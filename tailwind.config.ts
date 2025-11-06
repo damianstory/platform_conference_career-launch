@@ -13,6 +13,10 @@ const config: Config = {
         blue: '#0092FF',
         'light-blue': '#C6E7FF',
         'off-white': '#F6F6FF',
+        'block1': '#0066CC',
+        'block2': '#0092FF',
+        'block3': '#33AAFF',
+        'block4': '#66C2FF',
       },
       spacing: {
         '1': '8px',

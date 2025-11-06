@@ -9,7 +9,7 @@ export default function Footer({ className, ...props }: FooterProps) {
   return (
     <footer
       className={cn(
-        'border-t border-gray-100 bg-white py-6',
+        'border-t border-gray-100 bg-white py-3',
         className
       )}
       {...props}

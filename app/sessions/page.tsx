@@ -1,26 +1,34 @@
 import { createClient } from '@/lib/supabase/server';
-import type { Session } from '@/types';
+import type { Session, BlockNumber } from '@/types';
 import Accordion, { AccordionItem } from '@/components/Accordion';
 import SessionCard from '@/components/SessionCard';
 
 export const dynamic = 'force-dynamic';
 
-// Category mapping for sessions
-const CATEGORY_MAPPING: Record<string, string[]> = {
-  'Healthcare & Medical Careers': ['Healthcare', 'Medicine', 'Nursing', 'Health'],
-  'Technology & Engineering': ['Technology', 'Engineering', 'Computer Science', 'IT', 'Software'],
-  'Skilled Trades & Construction': ['Trades', 'Construction', 'Manufacturing', 'Skilled Trades'],
-  'Business, Creative & Sciences': ['Business', 'Finance', 'Arts', 'Design', 'Science', 'Creative', 'Entrepreneurship'],
+// Block color mapping
+const BLOCK_COLORS: Record<BlockNumber, string> = {
+  1: 'block1',
+  2: 'block2',
+  3: 'block3',
+  4: 'block4',
 };
+
+// Helper function to get unique industries and create a preview string
+function getIndustryPreview(sessions: Session[]): string {
+  const uniqueIndustries = Array.from(new Set(sessions.map(s => s.industry)));
+  const preview = uniqueIndustries.slice(0, 3).join(', ');
+  return preview;
+}
 
 export default async function SessionsPage() {
   const supabase = await createClient();
 
-  // Fetch all sessions
+  // Fetch all sessions ordered by block and display_order
   const { data: sessions, error } = await supabase
     .from('sessions')
     .select('*')
-    .order('title', { ascending: true });
+    .order('block_number', { ascending: true })
+    .order('display_order', { ascending: true });
 
   if (error) {
     console.error('Error fetching sessions:', error);
@@ -31,35 +39,42 @@ export default async function SessionsPage() {
     );
   }
 
-  // Group sessions by category
-  const sessionsByCategory: Record<string, Session[]> = {};
+  // Group sessions by block_number
+  const sessionsByBlock: Record<BlockNumber, Session[]> = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+  };
 
-  Object.keys(CATEGORY_MAPPING).forEach((category) => {
-    sessionsByCategory[category] = (sessions || []).filter((session) => {
-      const industryLower = session.industry.toLowerCase();
-      return CATEGORY_MAPPING[category].some((keyword) =>
-        industryLower.includes(keyword.toLowerCase())
-      );
-    });
+  (sessions || []).forEach((session) => {
+    const blockNum = session.block_number as BlockNumber | null;
+    if (blockNum && (blockNum === 1 || blockNum === 2 || blockNum === 3 || blockNum === 4)) {
+      sessionsByBlock[blockNum as BlockNumber].push(session);
+    }
   });
 
-  // Create accordion items
-  const accordionItems: AccordionItem[] = Object.keys(CATEGORY_MAPPING).map((category) => {
-    const categorySessions = sessionsByCategory[category] || [];
+  // Create accordion items for each block
+  const accordionItems: AccordionItem[] = ([1, 2, 3, 4] as BlockNumber[]).map((blockNum) => {
+    const blockSessions = sessionsByBlock[blockNum] || [];
+    const sessionCount = blockSessions.length;
+    const industryPreview = getIndustryPreview(blockSessions);
 
     return {
-      id: category.toLowerCase().replace(/[^a-z0-9]/g, '-'),
-      title: `${category} (${categorySessions.length})`,
+      id: `block-${blockNum}`,
+      title: `Block ${blockNum}`,
+      subtitle: `${sessionCount} session${sessionCount !== 1 ? 's' : ''} • ${industryPreview}`,
+      blockColor: BLOCK_COLORS[blockNum],
       content: (
         <div>
-          {categorySessions.length > 0 ? (
+          {blockSessions.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-              {categorySessions.map((session) => (
+              {blockSessions.map((session) => (
                 <SessionCard key={session.id} session={session} />
               ))}
             </div>
           ) : (
-            <p className="text-gray-600 italic">No sessions in this category yet.</p>
+            <p className="text-white/80 italic">No sessions in this block yet.</p>
           )}
         </div>
       ),
@@ -67,24 +82,22 @@ export default async function SessionsPage() {
   });
 
   return (
-    <div className="bg-off-white min-h-screen">
+    <div className="min-h-screen">
       {/* Mini Hero Section */}
       <section className="bg-navy text-white py-12">
-        <div className="container-custom">
+        <div className="px-8 md:px-16">
           <h1 className="text-3xl md:text-4xl font-black mb-3">
             Browse All Sessions
           </h1>
           <p className="text-lg text-light-blue">
-            Click on a category to explore sessions
+            Click on a block to explore sessions
           </p>
         </div>
       </section>
 
-      {/* Category Accordion */}
-      <section className="py-12">
-        <div className="container-custom">
-          <Accordion items={accordionItems} />
-        </div>
+      {/* Block Accordion - Full Width */}
+      <section>
+        <Accordion items={accordionItems} variant="blocks" />
       </section>
     </div>
   );
