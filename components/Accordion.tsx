@@ -123,14 +123,14 @@ export default function Accordion({ items, className = '', variant = 'default' }
             <div
               className={cn(
                 'overflow-hidden transition-all duration-300 ease-in-out',
-                isOpen ? (isBlocksVariant ? 'max-h-[2000px]' : 'max-h-[600px]') : 'max-h-0'
+                isOpen ? (isBlocksVariant ? 'max-h-[2500px]' : 'max-h-[600px]') : 'max-h-0'
               )}
             >
               <div
                 className={cn(
                   'text-sm leading-[1.6]',
                   isBlocksVariant
-                    ? 'px-8 md:px-16 pb-8 text-white'
+                    ? 'px-8 md:px-16 pb-12 text-white'
                     : 'px-6 pb-5 text-[#555555]'
                 )}
               >

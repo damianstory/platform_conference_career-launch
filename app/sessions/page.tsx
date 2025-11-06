@@ -68,7 +68,7 @@ export default async function SessionsPage() {
       content: (
         <div>
           {blockSessions.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-3 md:gap-4 pt-4">
               {blockSessions.map((session) => (
                 <SessionCard key={session.id} session={session} />
               ))}
