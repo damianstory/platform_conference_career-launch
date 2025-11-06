@@ -24,16 +24,17 @@
 
 ## 1.1 Product Overview
 
-**Career Launch Platform** is a video platform designed for Ontario high school educators to easily show career education content to their students while accurately measuring student reach for reporting and sponsor engagement.
+**Career Launch Platform** is a video platform designed for Ontario high school educators to easily show career education content to their students while accurately measuring student reach for reporting and sponsor engagement. The platform includes both curated video sessions and virtual expo booths where students can explore career resources from sponsor organizations.
 
 ### Elevator Pitch
-A video platform that makes it easy for teachers to show career videos to their students, and tells presenters exactly how many students watched their session.
+A video platform that makes it easy for teachers to show career videos to their students, explore virtual sponsor booths, and tells presenters exactly how many students watched their session.
 
 ### Event Details
 - **Name:** Career Launch Week
 - **Dates:** December 1-5, 2025
 - **Participating Boards:** 20+ Ontario school boards
-- **Content:** 25 career sessions across healthcare, technology, trades, business, and more
+- **Content:** 25 career sessions organized by industry categories
+- **Expo Booths:** Virtual booths from session sponsors and partner organizations
 - **Target Audience:** Grades 9-12 educators and students
 
 ---
@@ -60,7 +61,7 @@ Instead of forcing registration before browsing, educators can explore all 25 se
 
 ### Core Flow
 ```
-Homepage → Browse 25 Sessions Instantly → Click Session → Combined Registration Form → Watch Video
+Homepage → Choose Sessions or Booths → Browse Sessions (Category Accordions) → Click Session → View Session Page → Click Play → Registration Modal → Watch Video
 Time to browse: <1 second (vs 60+ seconds with traditional registration)
 Time to first video: <30 seconds (vs 90+ seconds with traditional registration)
 ```
@@ -69,9 +70,9 @@ Time to first video: <30 seconds (vs 90+ seconds with traditional registration)
 
 #### 1. Zero-Friction Browsing
 - **No registration required to explore content**
-- All 25 sessions visible immediately
-- Watch trailers without any barriers
-- One-time information collection only when ready to watch
+- All 25 sessions and expo booths visible immediately
+- Browse sessions by industry category using accordion interface
+- One-time information collection only when clicking play on a video
 
 #### 2. Honest Impact Measurement
 - **Captures actual student reach, not just "views"**
@@ -79,11 +80,11 @@ Time to first video: <30 seconds (vs 90+ seconds with traditional registration)
 - Distinguishes between educator previews and classroom viewing
 - Tracks completion rates and engagement patterns
 
-#### 3. Smart 4-Block Structure
-- **Mirrors Ontario high school schedule** (4 periods/day)
-- Prevents students from seeing duplicate content across classes
-- ~6 sessions per block = variety within structure
-- Manual curation ensures industry diversity in each block
+#### 3. Smart Category-Based Organization
+- **Industry-focused categories** for easier discovery
+- Categories: Healthcare & Medicine, Technology & Engineering, Skilled Trades, Business & Entrepreneurship, Creative Industries, Public Service
+- Accordion UI pattern allows focused browsing (expand one category at a time)
+- Each session appears in only one category for clarity
 
 #### 4. Built for Real Teaching Contexts
 - **Pre-fills previous selections** (1-second for repeat users)
@@ -136,12 +137,13 @@ Time to first video: <30 seconds (vs 90+ seconds with traditional registration)
 ### Browse-First Access
 **No registration barrier prevents educators from seeing value**
 
-- Explore all 25 sessions instantly
-- Watch trailers without providing any information
-- Bookmark sessions before committing
-- Only register when ready to show to class
+- Explore all 25 sessions and expo booths instantly
+- Browse sessions organized by industry category
+- Read full session descriptions and details without any barriers
+- Only register when clicking play on a video (maximum commitment point)
+- Access to virtual expo booths for additional career resources
 
-**Why this matters:** Traditional platforms force registration upfront, causing 40-60% drop-off before educators even see the content. We show value first, collect information at peak commitment.
+**Why this matters:** Traditional platforms force registration upfront, causing 40-60% drop-off before educators even see the content. We show value first, collect information at peak commitment (the moment they click play).
 
 ### Honest Impact Measurement
 **Transform raw view counts into meaningful student reach data**
@@ -154,11 +156,13 @@ Time to first video: <30 seconds (vs 90+ seconds with traditional registration)
 **Why this matters:** Sponsors need proof of impact. Boards need ROI justification. "12,500 students reached across 8 schools" is infinitely more valuable than "437 video views."
 
 ### Smart Content Organization
-**4-block structure prevents content repetition for students**
+**Category-based structure enables intuitive discovery**
 
-If a student is in multiple participating classes (e.g., English Period 1 and Civics Period 3), they won't see the same session twice because each block has different options.
+Sessions are organized by industry categories (Healthcare & Medicine, Technology & Engineering, Skilled Trades, Business & Entrepreneurship, Creative Industries, Public Service) making it easy for educators to find content aligned with student interests and curriculum connections.
 
-**Why this matters:** Respects student time, increases overall reach, provides better experience for multi-class participants.
+Accordion UI pattern allows educators to focus on one category at a time, reducing cognitive load and improving the browsing experience.
+
+**Why this matters:** Industry-based organization aligns with how students think about careers and makes discovery more intuitive than arbitrary time blocks.
 
 ### Returning User Magic
 **Cookie-based pre-fill makes repeat watching effortless**
@@ -209,49 +213,69 @@ Subsequent watches: Click "Start Video" immediately (~1 second)
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 1: LANDING & IMMEDIATE BROWSING                    │
+│ STEP 1: LANDING & CHOOSING PATH                         │
 │                                                          │
 │ User visits homepage                                     │
 │ ↓                                                        │
-│ Sees 4-block schedule IMMEDIATELY                       │
+│ Sees two main options:                                  │
+│ - Browse Sessions (video content)                       │
+│ - Explore Booths (sponsor resources)                    │
 │ - No login prompt                                        │
 │ - No registration form                                   │
-│ - All 25 sessions visible                               │
-│ - Can browse, read descriptions, watch trailers         │
 │                                                          │
+│ User clicks "Browse Sessions"                           │
 │ Time: <1 second to full content access                  │
 └─────────────────────────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 2: DISCOVERY & EXPLORATION                         │
+│ STEP 2: BROWSING SESSIONS BY CATEGORY                   │
 │                                                          │
-│ User browses blocks, looking for relevant content       │
+│ User sees category-based accordion interface            │
 │ ↓                                                        │
-│ Clicks on interesting session card                      │
+│ Categories visible (collapsed by default):              │
+│ - Healthcare & Medicine                                 │
+│ - Technology & Engineering                              │
+│ - Skilled Trades                                        │
+│ - Business & Entrepreneurship                           │
+│ - Creative Industries                                   │
+│ - Public Service                                        │
 │ ↓                                                        │
-│ Views session detail page:                              │
-│ - Watches 1-2 minute trailer                            │
-│ - Reads full description                                │
-│ - Reviews learning objectives                           │
-│ - Sees presenter bio                                    │
+│ User clicks category → Accordion expands                │
+│ Shows session cards in that category                    │
+│ Clicks interesting session card                         │
 │                                                          │
-│ Time: 2-5 minutes exploration (self-paced)              │
+│ Time: 1-3 minutes browsing (self-paced)                 │
 └─────────────────────────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 3: COMMITMENT POINT                                │
+│ STEP 3: SESSION DETAIL PAGE                             │
+│                                                          │
+│ Views session detail page:                              │
+│ - Mini hero navigation bar visible (myB Logo | Sessions)│
+│ - Full session description                              │
+│ - Learning objectives                                   │
+│ - Presenter bio                                         │
+│ - Video player with play button overlay                │
+│ - Links to related sponsor booths (if applicable)      │
+│                                                          │
+│ Time: 1-2 minutes reading (self-paced)                  │
+└─────────────────────────────────────────────────────────┘
+                         ↓
+┌─────────────────────────────────────────────────────────┐
+│ STEP 4: COMMITMENT POINT (PLAY BUTTON)                  │
 │                                                          │
 │ User decides: "I want to show this to my class"         │
 │ ↓                                                        │
-│ Clicks "Watch with Your Class" button                   │
+│ Clicks PLAY button on video                             │
 │ ↓                                                        │
-│ Modal appears with combined registration form           │
-│ (This is the ONLY form in the entire flow)              │
+│ Modal appears: "Who's Watching With You?"               │
+│ Combined registration form (This is the ONLY form)      │
 └─────────────────────────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 4: ONE-TIME REGISTRATION                           │
+│ STEP 5: ONE-TIME REGISTRATION                           │
 │                                                          │
+│ Modal: "Who's Watching With You?"                       │
 │ Combined Form (6 fields in ONE submission):             │
 │                                                          │
 │ PROFILE SECTION:                                         │
@@ -272,7 +296,7 @@ Subsequent watches: Click "Start Video" immediately (~1 second)
 └─────────────────────────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 5: IMMEDIATE VIDEO PLAYBACK                        │
+│ STEP 6: IMMEDIATE VIDEO PLAYBACK                        │
 │                                                          │
 │ User clicks "Start Video"                               │
 │ ↓                                                        │
@@ -291,7 +315,7 @@ Subsequent watches: Click "Start Video" immediately (~1 second)
 └─────────────────────────────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────────┐
-│ STEP 6: ENGAGEMENT TRACKING                             │
+│ STEP 7: ENGAGEMENT TRACKING                             │
 │                                                          │
 │ While video plays:                                       │
 │ - Track watch duration (updated every 5 seconds)        │
@@ -306,8 +330,8 @@ Subsequent watches: Click "Start Video" immediately (~1 second)
 └─────────────────────────────────────────────────────────┘
 ```
 
-**Total time from landing to watching first video: ~3-7 minutes**  
-(Browse 2-5 min + Form 20 sec + Video start <1 sec)
+**Total time from landing to watching first video: ~2-6 minutes**
+(Browse categories 1-3 min + Read session details 1-2 min + Form 20 sec + Video start <1 sec)
 
 ---
 
@@ -319,14 +343,15 @@ Subsequent watches: Click "Start Video" immediately (~1 second)
 │                                                          │
 │ Cookie detected: email + last submission values         │
 │ ↓                                                        │
-│ User browses 4-block schedule                           │
+│ User browses sessions by category (accordion interface) │
 │ (No difference in experience - still public)            │
 │ ↓                                                        │
-│ Clicks on different session                             │
+│ Clicks on different session → Views detail page         │
 │ ↓                                                        │
-│ Clicks "Watch with Your Class"                          │
+│ Clicks PLAY button on video                             │
 │ ↓                                                        │
-│ Form appears with ALL 6 FIELDS PRE-FILLED:              │
+│ "Who's Watching With You?" modal appears                │
+│ Form shows ALL 6 FIELDS PRE-FILLED:                     │
 │ ✓ Name: Jane Smith                                      │
 │ ✓ Email: jane.smith@torontodsb.ca                       │
 │ ✓ School: Central High School                           │
@@ -423,41 +448,44 @@ Show inline errors              User clicks button
 
 ## 3.4 Key User Interactions
 
-### Browsing Sessions
-**Trigger:** User lands on homepage  
-**Action:** Immediately displays 4-block schedule  
-**Result:** User can explore all 25 sessions without any barriers
+### Browsing Sessions by Category
+**Trigger:** User lands on sessions page
+**Action:** Displays category-based accordion interface
+**Result:** User can explore all 25 sessions organized by industry without any barriers
 
 **Interaction Details:**
+- Categories displayed as accordion items (collapsed by default)
+- Categories: Healthcare & Medicine, Technology & Engineering, Skilled Trades, Business & Entrepreneurship, Creative Industries, Public Service
+- Click category header → Accordion expands to show sessions in that category
 - Session cards show: thumbnail, title, duration, grade level, presenter
-- Hover reveals additional metadata
 - Click card → Navigate to session detail page
-- Star icon (optional) → Add to favorites
 
-### Watching Trailers
-**Trigger:** User navigates to session detail page  
-**Action:** Trailer video embedded on page  
-**Result:** User can preview 1-2 minute trailer without registration
-
-**Interaction Details:**
-- Trailer plays inline (no modal, no navigation away)
-- Standard Vimeo controls (play, pause, volume, fullscreen)
-- Trailer viewing does NOT trigger registration form
-- Trailer viewing is NOT tracked (preview only)
-
-### Initiating Full Video Watch
-**Trigger:** User clicks "Watch with Your Class" button  
-**Action:** Combined registration form appears as modal  
-**Result:** User provides info, then immediately watches video
+### Viewing Session Details
+**Trigger:** User clicks session card
+**Action:** Navigate to session detail page with full description
+**Result:** User can read all information about session before committing
 
 **Interaction Details:**
-- Modal blocks underlying page (focus trap)
+- Mini hero navigation bar (myB Logo | Sessions link for easy return)
+- Full session description and learning objectives
+- Presenter bio and credentials
+- Video player with play button overlay
+- Links to related sponsor booths (if applicable)
+- No registration required to view this page
+
+### Initiating Video Playback
+**Trigger:** User clicks PLAY button on video player
+**Action:** "Who's Watching With You?" modal appears
+**Result:** User provides viewing context, then video plays immediately
+
+**Interaction Details:**
+- Modal appears with title "Who's Watching With You?"
 - All 6 fields required before submission
 - Real-time validation as user types/selects
 - Pre-filled if returning user (cookie exists)
 - "Start Video" button disabled until form is valid
 - Clicking outside modal closes it (video does NOT play)
-- Can click "Watch with Your Class" again to retry
+- Can click PLAY button again to retry
 
 ### Video Playback & Tracking
 **Trigger:** User submits valid combined form  
@@ -551,27 +579,34 @@ CREATE TABLE sessions (
   presenter_bio TEXT,
   presenter_photo_url TEXT,
   duration INTEGER NOT NULL,         -- Duration in minutes
-  block_number INTEGER NOT NULL CHECK (block_number BETWEEN 1 AND 4),
-  industry TEXT NOT NULL,            -- Healthcare, Tech, Trades, etc.
+  category TEXT NOT NULL CHECK (category IN (
+    'Healthcare & Medicine',
+    'Technology & Engineering',
+    'Skilled Trades',
+    'Business & Entrepreneurship',
+    'Creative Industries',
+    'Public Service'
+  )),
   grade_level TEXT NOT NULL,         -- "9-10", "11-12", "9-12"
   thumbnail_url TEXT NOT NULL,
-  trailer_url TEXT NOT NULL,         -- Vimeo embed URL
-  full_video_url TEXT NOT NULL,      -- Vimeo embed URL
+  video_url TEXT NOT NULL,           -- Vimeo embed URL (single video)
   learning_objectives JSONB,         -- Array of bullet points
+  related_booth_ids JSONB,           -- Array of booth IDs this session links to
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE INDEX idx_sessions_block ON sessions(block_number);
-CREATE INDEX idx_sessions_industry ON sessions(industry);
+CREATE INDEX idx_sessions_category ON sessions(category);
 CREATE INDEX idx_sessions_slug ON sessions(slug);
+CREATE INDEX idx_sessions_grade ON sessions(grade_level);
 ```
 
 **Key Design Decisions:**
-- `block_number` enforces 4-block organization
-- `slug` for clean URLs (/session/nursing-career-pathways)
+- `category` enforces industry-based organization (replaces block_number)
+- `slug` for clean URLs (/sessions/nursing-career-pathways)
 - `learning_objectives` as JSONB for flexibility
-- Separate `trailer_url` and `full_video_url` (different Vimeo videos)
+- Single `video_url` (trailers removed for simpler flow)
+- `related_booth_ids` enables linking sessions to sponsor booths
 
 ### ViewingEvents Table
 ```sql
@@ -633,6 +668,35 @@ CREATE TABLE schools (
 CREATE INDEX idx_schools_board ON schools(board_id);
 CREATE INDEX idx_schools_name ON schools(name);
 ```
+
+### Booths Table (Expo Hall)
+```sql
+CREATE TABLE booths (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  slug TEXT UNIQUE NOT NULL,          -- URL-friendly identifier
+  organization_name TEXT NOT NULL,    -- Sponsor/organization name
+  booth_title TEXT NOT NULL,          -- Display title
+  description TEXT NOT NULL,          -- Full booth description
+  logo_url TEXT NOT NULL,             -- Organization logo
+  banner_url TEXT,                    -- Optional banner image
+  resources JSONB,                    -- Array of downloadable resources
+  contact_info JSONB,                 -- Contact information (email, website, etc.)
+  related_category TEXT,              -- Link to session category
+  display_order INTEGER DEFAULT 0,    -- For custom ordering
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_booths_category ON booths(related_category);
+CREATE INDEX idx_booths_slug ON booths(slug);
+```
+
+**Key Design Decisions:**
+- `slug` for clean URLs (/booths/hospital-careers-ontario)
+- `resources` as JSONB for flexible resource types (PDFs, links, videos)
+- `contact_info` as JSONB to handle varying contact methods
+- `related_category` links booths to session categories for cross-navigation
+- `display_order` allows manual curation of booth presentation order
 
 ---
 

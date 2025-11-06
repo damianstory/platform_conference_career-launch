@@ -2615,27 +2615,35 @@ CREATE TABLE sessions (
   -- Primary Key
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   slug TEXT UNIQUE NOT NULL, -- URL-friendly identifier
-  
+
   -- Content
   title TEXT NOT NULL,
   description TEXT NOT NULL,
   learning_objectives JSONB, -- Array of strings
-  
+
   -- Presenter
   presenter_name TEXT NOT NULL,
   presenter_bio TEXT,
   presenter_photo_url TEXT,
-  
+
   -- Media
   thumbnail_url TEXT NOT NULL,
-  trailer_url TEXT NOT NULL, -- Vimeo URL
-  full_video_url TEXT NOT NULL, -- Vimeo URL
+  video_url TEXT NOT NULL, -- Vimeo URL (single video, trailers removed)
   duration INTEGER NOT NULL, -- Minutes
-  
+
   -- Classification
-  block_number INTEGER NOT NULL CHECK (block_number BETWEEN 1 AND 4),
-  industry TEXT NOT NULL,
+  category TEXT NOT NULL CHECK (category IN (
+    'Healthcare & Medicine',
+    'Technology & Engineering',
+    'Skilled Trades',
+    'Business & Entrepreneurship',
+    'Creative Industries',
+    'Public Service'
+  )),
   grade_level TEXT NOT NULL,
+
+  -- Related Content
+  related_booth_ids JSONB, -- Array of booth UUIDs for cross-linking
   
   -- Timestamps
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -2644,8 +2652,8 @@ CREATE TABLE sessions (
 
 -- Indexes
 CREATE INDEX idx_sessions_slug ON sessions(slug);
-CREATE INDEX idx_sessions_block ON sessions(block_number);
-CREATE INDEX idx_sessions_industry ON sessions(industry);
+CREATE INDEX idx_sessions_category ON sessions(category);
+CREATE INDEX idx_sessions_grade ON sessions(grade_level);
 
 -- Row Level Security
 ALTER TABLE sessions ENABLE ROW LEVEL SECURITY;
@@ -2673,12 +2681,11 @@ USING (true);
   "presenter_bio": "Registered Nurse with 15 years experience...",
   "presenter_photo_url": "https://vimeo.com/photos/sarah-johnson.jpg",
   "thumbnail_url": "/images/sessions/nursing-thumbnail.jpg",
-  "trailer_url": "https://vimeo.com/987654321",
-  "full_video_url": "https://vimeo.com/123456789",
+  "video_url": "https://vimeo.com/123456789",
   "duration": 35,
-  "block_number": 1,
-  "industry": "Healthcare",
+  "category": "Healthcare & Medicine",
   "grade_level": "9-12",
+  "related_booth_ids": ["booth-uuid-123", "booth-uuid-456"],
   "created_at": "2025-11-01T10:00:00.000Z",
   "updated_at": "2025-11-15T14:30:00.000Z"
 }
@@ -2829,6 +2836,53 @@ ALTER TABLE schools ENABLE ROW LEVEL SECURITY;
 -- Policy: Public read access
 CREATE POLICY "Public read access"
 ON schools FOR SELECT
+TO public
+USING (true);
+```
+
+### booths Table
+
+Stores virtual expo booth information for sponsor organizations.
+
+```sql
+CREATE TABLE booths (
+  -- Primary Key
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  slug TEXT UNIQUE NOT NULL, -- URL-friendly identifier
+
+  -- Organization
+  organization_name TEXT NOT NULL,
+  booth_title TEXT NOT NULL,
+  description TEXT NOT NULL,
+
+  -- Media
+  logo_url TEXT NOT NULL,
+  banner_url TEXT,
+
+  -- Resources (flexible JSON structure)
+  resources JSONB, -- Array of { type, title, url }
+  contact_info JSONB, -- { email, website, phone, linkedin, etc. }
+
+  -- Classification
+  related_category TEXT, -- Link to session category
+  display_order INTEGER DEFAULT 0, -- For custom ordering
+
+  -- Timestamps
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Indexes
+CREATE INDEX idx_booths_slug ON booths(slug);
+CREATE INDEX idx_booths_category ON booths(related_category);
+CREATE INDEX idx_booths_order ON booths(display_order);
+
+-- Row Level Security
+ALTER TABLE booths ENABLE ROW LEVEL SECURITY;
+
+-- Policy: Public read access
+CREATE POLICY "Public read access"
+ON booths FOR SELECT
 TO public
 USING (true);
 ```

@@ -1,147 +1,110 @@
-import { createClient } from '@/lib/supabase/server';
-import type { Session, SessionsByBlock } from '@/types';
 import Link from 'next/link';
-import Image from 'next/image';
-import { formatDuration } from '@/lib/utils';
+import FAQ from '@/components/FAQ';
 
-export const dynamic = 'force-dynamic';
-
-export default async function HomePage() {
-  const supabase = await createClient();
-
-  // Fetch all sessions ordered by block and display_order
-  const { data: sessions, error } = await supabase
-    .from('sessions')
-    .select('*')
-    .order('block_number', { ascending: true })
-    .order('display_order', { ascending: true });
-
-  if (error) {
-    console.error('Error fetching sessions:', error);
-    return (
-      <div className="container-custom py-12">
-        <p className="text-red-600">Failed to load sessions. Please try again later.</p>
-      </div>
-    );
-  }
-
-  // Group sessions by block number
-  const sessionsByBlock: SessionsByBlock = (sessions || []).reduce((acc, session) => {
-    if (!acc[session.block_number]) {
-      acc[session.block_number] = [];
-    }
-    acc[session.block_number].push(session);
-    return acc;
-  }, {} as SessionsByBlock);
-
+export default function HomePage() {
   return (
     <div className="bg-off-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-navy text-white py-12">
+      <section className="bg-light-blue py-20">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Career Launch 2025
-          </h1>
-          <p className="text-xl md:text-2xl text-light-blue mb-6">
-            December 1-5, 2025
-          </p>
-          <p className="text-lg max-w-3xl">
-            Explore 25 inspiring career sessions from leading Ontario professionals. Show your students the exciting possibilities that await them across technology, healthcare, skilled trades, creative arts, finance, and science.
-          </p>
-        </div>
-      </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <div>
+              <h1 className="text-4xl md:text-5xl font-black text-navy mb-6">
+                Explore Careers, Inspire Futures
+              </h1>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                Join Ontario's largest virtual career education event. December 1-5, 2025.
+                Bringing industry professionals directly to your classroom.
+              </p>
+            </div>
 
-      {/* Schedule Section */}
-      <section className="py-12">
-        <div className="container-custom">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-navy mb-3">
-              Browse All Sessions
-            </h2>
-            <p className="text-lg text-gray-700">
-              Sessions are organized into 4 time blocks to match your school schedule. Click any session to learn more.
-            </p>
-          </div>
-
-          {/* Render each block */}
-          {[1, 2, 3, 4].map((blockNumber) => {
-            const blockSessions = sessionsByBlock[blockNumber] || [];
-            return (
-              <div key={blockNumber} className="mb-12">
-                <div className="flex items-center mb-6">
-                  <div className="bg-blue text-white px-4 py-2 rounded-md font-bold text-lg">
-                    Block {blockNumber}
-                  </div>
-                  <div className="ml-4 text-gray-600">
-                    {blockSessions.length} {blockSessions.length === 1 ? 'session' : 'sessions'}
-                  </div>
-                </div>
-
-                {/* Sessions Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {blockSessions.map((session) => (
-                    <SessionCard key={session.id} session={session} />
-                  ))}
+            {/* Right Column - Image Placeholder */}
+            <div className="relative">
+              <div className="aspect-video bg-gradient-to-br from-light-blue to-off-white rounded-lg shadow-lg flex items-center justify-center">
+                <div className="text-center p-8">
+                  <svg
+                    className="w-24 h-24 mx-auto text-navy/20"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <p className="text-sm text-navy/40 mt-4">Hero Image</p>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </section>
-    </div>
-  );
-}
 
-function SessionCard({ session }: { session: Session }) {
-  return (
-    <Link
-      href={`/sessions/${session.slug}`}
-      className="card hover:scale-[1.02] transition-transform"
-    >
-      {/* Thumbnail */}
-      <div className="h-48 bg-gradient-to-br from-blue to-navy flex items-center justify-center text-white relative">
-        {session.thumbnail_url ? (
-          <Image
-            src={session.thumbnail_url}
-            alt={session.title}
-            fill
-            className="object-cover"
-          />
-        ) : (
-          <div className="text-center p-6">
-            <p className="text-sm font-semibold">{session.industry}</p>
+      {/* Sessions & Booths Cards Section */}
+      <section className="py-16">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Sessions Card */}
+            <Link
+              href="/sessions"
+              className="group relative bg-blue text-white rounded-xl p-12 min-h-[16rem] flex flex-col justify-center items-center text-center hover:scale-[1.02] transition-transform duration-200 shadow-lg hover:shadow-xl"
+            >
+              <h2 className="text-4xl font-black mb-3">Sessions</h2>
+              <p className="text-lg opacity-90">25+ Career Presentations</p>
+
+              {/* Hover Arrow */}
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </Link>
+
+            {/* Booths Card */}
+            <Link
+              href="/booths"
+              className="group relative bg-navy text-white rounded-xl p-12 min-h-[16rem] flex flex-col justify-center items-center text-center hover:scale-[1.02] transition-transform duration-200 shadow-lg hover:shadow-xl"
+            >
+              <h2 className="text-4xl font-black mb-3">Booths</h2>
+              <p className="text-lg opacity-90">Interactive Sponsor Exhibits</p>
+
+              {/* Hover Arrow */}
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </Link>
           </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-5">
-        <h3 className="font-bold text-lg text-navy mb-2 line-clamp-2">
-          {session.title}
-        </h3>
-
-        <div className="space-y-2 mb-4">
-          <p className="text-sm text-gray-700">
-            <span className="font-semibold">{session.speaker_name}</span>
-            {session.speaker_title && (
-              <span className="text-gray-600"> • {session.speaker_title}</span>
-            )}
-          </p>
-          {session.company && (
-            <p className="text-sm text-gray-600">{session.company}</p>
-          )}
         </div>
+      </section>
 
-        {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-          <span className="text-sm font-medium text-blue">
-            {session.industry}
-          </span>
-          <span className="text-sm text-gray-600">
-            {formatDuration(session.duration_minutes)}
-          </span>
-        </div>
-      </div>
-    </Link>
+      {/* FAQ Section */}
+      <FAQ />
+    </div>
   );
 }

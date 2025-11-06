@@ -847,6 +847,124 @@ margin-bottom: var(--space-3); /* 24px between fields */
 }
 ```
 
+## 5.2.5 Category Accordion
+
+### Accordion Container
+
+```css
+.category-accordion {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.category-accordion__item {
+  border: 1px solid var(--myb-neutral-2);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+  transition: all 0.3s var(--ease-default);
+}
+
+.category-accordion__item--expanded {
+  box-shadow: var(--shadow-lg);
+}
+```
+
+### Accordion Header (Clickable)
+
+```css
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  background: white;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-default);
+
+  /* Larger click target for educators */
+  min-height: 64px;
+
+  &:hover {
+    background: var(--myb-off-white);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--myb-primary-blue);
+    outline-offset: -2px;
+  }
+}
+
+.accordion__title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--myb-navy);
+  text-align: left;
+}
+
+.accordion__count {
+  font-size: 14px;
+  color: var(--myb-neutral-4);
+  font-weight: 500;
+  margin-left: var(--space-2);
+}
+
+.accordion__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--myb-primary-blue);
+  transition: transform 0.3s var(--ease-default);
+}
+
+.accordion__header--expanded .accordion__icon {
+  transform: rotate(180deg);
+}
+```
+
+### Accordion Content
+
+```css
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-default);
+}
+
+.accordion__content--expanded {
+  max-height: 5000px; /* Large enough for content */
+  padding: var(--space-4);
+  background: var(--myb-off-white);
+}
+
+.accordion__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+/* Responsive accordion grid */
+@media (max-width: 1023px) {
+  .accordion__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .accordion__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .accordion__grid {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
 ## 5.3 Form Elements
 
 ### Text Input
@@ -1147,53 +1265,99 @@ margin-bottom: var(--space-3); /* 24px between fields */
 }
 ```
 
-## 5.6 Navigation Header
+## 5.6 Navigation Components
+
+### Mini Hero Navigation (Persistent)
+
+**Used on:** All pages except landing page
 
 ```css
-.site-header {
+.mini-nav {
   background: var(--myb-navy);
   color: white;
-  padding: var(--space-3) 0;
+  padding: var(--space-2) 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
-.site-header__container {
+.mini-nav__container {
   max-width: var(--container-xl);
   margin: 0 auto;
   padding: 0 var(--space-4);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.site-header__logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: 24px;
-  font-weight: 900;
-  color: white;
-  text-decoration: none;
-}
-
-.site-header__nav {
-  display: flex;
   gap: var(--space-4);
 }
 
-.site-header__link {
+.mini-nav__logo {
+  display: flex;
+  align-items: center;
+  height: 32px;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.mini-nav__divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mini-nav__link {
   color: white;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
   transition: opacity 0.2s;
-  
+
   &:hover {
     opacity: 0.8;
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--myb-light-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+```
+
+### Full Navigation Header (Landing Page Only)
+
+```css
+.site-header {
+  background: var(--myb-navy);
+  color: white;
+  padding: var(--space-6) 0;
+  text-align: center;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+
+  img {
+    height: 48px;
+    width: auto;
+  }
+}
+
+.site-header__title {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: var(--space-2);
+}
+
+.site-header__dates {
+  font-size: 18px;
+  color: var(--myb-light-blue);
 }
 ```
 
@@ -2070,14 +2234,23 @@ a:hover {
 }
 ```
 
-## 8.5 Class Context Form Modal
+## 8.5 Registration Modal - "Who's Watching With You?"
 
 ### Layout Structure
 
+**Triggered by:** Clicking PLAY button on video player
+
 ```
 ┌──────────────────────────────────────────────┐
-│  Help us understand your impact! 📊          │
+│  Who's Watching With You?                    │
 │                                              │
+│  [Profile Section - if new user]            │
+│  Name: [_______________]                     │
+│  Email: [_______________]                    │
+│  School: [Dropdown]                          │
+│  Role: [Guidance] [Teacher] [Admin] [Other]  │
+│                                              │
+│  [Viewing Context Section]                   │
 │  How many students are watching?             │
 │  ┌──────────┐ ┌──────────┐ ┌────────────┐   │
 │  │Less than │ │ 25 to 35 │ │Large group │   │
