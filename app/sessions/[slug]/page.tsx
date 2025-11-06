@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { formatDuration } from '@/lib/utils';
 import type { Session } from '@/types';
 import VideoSection from '@/components/session/VideoSection';
+import SpeakerSection from '@/components/session/SpeakerSection';
+import DescriptionSection from '@/components/session/DescriptionSection';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,15 +30,6 @@ export default async function SessionPage({ params }: SessionPageProps) {
     notFound();
   }
 
-  // Fetch other sessions in the same block for recommendations
-  const { data: relatedSessions } = await supabase
-    .from('sessions')
-    .select('*')
-    .eq('block_number', session.block_number)
-    .neq('id', session.id)
-    .order('display_order', { ascending: true })
-    .limit(3);
-
   return (
     <div className="bg-off-white min-h-screen">
       {/* Breadcrumb */}
@@ -55,7 +48,7 @@ export default async function SessionPage({ params }: SessionPageProps) {
       <section className="bg-navy text-white py-12">
         <div className="container-custom">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-2">
               <span className="bg-blue px-3 py-1 rounded-md text-sm font-semibold">
                 Block {session.block_number}
               </span>
@@ -66,111 +59,36 @@ export default async function SessionPage({ params }: SessionPageProps) {
               )}
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            {session.duration_minutes && (
+              <p className="text-sm text-light-blue mb-4">
+                {formatDuration(session.duration_minutes)}
+              </p>
+            )}
+
+            <h1 className="text-4xl md:text-5xl font-bold">
               {session.title}
             </h1>
-
-            <div className="space-y-2">
-              {session.speaker_name && (
-                <p className="text-xl">
-                  <span className="font-semibold">{session.speaker_name}</span>
-                  {session.speaker_title && (
-                    <span className="text-light-blue"> • {session.speaker_title}</span>
-                  )}
-                </p>
-              )}
-              {session.company && (
-                <p className="text-lg text-light-blue">{session.company}</p>
-              )}
-              {session.duration_minutes && (
-                <p className="text-lg">
-                  Duration: {formatDuration(session.duration_minutes)}
-                </p>
-              )}
-            </div>
           </div>
         </div>
       </section>
 
       {/* Content Section */}
-      <section className="py-12">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Description */}
-              {session.description && (
-                <div className="bg-white rounded-lg shadow-md p-8">
-                  <h2 className="text-2xl font-bold text-navy mb-4">
-                    About This Session
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    {session.description}
-                  </p>
-                </div>
-              )}
+      <section className="py-12 md:py-12">
+        <div className="max-w-5xl mx-auto px-4">
+          {/* Video Section - Top Priority */}
+          <VideoSection sessionSlug={session.slug} />
 
-              {/* Video Section */}
-              <VideoSection sessionSlug={session.slug} />
-            </div>
+          {/* Description Section */}
+          {session.description && (
+            <DescriptionSection description={session.description} />
+          )}
 
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Session Details Card */}
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="font-bold text-lg text-navy mb-4">
-                  Session Details
-                </h3>
-                <dl className="space-y-3">
-                  <div>
-                    <dt className="text-sm font-semibold text-gray-600">Block</dt>
-                    <dd className="text-base text-navy">Block {session.block_number}</dd>
-                  </div>
-                  {session.industry && (
-                    <div>
-                      <dt className="text-sm font-semibold text-gray-600">Industry</dt>
-                      <dd className="text-base text-navy">{session.industry}</dd>
-                    </div>
-                  )}
-                  {session.duration_minutes && (
-                    <div>
-                      <dt className="text-sm font-semibold text-gray-600">Duration</dt>
-                      <dd className="text-base text-navy">
-                        {formatDuration(session.duration_minutes)}
-                      </dd>
-                    </div>
-                  )}
-                </dl>
-              </div>
-
-              {/* Related Sessions */}
-              {relatedSessions && relatedSessions.length > 0 && (
-                <div className="bg-white rounded-lg shadow-md p-6">
-                  <h3 className="font-bold text-lg text-navy mb-4">
-                    Other Sessions in Block {session.block_number}
-                  </h3>
-                  <div className="space-y-3">
-                    {relatedSessions.map((related) => (
-                      <Link
-                        key={related.id}
-                        href={`/sessions/${related.slug}`}
-                        className="block p-3 rounded-md hover:bg-light-blue transition-colors"
-                      >
-                        <p className="font-semibold text-navy text-sm mb-1">
-                          {related.title}
-                        </p>
-                        {related.speaker_name && (
-                          <p className="text-xs text-gray-600">
-                            {related.speaker_name}
-                          </p>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          {/* Speaker Section */}
+          <SpeakerSection
+            name={session.speaker_name || 'Speaker'}
+            title={session.speaker_title || ''}
+            company={session.company || 'Company'}
+          />
         </div>
       </section>
     </div>

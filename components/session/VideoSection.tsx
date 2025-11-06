@@ -11,7 +11,7 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-8">
+    <div className="bg-white rounded-xl border border-[#E5E9F1] p-8 mb-6 shadow-[0_4px_24px_rgba(34,34,76,0.08)]">
       <h2 className="text-2xl font-bold text-navy mb-4">
         Watch with Your Class
       </h2>
