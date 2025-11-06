@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { formatDuration } from '@/lib/utils';
 import type { Session } from '@/types';
+import VideoSection from '@/components/session/VideoSection';
 
 export const dynamic = 'force-dynamic';
 
@@ -109,26 +110,8 @@ export default async function SessionPage({ params }: SessionPageProps) {
                 </div>
               )}
 
-              {/* Video Placeholder */}
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-2xl font-bold text-navy mb-4">
-                  Watch with Your Class
-                </h2>
-                <div className="bg-gradient-to-br from-blue to-navy rounded-lg h-96 flex items-center justify-center text-white">
-                  <div className="text-center">
-                    <p className="text-xl mb-4">Video player coming soon</p>
-                    <button
-                      onClick={() => console.log('Watch button clicked for session:', session.slug)}
-                      className="btn-primary"
-                    >
-                      Watch with Your Class
-                    </button>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600 mt-4">
-                  Click &ldquo;Watch with Your Class&rdquo; to register and start the video. You&rsquo;ll be able to track your students&rsquo; engagement and report on reach.
-                </p>
-              </div>
+              {/* Video Section */}
+              <VideoSection sessionSlug={session.slug} />
             </div>
 
             {/* Sidebar */}
