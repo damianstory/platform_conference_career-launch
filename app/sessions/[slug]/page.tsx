@@ -46,29 +46,10 @@ export default async function SessionPage({ params }: SessionPageProps) {
 
       {/* Hero Section */}
       <section className="bg-navy text-white py-12">
-        <div className="container-custom">
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-2">
-              <span className="bg-blue px-3 py-1 rounded-md text-sm font-semibold">
-                Block {session.block_number}
-              </span>
-              {session.industry && (
-                <span className="bg-light-blue text-navy px-3 py-1 rounded-md text-sm font-semibold">
-                  {session.industry}
-                </span>
-              )}
-            </div>
-
-            {session.duration_minutes && (
-              <p className="text-sm text-light-blue mb-4">
-                {formatDuration(session.duration_minutes)}
-              </p>
-            )}
-
-            <h1 className="text-4xl md:text-5xl font-bold">
-              {session.title}
-            </h1>
-          </div>
+        <div className="max-w-5xl mx-auto px-4 flex items-center justify-center min-h-[200px]">
+          <h1 className="text-4xl md:text-5xl font-bold text-center">
+            {session.title}
+          </h1>
         </div>
       </section>
 
