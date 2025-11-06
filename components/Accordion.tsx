@@ -130,7 +130,7 @@ export default function Accordion({ items, className = '', variant = 'default' }
                 className={cn(
                   'text-sm leading-[1.6]',
                   isBlocksVariant
-                    ? 'px-8 md:px-16 pb-12 text-white'
+                    ? 'px-8 md:px-16 pb-4 text-white'
                     : 'px-6 pb-5 text-[#555555]'
                 )}
               >

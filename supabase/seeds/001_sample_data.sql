@@ -50,7 +50,7 @@ INSERT INTO schools (id, board_id, name) VALUES
 -- SESSIONS - 25 Career Sessions Across 4 Blocks
 -- ============================================================================
 
--- BLOCK 1: 6 Sessions
+-- BLOCK 1: 5 Sessions
 INSERT INTO sessions (id, slug, title, description, speaker_name, speaker_title, company, industry, duration_minutes, thumbnail_url, trailer_vimeo_id, full_video_vimeo_id, block_number, display_order) VALUES
     (
         '770e8400-e29b-41d4-a716-446655440001',
@@ -145,11 +145,11 @@ INSERT INTO sessions (id, slug, title, description, speaker_name, speaker_title,
         'https://i.vimeocdn.com/video/1234567895_640x360.jpg',
         '987654331',
         '987654332',
-        1,
-        6
+        4,
+        7
     );
 
--- BLOCK 2: 6 Sessions
+-- BLOCK 2: 5 Sessions
 INSERT INTO sessions (id, slug, title, description, speaker_name, speaker_title, company, industry, duration_minutes, thumbnail_url, trailer_vimeo_id, full_video_vimeo_id, block_number, display_order) VALUES
     (
         '770e8400-e29b-41d4-a716-446655440007',
@@ -244,8 +244,8 @@ INSERT INTO sessions (id, slug, title, description, speaker_name, speaker_title,
         'https://i.vimeocdn.com/video/1234567901_640x360.jpg',
         '987654343',
         '987654344',
-        2,
-        6
+        4,
+        8
     );
 
 -- BLOCK 3: 7 Sessions
@@ -363,7 +363,7 @@ INSERT INTO sessions (id, slug, title, description, speaker_name, speaker_title,
         7
     );
 
--- BLOCK 4: 6 Sessions
+-- BLOCK 4: 8 Sessions
 INSERT INTO sessions (id, slug, title, description, speaker_name, speaker_title, company, industry, duration_minutes, thumbnail_url, trailer_vimeo_id, full_video_vimeo_id, block_number, display_order) VALUES
     (
         '770e8400-e29b-41d4-a716-446655440020',
