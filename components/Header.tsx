@@ -1,27 +1,31 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur-md text-white shadow-md">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold">myBlueprint</span>
-            </div>
+        <div className="flex items-center justify-between h-20">
+          <Link
+            href="/"
+            className="flex items-center hover:opacity-90 transition-opacity"
+          >
+            <Image
+              src="/images/logo.png"
+              alt="myBlueprint"
+              width={240}
+              height={80}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
-          <div className="flex items-center space-x-6">
-            <Link
-              href="/sessions"
-              className="text-light-blue font-medium hover:text-white transition-colors"
-            >
-              Agenda
-            </Link>
-            <div className="bg-blue text-white px-4 py-2 rounded-md font-semibold">
-              Career Launch 2025
-            </div>
-          </div>
+          <Link
+            href="/"
+            className="text-navy font-medium hover:text-blue transition-colors duration-150"
+          >
+            Agenda
+          </Link>
         </div>
       </div>
     </header>

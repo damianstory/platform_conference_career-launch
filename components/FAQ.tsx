@@ -118,13 +118,15 @@ const faqItems: AccordionItem[] = [
 
 export default function FAQ() {
   return (
-    <section className="bg-light-blue py-16">
+    <section className="bg-gray-50 py-8 md:py-12">
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-black text-navy text-center mb-10">
-          Frequently Asked Questions
-        </h2>
         <div className="max-w-4xl mx-auto">
-          <Accordion items={faqItems} />
+          <div className="space-y-4 md:space-y-6">
+            <h3 className="text-2xl md:text-3xl text-navy text-center mb-8 md:mb-12">
+              Frequently Asked Questions
+            </h3>
+            <Accordion items={faqItems} />
+          </div>
         </div>
       </div>
     </section>
