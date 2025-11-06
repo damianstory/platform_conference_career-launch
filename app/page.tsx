@@ -5,8 +5,8 @@ export default function HomePage() {
   return (
     <div className="bg-off-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-light-blue py-20">
-        <div className="container-custom">
+      <section className="bg-light-blue min-h-[50vh] md:min-h-[60vh] lg:min-h-[65vh] flex items-center py-24">
+        <div className="container-custom w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Text Content */}
             <div>
