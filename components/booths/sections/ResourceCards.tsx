@@ -1,8 +1,11 @@
 'use client'
 
 import React from 'react'
-import { FileText, ExternalLink, Video, File } from 'lucide-react'
+import { FileText, ExternalLink, Video, File, FileStack } from 'lucide-react'
 import { ResourceItem } from '@/types/booth'
+import SectionLabel from '../shared/SectionLabel'
+import EmptyState from '../shared/EmptyState'
+import { getDownloadAriaLabel } from '@/lib/utils/accessibility'
 
 interface ResourceCardsProps {
   resources: ResourceItem[]
@@ -28,14 +31,14 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
   const displayResources = resources.slice(0, 5)
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-6 lg:col-span-6 h-[400px] sm:h-[450px]">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-5">
       {/* Header */}
-      <div className="px-6 py-4 border-b border-neutral-2">
-        <h3 className="text-header-4 font-bold text-brand-navy">Resources</h3>
+      <div className="px-6 py-6 border-b border-neutral-2">
+        <SectionLabel text="Resources" />
       </div>
 
       {/* Mosaic Grid Layout - 6x6 internal grid */}
-      <div className="p-4 h-[calc(100%-72px)]">
+      <div className="p-6 min-h-[300px]">
         <div className="grid grid-cols-6 grid-rows-6 gap-2 h-full">
           {displayResources.map((resource, index) => {
             const { icon: Icon, bgColor, textColor, borderColor, hoverBorder } = getResourceIcon(resource.type)
@@ -58,7 +61,8 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
                 href={resource.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative ${gridClass} bg-white border-2 ${borderColor} ${hoverBorder} rounded-lg p-3 hover:scale-[1.02] hover:rotate-1 transition-all duration-300 overflow-hidden focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2`}
+                aria-label={getDownloadAriaLabel(resource.title, resource.fileSize)}
+                className={`group relative ${gridClass} bg-white border ${borderColor} ${hoverBorder} rounded-lg p-3 hover:shadow-md transition-all duration-200 overflow-hidden focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2`}
               >
                 {/* Background tint on hover */}
                 <div className={`absolute inset-0 ${bgColor} opacity-0 group-hover:opacity-30 transition-opacity duration-300`} />
@@ -71,27 +75,27 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
                       <Icon className={`w-4 h-4 ${textColor}`} />
                     </div>
                     {resource.fileSize && (
-                      <span className="text-subtitle-2 text-neutral-4 font-medium">
+                      <span className="text-xs text-gray-500 font-medium">
                         {resource.fileSize}
                       </span>
                     )}
                   </div>
 
                   {/* Title */}
-                  <h4 className={`${index === 0 ? 'text-body-2' : 'text-compact'} font-bold text-brand-navy mb-1 line-clamp-2`}>
+                  <h4 className={`${index === 0 ? 'text-lg' : 'text-sm'} font-medium text-gray-900 mb-1 line-clamp-2`}>
                     {resource.title}
                   </h4>
 
                   {/* Description (only show on large card) */}
                   {index === 0 && (
-                    <p className="text-subtitle-1 text-neutral-5 line-clamp-3 mb-2">
+                    <p className="text-sm text-gray-600 line-clamp-3 mb-2">
                       {resource.description}
                     </p>
                   )}
 
                   {/* Download/View icon (appears on hover) */}
                   <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className={`inline-flex items-center gap-1 text-subtitle-1 ${textColor} font-semibold`}>
+                    <div className={`inline-flex items-center gap-1 text-sm ${textColor} font-medium`}>
                       {resource.type === 'pdf' ? 'Download' : 'View'}
                       <ExternalLink className="w-3 h-3" />
                     </div>
@@ -101,13 +105,14 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
             )
           })}
 
-          {/* Fill empty spaces if less than 5 resources */}
+          {/* Empty state if less than 5 resources */}
           {displayResources.length < 5 && (
-            <div className={`${displayResources.length === 1 ? 'col-span-3 row-span-2' : displayResources.length === 2 ? 'col-span-6 row-span-2' : displayResources.length === 3 ? 'col-span-3 row-span-2' : 'col-span-3 row-span-2'} bg-neutral-1 border-2 border-dashed border-neutral-3 rounded-lg flex items-center justify-center`}>
-              <div className="text-center px-4">
-                <File className="w-8 h-8 text-neutral-3 mx-auto mb-2" />
-                <p className="text-subtitle-1 text-neutral-4">More resources coming soon</p>
-              </div>
+            <div className={`${displayResources.length === 1 ? 'col-span-3 row-span-2' : displayResources.length === 2 ? 'col-span-6 row-span-2' : displayResources.length === 3 ? 'col-span-3 row-span-2' : 'col-span-3 row-span-2'} flex items-center justify-center`}>
+              <EmptyState
+                icon={FileStack}
+                message="More resources coming soon"
+                className="h-full flex flex-col items-center justify-center"
+              />
             </div>
           )}
         </div>

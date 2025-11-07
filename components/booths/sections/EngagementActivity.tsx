@@ -1,8 +1,10 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Sparkles, Loader2, Trophy } from 'lucide-react'
+import { Sparkles, Loader2 } from 'lucide-react'
 import { EngagementActivityData } from '@/types/booth'
+import SectionLabel from '../shared/SectionLabel'
+import PrizeBox from '../shared/PrizeBox'
 
 interface EngagementActivityProps {
   activity: EngagementActivityData
@@ -30,53 +32,41 @@ export default function EngagementActivity({ activity, brandColors }: Engagement
 
   return (
     <div
-      className="relative rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:-rotate-1 col-span-12 sm:col-span-6 lg:col-span-8 h-[400px] sm:h-[450px] lg:h-[500px]"
-      style={gradientStyle}
+      className="relative rounded-xl shadow-md border border-blue-200 overflow-hidden transition-all duration-200 col-span-12 lg:col-span-8 bg-gradient-to-br from-blue-50 to-blue-100"
     >
-      {/* Decorative Blobs */}
-      <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-blue/20 rounded-full blur-3xl backdrop-blur-sm" />
-      <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-brand-navy/15 rounded-full blur-3xl backdrop-blur-sm" />
-
       {/* Content Container */}
-      <div className="relative h-full flex flex-col p-6">
+      <div className="relative h-full flex flex-col p-8">
         {/* Header */}
         <div className="flex items-start justify-between mb-4 z-10">
           <div className="flex-grow">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full shadow-md mb-3">
-              <Sparkles className="w-4 h-4 text-primary-blue" />
-              <span className="text-compact font-semibold text-brand-navy">
-                Interactive Activity
-              </span>
+            {/* Section Label */}
+            <div className="mb-3">
+              <SectionLabel text="Interactive Activity" icon={Sparkles} />
             </div>
 
             {/* Title & Description */}
-            <h3 className="text-header-4 font-bold text-brand-navy mb-2">
-              {activity.title}
-            </h3>
-            <p className="text-body-2 text-neutral-5 line-clamp-2">
-              {activity.description}
-            </p>
-            {activity.duration && (
-              <p className="text-compact text-neutral-4 mt-1">
-                Duration: {activity.duration}
+            <div className="space-y-3">
+              <h2 className="text-2xl font-semibold text-gray-900">
+                {activity.title}
+              </h2>
+              <p className="text-base leading-relaxed text-gray-600 line-clamp-2">
+                {activity.description}
               </p>
-            )}
+              {activity.duration && (
+                <p className="text-sm text-gray-500">
+                  Duration: {activity.duration}
+                </p>
+              )}
+            </div>
           </div>
 
-          {/* Prize Card (if available) */}
+          {/* Prize Box (if available) */}
           {activity.prize && (
-            <div className="ml-4 bg-white rounded-lg p-3 shadow-md max-w-[180px] flex-shrink-0">
-              <div className="flex items-center gap-2 mb-1">
-                <Trophy className="w-4 h-4 text-yellow-500" />
-                <span className="text-compact font-semibold text-brand-navy">Prize</span>
-              </div>
-              <p className="text-subtitle-1 font-bold text-primary-blue line-clamp-2">
-                {activity.prize.title}
-              </p>
-              <p className="text-subtitle-2 text-neutral-4 line-clamp-2 mt-0.5">
-                {activity.prize.description}
-              </p>
+            <div className="ml-4 max-w-[200px] flex-shrink-0">
+              <PrizeBox
+                title={activity.prize.title}
+                description={activity.prize.description}
+              />
             </div>
           )}
         </div>

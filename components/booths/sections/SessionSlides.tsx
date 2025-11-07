@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Presentation, Maximize2, Loader2 } from 'lucide-react'
 import { SessionSlidesData } from '@/types/booth'
+import SectionLabel from '../shared/SectionLabel'
 
 interface SessionSlidesProps {
   slides: SessionSlidesData
@@ -21,17 +22,14 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-6 lg:col-span-6 h-[400px] sm:h-[450px]">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-7">
       {/* Header */}
-      <div className="px-4 py-2 border-b border-neutral-2 flex items-center justify-between gap-3">
+      <div className="px-6 py-4 border-b border-neutral-2 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2 min-w-0 flex-1">
-          <div className="p-1.5 bg-primary-blue/10 rounded-lg flex-shrink-0">
-            <Presentation className="w-4 h-4 text-primary-blue" />
-          </div>
           <div className="min-w-0 flex-1">
-            <h3 className="text-subtitle-1 font-bold text-brand-navy truncate">{slides.title}</h3>
+            <SectionLabel text="Your Session Deck" icon={Presentation} />
             {slides.description && (
-              <p className="text-subtitle-2 text-neutral-4 line-clamp-1">{slides.description}</p>
+              <p className="text-sm text-gray-500 line-clamp-1 mt-1">{slides.description}</p>
             )}
           </div>
         </div>
@@ -47,7 +45,7 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
       </div>
 
       {/* Slides Embed */}
-      <div className="relative h-[calc(100%-56px)]">
+      <div className="relative aspect-[16/10]">
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-neutral-1">
             <Loader2 className="w-10 h-10 text-primary-blue animate-spin" />

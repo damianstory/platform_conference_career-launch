@@ -3,6 +3,8 @@
 import React from 'react'
 import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react'
 import { ContactDetails } from '@/types/booth'
+import SectionLabel from '../shared/SectionLabel'
+import { getExternalLinkAriaLabel } from '@/lib/utils/accessibility'
 
 interface ContactInfoProps {
   contact: ContactDetails
@@ -52,23 +54,24 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
   const hasLocation = contact.headquarters
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-12 lg:col-span-4 h-[220px]">
-      <div className="p-6">
-        {/* Header */}
-        <h3 className="text-header-3 font-bold text-brand-navy mb-4">Get in Touch</h3>
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-5">
+      <div className="p-8 space-y-6">
+        {/* Section Label */}
+        <SectionLabel text="Get in Touch" />
 
         {/* Contact Methods */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3">
           {/* Email */}
           {contact.email && (
             <a
               href={`mailto:${contact.email}`}
+              aria-label={`Email ${contact.email}`}
               className="flex items-center gap-3 p-3 bg-neutral-1 rounded-lg hover:bg-primary-blue/10 transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
             >
               <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
                 <Mail className="w-3 h-3 text-primary-blue" />
               </div>
-              <span className="text-compact text-neutral-5 group-hover:text-primary-blue transition-colors break-all">
+              <span className="text-sm text-gray-700 group-hover:text-blue-600 transition-colors break-all">
                 {contact.email}
               </span>
             </a>
@@ -78,12 +81,13 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
           {contact.phone && (
             <a
               href={`tel:${contact.phone}`}
+              aria-label={`Call ${contact.phone}`}
               className="flex items-center gap-3 p-3 bg-neutral-1 rounded-lg hover:bg-primary-blue/10 transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
             >
               <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
                 <Phone className="w-3 h-3 text-primary-blue" />
               </div>
-              <span className="text-compact text-neutral-5 group-hover:text-primary-blue transition-colors">
+              <span className="text-sm text-gray-700 group-hover:text-green-600 transition-colors">
                 {contact.phone}
               </span>
             </a>
@@ -95,7 +99,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
               <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
                 <MapPin className="w-3 h-3 text-primary-blue" />
               </div>
-              <div className="text-compact text-neutral-5">
+              <div className="text-sm text-gray-700">
                 <p>{contact.headquarters.address}</p>
                 <p>
                   {contact.headquarters.city}, {contact.headquarters.province}{' '}
@@ -108,11 +112,11 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
 
         {/* Internship Info (if available) */}
         {contact.internshipInfo && contact.internshipInfo.available && (
-          <div className="mb-6 p-3 bg-primary-blue/5 border border-primary-blue/20 rounded-lg">
-            <p className="text-compact font-semibold text-primary-blue mb-1">
+          <div className="p-3 bg-primary-blue/5 border border-primary-blue/20 rounded-lg">
+            <p className="text-sm font-semibold text-primary-blue mb-1">
               Internships Available
             </p>
-            <p className="text-subtitle-1 text-neutral-5">
+            <p className="text-sm text-gray-600">
               {contact.internshipInfo.period}
             </p>
             {contact.internshipInfo.applicationUrl && (
@@ -120,7 +124,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
                 href={contact.internshipInfo.applicationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 text-subtitle-1 text-primary-blue font-semibold hover:underline"
+                className="inline-block mt-2 text-sm text-primary-blue font-medium hover:underline"
               >
                 Apply Now →
               </a>
@@ -131,7 +135,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         {/* Social Links */}
         {contact.socialLinks && contact.socialLinks.length > 0 && (
           <>
-            <div className="border-t border-neutral-2 my-4" />
+            <div className="border-t border-neutral-2" />
 
             <div className="flex items-center gap-2 flex-wrap">
               {contact.socialLinks.map((social, index) => {
@@ -144,8 +148,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-6 h-6 flex items-center justify-center bg-neutral-4 text-white rounded transition-all duration-200 hover:scale-110 ${hoverColor} focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2`}
-                    aria-label={`Visit ${social.platform}`}
+                    className={`w-6 h-6 flex items-center justify-center bg-neutral-4 text-white rounded transition-all duration-200 hover:scale-110 ${hoverColor} focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2`}
+                    aria-label={getExternalLinkAriaLabel(social.platform)}
                   >
                     {Icon ? (
                       <Icon className="w-3 h-3" />

@@ -3,6 +3,7 @@
 import React from 'react'
 import { Building2, Users, Target, TrendingUp, Award, Globe } from 'lucide-react'
 import { QuickFact } from '@/types/booth'
+import SectionLabel from '../shared/SectionLabel'
 
 interface CompanyStoryProps {
   description: string
@@ -32,23 +33,23 @@ export default function CompanyStory({ description, quickFacts }: CompanyStoryPr
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-12 lg:col-span-8 h-[220px]">
-      <div className="p-6">
-        {/* Header */}
-        <h3 className="text-header-4 font-bold text-brand-navy mb-4">About Us</h3>
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-7">
+      <div className="p-8 space-y-4">
+        {/* Section Label */}
+        <SectionLabel text="About Us" />
 
         {/* Description */}
-        <p className="text-body-2 text-neutral-5 leading-relaxed mb-6">
+        <p className="text-base leading-relaxed text-gray-600">
           {description}
         </p>
 
         {/* Quick Facts (if available) */}
         {quickFacts && quickFacts.length > 0 && (
           <>
-            <div className="border-t border-neutral-2 my-6" />
+            <div className="border-t border-neutral-2" />
 
             <div className="space-y-3">
-              <h4 className="text-body-1 font-bold text-brand-navy mb-3">Quick Facts</h4>
+              <h4 className="text-lg font-semibold text-gray-900">Quick Facts</h4>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {quickFacts.map((fact, index) => {
@@ -63,10 +64,10 @@ export default function CompanyStory({ description, quickFacts }: CompanyStoryPr
                         <Icon className="w-4 h-4 text-primary-blue" />
                       </div>
                       <div className="flex-grow min-w-0">
-                        <p className="text-subtitle-1 text-neutral-4 font-medium mb-0.5">
+                        <p className="text-xs font-medium uppercase tracking-wide text-gray-500 mb-0.5">
                           {fact.label}
                         </p>
-                        <p className="text-body-2 text-brand-navy font-bold truncate">
+                        <p className="text-lg font-semibold text-gray-900 truncate">
                           {fact.value}
                         </p>
                       </div>

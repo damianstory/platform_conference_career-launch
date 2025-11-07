@@ -19,8 +19,8 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
 
   return (
     <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* 12-column bento grid */}
-      <div className="grid grid-cols-12 gap-y-4 sm:gap-y-6 gap-x-2 sm:gap-x-4 w-full">
+      {/* 12-column bento grid with consistent 24px gaps */}
+      <div className="grid grid-cols-12 gap-6 w-full">
 
         {/* Booth Header - Always shown, full width */}
         <BoothHeader

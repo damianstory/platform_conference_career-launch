@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Play, Loader2 } from 'lucide-react'
 import { VideoContent } from '@/types/booth'
+import { getVideoPlayAriaLabel } from '@/lib/utils/accessibility'
 
 interface VideoSectionProps {
   video: VideoContent
@@ -73,13 +74,13 @@ export default function VideoSection({ video }: VideoSectionProps) {
   return (
     <div
       ref={videoRef}
-      className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-6 lg:col-span-4 h-[300px] sm:h-[400px] lg:h-[500px]"
+      className="bg-gray-800 rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-4"
     >
-      <div className="relative w-full h-full">
+      <div className="relative w-full aspect-video">
         {!isPlaying ? (
           <>
             {/* Video Thumbnail */}
-            <div className="absolute inset-0 bg-gradient-to-br from-neutral-2 to-neutral-3">
+            <div className="absolute inset-0 bg-gray-900">
               {video.thumbnail && isVisible ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -105,13 +106,13 @@ export default function VideoSection({ video }: VideoSectionProps) {
             </div>
 
             {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors">
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/80 to-transparent">
               <button
                 onClick={handlePlayClick}
-                className="group w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transform transition-all duration-300 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-4"
-                aria-label="Play video"
+                className="group w-16 h-16 sm:w-20 sm:h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transform transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-4"
+                aria-label={getVideoPlayAriaLabel(video.title)}
               >
-                <Play className="w-8 h-8 sm:w-10 sm:h-10 text-primary-blue ml-1 group-hover:text-brand-navy transition-colors" fill="currentColor" />
+                <Play className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1" fill="currentColor" />
               </button>
             </div>
           </>
