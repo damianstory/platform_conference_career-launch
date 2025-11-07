@@ -36,7 +36,7 @@ export default async function SessionPage({ params }: SessionPageProps) {
       <div className="bg-white border-b border-gray-200">
         <div className="container-custom py-4">
           <Link
-            href="/"
+            href="/sessions"
             className="text-blue hover:text-navy font-medium transition-colors"
           >
             ← Back to Schedule
