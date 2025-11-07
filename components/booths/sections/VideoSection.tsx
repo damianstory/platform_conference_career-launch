@@ -1,132 +1,144 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
-import { VideoContent } from '@/types/booth'
+import React, { useState, useRef, useEffect } from 'react'
 import { Play, Loader2 } from 'lucide-react'
+import { VideoContent } from '@/types/booth'
 
 interface VideoSectionProps {
   video: VideoContent
-  autoplay?: boolean
-  controls?: boolean
 }
 
-const VideoSection: React.FC<VideoSectionProps> = ({ 
-  video, 
-  autoplay = false, 
-  controls = true 
-}) => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [showVideo, setShowVideo] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+export default function VideoSection({ video }: VideoSectionProps) {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const videoRef = useRef<HTMLDivElement>(null)
 
+  // Intersection Observer for lazy loading
   useEffect(() => {
+    const currentRef = videoRef.current
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !showVideo) {
-          setShowVideo(true)
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        })
       },
       { threshold: 0.1 }
     )
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
-    return () => observer.disconnect()
-  }, [showVideo])
-
-  const getEmbedUrl = () => {
-    switch (video.type) {
-      case 'youtube':
-        const youtubeId = video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/)?.[1]
-        return `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1${autoplay ? '&autoplay=1' : ''}`
-      
-      case 'vimeo':
-        const vimeoId = video.url.match(/vimeo\.com\/(\d+)/)?.[1]
-        return `https://player.vimeo.com/video/${vimeoId}?title=0&byline=0&portrait=0${autoplay ? '&autoplay=1' : ''}`
-      
-      case 'google-drive':
-        const driveId = video.url.match(/[-\w]{25,}/)?.[0]
-        return `https://drive.google.com/file/d/${driveId}/preview`
-      
-      default:
-        return video.url
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
     }
-  }
+  }, [])
 
   const handlePlayClick = () => {
-    setShowVideo(true)
+    setIsPlaying(true)
+    setIsLoading(true)
   }
 
+  const handleIframeLoad = () => {
+    setIsLoading(false)
+  }
+
+  // Convert video URL to embed URL
+  const getEmbedUrl = (url: string, type: string): string => {
+    switch (type) {
+      case 'youtube': {
+        const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/)?.[1]
+        return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : url
+      }
+      case 'vimeo': {
+        const videoId = url.match(/vimeo\.com\/(\d+)/)?.[1]
+        return videoId ? `https://player.vimeo.com/video/${videoId}?autoplay=1` : url
+      }
+      case 'google-drive': {
+        const fileId = url.match(/\/file\/d\/([^/]+)/)?.[1]
+        return fileId ? `https://drive.google.com/file/d/${fileId}/preview` : url
+      }
+      default:
+        return url
+    }
+  }
+
+  const embedUrl = getEmbedUrl(video.url, video.type)
+
   return (
-    <div ref={containerRef} className="relative w-full h-full min-h-[300px] lg:min-h-[400px]">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/5 to-brand-navy/5 rounded-xl" />
-      
-      {!showVideo && video.thumbnail ? (
-        <div 
-          className="relative w-full h-full cursor-pointer group rounded-xl overflow-hidden"
-          onClick={handlePlayClick}
-        >
-          <img 
-            src={video.thumbnail} 
-            alt={video.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-            <button className="w-16 h-16 lg:w-20 lg:h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
-              <Play className="w-6 h-6 lg:w-8 lg:h-8 text-primary-blue ml-1" fill="currentColor" />
-            </button>
-          </div>
-          <div className="absolute bottom-4 left-4 right-4">
-            <h3 className="text-white font-semibold text-lg drop-shadow-lg">
-              {video.title}
-            </h3>
-            {video.description && (
-              <p className="text-white/80 text-sm mt-1 drop-shadow-md">
-                {video.description}
-              </p>
-            )}
-          </div>
-        </div>
-      ) : showVideo ? (
-        <div className="relative w-full h-full rounded-xl overflow-hidden bg-black">
-          {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-900/50">
-              <Loader2 className="w-8 h-8 text-white animate-spin" />
+    <div
+      ref={videoRef}
+      className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-6 lg:col-span-4 h-[300px] sm:h-[400px] lg:h-[500px]"
+    >
+      <div className="relative w-full h-full">
+        {!isPlaying ? (
+          <>
+            {/* Video Thumbnail */}
+            <div className="absolute inset-0 bg-gradient-to-br from-neutral-2 to-neutral-3">
+              {video.thumbnail && isVisible ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center px-4">
+                    <div className="text-6xl mb-4">🎥</div>
+                    <h3 className="text-header-4 font-bold text-brand-navy mb-2">
+                      {video.title}
+                    </h3>
+                    {video.description && (
+                      <p className="text-body-2 text-neutral-5 line-clamp-2">
+                        {video.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-          <iframe
-            src={getEmbedUrl()}
-            className="w-full h-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            onLoad={() => setIsLoading(false)}
-            title={video.title}
-          />
-        </div>
-      ) : (
-        <div 
-          className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-blue to-indigo-600 rounded-xl cursor-pointer group"
-          onClick={handlePlayClick}
-        >
-          <div className="text-center">
-            <button className="w-16 h-16 lg:w-20 lg:h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl mx-auto mb-4">
-              <Play className="w-6 h-6 lg:w-8 lg:h-8 text-white ml-1" fill="currentColor" />
-            </button>
-            <h3 className="text-white font-semibold text-lg">
-              {video.title}
-            </h3>
-            {video.description && (
-              <p className="text-white/80 text-sm mt-1">
-                {video.description}
-              </p>
+
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors">
+              <button
+                onClick={handlePlayClick}
+                className="group w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transform transition-all duration-300 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-4"
+                aria-label="Play video"
+              >
+                <Play className="w-8 h-8 sm:w-10 sm:h-10 text-primary-blue ml-1 group-hover:text-brand-navy transition-colors" fill="currentColor" />
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Loading Spinner */}
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-neutral-1">
+                <Loader2 className="w-12 h-12 text-primary-blue animate-spin" />
+              </div>
             )}
-          </div>
-        </div>
-      )}
+
+            {/* Video Iframe */}
+            {isVisible && (
+              <iframe
+                src={embedUrl}
+                title={video.title}
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                onLoad={handleIframeLoad}
+                suppressHydrationWarning
+              />
+            )}
+          </>
+        )}
+      </div>
     </div>
   )
 }
-
-export default VideoSection

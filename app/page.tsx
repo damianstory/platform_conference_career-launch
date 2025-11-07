@@ -14,7 +14,7 @@ export default function HomePage() {
                 Explore Careers, Inspire Futures
               </h1>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Join Ontario's largest virtual career education event. December 1-5, 2025.
+                Join Ontario&apos;s largest virtual career education event. December 1-5, 2025.
                 Bringing industry professionals directly to your classroom.
               </p>
             </div>

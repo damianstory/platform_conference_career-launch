@@ -43,7 +43,7 @@ export const techVision: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRMx5w8FJ1dFBDQzQ5pXJO3rV/embed',
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
     title: 'Tech Careers 2025',
     description: 'Interactive presentation on emerging tech careers'
   },
@@ -110,13 +110,50 @@ export const healthFirst: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Healthcare Careers',
-      description: 'Discover healthcare career pathways',
-      url: 'https://example.com/careers.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '3.1 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Positions',
     url: 'https://healthfirst.example.com/careers',
@@ -158,13 +195,50 @@ export const futureBuild: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Engineering Careers',
-      description: 'Explore engineering opportunities',
-      url: 'https://example.com/engineering.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.8 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Join Our Team',
     url: 'https://futurebuild.example.com/careers',
@@ -211,13 +285,50 @@ export const financeHub: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Finance Careers',
-      description: 'Discover paths from analyst to executive',
-      url: 'https://example.com/finance.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.7 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Opportunities',
     url: 'https://financehub.example.com/careers',
@@ -259,17 +370,49 @@ export const eduPath: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Program Guide',
-      description: 'Complete guide to all programs',
-      url: 'https://example.com/programs.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '5.2 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRMx5w8FJ1dFBDQzQ5pXJO3rV/embed',
-    title: 'Choosing Your Program',
-    description: 'Expert guidance on program selection'
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
   },
   primaryCTA: {
     text: 'Apply Now',
@@ -312,19 +455,49 @@ export const tradesMaster: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Trades Guide',
-      description: 'Explore all trades programs',
-      url: 'https://example.com/trades.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '4.3 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
   engagementActivity: {
-    embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
-    embedType: 'google-form',
-    title: 'Find Your Trade',
-    description: 'Discover your ideal trades career path',
-    duration: '5 minutes'
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
   },
   primaryCTA: {
     text: 'View Programs',
@@ -367,13 +540,50 @@ export const worldExplorer: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Gap Year Guide',
-      description: 'Explore all international programs',
-      url: 'https://example.com/gap-year.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '6.8 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Explore Programs',
     url: 'https://worldexplorer.example.com/programs',
@@ -415,19 +625,49 @@ export const greenPower: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Energy Careers',
-      description: 'Explore clean energy opportunities',
-      url: 'https://example.com/green-careers.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '3.4 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
   engagementActivity: {
-    embedUrl: 'about:blank',
-    embedType: 'skills-gap-quiz',
-    title: 'Energy Quiz',
-    description: 'Test your clean energy knowledge',
-    duration: '8 minutes'
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
   },
   primaryCTA: {
     text: 'Apply for Training',
@@ -470,13 +710,50 @@ export const creativeMinds: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Program Portfolio',
-      description: 'Browse creative programs with samples',
-      url: 'https://example.com/portfolio.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '12.5 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Explore Programs',
     url: 'https://creativeminds.example.com/programs',
@@ -518,13 +795,50 @@ export const dataDynamics: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Data Science Guide',
-      description: 'Learn about data career paths',
-      url: 'https://example.com/data-science.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '3.2 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Join Our Team',
     url: 'https://datadynamics.example.com/careers',
@@ -566,13 +880,50 @@ export const marketGenius: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Marketing Careers',
-      description: 'Explore creative marketing opportunities',
-      url: 'https://example.com/marketing.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.9 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Openings',
     url: 'https://marketgenius.example.com/careers',
@@ -614,13 +965,50 @@ export const consultPro: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Consultant Guide',
-      description: 'Learn about consulting careers',
-      url: 'https://example.com/consulting.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.6 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Apply Now',
     url: 'https://consultpro.example.com/careers',
@@ -662,13 +1050,50 @@ export const manufactureTech: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Manufacturing Jobs',
-      description: 'View current openings and requirements',
-      url: 'https://example.com/jobs.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
+      type: 'pdf',
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
       type: 'pdf',
       fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Apply Today',
     url: 'https://manufacturetech.example.com/apply',
@@ -710,13 +1135,50 @@ export const cyberShield: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Cybersecurity Guide',
-      description: 'Learn about security career paths',
-      url: 'https://example.com/security.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.3 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Join Our Team',
     url: 'https://cybershield.example.com/careers',
@@ -758,13 +1220,50 @@ export const bioMedical: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Research Careers',
-      description: 'Explore opportunities in medical research',
-      url: 'https://example.com/research.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '3.5 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Positions',
     url: 'https://biomedical.example.com/careers',
@@ -806,13 +1305,50 @@ export const architectDesign: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Architecture Guide',
-      description: 'Learn about architecture careers',
-      url: 'https://example.com/architecture.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '5.1 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Opportunities',
     url: 'https://architectdesign.example.com/careers',
@@ -854,13 +1390,50 @@ export const foodService: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Path',
-      description: 'See advancement opportunities in food service',
-      url: 'https://example.com/food-careers.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '1.5 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Apply Now',
     url: 'https://foodservicepro.example.com/apply',
@@ -902,13 +1475,50 @@ export const legalServices: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Legal Career Guide',
-      description: 'Explore diverse legal career paths',
-      url: 'https://example.com/legal.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.8 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Learn More',
     url: 'https://legalservices.example.com/careers',
@@ -950,13 +1560,50 @@ export const socialImpact: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Non-Profit Careers',
-      description: 'Explore meaningful career opportunities',
-      url: 'https://example.com/nonprofit.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
       fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Join Our Mission',
     url: 'https://socialimpact.example.com/careers',
@@ -998,13 +1645,50 @@ export const urbanPlanning: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Planning Careers',
-      description: 'Learn about urban planning opportunities',
-      url: 'https://example.com/planning.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '3.3 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Positions',
     url: 'https://urbanplanning.example.com/careers',
@@ -1046,13 +1730,50 @@ export const sportsManagement: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Sports Career Guide',
-      description: 'Discover diverse sports industry roles',
-      url: 'https://example.com/sports.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.7 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Openings',
     url: 'https://sportsmgmt.example.com/careers',
@@ -1094,13 +1815,50 @@ export const environmentalConsulting: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Environmental Guide',
-      description: 'Learn about sustainability careers',
-      url: 'https://example.com/environment.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '3.1 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Join Our Team',
     url: 'https://ecoconsult.example.com/careers',
@@ -1142,13 +1900,50 @@ export const automotiveTech: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Automotive Careers',
-      description: 'Learn about vehicle technology roles',
-      url: 'https://example.com/automotive.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.9 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Apply Now',
     url: 'https://autotech.example.com/apply',
@@ -1190,13 +1985,50 @@ export const fashionDesign: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Fashion Programs',
-      description: 'Explore design and merchandising programs',
-      url: 'https://example.com/fashion.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '8.4 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Apply Today',
     url: 'https://fashionforward.example.com/apply',
@@ -1238,13 +2070,50 @@ export const aviationAcademy: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Aviation Programs',
-      description: 'Learn about flight training programs',
-      url: 'https://example.com/aviation.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '4.2 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Start Training',
     url: 'https://aviationacademy.example.com/programs',
@@ -1286,13 +2155,50 @@ export const hospitalityCollege: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Program Guide',
-      description: 'Explore hospitality and tourism programs',
-      url: 'https://example.com/hospitality.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '3.6 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'Apply Now',
     url: 'https://hospitalitypro.example.com/apply',
@@ -1334,13 +2240,50 @@ export const publicHealth: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Opportunities',
-      description: 'Explore diverse public health roles',
-      url: 'https://example.com/public-health.pdf',
+      title: 'Career Pathways Guide',
+      description: 'Explore different career paths in technology and find your perfect fit',
+      url: '#',
       type: 'pdf',
-      fileSize: '2.5 MB'
+      fileSize: '2.4 MB'
+    },
+    {
+      title: 'Summer Internship Program',
+      description: 'Learn about our 12-week immersive internship experience',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Tech Skills Workshop Series',
+      description: 'Free online workshops covering AI, web development, and...',
+      url: '#',
+      type: 'video'
+    },
+    {
+      title: 'Company Culture Handbook',
+      description: 'Discover our values, benefits, and what makes us unique',
+      url: '#',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    },
+    {
+      title: 'Student Success Stories',
+      description: 'Read about students who launched their careers with TechCorp',
+      url: '#',
+      type: 'other'
     }
   ],
+  sessionSlides: {
+    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    title: 'Career Pathways Presentation',
+    description: 'Interactive presentation on career opportunities'
+  },
+  engagementActivity: {
+    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedType: 'iframe',
+    title: 'Career Skills Assessment',
+    description: 'Test your knowledge and discover career opportunities',
+    duration: '10 minutes'
+  },
   primaryCTA: {
     text: 'View Positions',
     url: 'https://publichealth.example.com/careers',

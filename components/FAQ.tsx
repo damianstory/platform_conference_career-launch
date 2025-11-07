@@ -7,7 +7,7 @@ const faqItems: AccordionItem[] = [
     content: (
       <p>
         Simply browse the sessions on this platform, click on any session that interests you,
-        and you'll be able to watch the video content directly in your browser. No special
+        and you&apos;ll be able to watch the video content directly in your browser. No special
         software or downloads required.
       </p>
     ),
@@ -50,9 +50,9 @@ const faqItems: AccordionItem[] = [
     title: 'Do I need to register in advance?',
     content: (
       <p>
-        You can browse all session content without registration. When you're ready to watch a
-        session with your class, you'll be asked to provide some quick information about your
-        viewing context. This helps us measure the program's reach and impact.
+        You can browse all session content without registration. When you&apos;re ready to watch a
+        session with your class, you&apos;ll be asked to provide some quick information about your
+        viewing context. This helps us measure the program&apos;s reach and impact.
       </p>
     ),
   },
@@ -61,9 +61,9 @@ const faqItems: AccordionItem[] = [
     title: 'Are sessions available after the event?',
     content: (
       <p>
-        Session availability after the event week depends on each presenter's preferences.
+        Session availability after the event week depends on each presenter&apos;s preferences.
         Check back for updates on extended access, or contact us for more information about
-        specific sessions you'd like to revisit.
+        specific sessions you&apos;d like to revisit.
       </p>
     ),
   },
@@ -110,7 +110,7 @@ const faqItems: AccordionItem[] = [
         <a href="mailto:support@careerlaunch.ca" className="text-blue hover:underline">
           support@careerlaunch.ca
         </a>
-        . We're here to help ensure your experience is smooth and successful.
+        . We&apos;re here to help ensure your experience is smooth and successful.
       </p>
     ),
   },

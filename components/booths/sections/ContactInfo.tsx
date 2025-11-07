@@ -1,110 +1,166 @@
+'use client'
+
 import React from 'react'
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react'
 import { ContactDetails } from '@/types/booth'
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Globe,
-  Linkedin,
-  Twitter,
-  Instagram,
-  Facebook,
-  Youtube
-} from 'lucide-react'
 
 interface ContactInfoProps {
   contact: ContactDetails
-  website?: string
 }
 
-const ContactInfo: React.FC<ContactInfoProps> = ({ contact, website }) => {
-  const socialIcons = {
-    linkedin: <Linkedin className="w-3 h-3" />,
-    twitter: <Twitter className="w-3 h-3" />,
-    instagram: <Instagram className="w-3 h-3" />,
-    facebook: <Facebook className="w-3 h-3" />,
-    youtube: <Youtube className="w-3 h-3" />,
-    tiktok: (
-      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-      </svg>
-    )
+export default function ContactInfo({ contact }: ContactInfoProps) {
+  // Get social media icon
+  const getSocialIcon = (platform: string) => {
+    switch (platform.toLowerCase()) {
+      case 'linkedin':
+        return Linkedin
+      case 'twitter':
+        return Twitter
+      case 'instagram':
+        return Instagram
+      case 'facebook':
+        return Facebook
+      case 'tiktok':
+        return null // Will use emoji/text
+      case 'youtube':
+        return null // Will use emoji/text
+      default:
+        return null
+    }
   }
 
-  const socialColors = {
-    linkedin: 'hover:bg-blue-600',
-    twitter: 'hover:bg-sky-500',
-    instagram: 'hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500',
-    facebook: 'hover:bg-blue-700',
-    youtube: 'hover:bg-red-600',
-    tiktok: 'hover:bg-black'
+  // Get platform-specific hover colors
+  const getSocialHoverColor = (platform: string): string => {
+    switch (platform.toLowerCase()) {
+      case 'linkedin':
+        return 'hover:bg-blue-600'
+      case 'twitter':
+        return 'hover:bg-sky-500'
+      case 'instagram':
+        return 'hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600'
+      case 'facebook':
+        return 'hover:bg-blue-700'
+      case 'tiktok':
+        return 'hover:bg-black'
+      case 'youtube':
+        return 'hover:bg-red-600'
+      default:
+        return 'hover:bg-neutral-5'
+    }
   }
+
+  const hasLocation = contact.headquarters
 
   return (
-    <div className="h-full flex flex-col">
-      <h3 className="text-body-1 font-black text-brand-navy mb-2">Get in Touch</h3>
-      
-      <div className="space-y-2 mb-3">
-        {contact.email && (
-          <div className="flex items-center gap-2">
-            <Mail className="w-3 h-3 text-primary-blue" />
-            <div className="min-w-0 flex-1">
-              <a 
-                href={`mailto:${contact.email}`}
-                className="text-compact font-light text-brand-navy hover:text-primary-blue transition-colors break-all"
-              >
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-12 lg:col-span-4 min-h-[220px]">
+      <div className="p-6">
+        {/* Header */}
+        <h3 className="text-header-3 font-bold text-brand-navy mb-4">Get in Touch</h3>
+
+        {/* Contact Methods */}
+        <div className="space-y-3 mb-6">
+          {/* Email */}
+          {contact.email && (
+            <a
+              href={`mailto:${contact.email}`}
+              className="flex items-center gap-3 p-3 bg-neutral-1 rounded-lg hover:bg-primary-blue/10 transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+            >
+              <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
+                <Mail className="w-3 h-3 text-primary-blue" />
+              </div>
+              <span className="text-compact text-neutral-5 group-hover:text-primary-blue transition-colors break-all">
                 {contact.email}
-              </a>
-            </div>
-          </div>
-        )}
+              </span>
+            </a>
+          )}
 
-        {contact.phone && (
-          <div className="flex items-center gap-2">
-            <Phone className="w-3 h-3 text-primary-blue" />
-            <div>
-              <a 
-                href={`tel:${contact.phone}`}
-                className="text-compact font-light text-brand-navy hover:text-primary-blue transition-colors"
-              >
+          {/* Phone */}
+          {contact.phone && (
+            <a
+              href={`tel:${contact.phone}`}
+              className="flex items-center gap-3 p-3 bg-neutral-1 rounded-lg hover:bg-primary-blue/10 transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+            >
+              <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
+                <Phone className="w-3 h-3 text-primary-blue" />
+              </div>
+              <span className="text-compact text-neutral-5 group-hover:text-primary-blue transition-colors">
                 {contact.phone}
-              </a>
-            </div>
-          </div>
-        )}
+              </span>
+            </a>
+          )}
 
-        {contact.headquarters && (
-          <div className="flex items-center gap-2">
-            <MapPin className="w-3 h-3 text-primary-blue flex-shrink-0" />
-            <div>
-              <p className="text-compact font-light text-brand-navy">
-                {contact.headquarters.city}, {contact.headquarters.province}
-              </p>
+          {/* Location */}
+          {hasLocation && contact.headquarters && (
+            <div className="flex items-start gap-3 p-3 bg-neutral-1 rounded-lg">
+              <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
+                <MapPin className="w-3 h-3 text-primary-blue" />
+              </div>
+              <div className="text-compact text-neutral-5">
+                <p>{contact.headquarters.address}</p>
+                <p>
+                  {contact.headquarters.city}, {contact.headquarters.province}{' '}
+                  {contact.headquarters.postalCode}
+                </p>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
 
-      {contact.socialLinks && contact.socialLinks.length > 0 && (
-        <div className="mt-auto">
-          <div className="flex gap-1">
-            {contact.socialLinks.slice(0, 4).map((link, index) => (
+        {/* Internship Info (if available) */}
+        {contact.internshipInfo && contact.internshipInfo.available && (
+          <div className="mb-6 p-3 bg-primary-blue/5 border border-primary-blue/20 rounded-lg">
+            <p className="text-compact font-semibold text-primary-blue mb-1">
+              Internships Available
+            </p>
+            <p className="text-subtitle-1 text-neutral-5">
+              {contact.internshipInfo.period}
+            </p>
+            {contact.internshipInfo.applicationUrl && (
               <a
-                key={index}
-                href={link.url}
+                href={contact.internshipInfo.applicationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-6 h-6 bg-neutral-2 rounded flex items-center justify-center text-neutral-4 hover:text-white transition-all duration-200 ${socialColors[link.platform]}`}
-                title={link.platform}
+                className="inline-block mt-2 text-subtitle-1 text-primary-blue font-semibold hover:underline"
               >
-                {socialIcons[link.platform]}
+                Apply Now →
               </a>
-            ))}
+            )}
           </div>
-        </div>
-      )}
+        )}
+
+        {/* Social Links */}
+        {contact.socialLinks && contact.socialLinks.length > 0 && (
+          <>
+            <div className="border-t border-neutral-2 my-4" />
+
+            <div className="flex items-center gap-2 flex-wrap">
+              {contact.socialLinks.map((social, index) => {
+                const Icon = getSocialIcon(social.platform)
+                const hoverColor = getSocialHoverColor(social.platform)
+
+                return (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-6 h-6 flex items-center justify-center bg-neutral-4 text-white rounded transition-all duration-200 hover:scale-110 ${hoverColor} focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2`}
+                    aria-label={`Visit ${social.platform}`}
+                  >
+                    {Icon ? (
+                      <Icon className="w-3 h-3" />
+                    ) : (
+                      <span className="text-subtitle-2 font-bold">
+                        {social.platform.substring(0, 1).toUpperCase()}
+                      </span>
+                    )}
+                  </a>
+                )
+              })}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   )
 }
-
-export default ContactInfo
