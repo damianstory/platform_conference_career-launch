@@ -32,7 +32,7 @@ export default function CompanyStory({ description, quickFacts }: CompanyStoryPr
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-12 lg:col-span-8 min-h-[220px]">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-12 lg:col-span-8 h-[220px]">
       <div className="p-6">
         {/* Header */}
         <h3 className="text-header-4 font-bold text-brand-navy mb-4">About Us</h3>

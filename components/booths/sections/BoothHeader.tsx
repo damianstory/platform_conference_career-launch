@@ -9,7 +9,7 @@ interface BoothHeaderProps {
   logo: string
   tagline: string
   primaryCTA: CTAButton
-  secondaryCTA?: CTAButton
+  secondaryCTA: CTAButton
   website?: string
 }
 
@@ -22,7 +22,7 @@ export default function BoothHeader({
   website
 }: BoothHeaderProps) {
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-primary-blue overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12">
+    <div className="bg-white rounded-xl shadow-lg border border-primary-blue overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 h-[220px]">
       <div className="p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
           {/* Logo */}
@@ -54,28 +54,26 @@ export default function BoothHeader({
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto sm:max-w-[425px]">
             <a
               href={primaryCTA.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-blue text-white rounded-lg font-semibold text-body-2 shadow-md hover:bg-brand-navy hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+              className="inline-flex items-center justify-center gap-2 px-6 h-[52px] bg-primary-blue text-white rounded-lg font-semibold text-body-2 shadow-md hover:bg-brand-navy hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 flex-1 sm:min-w-[200px]"
             >
               {primaryCTA.text}
               <ExternalLink className="w-4 h-4" />
             </a>
 
-            {secondaryCTA && (
-              <a
-                href={secondaryCTA.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-primary-blue border-2 border-primary-blue rounded-lg font-semibold text-body-2 hover:bg-primary-blue hover:text-white hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
-              >
-                {secondaryCTA.text}
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            )}
+            <a
+              href={secondaryCTA.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 h-[52px] bg-white text-primary-blue border-2 border-primary-blue rounded-lg font-semibold text-body-2 hover:bg-primary-blue hover:text-white hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 flex-1 sm:min-w-[200px]"
+            >
+              {secondaryCTA.text}
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>

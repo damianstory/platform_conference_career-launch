@@ -52,7 +52,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
   const hasLocation = contact.headquarters
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-12 lg:col-span-4 min-h-[220px]">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl col-span-12 sm:col-span-12 lg:col-span-4 h-[220px]">
       <div className="p-6">
         {/* Header */}
         <h3 className="text-header-3 font-bold text-brand-navy mb-4">Get in Touch</h3>

@@ -121,7 +121,7 @@ export interface PlatinumBoothData {
   sessionSlides?: SessionSlidesData
   engagementActivity?: EngagementActivityData
   primaryCTA: CTAButton
-  secondaryCTA?: CTAButton
+  secondaryCTA: CTAButton
   contact: ContactDetails
   brandColors: BrandColors
 }
@@ -142,7 +142,7 @@ export interface StandardBoothData {
   resources: ResourceItem[]
   googleFormUrl?: string
   primaryCTA: CTAButton
-  secondaryCTA?: CTAButton
+  secondaryCTA: CTAButton
   contact: ContactDetails
   brandColors: BrandColors
 }

@@ -159,6 +159,11 @@ export const healthFirst: PlatinumBoothData = {
     url: 'https://healthfirst.example.com/careers',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://healthfirst.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'recruitment@healthfirst.example.com',
     phone: '1-855-555-CARE',
@@ -243,6 +248,11 @@ export const futureBuild: PlatinumBoothData = {
     text: 'Join Our Team',
     url: 'https://futurebuild.example.com/careers',
     type: 'careers'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://futurebuild.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'careers@futurebuild.example.com',
@@ -334,6 +344,11 @@ export const financeHub: PlatinumBoothData = {
     url: 'https://financehub.example.com/careers',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://financehub.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'students@financehub.example.com',
     phone: '1-800-555-MONEY',
@@ -418,6 +433,11 @@ export const eduPath: PlatinumBoothData = {
     text: 'Apply Now',
     url: 'https://edupath.example.com/apply',
     type: 'application'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://edupath.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'admissions@edupath.example.com',
@@ -504,6 +524,11 @@ export const tradesMaster: PlatinumBoothData = {
     url: 'https://tradesmaster.example.com/programs',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://tradesmaster.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'info@tradesmaster.example.com',
     phone: '1-888-555-TRADE',
@@ -588,6 +613,11 @@ export const worldExplorer: PlatinumBoothData = {
     text: 'Explore Programs',
     url: 'https://worldexplorer.example.com/programs',
     type: 'learn-more'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://worldexplorer.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'hello@worldexplorer.example.com',
@@ -674,6 +704,11 @@ export const greenPower: PlatinumBoothData = {
     url: 'https://greenpower.example.com/apply',
     type: 'application'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://greenpower.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'careers@greenpower.example.com',
     phone: '1-866-555-GREEN',
@@ -758,6 +793,11 @@ export const creativeMinds: PlatinumBoothData = {
     text: 'Explore Programs',
     url: 'https://creativeminds.example.com/programs',
     type: 'learn-more'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://creativeminds.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'admissions@creativeminds.example.com',
@@ -844,6 +884,11 @@ export const dataDynamics: PlatinumBoothData = {
     url: 'https://datadynamics.example.com/careers',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://datadynamics.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'talent@datadynamics.example.com',
     phone: '1-800-555-DATA',
@@ -928,6 +973,11 @@ export const marketGenius: PlatinumBoothData = {
     text: 'View Openings',
     url: 'https://marketgenius.example.com/careers',
     type: 'careers'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://marketgenius.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'careers@marketgenius.example.com',
@@ -1014,6 +1064,11 @@ export const consultPro: PlatinumBoothData = {
     url: 'https://consultpro.example.com/careers',
     type: 'application'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://consultpro.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'recruiting@consultpro.example.com',
     phone: '1-800-555-CONSULT',
@@ -1098,6 +1153,11 @@ export const manufactureTech: PlatinumBoothData = {
     text: 'Apply Today',
     url: 'https://manufacturetech.example.com/apply',
     type: 'application'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://manufacturetech.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'hr@manufacturetech.example.com',
@@ -1184,6 +1244,11 @@ export const cyberShield: PlatinumBoothData = {
     url: 'https://cybershield.example.com/careers',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://cybershield.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'careers@cybershield.example.com',
     phone: '1-888-555-CYBER',
@@ -1268,6 +1333,11 @@ export const bioMedical: PlatinumBoothData = {
     text: 'View Positions',
     url: 'https://biomedical.example.com/careers',
     type: 'careers'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://biomedical.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'talent@biomedical.example.com',
@@ -1354,6 +1424,11 @@ export const architectDesign: PlatinumBoothData = {
     url: 'https://architectdesign.example.com/careers',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://architectdesign.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'careers@architectdesign.example.com',
     phone: '1-800-555-DESIGN',
@@ -1438,6 +1513,11 @@ export const foodService: PlatinumBoothData = {
     text: 'Apply Now',
     url: 'https://foodservicepro.example.com/apply',
     type: 'application'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://foodservicepro.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'jobs@foodservicepro.example.com',
@@ -1524,6 +1604,11 @@ export const legalServices: PlatinumBoothData = {
     url: 'https://legalservices.example.com/careers',
     type: 'learn-more'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://legalservices.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'recruitment@legalservices.example.com',
     phone: '1-800-555-LEGAL',
@@ -1608,6 +1693,11 @@ export const socialImpact: PlatinumBoothData = {
     text: 'Join Our Mission',
     url: 'https://socialimpact.example.com/careers',
     type: 'careers'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://socialimpact.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'careers@socialimpact.example.com',
@@ -1694,6 +1784,11 @@ export const urbanPlanning: PlatinumBoothData = {
     url: 'https://urbanplanning.example.com/careers',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://urbanplanning.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'jobs@urbanplanning.example.com',
     phone: '1-866-555-URBAN',
@@ -1778,6 +1873,11 @@ export const sportsManagement: PlatinumBoothData = {
     text: 'View Openings',
     url: 'https://sportsmgmt.example.com/careers',
     type: 'careers'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://sportsmgmt.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'careers@sportsmgmt.example.com',
@@ -1864,6 +1964,11 @@ export const environmentalConsulting: PlatinumBoothData = {
     url: 'https://ecoconsult.example.com/careers',
     type: 'careers'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://ecoconsult.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'careers@ecoconsult.example.com',
     phone: '1-855-555-ENVIRO',
@@ -1948,6 +2053,11 @@ export const automotiveTech: PlatinumBoothData = {
     text: 'Apply Now',
     url: 'https://autotech.example.com/apply',
     type: 'application'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://autotech.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'hr@autotech.example.com',
@@ -2034,6 +2144,11 @@ export const fashionDesign: PlatinumBoothData = {
     url: 'https://fashionforward.example.com/apply',
     type: 'application'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://fashionforward.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'admissions@fashionforward.example.com',
     phone: '1-800-555-STYLE',
@@ -2118,6 +2233,11 @@ export const aviationAcademy: PlatinumBoothData = {
     text: 'Start Training',
     url: 'https://aviationacademy.example.com/programs',
     type: 'learn-more'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://aviationacademy.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'info@aviationacademy.example.com',
@@ -2204,6 +2324,11 @@ export const hospitalityCollege: PlatinumBoothData = {
     url: 'https://hospitalitypro.example.com/apply',
     type: 'application'
   },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://hospitalitypro.example.com/contact',
+    type: 'contact'
+  },
   contact: {
     email: 'admissions@hospitalitypro.example.com',
     phone: '1-800-555-HOTEL',
@@ -2288,6 +2413,11 @@ export const publicHealth: PlatinumBoothData = {
     text: 'View Positions',
     url: 'https://publichealth.example.com/careers',
     type: 'careers'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://publichealth.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'careers@publichealth.example.com',
@@ -2411,6 +2541,11 @@ export const communityCollege: StandardBoothData = {
     text: 'Apply Today',
     url: 'https://communitycollege.example.com/apply',
     type: 'application'
+  },
+  secondaryCTA: {
+    text: 'Contact Us',
+    url: 'https://communitycollege.example.com/contact',
+    type: 'contact'
   },
   contact: {
     email: 'info@communitycollege.example.com',
