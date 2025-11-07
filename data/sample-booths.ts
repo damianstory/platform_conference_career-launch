@@ -1,96 +1,71 @@
 import { PlatinumBoothData, StandardBoothData } from '@/types/booth'
 
 // ======================
-// PLATINUM TIER BOOTHS
+// PLATINUM TIER BOOTHS (27 TOTAL)
 // ======================
 
-export const techInnovators: PlatinumBoothData = {
-  id: 'tech-innovators',
-  name: 'Tech Innovators Inc.',
-  slug: 'tech-innovators',
+export const techVision: PlatinumBoothData = {
+  id: 'tech-vision',
+  name: 'TechVision Corp',
+  slug: 'tech-vision',
   tier: 'platinum',
   industry: 'Technology',
   organizationType: 'employer',
-  pathway: 'direct-to-workplace',
-  logo: '/logos/tech-innovators.svg',
-  tagline: 'Building the Future of AI & Cloud Computing',
-  description: 'Tech Innovators Inc. is a leading technology company specializing in artificial intelligence, cloud computing, and sustainable tech solutions. For over 15 years, we\'ve been at the forefront of digital transformation, helping businesses and communities thrive in the digital age. Our mission is to create innovative solutions that make a positive impact on society while fostering the next generation of tech leaders through comprehensive internship programs and mentorship opportunities.',
-  website: 'https://techinnovators.example.com',
+  pathway: 'university',
+  logo: '/images/booths/logo-1.png',
+  tagline: 'Building tomorrow\'s technology solutions today',
+  description: 'TechVision Corp is a leading technology company specializing in artificial intelligence, cloud computing, and sustainable tech solutions. We offer comprehensive internship programs and mentorship opportunities for aspiring tech professionals.',
+  website: 'https://techvision.example.com',
   quickFacts: [
-    {
-      icon: 'building',
-      label: 'Founded',
-      value: '2008'
-    },
-    {
-      icon: 'users',
-      label: 'Employees',
-      value: '3,500+'
-    },
-    {
-      icon: 'globe',
-      label: 'Global Reach',
-      value: '25 Countries'
-    }
+    { icon: 'building', label: 'Founded', value: '2010' },
+    { icon: 'users', label: 'Employees', value: '2,500+' },
+    { icon: 'globe', label: 'Global Reach', value: '15 Countries' }
   ],
   video: {
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     type: 'youtube',
-    title: 'Life at Tech Innovators',
-    description: 'Discover what makes Tech Innovators a great place to start your career',
-    thumbnail: 'https://via.placeholder.com/1280x720/0092FF/FFFFFF?text=Watch+Our+Story'
+    title: 'Life at TechVision',
+    description: 'Discover what makes TechVision a great place to start your career'
   },
   resources: [
     {
       title: 'Career Pathways in Tech',
-      description: 'Explore different career paths in technology and find your perfect fit',
+      description: 'Explore different career paths in technology',
       url: 'https://example.com/career-guide.pdf',
       type: 'pdf',
       fileSize: '2.4 MB'
     },
     {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 16-week immersive internship experience',
+      title: 'Internship Program',
+      description: 'Learn about our immersive internship experience',
       url: 'https://example.com/internship-info',
       type: 'link'
-    },
-    {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and cybersecurity',
-      url: 'https://example.com/workshops',
-      type: 'video'
-    },
-    {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with us',
-      url: 'https://example.com/success-stories',
-      type: 'document'
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRMx5w8FJ1dFBDQzQ5pXJO3rV/embed?start=false&loop=false',
-    title: 'Emerging Tech Careers 2025',
-    description: 'An interactive presentation on emerging tech careers and how to prepare for them'
+    embedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRMx5w8FJ1dFBDQzQ5pXJO3rV/embed',
+    title: 'Tech Careers 2025',
+    description: 'Interactive presentation on emerging tech careers'
   },
   engagementActivity: {
     embedUrl: 'about:blank',
     embedType: 'skills-gap-quiz',
-    title: 'Tech Career Readiness Quiz',
-    description: 'Test your knowledge about technology careers and discover your strengths!',
+    title: 'Tech Career Quiz',
+    description: 'Discover your strengths in technology fields',
     duration: '10 minutes'
   },
   primaryCTA: {
     text: 'Explore Careers',
-    url: 'https://techinnovators.example.com/careers',
+    url: 'https://techvision.example.com/careers',
     type: 'careers'
   },
   secondaryCTA: {
-    text: 'Ask Us Anything',
-    url: 'https://techinnovators.example.com/contact',
+    text: 'Contact Us',
+    url: 'https://techvision.example.com/contact',
     type: 'contact'
   },
   contact: {
-    email: 'students@techinnovators.example.com',
+    email: 'students@techvision.example.com',
     phone: '1-800-555-TECH',
     headquarters: {
       address: '100 King Street West',
@@ -101,21 +76,11 @@ export const techInnovators: PlatinumBoothData = {
     internshipInfo: {
       available: true,
       period: 'Summer 2025 (May - August)',
-      applicationUrl: 'https://techinnovators.example.com/apply'
+      applicationUrl: 'https://techvision.example.com/apply'
     },
     socialLinks: [
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/company/techinnovators'
-      },
-      {
-        platform: 'twitter',
-        url: 'https://twitter.com/techinnovators'
-      },
-      {
-        platform: 'instagram',
-        url: 'https://instagram.com/techinnovators'
-      }
+      { platform: 'linkedin', url: 'https://linkedin.com/company/techvision' },
+      { platform: 'twitter', url: 'https://twitter.com/techvision' }
     ]
   },
   brandColors: {
@@ -125,69 +90,47 @@ export const techInnovators: PlatinumBoothData = {
   }
 }
 
-export const healthCarePlus: PlatinumBoothData = {
-  id: 'healthcare-plus',
-  name: 'HealthCare Plus',
-  slug: 'healthcare-plus',
+export const healthFirst: PlatinumBoothData = {
+  id: 'health-first',
+  name: 'HealthFirst',
+  slug: 'health-first',
   tier: 'platinum',
   industry: 'Healthcare',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/healthcare-plus.svg',
-  tagline: 'Where Compassion Meets Innovation',
-  description: 'HealthCare Plus is Ontario\'s leading healthcare provider, operating 15 hospitals and 50+ clinics across the province. We offer diverse career opportunities in nursing, allied health, administration, and medical technology. Our commitment to patient care excellence is matched only by our dedication to developing the next generation of healthcare professionals through comprehensive training programs, mentorship, and career advancement opportunities.',
-  website: 'https://healthcareplus.example.com',
+  logo: '/images/booths/logo-2.png',
+  tagline: 'Where compassion meets medical innovation',
+  description: 'HealthFirst is Ontario\'s leading healthcare provider with diverse career opportunities in nursing, allied health, and medical technology.',
+  website: 'https://healthfirst.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     type: 'youtube',
-    title: 'Healthcare Careers That Matter',
-    description: 'See the impact you can make in healthcare'
+    title: 'Healthcare Careers',
+    description: 'See the impact you can make'
   },
   resources: [
     {
-      title: 'Healthcare Career Explorer',
-      description: 'Discover 50+ healthcare career pathways',
-      url: 'https://example.com/healthcare-careers.pdf',
+      title: 'Healthcare Careers',
+      description: 'Discover healthcare career pathways',
+      url: 'https://example.com/careers.pdf',
       type: 'pdf',
       fileSize: '3.1 MB'
-    },
-    {
-      title: 'PSW Training Program',
-      description: 'Learn about our Personal Support Worker certification program',
-      url: 'https://example.com/psw-training',
-      type: 'link'
-    },
-    {
-      title: 'Virtual Hospital Tour',
-      description: 'Experience a day in the life at our facilities',
-      url: 'https://example.com/virtual-tour',
-      type: 'video'
     }
   ],
   primaryCTA: {
-    text: 'View Open Positions',
-    url: 'https://healthcareplus.example.com/careers',
+    text: 'View Positions',
+    url: 'https://healthfirst.example.com/careers',
     type: 'careers'
   },
   contact: {
-    email: 'recruitment@healthcareplus.example.com',
-    phone: '1-855-CARE-NOW',
+    email: 'recruitment@healthfirst.example.com',
+    phone: '1-855-555-CARE',
     headquarters: {
       address: '555 University Avenue',
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5G 1X8'
-    },
-    socialLinks: [
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/company/healthcareplus'
-      },
-      {
-        platform: 'facebook',
-        url: 'https://facebook.com/healthcareplus'
-      }
-    ]
+    }
   },
   brandColors: {
     primary: '#0092FF',
@@ -195,403 +138,52 @@ export const healthCarePlus: PlatinumBoothData = {
   }
 }
 
-export const universityOfOntario: PlatinumBoothData = {
-  id: 'university-ontario',
-  name: 'University of Ontario',
-  slug: 'university-ontario',
+export const futureBuild: PlatinumBoothData = {
+  id: 'future-build',
+  name: 'FutureBuild Co',
+  slug: 'future-build',
   tier: 'platinum',
-  industry: 'Education',
-  organizationType: 'post-secondary',
+  industry: 'Engineering',
+  organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/university-ontario.svg',
-  tagline: 'Where Ambition Meets Opportunity',
-  description: 'The University of Ontario is a world-renowned research university offering over 200 undergraduate programs across arts, sciences, engineering, business, and health sciences. With a student-to-faculty ratio of 18:1, we provide personalized attention and hands-on learning experiences. Our graduates consistently rank among the most employable in Canada, with 95% finding meaningful work or pursuing graduate studies within 6 months of graduation.',
-  website: 'https://universityontario.example.com',
+  logo: '/images/booths/logo-3.png',
+  tagline: 'Engineering sustainable infrastructure solutions',
+  description: 'FutureBuild Co is a leading engineering firm specializing in sustainable infrastructure and innovative building solutions.',
+  website: 'https://futurebuild.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     type: 'youtube',
-    title: 'Your Future Starts Here',
-    description: 'Explore campus life at University of Ontario'
+    title: 'Building Tomorrow',
+    description: 'Discover engineering careers'
   },
   resources: [
     {
-      title: 'Program Guide 2025',
-      description: 'Complete guide to all undergraduate programs',
-      url: 'https://example.com/program-guide.pdf',
+      title: 'Engineering Careers',
+      description: 'Explore engineering opportunities',
+      url: 'https://example.com/engineering.pdf',
       type: 'pdf',
-      fileSize: '5.2 MB'
-    },
-    {
-      title: 'Scholarship Opportunities',
-      description: 'Over $50M in scholarships available',
-      url: 'https://example.com/scholarships',
-      type: 'link'
-    },
-    {
-      title: 'Campus Virtual Tour',
-      description: 'Explore our beautiful 300-acre campus',
-      url: 'https://example.com/campus-tour',
-      type: 'video'
-    },
-    {
-      title: 'Residence Life Guide',
-      description: 'Everything you need to know about living on campus',
-      url: 'https://example.com/residence.pdf',
-      type: 'pdf',
-      fileSize: '1.9 MB'
+      fileSize: '2.8 MB'
     }
   ],
-  sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRMx5w8FJ1dFBDQzQ5pXJO3rV/embed',
-    title: 'Choosing Your University Program',
-    description: 'Expert guidance on selecting the right path for your future'
-  },
   primaryCTA: {
-    text: 'Apply Now',
-    url: 'https://universityontario.example.com/apply',
-    type: 'application'
-  },
-  secondaryCTA: {
-    text: 'Book Campus Tour',
-    url: 'https://universityontario.example.com/visit',
-    type: 'contact'
-  },
-  contact: {
-    email: 'admissions@universityontario.example.com',
-    phone: '1-800-GO-TO-UNI',
-    headquarters: {
-      address: '1000 University Drive',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M3J 1P3'
-    },
-    socialLinks: [
-      {
-        platform: 'instagram',
-        url: 'https://instagram.com/universityontario'
-      },
-      {
-        platform: 'tiktok',
-        url: 'https://tiktok.com/@universityontario'
-      },
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/school/university-ontario'
-      }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
-export const skilledTradesCollege: PlatinumBoothData = {
-  id: 'skilled-trades-college',
-  name: 'Ontario Skilled Trades College',
-  slug: 'skilled-trades-college',
-  tier: 'platinum',
-  industry: 'Skilled Trades',
-  organizationType: 'post-secondary',
-  pathway: 'apprenticeship',
-  logo: '/logos/skilled-trades.svg',
-  tagline: 'Master Your Craft, Build Your Future',
-  description: 'Ontario Skilled Trades College offers hands-on training in 25+ high-demand trades including electrical, plumbing, HVAC, welding, carpentry, and more. Our 95% job placement rate speaks to the quality of our programs and the demand for skilled trades professionals. With state-of-the-art facilities and partnerships with over 500 employers, we provide real-world training that leads directly to rewarding careers.',
-  website: 'https://skilledtradescollege.example.com',
-  video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    type: 'youtube',
-    title: 'The Power of Skilled Trades',
-    description: 'See what our graduates are building'
-  },
-  resources: [
-    {
-      title: 'Trades Career Guide',
-      description: 'Explore all 25 trades programs we offer',
-      url: 'https://example.com/trades-guide.pdf',
-      type: 'pdf',
-      fileSize: '4.3 MB'
-    },
-    {
-      title: 'Apprenticeship FAQs',
-      description: 'Everything you need to know about becoming an apprentice',
-      url: 'https://example.com/apprentice-faqs',
-      type: 'link'
-    },
-    {
-      title: 'Tool & Equipment Guide',
-      description: 'What you\'ll need for your program',
-      url: 'https://example.com/tools.pdf',
-      type: 'pdf',
-      fileSize: '800 KB'
-    }
-  ],
-  engagementActivity: {
-    embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
-    embedType: 'google-form',
-    title: 'Which Trade is Right for You?',
-    description: 'Take our quick quiz to find your ideal trades career path',
-    duration: '5 minutes'
-  },
-  primaryCTA: {
-    text: 'View Programs',
-    url: 'https://skilledtradescollege.example.com/programs',
+    text: 'Join Our Team',
+    url: 'https://futurebuild.example.com/careers',
     type: 'careers'
   },
   contact: {
-    email: 'info@skilledtradescollege.example.com',
-    phone: '1-888-TRADES-1',
+    email: 'careers@futurebuild.example.com',
+    phone: '1-800-555-BUILD',
     headquarters: {
-      address: '789 Industrial Parkway',
-      city: 'Mississauga',
-      province: 'ON',
-      postalCode: 'L4W 2T7'
-    },
-    socialLinks: [
-      {
-        platform: 'facebook',
-        url: 'https://facebook.com/skilledtradescollege'
-      },
-      {
-        platform: 'youtube',
-        url: 'https://youtube.com/@skilledtradescollege'
-      }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
-export const globalExplorations: PlatinumBoothData = {
-  id: 'global-explorations',
-  name: 'Global Explorations',
-  slug: 'global-explorations',
-  tier: 'platinum',
-  industry: 'Education',
-  organizationType: 'gap-year',
-  pathway: 'gap-year',
-  logo: '/logos/global-explorations.svg',
-  tagline: 'Discover Yourself. Discover the World.',
-  description: 'Global Explorations offers structured gap year programs in 30+ countries, combining volunteer work, cultural immersion, skill development, and adventure travel. Our programs are designed to help students gain real-world experience, develop leadership skills, learn new languages, and discover their passions before committing to a post-secondary path. 98% of our participants report increased clarity about their career goals.',
-  website: 'https://globalexplorations.example.com',
-  video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    type: 'youtube',
-    title: 'A Year That Changes Everything',
-    description: 'Hear from students who took the gap year leap'
-  },
-  resources: [
-    {
-      title: 'Gap Year Program Guide',
-      description: 'Explore all our international programs',
-      url: 'https://example.com/gap-year-guide.pdf',
-      type: 'pdf',
-      fileSize: '6.8 MB'
-    },
-    {
-      title: 'Parent Information Package',
-      description: 'Everything parents need to know about gap years',
-      url: 'https://example.com/parent-info',
-      type: 'link'
-    },
-    {
-      title: 'Alumni Stories',
-      description: 'Where are they now? Success stories from past participants',
-      url: 'https://example.com/alumni-stories',
-      type: 'document'
-    }
-  ],
-  sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRMx5w8FJ1dFBDQzQ5pXJO3rV/embed',
-    title: 'Is a Gap Year Right for You?',
-    description: 'Learn about the benefits and logistics of taking a gap year'
-  },
-  primaryCTA: {
-    text: 'Explore Programs',
-    url: 'https://globalexplorations.example.com/programs',
-    type: 'learn-more'
-  },
-  secondaryCTA: {
-    text: 'Speak with an Advisor',
-    url: 'https://globalexplorations.example.com/advising',
-    type: 'contact'
-  },
-  contact: {
-    email: 'hello@globalexplorations.example.com',
-    phone: '1-877-EXPLORE',
-    headquarters: {
-      address: '250 Queen Street East',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5A 1S1'
-    },
-    socialLinks: [
-      {
-        platform: 'instagram',
-        url: 'https://instagram.com/globalexplorations'
-      },
-      {
-        platform: 'tiktok',
-        url: 'https://tiktok.com/@globalexplorations'
-      },
-      {
-        platform: 'facebook',
-        url: 'https://facebook.com/globalexplorations'
-      }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
-export const financialServicesGroup: PlatinumBoothData = {
-  id: 'financial-services-group',
-  name: 'Financial Services Group',
-  slug: 'financial-services-group',
-  tier: 'platinum',
-  industry: 'Finance',
-  organizationType: 'employer',
-  pathway: 'university',
-  logo: '/logos/financial-services.svg',
-  tagline: 'Building Financial Futures Together',
-  description: 'Financial Services Group is one of Canada\'s largest banks, serving over 15 million customers nationwide. We offer exciting career opportunities in banking, investment management, financial planning, technology, and corporate services. Our award-winning student programs include co-op placements, summer internships, and rotational graduate programs that provide exposure to multiple areas of the business.',
-  website: 'https://financialservicesgroup.example.com',
-  video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    type: 'youtube',
-    title: 'Your Career in Finance',
-    description: 'Explore diverse opportunities in financial services'
-  },
-  resources: [
-    {
-      title: 'Financial Careers Guide',
-      description: 'Discover career paths from teller to CFO',
-      url: 'https://example.com/finance-careers.pdf',
-      type: 'pdf',
-      fileSize: '2.7 MB'
-    },
-    {
-      title: 'Student Programs Overview',
-      description: 'Co-op, internship, and graduate opportunities',
-      url: 'https://example.com/student-programs',
-      type: 'link'
-    },
-    {
-      title: 'Financial Literacy Resources',
-      description: 'Free courses on personal finance and investing',
-      url: 'https://example.com/literacy',
-      type: 'video'
-    }
-  ],
-  primaryCTA: {
-    text: 'View Student Opportunities',
-    url: 'https://financialservicesgroup.example.com/students',
-    type: 'careers'
-  },
-  contact: {
-    email: 'students@fsg.example.com',
-    phone: '1-800-FSG-JOBS',
-    headquarters: {
-      address: '1 First Canadian Place',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5X 1H3'
-    },
-    internshipInfo: {
-      available: true,
-      period: 'Year-round opportunities',
-      applicationUrl: 'https://financialservicesgroup.example.com/apply'
-    },
-    socialLinks: [
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/company/fsg'
-      },
-      {
-        platform: 'twitter',
-        url: 'https://twitter.com/fsg'
-      }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
-export const greenEnergyInnovations: PlatinumBoothData = {
-  id: 'green-energy',
-  name: 'Green Energy Innovations',
-  slug: 'green-energy',
-  tier: 'platinum',
-  industry: 'Energy',
-  organizationType: 'employer',
-  pathway: 'direct-to-workplace',
-  logo: '/logos/green-energy.svg',
-  tagline: 'Powering a Sustainable Future',
-  description: 'Green Energy Innovations is a leading renewable energy company specializing in solar, wind, and battery storage solutions. We\'re committed to fighting climate change while creating meaningful careers for the next generation. Our entry-level technician training programs require no prior experience - just passion for the environment and willingness to learn. Many of our current managers started as field technicians.',
-  website: 'https://greenenergyinnovations.example.com',
-  video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    type: 'youtube',
-    title: 'Join the Green Revolution',
-    description: 'See how we\'re building Ontario\'s clean energy future'
-  },
-  resources: [
-    {
-      title: 'Renewable Energy Careers',
-      description: 'Explore opportunities in the clean energy sector',
-      url: 'https://example.com/green-careers.pdf',
-      type: 'pdf',
-      fileSize: '3.4 MB'
-    },
-    {
-      title: 'Technician Training Program',
-      description: 'Learn about our paid 8-week training program',
-      url: 'https://example.com/training',
-      type: 'link'
-    }
-  ],
-  engagementActivity: {
-    embedUrl: 'about:blank',
-    embedType: 'skills-gap-quiz',
-    title: 'Renewable Energy Quiz',
-    description: 'Test your knowledge about clean energy and sustainability',
-    duration: '8 minutes'
-  },
-  primaryCTA: {
-    text: 'Apply for Training',
-    url: 'https://greenenergyinnovations.example.com/apply',
-    type: 'application'
-  },
-  contact: {
-    email: 'careers@greenenergy.example.com',
-    phone: '1-866-GO-GREEN',
-    headquarters: {
-      address: '888 Renewable Way',
+      address: '200 Engineering Drive',
       city: 'Ottawa',
       province: 'ON',
       postalCode: 'K1A 0B1'
     },
     internshipInfo: {
       available: true,
-      period: 'Spring/Summer/Fall terms',
-      applicationUrl: 'https://greenenergyinnovations.example.com/internships'
-    },
-    socialLinks: [
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/company/greenenergy'
-      },
-      {
-        platform: 'instagram',
-        url: 'https://instagram.com/greenenergy'
-      }
-    ]
+      period: 'Year-round opportunities',
+      applicationUrl: 'https://futurebuild.example.com/apply'
+    }
   },
   brandColors: {
     primary: '#0092FF',
@@ -599,83 +191,1170 @@ export const greenEnergyInnovations: PlatinumBoothData = {
   }
 }
 
-export const creativeMindsColl: PlatinumBoothData = {
-  id: 'creative-minds-college',
-  name: 'Creative Minds College',
-  slug: 'creative-minds-college',
+export const financeHub: PlatinumBoothData = {
+  id: 'finance-hub',
+  name: 'FinanceHub',
+  slug: 'finance-hub',
   tier: 'platinum',
-  industry: 'Arts & Media',
-  organizationType: 'post-secondary',
-  pathway: 'college',
-  logo: '/logos/creative-minds.svg',
-  tagline: 'Where Creativity Becomes Career',
-  description: 'Creative Minds College is Ontario\'s premier institution for arts, design, media, and entertainment programs. From graphic design and animation to film production and game development, we offer cutting-edge programs taught by industry professionals. Our state-of-the-art studios, industry partnerships, and project-based learning approach ensure graduates are job-ready on day one.',
-  website: 'https://creativemindscollege.example.com',
+  industry: 'Finance',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-4.png',
+  tagline: 'Your financial future starts here',
+  description: 'FinanceHub is one of Canada\'s leading financial institutions offering exciting career opportunities in banking, investment, and financial planning.',
+  website: 'https://financehub.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     type: 'youtube',
-    title: 'Creativity Unleashed',
-    description: 'See student work from our award-winning programs'
+    title: 'Career in Finance',
+    description: 'Explore financial services careers'
   },
   resources: [
     {
-      title: 'Program Portfolio 2025',
-      description: 'Browse all creative programs with sample student work',
-      url: 'https://example.com/program-portfolio.pdf',
+      title: 'Finance Careers',
+      description: 'Discover paths from analyst to executive',
+      url: 'https://example.com/finance.pdf',
       type: 'pdf',
-      fileSize: '12.5 MB'
-    },
+      fileSize: '2.7 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'View Opportunities',
+    url: 'https://financehub.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'students@financehub.example.com',
+    phone: '1-800-555-MONEY',
+    headquarters: {
+      address: '1 Financial Place',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5X 1H3'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const eduPath: PlatinumBoothData = {
+  id: 'edupath',
+  name: 'EduPath',
+  slug: 'edupath',
+  tier: 'platinum',
+  industry: 'Education',
+  organizationType: 'post-secondary',
+  pathway: 'university',
+  logo: '/images/booths/logo-5.png',
+  tagline: 'Where ambition meets educational excellence',
+  description: 'EduPath is a world-renowned institution offering over 200 undergraduate programs with exceptional career preparation.',
+  website: 'https://edupath.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Your Future',
+    description: 'Explore campus life'
+  },
+  resources: [
     {
-      title: 'Industry Partner Network',
-      description: 'See where our graduates work',
-      url: 'https://example.com/partners',
-      type: 'link'
-    },
-    {
-      title: 'Virtual Studio Tour',
-      description: 'Explore our animation, film, and design studios',
-      url: 'https://example.com/studio-tour',
-      type: 'video'
+      title: 'Program Guide',
+      description: 'Complete guide to all programs',
+      url: 'https://example.com/programs.pdf',
+      type: 'pdf',
+      fileSize: '5.2 MB'
     }
   ],
   sessionSlides: {
     embedUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRMx5w8FJ1dFBDQzQ5pXJO3rV/embed',
-    title: 'Breaking Into Creative Industries',
-    description: 'Insider tips for building your creative career'
+    title: 'Choosing Your Program',
+    description: 'Expert guidance on program selection'
   },
   primaryCTA: {
+    text: 'Apply Now',
+    url: 'https://edupath.example.com/apply',
+    type: 'application'
+  },
+  contact: {
+    email: 'admissions@edupath.example.com',
+    phone: '1-800-555-LEARN',
+    headquarters: {
+      address: '1000 University Drive',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M3J 1P3'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const tradesMaster: PlatinumBoothData = {
+  id: 'trades-master',
+  name: 'TradesMaster',
+  slug: 'trades-master',
+  tier: 'platinum',
+  industry: 'Skilled Trades',
+  organizationType: 'post-secondary',
+  pathway: 'apprenticeship',
+  logo: '/images/booths/logo-6.png',
+  tagline: 'Master your craft build your future',
+  description: 'TradesMaster offers hands-on training in 25+ high-demand trades with exceptional job placement rates.',
+  website: 'https://tradesmaster.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Power of Trades',
+    description: 'See what our graduates build'
+  },
+  resources: [
+    {
+      title: 'Trades Guide',
+      description: 'Explore all trades programs',
+      url: 'https://example.com/trades.pdf',
+      type: 'pdf',
+      fileSize: '4.3 MB'
+    }
+  ],
+  engagementActivity: {
+    embedUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
+    embedType: 'google-form',
+    title: 'Find Your Trade',
+    description: 'Discover your ideal trades career path',
+    duration: '5 minutes'
+  },
+  primaryCTA: {
+    text: 'View Programs',
+    url: 'https://tradesmaster.example.com/programs',
+    type: 'careers'
+  },
+  contact: {
+    email: 'info@tradesmaster.example.com',
+    phone: '1-888-555-TRADE',
+    headquarters: {
+      address: '789 Industrial Parkway',
+      city: 'Mississauga',
+      province: 'ON',
+      postalCode: 'L4W 2T7'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const worldExplorer: PlatinumBoothData = {
+  id: 'world-explorer',
+  name: 'WorldExplorer',
+  slug: 'world-explorer',
+  tier: 'platinum',
+  industry: 'Education',
+  organizationType: 'gap-year',
+  pathway: 'gap-year',
+  logo: '/images/booths/logo-7.png',
+  tagline: 'Discover yourself discover the world',
+  description: 'WorldExplorer offers structured gap year programs combining volunteer work, cultural immersion, and skill development.',
+  website: 'https://worldexplorer.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Year of Change',
+    description: 'Hear from gap year students'
+  },
+  resources: [
+    {
+      title: 'Gap Year Guide',
+      description: 'Explore all international programs',
+      url: 'https://example.com/gap-year.pdf',
+      type: 'pdf',
+      fileSize: '6.8 MB'
+    }
+  ],
+  primaryCTA: {
     text: 'Explore Programs',
-    url: 'https://creativemindscollege.example.com/programs',
+    url: 'https://worldexplorer.example.com/programs',
     type: 'learn-more'
   },
-  secondaryCTA: {
-    text: 'Book Portfolio Review',
-    url: 'https://creativemindscollege.example.com/portfolio-review',
-    type: 'contact'
+  contact: {
+    email: 'hello@worldexplorer.example.com',
+    phone: '1-877-555-WORLD',
+    headquarters: {
+      address: '250 Queen Street East',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5A 1S1'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const greenPower: PlatinumBoothData = {
+  id: 'green-power',
+  name: 'GreenPower Inc',
+  slug: 'green-power',
+  tier: 'platinum',
+  industry: 'Energy',
+  organizationType: 'employer',
+  pathway: 'direct-to-workplace',
+  logo: '/images/booths/logo-8.png',
+  tagline: 'Powering sustainable tomorrow together',
+  description: 'GreenPower Inc is a leading renewable energy company fighting climate change while creating meaningful careers.',
+  website: 'https://greenpower.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Green Revolution',
+    description: 'Building Ontario\'s clean energy future'
+  },
+  resources: [
+    {
+      title: 'Energy Careers',
+      description: 'Explore clean energy opportunities',
+      url: 'https://example.com/green-careers.pdf',
+      type: 'pdf',
+      fileSize: '3.4 MB'
+    }
+  ],
+  engagementActivity: {
+    embedUrl: 'about:blank',
+    embedType: 'skills-gap-quiz',
+    title: 'Energy Quiz',
+    description: 'Test your clean energy knowledge',
+    duration: '8 minutes'
+  },
+  primaryCTA: {
+    text: 'Apply for Training',
+    url: 'https://greenpower.example.com/apply',
+    type: 'application'
+  },
+  contact: {
+    email: 'careers@greenpower.example.com',
+    phone: '1-866-555-GREEN',
+    headquarters: {
+      address: '888 Renewable Way',
+      city: 'Ottawa',
+      province: 'ON',
+      postalCode: 'K1A 0B1'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const creativeMinds: PlatinumBoothData = {
+  id: 'creative-minds',
+  name: 'CreativeMinds',
+  slug: 'creative-minds',
+  tier: 'platinum',
+  industry: 'Arts & Media',
+  organizationType: 'post-secondary',
+  pathway: 'college',
+  logo: '/images/booths/logo-9.png',
+  tagline: 'Where creativity becomes successful career',
+  description: 'CreativeMinds is Ontario\'s premier institution for arts, design, media, and entertainment programs.',
+  website: 'https://creativeminds.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Creativity Unleashed',
+    description: 'See award-winning student work'
+  },
+  resources: [
+    {
+      title: 'Program Portfolio',
+      description: 'Browse creative programs with samples',
+      url: 'https://example.com/portfolio.pdf',
+      type: 'pdf',
+      fileSize: '12.5 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Explore Programs',
+    url: 'https://creativeminds.example.com/programs',
+    type: 'learn-more'
   },
   contact: {
     email: 'admissions@creativeminds.example.com',
-    phone: '1-855-CREATE-1',
+    phone: '1-855-555-CREATE',
     headquarters: {
       address: '123 Artistic Avenue',
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5T 1R8'
-    },
-    socialLinks: [
-      {
-        platform: 'instagram',
-        url: 'https://instagram.com/creativemindscollege'
-      },
-      {
-        platform: 'tiktok',
-        url: 'https://tiktok.com/@creativeminds'
-      },
-      {
-        platform: 'youtube',
-        url: 'https://youtube.com/@creativeminds'
-      }
-    ]
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const dataDynamics: PlatinumBoothData = {
+  id: 'data-dynamics',
+  name: 'DataDynamics',
+  slug: 'data-dynamics',
+  tier: 'platinum',
+  industry: 'Technology',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-10.png',
+  tagline: 'Transform data into powerful insights',
+  description: 'DataDynamics specializes in data science, analytics, and machine learning solutions for enterprise clients.',
+  website: 'https://datadynamics.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Data Science Careers',
+    description: 'Explore data-driven opportunities'
+  },
+  resources: [
+    {
+      title: 'Data Science Guide',
+      description: 'Learn about data career paths',
+      url: 'https://example.com/data-science.pdf',
+      type: 'pdf',
+      fileSize: '3.2 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Join Our Team',
+    url: 'https://datadynamics.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'talent@datadynamics.example.com',
+    phone: '1-800-555-DATA',
+    headquarters: {
+      address: '500 Tech Boulevard',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5V 2T6'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const marketGenius: PlatinumBoothData = {
+  id: 'market-genius',
+  name: 'MarketGenius',
+  slug: 'market-genius',
+  tier: 'platinum',
+  industry: 'Marketing',
+  organizationType: 'employer',
+  pathway: 'college',
+  logo: '/images/booths/logo-11.png',
+  tagline: 'Creating brands that inspire action',
+  description: 'MarketGenius is a full-service marketing agency creating innovative campaigns for leading Canadian brands.',
+  website: 'https://marketgenius.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Marketing Excellence',
+    description: 'See our award-winning campaigns'
+  },
+  resources: [
+    {
+      title: 'Marketing Careers',
+      description: 'Explore creative marketing opportunities',
+      url: 'https://example.com/marketing.pdf',
+      type: 'pdf',
+      fileSize: '2.9 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'View Openings',
+    url: 'https://marketgenius.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'careers@marketgenius.example.com',
+    phone: '1-855-555-MARKET',
+    headquarters: {
+      address: '300 Creative Drive',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5H 3Y2'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const consultPro: PlatinumBoothData = {
+  id: 'consult-pro',
+  name: 'ConsultPro',
+  slug: 'consult-pro',
+  tier: 'platinum',
+  industry: 'Consulting',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-12.png',
+  tagline: 'Solving complex business challenges daily',
+  description: 'ConsultPro is a leading management consulting firm helping organizations achieve transformational results.',
+  website: 'https://consultpro.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Consulting Careers',
+    description: 'Discover management consulting'
+  },
+  resources: [
+    {
+      title: 'Consultant Guide',
+      description: 'Learn about consulting careers',
+      url: 'https://example.com/consulting.pdf',
+      type: 'pdf',
+      fileSize: '2.6 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Apply Now',
+    url: 'https://consultpro.example.com/careers',
+    type: 'application'
+  },
+  contact: {
+    email: 'recruiting@consultpro.example.com',
+    phone: '1-800-555-CONSULT',
+    headquarters: {
+      address: '400 Business Plaza',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5K 1E3'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const manufactureTech: PlatinumBoothData = {
+  id: 'manufacture-tech',
+  name: 'ManufactureTech',
+  slug: 'manufacture-tech',
+  tier: 'platinum',
+  industry: 'Manufacturing',
+  organizationType: 'employer',
+  pathway: 'direct-to-workplace',
+  logo: '/images/booths/logo-13.png',
+  tagline: 'Building products building careers',
+  description: 'ManufactureTech is an advanced manufacturing company producing precision components for automotive and aerospace.',
+  website: 'https://manufacturetech.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Modern Manufacturing',
+    description: 'See our state-of-the-art facility'
+  },
+  resources: [
+    {
+      title: 'Manufacturing Jobs',
+      description: 'View current openings and requirements',
+      url: 'https://example.com/jobs.pdf',
+      type: 'pdf',
+      fileSize: '1.8 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Apply Today',
+    url: 'https://manufacturetech.example.com/apply',
+    type: 'application'
+  },
+  contact: {
+    email: 'hr@manufacturetech.example.com',
+    phone: '905-555-5678',
+    headquarters: {
+      address: '45 Industrial Drive',
+      city: 'Hamilton',
+      province: 'ON',
+      postalCode: 'L8E 2X9'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const cyberShield: PlatinumBoothData = {
+  id: 'cyber-shield',
+  name: 'CyberShield',
+  slug: 'cyber-shield',
+  tier: 'platinum',
+  industry: 'Technology',
+  organizationType: 'employer',
+  pathway: 'college',
+  logo: '/images/booths/logo-14.png',
+  tagline: 'Protecting digital futures every day',
+  description: 'CyberShield provides enterprise cybersecurity solutions protecting organizations from evolving digital threats.',
+  website: 'https://cybershield.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Security Careers',
+    description: 'Explore cybersecurity opportunities'
+  },
+  resources: [
+    {
+      title: 'Cybersecurity Guide',
+      description: 'Learn about security career paths',
+      url: 'https://example.com/security.pdf',
+      type: 'pdf',
+      fileSize: '2.3 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Join Our Team',
+    url: 'https://cybershield.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'careers@cybershield.example.com',
+    phone: '1-888-555-CYBER',
+    headquarters: {
+      address: '600 Security Way',
+      city: 'Ottawa',
+      province: 'ON',
+      postalCode: 'K2P 0R4'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const bioMedical: PlatinumBoothData = {
+  id: 'bio-medical',
+  name: 'BioMedical',
+  slug: 'bio-medical',
+  tier: 'platinum',
+  industry: 'Healthcare',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-15.png',
+  tagline: 'Advancing medical science for humanity',
+  description: 'BioMedical is a research-focused pharmaceutical company developing breakthrough treatments for critical diseases.',
+  website: 'https://biomedical.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Medical Innovation',
+    description: 'Discover pharmaceutical research careers'
+  },
+  resources: [
+    {
+      title: 'Research Careers',
+      description: 'Explore opportunities in medical research',
+      url: 'https://example.com/research.pdf',
+      type: 'pdf',
+      fileSize: '3.5 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'View Positions',
+    url: 'https://biomedical.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'talent@biomedical.example.com',
+    phone: '1-800-555-BIOMED',
+    headquarters: {
+      address: '700 Research Parkway',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M2N 6K1'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const architectDesign: PlatinumBoothData = {
+  id: 'architect-design',
+  name: 'ArchitectDesign',
+  slug: 'architect-design',
+  tier: 'platinum',
+  industry: 'Engineering',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-16.png',
+  tagline: 'Designing spaces that inspire life',
+  description: 'ArchitectDesign is an award-winning architectural firm creating sustainable and innovative building designs.',
+  website: 'https://architectdesign.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Architecture Careers',
+    description: 'See our portfolio of projects'
+  },
+  resources: [
+    {
+      title: 'Architecture Guide',
+      description: 'Learn about architecture careers',
+      url: 'https://example.com/architecture.pdf',
+      type: 'pdf',
+      fileSize: '5.1 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'View Opportunities',
+    url: 'https://architectdesign.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'careers@architectdesign.example.com',
+    phone: '1-800-555-DESIGN',
+    headquarters: {
+      address: '800 Design Street',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5J 2L7'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const foodService: PlatinumBoothData = {
+  id: 'food-service',
+  name: 'FoodService Pro',
+  slug: 'food-service',
+  tier: 'platinum',
+  industry: 'Retail',
+  organizationType: 'employer',
+  pathway: 'direct-to-workplace',
+  logo: '/images/booths/logo-17.png',
+  tagline: 'Serving excellence one meal daily',
+  description: 'FoodService Pro operates 200+ restaurants across Ontario with comprehensive training and advancement opportunities.',
+  website: 'https://foodservicepro.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Hospitality Careers',
+    description: 'Explore food service opportunities'
+  },
+  resources: [
+    {
+      title: 'Career Path',
+      description: 'See advancement opportunities in food service',
+      url: 'https://example.com/food-careers.pdf',
+      type: 'pdf',
+      fileSize: '1.5 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Apply Now',
+    url: 'https://foodservicepro.example.com/apply',
+    type: 'application'
+  },
+  contact: {
+    email: 'jobs@foodservicepro.example.com',
+    phone: '1-877-555-FOOD',
+    headquarters: {
+      address: '900 Restaurant Row',
+      city: 'Mississauga',
+      province: 'ON',
+      postalCode: 'L5B 1M2'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const legalServices: PlatinumBoothData = {
+  id: 'legal-services',
+  name: 'LegalServices',
+  slug: 'legal-services',
+  tier: 'platinum',
+  industry: 'Consulting',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-18.png',
+  tagline: 'Justice through excellence and integrity',
+  description: 'LegalServices is a leading law firm providing comprehensive legal services across multiple practice areas.',
+  website: 'https://legalservices.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Legal Careers',
+    description: 'Discover careers in law'
+  },
+  resources: [
+    {
+      title: 'Legal Career Guide',
+      description: 'Explore diverse legal career paths',
+      url: 'https://example.com/legal.pdf',
+      type: 'pdf',
+      fileSize: '2.8 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Learn More',
+    url: 'https://legalservices.example.com/careers',
+    type: 'learn-more'
+  },
+  contact: {
+    email: 'recruitment@legalservices.example.com',
+    phone: '1-800-555-LEGAL',
+    headquarters: {
+      address: '1000 Law Street',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5H 1H1'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const socialImpact: PlatinumBoothData = {
+  id: 'social-impact',
+  name: 'SocialImpact',
+  slug: 'social-impact',
+  tier: 'platinum',
+  industry: 'Non-Profit',
+  organizationType: 'employer',
+  pathway: 'college',
+  logo: '/images/booths/logo-19.png',
+  tagline: 'Creating positive change every day',
+  description: 'SocialImpact is a non-profit organization dedicated to community development and social justice initiatives.',
+  website: 'https://socialimpact.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Make a Difference',
+    description: 'See our community impact'
+  },
+  resources: [
+    {
+      title: 'Non-Profit Careers',
+      description: 'Explore meaningful career opportunities',
+      url: 'https://example.com/nonprofit.pdf',
+      type: 'pdf',
+      fileSize: '2.4 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Join Our Mission',
+    url: 'https://socialimpact.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'careers@socialimpact.example.com',
+    phone: '1-855-555-IMPACT',
+    headquarters: {
+      address: '1100 Community Way',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M4Y 1J6'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const urbanPlanning: PlatinumBoothData = {
+  id: 'urban-planning',
+  name: 'UrbanPlanning',
+  slug: 'urban-planning',
+  tier: 'platinum',
+  industry: 'Government',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-20.png',
+  tagline: 'Building livable cities for tomorrow',
+  description: 'UrbanPlanning works with municipalities to design sustainable, vibrant urban communities across Ontario.',
+  website: 'https://urbanplanning.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'City Planning',
+    description: 'Discover urban planning careers'
+  },
+  resources: [
+    {
+      title: 'Planning Careers',
+      description: 'Learn about urban planning opportunities',
+      url: 'https://example.com/planning.pdf',
+      type: 'pdf',
+      fileSize: '3.3 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'View Positions',
+    url: 'https://urbanplanning.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'jobs@urbanplanning.example.com',
+    phone: '1-866-555-URBAN',
+    headquarters: {
+      address: '1200 City Hall Drive',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5H 2N2'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const sportsManagement: PlatinumBoothData = {
+  id: 'sports-management',
+  name: 'SportsMgmt',
+  slug: 'sports-management',
+  tier: 'platinum',
+  industry: 'Arts & Media',
+  organizationType: 'employer',
+  pathway: 'college',
+  logo: '/images/booths/logo-21.png',
+  tagline: 'Where passion meets sports careers',
+  description: 'SportsMgmt manages professional sports facilities and creates career opportunities in sports administration.',
+  website: 'https://sportsmgmt.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Sports Careers',
+    description: 'Explore opportunities in sports'
+  },
+  resources: [
+    {
+      title: 'Sports Career Guide',
+      description: 'Discover diverse sports industry roles',
+      url: 'https://example.com/sports.pdf',
+      type: 'pdf',
+      fileSize: '2.7 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'View Openings',
+    url: 'https://sportsmgmt.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'careers@sportsmgmt.example.com',
+    phone: '1-800-555-SPORT',
+    headquarters: {
+      address: '1300 Arena Boulevard',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5J 2H7'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const environmentalConsulting: PlatinumBoothData = {
+  id: 'environmental',
+  name: 'EcoConsult',
+  slug: 'environmental',
+  tier: 'platinum',
+  industry: 'Consulting',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-22.png',
+  tagline: 'Protecting nature through smart solutions',
+  description: 'EcoConsult provides environmental consulting services helping organizations achieve sustainability goals.',
+  website: 'https://ecoconsult.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Environmental Careers',
+    description: 'Explore environmental consulting'
+  },
+  resources: [
+    {
+      title: 'Environmental Guide',
+      description: 'Learn about sustainability careers',
+      url: 'https://example.com/environment.pdf',
+      type: 'pdf',
+      fileSize: '3.1 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Join Our Team',
+    url: 'https://ecoconsult.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'careers@ecoconsult.example.com',
+    phone: '1-855-555-ENVIRO',
+    headquarters: {
+      address: '1400 Green Street',
+      city: 'Ottawa',
+      province: 'ON',
+      postalCode: 'K1P 5N7'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const automotiveTech: PlatinumBoothData = {
+  id: 'automotive-tech',
+  name: 'AutoTech',
+  slug: 'automotive-tech',
+  tier: 'platinum',
+  industry: 'Manufacturing',
+  organizationType: 'employer',
+  pathway: 'apprenticeship',
+  logo: '/images/booths/logo-23.png',
+  tagline: 'Driving automotive innovation forward',
+  description: 'AutoTech specializes in electric vehicle technology and advanced automotive systems development.',
+  website: 'https://autotech.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Automotive Future',
+    description: 'Explore automotive technology careers'
+  },
+  resources: [
+    {
+      title: 'Automotive Careers',
+      description: 'Learn about vehicle technology roles',
+      url: 'https://example.com/automotive.pdf',
+      type: 'pdf',
+      fileSize: '2.9 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Apply Now',
+    url: 'https://autotech.example.com/apply',
+    type: 'application'
+  },
+  contact: {
+    email: 'hr@autotech.example.com',
+    phone: '1-866-555-AUTO',
+    headquarters: {
+      address: '1500 Motor Parkway',
+      city: 'Windsor',
+      province: 'ON',
+      postalCode: 'N9A 6J3'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const fashionDesign: PlatinumBoothData = {
+  id: 'fashion-design',
+  name: 'FashionForward',
+  slug: 'fashion-design',
+  tier: 'platinum',
+  industry: 'Arts & Media',
+  organizationType: 'post-secondary',
+  pathway: 'college',
+  logo: '/images/booths/logo-24.png',
+  tagline: 'Designing tomorrow\'s fashion trends today',
+  description: 'FashionForward is a leading fashion design school preparing students for careers in the global fashion industry.',
+  website: 'https://fashionforward.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Fashion Excellence',
+    description: 'See student runway shows'
+  },
+  resources: [
+    {
+      title: 'Fashion Programs',
+      description: 'Explore design and merchandising programs',
+      url: 'https://example.com/fashion.pdf',
+      type: 'pdf',
+      fileSize: '8.4 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Apply Today',
+    url: 'https://fashionforward.example.com/apply',
+    type: 'application'
+  },
+  contact: {
+    email: 'admissions@fashionforward.example.com',
+    phone: '1-800-555-STYLE',
+    headquarters: {
+      address: '1600 Fashion Avenue',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5V 3C6'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const aviationAcademy: PlatinumBoothData = {
+  id: 'aviation-academy',
+  name: 'AviationAcademy',
+  slug: 'aviation-academy',
+  tier: 'platinum',
+  industry: 'Engineering',
+  organizationType: 'post-secondary',
+  pathway: 'college',
+  logo: '/images/booths/logo-25.png',
+  tagline: 'Soaring toward aviation excellence',
+  description: 'AviationAcademy trains pilots, aircraft technicians, and aviation management professionals.',
+  website: 'https://aviationacademy.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Aviation Careers',
+    description: 'Explore careers in aviation'
+  },
+  resources: [
+    {
+      title: 'Aviation Programs',
+      description: 'Learn about flight training programs',
+      url: 'https://example.com/aviation.pdf',
+      type: 'pdf',
+      fileSize: '4.2 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Start Training',
+    url: 'https://aviationacademy.example.com/programs',
+    type: 'learn-more'
+  },
+  contact: {
+    email: 'info@aviationacademy.example.com',
+    phone: '1-877-555-FLY',
+    headquarters: {
+      address: '1700 Airport Road',
+      city: 'Brampton',
+      province: 'ON',
+      postalCode: 'L6T 5E3'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const hospitalityCollege: PlatinumBoothData = {
+  id: 'hospitality-college',
+  name: 'HospitalityPro',
+  slug: 'hospitality-college',
+  tier: 'platinum',
+  industry: 'Education',
+  organizationType: 'post-secondary',
+  pathway: 'college',
+  logo: '/images/booths/logo-26.png',
+  tagline: 'Excellence in service starts here',
+  description: 'HospitalityPro College offers comprehensive training in hotel management, culinary arts, and tourism.',
+  website: 'https://hospitalitypro.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Hospitality Excellence',
+    description: 'Discover hospitality careers'
+  },
+  resources: [
+    {
+      title: 'Program Guide',
+      description: 'Explore hospitality and tourism programs',
+      url: 'https://example.com/hospitality.pdf',
+      type: 'pdf',
+      fileSize: '3.6 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'Apply Now',
+    url: 'https://hospitalitypro.example.com/apply',
+    type: 'application'
+  },
+  contact: {
+    email: 'admissions@hospitalitypro.example.com',
+    phone: '1-800-555-HOTEL',
+    headquarters: {
+      address: '1800 Service Boulevard',
+      city: 'Niagara Falls',
+      province: 'ON',
+      postalCode: 'L2E 6T2'
+    }
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
+export const publicHealth: PlatinumBoothData = {
+  id: 'public-health',
+  name: 'PublicHealth',
+  slug: 'public-health',
+  tier: 'platinum',
+  industry: 'Healthcare',
+  organizationType: 'employer',
+  pathway: 'university',
+  logo: '/images/booths/logo-27.png',
+  tagline: 'Protecting communities promoting wellness',
+  description: 'PublicHealth Ontario works to prevent disease and promote health across all Ontario communities.',
+  website: 'https://publichealth.example.com',
+  video: {
+    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    type: 'youtube',
+    title: 'Public Health Careers',
+    description: 'Make a difference in public health'
+  },
+  resources: [
+    {
+      title: 'Career Opportunities',
+      description: 'Explore diverse public health roles',
+      url: 'https://example.com/public-health.pdf',
+      type: 'pdf',
+      fileSize: '2.5 MB'
+    }
+  ],
+  primaryCTA: {
+    text: 'View Positions',
+    url: 'https://publichealth.example.com/careers',
+    type: 'careers'
+  },
+  contact: {
+    email: 'careers@publichealth.example.com',
+    phone: '1-866-555-HEALTH',
+    headquarters: {
+      address: '1900 Health Street',
+      city: 'Toronto',
+      province: 'ON',
+      postalCode: 'M5G 1V2'
+    }
   },
   brandColors: {
     primary: '#0092FF',
@@ -684,44 +1363,38 @@ export const creativeMindsColl: PlatinumBoothData = {
 }
 
 // ======================
-// STANDARD TIER BOOTHS
+// STANDARD TIER BOOTHS (2 TOTAL)
 // ======================
 
 export const localManufacturing: StandardBoothData = {
   id: 'local-manufacturing',
-  name: 'Ontario Local Manufacturing Co.',
+  name: 'LocalMake Co',
   slug: 'local-manufacturing',
   tier: 'standard',
   industry: 'Manufacturing',
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
-  logo: '/logos/local-manufacturing.svg',
-  tagline: 'Building Products, Building Careers',
-  description: 'Ontario Local Manufacturing is a family-owned company producing precision automotive parts for major manufacturers across North America. We\'re actively hiring for machine operator, quality control, and production supervisor roles. We offer paid on-the-job training, competitive wages starting at $22/hour, benefits after 90 days, and clear career progression paths.',
-  website: 'https://localmanufacturing.example.com',
+  logo: '/images/booths/logo-28.png',
+  tagline: 'Building products building careers',
+  description: 'LocalMake Co is a family-owned manufacturing company producing precision components with competitive wages and benefits.',
+  website: 'https://localmake.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     type: 'youtube',
     title: 'Inside Our Facility',
-    description: 'See our modern manufacturing operations'
+    description: 'See our modern operations'
   },
   resources: [
     {
       title: 'Open Positions',
-      description: 'View current job openings and requirements',
+      description: 'View current job openings',
       url: 'https://example.com/jobs.pdf',
       type: 'pdf',
       fileSize: '400 KB'
     },
     {
-      title: 'Application Guide',
-      description: 'How to apply and what to expect',
-      url: 'https://example.com/apply-guide',
-      type: 'link'
-    },
-    {
-      title: 'Benefits Overview',
-      description: 'Our compensation and benefits package',
+      title: 'Benefits Package',
+      description: 'Our compensation and benefits',
       url: 'https://example.com/benefits.pdf',
       type: 'pdf',
       fileSize: '250 KB'
@@ -730,17 +1403,17 @@ export const localManufacturing: StandardBoothData = {
   googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
   primaryCTA: {
     text: 'Apply Now',
-    url: 'https://localmanufacturing.example.com/apply',
+    url: 'https://localmake.example.com/apply',
     type: 'application'
   },
   secondaryCTA: {
     text: 'Schedule Tour',
-    url: 'https://localmanufacturing.example.com/tour',
+    url: 'https://localmake.example.com/tour',
     type: 'contact'
   },
   contact: {
-    email: 'hr@localmanufacturing.example.com',
-    phone: '905-555-MAKE',
+    email: 'hr@localmake.example.com',
+    phone: '905-555-5678',
     headquarters: {
       address: '45 Industrial Drive',
       city: 'Hamilton',
@@ -748,10 +1421,7 @@ export const localManufacturing: StandardBoothData = {
       postalCode: 'L8E 2X9'
     },
     socialLinks: [
-      {
-        platform: 'facebook',
-        url: 'https://facebook.com/localmanufacturing'
-      }
+      { platform: 'facebook', url: 'https://facebook.com/localmake' }
     ]
   },
   brandColors: {
@@ -762,52 +1432,46 @@ export const localManufacturing: StandardBoothData = {
 
 export const communityCollege: StandardBoothData = {
   id: 'community-college',
-  name: 'Northern Ontario Community College',
+  name: 'Community College',
   slug: 'community-college',
   tier: 'standard',
   industry: 'Education',
   organizationType: 'post-secondary',
   pathway: 'college',
-  logo: '/logos/community-college.svg',
-  tagline: 'Accessible Education, Real Results',
-  description: 'Northern Ontario Community College offers affordable, career-focused programs with small class sizes and personalized attention. With campuses in 7 communities, we make post-secondary education accessible across Northern Ontario. Our programs in business, healthcare, trades, and technology are designed with employer input to ensure graduates have the skills employers actually need.',
-  website: 'https://northerncollege.example.com',
+  logo: '/images/booths/logo-29.png',
+  tagline: 'Accessible education real results',
+  description: 'Community College offers affordable career-focused programs with small class sizes across multiple campus locations.',
+  website: 'https://communitycollege.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     type: 'youtube',
-    title: 'Your Community College',
-    description: 'Discover accessible education close to home'
+    title: 'Your College',
+    description: 'Discover accessible education'
   },
   resources: [
     {
-      title: 'Program Guide 2025',
-      description: 'All programs and admission requirements',
+      title: 'Program Guide',
+      description: 'All programs and requirements',
       url: 'https://example.com/programs.pdf',
       type: 'pdf',
       fileSize: '2.1 MB'
     },
     {
-      title: 'Financial Aid & Scholarships',
-      description: 'How to make college affordable',
+      title: 'Financial Aid',
+      description: 'Making college affordable',
       url: 'https://example.com/financial-aid',
-      type: 'link'
-    },
-    {
-      title: 'Campus Locations',
-      description: 'Find the campus closest to you',
-      url: 'https://example.com/campuses',
       type: 'link'
     }
   ],
   googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
   primaryCTA: {
-    text: 'Apply for Fall 2025',
-    url: 'https://northerncollege.example.com/apply',
+    text: 'Apply Today',
+    url: 'https://communitycollege.example.com/apply',
     type: 'application'
   },
   contact: {
-    email: 'info@northerncollege.example.com',
-    phone: '1-800-NO-COLLEGE',
+    email: 'info@communitycollege.example.com',
+    phone: '1-800-555-COLLEGE',
     headquarters: {
       address: '640 Elm Street',
       city: 'Sudbury',
@@ -815,157 +1479,8 @@ export const communityCollege: StandardBoothData = {
       postalCode: 'P3E 2E4'
     },
     socialLinks: [
-      {
-        platform: 'facebook',
-        url: 'https://facebook.com/northerncollege'
-      },
-      {
-        platform: 'instagram',
-        url: 'https://instagram.com/northerncollege'
-      }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
-export const retailCareers: StandardBoothData = {
-  id: 'retail-careers',
-  name: 'Ontario Retail Partners',
-  slug: 'retail-careers',
-  tier: 'standard',
-  industry: 'Retail',
-  organizationType: 'employer',
-  pathway: 'direct-to-workplace',
-  logo: '/logos/retail-partners.svg',
-  tagline: 'Start Here, Go Anywhere',
-  description: 'Ontario Retail Partners represents a network of 15+ retail brands offering part-time and full-time opportunities across the province. Retail is an excellent starting point for developing customer service, sales, inventory management, and leadership skills. Many of our district and regional managers started as part-time sales associates while in high school or college.',
-  website: 'https://retailcareers.example.com',
-  video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    type: 'youtube',
-    title: 'Retail Careers That Grow With You',
-    description: 'Hear from associates who advanced to management'
-  },
-  resources: [
-    {
-      title: 'Retail Career Ladder',
-      description: 'See how far you can go in retail',
-      url: 'https://example.com/career-ladder.pdf',
-      type: 'pdf',
-      fileSize: '600 KB'
-    },
-    {
-      title: 'Available Positions',
-      description: 'Browse current openings by location',
-      url: 'https://example.com/positions',
-      type: 'link'
-    },
-    {
-      title: 'Employee Perks',
-      description: 'Discounts, benefits, and scheduling flexibility',
-      url: 'https://example.com/perks',
-      type: 'link'
-    }
-  ],
-  googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
-  primaryCTA: {
-    text: 'Search Jobs',
-    url: 'https://retailcareers.example.com/jobs',
-    type: 'careers'
-  },
-  contact: {
-    email: 'hiring@retailcareers.example.com',
-    phone: '1-888-RETAIL-1',
-    headquarters: {
-      address: '200 Commerce Way',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M1P 5B4'
-    },
-    socialLinks: [
-      {
-        platform: 'instagram',
-        url: 'https://instagram.com/retailcareers'
-      },
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/company/retailcareers'
-      }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
-export const publicServiceCareers: StandardBoothData = {
-  id: 'public-service',
-  name: 'Ontario Public Service',
-  slug: 'public-service',
-  tier: 'standard',
-  industry: 'Government',
-  organizationType: 'employer',
-  pathway: 'university',
-  logo: '/logos/public-service.svg',
-  tagline: 'Serve Your Community, Build Your Career',
-  description: 'The Ontario Public Service employs over 70,000 people in hundreds of different roles across the province. From policy analysts and social workers to IT specialists and project managers, we offer meaningful careers that make a difference. We\'re committed to building a diverse workforce that reflects the communities we serve, with competitive compensation, excellent benefits, and strong work-life balance.',
-  website: 'https://ontariopublicservice.example.com',
-  video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    type: 'youtube',
-    title: 'Public Service Careers',
-    description: 'Discover the diverse roles in government'
-  },
-  resources: [
-    {
-      title: 'Student Programs Guide',
-      description: 'Co-op, internship, and summer opportunities',
-      url: 'https://example.com/student-programs.pdf',
-      type: 'pdf',
-      fileSize: '1.5 MB'
-    },
-    {
-      title: 'Career Exploration Tool',
-      description: 'Find roles that match your interests and skills',
-      url: 'https://example.com/career-tool',
-      type: 'link'
-    },
-    {
-      title: 'Benefits Overview',
-      description: 'Comprehensive benefits and pension information',
-      url: 'https://example.com/benefits.pdf',
-      type: 'pdf',
-      fileSize: '900 KB'
-    }
-  ],
-  googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
-  primaryCTA: {
-    text: 'View Opportunities',
-    url: 'https://ontariopublicservice.example.com/careers',
-    type: 'careers'
-  },
-  contact: {
-    email: 'recruitment@ops.example.com',
-    phone: '1-866-ONT-JOBS',
-    headquarters: {
-      address: '900 Bay Street',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M7A 1N3'
-    },
-    socialLinks: [
-      {
-        platform: 'linkedin',
-        url: 'https://linkedin.com/company/ontario-public-service'
-      },
-      {
-        platform: 'twitter',
-        url: 'https://twitter.com/ONpublicservice'
-      }
+      { platform: 'facebook', url: 'https://facebook.com/communitycollege' },
+      { platform: 'instagram', url: 'https://instagram.com/communitycollege' }
     ]
   },
   brandColors: {
@@ -979,20 +1494,37 @@ export const publicServiceCareers: StandardBoothData = {
 // ======================
 
 export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
-  // Platinum Tier
-  techInnovators,
-  healthCarePlus,
-  universityOfOntario,
-  skilledTradesCollege,
-  globalExplorations,
-  financialServicesGroup,
-  greenEnergyInnovations,
-  creativeMindsColl,
-  // Standard Tier
+  // Platinum Tier (27 booths)
+  techVision,
+  healthFirst,
+  futureBuild,
+  financeHub,
+  eduPath,
+  tradesMaster,
+  worldExplorer,
+  greenPower,
+  creativeMinds,
+  dataDynamics,
+  marketGenius,
+  consultPro,
+  manufactureTech,
+  cyberShield,
+  bioMedical,
+  architectDesign,
+  foodService,
+  legalServices,
+  socialImpact,
+  urbanPlanning,
+  sportsManagement,
+  environmentalConsulting,
+  automotiveTech,
+  fashionDesign,
+  aviationAcademy,
+  hospitalityCollege,
+  publicHealth,
+  // Standard Tier (2 booths)
   localManufacturing,
-  communityCollege,
-  retailCareers,
-  publicServiceCareers
+  communityCollege
 ]
 
 export const platinumBooths = allBooths.filter(booth => booth.tier === 'platinum') as PlatinumBoothData[]

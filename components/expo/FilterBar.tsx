@@ -63,7 +63,7 @@ export default function FilterBar({
           <button
             onClick={() => onOrganizationTypeChange('all')}
             className={`
-              px-4 py-2 rounded-full text-compact font-light transition-all
+              px-3 py-1.5 rounded-full text-compact font-light transition-all
               ${organizationType === 'all'
                 ? 'bg-primary-blue text-white'
                 : 'bg-neutral-2 text-neutral-5 hover:bg-neutral-3'
@@ -75,7 +75,7 @@ export default function FilterBar({
           <button
             onClick={() => onOrganizationTypeChange('employer')}
             className={`
-              px-4 py-2 rounded-full text-compact font-light transition-all flex items-center gap-2
+              px-3 py-1.5 rounded-full text-compact font-light transition-all flex items-center gap-2
               ${organizationType === 'employer'
                 ? 'bg-primary-blue text-white'
                 : 'bg-neutral-2 text-neutral-5 hover:bg-neutral-3'
@@ -88,7 +88,7 @@ export default function FilterBar({
           <button
             onClick={() => onOrganizationTypeChange('post-secondary')}
             className={`
-              px-4 py-2 rounded-full text-compact font-light transition-all flex items-center gap-2
+              px-3 py-1.5 rounded-full text-compact font-light transition-all flex items-center gap-2
               ${organizationType === 'post-secondary'
                 ? 'bg-primary-blue text-white'
                 : 'bg-neutral-2 text-neutral-5 hover:bg-neutral-3'
@@ -101,7 +101,7 @@ export default function FilterBar({
           <button
             onClick={() => onOrganizationTypeChange('gap-year')}
             className={`
-              px-4 py-2 rounded-full text-compact font-light transition-all flex items-center gap-2
+              px-3 py-1.5 rounded-full text-compact font-light transition-all flex items-center gap-2
               ${organizationType === 'gap-year'
                 ? 'bg-primary-blue text-white'
                 : 'bg-neutral-2 text-neutral-5 hover:bg-neutral-3'

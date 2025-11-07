@@ -34,6 +34,25 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
     setIsImageError(true)
   }
 
+  // Split title into two lines for consistent display
+  const splitTitle = (title: string): [string, string] => {
+    const words = title.split(' ')
+
+    // If only one word, return it on first line with empty second line
+    if (words.length === 1) {
+      return [title, '']
+    }
+
+    // Find the midpoint to split
+    const midpoint = Math.ceil(words.length / 2)
+    const firstLine = words.slice(0, midpoint).join(' ')
+    const secondLine = words.slice(midpoint).join(' ')
+
+    return [firstLine, secondLine]
+  }
+
+  const [titleLine1, titleLine2] = splitTitle(booth.name)
+
   // Tier-specific styles
   const getTierStyles = () => {
     switch (booth.tier) {
@@ -203,8 +222,9 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
                 ease: [0.4, 0, 0.2, 1]
               }}
             >
-              <h3 className="text-body-1 font-black text-brand-navy line-clamp-2" title={booth.name}>
-                {booth.name}
+              <h3 className="text-body-1 font-black text-brand-navy" title={booth.name}>
+                <div className="line-clamp-1">{titleLine1}</div>
+                {titleLine2 && <div className="line-clamp-1">{titleLine2}</div>}
               </h3>
               <p className="text-body-2 font-light text-neutral-5 line-clamp-2" title={booth.tagline}>
                 {booth.tagline}
