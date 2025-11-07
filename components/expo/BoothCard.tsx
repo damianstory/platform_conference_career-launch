@@ -41,11 +41,11 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
         return {
           wrapper: 'col-span-2',
           card: `
-            bg-gradient-to-br from-light-blue/30 via-off-white to-light-blue/30
+            bg-gradient-to-br from-primary-blue/20 via-primary-blue/5 to-primary-blue/15
             border-2 border-primary-blue/20 hover:border-primary-blue
             relative overflow-hidden
             before:absolute before:inset-0
-            before:bg-gradient-to-r before:from-primary-blue/10 before:via-brand-navy/10 before:to-primary-blue/10
+            before:bg-gradient-to-r before:from-primary-blue/15 before:via-primary-blue/10 before:to-primary-blue/15
             before:opacity-0 hover:before:opacity-100 before:transition-opacity
           `,
           badge: 'bg-gradient-to-r from-primary-blue to-brand-navy text-white shadow-lg shadow-primary-blue/30',
@@ -78,13 +78,6 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
     if (tier === 'platinum') {
       return (
         <div className="relative group">
-          {/* Animated background particles for platinum - only CSS hover, no JS state */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute top-4 left-4 w-2 h-2 bg-primary-blue rounded-full animate-particle-float-1"></div>
-            <div className="absolute top-8 right-6 w-1 h-1 bg-light-blue rounded-full animate-particle-float-2"></div>
-            <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-primary-blue rounded-full animate-particle-float-3"></div>
-          </div>
-
           {/* Shimmer effect on hover - only CSS hover, no JS state */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 shimmer-effect group-hover:animate-shimmer"></div>
 
@@ -228,8 +221,8 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
             {/* Decorative Elements for Platinum Tier - Pure CSS hover */}
             {booth.tier === 'platinum' && (
               <div className="absolute top-0 left-0 w-full h-full rounded-xl pointer-events-none overflow-hidden">
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-primary-blue/10 to-light-blue/10 rounded-full blur-3xl opacity-60 scale-100 group-hover:opacity-80 group-hover:scale-110 transition-all duration-300"></div>
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-light-blue/10 to-brand-navy/10 rounded-full blur-3xl opacity-50 scale-100 group-hover:opacity-70 group-hover:scale-120 transition-all duration-400"></div>
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-primary-blue/15 to-primary-blue/10 rounded-full blur-3xl opacity-60 scale-100 group-hover:opacity-80 group-hover:scale-110 transition-all duration-300"></div>
+                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-primary-blue/10 to-primary-blue/5 rounded-full blur-3xl opacity-50 scale-100 group-hover:opacity-70 group-hover:scale-120 transition-all duration-400"></div>
               </div>
             )}
           </motion.div>

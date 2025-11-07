@@ -352,17 +352,12 @@ export default function ExpoHall() {
                   {/* Platinum Booths Section */}
                   {boothsByTier.platinum.length > 0 && (
                     <div>
-                      <motion.div
-                        className="mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-                      >
-                        <h2 className="text-3xl font-bold animated-gradient-text mb-2">
+                      <div className="mb-6">
+                        <h2 className="text-3xl font-bold text-brand-navy mb-2">
                           Platinum Booths
                         </h2>
                         <div className="h-1.5 w-24 bg-primary-blue rounded-full"></div>
-                      </motion.div>
+                      </div>
                       <div className="expo-booth-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {boothsByTier.platinum.map((booth, index) => (
                           <motion.div
@@ -388,17 +383,12 @@ export default function ExpoHall() {
                   {/* Standard Booths Section */}
                   {boothsByTier.standard.length > 0 && (
                     <div>
-                      <motion.div
-                        className="mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-                      >
+                      <div className="mb-6">
                         <h2 className="text-xl font-semibold text-neutral-5 mb-2">
                           Standard Booths
                         </h2>
                         <div className="h-0.5 w-16 bg-neutral-4 rounded-full"></div>
-                      </motion.div>
+                      </div>
                       <div className="expo-booth-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {boothsByTier.standard.map((booth, index) => (
                           <motion.div
