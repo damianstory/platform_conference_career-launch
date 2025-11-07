@@ -6,6 +6,24 @@
   --color-off-white: #F6F6FF;
   --color-white: #FFFFFF;
 
+  /* Booth-specific color aliases */
+  --primary-blue: #0092FF;
+  --brand-navy: #22224C;
+  --light-blue: #C6E7FF;
+  --background-light: #F9FAFB;
+  --secondary-blue-pale: #E6F4FF;
+  --off-white: #F6F6FF;
+  --background-white: #FFFFFF;
+
+  /* Neutral blue-gray palette (branded) */
+  --neutral-1: #E5E9F1;
+  --neutral-2: #D9DFEA;
+  --neutral-3: #AAB7CB;
+  --neutral-4: #65738B;
+  --neutral-5: #485163;
+  --neutral-6: #252A33;
+  --gray-100: #F3F4F6;
+
   /* Typography */
   --font-primary: 'Open Sans', system-ui, sans-serif;
 
@@ -19,6 +37,11 @@
   --space-7: 56px;
   --space-8: 64px;
 
+  /* Booth-specific spacing */
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -28,4 +51,7 @@
   --shadow-sm: 0 1px 2px rgba(34, 34, 76, 0.05);
   --shadow-md: 0 4px 6px rgba(34, 34, 76, 0.1);
   --shadow-lg: 0 10px 15px rgba(34, 34, 76, 0.15);
+
+  /* Animation easing */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
 }

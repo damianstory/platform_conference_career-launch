@@ -9,14 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: '#22224C',
-        blue: '#0092FF',
+        // Primary brand colors
+        'primary-blue': '#0092FF',
+        'brand-navy': '#22224C',
+        'background-light': '#F9FAFB',
+        'secondary-blue-pale': '#E6F4FF',
         'light-blue': '#C6E7FF',
         'off-white': '#F6F6FF',
+        // Neutral palette (matches design-tokens.css)
+        'neutral-1': '#E5E9F1',
+        'neutral-2': '#D9DFEA',
+        'neutral-3': '#AAB7CB',
+        'neutral-4': '#65738B',
+        'neutral-5': '#485163',
+        'neutral-6': '#252A33',
+        // Block colors (keep existing)
         'block1': '#0066CC',
         'block2': '#0092FF',
         'block3': '#33AAFF',
         'block4': '#66C2FF',
+        // Legacy aliases (for compatibility)
+        navy: '#22224C',
+        blue: '#0092FF',
+      },
+      fontSize: {
+        'header-1': ['4rem', { lineHeight: '5rem' }],
+        'header-2': ['2.5rem', { lineHeight: '3.5rem' }],
+        'header-3': ['2rem', { lineHeight: '3rem' }],
+        'header-4': ['1.5rem', { lineHeight: '2.25rem' }],
+        'subheader': ['1.375rem', { lineHeight: '2rem' }],
+        'body-1': ['1.25rem', { lineHeight: '2rem' }],
+        'body-2': ['1rem', { lineHeight: '1.75rem' }],
+        'compact': ['0.875rem', { lineHeight: '1.25rem' }],
+        'subtitle-1': ['0.75rem', { lineHeight: '1.25rem' }],
+        'subtitle-2': ['0.625rem', { lineHeight: '1rem' }],
       },
       spacing: {
         '1': '8px',

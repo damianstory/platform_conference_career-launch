@@ -121,3 +121,71 @@ export function getClassSizeLabel(classSize: string): string {
   };
   return sizeLabels[classSize] || classSize;
 }
+
+// ============================================
+// BOOTH-SPECIFIC UTILITIES
+// ============================================
+
+/**
+ * Finds a booth by its slug from the sponsors array
+ * Useful for future dynamic routing to individual booth pages
+ */
+export function findBoothBySlug(
+  slug: string,
+  sponsors: Array<{ slug: string; [key: string]: any }>
+): any | undefined {
+  return sponsors.find((booth) => booth.slug === slug);
+}
+
+/**
+ * Gets display label for industry
+ */
+export function getIndustryLabel(industry: string): string {
+  const industryLabels: Record<string, string> = {
+    'Technology': 'Technology',
+    'Healthcare': 'Healthcare',
+    'Finance': 'Finance',
+    'Engineering': 'Engineering',
+    'Education': 'Education',
+    'Manufacturing': 'Manufacturing',
+    'Retail': 'Retail',
+    'Energy': 'Energy',
+    'Marketing': 'Marketing',
+    'Consulting': 'Consulting',
+  };
+  return industryLabels[industry] || industry;
+}
+
+/**
+ * Gets display label for pathway
+ */
+export function getPathwayLabel(pathway: string): string {
+  const pathwayLabels: Record<string, string> = {
+    'direct-to-workplace': 'Direct to Workplace',
+    'apprenticeship': 'Apprenticeship',
+    'college': 'College',
+    'university': 'University',
+    'gap-year': 'Gap Year',
+  };
+  return pathwayLabels[pathway] || pathway;
+}
+
+/**
+ * Gets all unique industries from sponsors array
+ */
+export function getUniqueIndustries(
+  sponsors: Array<{ industry: string; [key: string]: any }>
+): string[] {
+  const industries = sponsors.map((s) => s.industry);
+  return Array.from(new Set(industries)).sort();
+}
+
+/**
+ * Gets all unique pathways from sponsors array
+ */
+export function getUniquePathways(
+  sponsors: Array<{ pathway: string; [key: string]: any }>
+): string[] {
+  const pathways = sponsors.map((s) => s.pathway);
+  return Array.from(new Set(pathways)).sort();
+}

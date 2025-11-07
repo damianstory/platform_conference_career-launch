@@ -26,6 +26,38 @@
   *:focus:not(:focus-visible) {
     @apply outline-none;
   }
+
+  /* myBlueprint Brand Typography System */
+  .text-header-1 {
+    @apply text-[4rem] leading-[5rem] font-black;
+  }
+  .text-header-2 {
+    @apply text-[2.5rem] leading-[3.5rem] font-black;
+  }
+  .text-header-3 {
+    @apply text-[2rem] leading-[3rem] font-black;
+  }
+  .text-header-4 {
+    @apply text-[1.5rem] leading-[2.25rem] font-black;
+  }
+  .text-subheader {
+    @apply text-[1.375rem] leading-[2rem] font-medium;
+  }
+  .text-body-1 {
+    @apply text-[1.25rem] leading-[2rem];
+  }
+  .text-body-2 {
+    @apply text-[1rem] leading-[1.75rem];
+  }
+  .text-compact {
+    @apply text-[0.875rem] leading-[1.25rem];
+  }
+  .text-subtitle-1 {
+    @apply text-[0.75rem] leading-[1.25rem];
+  }
+  .text-subtitle-2 {
+    @apply text-[0.625rem] leading-[1rem];
+  }
 }
 
 @layer components {
@@ -50,6 +82,164 @@
   /* Container utilities */
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Booth-specific animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes particle-float-1 {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-30px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes particle-float-2 {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes particle-float-3 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-25px) translateX(10px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  /* Skeleton loader */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--neutral-2) 0%,
+      var(--neutral-1) 50%,
+      var(--neutral-2) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+
+  /* Shimmer effect */
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Animated gradient text */
+  .animated-gradient-text {
+    background: linear-gradient(
+      90deg,
+      var(--primary-blue),
+      var(--light-blue),
+      var(--primary-blue),
+      var(--light-blue)
+    );
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Float animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-particle-float-1 {
+    animation: particle-float-1 8s ease-in-out infinite;
+  }
+
+  .animate-particle-float-2 {
+    animation: particle-float-2 10s ease-in-out infinite;
+  }
+
+  .animate-particle-float-3 {
+    animation: particle-float-3 7s ease-in-out infinite;
+  }
+
+  /* Glow effects */
+  .glow-platinum {
+    box-shadow: 0 0 30px rgba(0, 146, 255, 0.3);
+  }
+
+  /* 3D transforms */
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
   }
 }
 
