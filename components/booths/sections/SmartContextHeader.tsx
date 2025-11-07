@@ -3,13 +3,13 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
-import { DeluxeBoothData, StandardBoothData } from '@/types/booth'
+import { PlatinumBoothData, StandardBoothData } from '@/types/booth'
 
 interface SmartContextHeaderProps {
-  sponsor: DeluxeBoothData | StandardBoothData
+  booth: PlatinumBoothData | StandardBoothData
 }
 
-const SmartContextHeader: React.FC<SmartContextHeaderProps> = ({ sponsor }) => {
+const SmartContextHeader: React.FC<SmartContextHeaderProps> = ({ booth }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -32,7 +32,12 @@ const SmartContextHeader: React.FC<SmartContextHeaderProps> = ({ sponsor }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const organizationType = sponsor.isPostSecondary ? 'Post-Secondary' : 'Employer'
+  const organizationTypeMap = {
+    'post-secondary': 'Post-Secondary Institution',
+    'employer': 'Employer',
+    'gap-year': 'Gap Year Program'
+  }
+  const organizationType = organizationTypeMap[booth.organizationType]
 
   return (
     <motion.header
@@ -51,7 +56,7 @@ const SmartContextHeader: React.FC<SmartContextHeaderProps> = ({ sponsor }) => {
           >
             {/* Back Button */}
             <motion.a
-              href="/"
+              href="/booths"
               className="group flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl hover:bg-primary-blue/5 transition-all duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -86,7 +91,7 @@ const SmartContextHeader: React.FC<SmartContextHeaderProps> = ({ sponsor }) => {
                   <ChevronRight className="w-4 h-4 text-neutral-5" />
                   <span className="text-neutral-5 hidden sm:inline">{organizationType}</span>
                   <ChevronRight className="w-4 h-4 text-neutral-5 hidden sm:inline" />
-                  <span className="text-brand-navy font-semibold">{sponsor.name}</span>
+                  <span className="text-brand-navy font-semibold">{booth.name}</span>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -103,15 +108,15 @@ const SmartContextHeader: React.FC<SmartContextHeaderProps> = ({ sponsor }) => {
                 >
                   <div className="w-px h-6 bg-neutral-2"></div>
                   <img
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
+                    src={booth.logo}
+                    alt={`${booth.name} logo`}
                     className="w-8 h-8 rounded object-contain"
                   />
                   <span className="text-base font-bold text-brand-navy hidden sm:inline">
-                    {sponsor.name}
+                    {booth.name}
                   </span>
                   <span className="text-sm font-bold text-brand-navy sm:hidden">
-                    {sponsor.name.split(' ')[0]}
+                    {booth.name.split(' ')[0]}
                   </span>
                 </motion.div>
               )}

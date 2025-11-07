@@ -1,0 +1,159 @@
+================================================================================
+  COMPACT BOOTH CARDS - QUICK START GUIDE
+================================================================================
+
+FILE TO EDIT: /components/expo/BoothCard.tsx
+
+TIME: 30-45 minutes
+RISK: Low (visual only, no logic changes)
+
+================================================================================
+  WHAT TO REMOVE
+================================================================================
+
+1. Lines 165-170: "Industry Immersion Series" badge (entire <div> block)
+2. Lines 234-262: Tag pills section (organization type + industry)
+3. Lines 37-42: orgTypeBadgeColor variable (no longer needed)
+
+================================================================================
+  WHAT TO CHANGE
+================================================================================
+
+Line 116: min-h-[360px]        →  h-[224px]
+Line 112: p-6                  →  p-4
+Line 174: mt-12                →  (remove mt-12)
+Line 174: mb-4                 →  mb-3
+Line 183: w-24 h-24            →  w-16 h-16
+
+Title (line 227-229):
+  FROM: <h3 className="text-body-1 font-black text-brand-navy">
+  TO:   <h3 className="text-[18px] leading-6 font-extrabold text-brand-navy
+                       line-clamp-2 h-12 mb-2 tracking-tight break-words
+                       hyphens-auto"
+              title={booth.name}
+              aria-label={booth.name}>
+
+Description (line 230-232):
+  FROM: <p className="text-body-2 font-light text-neutral-5 flex-grow">
+  TO:   <p className="text-compact leading-[22px] font-normal text-neutral-5
+                      line-clamp-2 h-11 break-words"
+             title={booth.tagline}
+             aria-label={booth.tagline}>
+
+Container (line 217):
+  FROM: <motion.div className="flex-grow flex flex-col space-y-3">
+  TO:   <motion.div className="flex flex-col">
+
+================================================================================
+  MEASUREMENTS TO VERIFY
+================================================================================
+
+Card Height:     224px (FIXED, not min-height)
+Card Padding:    16px (p-4)
+Logo Size:       64×64px (w-16 h-16)
+Logo Gap:        12px (mb-3)
+Title:           18px font / 24px line-height / 48px container / 2-line clamp
+Title Gap:       8px (mb-2)
+Description:     14px font / 22px line-height / 44px container / 2-line clamp
+
+HEIGHT CALCULATION:
+  16px padding top
+  64px logo
+  12px gap
+  48px title (2 lines)
+   8px gap
+  44px description (2 lines)
+  16px reserved for hover CTA
+  16px padding bottom
+  ────────────────
+  224px TOTAL ✓
+
+================================================================================
+  TEST CASES
+================================================================================
+
+SHORT NAME:      "IBM" → single line, card stays 224px ✓
+LONG NAME:       "Ontario College of Trades..." → 2 lines with ellipsis ✓
+VERY LONG NAME:  80+ chars → truncates at 2 lines with ellipsis ✓
+LONG DESC:       100+ chars → truncates at 2 lines with ellipsis ✓
+MISSING LOGO:    Shows "IB" fallback in neutral colors ✓
+
+RESPONSIVE:
+  Mobile (375px):   Single column, all full width, 2-3 cards visible ✓
+  Tablet (768px):   2 columns, all full width, 3-4 cards visible ✓
+  Desktop (1440px): 4 columns, platinum spans 2, 7-8 cards visible ✓
+
+ACCESSIBILITY:
+  Keyboard nav:     Tab through cards, focus visible ✓
+  Screen reader:    Full text announced via title/aria-label ✓
+  Color contrast:   All text ≥4.5:1 ratio ✓
+  Touch targets:    All cards >44×44px ✓
+
+================================================================================
+  BEFORE/AFTER SUMMARY
+================================================================================
+
+                    BEFORE          AFTER          CHANGE
+  ──────────────────────────────────────────────────────────
+  Card Height       360px           224px          -38%
+  Elements          7               4              -43%
+  Visible Booths    4-5             7-8            +60%
+  DOM Nodes/Card    ~25             ~15            -40%
+
+  REMOVED:
+    ❌ "Industry Immersion Series" badge
+    ❌ Organization type pill
+    ❌ Industry pill
+
+  KEPT:
+    ✓ Logo (reduced 96×96 → 64×64)
+    ✓ Title (with 2-line clamp)
+    ✓ Description (with 2-line clamp)
+    ✓ Hover CTA overlay
+
+================================================================================
+  COMMIT MESSAGE
+================================================================================
+
+Refactor: Implement compact booth card design
+
+- Reduce card height from 360px to 224px (38% reduction)
+- Remove 'Industry Immersion Series' badge
+- Remove organization type and industry tag pills
+- Reduce logo from 96x96 to 64x64
+- Add strict 2-line clamping to title and description
+- Improve information density by 60%
+- Maintain WCAG AA accessibility standards
+
+Addresses: Display 27 platinum booths effectively
+
+================================================================================
+  ROLLBACK IF NEEDED
+================================================================================
+
+git revert <commit-hash>
+
+OR
+
+git checkout backup-booth-cards-360px -- components/expo/BoothCard.tsx
+
+================================================================================
+  DETAILED DOCUMENTATION
+================================================================================
+
+This folder contains complete specifications:
+
+  README.md                   - Overview and design goals
+  IMPLEMENTATION_SUMMARY.md   - Executive summary (START HERE)
+  implementation-guide.md     - Step-by-step code changes
+  card-dimensions.md          - Exact pixel measurements
+  typography-hierarchy.md     - Font sizes, weights, line heights
+  visual-system.md            - Colors, borders, shadows
+  grid-layout.md              - Responsive grid configurations
+  visual-comparison.md        - Before/after analysis
+
+================================================================================
+
+Ready? Start editing /components/expo/BoothCard.tsx now!
+
+🚀 You've got this!

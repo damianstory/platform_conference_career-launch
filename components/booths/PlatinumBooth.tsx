@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { DeluxeBoothProps } from '@/types/booth'
+import { PlatinumBoothProps } from '@/types/booth'
 import SmartContextHeader from './sections/SmartContextHeader'
 import BoothHeader from './sections/BoothHeader'
 import CompanyStory from './sections/CompanyStory'
@@ -10,52 +10,51 @@ import EngagementActivity from './sections/EngagementActivity'
 import SessionSlides from './sections/SessionSlides'
 import ResourceCards from './sections/ResourceCards'
 import ContactInfo from './sections/ContactInfo'
-import FooterCTA from './sections/FooterCTA'
 
-const DeluxeBooth: React.FC<DeluxeBoothProps> = ({ sponsor }) => {
+const PlatinumBooth: React.FC<PlatinumBoothProps> = ({ booth }) => {
   const bentoCardClass = "bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden"
 
   return (
     <div className="min-h-screen bg-background-light">
-      <SmartContextHeader sponsor={sponsor} />
+      <SmartContextHeader booth={booth} />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
           <div className={`${bentoCardClass} p-0`}>
-            <BoothHeader sponsor={sponsor} />
+            <BoothHeader booth={booth} />
           </div>
         </div>
 
         <div className="expo-bento-grid">
           <div className={`${bentoCardClass} p-0 col-span-12 sm:col-span-6 lg:col-span-4 hover:scale-[1.02] h-[450px] lg:h-[500px]`}>
-            <VideoSection video={sponsor.video} />
+            <VideoSection video={booth.video} />
           </div>
 
-          {sponsor.engagementActivity && (
+          {booth.engagementActivity && (
             <div className={`col-span-12 sm:col-span-6 lg:col-span-8 rounded-xl overflow-hidden hover:scale-[1.02] hover:-rotate-1 transition-all duration-300 h-[450px] lg:h-[500px]`}>
               <EngagementActivity
-                activity={sponsor.engagementActivity}
-                brandColors={sponsor.brandColors}
+                activity={booth.engagementActivity}
+                brandColors={booth.brandColors}
               />
             </div>
           )}
 
           <div className={`${bentoCardClass} p-6 col-span-12 sm:col-span-6 lg:col-span-6 hover:scale-[1.02] hover:rotate-1 h-[450px]`}>
-            <ResourceCards resources={sponsor.resources} maxDisplay={5} variant="mosaic" />
+            <ResourceCards resources={booth.resources} maxDisplay={5} variant="mosaic" />
           </div>
 
-          {sponsor.sessionSlides && (
+          {booth.sessionSlides && (
             <div className={`${bentoCardClass} p-6 col-span-12 sm:col-span-6 lg:col-span-6 hover:scale-[1.02] h-[450px]`}>
-              <SessionSlides slides={sponsor.sessionSlides} />
+              <SessionSlides slides={booth.sessionSlides} />
             </div>
           )}
 
           <div className="col-span-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:h-[220px]">
             <div className={`${bentoCardClass} p-6 col-span-12 lg:col-span-8 h-full`}>
-              <CompanyStory description={sponsor.description} maxLength={420} />
+              <CompanyStory description={booth.description} maxLength={420} />
             </div>
             <div className={`${bentoCardClass} p-6 col-span-12 lg:col-span-4 h-full`}>
-              <ContactInfo contact={sponsor.contact} website={sponsor.website} />
+              <ContactInfo contact={booth.contact} website={booth.website} />
             </div>
           </div>
         </div>
@@ -89,4 +88,4 @@ const DeluxeBooth: React.FC<DeluxeBoothProps> = ({ sponsor }) => {
   )
 }
 
-export default DeluxeBooth
+export default PlatinumBooth

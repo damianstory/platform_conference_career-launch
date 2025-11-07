@@ -1,21 +1,28 @@
 'use client'
 
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Gift } from 'lucide-react'
-import { DeluxeBoothData, StandardBoothData } from '@/types/booth'
+import { Sparkles } from 'lucide-react'
+import { PlatinumBoothData, StandardBoothData } from '@/types/booth'
 
 interface BoothCardProps {
-  sponsor: DeluxeBoothData | StandardBoothData
+  booth: PlatinumBoothData | StandardBoothData
   index?: number
+  isHighlighted?: boolean
 }
 
-export default function BoothCard({ sponsor, index = 0 }: BoothCardProps) {
+export default function BoothCard({ booth, index = 0, isHighlighted = false }: BoothCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
-  const [isHovered, setIsHovered] = useState(false)
   const [isImageLoading, setIsImageLoading] = useState(true)
   const [isImageError, setIsImageError] = useState(false)
+
+  // Scroll into view when highlighted
+  useEffect(() => {
+    if (isHighlighted && cardRef.current) {
+      cardRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [isHighlighted])
 
   const handleImageLoad = () => {
     setIsImageLoading(false)
@@ -27,34 +34,38 @@ export default function BoothCard({ sponsor, index = 0 }: BoothCardProps) {
     setIsImageError(true)
   }
 
+  // Tier-specific styles
   const getTierStyles = () => {
-    switch (sponsor.tier) {
+    switch (booth.tier) {
       case 'platinum':
         return {
-          wrapper: 'col-span-2 md:col-span-3 lg:col-span-3 xl:col-span-3',
-          card: `bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50 border-2
-                 border-transparent hover:border-blue-500 relative overflow-hidden
-                 before:absolute before:inset-0 before:bg-gradient-to-r
-                 before:from-blue-600/20 before:via-cyan-600/20 before:to-blue-600/20
-                 before:opacity-0 hover:before:opacity-100 before:transition-opacity`,
-          trophy: 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-yellow-900 animate-pulse shadow-lg shadow-yellow-400/50',
-          glow: 'hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-[1.02]',
+          wrapper: 'col-span-2',
+          card: `
+            bg-gradient-to-br from-light-blue/30 via-off-white to-light-blue/30
+            border-2 border-primary-blue/20 hover:border-primary-blue
+            relative overflow-hidden
+            before:absolute before:inset-0
+            before:bg-gradient-to-r before:from-primary-blue/10 before:via-brand-navy/10 before:to-primary-blue/10
+            before:opacity-0 hover:before:opacity-100 before:transition-opacity
+          `,
+          badge: 'bg-gradient-to-r from-primary-blue to-brand-navy text-white shadow-lg shadow-primary-blue/30',
+          glow: 'hover:shadow-2xl hover:shadow-primary-blue/25 transform hover:scale-[1.02]',
           animation: 'animate-float',
           priority: 1
         }
-      case 'silver':
+      case 'standard':
         return {
-          wrapper: 'col-span-2 md:col-span-1 lg:col-span-1',
-          card: 'bg-white border-2 border-gray-200 hover:border-gray-300',
-          trophy: 'bg-gradient-to-r from-gray-400 to-gray-500 text-gray-100',
+          wrapper: 'col-span-1',
+          card: 'bg-white border-2 border-neutral-2 hover:border-neutral-3',
+          badge: 'bg-neutral-4 text-white',
           glow: 'hover:shadow-lg',
-          priority: 3
+          priority: 2
         }
       default:
         return {
           wrapper: 'col-span-1',
           card: 'bg-off-white border-2 border-neutral-2',
-          trophy: 'bg-neutral-5 text-white',
+          badge: 'bg-neutral-5 text-white',
           glow: '',
         }
     }
@@ -62,16 +73,19 @@ export default function BoothCard({ sponsor, index = 0 }: BoothCardProps) {
 
   const styles = getTierStyles()
 
+  // Enhanced wrapper component for platinum cards only
   const PlatinumCardEnhancements = ({ children, tier }: { children: React.ReactNode, tier: string }) => {
     if (tier === 'platinum') {
       return (
         <div className="relative group">
+          {/* Animated background particles for platinum - only CSS hover, no JS state */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400 rounded-full animate-particle-float-1"></div>
-            <div className="absolute top-8 right-6 w-1 h-1 bg-cyan-400 rounded-full animate-particle-float-2"></div>
-            <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-blue-500 rounded-full animate-particle-float-3"></div>
+            <div className="absolute top-4 left-4 w-2 h-2 bg-primary-blue rounded-full animate-particle-float-1"></div>
+            <div className="absolute top-8 right-6 w-1 h-1 bg-light-blue rounded-full animate-particle-float-2"></div>
+            <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-primary-blue rounded-full animate-particle-float-3"></div>
           </div>
 
+          {/* Shimmer effect on hover - only CSS hover, no JS state */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 shimmer-effect group-hover:animate-shimmer"></div>
 
           {children}
@@ -82,54 +96,90 @@ export default function BoothCard({ sponsor, index = 0 }: BoothCardProps) {
   }
 
   return (
-    <PlatinumCardEnhancements tier={sponsor.tier}>
+    <PlatinumCardEnhancements tier={booth.tier}>
       <div className={`${styles.wrapper} booth-card-wrapper`}>
-        <Link href={`/${sponsor.slug}`}>
+        <Link href={`/booths/${booth.slug}`}>
           <motion.div
             ref={cardRef}
-            className={`booth-card group relative rounded-xl p-6 cursor-pointer flex flex-col
+            className={`
+              booth-card group relative rounded-xl pt-3 pb-4 px-5 cursor-pointer flex flex-col
               ${styles.card} ${styles.glow}
-              ${sponsor.tier === 'platinum' ? 'animate-float' : ''}
-              h-[320px]`}
+              ${booth.tier === 'platinum' ? 'animate-float' : ''}
+              ${isHighlighted ? 'ring-4 ring-primary-blue ring-offset-4 ring-offset-background-light' : ''}
+              h-[280px]
+            `}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: isHighlighted ? [1, 1.05, 1] : 1
+            }}
+            transition={{
+              delay: index * 0.05,
+              duration: 0.6,
+              ease: [0.4, 0, 0.2, 1]
+            }}
             whileHover={{
               scale: 1.02,
-              rotateY: sponsor.tier === 'platinum' ? 2 : 1,
-              rotateX: sponsor.tier === 'platinum' ? -1 : -0.5,
-              transition: { duration: 0.2, ease: [0.4, 0, 0.2, 1] }
+              rotateY: booth.tier === 'platinum' ? 2 : 1,
+              rotateX: booth.tier === 'platinum' ? -1 : -0.5,
+              transition: {
+                duration: 0.2,
+                ease: [0.4, 0, 0.2, 1]
+              }
             }}
-            whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
-            onHoverStart={() => setIsHovered(true)}
-            style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+            whileTap={{
+              scale: 0.98,
+              transition: { duration: 0.1 }
+            }}
+            style={{
+              transformStyle: 'preserve-3d',
+              perspective: 1000,
+            }}
           >
-            {sponsor.isPrize && (
+            {/* Sparkle icon for highlighted booth */}
+            {isHighlighted && (
               <motion.div
                 className="absolute top-4 right-4 z-10"
                 initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ delay: index * 0.05 + 0.2, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+                animate={{ scale: [1, 1.2, 1], rotate: [0, 360, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
               >
-                <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full ${styles.trophy}`}>
-                  <Gift size={18} />
+                <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-blue text-white shadow-lg">
+                  <Sparkles size={18} />
                 </div>
               </motion.div>
             )}
 
+            {/* Logo */}
             <motion.div
-              className="mb-4 flex-shrink-0"
+              className="mb-2 flex-shrink-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              transition={{
+                delay: index * 0.05,
+                duration: 0.6,
+                ease: [0.4, 0, 0.2, 1]
+              }}
             >
-              <div className="bg-neutral-2 rounded-lg flex items-center justify-center overflow-hidden relative w-20 h-20">
-                {isImageLoading && sponsor.logo && (
+              <div className={`
+                bg-white rounded-lg flex items-center justify-center overflow-hidden relative
+                w-20 h-20 shadow-sm
+              `}>
+                {/* Loading skeleton for image */}
+                {isImageLoading && booth.logo && (
                   <div className="absolute inset-0 skeleton rounded-lg" />
                 )}
 
-                {sponsor.logo && !isImageError ? (
+                {booth.logo && !isImageError ? (
                   <motion.img
-                    src={sponsor.logo}
-                    alt={`${sponsor.name} logo`}
-                    className="w-full h-full object-contain"
+                    src={booth.logo}
+                    alt={`${booth.name} logo`}
+                    className="w-full h-full object-contain p-2"
                     onLoad={handleImageLoad}
                     onError={handleImageError}
                     initial={{ opacity: 0 }}
@@ -143,47 +193,43 @@ export default function BoothCard({ sponsor, index = 0 }: BoothCardProps) {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {sponsor.name.substring(0, 2).toUpperCase()}
+                    {booth.name.substring(0, 2).toUpperCase()}
                   </motion.div>
                 )}
               </div>
             </motion.div>
 
+            {/* Company Info */}
             <motion.div
               className="flex-grow flex flex-col space-y-2"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 + 0.1, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              transition={{
+                delay: index * 0.05 + 0.1,
+                duration: 0.5,
+                ease: [0.4, 0, 0.2, 1]
+              }}
             >
-              <h3 className="text-body-1 font-black text-brand-navy line-clamp-2 whitespace-pre-line">
-                {sponsor.name}
+              <h3 className="text-body-1 font-black text-brand-navy line-clamp-2" title={booth.name}>
+                {booth.name}
               </h3>
-              <p className="text-body-2 font-light text-neutral-5 flex-grow line-clamp-2">
-                {sponsor.tagline}
+              <p className="text-body-2 font-light text-neutral-5 line-clamp-2" title={booth.tagline}>
+                {booth.tagline}
               </p>
-
-              <div className="flex flex-wrap gap-2 mt-auto pt-2">
-                <motion.span
-                  className="inline-block px-2 py-1 bg-primary-blue/10 text-primary-blue text-subtitle-1 font-medium rounded-full"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.05 + 0.3, duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                >
-                  {sponsor.industry}
-                </motion.span>
-              </div>
             </motion.div>
 
+            {/* Hover CTA - Pure CSS hover */}
             <div className="absolute bottom-4 left-4 right-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
-              <div className="bg-primary-blue text-white text-center py-2 px-4 rounded-lg font-medium text-sm shadow-lg">
+              <div className="bg-primary-blue text-white text-center py-2 px-4 rounded-lg font-medium text-sm shadow-lg hover:bg-brand-navy transition-colors">
                 Visit Booth →
               </div>
             </div>
 
-            {sponsor.tier === 'platinum' && (
+            {/* Decorative Elements for Platinum Tier - Pure CSS hover */}
+            {booth.tier === 'platinum' && (
               <div className="absolute top-0 left-0 w-full h-full rounded-xl pointer-events-none overflow-hidden">
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-primary-blue/10 to-purple-500/10 rounded-full blur-3xl opacity-60 scale-100 group-hover:opacity-80 group-hover:scale-110 transition-all duration-300"></div>
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-pink-500/10 to-indigo-500/10 rounded-full blur-3xl opacity-50 scale-100 group-hover:opacity-70 group-hover:scale-120 transition-all duration-400"></div>
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-primary-blue/10 to-light-blue/10 rounded-full blur-3xl opacity-60 scale-100 group-hover:opacity-80 group-hover:scale-110 transition-all duration-300"></div>
+                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-light-blue/10 to-brand-navy/10 rounded-full blur-3xl opacity-50 scale-100 group-hover:opacity-70 group-hover:scale-120 transition-all duration-400"></div>
               </div>
             )}
           </motion.div>

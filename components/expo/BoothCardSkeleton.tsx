@@ -4,23 +4,24 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 interface BoothCardSkeletonProps {
-  tier?: 'platinum' | 'silver'
+  tier?: 'platinum' | 'standard'
   index?: number
 }
 
-export default function BoothCardSkeleton({ tier = 'silver', index = 0 }: BoothCardSkeletonProps) {
+export default function BoothCardSkeleton({ tier = 'standard', index = 0 }: BoothCardSkeletonProps) {
+  // Tier-specific styles to match real cards
   const getTierStyles = () => {
     switch (tier) {
       case 'platinum':
         return {
-          wrapper: 'col-span-2 md:col-span-2 lg:col-span-2',
-          height: 'h-[320px]',
-          logoSize: 'w-24 h-24'
+          wrapper: 'col-span-2',
+          height: 'h-[280px]',
+          logoSize: 'w-20 h-20'
         }
-      case 'silver':
+      case 'standard':
         return {
-          wrapper: 'col-span-2 md:col-span-1 lg:col-span-1',
-          height: 'h-[320px]',
+          wrapper: 'col-span-1',
+          height: 'h-[280px]',
           logoSize: 'w-20 h-20'
         }
     }
@@ -40,26 +41,26 @@ export default function BoothCardSkeleton({ tier = 'silver', index = 0 }: BoothC
         ease: [0.4, 0, 0.2, 1]
       }}
     >
-      <div className={`relative rounded-xl p-6 flex flex-col bg-off-white border-2 border-neutral-2 ${styles.height}`}>
-        <div className="absolute top-4 right-4 z-10">
-          <div className="skeleton w-16 h-6 rounded-full"></div>
+      <div className={`
+        relative rounded-xl pt-3 pb-4 px-5 flex flex-col bg-off-white border-2 border-neutral-2
+        ${styles.height}
+      `}>
+        {/* Logo Skeleton */}
+        <div className="mb-2 flex-shrink-0">
+          <div className={`
+            skeleton rounded-lg
+            ${styles.logoSize}
+          `}></div>
         </div>
 
-        <div className="mb-4 flex-shrink-0">
-          <div className={`skeleton rounded-lg ${styles.logoSize}`}></div>
-        </div>
-
+        {/* Company Info Skeleton */}
         <div className="flex-grow flex flex-col space-y-2">
-          <div className="skeleton h-6 w-3/4 rounded mb-2"></div>
-          <div className="skeleton h-4 w-full rounded mb-1"></div>
-          <div className="skeleton h-4 w-2/3 rounded mb-1"></div>
-          {tier === 'platinum' && (
-            <div className="skeleton h-4 w-1/2 rounded mb-1"></div>
-          )}
+          {/* Company Name */}
+          <div className="skeleton h-6 w-3/4 rounded"></div>
 
-          <div className="flex flex-wrap gap-2 mt-auto pt-2">
-            <div className="skeleton w-20 h-6 rounded-full"></div>
-          </div>
+          {/* Tagline Lines */}
+          <div className="skeleton h-4 w-full rounded"></div>
+          <div className="skeleton h-4 w-2/3 rounded"></div>
         </div>
       </div>
     </motion.div>

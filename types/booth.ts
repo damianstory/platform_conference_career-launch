@@ -17,7 +17,7 @@ export interface ResourceItem {
 export interface CTAButton {
   text: string
   url: string
-  type?: 'website' | 'careers' | 'contact' | 'application'
+  type?: 'website' | 'careers' | 'contact' | 'application' | 'learn-more'
 }
 
 export interface BrandColors {
@@ -47,7 +47,7 @@ export interface ContactDetails {
     applicationUrl?: string
   }
   socialLinks?: Array<{
-    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok'
+    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube'
     url: string
   }>
 }
@@ -73,10 +73,12 @@ export interface EngagementActivityData {
     description: string
   }
   duration?: string
-  embedType?: 'iframe' | 'skills-gap-quiz'
+  embedType?: 'iframe' | 'skills-gap-quiz' | 'google-form'
 }
 
-export type BoothTier = 'platinum' | 'silver'
+export type BoothTier = 'platinum' | 'standard'
+
+export type OrganizationType = 'employer' | 'post-secondary' | 'gap-year'
 
 export type Industry =
   | 'Technology'
@@ -89,6 +91,10 @@ export type Industry =
   | 'Energy'
   | 'Marketing'
   | 'Consulting'
+  | 'Skilled Trades'
+  | 'Arts & Media'
+  | 'Government'
+  | 'Non-Profit'
 
 export type Pathway =
   | 'direct-to-workplace'
@@ -97,15 +103,14 @@ export type Pathway =
   | 'university'
   | 'gap-year'
 
-export interface DeluxeBoothData {
+export interface PlatinumBoothData {
   id: string
   name: string
   slug: string
   tier: 'platinum'
   industry: Industry
-  isPostSecondary: boolean
+  organizationType: OrganizationType
   pathway: Pathway
-  isPrize: boolean
   logo: string
   tagline: string
   description: string
@@ -125,11 +130,10 @@ export interface StandardBoothData {
   id: string
   name: string
   slug: string
-  tier: 'silver'
+  tier: 'standard'
   industry: Industry
-  isPostSecondary: boolean
+  organizationType: OrganizationType
   pathway: Pathway
-  isPrize: boolean
   logo: string
   tagline: string
   description: string
@@ -143,10 +147,12 @@ export interface StandardBoothData {
   brandColors: BrandColors
 }
 
-export interface DeluxeBoothProps {
-  sponsor: DeluxeBoothData
+export type BoothData = PlatinumBoothData | StandardBoothData
+
+export interface PlatinumBoothProps {
+  booth: PlatinumBoothData
 }
 
 export interface StandardBoothProps {
-  sponsor: StandardBoothData
+  booth: StandardBoothData
 }
