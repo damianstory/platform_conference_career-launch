@@ -23,16 +23,16 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
       {/* Header */}
-      <div className="px-6 py-2 border-b border-neutral-2 flex items-center justify-between gap-3">
+      <div className="px-6 py-2 border-b border-gray-200 flex items-center justify-between gap-3">
         <h3 className="text-lg font-bold text-gray-900 truncate min-w-0 flex-1">Your Session Deck Here</h3>
 
-        {/* Fullscreen Toggle Button - maintains 44px touch target */}
+        {/* Fullscreen Toggle Button */}
         <button
           onClick={handleFullscreenToggle}
-          className="p-3.5 hover:bg-neutral-1 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 flex-shrink-0"
+          className="p-2 hover:bg-neutral-1 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 flex-shrink-0"
           aria-label="Toggle fullscreen"
         >
-          <Maximize2 className="w-4 h-4 text-neutral-4 hover:text-primary-blue transition-colors" />
+          <Maximize2 className="w-3.5 h-3.5 text-neutral-4 hover:text-primary-blue transition-colors" />
         </button>
       </div>
 
