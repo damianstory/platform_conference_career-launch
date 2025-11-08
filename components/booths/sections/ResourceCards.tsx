@@ -30,11 +30,16 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
+      {/* Header - matches SessionSlides styling */}
+      <div className="px-6 py-2 border-b border-neutral-2">
+        <h3 className="text-lg font-bold text-gray-900 truncate">Resources</h3>
+      </div>
+
       {/* Constrained aspect ratio to match SessionSlides */}
       <div className="relative aspect-[16/10]">
         {/* Scrollable container for 5 cards in compact 2-column grid */}
-        <div className="absolute inset-0 p-3 overflow-y-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 h-full">
+        <div className="absolute inset-0 px-4 pt-2 pb-3 overflow-y-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 h-full">
             {displayResources.map((resource, index) => {
               const { icon: Icon, bgColor, textColor, borderColor, hoverBorder } = getResourceIcon(resource.type)
 
@@ -45,20 +50,20 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={getDownloadAriaLabel(resource.title, resource.fileSize)}
-                  className={`group relative bg-white border ${borderColor} ${hoverBorder} rounded-lg p-2 hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit`}
+                  className={`group relative bg-white border ${borderColor} ${hoverBorder} rounded-lg p-2.5 hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit`}
                 >
                   {/* Background tint on hover */}
                   <div className={`absolute inset-0 ${bgColor} opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-lg`} />
 
                   {/* Content - Horizontal layout: Icon left, Text right (compact) */}
-                  <div className="relative flex flex-row gap-2 items-start">
+                  <div className="relative flex flex-row gap-2.5 items-start">
                     {/* Icon - small */}
-                    <div className={`p-1.5 ${bgColor} rounded-md flex-shrink-0`}>
+                    <div className={`p-2 ${bgColor} rounded-md flex-shrink-0`}>
                       <Icon className={`w-4 h-4 ${textColor}`} />
                     </div>
 
                     {/* Text Content - compact */}
-                    <div className="flex flex-col gap-0.5 flex-1 min-w-0">
+                    <div className="flex flex-col gap-1 flex-1 min-w-0">
                       {/* Title - single line */}
                       <h4 className="text-xs font-semibold text-gray-900 line-clamp-1">
                         {resource.title}
