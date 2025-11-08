@@ -39,7 +39,7 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
       <div className="relative aspect-[16/10]">
         {/* Scrollable container for 5 cards in compact 2-column grid */}
         <div className="absolute inset-0 px-4 pt-4 pb-3 overflow-y-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 h-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 h-full">
             {displayResources.map((resource, index) => {
               const { icon: Icon, bgColor, textColor, borderColor, hoverBorder } = getResourceIcon(resource.type)
 
@@ -50,7 +50,7 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={getDownloadAriaLabel(resource.title, resource.fileSize)}
-                  className={`group relative bg-white border ${borderColor} ${hoverBorder} rounded-lg p-3 hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit`}
+                  className={`group relative bg-white border ${borderColor} ${hoverBorder} rounded-lg py-4 px-3 hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit`}
                 >
                   {/* Background tint on hover */}
                   <div className={`absolute inset-0 ${bgColor} opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-lg`} />
