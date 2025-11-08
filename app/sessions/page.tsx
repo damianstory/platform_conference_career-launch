@@ -3,7 +3,8 @@ import type { Session, BlockNumber } from '@/types';
 import Accordion, { AccordionItem } from '@/components/Accordion';
 import SessionCard from '@/components/SessionCard';
 
-export const dynamic = 'force-dynamic';
+// Revalidate every hour for ISR (Incremental Static Regeneration)
+export const revalidate = 3600;
 
 // Block color mapping
 const BLOCK_COLORS: Record<BlockNumber, string> = {

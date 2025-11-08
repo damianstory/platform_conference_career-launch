@@ -147,7 +147,7 @@ export const ASPECT_RATIO = {
  *
  * // In BoothLayout:
  * <div className={`grid grid-cols-12 ${GRID_GAP}`}>
- *   {/* sections */}
+ *   // sections
  * </div>
  */
 

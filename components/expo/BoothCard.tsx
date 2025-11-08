@@ -1,36 +1,19 @@
 'use client'
 
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Sparkles } from 'lucide-react'
+import Image from 'next/image'
 import { PlatinumBoothData, StandardBoothData } from '@/types/booth'
 
 interface BoothCardProps {
   booth: PlatinumBoothData | StandardBoothData
   index?: number
-  isHighlighted?: boolean
 }
 
-export default function BoothCard({ booth, index = 0, isHighlighted = false }: BoothCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const [isImageLoading, setIsImageLoading] = useState(true)
+export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
   const [isImageError, setIsImageError] = useState(false)
 
-  // Scroll into view when highlighted
-  useEffect(() => {
-    if (isHighlighted && cardRef.current) {
-      cardRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-  }, [isHighlighted])
-
-  const handleImageLoad = () => {
-    setIsImageLoading(false)
-    setIsImageError(false)
-  }
-
   const handleImageError = () => {
-    setIsImageLoading(false)
     setIsImageError(true)
   }
 
@@ -111,117 +94,35 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
     <PlatinumCardEnhancements tier={booth.tier}>
       <div className={`${styles.wrapper} booth-card-wrapper`}>
         <Link href={`/booths/${booth.slug}`}>
-          <motion.div
-            ref={cardRef}
-            className={`
-              booth-card group relative rounded-xl pt-3 pb-4 px-5 cursor-pointer flex flex-col
-              ${styles.card} ${styles.glow}
-              ${booth.tier === 'platinum' ? 'animate-float' : ''}
-              ${isHighlighted ? 'ring-4 ring-primary-blue ring-offset-4 ring-offset-background-light' : ''}
-              h-[280px]
-            `}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              scale: isHighlighted ? [1, 1.05, 1] : 1
-            }}
-            transition={{
-              delay: index * 0.05,
-              duration: 0.6,
-              ease: [0.4, 0, 0.2, 1]
-            }}
-            whileHover={{
-              scale: 1.02,
-              rotateY: booth.tier === 'platinum' ? 2 : 1,
-              rotateX: booth.tier === 'platinum' ? -1 : -0.5,
-              transition: {
-                duration: 0.2,
-                ease: [0.4, 0, 0.2, 1]
-              }
-            }}
-            whileTap={{
-              scale: 0.98,
-              transition: { duration: 0.1 }
-            }}
-            style={{
-              transformStyle: 'preserve-3d',
-              perspective: 1000,
-            }}
-          >
-            {/* Sparkle icon for highlighted booth */}
-            {isHighlighted && (
-              <motion.div
-                className="absolute top-4 right-4 z-10"
-                initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: [1, 1.2, 1], rotate: [0, 360, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-blue text-white shadow-lg">
-                  <Sparkles size={18} />
-                </div>
-              </motion.div>
-            )}
-
+          <div className={`
+            booth-card group relative rounded-xl pt-3 pb-4 px-5 cursor-pointer flex flex-col
+            ${styles.card} ${styles.glow}
+            h-[280px]
+            transition-all duration-200 hover:scale-102 active:scale-98
+          `}>
             {/* Logo */}
-            <motion.div
-              className="mb-2 flex-shrink-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: index * 0.05,
-                duration: 0.6,
-                ease: [0.4, 0, 0.2, 1]
-              }}
-            >
-              <div className={`
-                bg-white rounded-lg flex items-center justify-center overflow-hidden relative
-                w-20 h-20 shadow-sm
-              `}>
-                {/* Loading skeleton for image */}
-                {isImageLoading && booth.logo && (
-                  <div className="absolute inset-0 skeleton rounded-lg" />
-                )}
-
+            <div className="mb-2 flex-shrink-0">
+              <div className="bg-white rounded-lg flex items-center justify-center overflow-hidden relative w-20 h-20 shadow-sm">
                 {booth.logo && !isImageError ? (
-                  <motion.img
+                  <Image
                     src={booth.logo}
                     alt={`${booth.name} logo`}
-                    className="w-full h-full object-contain p-2"
-                    onLoad={handleImageLoad}
+                    width={80}
+                    height={80}
+                    className="object-contain p-2"
                     onError={handleImageError}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: isImageLoading ? 0 : 1 }}
-                    transition={{ duration: 0.3 }}
+                    unoptimized
                   />
                 ) : (
-                  <motion.div
-                    className="text-2xl font-bold text-neutral-3"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <div className="text-2xl font-bold text-neutral-3">
                     {booth.name.substring(0, 2).toUpperCase()}
-                  </motion.div>
+                  </div>
                 )}
               </div>
-            </motion.div>
+            </div>
 
             {/* Company Info */}
-            <motion.div
-              className="flex-grow flex flex-col space-y-2"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: index * 0.05 + 0.1,
-                duration: 0.5,
-                ease: [0.4, 0, 0.2, 1]
-              }}
-            >
+            <div className="flex-grow flex flex-col space-y-2">
               <h3 className="text-body-1 font-black text-brand-navy" title={booth.name}>
                 <div className="line-clamp-1">{titleLine1}</div>
                 {titleLine2 && <div className="line-clamp-1">{titleLine2}</div>}
@@ -229,7 +130,7 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
               <p className="text-body-2 font-light text-neutral-5 line-clamp-2" title={booth.tagline}>
                 {booth.tagline}
               </p>
-            </motion.div>
+            </div>
 
             {/* Hover CTA - Pure CSS hover */}
             <div className="absolute bottom-4 left-4 right-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
@@ -245,7 +146,7 @@ export default function BoothCard({ booth, index = 0, isHighlighted = false }: B
                 <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-primary-blue/10 to-primary-blue/5 rounded-full blur-3xl opacity-50 scale-100 group-hover:opacity-70 group-hover:scale-120 transition-all duration-400"></div>
               </div>
             )}
-          </motion.div>
+          </div>
         </Link>
       </div>
     </PlatinumCardEnhancements>

@@ -139,7 +139,7 @@ export const healthFirst: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -229,7 +229,7 @@ export const futureBuild: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -324,7 +324,7 @@ export const financeHub: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -414,7 +414,7 @@ export const eduPath: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -504,7 +504,7 @@ export const tradesMaster: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -594,7 +594,7 @@ export const worldExplorer: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -684,7 +684,7 @@ export const greenPower: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -774,7 +774,7 @@ export const creativeMinds: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -864,7 +864,7 @@ export const dataDynamics: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -954,7 +954,7 @@ export const marketGenius: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1044,7 +1044,7 @@ export const consultPro: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1134,7 +1134,7 @@ export const manufactureTech: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1224,7 +1224,7 @@ export const cyberShield: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1314,7 +1314,7 @@ export const bioMedical: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1404,7 +1404,7 @@ export const architectDesign: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1494,7 +1494,7 @@ export const foodService: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1584,7 +1584,7 @@ export const legalServices: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1674,7 +1674,7 @@ export const socialImpact: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1764,7 +1764,7 @@ export const urbanPlanning: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1854,7 +1854,7 @@ export const sportsManagement: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -1944,7 +1944,7 @@ export const environmentalConsulting: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -2034,7 +2034,7 @@ export const automotiveTech: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -2124,7 +2124,7 @@ export const fashionDesign: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -2214,7 +2214,7 @@ export const aviationAcademy: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -2304,7 +2304,7 @@ export const hospitalityCollege: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
@@ -2394,7 +2394,7 @@ export const publicHealth: PlatinumBoothData = {
       title: 'Student Success Stories',
       description: 'Read about students who launched their careers with TechCorp',
       url: '#',
-      type: 'other'
+      type: 'link'
     }
   ],
   sessionSlides: {
