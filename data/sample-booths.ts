@@ -22,7 +22,7 @@ export const techVision: PlatinumBoothData = {
     { icon: 'globe', label: 'Global Reach', value: '15 Countries' }
   ],
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Life at TechVision',
     description: 'Discover what makes TechVision a great place to start your career'
@@ -103,7 +103,7 @@ export const healthFirst: PlatinumBoothData = {
   description: 'HealthFirst is Ontario\'s leading healthcare provider with diverse career opportunities in nursing, allied health, and medical technology.',
   website: 'https://healthfirst.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Healthcare Careers',
     description: 'See the impact you can make'
@@ -193,7 +193,7 @@ export const futureBuild: PlatinumBoothData = {
   description: 'FutureBuild Co is a leading engineering firm specializing in sustainable infrastructure and innovative building solutions.',
   website: 'https://futurebuild.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Building Tomorrow',
     description: 'Discover engineering careers'
@@ -288,7 +288,7 @@ export const financeHub: PlatinumBoothData = {
   description: 'FinanceHub is one of Canada\'s leading financial institutions offering exciting career opportunities in banking, investment, and financial planning.',
   website: 'https://financehub.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Career in Finance',
     description: 'Explore financial services careers'
@@ -378,7 +378,7 @@ export const eduPath: PlatinumBoothData = {
   description: 'EduPath is a world-renowned institution offering over 200 undergraduate programs with exceptional career preparation.',
   website: 'https://edupath.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Your Future',
     description: 'Explore campus life'
@@ -468,7 +468,7 @@ export const tradesMaster: PlatinumBoothData = {
   description: 'TradesMaster offers hands-on training in 25+ high-demand trades with exceptional job placement rates.',
   website: 'https://tradesmaster.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Power of Trades',
     description: 'See what our graduates build'
@@ -558,7 +558,7 @@ export const worldExplorer: PlatinumBoothData = {
   description: 'WorldExplorer offers structured gap year programs combining volunteer work, cultural immersion, and skill development.',
   website: 'https://worldexplorer.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Year of Change',
     description: 'Hear from gap year students'
@@ -648,7 +648,7 @@ export const greenPower: PlatinumBoothData = {
   description: 'GreenPower Inc is a leading renewable energy company fighting climate change while creating meaningful careers.',
   website: 'https://greenpower.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Green Revolution',
     description: 'Building Ontario\'s clean energy future'
@@ -738,7 +738,7 @@ export const creativeMinds: PlatinumBoothData = {
   description: 'CreativeMinds is Ontario\'s premier institution for arts, design, media, and entertainment programs.',
   website: 'https://creativeminds.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Creativity Unleashed',
     description: 'See award-winning student work'
@@ -828,7 +828,7 @@ export const dataDynamics: PlatinumBoothData = {
   description: 'DataDynamics specializes in data science, analytics, and machine learning solutions for enterprise clients.',
   website: 'https://datadynamics.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Data Science Careers',
     description: 'Explore data-driven opportunities'
@@ -918,7 +918,7 @@ export const marketGenius: PlatinumBoothData = {
   description: 'MarketGenius is a full-service marketing agency creating innovative campaigns for leading Canadian brands.',
   website: 'https://marketgenius.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Marketing Excellence',
     description: 'See our award-winning campaigns'
@@ -1008,7 +1008,7 @@ export const consultPro: PlatinumBoothData = {
   description: 'ConsultPro is a leading management consulting firm helping organizations achieve transformational results.',
   website: 'https://consultpro.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Consulting Careers',
     description: 'Discover management consulting'
@@ -1098,7 +1098,7 @@ export const manufactureTech: PlatinumBoothData = {
   description: 'ManufactureTech is an advanced manufacturing company producing precision components for automotive and aerospace.',
   website: 'https://manufacturetech.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Modern Manufacturing',
     description: 'See our state-of-the-art facility'
@@ -1188,7 +1188,7 @@ export const cyberShield: PlatinumBoothData = {
   description: 'CyberShield provides enterprise cybersecurity solutions protecting organizations from evolving digital threats.',
   website: 'https://cybershield.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Security Careers',
     description: 'Explore cybersecurity opportunities'
@@ -1278,7 +1278,7 @@ export const bioMedical: PlatinumBoothData = {
   description: 'BioMedical is a research-focused pharmaceutical company developing breakthrough treatments for critical diseases.',
   website: 'https://biomedical.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Medical Innovation',
     description: 'Discover pharmaceutical research careers'
@@ -1368,7 +1368,7 @@ export const architectDesign: PlatinumBoothData = {
   description: 'ArchitectDesign is an award-winning architectural firm creating sustainable and innovative building designs.',
   website: 'https://architectdesign.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Architecture Careers',
     description: 'See our portfolio of projects'
@@ -1458,7 +1458,7 @@ export const foodService: PlatinumBoothData = {
   description: 'FoodService Pro operates 200+ restaurants across Ontario with comprehensive training and advancement opportunities.',
   website: 'https://foodservicepro.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Hospitality Careers',
     description: 'Explore food service opportunities'
@@ -1548,7 +1548,7 @@ export const legalServices: PlatinumBoothData = {
   description: 'LegalServices is a leading law firm providing comprehensive legal services across multiple practice areas.',
   website: 'https://legalservices.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Legal Careers',
     description: 'Discover careers in law'
@@ -1638,7 +1638,7 @@ export const socialImpact: PlatinumBoothData = {
   description: 'SocialImpact is a non-profit organization dedicated to community development and social justice initiatives.',
   website: 'https://socialimpact.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Make a Difference',
     description: 'See our community impact'
@@ -1728,7 +1728,7 @@ export const urbanPlanning: PlatinumBoothData = {
   description: 'UrbanPlanning works with municipalities to design sustainable, vibrant urban communities across Ontario.',
   website: 'https://urbanplanning.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'City Planning',
     description: 'Discover urban planning careers'
@@ -1818,7 +1818,7 @@ export const sportsManagement: PlatinumBoothData = {
   description: 'SportsMgmt manages professional sports facilities and creates career opportunities in sports administration.',
   website: 'https://sportsmgmt.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Sports Careers',
     description: 'Explore opportunities in sports'
@@ -1908,7 +1908,7 @@ export const environmentalConsulting: PlatinumBoothData = {
   description: 'EcoConsult provides environmental consulting services helping organizations achieve sustainability goals.',
   website: 'https://ecoconsult.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Environmental Careers',
     description: 'Explore environmental consulting'
@@ -1998,7 +1998,7 @@ export const automotiveTech: PlatinumBoothData = {
   description: 'AutoTech specializes in electric vehicle technology and advanced automotive systems development.',
   website: 'https://autotech.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Automotive Future',
     description: 'Explore automotive technology careers'
@@ -2088,7 +2088,7 @@ export const fashionDesign: PlatinumBoothData = {
   description: 'FashionForward is a leading fashion design school preparing students for careers in the global fashion industry.',
   website: 'https://fashionforward.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Fashion Excellence',
     description: 'See student runway shows'
@@ -2178,7 +2178,7 @@ export const aviationAcademy: PlatinumBoothData = {
   description: 'AviationAcademy trains pilots, aircraft technicians, and aviation management professionals.',
   website: 'https://aviationacademy.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Aviation Careers',
     description: 'Explore careers in aviation'
@@ -2268,7 +2268,7 @@ export const hospitalityCollege: PlatinumBoothData = {
   description: 'HospitalityPro College offers comprehensive training in hotel management, culinary arts, and tourism.',
   website: 'https://hospitalitypro.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Hospitality Excellence',
     description: 'Discover hospitality careers'
@@ -2358,7 +2358,7 @@ export const publicHealth: PlatinumBoothData = {
   description: 'PublicHealth Ontario works to prevent disease and promote health across all Ontario communities.',
   website: 'https://publichealth.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Public Health Careers',
     description: 'Make a difference in public health'
@@ -2452,7 +2452,7 @@ export const localManufacturing: StandardBoothData = {
   description: 'LocalMake Co is a family-owned manufacturing company producing precision components with competitive wages and benefits.',
   website: 'https://localmake.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Inside Our Facility',
     description: 'See our modern operations'
@@ -2516,7 +2516,7 @@ export const communityCollege: StandardBoothData = {
   description: 'Community College offers affordable career-focused programs with small class sizes across multiple campus locations.',
   website: 'https://communitycollege.example.com',
   video: {
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
     title: 'Your College',
     description: 'Discover accessible education'

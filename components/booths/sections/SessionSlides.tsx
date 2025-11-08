@@ -1,9 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Presentation, Maximize2, Loader2 } from 'lucide-react'
+import { Maximize2, Loader2 } from 'lucide-react'
 import { SessionSlidesData } from '@/types/booth'
-import SectionLabel from '../shared/SectionLabel'
 
 interface SessionSlidesProps {
   slides: SessionSlidesData
@@ -22,17 +21,10 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-7">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
       {/* Header */}
-      <div className="px-6 py-4 border-b border-neutral-2 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2 min-w-0 flex-1">
-          <div className="min-w-0 flex-1">
-            <SectionLabel text="Your Session Deck" icon={Presentation} />
-            {slides.description && (
-              <p className="text-sm text-gray-500 line-clamp-1 mt-1">{slides.description}</p>
-            )}
-          </div>
-        </div>
+      <div className="px-6 py-2 border-b border-neutral-2 flex items-center justify-between gap-3">
+        <h3 className="text-lg font-bold text-gray-900 truncate min-w-0 flex-1">Your Session Deck Here</h3>
 
         {/* Fullscreen Toggle Button - maintains 44px touch target */}
         <button
@@ -54,7 +46,7 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
 
         <iframe
           src={slides.embedUrl}
-          className="w-full h-full"
+          className="absolute inset-0 w-full h-full"
           onLoad={handleIframeLoad}
           title={slides.title}
           allowFullScreen

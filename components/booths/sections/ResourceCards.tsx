@@ -3,7 +3,6 @@
 import React from 'react'
 import { FileText, ExternalLink, Video, File, FileStack } from 'lucide-react'
 import { ResourceItem } from '@/types/booth'
-import SectionLabel from '../shared/SectionLabel'
 import EmptyState from '../shared/EmptyState'
 import { getDownloadAriaLabel } from '@/lib/utils/accessibility'
 
@@ -31,14 +30,14 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
   const displayResources = resources.slice(0, 5)
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-5">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
       {/* Header */}
-      <div className="px-6 py-6 border-b border-neutral-2">
-        <SectionLabel text="Resources" />
+      <div className="px-6 pt-4 pb-4 border-b border-neutral-2">
+        <h3 className="text-lg font-bold text-gray-900 truncate">Resources</h3>
       </div>
 
       {/* Mosaic Grid Layout - 6x6 internal grid */}
-      <div className="p-6 min-h-[300px]">
+      <div className="p-6 aspect-video">
         <div className="grid grid-cols-6 grid-rows-6 gap-2 h-full">
           {displayResources.map((resource, index) => {
             const { icon: Icon, bgColor, textColor, borderColor, hoverBorder } = getResourceIcon(resource.type)
