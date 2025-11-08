@@ -50,13 +50,13 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={getDownloadAriaLabel(resource.title, resource.fileSize)}
-                  className={`group relative bg-white border ${borderColor} ${hoverBorder} rounded-lg p-2.5 hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit`}
+                  className={`group relative bg-white border ${borderColor} ${hoverBorder} rounded-lg p-3 hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit`}
                 >
                   {/* Background tint on hover */}
                   <div className={`absolute inset-0 ${bgColor} opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-lg`} />
 
                   {/* Content - Horizontal layout: Icon left, Text right (compact) */}
-                  <div className="relative flex flex-row gap-2.5 items-start">
+                  <div className="relative flex flex-row gap-3 items-start">
                     {/* Icon - small */}
                     <div className={`p-2 ${bgColor} rounded-md flex-shrink-0`}>
                       <Icon className={`w-4 h-4 ${textColor}`} />
