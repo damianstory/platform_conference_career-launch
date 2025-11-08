@@ -38,8 +38,8 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
       {/* Constrained aspect ratio to match SessionSlides */}
       <div className="relative aspect-[16/10]">
         {/* Scrollable container for 5 cards in compact 2-column grid */}
-        <div className="absolute inset-0 px-4 pt-2 pb-3 overflow-y-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 h-full">
+        <div className="absolute inset-0 px-4 pt-4 pb-3 overflow-y-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 h-full">
             {displayResources.map((resource, index) => {
               const { icon: Icon, bgColor, textColor, borderColor, hoverBorder } = getResourceIcon(resource.type)
 
@@ -58,8 +58,8 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
                   {/* Content - Horizontal layout: Icon left, Text right (compact) */}
                   <div className="relative flex flex-row gap-3 items-start">
                     {/* Icon - small */}
-                    <div className={`p-2 ${bgColor} rounded-md flex-shrink-0`}>
-                      <Icon className={`w-4 h-4 ${textColor}`} />
+                    <div className={`p-1.5 ${bgColor} rounded-md flex-shrink-0`}>
+                      <Icon className={`w-3.5 h-3.5 ${textColor}`} />
                     </div>
 
                     {/* Text Content - compact */}
