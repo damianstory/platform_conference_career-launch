@@ -118,7 +118,7 @@ const faqItems: AccordionItem[] = [
 
 export default function FAQ() {
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-10 md:pt-[70px]">
       <div className="max-w-[900px] mx-auto px-5">
         <h2 className="text-[32px] font-bold text-[#1a1a1a] text-center mb-[30px]">
           Frequently Asked Questions
