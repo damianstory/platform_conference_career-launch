@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
+import ConditionalHeader from '@/components/layout/ConditionalHeader';
 import Footer from '@/components/Footer';
 
 const openSans = Open_Sans({
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
       <body className="min-h-screen flex flex-col">
-        <Header />
+        <ConditionalHeader />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
