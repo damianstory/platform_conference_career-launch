@@ -14,14 +14,46 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
   const getResourceIcon = (type: string) => {
     switch (type) {
       case 'pdf':
-        return { icon: FileText, bgColor: 'bg-red-50', textColor: 'text-red-600', borderColor: 'border-red-200', hoverBorder: 'group-hover:border-red-400' }
+        return {
+          icon: FileText,
+          cardBg: 'bg-resource-pdf',
+          iconBg: 'bg-blue/12',
+          iconColor: 'text-blue',
+          borderColor: 'border-blue/20',
+          hoverBorder: 'group-hover:border-blue/40',
+          hoverBg: 'group-hover:bg-blue/5'
+        }
       case 'link':
-        return { icon: ExternalLink, bgColor: 'bg-blue-50', textColor: 'text-blue-600', borderColor: 'border-blue-200', hoverBorder: 'group-hover:border-blue-400' }
+        return {
+          icon: ExternalLink,
+          cardBg: 'bg-resource-link',
+          iconBg: 'bg-light-blue/60',
+          iconColor: 'text-blue',
+          borderColor: 'border-blue/20',
+          hoverBorder: 'group-hover:border-blue/40',
+          hoverBg: 'group-hover:bg-blue/5'
+        }
       case 'video':
-        return { icon: Video, bgColor: 'bg-orange-50', textColor: 'text-orange-600', borderColor: 'border-orange-200', hoverBorder: 'group-hover:border-orange-400' }
+        return {
+          icon: Video,
+          cardBg: 'bg-resource-video',
+          iconBg: 'bg-blue/15',
+          iconColor: 'text-blue',
+          borderColor: 'border-blue/20',
+          hoverBorder: 'group-hover:border-blue/40',
+          hoverBg: 'group-hover:bg-blue/5'
+        }
       case 'document':
       default:
-        return { icon: File, bgColor: 'bg-purple-50', textColor: 'text-purple-600', borderColor: 'border-purple-200', hoverBorder: 'group-hover:border-purple-400' }
+        return {
+          icon: File,
+          cardBg: 'bg-resource-document',
+          iconBg: 'bg-light-blue/50',
+          iconColor: 'text-brand-navy',
+          borderColor: 'border-blue/20',
+          hoverBorder: 'group-hover:border-blue/40',
+          hoverBg: 'group-hover:bg-blue/5'
+        }
     }
   }
 
@@ -41,7 +73,7 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
         <div className="absolute inset-0 px-4 pt-4 pb-3 overflow-y-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 h-full">
             {displayResources.map((resource, index) => {
-              const { icon: Icon, bgColor, textColor, borderColor, hoverBorder } = getResourceIcon(resource.type)
+              const { icon: Icon, cardBg, iconBg, iconColor, borderColor, hoverBorder, hoverBg } = getResourceIcon(resource.type)
 
               return (
                 <a
@@ -50,16 +82,16 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={getDownloadAriaLabel(resource.title, resource.fileSize)}
-                  className={`group relative bg-white border ${borderColor} ${hoverBorder} rounded-lg py-4 px-3 hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit`}
+                  className={`group relative ${cardBg} border ${borderColor} ${hoverBorder} rounded-lg py-4 px-3 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit shadow-[0_2px_4px_rgba(34,34,76,0.06)] hover:shadow-[0_4px_12px_rgba(0,146,255,0.15),0_2px_4px_rgba(34,34,76,0.08)]`}
                 >
-                  {/* Background tint on hover */}
-                  <div className={`absolute inset-0 ${bgColor} opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-lg`} />
+                  {/* Hover overlay effect */}
+                  <div className={`absolute inset-0 ${hoverBg} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none`} />
 
                   {/* Content - Horizontal layout: Icon left, Text right (compact) */}
                   <div className="relative flex flex-row gap-3 items-start">
                     {/* Icon - small */}
-                    <div className={`p-1.5 ${bgColor} rounded-md flex-shrink-0`}>
-                      <Icon className={`w-3.5 h-3.5 ${textColor}`} />
+                    <div className={`p-1.5 ${iconBg} rounded-md flex-shrink-0`}>
+                      <Icon className={`w-3.5 h-3.5 ${iconColor}`} />
                     </div>
 
                     {/* Text Content - compact */}

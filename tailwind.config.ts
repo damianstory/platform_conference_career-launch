@@ -67,6 +67,12 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-open-sans)', 'Open Sans', 'system-ui', 'sans-serif'],
       },
+      backgroundImage: {
+        'resource-pdf': 'linear-gradient(135deg, #C6E7FF 0%, #E6F4FF 100%)',
+        'resource-link': 'linear-gradient(135deg, rgba(0, 146, 255, 0.08) 0%, rgba(198, 231, 255, 0.25) 100%)',
+        'resource-video': 'linear-gradient(135deg, #F6F6FF 0%, #C6E7FF 100%)',
+        'resource-document': 'linear-gradient(135deg, #E6F4FF 0%, #F6F6FF 100%)',
+      },
     },
   },
   plugins: [],
