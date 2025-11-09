@@ -14,7 +14,7 @@ export const techVision: PlatinumBoothData = {
   pathway: 'university',
   logo: '/images/booths/logo-1.png',
   tagline: 'Building tomorrow\'s technology solutions today',
-  description: 'TechVision Corp is a leading technology company specializing in artificial intelligence, cloud computing, and sustainable tech solutions. We offer comprehensive internship programs and mentorship opportunities for aspiring tech professionals.',
+  description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
   website: 'https://techvision.example.com',
   quickFacts: [
     { icon: 'building', label: 'Founded', value: '2010' },
@@ -465,7 +465,7 @@ export const tradesMaster: PlatinumBoothData = {
   pathway: 'apprenticeship',
   logo: '/images/booths/logo-6.png',
   tagline: 'Master your craft build your future',
-  description: 'TradesMaster offers hands-on training in 25+ high-demand trades with exceptional job placement rates.',
+  description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
   website: 'https://tradesmaster.example.com',
   video: {
     url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
@@ -537,7 +537,13 @@ export const tradesMaster: PlatinumBoothData = {
       city: 'Mississauga',
       province: 'ON',
       postalCode: 'L4W 2T7'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@tradesmaster' },
+      { platform: 'twitter', url: 'https://twitter.com/tradesmaster' },
+      { platform: 'instagram', url: 'https://instagram.com/tradesmaster' },
+      { platform: 'facebook', url: 'https://facebook.com/tradesmaster' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',

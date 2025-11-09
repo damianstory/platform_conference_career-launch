@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Facebook } from 'lucide-react'
+import { Mail, Globe, Youtube, Twitter, Instagram, Facebook } from 'lucide-react'
 import { ContactDetails } from '@/types/booth'
 import SectionLabel from '../shared/SectionLabel'
 import { getExternalLinkAriaLabel } from '@/lib/utils/accessibility'
@@ -14,8 +14,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
   // Get social media icon
   const getSocialIcon = (platform: string) => {
     switch (platform.toLowerCase()) {
-      case 'linkedin':
-        return Linkedin
+      case 'youtube':
+        return Youtube
       case 'twitter':
         return Twitter
       case 'instagram':
@@ -24,123 +24,57 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         return Facebook
       case 'tiktok':
         return null // Will use emoji/text
-      case 'youtube':
-        return null // Will use emoji/text
       default:
         return null
     }
   }
 
-  // Get platform-specific hover colors
-  const getSocialHoverColor = (platform: string): string => {
-    switch (platform.toLowerCase()) {
-      case 'linkedin':
-        return 'hover:bg-blue-600'
-      case 'twitter':
-        return 'hover:bg-sky-500'
-      case 'instagram':
-        return 'hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600'
-      case 'facebook':
-        return 'hover:bg-blue-700'
-      case 'tiktok':
-        return 'hover:bg-black'
-      case 'youtube':
-        return 'hover:bg-red-600'
-      default:
-        return 'hover:bg-neutral-5'
-    }
-  }
-
-  const hasLocation = contact.headquarters
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-5">
-      <div className="p-8 space-y-6">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-4 h-64">
+      <div className="p-4 flex flex-col h-full">
         {/* Section Label */}
-        <SectionLabel text="Get in Touch" />
+        <div className="mb-2 flex-shrink-0">
+          <SectionLabel text="Get in Touch" />
+        </div>
 
-        {/* Contact Methods */}
-        <div className="space-y-3">
+        {/* Contact Methods - Compact Layout */}
+        <div className="space-y-0.5 flex-shrink-0">
           {/* Email */}
           {contact.email && (
             <a
               href={`mailto:${contact.email}`}
               aria-label={`Email ${contact.email}`}
-              className="flex items-center gap-3 p-3 bg-neutral-1 rounded-lg hover:bg-primary-blue/10 transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+              className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] hover:text-primary-blue transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 focus-visible:rounded"
             >
-              <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                <Mail className="w-3 h-3 text-primary-blue" />
-              </div>
-              <span className="text-sm text-gray-700 group-hover:text-blue-600 transition-colors break-all">
+              <Mail className="w-2 h-2 text-primary-blue flex-shrink-0" />
+              <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors break-all leading-tight">
                 {contact.email}
               </span>
             </a>
           )}
 
-          {/* Phone */}
-          {contact.phone && (
-            <a
-              href={`tel:${contact.phone}`}
-              aria-label={`Call ${contact.phone}`}
-              className="flex items-center gap-3 p-3 bg-neutral-1 rounded-lg hover:bg-primary-blue/10 transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
-            >
-              <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                <Phone className="w-3 h-3 text-primary-blue" />
-              </div>
-              <span className="text-sm text-gray-700 group-hover:text-green-600 transition-colors">
-                {contact.phone}
-              </span>
-            </a>
-          )}
-
-          {/* Location */}
-          {hasLocation && contact.headquarters && (
-            <div className="flex items-start gap-3 p-3 bg-neutral-1 rounded-lg">
-              <div className="flex-shrink-0 p-2 bg-white rounded-lg shadow-sm">
-                <MapPin className="w-3 h-3 text-primary-blue" />
-              </div>
-              <div className="text-sm text-gray-700">
-                <p>{contact.headquarters.address}</p>
-                <p>
-                  {contact.headquarters.city}, {contact.headquarters.province}{' '}
-                  {contact.headquarters.postalCode}
-                </p>
-              </div>
-            </div>
-          )}
+          {/* Website */}
+          <a
+            href="https://www.conestogac.on.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit website"
+            className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] hover:text-primary-blue transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 focus-visible:rounded"
+          >
+            <Globe className="w-2 h-2 text-primary-blue flex-shrink-0" />
+            <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
+              www.conestogac.on.ca
+            </span>
+          </a>
         </div>
 
-        {/* Internship Info (if available) */}
-        {contact.internshipInfo && contact.internshipInfo.available && (
-          <div className="p-3 bg-primary-blue/5 border border-primary-blue/20 rounded-lg">
-            <p className="text-sm font-semibold text-primary-blue mb-1">
-              Internships Available
-            </p>
-            <p className="text-sm text-gray-600">
-              {contact.internshipInfo.period}
-            </p>
-            {contact.internshipInfo.applicationUrl && (
-              <a
-                href={contact.internshipInfo.applicationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-2 text-sm text-primary-blue font-medium hover:underline"
-              >
-                Apply Now →
-              </a>
-            )}
-          </div>
-        )}
-
-        {/* Social Links */}
+        {/* Social Media Buttons - Compact */}
         {contact.socialLinks && contact.socialLinks.length > 0 && (
-          <>
-            <div className="border-t border-neutral-2" />
-
-            <div className="flex items-center gap-2 flex-wrap">
+          <div className="mt-2 flex-shrink-0">
+            <div className="flex items-center gap-1.5 flex-wrap">
               {contact.socialLinks.map((social, index) => {
                 const Icon = getSocialIcon(social.platform)
-                const hoverColor = getSocialHoverColor(social.platform)
 
                 return (
                   <a
@@ -148,13 +82,13 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-6 h-6 flex items-center justify-center bg-neutral-4 text-white rounded transition-all duration-200 hover:scale-110 ${hoverColor} focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2`}
+                    className="w-6 h-6 flex items-center justify-center bg-gray-100 rounded transition-all duration-200 hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
                     aria-label={getExternalLinkAriaLabel(social.platform)}
                   >
                     {Icon ? (
-                      <Icon className="w-3 h-3" />
+                      <Icon className="w-3 h-3 text-gray-500" />
                     ) : (
-                      <span className="text-subtitle-2 font-bold">
+                      <span className="text-[0.5rem] font-bold text-gray-500">
                         {social.platform.substring(0, 1).toUpperCase()}
                       </span>
                     )}
@@ -162,8 +96,33 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
                 )
               })}
             </div>
-          </>
+          </div>
         )}
+
+        {/* Internship Info (if available) */}
+        {contact.internshipInfo && contact.internshipInfo.available && (
+          <div className="mt-2 p-2 bg-primary-blue/5 border border-primary-blue/20 rounded-lg flex-shrink-0">
+            <p className="text-xs font-semibold text-primary-blue mb-0.5 leading-tight">
+              Internships Available
+            </p>
+            <p className="text-xs text-gray-600 leading-tight">
+              {contact.internshipInfo.period}
+            </p>
+            {contact.internshipInfo.applicationUrl && (
+              <a
+                href={contact.internshipInfo.applicationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 mt-1 text-xs text-primary-blue font-medium hover:underline focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 focus-visible:rounded"
+              >
+                Apply Now →
+              </a>
+            )}
+          </div>
+        )}
+
+        {/* Spacer to push content up */}
+        <div className="flex-grow" />
       </div>
     </div>
   )
