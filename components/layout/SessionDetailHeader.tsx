@@ -4,13 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft } from 'lucide-react'
 
-interface BoothDetailHeaderProps {
-  boothName: string
+interface SessionDetailHeaderProps {
+  sessionTitle: string
 }
 
-export default function BoothDetailHeader({
-  boothName,
-}: BoothDetailHeaderProps) {
+export default function SessionDetailHeader({
+  sessionTitle,
+}: SessionDetailHeaderProps) {
   return (
     <header
       role="banner"
@@ -22,12 +22,12 @@ export default function BoothDetailHeader({
           <div className="grid grid-cols-[auto_1fr_auto] gap-8 items-center h-full">
             {/* Left: Back Button */}
             <Link
-              href="/booths"
+              href="/sessions"
               className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-3 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              aria-label="Return to All Booths"
+              aria-label="Return to All Sessions"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              <span>All Booths</span>
+              <span>All Sessions</span>
             </Link>
 
             {/* Center: Logo */}
@@ -60,12 +60,12 @@ export default function BoothDetailHeader({
           <div className="grid grid-cols-[auto_1fr_auto] gap-4 items-center h-full">
             {/* Left: Back Button */}
             <Link
-              href="/booths"
+              href="/sessions"
               className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-2 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              aria-label="Return to All Booths"
+              aria-label="Return to All Sessions"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              <span className="text-compact">All Booths</span>
+              <span className="text-compact">All Sessions</span>
             </Link>
 
             {/* Center: Logo */}
@@ -97,9 +97,9 @@ export default function BoothDetailHeader({
         <div className="grid grid-cols-[auto_1fr] gap-4 items-center h-20 px-4">
           {/* Left: Back arrow */}
           <Link
-            href="/booths"
+            href="/sessions"
             className="flex items-center text-brand-navy hover:text-primary-blue p-2 -ml-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-            aria-label="Return to All Booths"
+            aria-label="Return to All Sessions"
           >
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
           </Link>

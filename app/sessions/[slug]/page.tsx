@@ -1,6 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import { formatDuration } from '@/lib/utils';
 import type { Session } from '@/types';
 import VideoSection from '@/components/session/VideoSection';
@@ -32,18 +31,6 @@ export default async function SessionPage({ params }: SessionPageProps) {
 
   return (
     <div className="bg-off-white min-h-screen">
-      {/* Breadcrumb */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="container-custom py-4">
-          <Link
-            href="/sessions"
-            className="text-blue hover:text-navy font-medium transition-colors"
-          >
-            ← Back to Schedule
-          </Link>
-        </div>
-      </div>
-
       {/* Hero Section */}
       <section className="bg-navy text-white py-12">
         <div className="max-w-5xl mx-auto px-4 flex items-center justify-center min-h-[200px]">
