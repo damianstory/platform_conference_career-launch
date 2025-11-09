@@ -50,10 +50,10 @@ export default function BoothDetailHeader({
             <Link
               href="/booths"
               className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-3 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              aria-label="Return to Expo Hall"
+              aria-label="Return to All Booths"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              <span>Expo Hall</span>
+              <span>All Booths</span>
             </Link>
 
             {/* Center: Breadcrumb */}
@@ -78,7 +78,7 @@ export default function BoothDetailHeader({
                     href="/booths"
                     className="hover:text-primary-blue transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
                   >
-                    Expo Hall
+                    All Booths
                   </Link>
                 </li>
                 <li aria-hidden="true">
@@ -132,10 +132,10 @@ export default function BoothDetailHeader({
             <Link
               href="/booths"
               className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-2 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              aria-label="Return to Expo Hall"
+              aria-label="Return to All Booths"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              <span className="text-compact">Expo Hall</span>
+              <span className="text-compact">All Booths</span>
             </Link>
 
             {/* Center: Breadcrumb (condensed) */}
@@ -200,10 +200,10 @@ export default function BoothDetailHeader({
               <Link
                 href="/booths"
                 className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 p-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-                aria-label="Return to Expo Hall"
+                aria-label="Return to All Booths"
               >
                 <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-                <span className="text-compact">Expo Hall</span>
+                <span className="text-compact">All Booths</span>
               </Link>
 
               <Link
@@ -245,7 +245,7 @@ export default function BoothDetailHeader({
                       href="/booths"
                       className="hover:text-primary-blue transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
                     >
-                      Expo Hall
+                      All Booths
                     </Link>
                   </li>
                   <li aria-hidden="true">
@@ -270,7 +270,7 @@ export default function BoothDetailHeader({
             <Link
               href="/booths"
               className="flex items-center text-brand-navy hover:text-primary-blue p-2 -ml-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              aria-label="Return to Expo Hall"
+              aria-label="Return to All Booths"
             >
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>

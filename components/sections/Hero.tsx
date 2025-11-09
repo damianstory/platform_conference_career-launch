@@ -86,7 +86,7 @@ const AnimatedStatistic: React.FC<StatisticProps> = ({ value, suffix = '', label
 const heroContent = {
   headline: {
     line1: "Career Launch",
-    line2: "Expo Hall"
+    line2: "All Booths"
   },
   subtext: {
     line1: "Meet the companies investing in",
