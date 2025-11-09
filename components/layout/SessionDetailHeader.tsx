@@ -18,17 +18,19 @@ export default function SessionDetailHeader({
     >
       {/* Desktop Layout (>=1024px) */}
       <div className="hidden lg:block">
-        <div className="max-w-[1400px] mx-auto px-8 h-20">
-          <div className="grid grid-cols-[auto_1fr_auto] gap-8 items-center h-full">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 h-20">
+          <div className="grid grid-cols-3 items-center h-full">
             {/* Left: Back Button */}
-            <Link
-              href="/sessions"
-              className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-3 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              aria-label="Return to All Sessions"
-            >
-              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              <span>All Sessions</span>
-            </Link>
+            <div>
+              <Link
+                href="/sessions"
+                className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-3 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+                aria-label="Return to All Sessions"
+              >
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                <span>All Sessions</span>
+              </Link>
+            </div>
 
             {/* Center: Logo */}
             <div className="flex items-center justify-center">
@@ -49,24 +51,26 @@ export default function SessionDetailHeader({
             </div>
 
             {/* Right: Empty spacer for balance */}
-            <div className="w-[120px]" aria-hidden="true" />
+            <div aria-hidden="true" />
           </div>
         </div>
       </div>
 
       {/* Tablet Layout (768px-1023px) */}
       <div className="hidden md:block lg:hidden">
-        <div className="max-w-[1400px] mx-auto px-6 h-20">
-          <div className="grid grid-cols-[auto_1fr_auto] gap-4 items-center h-full">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 h-20">
+          <div className="grid grid-cols-3 items-center h-full">
             {/* Left: Back Button */}
-            <Link
-              href="/sessions"
-              className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-2 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              aria-label="Return to All Sessions"
-            >
-              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-              <span className="text-compact">All Sessions</span>
-            </Link>
+            <div>
+              <Link
+                href="/sessions"
+                className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-2 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+                aria-label="Return to All Sessions"
+              >
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                <span className="text-compact">All Sessions</span>
+              </Link>
+            </div>
 
             {/* Center: Logo */}
             <div className="flex items-center justify-center">
@@ -87,7 +91,7 @@ export default function SessionDetailHeader({
             </div>
 
             {/* Right: Empty spacer for balance */}
-            <div className="w-[100px]" aria-hidden="true" />
+            <div aria-hidden="true" />
           </div>
         </div>
       </div>
