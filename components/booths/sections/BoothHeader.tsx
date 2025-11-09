@@ -46,10 +46,10 @@ export default function BoothHeader({
 
           {/* Company Info */}
           <div className="flex-grow space-y-2">
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-[40px] font-black text-brand-navy leading-tight tracking-tight">
               {name}
             </h1>
-            <p className="text-base text-gray-600">
+            <p className="text-[20px] text-neutral-5 font-normal">
               {tagline}
             </p>
           </div>
