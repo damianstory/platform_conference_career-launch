@@ -61,19 +61,21 @@ export default function VideoSection({ video }: VideoSectionProps) {
   return (
     <div
       ref={videoRef}
-      className="relative w-full h-full min-h-0 bg-gray-800 rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-4"
+      className="bg-gray-800 rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md h-full"
     >
-      {/* Video Iframe - loads immediately when visible */}
-      {isVisible && (
-        <iframe
-          src={embedUrl}
-          title={video.title}
-          className="absolute inset-0 w-full h-full"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          suppressHydrationWarning
-        />
-      )}
+      <div className="relative w-full h-full">
+        {/* Video Iframe - loads immediately when visible */}
+        {isVisible && (
+          <iframe
+            src={embedUrl}
+            title={video.title}
+            className="absolute inset-0 w-full h-full"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            suppressHydrationWarning
+          />
+        )}
+      </div>
     </div>
   )
 }

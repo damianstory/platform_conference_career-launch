@@ -33,14 +33,15 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         />
 
         {/* Video Section - Always shown */}
-        <VideoSection video={booth.video} />
+        <div className="col-span-12 lg:col-span-4 h-[450px] lg:h-[500px]">
+          <VideoSection video={booth.video} />
+        </div>
 
         {/* Engagement Activity - Platinum only */}
         {isPlatinum && booth.tier === 'platinum' && booth.engagementActivity && (
-          <EngagementActivity
-            activity={booth.engagementActivity}
-            brandColors={booth.brandColors}
-          />
+          <div className="col-span-12 lg:col-span-8 h-[450px] lg:h-[500px]">
+            <EngagementActivity />
+          </div>
         )}
 
         {/* Resources - Always shown */}
