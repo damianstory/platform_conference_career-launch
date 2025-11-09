@@ -34,7 +34,7 @@ export default function BoothHeader({
                 <img
                   src={logo}
                   alt={`${name} logo`}
-                  className="w-full h-full object-contain p-2"
+                  className="w-full h-full object-contain"
                 />
               ) : (
                 <div className="text-2xl font-bold text-neutral-3">

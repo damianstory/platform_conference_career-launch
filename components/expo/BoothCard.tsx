@@ -109,7 +109,7 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
                     alt={`${booth.name} logo`}
                     width={80}
                     height={80}
-                    className="object-contain p-2"
+                    className="object-contain"
                     onError={handleImageError}
                     unoptimized
                   />
