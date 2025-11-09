@@ -172,7 +172,13 @@ export const healthFirst: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5G 1X8'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@healthfirst' },
+      { platform: 'twitter', url: 'https://twitter.com/healthfirst' },
+      { platform: 'instagram', url: 'https://instagram.com/healthfirst' },
+      { platform: 'facebook', url: 'https://facebook.com/healthfirst' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -267,7 +273,13 @@ export const futureBuild: PlatinumBoothData = {
       available: true,
       period: 'Year-round opportunities',
       applicationUrl: 'https://futurebuild.example.com/apply'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@futurebuild' },
+      { platform: 'twitter', url: 'https://twitter.com/futurebuild' },
+      { platform: 'instagram', url: 'https://instagram.com/futurebuild' },
+      { platform: 'facebook', url: 'https://facebook.com/futurebuild' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -357,7 +369,13 @@ export const financeHub: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5X 1H3'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@financehub' },
+      { platform: 'twitter', url: 'https://twitter.com/financehub' },
+      { platform: 'instagram', url: 'https://instagram.com/financehub' },
+      { platform: 'facebook', url: 'https://facebook.com/financehub' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -447,7 +465,13 @@ export const eduPath: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M3J 1P3'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@edupath' },
+      { platform: 'twitter', url: 'https://twitter.com/edupath' },
+      { platform: 'instagram', url: 'https://instagram.com/edupath' },
+      { platform: 'facebook', url: 'https://facebook.com/edupath' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -633,7 +657,13 @@ export const worldExplorer: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5A 1S1'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@worldexplorer' },
+      { platform: 'twitter', url: 'https://twitter.com/worldexplorer' },
+      { platform: 'instagram', url: 'https://instagram.com/worldexplorer' },
+      { platform: 'facebook', url: 'https://facebook.com/worldexplorer' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -723,7 +753,13 @@ export const greenPower: PlatinumBoothData = {
       city: 'Ottawa',
       province: 'ON',
       postalCode: 'K1A 0B1'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@greenpower' },
+      { platform: 'twitter', url: 'https://twitter.com/greenpower' },
+      { platform: 'instagram', url: 'https://instagram.com/greenpower' },
+      { platform: 'facebook', url: 'https://facebook.com/greenpower' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -813,7 +849,13 @@ export const creativeMinds: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5T 1R8'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@creativeminds' },
+      { platform: 'twitter', url: 'https://twitter.com/creativeminds' },
+      { platform: 'instagram', url: 'https://instagram.com/creativeminds' },
+      { platform: 'facebook', url: 'https://facebook.com/creativeminds' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -903,7 +945,13 @@ export const dataDynamics: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5V 2T6'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@datadynamics' },
+      { platform: 'twitter', url: 'https://twitter.com/datadynamics' },
+      { platform: 'instagram', url: 'https://instagram.com/datadynamics' },
+      { platform: 'facebook', url: 'https://facebook.com/datadynamics' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -993,7 +1041,13 @@ export const marketGenius: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5H 3Y2'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@marketgenius' },
+      { platform: 'twitter', url: 'https://twitter.com/marketgenius' },
+      { platform: 'instagram', url: 'https://instagram.com/marketgenius' },
+      { platform: 'facebook', url: 'https://facebook.com/marketgenius' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1083,7 +1137,13 @@ export const consultPro: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5K 1E3'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@consultpro' },
+      { platform: 'twitter', url: 'https://twitter.com/consultpro' },
+      { platform: 'instagram', url: 'https://instagram.com/consultpro' },
+      { platform: 'facebook', url: 'https://facebook.com/consultpro' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1173,7 +1233,13 @@ export const manufactureTech: PlatinumBoothData = {
       city: 'Hamilton',
       province: 'ON',
       postalCode: 'L8E 2X9'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@manufacturetech' },
+      { platform: 'twitter', url: 'https://twitter.com/manufacturetech' },
+      { platform: 'instagram', url: 'https://instagram.com/manufacturetech' },
+      { platform: 'facebook', url: 'https://facebook.com/manufacturetech' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1263,7 +1329,13 @@ export const cyberShield: PlatinumBoothData = {
       city: 'Ottawa',
       province: 'ON',
       postalCode: 'K2P 0R4'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@cybershield' },
+      { platform: 'twitter', url: 'https://twitter.com/cybershield' },
+      { platform: 'instagram', url: 'https://instagram.com/cybershield' },
+      { platform: 'facebook', url: 'https://facebook.com/cybershield' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1353,7 +1425,13 @@ export const bioMedical: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M2N 6K1'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@biomedical' },
+      { platform: 'twitter', url: 'https://twitter.com/biomedical' },
+      { platform: 'instagram', url: 'https://instagram.com/biomedical' },
+      { platform: 'facebook', url: 'https://facebook.com/biomedical' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1443,7 +1521,13 @@ export const architectDesign: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5J 2L7'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@architectdesign' },
+      { platform: 'twitter', url: 'https://twitter.com/architectdesign' },
+      { platform: 'instagram', url: 'https://instagram.com/architectdesign' },
+      { platform: 'facebook', url: 'https://facebook.com/architectdesign' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1533,7 +1617,13 @@ export const foodService: PlatinumBoothData = {
       city: 'Mississauga',
       province: 'ON',
       postalCode: 'L5B 1M2'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@foodservicepro' },
+      { platform: 'twitter', url: 'https://twitter.com/foodservicepro' },
+      { platform: 'instagram', url: 'https://instagram.com/foodservicepro' },
+      { platform: 'facebook', url: 'https://facebook.com/foodservicepro' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1623,7 +1713,13 @@ export const legalServices: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5H 1H1'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@legalservices' },
+      { platform: 'twitter', url: 'https://twitter.com/legalservices' },
+      { platform: 'instagram', url: 'https://instagram.com/legalservices' },
+      { platform: 'facebook', url: 'https://facebook.com/legalservices' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1713,7 +1809,13 @@ export const socialImpact: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M4Y 1J6'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@socialimpact' },
+      { platform: 'twitter', url: 'https://twitter.com/socialimpact' },
+      { platform: 'instagram', url: 'https://instagram.com/socialimpact' },
+      { platform: 'facebook', url: 'https://facebook.com/socialimpact' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1803,7 +1905,13 @@ export const urbanPlanning: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5H 2N2'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@urbanplanning' },
+      { platform: 'twitter', url: 'https://twitter.com/urbanplanning' },
+      { platform: 'instagram', url: 'https://instagram.com/urbanplanning' },
+      { platform: 'facebook', url: 'https://facebook.com/urbanplanning' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1893,7 +2001,13 @@ export const sportsManagement: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5J 2H7'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@sportsmgmt' },
+      { platform: 'twitter', url: 'https://twitter.com/sportsmgmt' },
+      { platform: 'instagram', url: 'https://instagram.com/sportsmgmt' },
+      { platform: 'facebook', url: 'https://facebook.com/sportsmgmt' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -1983,7 +2097,13 @@ export const environmentalConsulting: PlatinumBoothData = {
       city: 'Ottawa',
       province: 'ON',
       postalCode: 'K1P 5N7'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@ecoconsult' },
+      { platform: 'twitter', url: 'https://twitter.com/ecoconsult' },
+      { platform: 'instagram', url: 'https://instagram.com/ecoconsult' },
+      { platform: 'facebook', url: 'https://facebook.com/ecoconsult' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -2073,7 +2193,13 @@ export const automotiveTech: PlatinumBoothData = {
       city: 'Windsor',
       province: 'ON',
       postalCode: 'N9A 6J3'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@autotech' },
+      { platform: 'twitter', url: 'https://twitter.com/autotech' },
+      { platform: 'instagram', url: 'https://instagram.com/autotech' },
+      { platform: 'facebook', url: 'https://facebook.com/autotech' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -2163,7 +2289,13 @@ export const fashionDesign: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5V 3C6'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@fashionforward' },
+      { platform: 'twitter', url: 'https://twitter.com/fashionforward' },
+      { platform: 'instagram', url: 'https://instagram.com/fashionforward' },
+      { platform: 'facebook', url: 'https://facebook.com/fashionforward' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -2253,7 +2385,13 @@ export const aviationAcademy: PlatinumBoothData = {
       city: 'Brampton',
       province: 'ON',
       postalCode: 'L6T 5E3'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@aviationacademy' },
+      { platform: 'twitter', url: 'https://twitter.com/aviationacademy' },
+      { platform: 'instagram', url: 'https://instagram.com/aviationacademy' },
+      { platform: 'facebook', url: 'https://facebook.com/aviationacademy' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -2343,7 +2481,13 @@ export const hospitalityCollege: PlatinumBoothData = {
       city: 'Niagara Falls',
       province: 'ON',
       postalCode: 'L2E 6T2'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@hospitalitypro' },
+      { platform: 'twitter', url: 'https://twitter.com/hospitalitypro' },
+      { platform: 'instagram', url: 'https://instagram.com/hospitalitypro' },
+      { platform: 'facebook', url: 'https://facebook.com/hospitalitypro' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
@@ -2433,7 +2577,13 @@ export const publicHealth: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5G 1V2'
-    }
+    },
+    socialLinks: [
+      { platform: 'youtube', url: 'https://youtube.com/@publichealth' },
+      { platform: 'twitter', url: 'https://twitter.com/publichealth' },
+      { platform: 'instagram', url: 'https://instagram.com/publichealth' },
+      { platform: 'facebook', url: 'https://facebook.com/publichealth' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
