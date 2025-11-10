@@ -21,15 +21,69 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
   const splitTitle = (title: string): [string, string] => {
     const words = title.split(' ')
 
-    // If only one word, return it on first line with empty second line
+    // If only one word, return it on second line with empty first line for visual consistency
     if (words.length === 1) {
-      return [title, '']
+      return ['', title]
     }
 
-    // Find the midpoint to split
-    const midpoint = Math.ceil(words.length / 2)
-    const firstLine = words.slice(0, midpoint).join(' ')
-    const secondLine = words.slice(midpoint).join(' ')
+    // For 2-word titles: Always split 1 word per line for visual consistency
+    if (words.length === 2) {
+      return [words[0], words[1]]
+    }
+
+    // Hardcoded exceptions for specific titles that should display on 2 lines
+    const twoLineExceptions: { [key: string]: [string, string] } = {
+      'Kids Help Phone': ['Kids Help', 'Phone'],
+      'thinkAG & CAHRC': ['thinkAG &', 'CAHRC'],
+      'Vox Pop Labs': ['Vox Pop', 'Labs'],
+      'Ernst & Young': ['Ernst', '& Young']
+    }
+
+    if (twoLineExceptions[title]) {
+      return twoLineExceptions[title]
+    }
+
+    // For 3+ word titles that are short enough to fit on one line (like "Cielle & Co.")
+    // treat them like single-word titles for visual consistency
+    const MAX_SINGLE_LINE_CHARS = 15
+    if (title.length <= MAX_SINGLE_LINE_CHARS) {
+      return ['', title]
+    }
+
+    // For 3+ word titles: Use character-based splitting to avoid ellipsis on first line
+    // Max ~17-18 characters on first line to prevent truncation
+    const MAX_FIRST_LINE_CHARS = 18
+
+    let firstLineWords: string[] = []
+    let currentLength = 0
+
+    for (let i = 0; i < words.length; i++) {
+      const wordLength = words[i].length
+      const spaceLength = firstLineWords.length > 0 ? 1 : 0
+      const projectedLength = currentLength + spaceLength + wordLength
+
+      // Check if adding this word would exceed the limit
+      if (projectedLength >= MAX_FIRST_LINE_CHARS && firstLineWords.length > 0) {
+        break
+      }
+
+      firstLineWords.push(words[i])
+      currentLength = projectedLength
+    }
+
+    // Ensure we have at least one word on first line
+    if (firstLineWords.length === 0) {
+      firstLineWords.push(words[0])
+    }
+
+    // Ensure we don't put ALL words on first line (must split for 2-line consistency)
+    if (firstLineWords.length === words.length && words.length > 2) {
+      // Move last word(s) to second line to ensure 2-line display
+      firstLineWords = words.slice(0, -1)
+    }
+
+    const firstLine = firstLineWords.join(' ')
+    const secondLine = words.slice(firstLineWords.length).join(' ')
 
     return [firstLine, secondLine]
   }
@@ -127,8 +181,8 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
       {/* Company Info */}
       <div className="flex-grow flex flex-col space-y-2">
         <h3 className="text-body-1 font-black text-brand-navy" title={booth.name}>
-          <div className="line-clamp-1">{titleLine1}</div>
-          {titleLine2 && <div className="line-clamp-1">{titleLine2}</div>}
+          <div className="line-clamp-1">{titleLine1 || '\u00A0'}</div>
+          <div className="line-clamp-1">{titleLine2 || '\u00A0'}</div>
         </h3>
         <p className="text-body-2 font-light text-neutral-5 line-clamp-2" title={booth.tagline}>
           {booth.tagline}
