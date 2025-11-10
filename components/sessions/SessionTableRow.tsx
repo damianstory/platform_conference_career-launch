@@ -7,6 +7,7 @@ interface SessionTableRowProps {
   session: Session;
   isExpanded: boolean;
   onToggle: () => void;
+  variant?: 'default' | 'conference';
 }
 
 // Helper function to format grade level
@@ -25,6 +26,7 @@ export default function SessionTableRow({
   session,
   isExpanded,
   onToggle,
+  variant = 'default',
 }: SessionTableRowProps) {
   const handleWatchClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -42,7 +44,11 @@ export default function SessionTableRow({
     <>
       {/* Collapsed Row */}
       <tr
-        className="border-b border-gray-200 hover:bg-neutral-1 cursor-pointer transition-colors duration-200"
+        className={`border-b cursor-pointer transition-colors duration-200 ${
+          variant === 'conference'
+            ? 'border-white/20 hover:bg-white/10'
+            : 'border-gray-200 hover:bg-neutral-1'
+        }`}
         onClick={onToggle}
         role="button"
         tabIndex={0}
@@ -58,9 +64,9 @@ export default function SessionTableRow({
         {/* Chevron Column (24px) */}
         <td className="py-5 pl-6 w-6">
           <svg
-            className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-              isExpanded ? 'rotate-90' : ''
-            }`}
+            className={`w-4 h-4 transition-transform duration-200 ${
+              variant === 'conference' ? 'text-white/60' : 'text-gray-400'
+            } ${isExpanded ? 'rotate-90' : ''}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -77,7 +83,9 @@ export default function SessionTableRow({
 
         {/* Session Title Column (flex) */}
         <td className="py-5 pr-4">
-          <span className="text-lg font-semibold text-navy">
+          <span className={`text-lg font-semibold ${
+            variant === 'conference' ? 'text-white' : 'text-navy'
+          }`}>
             {session.title}
           </span>
         </td>
@@ -88,12 +96,16 @@ export default function SessionTableRow({
         </td>
 
         {/* Duration Column (100px) - Hidden on mobile */}
-        <td className="py-5 text-sm text-gray-600 hidden md:table-cell">
+        <td className={`py-5 text-sm hidden md:table-cell ${
+          variant === 'conference' ? 'text-white/80' : 'text-gray-600'
+        }`}>
           {session.duration} min
         </td>
 
         {/* Grade Level Column (120px) */}
-        <td className="py-5 text-sm text-gray-600">
+        <td className={`py-5 text-sm ${
+          variant === 'conference' ? 'text-white/80' : 'text-gray-600'
+        }`}>
           {formatGradeLevel(session.grade_level)}
         </td>
 
@@ -114,7 +126,11 @@ export default function SessionTableRow({
         <tr>
           <td colSpan={6} className="p-0">
             <div
-              className="px-6 md:px-24 py-6 bg-gray-50 border-t border-gray-200 animate-fadeIn"
+              className={`px-6 md:px-24 py-6 border-t animate-fadeIn ${
+                variant === 'conference'
+                  ? 'bg-white/5 border-white/20'
+                  : 'bg-gray-50 border-gray-200'
+              }`}
               role="region"
               aria-label={`Details for ${session.title}`}
             >
@@ -126,8 +142,12 @@ export default function SessionTableRow({
               {/* Description Section */}
               {session.description && (
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Description</h4>
-                  <p className="text-gray-600 leading-relaxed">
+                  <h4 className={`text-sm font-semibold mb-2 ${
+                    variant === 'conference' ? 'text-white/90' : 'text-gray-700'
+                  }`}>Description</h4>
+                  <p className={`leading-relaxed ${
+                    variant === 'conference' ? 'text-white/80' : 'text-gray-600'
+                  }`}>
                     {session.description}
                   </p>
                 </div>
@@ -136,8 +156,12 @@ export default function SessionTableRow({
               {/* Learning Objectives Section */}
               {session.learning_objectives && session.learning_objectives.length > 0 && (
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Learning Objectives</h4>
-                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                  <h4 className={`text-sm font-semibold mb-2 ${
+                    variant === 'conference' ? 'text-white/90' : 'text-gray-700'
+                  }`}>Learning Objectives</h4>
+                  <ul className={`list-disc list-inside space-y-1 ${
+                    variant === 'conference' ? 'text-white/80' : 'text-gray-600'
+                  }`}>
                     {session.learning_objectives.map((objective, index) => (
                       <li key={index}>{objective}</li>
                     ))}
@@ -148,11 +172,13 @@ export default function SessionTableRow({
               {/* Presenter Section */}
               {session.presenter_name && (
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Presenter</h4>
-                  <p className="text-gray-600">
+                  <h4 className={`text-sm font-semibold mb-2 ${
+                    variant === 'conference' ? 'text-white/90' : 'text-gray-700'
+                  }`}>Presenter</h4>
+                  <p className={variant === 'conference' ? 'text-white/80' : 'text-gray-600'}>
                     <span className="font-medium">{session.presenter_name}</span>
                     {session.presenter_bio && (
-                      <span className="text-gray-500"> • {session.presenter_bio}</span>
+                      <span className={variant === 'conference' ? 'text-white/70' : 'text-gray-500'}> • {session.presenter_bio}</span>
                     )}
                   </p>
                 </div>
@@ -160,8 +186,12 @@ export default function SessionTableRow({
 
               {/* Session Details (Mobile Duration) */}
               <div className="mb-4 md:hidden">
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Session Details</h4>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                <h4 className={`text-sm font-semibold mb-2 ${
+                  variant === 'conference' ? 'text-white/90' : 'text-gray-700'
+                }`}>Session Details</h4>
+                <div className={`flex flex-wrap gap-4 text-sm ${
+                  variant === 'conference' ? 'text-white/80' : 'text-gray-600'
+                }`}>
                   <div>
                     <span className="font-medium">Duration:</span> {session.duration} minutes
                   </div>

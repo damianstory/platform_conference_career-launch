@@ -4,9 +4,9 @@ import type { Session, BlockNumber } from '@/types';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import Accordion, { AccordionItem } from '@/components/Accordion';
-import SessionCard from '@/components/SessionCard';
 import SessionTabs from '@/components/ui/SessionTabs';
 import AllSessionsView from '@/components/sessions/AllSessionsView';
+import ConferenceScheduleTable from '@/components/sessions/ConferenceScheduleTable';
 import { allSessions } from '@/data/sample-sessions';
 
 // Block color mapping
@@ -63,10 +63,8 @@ function SessionsContent() {
       content: (
         <div>
           {blockSessions.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-3 md:gap-4 pt-4">
-              {blockSessions.map((session) => (
-                <SessionCard key={session.id} session={session} />
-              ))}
+            <div className="pt-4">
+              <ConferenceScheduleTable sessions={blockSessions} />
             </div>
           ) : (
             <p className="text-white/80 italic">No sessions in this block yet.</p>
