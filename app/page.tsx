@@ -14,7 +14,7 @@ export default function HomePage() {
             alt="Career Launch Platform Hero"
             fill
             className="object-cover"
-            style={{ objectPosition: 'center calc(70% + 15px)' }}
+            style={{ objectPosition: '60% calc(70% + 15px)' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/40" />
@@ -22,7 +22,7 @@ export default function HomePage() {
 
         {/* Content Layer */}
         <div className="relative w-full container-custom">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl lg:-ml-32">
             <h1 className="text-4xl md:text-5xl font-black text-white mb-6">
               Explore Careers,<br />Inspire Futures
             </h1>
