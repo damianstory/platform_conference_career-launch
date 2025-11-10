@@ -1,12 +1,10 @@
-import { createClient } from '@/lib/supabase/server';
 import { notFound } from 'next/navigation';
 import { formatDuration } from '@/lib/utils';
 import type { Session } from '@/types';
+import { getSessionBySlug, allSessions } from '@/data/sample-sessions';
 import VideoSection from '@/components/session/VideoSection';
 import SpeakerSection from '@/components/session/SpeakerSection';
 import DescriptionSection from '@/components/session/DescriptionSection';
-
-export const dynamic = 'force-dynamic';
 
 interface SessionPageProps {
   params: Promise<{
@@ -14,18 +12,20 @@ interface SessionPageProps {
   }>;
 }
 
+// Generate static params for all sessions at build time
+export async function generateStaticParams() {
+  return allSessions.map((session) => ({
+    slug: session.slug,
+  }));
+}
+
 export default async function SessionPage({ params }: SessionPageProps) {
   const { slug } = await params;
-  const supabase = await createClient();
 
-  // Fetch session by slug
-  const { data: session, error } = await supabase
-    .from('sessions')
-    .select('*')
-    .eq('slug', slug)
-    .single();
+  // Get session from hardcoded data
+  const session = getSessionBySlug(slug);
 
-  if (error || !session) {
+  if (!session) {
     notFound();
   }
 
@@ -53,9 +53,9 @@ export default async function SessionPage({ params }: SessionPageProps) {
 
           {/* Speaker Section */}
           <SpeakerSection
-            name={session.speaker_name || 'Speaker'}
-            title={session.speaker_title || ''}
-            company={session.company || 'Company'}
+            name={session.presenter_name || 'Speaker'}
+            title={session.presenter_bio || ''}
+            company={''}
           />
         </div>
       </section>

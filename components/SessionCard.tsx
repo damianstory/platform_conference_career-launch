@@ -40,10 +40,10 @@ export default function SessionCard({ session, className = '' }: SessionCardProp
       </div>
 
       {/* Duration badge */}
-      {session.duration_minutes && (
+      {session.duration && (
         <div className="absolute top-3 right-3 z-10">
           <span className="text-[10px] font-medium text-white/80 bg-[#22224C]/60 backdrop-blur-sm px-2 py-1 rounded-md">
-            {formatDuration(session.duration_minutes)}
+            {formatDuration(session.duration)}
           </span>
         </div>
       )}
@@ -54,19 +54,14 @@ export default function SessionCard({ session, className = '' }: SessionCardProp
           {session.title}
         </h3>
         <div className="flex items-center gap-2 text-white/90 text-xs">
-          <span className="line-clamp-1 font-medium">{session.speaker_name}</span>
-          {session.speaker_title && (
+          <span className="line-clamp-1 font-medium">{session.presenter_name}</span>
+          {session.presenter_bio && (
             <>
               <span className="text-[#C6E7FF]/60">•</span>
-              <span className="line-clamp-1 text-white/70 font-light">{session.speaker_title}</span>
+              <span className="line-clamp-1 text-white/70 font-light">{session.presenter_bio}</span>
             </>
           )}
         </div>
-        {session.company && (
-          <p className="text-[#C6E7FF]/80 text-[10px] mt-1 font-medium uppercase tracking-wider">
-            {session.company}
-          </p>
-        )}
       </div>
 
       {/* Hover arrow indicator with myBlueprint blue */}

@@ -1,10 +1,7 @@
-import { createClient } from '@/lib/supabase/server';
 import type { Session, BlockNumber } from '@/types';
 import Accordion, { AccordionItem } from '@/components/Accordion';
 import SessionCard from '@/components/SessionCard';
-
-// Revalidate every hour for ISR (Incremental Static Regeneration)
-export const revalidate = 3600;
+import { allSessions } from '@/data/sample-sessions';
 
 // Block color mapping
 const BLOCK_COLORS: Record<BlockNumber, string> = {
@@ -21,24 +18,9 @@ function getIndustryPreview(sessions: Session[]): string {
   return preview;
 }
 
-export default async function SessionsPage() {
-  const supabase = await createClient();
-
-  // Fetch all sessions ordered by block and display_order
-  const { data: sessions, error } = await supabase
-    .from('sessions')
-    .select('*')
-    .order('block_number', { ascending: true })
-    .order('display_order', { ascending: true });
-
-  if (error) {
-    console.error('Error fetching sessions:', error);
-    return (
-      <div className="container-custom py-12">
-        <p className="text-red-600">Failed to load sessions. Please try again later.</p>
-      </div>
-    );
-  }
+export default function SessionsPage() {
+  // Use hardcoded session data
+  const sessions = allSessions;
 
   // Group sessions by block_number
   const sessionsByBlock: Record<BlockNumber, Session[]> = {

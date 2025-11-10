@@ -2,7 +2,6 @@
 
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import type { ClassSize } from '@/types';
 
 /**
  * Merges Tailwind CSS classes with proper precedence
@@ -10,26 +9,6 @@ import type { ClassSize } from '@/types';
  */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
-}
-
-/**
- * Estimates student count based on class size category
- * Used for calculating total student reach metrics
- */
-export function estimateStudentCount(
-  classSize: ClassSize,
-  largeGroupCount?: number | null
-): number {
-  switch (classSize) {
-    case 'less-than-25':
-      return 20; // Conservative estimate
-    case '25-to-35':
-      return 30; // Mid-range estimate
-    case 'large-group':
-      return largeGroupCount || 50; // Use provided count or default to 50
-    default:
-      return 0;
-  }
 }
 
 /**
@@ -58,67 +37,5 @@ export function titleToSlug(title: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
-}
-
-/**
- * Checks if a viewing event is considered "completed" (>=80% watched)
- */
-export function isViewingCompleted(completionPercentage: number): boolean {
-  return completionPercentage >= 80;
-}
-
-/**
- * Formats completion percentage with % symbol
- */
-export function formatCompletionPercentage(percentage: number): string {
-  return `${Math.round(percentage)}%`;
-}
-
-/**
- * Converts watch duration in seconds to minutes display (e.g., "5:23")
- */
-export function formatWatchDuration(seconds: number): string {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = seconds % 60;
-  return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-}
-
-/**
- * Gets display label for user role
- */
-export function getRoleLabel(role: string): string {
-  const roleLabels: Record<string, string> = {
-    teacher: 'Teacher',
-    guidance_counselor: 'Guidance Counselor',
-    administrator: 'Administrator',
-    other: 'Other',
-  };
-  return roleLabels[role] || role;
-}
-
-/**
- * Gets display label for grade level
- */
-export function getGradeLevelLabel(gradeLevel: string): string {
-  const gradeLabels: Record<string, string> = {
-    'grade-9': 'Grade 9',
-    'grade-10': 'Grade 10',
-    'grade-11': 'Grade 11',
-    'grade-12': 'Grade 12',
-    mixed: 'Mixed Grades',
-  };
-  return gradeLabels[gradeLevel] || gradeLevel;
-}
-
-/**
- * Gets display label for class size
- */
-export function getClassSizeLabel(classSize: string): string {
-  const sizeLabels: Record<string, string> = {
-    'less-than-25': 'Less than 25 students',
-    '25-to-35': '25-35 students',
-    'large-group': 'Large group (35+ students)',
-  };
-  return sizeLabels[classSize] || classSize;
 }
 

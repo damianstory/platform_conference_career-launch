@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import BoothDetailHeader from '@/components/layout/BoothDetailHeader'
 import SessionDetailHeader from '@/components/layout/SessionDetailHeader'
 import { getBoothBySlug } from '@/data/sample-booths'
+import { getSessionBySlug } from '@/data/sample-sessions'
 
 export default function ConditionalHeader() {
   const pathname = usePathname()
@@ -49,12 +50,15 @@ export default function ConditionalHeader() {
       const slug = pathname.split('/').pop()
 
       if (slug) {
-        // For sessions, we'll use the slug as a placeholder
-        // The actual session title is fetched server-side in the page component
-        setSessionData({
-          title: '', // Title will be displayed in the page hero, not the header
-          slug: slug,
-        })
+        // Fetch session data
+        const session = getSessionBySlug(slug)
+
+        if (session) {
+          setSessionData({
+            title: session.title,
+            slug: session.slug,
+          })
+        }
       }
     } else {
       setSessionData(null)
