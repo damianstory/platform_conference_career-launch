@@ -145,7 +145,7 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
                   <th className="text-center py-3 text-sm font-semibold text-gray-700 w-24 hidden md:table-cell">
                     Duration
                   </th>
-                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-32">
+                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-32 hidden md:table-cell">
                     Grades
                   </th>
                   <th className="w-44" aria-label="Actions"></th>

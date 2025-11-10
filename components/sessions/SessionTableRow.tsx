@@ -103,8 +103,8 @@ export default function SessionTableRow({
           {session.duration} min
         </td>
 
-        {/* Grade Level Column (120px) */}
-        <td className={`py-5 text-sm text-center ${
+        {/* Grade Level Column (120px) - Hidden on mobile */}
+        <td className={`py-5 text-sm hidden md:table-cell text-center ${
           variant === 'conference' ? 'text-white/80' : 'text-gray-600'
         }`}>
           {formatGradeLevel(session.grade_level)}
@@ -182,6 +182,9 @@ export default function SessionTableRow({
                   </div>
                   <div>
                     <span className="font-medium">Block:</span> {session.block_number}
+                  </div>
+                  <div>
+                    <span className="font-medium">Grades:</span> {formatGradeLevel(session.grade_level)}
                   </div>
                 </div>
               </div>
