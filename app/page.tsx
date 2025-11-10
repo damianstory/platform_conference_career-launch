@@ -1,45 +1,36 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import FAQ from '@/components/FAQ';
 
 export default function HomePage() {
   return (
     <div className="bg-off-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-light-blue min-h-[50vh] md:min-h-[60vh] lg:min-h-[65vh] flex items-center py-24">
-        <div className="container-custom w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <div>
-              <h1 className="text-4xl md:text-5xl font-black text-navy mb-6">
-                Explore Careers, Inspire Futures
-              </h1>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                Join Ontario&apos;s largest virtual career education event. December 1-5, 2025.
-                Bringing industry professionals directly to your classroom.
-              </p>
-            </div>
+      <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[65vh] flex items-center">
+        {/* Background Layer */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-career-launch.jpg"
+            alt="Career Launch Platform Hero"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center calc(70% + 15px)' }}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/40" />
+        </div>
 
-            {/* Right Column - Image Placeholder */}
-            <div className="relative">
-              <div className="aspect-video bg-gradient-to-br from-light-blue to-off-white rounded-lg shadow-lg flex items-center justify-center">
-                <div className="text-center p-8">
-                  <svg
-                    className="w-24 h-24 mx-auto text-navy/20"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <p className="text-sm text-navy/40 mt-4">Hero Image</p>
-                </div>
-              </div>
-            </div>
+        {/* Content Layer */}
+        <div className="relative w-full container-custom">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-5xl font-black text-white mb-6">
+              Explore Careers,<br />Inspire Futures
+            </h1>
+            <p className="text-xl text-white/95 leading-relaxed">
+              Join Ontario&apos;s largest virtual career education<br />
+              event. December 1-5, 2025. Bringing industry<br />
+              professionals directly to your classroom.
+            </p>
           </div>
         </div>
       </section>
