@@ -2627,6 +2627,12 @@ export const localManufacturing: StandardBoothData = {
       url: 'https://example.com/benefits.pdf',
       type: 'pdf',
       fileSize: '250 KB'
+    },
+    {
+      title: 'Apprenticeship Info',
+      description: 'Learn about our apprenticeship program',
+      url: 'https://example.com/apprenticeship',
+      type: 'link'
     }
   ],
   googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
@@ -2690,6 +2696,13 @@ export const communityCollege: StandardBoothData = {
       description: 'Making college affordable',
       url: 'https://example.com/financial-aid',
       type: 'link'
+    },
+    {
+      title: 'Campus Tour',
+      description: 'Schedule a campus visit',
+      url: 'https://example.com/campus-tour.pdf',
+      type: 'pdf',
+      fileSize: '1.5 MB'
     }
   ],
   googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',

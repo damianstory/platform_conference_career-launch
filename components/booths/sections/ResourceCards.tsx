@@ -7,9 +7,11 @@ import { getDownloadAriaLabel } from '@/lib/utils/accessibility'
 
 interface ResourceCardsProps {
   resources: ResourceItem[]
+  colSpan?: string
+  layout?: 'grid' | 'vertical'
 }
 
-export default function ResourceCards({ resources }: ResourceCardsProps) {
+export default function ResourceCards({ resources, colSpan = 'lg:col-span-6', layout = 'grid' }: ResourceCardsProps) {
   // Get icon and color based on resource type
   const getResourceIcon = (type: string) => {
     switch (type) {
@@ -57,11 +59,11 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
     }
   }
 
-  // Limit to first 5 resources for grid layout
-  const displayResources = resources.slice(0, 5)
+  // Limit resources based on layout: 3 for vertical, 5 for grid
+  const displayResources = resources.slice(0, layout === 'vertical' ? 3 : 5)
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
+    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 ${colSpan}`}>
       {/* Header - matches SessionSlides styling */}
       <div className="px-6 py-2 border-b border-gray-200">
         <h3 className="text-lg font-bold text-gray-900 truncate">Resources</h3>
@@ -69,7 +71,7 @@ export default function ResourceCards({ resources }: ResourceCardsProps) {
 
       {/* Auto-height container - all cards visible without scrolling */}
       <div className="px-4 pt-4 pb-3">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
+        <div className={layout === 'vertical' ? 'flex flex-col gap-1' : 'grid grid-cols-1 sm:grid-cols-2 gap-1'}>
           {displayResources.map((resource, index) => {
             const { icon: Icon, cardBg, iconBg, iconColor, borderColor, hoverBorder, hoverBg } = getResourceIcon(resource.type)
 

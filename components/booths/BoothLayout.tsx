@@ -20,7 +20,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
   return (
     <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* 12-column bento grid with consistent gaps */}
-      <div className="grid grid-cols-12 gap-4 sm:gap-6 w-full">
+      <div className="grid grid-cols-12 gap-4 sm:gap-6 w-full" style={{ isolation: 'isolate' }}>
 
         {/* Booth Header - Always shown, full width */}
         <BoothHeader
@@ -33,7 +33,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         />
 
         {/* Video Section - Always shown */}
-        <div className="col-span-12 lg:col-span-4 h-[450px] lg:h-[500px]">
+        <div className={`col-span-12 h-[450px] lg:h-[500px] ${isPlatinum ? 'lg:col-span-4' : 'lg:col-span-8'}`}>
           <VideoSection video={booth.video} />
         </div>
 
@@ -45,7 +45,11 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         )}
 
         {/* Resources - Always shown */}
-        <ResourceCards resources={booth.resources} />
+        <ResourceCards
+          resources={booth.resources}
+          colSpan={isPlatinum ? 'lg:col-span-6' : 'lg:col-span-4'}
+          layout={isPlatinum ? 'grid' : 'vertical'}
+        />
 
         {/* Session Slides - Platinum only */}
         {isPlatinum && booth.tier === 'platinum' && booth.sessionSlides && (
