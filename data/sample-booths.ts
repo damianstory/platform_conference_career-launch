@@ -1,94 +1,8 @@
 import { PlatinumBoothData, StandardBoothData } from '@/types/booth'
 
 // ======================
-// PLATINUM TIER BOOTHS (27 TOTAL)
+// PLATINUM TIER BOOTHS (26 TOTAL)
 // ======================
-
-export const techVision: PlatinumBoothData = {
-  id: 'tech-vision',
-  name: 'TechVision Corp',
-  slug: 'tech-vision',
-  tier: 'platinum',
-  industry: 'Technology',
-  organizationType: 'employer',
-  pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
-  tagline: 'Building tomorrow\'s technology solutions today',
-  description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
-  website: 'https://techvision.example.com',
-  quickFacts: [
-    { icon: 'building', label: 'Founded', value: '2010' },
-    { icon: 'users', label: 'Employees', value: '2,500+' },
-    { icon: 'globe', label: 'Global Reach', value: '15 Countries' }
-  ],
-  video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
-    type: 'youtube',
-    title: 'Life at TechVision',
-    description: 'Discover what makes TechVision a great place to start your career'
-  },
-  resources: [
-    {
-      title: 'Career Pathways in Tech',
-      description: 'Explore different career paths in technology',
-      url: 'https://example.com/career-guide.pdf',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Internship Program',
-      description: 'Learn about our immersive internship experience',
-      url: 'https://example.com/internship-info',
-      type: 'link'
-    }
-  ],
-  sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Tech Careers 2025',
-    description: 'Interactive presentation on emerging tech careers'
-  },
-  engagementActivity: {
-    embedUrl: 'about:blank',
-    embedType: 'skills-gap-quiz',
-    title: 'Tech Career Quiz',
-    description: 'Discover your strengths in technology fields',
-    duration: '10 minutes'
-  },
-  primaryCTA: {
-    text: 'Explore Careers',
-    url: 'https://techvision.example.com/careers',
-    type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://techvision.example.com/contact',
-    type: 'contact'
-  },
-  contact: {
-    email: 'students@techvision.example.com',
-    phone: '1-800-555-TECH',
-    headquarters: {
-      address: '100 King Street West',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5X 1A1'
-    },
-    internshipInfo: {
-      available: true,
-      period: 'Summer 2025 (May - August)',
-      applicationUrl: 'https://techvision.example.com/apply'
-    },
-    socialLinks: [
-      { platform: 'linkedin', url: 'https://linkedin.com/company/techvision' },
-      { platform: 'twitter', url: 'https://twitter.com/techvision' }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C',
-    accent: '#C6E7FF'
-  }
-}
 
 export const healthFirst: PlatinumBoothData = {
   id: 'health-first',
@@ -2741,8 +2655,7 @@ export const communityCollege: StandardBoothData = {
 // ======================
 
 export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
-  // Platinum Tier (27 booths)
-  techVision,
+  // Platinum Tier (26 booths)
   healthFirst,
   futureBuild,
   financeHub,
