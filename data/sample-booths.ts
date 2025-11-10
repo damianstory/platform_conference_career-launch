@@ -2607,14 +2607,14 @@ export const voxPopLabs: PlatinumBoothData = {
 
 export const localManufacturing: StandardBoothData = {
   id: 'local-manufacturing',
-  name: 'LocalMake Co',
+  name: 'University of Guelph',
   slug: 'local-manufacturing',
   tier: 'standard',
   industry: 'Manufacturing',
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
   logo: '/logos/industry-immersion-series.png',
-  tagline: 'Building products building careers',
+  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'LocalMake Co is a family-owned manufacturing company producing precision components with competitive wages and benefits.',
   website: 'https://localmake.example.com',
   video: {
@@ -2677,14 +2677,14 @@ export const localManufacturing: StandardBoothData = {
 
 export const communityCollege: StandardBoothData = {
   id: 'community-college',
-  name: 'Community College',
+  name: 'Conestoga College',
   slug: 'community-college',
   tier: 'standard',
   industry: 'Education',
   organizationType: 'post-secondary',
   pathway: 'college',
   logo: '/logos/industry-immersion-series.png',
-  tagline: 'Accessible education real results',
+  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'Community College offers affordable career-focused programs with small class sizes across multiple campus locations.',
   website: 'https://communitycollege.example.com',
   video: {
