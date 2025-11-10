@@ -1,6 +1,12 @@
+'use client';
+
 import type { Session, BlockNumber } from '@/types';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import Accordion, { AccordionItem } from '@/components/Accordion';
 import SessionCard from '@/components/SessionCard';
+import SessionTabs from '@/components/ui/SessionTabs';
+import AllSessionsView from '@/components/sessions/AllSessionsView';
 import { allSessions } from '@/data/sample-sessions';
 
 // Block color mapping
@@ -18,7 +24,13 @@ function getIndustryPreview(sessions: Session[]): string {
   return preview;
 }
 
-export default function SessionsPage() {
+type ViewType = 'conference' | 'all';
+
+function SessionsContent() {
+  const searchParams = useSearchParams();
+  const viewParam = searchParams.get('view');
+  const activeView: ViewType = viewParam === 'all' ? 'all' : 'conference';
+
   // Use hardcoded session data
   const sessions = allSessions;
 
@@ -73,15 +85,51 @@ export default function SessionsPage() {
             Browse All Sessions
           </h1>
           <p className="text-lg text-light-blue">
-            Click on a block to explore sessions
+            {activeView === 'conference'
+              ? 'Click on a block to explore sessions'
+              : 'Explore all sessions in one view'}
           </p>
         </div>
       </section>
 
-      {/* Block Accordion - Full Width */}
-      <section>
-        <Accordion items={accordionItems} variant="blocks" />
-      </section>
+      {/* Tab Navigation */}
+      <SessionTabs activeView={activeView} />
+
+      {/* Tab Content with Fade Transition */}
+      <div className="animate-fadeIn">
+        {activeView === 'conference' ? (
+          <section
+            role="tabpanel"
+            id="conference-panel"
+            aria-labelledby="conference-tab"
+          >
+            <Accordion items={accordionItems} variant="blocks" />
+          </section>
+        ) : (
+          <AllSessionsView sessions={sessions} />
+        )}
+      </div>
     </div>
+  );
+}
+
+export default function SessionsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen">
+          <section className="bg-navy text-white py-12">
+            <div className="px-8 md:px-16">
+              <h1 className="text-3xl md:text-4xl font-black mb-3">
+                Browse All Sessions
+              </h1>
+              <p className="text-lg text-light-blue">Loading...</p>
+            </div>
+          </section>
+        </div>
+      }
+    >
+      <SessionsContent />
+    </Suspense>
   );
 }

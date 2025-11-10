@@ -56,30 +56,46 @@ Jamstack with Server-Side Rendering (SSR):
 ```
 /app                          # Next.js App Router
 ├── layout.tsx               # Root layout with providers
-├── page.tsx                 # Schedule landing page (PUBLIC)
-├── sessions/[slug]/
-│   └── page.tsx            # Session detail page (PUBLIC)
-└── api/
-    ├── submit-registration/ # Handle combined form submission
-    ├── update-viewing-event/# Track video progress
-    └── complete-viewing-event/ # Mark video completed
+├── page.tsx                 # Homepage with hero and 4-block schedule (PUBLIC)
+├── globals.css              # Tailwind base + design tokens + animations
+├── sessions/
+│   ├── page.tsx            # Sessions page with tab navigation (PUBLIC)
+│   └── [slug]/
+│       └── page.tsx        # Session detail page (PUBLIC)
+└── api/                     # API routes (to be implemented)
+    ├── submit-registration/
+    ├── update-viewing-event/
+    └── complete-viewing-event/
 
 /components
-├── schedule/               # Schedule page components
-├── session/               # Session detail components
-├── forms/                # Registration form components
-├── video/                # Video player and tracking
-└── ui/                   # Reusable UI components
+├── Accordion.tsx            # Reusable accordion with 'blocks' variant
+├── SessionCard.tsx          # Session card with hover effects
+├── Header.tsx               # Navigation header
+├── sessions/
+│   └── AllSessionsView.tsx # Flat list view for "All Sessions" tab
+└── ui/
+    └── SessionTabs.tsx      # Tab navigation (Conference/All Sessions)
+
+/data
+└── sample-sessions.ts       # Hardcoded session data (27 sessions)
 
 /lib
-├── supabase/             # Database client and queries
-├── analytics/            # GA4 tracking
-├── cookies/              # Cookie management
-└── utils/                # Helper functions
+├── supabase/                # Database client and queries
+│   ├── client.ts           # Browser client
+│   └── server.ts           # Server client
+└── utils.ts                 # Utility functions (cn, formatters)
+
+/types
+└── index.ts                 # TypeScript type definitions
 
 /styles
-├── globals.css           # Tailwind base + design tokens
-└── design-tokens.css     # CSS custom properties
+└── design-tokens.css        # CSS custom properties
+
+/supabase
+├── migrations/
+│   └── 001_initial_schema.sql
+└── seeds/
+    └── 001_sample_data.sql
 ```
 
 ## Database Schema
@@ -98,8 +114,6 @@ Jamstack with Server-Side Rendering (SSR):
 
 ## Development Commands
 
-**Note:** This repository currently contains documentation only. When code is implemented:
-
 ```bash
 # Install dependencies
 npm install
@@ -111,13 +125,67 @@ npm run dev              # Starts at http://localhost:3000
 npm run build
 
 # Type checking
-npm run type-check
+npm run type-check       # Run TypeScript compiler without emitting files
 
 # Linting
-npm run lint
+npm run lint             # Run ESLint for code quality
 
-# Format code
-npm run format
+# Testing
+npm run test             # Run Jest test suite
+npm run test:watch       # Run tests in watch mode
+npm run test:coverage    # Run tests with coverage report
+```
+
+## Current Implementation State
+
+### Completed Features
+- **Homepage (`/`)**: Hero section with event info + 4-block accordion schedule
+- **Sessions Page (`/sessions`)**: Two-tab navigation system
+  - **Conference Schedule Tab** (default): Original 4-block accordion view
+  - **All Sessions Tab** (`?view=all`): Flat list of all 27 sessions (sorted alphabetically)
+  - URL param-based navigation with `useSearchParams` and `useRouter`
+  - Centered tab design with background highlight for active state
+  - 200ms fade-in animation when switching views
+- **Session Detail Pages (`/sessions/[slug]`)**: Individual session pages with metadata and descriptions
+- **Design System**: Complete myBlueprint brand compliance with custom Tailwind tokens
+- **Sample Data**: 27 hardcoded sessions in `/data/sample-sessions.ts` (Block 1: 6, Block 2: 6, Block 3: 7, Block 4: 8)
+
+### Component Patterns
+
+#### Client vs Server Components
+- **Server Components** (default): Homepage, session detail pages
+- **Client Components** (`'use client'`):
+  - Sessions page (uses URL params)
+  - SessionTabs (router navigation)
+  - Accordion (interactive state)
+
+#### URL Navigation Pattern
+```typescript
+// Sessions page uses URL params for view state
+// Default: /sessions (shows Conference Schedule)
+// Alternate: /sessions?view=all (shows All Sessions)
+
+const searchParams = useSearchParams();
+const activeView = searchParams.get('view') === 'all' ? 'all' : 'conference';
+```
+
+#### Accordion Pattern
+```typescript
+// Accordion component supports two variants
+<Accordion items={accordionItems} variant="blocks" />
+// 'default': Standard accordion with white background
+// 'blocks': Colored backgrounds (block1-4 colors from design system)
+```
+
+#### Session Data Access
+```typescript
+// Sessions are imported from centralized data file
+import { allSessions } from '@/data/sample-sessions';
+// Helper functions available:
+// - getSessionBySlug(slug: string)
+// - getSessionsByBlock(blockNumber: BlockNumber)
+// - getSessionsByIndustry(industry: string)
+// - getAllIndustries()
 ```
 
 ## Important Concepts
