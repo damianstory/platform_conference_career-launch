@@ -100,11 +100,11 @@ export default function SessionTableRow({
         {/* Action Column (180px) */}
         <td className="py-5 pr-6">
           <button
-            className="btn-primary text-sm w-full md:w-auto px-4 py-2"
+            className="btn-primary text-sm w-full md:w-28 px-4 py-2"
             onClick={handleWatchClick}
             aria-label={`Watch ${session.title} with your class`}
           >
-            Watch with Class
+            Watch
           </button>
         </td>
       </tr>
@@ -181,11 +181,11 @@ export default function SessionTableRow({
                   Watch Trailer
                 </button>
                 <button
-                  className="btn-primary text-sm px-4 py-2"
+                  className="btn-primary text-sm w-full sm:w-28 px-4 py-2"
                   onClick={handleWatchClick}
                   aria-label={`Watch ${session.title} with your class`}
                 >
-                  Watch with Your Class
+                  Watch
                 </button>
               </div>
             </div>

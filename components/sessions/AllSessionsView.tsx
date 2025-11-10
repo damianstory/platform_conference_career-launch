@@ -136,7 +136,7 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
                 <tr>
                   <th className="w-6" aria-label="Expand row"></th>
                   <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
-                    Session
+                    {/* Empty - session titles column */}
                   </th>
                   <th className="text-left py-3 text-sm font-semibold text-gray-700 w-36 hidden md:table-cell">
                     Industry

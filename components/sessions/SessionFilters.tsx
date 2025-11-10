@@ -57,45 +57,78 @@ export default function SessionFilters({
           {/* Left side: Filter dropdowns + Reset button */}
           <div className="flex gap-3 flex-1">
             {/* Industry Dropdown */}
-            <select
-              value={filters.industry}
-              onChange={(e) => onFilterChange({ ...filters, industry: e.target.value })}
-              className="px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-              aria-label="Filter by industry"
-            >
-              <option value="">All Industries</option>
-              <option value="Healthcare">Healthcare</option>
-              <option value="Technology">Technology</option>
-              <option value="Skilled Trades">Skilled Trades</option>
-              <option value="Business">Business</option>
-              <option value="Public Service">Public Service</option>
-            </select>
+            <div className="relative">
+              <select
+                value={filters.industry}
+                onChange={(e) => onFilterChange({ ...filters, industry: e.target.value })}
+                className="appearance-none w-full px-4 py-2 pr-12 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+                aria-label="Filter by industry"
+              >
+                <option value="">All Industries</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Technology">Technology</option>
+                <option value="Skilled Trades">Skilled Trades</option>
+                <option value="Business">Business</option>
+                <option value="Public Service">Public Service</option>
+              </select>
+              <svg
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
             {/* Grade Level Dropdown */}
-            <select
-              value={filters.gradeLevel}
-              onChange={(e) => onFilterChange({ ...filters, gradeLevel: e.target.value })}
-              className="px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-              aria-label="Filter by grade level"
-            >
-              <option value="">All Grades</option>
-              <option value="9-10">Grades 9-10</option>
-              <option value="11-12">Grades 11-12</option>
-              <option value="All Grades">All Grades</option>
-            </select>
+            <div className="relative">
+              <select
+                value={filters.gradeLevel}
+                onChange={(e) => onFilterChange({ ...filters, gradeLevel: e.target.value })}
+                className="appearance-none w-full px-4 py-2 pr-12 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+                aria-label="Filter by grade level"
+              >
+                <option value="">All Grades</option>
+                <option value="9-10">Grades 9-10</option>
+                <option value="11-12">Grades 11-12</option>
+                <option value="All Grades">All Grades</option>
+              </select>
+              <svg
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
             {/* Duration Dropdown */}
-            <select
-              value={filters.duration}
-              onChange={(e) => onFilterChange({ ...filters, duration: e.target.value })}
-              className="px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-              aria-label="Filter by duration"
-            >
-              <option value="">All Durations</option>
-              <option value="under-20">Under 20 min</option>
-              <option value="20-30">20-30 min</option>
-              <option value="over-30">Over 30 min</option>
-            </select>
+            <div className="relative">
+              <select
+                value={filters.duration}
+                onChange={(e) => onFilterChange({ ...filters, duration: e.target.value })}
+                className="appearance-none w-full px-4 py-2 pr-12 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+                aria-label="Filter by duration"
+              >
+                <option value="">All Durations</option>
+                <option value="under-20">Under 20 min</option>
+                <option value="20-30">20-30 min</option>
+                <option value="over-30">Over 30 min</option>
+              </select>
+              <svg
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
             {/* Reset Button (conditional) */}
             {hasActiveFilters && (
@@ -120,7 +153,7 @@ export default function SessionFilters({
               aria-label="Search sessions"
             />
             <svg
-              className="absolute left-3 top-2.5 w-4 h-4 text-gray-400"
+              className="absolute left-3.5 top-3 w-4 h-4 text-gray-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -179,7 +212,7 @@ export default function SessionFilters({
               aria-label="Search sessions"
             />
             <svg
-              className="absolute left-3 top-2.5 w-4 h-4 text-gray-400"
+              className="absolute left-3.5 top-3 w-4 h-4 text-gray-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -293,19 +326,30 @@ export default function SessionFilters({
                   <label htmlFor="mobile-industry" className="block text-sm font-medium text-gray-700 mb-1">
                     Industry
                   </label>
-                  <select
-                    id="mobile-industry"
-                    value={filters.industry}
-                    onChange={(e) => onFilterChange({ ...filters, industry: e.target.value })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-                  >
-                    <option value="">All Industries</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Technology">Technology</option>
-                    <option value="Skilled Trades">Skilled Trades</option>
-                    <option value="Business">Business</option>
-                    <option value="Public Service">Public Service</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="mobile-industry"
+                      value={filters.industry}
+                      onChange={(e) => onFilterChange({ ...filters, industry: e.target.value })}
+                      className="appearance-none w-full px-4 py-2 pr-12 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+                    >
+                      <option value="">All Industries</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Technology">Technology</option>
+                      <option value="Skilled Trades">Skilled Trades</option>
+                      <option value="Business">Business</option>
+                      <option value="Public Service">Public Service</option>
+                    </select>
+                    <svg
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
 
                 {/* Grade Level Dropdown */}
@@ -313,17 +357,28 @@ export default function SessionFilters({
                   <label htmlFor="mobile-grade" className="block text-sm font-medium text-gray-700 mb-1">
                     Grade Level
                   </label>
-                  <select
-                    id="mobile-grade"
-                    value={filters.gradeLevel}
-                    onChange={(e) => onFilterChange({ ...filters, gradeLevel: e.target.value })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-                  >
-                    <option value="">All Grades</option>
-                    <option value="9-10">Grades 9-10</option>
-                    <option value="11-12">Grades 11-12</option>
-                    <option value="All Grades">All Grades</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="mobile-grade"
+                      value={filters.gradeLevel}
+                      onChange={(e) => onFilterChange({ ...filters, gradeLevel: e.target.value })}
+                      className="appearance-none w-full px-4 py-2 pr-12 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+                    >
+                      <option value="">All Grades</option>
+                      <option value="9-10">Grades 9-10</option>
+                      <option value="11-12">Grades 11-12</option>
+                      <option value="All Grades">All Grades</option>
+                    </select>
+                    <svg
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
 
                 {/* Duration Dropdown */}
@@ -331,17 +386,28 @@ export default function SessionFilters({
                   <label htmlFor="mobile-duration" className="block text-sm font-medium text-gray-700 mb-1">
                     Duration
                   </label>
-                  <select
-                    id="mobile-duration"
-                    value={filters.duration}
-                    onChange={(e) => onFilterChange({ ...filters, duration: e.target.value })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-                  >
-                    <option value="">All Durations</option>
-                    <option value="under-20">Under 20 min</option>
-                    <option value="20-30">20-30 min</option>
-                    <option value="over-30">Over 30 min</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      id="mobile-duration"
+                      value={filters.duration}
+                      onChange={(e) => onFilterChange({ ...filters, duration: e.target.value })}
+                      className="appearance-none w-full px-4 py-2 pr-12 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+                    >
+                      <option value="">All Durations</option>
+                      <option value="under-20">Under 20 min</option>
+                      <option value="20-30">20-30 min</option>
+                      <option value="over-30">Over 30 min</option>
+                    </select>
+                    <svg
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
 
