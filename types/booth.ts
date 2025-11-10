@@ -102,6 +102,7 @@ export type Pathway =
   | 'college'
   | 'university'
   | 'gap-year'
+  | 'general'
 
 export interface PlatinumBoothData {
   id: string
@@ -141,6 +142,7 @@ export interface StandardBoothData {
   video: VideoContent
   resources: ResourceItem[]
   googleFormUrl?: string
+  externalUrl?: string
   primaryCTA: CTAButton
   secondaryCTA: CTAButton
   contact: ContactDetails

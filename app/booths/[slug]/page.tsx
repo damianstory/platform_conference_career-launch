@@ -25,10 +25,19 @@ export default async function BoothPage({ params }: BoothPageProps) {
 }
 
 // Generate static params for all booths at build time
+// Excludes external booths (booths with externalUrl) as they link out directly
 export async function generateStaticParams() {
   const { allBooths } = await import('@/data/sample-booths')
 
-  return allBooths.map((booth) => ({
+  // Filter out booths with externalUrl as they don't need detail pages
+  const internalBooths = allBooths.filter((booth) => {
+    if (booth.tier === 'standard' && 'externalUrl' in booth && booth.externalUrl) {
+      return false
+    }
+    return true
+  })
+
+  return internalBooths.map((booth) => ({
     slug: booth.slug,
   }))
 }

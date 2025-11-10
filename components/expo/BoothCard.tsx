@@ -75,6 +75,11 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
 
   const styles = getTierStyles()
 
+  // Check if this is an external booth (only StandardBoothData can have externalUrl)
+  const isExternalBooth = booth.tier === 'standard' && 'externalUrl' in booth && booth.externalUrl
+  const linkUrl = (isExternalBooth && 'externalUrl' in booth && booth.externalUrl) ? booth.externalUrl : `/booths/${booth.slug}`
+  const ctaText = 'Visit Booth →'
+
   // Enhanced wrapper component for platinum cards only
   const PlatinumCardEnhancements = ({ children, tier }: { children: React.ReactNode, tier: string }) => {
     if (tier === 'platinum') {
@@ -90,64 +95,75 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
     return <>{children}</>
   }
 
+  // Card content wrapper
+  const CardContent = () => (
+    <div className={`
+      booth-card group relative rounded-xl pt-3 pb-4 px-5 cursor-pointer flex flex-col
+      ${styles.card} ${styles.glow}
+      h-[280px]
+      transition-all duration-200 hover:scale-102 active:scale-98
+    `}>
+      {/* Logo */}
+      <div className="mb-2 flex-shrink-0">
+        <div className="bg-white rounded-lg flex items-center justify-center overflow-hidden relative w-20 h-20 shadow-sm">
+          {booth.logo && !isImageError ? (
+            <Image
+              src={booth.logo}
+              alt={`${booth.name} logo`}
+              width={80}
+              height={80}
+              className="object-contain"
+              onError={handleImageError}
+              unoptimized
+            />
+          ) : (
+            <div className="text-2xl font-bold text-neutral-3">
+              {booth.name.substring(0, 2).toUpperCase()}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Company Info */}
+      <div className="flex-grow flex flex-col space-y-2">
+        <h3 className="text-body-1 font-black text-brand-navy" title={booth.name}>
+          <div className="line-clamp-1">{titleLine1}</div>
+          {titleLine2 && <div className="line-clamp-1">{titleLine2}</div>}
+        </h3>
+        <p className="text-body-2 font-light text-neutral-5 line-clamp-2" title={booth.tagline}>
+          {booth.tagline}
+        </p>
+      </div>
+
+      {/* Hover CTA - Pure CSS hover */}
+      <div className="absolute bottom-4 left-4 right-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
+        <div className="bg-primary-blue text-white text-center py-2 px-4 rounded-lg font-medium text-sm shadow-lg hover:bg-brand-navy transition-colors">
+          {ctaText}
+        </div>
+      </div>
+
+      {/* Decorative Elements for Platinum Tier - Pure CSS hover */}
+      {booth.tier === 'platinum' && (
+        <div className="absolute top-0 left-0 w-full h-full rounded-xl pointer-events-none overflow-hidden">
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-primary-blue/15 to-primary-blue/10 rounded-full blur-3xl opacity-60 scale-100 group-hover:opacity-80 group-hover:scale-110 transition-all duration-300"></div>
+          <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-primary-blue/10 to-primary-blue/5 rounded-full blur-3xl opacity-50 scale-100 group-hover:opacity-70 group-hover:scale-120 transition-all duration-400"></div>
+        </div>
+      )}
+    </div>
+  )
+
   return (
     <PlatinumCardEnhancements tier={booth.tier}>
       <div className={`${styles.wrapper} booth-card-wrapper`}>
-        <Link href={`/booths/${booth.slug}`}>
-          <div className={`
-            booth-card group relative rounded-xl pt-3 pb-4 px-5 cursor-pointer flex flex-col
-            ${styles.card} ${styles.glow}
-            h-[280px]
-            transition-all duration-200 hover:scale-102 active:scale-98
-          `}>
-            {/* Logo */}
-            <div className="mb-2 flex-shrink-0">
-              <div className="bg-white rounded-lg flex items-center justify-center overflow-hidden relative w-20 h-20 shadow-sm">
-                {booth.logo && !isImageError ? (
-                  <Image
-                    src={booth.logo}
-                    alt={`${booth.name} logo`}
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                    onError={handleImageError}
-                    unoptimized
-                  />
-                ) : (
-                  <div className="text-2xl font-bold text-neutral-3">
-                    {booth.name.substring(0, 2).toUpperCase()}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Company Info */}
-            <div className="flex-grow flex flex-col space-y-2">
-              <h3 className="text-body-1 font-black text-brand-navy" title={booth.name}>
-                <div className="line-clamp-1">{titleLine1}</div>
-                {titleLine2 && <div className="line-clamp-1">{titleLine2}</div>}
-              </h3>
-              <p className="text-body-2 font-light text-neutral-5 line-clamp-2" title={booth.tagline}>
-                {booth.tagline}
-              </p>
-            </div>
-
-            {/* Hover CTA - Pure CSS hover */}
-            <div className="absolute bottom-4 left-4 right-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
-              <div className="bg-primary-blue text-white text-center py-2 px-4 rounded-lg font-medium text-sm shadow-lg hover:bg-brand-navy transition-colors">
-                Visit Booth →
-              </div>
-            </div>
-
-            {/* Decorative Elements for Platinum Tier - Pure CSS hover */}
-            {booth.tier === 'platinum' && (
-              <div className="absolute top-0 left-0 w-full h-full rounded-xl pointer-events-none overflow-hidden">
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br from-primary-blue/15 to-primary-blue/10 rounded-full blur-3xl opacity-60 scale-100 group-hover:opacity-80 group-hover:scale-110 transition-all duration-300"></div>
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-primary-blue/10 to-primary-blue/5 rounded-full blur-3xl opacity-50 scale-100 group-hover:opacity-70 group-hover:scale-120 transition-all duration-400"></div>
-              </div>
-            )}
-          </div>
-        </Link>
+        {isExternalBooth ? (
+          <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+            <CardContent />
+          </a>
+        ) : (
+          <Link href={linkUrl}>
+            <CardContent />
+          </Link>
+        )}
       </div>
     </PlatinumCardEnhancements>
   )

@@ -2650,6 +2650,68 @@ export const communityCollege: StandardBoothData = {
   }
 }
 
+export const careerMythBuster: StandardBoothData = {
+  id: 'career-myth-buster',
+  name: 'Career Myth Buster',
+  slug: 'career-myth-buster',
+  tier: 'standard',
+  industry: 'Education',
+  organizationType: 'employer',
+  pathway: 'general',
+  logo: '/logos/career-myth-buster.png',
+  tagline: 'Separate Career Fact from Fiction',
+  description: 'Explore career myths and discover the reality behind common misconceptions about various career paths. Get evidence-based insights to make informed decisions about your future.',
+  website: 'https://degreehub.com/careermythbuster',
+  externalUrl: 'https://degreehub.com/careermythbuster',
+  video: {
+    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    type: 'youtube',
+    title: 'Career Myth Buster',
+    description: 'Debunking career myths'
+  },
+  resources: [
+    {
+      title: 'Career Myths Guide',
+      description: 'Common myths debunked',
+      url: 'https://degreehub.com/careermythbuster/guide',
+      type: 'link'
+    },
+    {
+      title: 'Career Facts',
+      description: 'Evidence-based career information',
+      url: 'https://degreehub.com/careermythbuster/facts',
+      type: 'link'
+    },
+    {
+      title: 'Interactive Quiz',
+      description: 'Test your career knowledge',
+      url: 'https://degreehub.com/careermythbuster/quiz',
+      type: 'link'
+    }
+  ],
+  primaryCTA: {
+    text: 'Explore Now',
+    url: 'https://degreehub.com/careermythbuster',
+    type: 'learn-more'
+  },
+  secondaryCTA: {
+    text: 'Learn More',
+    url: 'https://degreehub.com/careermythbuster',
+    type: 'website'
+  },
+  contact: {
+    email: 'info@degreehub.com',
+    socialLinks: [
+      { platform: 'linkedin', url: 'https://linkedin.com/company/degreehub' },
+      { platform: 'twitter', url: 'https://twitter.com/degreehub' }
+    ]
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
 // ======================
 // EXPORTS
 // ======================
@@ -2682,9 +2744,10 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   aviationAcademy,
   hospitalityCollege,
   publicHealth,
-  // Standard Tier (2 booths)
+  // Standard Tier (3 booths)
   localManufacturing,
-  communityCollege
+  communityCollege,
+  careerMythBuster
 ]
 
 export const platinumBooths = allBooths.filter(booth => booth.tier === 'platinum') as PlatinumBoothData[]
