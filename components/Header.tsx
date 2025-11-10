@@ -22,8 +22,8 @@ export default function Header() {
                 href="/sessions"
                 className={`px-4 py-2 rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
                   isSessionsActive
-                    ? 'text-brand-navy font-bold border-b-2 border-primary-blue'
-                    : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30'
+                    ? 'text-brand-navy font-bold border-2 border-primary-blue'
+                    : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30 border-2 border-transparent'
                 }`}
                 aria-current={isSessionsActive ? 'page' : undefined}
               >
@@ -33,8 +33,8 @@ export default function Header() {
                 href="/booths"
                 className={`px-4 py-2 rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
                   isBoothsActive
-                    ? 'text-brand-navy font-bold border-b-2 border-primary-blue'
-                    : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30'
+                    ? 'text-brand-navy font-bold border-2 border-primary-blue'
+                    : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30 border-2 border-transparent'
                 }`}
                 aria-current={isBoothsActive ? 'page' : undefined}
               >
