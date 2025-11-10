@@ -14,10 +14,11 @@ interface SessionTableRowProps {
 const formatGradeLevel = (gradeLevel: string | null): string => {
   if (!gradeLevel) return 'All Grades';
   if (gradeLevel.includes('All')) return 'All Grades';
-  if (gradeLevel.match(/9.*10/)) return 'Grades 9-10';
-  if (gradeLevel.match(/11.*12/)) return 'Grades 11-12';
-  if (gradeLevel.match(/^(9|10|11|12)-/)) {
-    return `Grades ${gradeLevel}`;
+  if (gradeLevel.match(/7.*12/)) return '7-12';
+  if (gradeLevel.match(/9.*10/)) return '9-10';
+  if (gradeLevel.match(/11.*12/)) return '11-12';
+  if (gradeLevel.match(/^(7|8|9|10|11|12)-/)) {
+    return gradeLevel;
   }
   return 'All Grades';
 };
@@ -91,19 +92,19 @@ export default function SessionTableRow({
         </td>
 
         {/* Industry Column (140px) - Hidden on mobile */}
-        <td className="py-5 hidden md:table-cell">
+        <td className="py-5 hidden md:table-cell text-center">
           <IndustryBadge industry={session.industry} />
         </td>
 
         {/* Duration Column (100px) - Hidden on mobile */}
-        <td className={`py-5 text-sm hidden md:table-cell ${
+        <td className={`py-5 text-sm hidden md:table-cell text-center ${
           variant === 'conference' ? 'text-white/80' : 'text-gray-600'
         }`}>
           {session.duration} min
         </td>
 
         {/* Grade Level Column (120px) */}
-        <td className={`py-5 text-sm ${
+        <td className={`py-5 text-sm text-center ${
           variant === 'conference' ? 'text-white/80' : 'text-gray-600'
         }`}>
           {formatGradeLevel(session.grade_level)}
@@ -153,28 +154,12 @@ export default function SessionTableRow({
                 </div>
               )}
 
-              {/* Learning Objectives Section */}
-              {session.learning_objectives && session.learning_objectives.length > 0 && (
-                <div className="mb-4">
-                  <h4 className={`text-sm font-semibold mb-2 ${
-                    variant === 'conference' ? 'text-white/90' : 'text-gray-700'
-                  }`}>Learning Objectives</h4>
-                  <ul className={`list-disc list-inside space-y-1 ${
-                    variant === 'conference' ? 'text-white/80' : 'text-gray-600'
-                  }`}>
-                    {session.learning_objectives.map((objective, index) => (
-                      <li key={index}>{objective}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
               {/* Presenter Section */}
               {session.presenter_name && (
                 <div className="mb-4">
                   <h4 className={`text-sm font-semibold mb-2 ${
                     variant === 'conference' ? 'text-white/90' : 'text-gray-700'
-                  }`}>Presenter</h4>
+                  }`}>Organization</h4>
                   <p className={variant === 'conference' ? 'text-white/80' : 'text-gray-600'}>
                     <span className="font-medium">{session.presenter_name}</span>
                     {session.presenter_bio && (

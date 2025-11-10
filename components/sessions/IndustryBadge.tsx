@@ -4,6 +4,7 @@ interface IndustryBadgeProps {
 }
 
 const industryColors: Record<string, string> = {
+  'Launch': 'bg-blue-50 text-blue-700 border-blue-200',
   'Healthcare': 'bg-blue-50 text-blue-700 border-blue-200',
   'Technology': 'bg-green-50 text-green-700 border-green-200',
   'Skilled Trades': 'bg-amber-50 text-amber-700 border-amber-200',

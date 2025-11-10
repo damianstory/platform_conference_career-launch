@@ -13,6 +13,7 @@ interface AllSessionsViewProps {
 const normalizeGradeLevel = (gradeLevel: string | null): string => {
   if (!gradeLevel) return 'All Grades';
   if (gradeLevel.includes('All')) return 'All Grades';
+  if (gradeLevel.match(/7.*12/)) return '7-12';
   if (gradeLevel.match(/9.*10/)) return '9-10';
   if (gradeLevel.match(/11.*12/)) return '11-12';
   return 'All Grades';
@@ -21,7 +22,7 @@ const normalizeGradeLevel = (gradeLevel: string | null): string => {
 // Helper function to format grade level for display
 const formatGradeLevel = (gradeLevel: string | null): string => {
   const normalized = normalizeGradeLevel(gradeLevel);
-  return normalized === 'All Grades' ? 'All Grades' : `Grades ${normalized}`;
+  return normalized;
 };
 
 export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
@@ -138,14 +139,14 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
                   <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
                     {/* Empty - session titles column */}
                   </th>
-                  <th className="text-left py-3 text-sm font-semibold text-gray-700 w-36 hidden md:table-cell">
+                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-36 hidden md:table-cell">
                     Industry
                   </th>
-                  <th className="text-left py-3 text-sm font-semibold text-gray-700 w-24 hidden md:table-cell">
+                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-24 hidden md:table-cell">
                     Duration
                   </th>
-                  <th className="text-left py-3 text-sm font-semibold text-gray-700 w-32">
-                    Grade Level
+                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-32">
+                    Grades
                   </th>
                   <th className="w-44" aria-label="Actions"></th>
                 </tr>
