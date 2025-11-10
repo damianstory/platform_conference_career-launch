@@ -51,16 +51,16 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
             before:opacity-0 hover:before:opacity-100 before:transition-opacity
           `,
           badge: 'bg-gradient-to-r from-primary-blue to-brand-navy text-white shadow-lg shadow-primary-blue/30',
-          glow: 'hover:shadow-2xl hover:shadow-primary-blue/25 transform hover:scale-[1.02]',
+          glow: 'shadow-[0_4px_16px_rgba(0,146,255,0.12),0_2px_6px_rgba(34,34,76,0.06)] hover:shadow-[0_12px_32px_rgba(0,146,255,0.25),0_4px_12px_rgba(34,34,76,0.08)] transform hover:scale-[1.02]',
           animation: 'animate-float',
           priority: 1
         }
       case 'standard':
         return {
           wrapper: 'col-span-1',
-          card: 'bg-white border-2 border-neutral-2 hover:border-neutral-3',
+          card: 'bg-white border-2 border-neutral-2/60 hover:border-primary-blue/30',
           badge: 'bg-neutral-4 text-white',
-          glow: 'hover:shadow-lg',
+          glow: 'shadow-[0_2px_6px_rgba(34,34,76,0.04)] hover:shadow-[0_6px_20px_rgba(0,146,255,0.12),0_2px_8px_rgba(34,34,76,0.06)]',
           priority: 2
         }
       default:

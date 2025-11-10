@@ -103,9 +103,9 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
         {/* Results Summary */}
         <div className="mb-6 text-center">
-          <p className="text-neutral-4">
-            Showing <span className="font-semibold text-brand-navy">{filteredBooths.length}</span>
-            {' '}of {booths.length} booths
+          <p className="text-neutral-5 text-base">
+            Showing <span className="font-bold text-brand-navy text-lg">{filteredBooths.length}</span>
+            {' '}of <span className="font-medium">{booths.length}</span> booths
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
                   <h2 className="text-3xl font-bold text-brand-navy mb-2">
                     Platinum Booths
                   </h2>
-                  <div className="h-1.5 w-24 bg-primary-blue rounded-full"></div>
+                  <div className="h-1.5 w-24 bg-gradient-to-r from-primary-blue to-primary-blue/20 rounded-full shadow-[0_2px_4px_rgba(0,146,255,0.15)]"></div>
                 </div>
                 <div className="expo-booth-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {boothsByTier.platinum.map((booth, index) => (
@@ -137,10 +137,10 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
             {boothsByTier.standard.length > 0 && (
               <div>
                 <div className="mb-6">
-                  <h2 className="text-xl font-semibold text-neutral-5 mb-2">
+                  <h2 className="text-xl font-semibold text-neutral-6 mb-2">
                     Standard Booths
                   </h2>
-                  <div className="h-0.5 w-16 bg-neutral-4 rounded-full"></div>
+                  <div className="h-0.5 w-16 bg-gradient-to-r from-neutral-5 to-neutral-3 rounded-full"></div>
                 </div>
                 <div className="expo-booth-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {boothsByTier.standard.map((booth, index) => (
@@ -185,7 +185,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
               <button
                 onClick={clearAllFilters}
-                className="px-8 py-3 bg-primary-blue text-white rounded-lg hover:bg-brand-navy transition-all hover:scale-102 active:scale-98 font-medium"
+                className="px-8 py-3 bg-primary-blue text-white rounded-lg font-semibold shadow-[0_4px_12px_rgba(0,146,255,0.25)] hover:bg-brand-navy hover:shadow-[0_6px_20px_rgba(0,146,255,0.35)] hover:-translate-y-1 transition-all duration-300 ease-out active:scale-98"
               >
                 View All Booths
               </button>
