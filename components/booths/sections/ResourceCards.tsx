@@ -82,7 +82,7 @@ export default function ResourceCards({ resources, colSpan = 'lg:col-span-6', la
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={getDownloadAriaLabel(resource.title, resource.fileSize)}
-                className={`group relative ${cardBg} border ${borderColor} ${hoverBorder} rounded-lg py-4 px-3 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit shadow-[0_2px_4px_rgba(34,34,76,0.06)] hover:shadow-[0_4px_12px_rgba(0,146,255,0.15),0_2px_4px_rgba(34,34,76,0.08)]`}
+                className={`group relative ${cardBg} border ${borderColor} ${hoverBorder} rounded-lg py-4 px-3 transition-all duration-300 ease-out hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 h-fit shadow-[0_2px_4px_rgba(34,34,76,0.06)] hover:shadow-[0_4px_12px_rgba(0,146,255,0.15),0_2px_4px_rgba(34,34,76,0.08)]`}
               >
                 {/* Hover overlay effect */}
                 <div className={`absolute inset-0 ${hoverBg} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none`} />

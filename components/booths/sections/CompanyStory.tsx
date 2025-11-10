@@ -33,7 +33,7 @@ export default function CompanyStory({ description, quickFacts }: CompanyStoryPr
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-8 h-64">
+    <div className="bg-white rounded-xl shadow-[0_2px_8px_rgba(34,34,76,0.04)] border border-gray-200/60 overflow-hidden transition-all duration-200 hover:shadow-[0_4px_16px_rgba(34,34,76,0.06)] hover:border-gray-300/80 col-span-12 lg:col-span-8 h-64">
       <div className="p-4 space-y-2 h-full overflow-y-auto">
         {/* Section Label */}
         <SectionLabel text="About Us" />

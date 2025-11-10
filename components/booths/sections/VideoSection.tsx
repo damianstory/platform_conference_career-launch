@@ -61,7 +61,7 @@ export default function VideoSection({ video }: VideoSectionProps) {
   return (
     <div
       ref={videoRef}
-      className="bg-gray-800 rounded-xl shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md h-full"
+      className="bg-gray-800 rounded-xl shadow-[0_3px_10px_rgba(34,34,76,0.08),0_1px_3px_rgba(34,34,76,0.04)] border border-gray-200/50 ring-1 ring-primary-blue/5 overflow-hidden transition-all duration-200 hover:shadow-md h-full"
     >
       <div className="relative w-full h-full">
         {/* Video Iframe - loads immediately when visible */}

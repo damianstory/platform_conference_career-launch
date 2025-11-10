@@ -21,7 +21,7 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
+    <div className="bg-white rounded-xl shadow-[0_3px_10px_rgba(34,34,76,0.08),0_1px_3px_rgba(34,34,76,0.04)] border border-gray-200/50 ring-1 ring-primary-blue/5 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
       {/* Header */}
       <div className="px-6 py-2 border-b border-gray-200 flex items-center justify-between gap-3">
         <h3 className="text-lg font-bold text-gray-900 truncate min-w-0 flex-1">Your Session Deck Here</h3>

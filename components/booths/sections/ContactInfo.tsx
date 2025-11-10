@@ -31,7 +31,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
 
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-4 h-64">
+    <div className="bg-white rounded-xl shadow-[0_2px_8px_rgba(34,34,76,0.04)] border border-gray-200/60 overflow-hidden transition-all duration-200 hover:shadow-[0_4px_16px_rgba(34,34,76,0.06)] hover:border-gray-300/80 col-span-12 lg:col-span-4 h-64">
       <div className="p-4 flex flex-col h-full">
         {/* Section Label */}
         <div className="mb-2 flex-shrink-0">
@@ -45,7 +45,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
             <a
               href={`mailto:${contact.email}`}
               aria-label={`Email ${contact.email}`}
-              className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] hover:text-primary-blue transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 focus-visible:rounded"
+              className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
             >
               <Mail className="w-2 h-2 text-primary-blue flex-shrink-0" />
               <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors break-all leading-tight">
@@ -60,7 +60,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit website"
-            className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] hover:text-primary-blue transition-colors group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 focus-visible:rounded"
+            className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
           >
             <Globe className="w-2 h-2 text-primary-blue flex-shrink-0" />
             <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
