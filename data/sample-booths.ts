@@ -2613,8 +2613,8 @@ export const universityOfGuelph: StandardBoothData = {
   industry: 'Manufacturing',
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
-  logo: '/logos/industry-immersion-series.png',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+  logo: '/logos/university-of-guelph.png',
+  tagline: 'The University of Guelph reached a major milestone, ranking as the second largest university co-op program in Ontario and the fifth largest in Canada.',
   description: 'At the University of Guelph, everyone who studies here, explores here, teaches here and works here is committed to one simple purpose: to Improve Life.\n\nNo matter where you\'re from, once you enroll at U of G, you\'re part of a community – a network of fellow students and staff who will help you achieve your goals and set you up for success.\n\nConnect with us to learn more about our programs, upcoming events, webinars, and more!',
   website: 'https://localmake.example.com',
   video: {
