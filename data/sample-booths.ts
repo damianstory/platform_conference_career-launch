@@ -2809,6 +2809,47 @@ export const careerMythBuster: StandardBoothData = {
   }
 }
 
+// Industry Immersion Series - External Booth
+export const industryImmersionSeries: StandardBoothData = {
+  id: 'industry-immersion-series',
+  name: 'Industry Immersion Series',
+  slug: 'industry-immersion-series',
+  tier: 'standard',
+  industry: 'Education',
+  organizationType: 'employer',
+  pathway: 'general',
+  logo: '/logos/industry-immersion-series.png',
+  tagline: '20 x $500 micro grants available EACH month',
+  description: 'The Industry Immersion Series provides Canadian students with hands-on experience and financial support to explore various career paths through micro-grants.',
+  website: 'https://industryimmersionseries.myblueprint.ca/',
+  externalUrl: 'https://industryimmersionseries.myblueprint.ca/',
+  video: {
+    url: 'https://industryimmersionseries.myblueprint.ca/',
+    type: 'custom',
+    title: 'Industry Immersion Series',
+    description: '20 x $500 micro-grants available to Canadian students each month.'
+  },
+  resources: [],
+  primaryCTA: {
+    text: 'Learn More',
+    url: 'https://industryimmersionseries.myblueprint.ca/',
+    type: 'learn-more'
+  },
+  secondaryCTA: {
+    text: 'Visit Website',
+    url: 'https://industryimmersionseries.myblueprint.ca/',
+    type: 'website'
+  },
+  contact: {
+    email: 'info@myblueprint.ca',
+    socialLinks: []
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
 // ======================
 // EXPORTS
 // ======================
@@ -2842,10 +2883,11 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   hospitalityCollege,
   publicHealth,
   voxPopLabs,
-  // Standard Tier (3 booths)
+  // Standard Tier (4 booths)
   universityOfGuelph,
   communityCollege,
-  careerMythBuster
+  careerMythBuster,
+  industryImmersionSeries
 ]
 
 export const platinumBooths = allBooths.filter(booth => booth.tier === 'platinum') as PlatinumBoothData[]

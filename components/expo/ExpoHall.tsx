@@ -83,7 +83,17 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
     // Select random booth and navigate directly
     const randomIndex = Math.floor(Math.random() * filteredBooths.length)
     const randomBooth = filteredBooths[randomIndex]
-    router.push(`/booths/${randomBooth.slug}`)
+
+    // Check if this is an external booth
+    const isExternalBooth = randomBooth.tier === 'standard' && 'externalUrl' in randomBooth && randomBooth.externalUrl
+
+    if (isExternalBooth && 'externalUrl' in randomBooth && randomBooth.externalUrl) {
+      // Open external URL in new tab
+      window.open(randomBooth.externalUrl, '_blank', 'noopener,noreferrer')
+    } else {
+      // Navigate to internal booth page
+      router.push(`/booths/${randomBooth.slug}`)
+    }
   }
 
   return (
