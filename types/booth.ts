@@ -79,7 +79,7 @@ export interface EngagementActivityData {
 
 export type BoothTier = 'platinum' | 'standard'
 
-export type OrganizationType = 'employer' | 'post-secondary' | 'gap-year'
+export type OrganizationType = 'employer' | 'post-secondary' | 'gap-year' | 'activities'
 
 export type Industry =
   | 'Technology'

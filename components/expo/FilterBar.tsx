@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { GraduationCap, Briefcase, Lightbulb, Dices } from 'lucide-react'
+import { GraduationCap, Briefcase, Lightbulb, Dices, Sparkles } from 'lucide-react'
 import { Industry, OrganizationType } from '@/types/booth'
 
 interface FilterBarProps {
@@ -111,6 +111,19 @@ export default function FilterBar({
             <Lightbulb className="w-3.5 h-3.5" />
             Gap Year Programs
           </button>
+          <button
+            onClick={() => onOrganizationTypeChange('activities')}
+            className={`
+              px-3 py-1.5 rounded-full text-compact font-light transition-all duration-200 flex items-center gap-1.5
+              ${organizationType === 'activities'
+                ? 'bg-gradient-to-r from-primary-blue to-primary-blue/90 text-white shadow-[0_2px_8px_rgba(0,146,255,0.25)] hover:shadow-[0_4px_12px_rgba(0,146,255,0.35)] hover:-translate-y-0.5'
+                : 'bg-neutral-2 text-neutral-6 hover:bg-primary-blue/10 hover:text-primary-blue border border-transparent hover:border-primary-blue/20'
+              }
+            `}
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            Activities
+          </button>
         </div>
       </div>
 
@@ -163,7 +176,8 @@ export default function FilterBar({
               <span className="px-3 py-1.5 bg-primary-blue/10 text-primary-blue rounded-full border border-primary-blue/20 font-medium text-xs shadow-[0_1px_3px_rgba(0,146,255,0.08)]">
                 {organizationType === 'employer' ? 'Employers' :
                  organizationType === 'post-secondary' ? 'Post-Secondary' :
-                 'Gap Year'}
+                 organizationType === 'gap-year' ? 'Gap Year' :
+                 'Activities'}
               </span>
             )}
             {selectedIndustries.map(industry => (
