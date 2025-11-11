@@ -35,6 +35,7 @@ export interface QuickFact {
 export interface ContactDetails {
   email?: string
   phone?: string
+  website?: string
   headquarters?: {
     address: string
     city: string
@@ -47,7 +48,7 @@ export interface ContactDetails {
     applicationUrl?: string
   }
   socialLinks?: Array<{
-    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube'
+    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube' | 'spotify'
     url: string
   }>
 }

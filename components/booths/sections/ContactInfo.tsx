@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Mail, Globe, Youtube, Twitter, Instagram, Facebook } from 'lucide-react'
+import { SiSpotify, SiTiktok } from 'react-icons/si'
 import { ContactDetails } from '@/types/booth'
 import SectionLabel from '../shared/SectionLabel'
 import { getExternalLinkAriaLabel } from '@/lib/utils/accessibility'
@@ -23,7 +24,9 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
       case 'facebook':
         return Facebook
       case 'tiktok':
-        return null // Will use emoji/text
+        return SiTiktok
+      case 'spotify':
+        return SiSpotify
       default:
         return null
     }
@@ -32,9 +35,9 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-[0_2px_8px_rgba(34,34,76,0.04)] border border-gray-200/60 overflow-hidden transition-all duration-200 hover:shadow-[0_4px_16px_rgba(34,34,76,0.06)] hover:border-gray-300/80 col-span-12 lg:col-span-4 h-64">
-      <div className="p-4 flex flex-col h-full">
+      <div className="p-4 pb-3 flex flex-col h-full">
         {/* Section Label */}
-        <div className="mb-2 flex-shrink-0">
+        <div className="mb-2 -mt-2 flex-shrink-0">
           <SectionLabel text="Get in Touch" />
         </div>
 
@@ -55,23 +58,47 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
           )}
 
           {/* Website */}
-          <a
-            href="https://www.conestogac.on.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit website"
-            className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
-          >
-            <Globe className="w-2 h-2 text-primary-blue flex-shrink-0" />
-            <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
-              www.conestogac.on.ca
-            </span>
-          </a>
+          {contact.website && (
+            <a
+              href={contact.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit website"
+              className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+            >
+              <Globe className="w-2 h-2 text-primary-blue flex-shrink-0" />
+              <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
+                {contact.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+              </span>
+            </a>
+          )}
         </div>
 
-        {/* Social Media Buttons - Compact */}
+        {/* Internship Info (if available) */}
+        {contact.internshipInfo && contact.internshipInfo.available && (
+          <div className="mt-2 p-2 bg-primary-blue/5 border border-primary-blue/20 rounded-lg flex-shrink-0">
+            <p className="text-xs font-semibold text-primary-blue mb-0.5 leading-tight">
+              Internships Available
+            </p>
+            <p className="text-xs text-gray-600 leading-tight">
+              {contact.internshipInfo.period}
+            </p>
+            {contact.internshipInfo.applicationUrl && (
+              <a
+                href={contact.internshipInfo.applicationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 mt-1 text-xs text-primary-blue font-medium hover:underline focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 focus-visible:rounded"
+              >
+                Apply Now →
+              </a>
+            )}
+          </div>
+        )}
+
+        {/* Social Media Buttons - Pushed to bottom */}
         {contact.socialLinks && contact.socialLinks.length > 0 && (
-          <div className="mt-2 flex-shrink-0">
+          <div className="mt-auto pt-3 flex-shrink-0">
             <div className="flex items-center gap-1.5 flex-wrap">
               {contact.socialLinks.map((social, index) => {
                 const Icon = getSocialIcon(social.platform)
@@ -98,31 +125,6 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
             </div>
           </div>
         )}
-
-        {/* Internship Info (if available) */}
-        {contact.internshipInfo && contact.internshipInfo.available && (
-          <div className="mt-2 p-2 bg-primary-blue/5 border border-primary-blue/20 rounded-lg flex-shrink-0">
-            <p className="text-xs font-semibold text-primary-blue mb-0.5 leading-tight">
-              Internships Available
-            </p>
-            <p className="text-xs text-gray-600 leading-tight">
-              {contact.internshipInfo.period}
-            </p>
-            {contact.internshipInfo.applicationUrl && (
-              <a
-                href={contact.internshipInfo.applicationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 mt-1 text-xs text-primary-blue font-medium hover:underline focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2 focus-visible:rounded"
-              >
-                Apply Now →
-              </a>
-            )}
-          </div>
-        )}
-
-        {/* Spacer to push content up */}
-        <div className="flex-grow" />
       </div>
     </div>
   )

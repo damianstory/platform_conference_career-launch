@@ -2605,59 +2605,57 @@ export const voxPopLabs: PlatinumBoothData = {
 // STANDARD TIER BOOTHS (2 TOTAL)
 // ======================
 
-export const localManufacturing: StandardBoothData = {
-  id: 'local-manufacturing',
+export const universityOfGuelph: StandardBoothData = {
+  id: 'university-of-guelph',
   name: 'University of Guelph',
-  slug: 'local-manufacturing',
+  slug: 'university-of-guelph',
   tier: 'standard',
   industry: 'Manufacturing',
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
   logo: '/logos/industry-immersion-series.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'LocalMake Co is a family-owned manufacturing company producing precision components with competitive wages and benefits.',
+  description: 'At the University of Guelph, everyone who studies here, explores here, teaches here and works here is committed to one simple purpose: to Improve Life.\n\nNo matter where you\'re from, once you enroll at U of G, you\'re part of a community – a network of fellow students and staff who will help you achieve your goals and set you up for success.\n\nConnect with us to learn more about our programs, upcoming events, webinars, and more!',
   website: 'https://localmake.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/embed/VfUmm2nfcyQ',
     type: 'youtube',
-    title: 'Inside Our Facility',
+    title: 'Choose the University of Guelph',
     description: 'See our modern operations'
   },
   resources: [
     {
-      title: 'Open Positions',
-      description: 'View current job openings',
-      url: 'https://example.com/jobs.pdf',
-      type: 'pdf',
-      fileSize: '400 KB'
+      title: 'Apply to the University of Guelph',
+      description: 'Start your application today',
+      url: 'https://www.uoguelph.ca/apply/',
+      type: 'link'
     },
     {
-      title: 'Benefits Package',
-      description: 'Our compensation and benefits',
-      url: 'https://example.com/benefits.pdf',
-      type: 'pdf',
-      fileSize: '250 KB'
+      title: 'Explore Our Programs',
+      description: 'Discover undergraduate programs',
+      url: 'https://www.uoguelph.ca/programs/undergraduate',
+      type: 'link'
     },
     {
-      title: 'Apprenticeship Info',
-      description: 'Learn about our apprenticeship program',
-      url: 'https://example.com/apprenticeship',
+      title: 'Contact Us',
+      description: 'Get in touch with admissions',
+      url: 'https://www.uoguelph.ca/admission/undergraduate/contact/',
       type: 'link'
     }
   ],
   googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
   primaryCTA: {
-    text: 'Apply Now',
-    url: 'https://localmake.example.com/apply',
+    text: 'Learn More',
+    url: 'https://apply.uoguelph.ca/register/?id=410f4687-a8f0-43f1-82a2-799607493e20',
     type: 'application'
   },
   secondaryCTA: {
-    text: 'Schedule Tour',
-    url: 'https://localmake.example.com/tour',
+    text: 'Visit Us',
+    url: 'https://www.uoguelph.ca/admission/undergraduate/events/',
     type: 'contact'
   },
   contact: {
-    email: 'hr@localmake.example.com',
+    website: 'https://www.uoguelph.ca/admission/undergraduate/',
     phone: '905-555-5678',
     headquarters: {
       address: '45 Industrial Drive',
@@ -2666,7 +2664,10 @@ export const localManufacturing: StandardBoothData = {
       postalCode: 'L8E 2X9'
     },
     socialLinks: [
-      { platform: 'facebook', url: 'https://facebook.com/localmake' }
+      { platform: 'instagram', url: 'https://www.instagram.com/uofgadmission/' },
+      { platform: 'tiktok', url: 'https://www.tiktok.com/@uofgadmission?lang=en' },
+      { platform: 'spotify', url: 'https://open.spotify.com/user/neuro38hfoyaojlkjoqvywkpp' },
+      { platform: 'youtube', url: 'https://www.youtube.com/user/UofGAdmissions/featured' }
     ]
   },
   brandColors: {
@@ -2842,7 +2843,7 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   publicHealth,
   voxPopLabs,
   // Standard Tier (3 booths)
-  localManufacturing,
+  universityOfGuelph,
   communityCollege,
   careerMythBuster
 ]
