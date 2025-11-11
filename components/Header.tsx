@@ -12,15 +12,15 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
-      {/* Desktop/Tablet Layout (≥768px) */}
-      <div className="hidden md:block">
+      {/* Desktop/Tablet Layout (≥1024px) */}
+      <div className="hidden lg:block">
         {showNavigation ? (
           <div className="grid grid-cols-3 items-center h-20 px-8 md:px-16">
             {/* Left: Navigation Tabs */}
             <nav aria-label="Main navigation" className="flex items-center gap-2">
               <Link
                 href="/sessions"
-                className={`px-4 py-2 rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
+                className={`px-4 py-2 rounded-lg lg:rounded-full transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
                   isSessionsActive
                     ? 'text-brand-navy font-bold border-2 border-primary-blue'
                     : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30 border-2 border-transparent'
@@ -31,7 +31,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/booths"
-                className={`px-4 py-2 rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
+                className={`px-4 py-2 rounded-lg lg:rounded-full transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
                   isBoothsActive
                     ? 'text-brand-navy font-bold border-2 border-primary-blue'
                     : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30 border-2 border-transparent'
@@ -81,8 +81,8 @@ export default function Header() {
         )}
       </div>
 
-      {/* Mobile Layout (<768px) */}
-      <div className="block md:hidden">
+      {/* Mobile Layout (<1024px) */}
+      <div className="block lg:hidden">
         {showNavigation ? (
           <div className="flex flex-col">
             {/* Logo at top */}
