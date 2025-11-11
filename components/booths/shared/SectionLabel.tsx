@@ -18,7 +18,7 @@ interface SectionLabelProps {
  * Used to create consistent section headers across all booth components.
  * Follows the typography specification:
  * - text-xs: Small text size
- * - font-semibold: Semi-bold weight
+ * - font-bold: Bold weight
  * - uppercase: All caps
  * - tracking-wider: Increased letter spacing
  * - text-gray-500: Medium gray color
@@ -34,7 +34,7 @@ interface SectionLabelProps {
 export default function SectionLabel({ text, icon: Icon, className = '' }: SectionLabelProps) {
   return (
     <span
-      className={`inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500 ${className}`}
+      className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-500 ${className}`}
     >
       {Icon && <Icon className="w-4 h-4" />}
       {text}
