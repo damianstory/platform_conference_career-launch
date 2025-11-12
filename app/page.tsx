@@ -10,7 +10,7 @@ export default function HomePage() {
         {/* Background Layer */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-career-launch.jpg"
+            src="/images/Hero_Launch_Sky with clouds.jpg"
             alt="Career Launch Platform Hero"
             fill
             className="object-cover"
