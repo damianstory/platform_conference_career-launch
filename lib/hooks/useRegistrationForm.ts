@@ -1,0 +1,166 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+
+export interface RegistrationFormData {
+  firstName: string;
+  email: string;
+  boardId: string;
+  schoolId: string;
+  classSize: string;
+  gradeLevel: string;
+}
+
+interface FormErrors {
+  firstName?: string;
+  email?: string;
+  boardId?: string;
+  schoolId?: string;
+  classSize?: string;
+  gradeLevel?: string;
+}
+
+const COOKIE_NAME = 'clp_registration';
+const COOKIE_EXPIRY_DAYS = 7;
+
+export function useRegistrationForm() {
+  const [formData, setFormData] = useState<RegistrationFormData>({
+    firstName: '',
+    email: '',
+    boardId: '',
+    schoolId: '',
+    classSize: '25-to-35', // Default selection
+    gradeLevel: '12', // Default selection
+  });
+
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isReturningUser, setIsReturningUser] = useState(false);
+
+  // Load saved data from cookie on mount
+  useEffect(() => {
+    const savedData = Cookies.get(COOKIE_NAME);
+    if (savedData) {
+      try {
+        const parsed = JSON.parse(savedData);
+        setFormData({
+          firstName: parsed.firstName || '',
+          email: parsed.email || '',
+          boardId: parsed.boardId || '',
+          schoolId: parsed.schoolId || '',
+          classSize: parsed.classSize || '25-to-35',
+          gradeLevel: parsed.gradeLevel || '12',
+        });
+        setIsReturningUser(true);
+      } catch (e) {
+        // Invalid cookie data, ignore
+        console.error('Error parsing registration cookie:', e);
+      }
+    }
+  }, []);
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateField = (name: keyof RegistrationFormData, value: string): string | undefined => {
+    switch (name) {
+      case 'firstName':
+        if (!value.trim()) return 'First name is required';
+        if (value.trim().length < 2) return 'First name must be at least 2 characters';
+        break;
+      case 'email':
+        if (!value.trim()) return 'Email is required';
+        if (!validateEmail(value)) return 'Please enter a valid email address';
+        break;
+      case 'boardId':
+        if (!value) return 'Please select a school board';
+        break;
+      case 'schoolId':
+        if (!value) return 'Please select a school';
+        break;
+      case 'classSize':
+        if (!value) return 'Please select a class size';
+        break;
+      case 'gradeLevel':
+        if (!value) return 'Please select a grade level';
+        break;
+    }
+    return undefined;
+  };
+
+  const updateField = (name: keyof RegistrationFormData, value: string) => {
+    setFormData(prev => {
+      const newData = { ...prev, [name]: value };
+
+      // Reset school when board changes
+      if (name === 'boardId' && value !== prev.boardId) {
+        newData.schoolId = '';
+      }
+
+      return newData;
+    });
+
+    // Clear error for this field when user starts typing
+    setErrors(prev => ({ ...prev, [name]: undefined }));
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    (Object.keys(formData) as Array<keyof RegistrationFormData>).forEach(key => {
+      const error = validateField(key, formData[key]);
+      if (error) {
+        newErrors[key] = error;
+      }
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const submitForm = (sessionId: string): boolean => {
+    if (!validateForm()) {
+      return false;
+    }
+
+    // Save to cookie
+    const cookieData = {
+      ...formData,
+      timestamp: new Date().toISOString(),
+    };
+
+    Cookies.set(COOKIE_NAME, JSON.stringify(cookieData), { expires: COOKIE_EXPIRY_DAYS });
+
+    // Log submission for now (will be replaced with API call)
+    console.log('Form submitted:', {
+      ...formData,
+      sessionId,
+      timestamp: cookieData.timestamp,
+    });
+
+    return true;
+  };
+
+  const isFormValid = (): boolean => {
+    return (
+      formData.firstName.trim().length >= 2 &&
+      validateEmail(formData.email) &&
+      formData.boardId !== '' &&
+      formData.schoolId !== '' &&
+      formData.classSize !== '' &&
+      formData.gradeLevel !== ''
+    );
+  };
+
+  return {
+    formData,
+    errors,
+    isReturningUser,
+    updateField,
+    submitForm,
+    isFormValid,
+    validateForm,
+  };
+}

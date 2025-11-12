@@ -3,6 +3,7 @@
 import type { Session } from '@/types';
 import IndustryBadge from './IndustryBadge';
 import { formatDescription } from '@/lib/formatDescription';
+import { useRouter } from 'next/navigation';
 
 interface SessionTableRowProps {
   session: Session;
@@ -30,10 +31,11 @@ export default function SessionTableRow({
   onToggle,
   variant = 'default',
 }: SessionTableRowProps) {
+  const router = useRouter();
+
   const handleWatchClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    console.log('Watch with class:', session.id);
-    // TODO: Open registration modal when implemented
+    router.push(`/sessions/${session.slug}`);
   };
 
   const handleTrailerClick = (e: React.MouseEvent) => {
