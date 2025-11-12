@@ -200,11 +200,11 @@ export default function SessionTableRow({
                   Watch Trailer
                 </button>
                 <button
-                  className="btn-primary text-sm w-full sm:w-28 px-4 py-2"
+                  className="btn-primary text-sm w-full sm:w-36 px-4 py-2 whitespace-nowrap"
                   onClick={handleWatchClick}
                   aria-label={`Watch ${session.title} with your class`}
                 >
-                  Watch
+                  Watch Session
                 </button>
               </div>
             </div>
