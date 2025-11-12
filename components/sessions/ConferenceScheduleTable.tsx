@@ -43,6 +43,7 @@ export default function ConferenceScheduleTable({ sessions }: ConferenceSchedule
               session={session}
               isExpanded={expandedId === session.id}
               onToggle={() => handleToggleRow(session.id)}
+              variant="default"
             />
           ))}
         </tbody>

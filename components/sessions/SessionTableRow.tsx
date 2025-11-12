@@ -147,7 +147,7 @@ export default function SessionTableRow({
                   <h4 className={`text-sm font-semibold mb-2 ${
                     variant === 'conference' ? 'text-white/90' : 'text-gray-700'
                   }`}>Description</h4>
-                  <div className={`leading-relaxed ${
+                  <div className={`text-base leading-relaxed ${
                     variant === 'conference' ? 'text-white/80' : 'text-gray-600'
                   }`}>
                     {formatDescription(session.description)}
@@ -161,7 +161,7 @@ export default function SessionTableRow({
                   <h4 className={`text-sm font-semibold mb-2 ${
                     variant === 'conference' ? 'text-white/90' : 'text-gray-700'
                   }`}>Organization</h4>
-                  <p className={variant === 'conference' ? 'text-white/80' : 'text-gray-600'}>
+                  <p className={`text-base ${variant === 'conference' ? 'text-white/80' : 'text-gray-600'}`}>
                     <span className="font-medium">{session.presenter_name}</span>
                     {session.presenter_bio && (
                       <span className={variant === 'conference' ? 'text-white/70' : 'text-gray-500'}> • {session.presenter_bio}</span>
