@@ -13,7 +13,7 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: 'Career Launch 2025 | myBlueprint',
   description:
-    'Explore 25 career sessions from leading Ontario professionals. December 1-5, 2025. Show your students the exciting possibilities that await them.',
+    '25+ engaging career focused sessions bringing Canadian industry professionals directly into your classroom. Start watching now.',
   keywords: [
     'career education',
     'Ontario high schools',
@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     'career videos',
     'guidance counselors',
   ],
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
