@@ -1,3 +1,7 @@
+'use client'
+
+import { formatDescription } from '@/lib/formatDescription';
+
 interface DescriptionSectionProps {
   description: string
 }
@@ -10,9 +14,9 @@ export default function DescriptionSection({
       {/* Header */}
       <h3 className="text-lg font-bold text-navy mb-4">About This Session</h3>
 
-      {/* Description */}
+      {/* Description with formatted text, line breaks, and bullet points */}
       <div className="text-navy leading-[1.8]">
-        {description}
+        {formatDescription(description)}
       </div>
     </div>
   )

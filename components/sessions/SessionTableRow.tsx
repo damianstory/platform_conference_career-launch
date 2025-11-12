@@ -2,6 +2,7 @@
 
 import type { Session } from '@/types';
 import IndustryBadge from './IndustryBadge';
+import { formatDescription } from '@/lib/formatDescription';
 
 interface SessionTableRowProps {
   session: Session;
@@ -146,11 +147,11 @@ export default function SessionTableRow({
                   <h4 className={`text-sm font-semibold mb-2 ${
                     variant === 'conference' ? 'text-white/90' : 'text-gray-700'
                   }`}>Description</h4>
-                  <p className={`leading-relaxed ${
+                  <div className={`leading-relaxed ${
                     variant === 'conference' ? 'text-white/80' : 'text-gray-600'
                   }`}>
-                    {session.description}
-                  </p>
+                    {formatDescription(session.description)}
+                  </div>
                 </div>
               )}
 

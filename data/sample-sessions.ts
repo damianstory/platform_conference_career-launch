@@ -388,8 +388,7 @@ export const plumberEssentialTrade: Session = {
 Step onto the Humber Polytechnic campus and go behind-the-scenes for an exclusive look inside our state-of-the-art labs where innovation comes to life!
 From robotics and hydraulics to circuits and coding, discover how engineers are pushing the boundaries of what's possible.
 Hosted by Associate Dean, Carl Oliver, you will meet passionate engineering students and faculty, and learn about the many exciting career paths in engineering including civil, mechanical, electrical, computer and environmental engineering.
-Whether you're curious about what engineers really do or you're already dreaming of designing the future, this behind-the-scenes look will show you how an engineering education can open doors to endless opportunities!
-https://www.youtube.com/watch?v=UvH91JY0cH8`,
+Whether you're curious about what engineers really do or you're already dreaming of designing the future, this behind-the-scenes look will show you how an engineering education can open doors to endless opportunities!`,
   learning_objectives: [
     'Learn about the plumbing apprenticeship',
     'Understand the variety in plumbing work',
@@ -450,7 +449,8 @@ Canadian Nuclear Laboratories is a leader in the development of innovative nucle
 • restoring and protecting the environment
 • advancing clean energy technologies
 • and contributing to the health of Canadians.
-https://youtu.be/wUnvoFE5UBk`,
+
+Note: This session was recorded as part of a TYKTWD event in 2025.`,
   learning_objectives: [
     'Understand the apprenticeship pathway',
     'Learn about different electrical specializations',
