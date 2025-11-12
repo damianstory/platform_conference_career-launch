@@ -2684,7 +2684,7 @@ export const communityCollege: StandardBoothData = {
   industry: 'Education',
   organizationType: 'post-secondary',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/Conestoga_vrt_RGB_gld_blk.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'Community College offers affordable career-focused programs with small class sizes across multiple campus locations.',
   website: 'https://communitycollege.example.com',
