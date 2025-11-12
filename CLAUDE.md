@@ -91,10 +91,12 @@ Jamstack with Server-Side Rendering (SSR):
 ├── Header.tsx               # Navigation header
 ├── Footer.tsx               # Footer with FAQ
 ├── FAQ.tsx                  # FAQ accordion component
+├── registration/
+│   └── BottomDrawerModal.tsx # Registration modal (6-field form with cookie pre-fill)
 ├── sessions/
 │   ├── AllSessionsView.tsx # Flat list view for "All Sessions" tab
 │   ├── ConferenceScheduleTable.tsx # Table view for conference schedule
-│   ├── SessionTableRow.tsx  # Individual session row
+│   ├── SessionTableRow.tsx  # Individual session row (navigates to detail page)
 │   ├── SessionFilters.tsx   # Filtering interface
 │   └── IndustryBadge.tsx    # Industry tag component
 ├── booths/
@@ -137,6 +139,10 @@ Jamstack with Server-Side Rendering (SSR):
 ├── supabase/                # Database client and queries
 │   ├── client.ts           # Browser client
 │   └── server.ts           # Server client
+├── hooks/
+│   └── useRegistrationForm.ts # Registration form state and validation
+├── mock-data/
+│   └── registration.ts     # Ontario boards, schools, class sizes, grade levels
 └── utils.ts                 # Utility functions (cn, formatters)
 
 /types
@@ -206,7 +212,33 @@ npm run test:coverage    # Run tests with coverage report
   - URL param-based navigation with `useSearchParams` and `useRouter`
   - Centered tab design with background highlight for active state
   - 200ms fade-in animation when switching views
+  - "Watch Session" buttons navigate to session detail pages
 - **Session Detail Pages (`/sessions/[slug]`)**: Individual session pages with metadata and descriptions
+  - "Watch with Your Class" button triggers registration modal
+  - Session title, description, presenter information
+  - Trailer video support (no registration required)
+- **Registration Modal (`/components/registration/BottomDrawerModal.tsx`)**: **COMPLETED**
+  - Bottom drawer slide-up animation (400ms cubic-bezier)
+  - Dynamic height: 88vh for first-time users, 92vh when welcome banner present
+  - 900px max-width on desktop, 600px on tablet/mobile
+  - 6-field form: First Name, Email, School Board, School, Class Size, Grade Level
+  - Cookie-based pre-fill (7-day expiration) using `js-cookie`
+  - Welcome back banner for returning users (compact single-line design)
+  - Real-time validation with inline error messages
+  - Smart field dependencies (school dropdown updates based on board)
+  - Default selections: "25 to 35 students", "Grade 12"
+  - Keyboard accessible (Tab, Enter, ESC)
+  - Mobile-responsive with stacked layout
+  - Session title reminder: "You're about to watch: [Session Title]"
+- **Registration Form Logic (`/lib/hooks/useRegistrationForm.ts`)**: **COMPLETED**
+  - Form state management with validation
+  - Cookie read/write functionality
+  - Pre-fill detection and field population
+  - Form submission handling (console.log for now, backend integration pending)
+- **Mock Registration Data (`/lib/mock-data/registration.ts`)**: **COMPLETED**
+  - 5 Ontario school boards with 14 schools
+  - Class size options (less-than-25, 25-to-35, large-group)
+  - Grade level options (7-8, 9, 10, 11, 12, mixed)
 - **Booths Page (`/booths`)**: Expo hall with grid layout
   - Filter by industry (Agriculture, Construction, Energy, Launch, Trades)
   - Filter by tier (All, Platinum, Standard)
@@ -288,36 +320,67 @@ import { sampleBooths } from '@/data/sample-booths';
 </div>
 ```
 
+#### Registration Modal Pattern
+```typescript
+// Modal is integrated into VideoSection component on session detail pages
+import BottomDrawerModal from '@/components/registration/BottomDrawerModal';
+
+// State management
+const [isModalOpen, setIsModalOpen] = useState(false);
+
+// Open modal when "Watch with Your Class" clicked
+<button onClick={() => setIsModalOpen(true)}>
+  Watch with Your Class
+</button>
+
+// Modal component with required props
+<BottomDrawerModal
+  isOpen={isModalOpen}
+  onClose={() => setIsModalOpen(false)}
+  sessionTitle={session.title}
+  sessionId={session.id}
+  onSubmit={(data) => {
+    console.log('Form data:', data);
+    // Backend integration goes here
+    setIsModalOpen(false);
+  }}
+/>
+
+// Modal behavior:
+// - Dynamic height based on isReturningUser (88vh vs 92vh)
+// - Cookie name: 'clp_registration' (7-day expiration)
+// - Pre-fills all 6 fields for returning users
+// - Validates before enabling submit button
+// - ESC key, overlay click, or Cancel button closes modal
+```
+
 ## Important Concepts
 
 ### Cookie-Based Pre-fill System
-**Cookie Name:** `clp_session`
+**Cookie Name:** `clp_registration`
 **Duration:** 7 days from last activity
 **Purpose:** Store educator info for seamless repeat watching (UX enhancement, NOT authentication)
 
 **Cookie Structure:**
 ```javascript
 {
+  firstName: "Jane",
   email: "jane.smith@torontodsb.ca",
-  timestamp: "2025-12-01T10:30:00Z",
-  lastSubmission: {
-    name: "Jane Smith",
-    email: "jane.smith@torontodsb.ca",
-    boardId: "uuid",
-    schoolId: "uuid",
-    role: "Teacher",
-    classSize: "25-to-35",
-    gradeLevel: "11-12"
-  }
+  boardId: "tdsb",
+  schoolId: "nss",
+  classSize: "25-to-35",
+  gradeLevel: "12",
+  timestamp: "2025-12-01T10:30:00Z"
 }
 ```
 
 **Pre-fill Logic:**
-1. When "Watch with Your Class" clicked, check for `clp_session` cookie
+1. When "Watch with Your Class" clicked, check for `clp_registration` cookie
 2. If cookie exists and < 7 days old → pre-fill ALL 6 fields
 3. If no cookie or expired → show empty form
 4. On form submit → create/update cookie with latest values
 5. Cookie updates on EVERY submission (captures latest class context)
+6. Welcome back banner appears when cookie detected
 
 **Security Notes:**
 - No passwords or tokens in cookie (public educator info only)
