@@ -29,7 +29,7 @@ type ViewType = 'conference' | 'all';
 function SessionsContent() {
   const searchParams = useSearchParams();
   const viewParam = searchParams.get('view');
-  const activeView: ViewType = viewParam === 'all' ? 'all' : 'conference';
+  const activeView: ViewType = viewParam === 'conference' ? 'conference' : 'all';
 
   // Use hardcoded session data
   const sessions = allSessions;
@@ -83,9 +83,9 @@ function SessionsContent() {
             Browse All Sessions
           </h1>
           <p className="text-lg text-light-blue">
-            {activeView === 'conference'
-              ? 'Click on a block to explore sessions'
-              : 'Explore all sessions in one view'}
+            {activeView === 'all'
+              ? 'Explore all sessions in one view'
+              : 'Click on a block to explore sessions'}
           </p>
         </div>
       </section>

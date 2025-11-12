@@ -17,10 +17,18 @@ export default function SessionTabs({ activeView, className = '' }: SessionTabsP
   const handleTabChange = (view: ViewType) => {
     // Create new URLSearchParams with the updated view
     const params = new URLSearchParams(searchParams.toString());
-    params.set('view', view);
+
+    if (view === 'all') {
+      // Remove the view param for "all" since it's now the default
+      params.delete('view');
+    } else {
+      // Set view=conference explicitly
+      params.set('view', view);
+    }
 
     // Update URL without page refresh
-    router.push(`/sessions?${params.toString()}`, { scroll: false });
+    const queryString = params.toString();
+    router.push(queryString ? `/sessions?${queryString}` : '/sessions', { scroll: false });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent, view: ViewType) => {
