@@ -159,7 +159,7 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
     `}>
       {/* Logo */}
       <div className="mb-2 flex-shrink-0">
-        <div className={`bg-white rounded-lg flex items-center justify-center overflow-hidden relative w-20 h-20 shadow-sm ${booth.id === 'career-myth-buster' ? 'p-2' : ''}`}>
+        <div className={`bg-white rounded-lg flex items-center justify-center overflow-hidden relative w-20 h-20 shadow-sm ${booth.tier === 'standard' ? 'border border-primary-blue/20' : ''} ${booth.id === 'career-myth-buster' ? 'p-2' : ''}`}>
           {booth.logo && !isImageError ? (
             <Image
               src={booth.logo}

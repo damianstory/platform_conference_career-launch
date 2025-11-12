@@ -2679,66 +2679,54 @@ export const universityOfGuelph: StandardBoothData = {
 export const communityCollege: StandardBoothData = {
   id: 'community-college',
   name: 'Conestoga College',
-  slug: 'community-college',
+  slug: 'conestoga-college',
   tier: 'standard',
   industry: 'Education',
   organizationType: 'post-secondary',
   pathway: 'college',
   logo: '/logos/Conestoga_vrt_RGB_gld_blk.jpg',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'Community College offers affordable career-focused programs with small class sizes across multiple campus locations.',
-  website: 'https://communitycollege.example.com',
+  tagline: 'Whether you are trying to choose your program, book a tour, or figure out next steps, we are here to support you.',
+  description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.\n\nEstablished in 1967, Conestoga has campuses and training centres in Kitchener, Waterloo, Cambridge, Guelph, Stratford, Ingersoll, Brantford and Milton and is a provincial leader in apprenticeship training.',
+  website: 'https://www.conestogac.on.ca',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=mk93CPvMx2c',
     type: 'youtube',
-    title: 'Your College',
-    description: 'Discover accessible education'
+    title: 'Conestoga Polytechnic Advantage',
+    description: 'Discover the Conestoga advantage'
   },
   resources: [
     {
-      title: 'Program Guide',
-      description: 'All programs and requirements',
-      url: 'https://example.com/programs.pdf',
-      type: 'pdf',
-      fileSize: '2.1 MB'
-    },
-    {
-      title: 'Financial Aid',
-      description: 'Making college affordable',
-      url: 'https://example.com/financial-aid',
+      title: 'Visit our online Career Coach',
+      description: 'Find your program fit',
+      url: 'https://conestogac.lightcastcc.com/assessment?radius=&region=Kitchener%20-%20Cambridge%20-%20Waterloo',
       type: 'link'
     },
     {
-      title: 'Campus Tour',
-      description: 'Schedule a campus visit',
-      url: 'https://example.com/campus-tour.pdf',
-      type: 'pdf',
-      fileSize: '1.5 MB'
+      title: 'Need help applying to Conestoga?',
+      description: 'Visit our Apply Now section',
+      url: 'https://www.conestogac.on.ca/admissions/applying-to-conestoga',
+      type: 'link'
     }
   ],
   googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
   primaryCTA: {
-    text: 'Apply Today',
-    url: 'https://communitycollege.example.com/apply',
-    type: 'application'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://communitycollege.example.com/contact',
+    text: 'Reach Out',
+    url: 'https://www.conestogac.on.ca/future-students/meet-our-recruiters',
     type: 'contact'
   },
+  secondaryCTA: {
+    text: 'Big Giveaway Contest',
+    url: 'https://lp.constantcontactpages.com/sl/2L9LEfG/HSV',
+    type: 'application'
+  },
   contact: {
-    email: 'info@communitycollege.example.com',
-    phone: '1-800-555-COLLEGE',
-    headquarters: {
-      address: '640 Elm Street',
-      city: 'Sudbury',
-      province: 'ON',
-      postalCode: 'P3E 2E4'
-    },
+    email: 'recruitment@conestogac.on.ca',
+    website: 'https://www.conestogac.on.ca',
     socialLinks: [
-      { platform: 'facebook', url: 'https://facebook.com/communitycollege' },
-      { platform: 'instagram', url: 'https://instagram.com/communitycollege' }
+      { platform: 'twitter', url: 'https://x.com/ThinkConestoga' },
+      { platform: 'facebook', url: 'https://www.facebook.com/ThinkConestoga' },
+      { platform: 'instagram', url: 'https://www.instagram.com/explore/tags/thinkconestoga/' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@ThinkConestoga' }
     ]
   },
   brandColors: {
