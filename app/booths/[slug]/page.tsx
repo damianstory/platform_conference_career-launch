@@ -18,6 +18,8 @@ export default async function BoothPage({ params }: BoothPageProps) {
 
   return (
     <div className="min-h-screen bg-background-light">
+      {/* Navigation Header is rendered by ConditionalHeader in root layout */}
+
       {/* Booth Content */}
       <BoothLayout booth={booth} />
     </div>

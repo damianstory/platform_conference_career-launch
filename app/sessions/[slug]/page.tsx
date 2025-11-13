@@ -62,6 +62,8 @@ export default async function SessionPage({ params }: SessionPageProps) {
             company={''}
             logo={booth?.logo}
             booth={booth}
+            sessionSlug={session.slug}
+            sessionTitle={session.title}
           />
         </div>
       </section>

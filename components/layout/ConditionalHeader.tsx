@@ -67,7 +67,7 @@ export default function ConditionalHeader() {
 
   // If we're on a booth page and have booth data, show BoothDetailHeader
   if (isBoothPage && boothData) {
-    return <BoothDetailHeader boothName={boothData.name} />
+    return <BoothDetailHeader boothName={boothData.name} boothSlug={boothData.slug} />
   }
 
   // If we're on a session page and have session data, show SessionDetailHeader

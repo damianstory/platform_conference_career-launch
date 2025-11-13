@@ -1,9 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import { PlatinumBoothData, StandardBoothData } from '@/data/sample-booths';
+import { useSessionContext } from '@/lib/hooks/useSessionContext';
 
 interface OrganizationSectionProps {
   name: string;
@@ -11,6 +12,8 @@ interface OrganizationSectionProps {
   company: string;
   logo?: string | null;
   booth?: PlatinumBoothData | StandardBoothData;
+  sessionSlug: string;
+  sessionTitle: string;
 }
 
 export default function OrganizationSection({
@@ -19,7 +22,12 @@ export default function OrganizationSection({
   company,
   logo,
   booth,
+  sessionSlug,
+  sessionTitle,
 }: OrganizationSectionProps) {
+  const router = useRouter();
+  const { saveContext } = useSessionContext();
+
   // Extract company initials for fallback (first letter of each word, max 2)
   const getCompanyInitials = (companyName: string) => {
     if (!companyName) return 'OR';
@@ -31,6 +39,15 @@ export default function OrganizationSection({
   };
 
   const initials = getCompanyInitials(company || name);
+
+  const handleVisitBooth = () => {
+    if (booth) {
+      // Store session context before navigating to booth
+      saveContext(sessionSlug, sessionTitle, booth.slug);
+      // Navigate to booth page
+      router.push(`/booths/${booth.slug}`);
+    }
+  };
 
   return (
     <div className={`grid grid-cols-1 ${booth ? 'lg:grid-cols-2' : ''} gap-6 mb-6`}>
@@ -88,13 +105,13 @@ export default function OrganizationSection({
             </p>
 
             {/* CTA Button */}
-            <Link
-              href={`/booths/${booth.slug}`}
+            <button
+              onClick={handleVisitBooth}
               className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] bg-primary-blue text-white rounded-lg font-semibold text-base shadow-md hover:bg-brand-navy hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
             >
               <span>Visit Booth</span>
               <ArrowRight className="w-4 h-4 flex-shrink-0" />
-            </Link>
+            </button>
           </div>
         </div>
       )}
