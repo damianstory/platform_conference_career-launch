@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
-import { PlatinumBoothData, StandardBoothData } from '@/data/sample-booths';
+import { PlatinumBoothData, StandardBoothData } from '@/types/booth';
 import { useSessionContext } from '@/lib/hooks/useSessionContext';
 
 interface OrganizationSectionProps {
