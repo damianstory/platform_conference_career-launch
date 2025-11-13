@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import BottomDrawerModal from '@/components/registration/BottomDrawerModal';
+import MultiStepModal from '@/components/registration/MultiStepModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
 
 interface VideoSectionProps {
@@ -54,7 +54,7 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
         </p>
       </div>
 
-      <BottomDrawerModal
+      <MultiStepModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         sessionTitle={session.title}
