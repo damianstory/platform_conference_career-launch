@@ -2886,6 +2886,28 @@ export function getBoothBySlug(slug: string): (PlatinumBoothData | StandardBooth
   return allBooths.find(booth => booth.slug === slug)
 }
 
+// Helper function to get booth by presenter/organization name
+// Supports partial matching to handle cases where presenter_name includes extra text
+export function getBoothByPresenterName(presenterName: string): (PlatinumBoothData | StandardBoothData) | undefined {
+  if (!presenterName) return undefined
+
+  const normalizedPresenter = presenterName.toLowerCase().trim()
+
+  // Try exact match first
+  const exactMatch = allBooths.find(booth =>
+    booth.name.toLowerCase().trim() === normalizedPresenter
+  )
+  if (exactMatch) return exactMatch
+
+  // Try partial match - check if booth name is contained in presenter name
+  const partialMatch = allBooths.find(booth => {
+    const boothName = booth.name.toLowerCase().trim()
+    return normalizedPresenter.includes(boothName) || boothName.includes(normalizedPresenter)
+  })
+
+  return partialMatch
+}
+
 // Helper function to filter booths
 export function filterBooths(
   booths: Array<PlatinumBoothData | StandardBoothData>,

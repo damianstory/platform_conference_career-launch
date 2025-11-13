@@ -35,7 +35,7 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   return (
     <>
       <div className="bg-white rounded-xl border border-[#E5E9F1] p-8 mb-6 shadow-[0_4px_24px_rgba(34,34,76,0.08)]">
-        <h2 className="text-2xl font-bold text-navy mb-4">
+        <h2 className="text-2xl font-bold text-navy mb-4 text-center">
           Watch with Your Class
         </h2>
         <div className="bg-gradient-to-br from-blue to-navy rounded-lg h-96 flex items-center justify-center text-white">
@@ -49,8 +49,8 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
             </button>
           </div>
         </div>
-        <p className="text-sm text-gray-600 mt-4">
-          Click &ldquo;Watch with Your Class&rdquo; to register and start the video. You&rsquo;ll be able to track your students&rsquo; engagement and report on reach.
+        <p className="text-sm text-gray-600 mt-4 text-center">
+          Click &ldquo;Watch with Your Class&rdquo; to register and start the video.
         </p>
       </div>
 

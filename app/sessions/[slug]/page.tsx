@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { formatDuration } from '@/lib/utils';
 import type { Session } from '@/types';
 import { getSessionBySlug, allSessions } from '@/data/sample-sessions';
+import { getBoothByPresenterName } from '@/data/sample-booths';
 import VideoSection from '@/components/session/VideoSection';
 import SpeakerSection from '@/components/session/SpeakerSection';
 import DescriptionSection from '@/components/session/DescriptionSection';
@@ -28,6 +29,9 @@ export default async function SessionPage({ params }: SessionPageProps) {
   if (!session) {
     notFound();
   }
+
+  // Get booth data for the presenter to display organization logo
+  const booth = session.presenter_name ? getBoothByPresenterName(session.presenter_name) : undefined;
 
   return (
     <div className="bg-off-white min-h-screen">
@@ -56,6 +60,7 @@ export default async function SessionPage({ params }: SessionPageProps) {
             name={session.presenter_name || 'Speaker'}
             title={session.presenter_bio || ''}
             company={''}
+            logo={booth?.logo}
           />
         </div>
       </section>
