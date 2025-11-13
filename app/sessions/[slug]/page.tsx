@@ -4,7 +4,7 @@ import type { Session } from '@/types';
 import { getSessionBySlug, allSessions } from '@/data/sample-sessions';
 import { getBoothByPresenterName } from '@/data/sample-booths';
 import VideoSection from '@/components/session/VideoSection';
-import SpeakerSection from '@/components/session/SpeakerSection';
+import OrganizationSection from '@/components/session/OrganizationSection';
 import DescriptionSection from '@/components/session/DescriptionSection';
 
 interface SessionPageProps {
@@ -55,12 +55,13 @@ export default async function SessionPage({ params }: SessionPageProps) {
             <DescriptionSection description={session.description} />
           )}
 
-          {/* Speaker Section */}
-          <SpeakerSection
+          {/* Organization Section */}
+          <OrganizationSection
             name={session.presenter_name || 'Speaker'}
             title={session.presenter_bio || ''}
             company={''}
             logo={booth?.logo}
+            booth={booth}
           />
         </div>
       </section>
