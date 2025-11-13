@@ -380,7 +380,7 @@ export default function MultiStepModal({
             <div className="space-y-4 animate-fade-in">
               <div className="bg-green-50 border-l-4 border-green-500 px-4 py-3 rounded mb-4">
                 <p className="text-sm font-medium text-green-800">
-                  Welcome back! We've pre-filled your information.
+                  Welcome back! We&apos;ve pre-filled your information.
                 </p>
               </div>
 
