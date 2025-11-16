@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collapsible Filter Mockup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide-down {
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      overflow: hidden;
+    }
+    .collapsed {
+      max-height: 0;
+      opacity: 0;
+    }
+    .expanded {
+      max-height: 600px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <div class="max-w-6xl mx-auto p-8">
+    <h1 class="text-2xl font-bold mb-8 text-gray-800">Collapsible Filter Mockup - Sessions Page</h1>
+
+    <!-- COLLAPSED STATE -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-12">
+      <div class="p-4 border-b border-gray-100">
+        <h2 class="text-lg font-semibold text-blue-600 mb-4">COLLAPSED STATE (Default View)</h2>
+      </div>
+
+      <div class="p-6">
+        <!-- Filter Bar - Collapsed -->
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <button class="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-blue-500 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+              </svg>
+              Filter Sessions
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+
+            <!-- Search stays visible -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search sessions..."
+                class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="text-sm text-gray-600">
+            Showing <span class="font-semibold">27</span> of <span class="font-semibold">27</span> sessions
+          </div>
+        </div>
+
+        <!-- Session Content Preview -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center text-gray-500 border-2 border-dashed border-gray-300">
+          <p class="text-lg font-medium mb-2">Session Content Visible Immediately</p>
+          <p>Users can start browsing right away without scrolling past filters</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLLAPSED WITH ACTIVE FILTERS -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-12">
+      <div class="p-4 border-b border-gray-100">
+        <h2 class="text-lg font-semibold text-blue-600 mb-4">COLLAPSED STATE (With Active Filters)</h2>
+      </div>
+
+      <div class="p-6">
+        <!-- Filter Bar - Collapsed with active filters -->
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <button class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+              </svg>
+              Filter Sessions
+              <span class="bg-white text-blue-600 text-xs px-1.5 py-0.5 rounded-full font-bold">3</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search sessions..."
+                class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="text-sm text-gray-600">
+            Showing <span class="font-semibold">8</span> of <span class="font-semibold">27</span> sessions
+          </div>
+        </div>
+
+        <!-- Active Filter Pills - Always Visible -->
+        <div class="flex items-center gap-2 mb-4 flex-wrap">
+          <span class="text-xs text-gray-500 font-medium">Active:</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+            Agriculture
+            <button class="hover:text-blue-900">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+            Health/Wellness
+            <button class="hover:text-blue-900">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+            Grades 11-12
+            <button class="hover:text-blue-900">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </span>
+          <button class="text-xs text-blue-600 hover:text-blue-800 font-medium ml-2">
+            Clear all
+          </button>
+        </div>
+
+        <!-- Session Content Preview -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center text-gray-500 border-2 border-dashed border-gray-300">
+          <p class="text-lg font-medium mb-2">Filtered Session Content</p>
+          <p>Active filters shown above, content still prominent</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPANDED STATE -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-12">
+      <div class="p-4 border-b border-gray-100">
+        <h2 class="text-lg font-semibold text-blue-600 mb-4">EXPANDED STATE (Filter Panel Open)</h2>
+      </div>
+
+      <div class="p-6">
+        <!-- Filter Bar - Expanded -->
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <button class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+              </svg>
+              Filter Sessions
+              <span class="bg-white text-blue-600 text-xs px-1.5 py-0.5 rounded-full font-bold">3</span>
+              <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search sessions..."
+                class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="text-sm text-gray-600">
+            Showing <span class="font-semibold">8</span> of <span class="font-semibold">27</span> sessions
+          </div>
+        </div>
+
+        <!-- Expanded Filter Panel -->
+        <div class="bg-gray-50 rounded-lg p-6 mb-4 border border-gray-200">
+          <!-- Industries -->
+          <div class="mb-6">
+            <h3 class="text-xs font-bold uppercase text-gray-500 mb-3 tracking-wider">INDUSTRIES</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">All Industries</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-blue-500 text-white shadow-sm">Agriculture</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Arts/Culture</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Aviation/Aerospace</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Business</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Construction</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Energy</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Environment</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Food Processing</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Forestry</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-blue-500 text-white shadow-sm">Health/Wellness</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Horticulture</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Hospitality/Tourism</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">ICT</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Justice/Emergency</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Manufacturing</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Mining</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Non-Profit/Education</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Sports</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Transportation</button>
+            </div>
+          </div>
+
+          <!-- Grade Level -->
+          <div class="mb-6">
+            <h3 class="text-xs font-bold uppercase text-gray-500 mb-3 tracking-wider">GRADE LEVEL</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">All Grades</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Grades 9-10</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-blue-500 text-white shadow-sm">Grades 11-12</button>
+            </div>
+          </div>
+
+          <!-- Duration -->
+          <div>
+            <h3 class="text-xs font-bold uppercase text-gray-500 mb-3 tracking-wider">DURATION</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-blue-500 text-white shadow-sm">All Durations</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Under 20 min</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">20-30 min</button>
+              <button class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-600 hover:bg-gray-300">Over 30 min</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Filter Pills -->
+        <div class="flex items-center gap-2 mb-4 flex-wrap">
+          <span class="text-xs text-gray-500 font-medium">Active:</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+            Agriculture
+            <button class="hover:text-blue-900">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+            Health/Wellness
+            <button class="hover:text-blue-900">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+            Grades 11-12
+            <button class="hover:text-blue-900">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+          </span>
+          <button class="text-xs text-blue-600 hover:text-blue-800 font-medium ml-2">
+            Clear all
+          </button>
+        </div>
+
+        <!-- Session Content (pushed down) -->
+        <div class="bg-gray-50 rounded-lg p-8 text-center text-gray-500 border-2 border-dashed border-gray-300">
+          <p class="text-lg font-medium mb-2">Session Content</p>
+          <p>Content shifts down when panel opens, shifts back up when closed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARISON -->
+    <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+      <h2 class="text-lg font-semibold text-blue-800 mb-4">Key Benefits</h2>
+      <ul class="space-y-2 text-blue-900">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Content First:</strong> Sessions visible immediately without scrolling</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Clear State:</strong> Active filters always visible, even when panel is collapsed</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Discoverable:</strong> Prominent button with badge shows filtering is available</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Quick Access:</strong> Search bar stays visible for fast searching</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span><strong>Results Feedback:</strong> Count updates show impact of filtering</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

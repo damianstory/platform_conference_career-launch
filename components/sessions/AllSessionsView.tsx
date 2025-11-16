@@ -28,7 +28,7 @@ const formatGradeLevel = (gradeLevel: string | null): string => {
 export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [filters, setFilters] = useState<FilterState>({
-    industry: '',
+    industries: [],
     gradeLevel: '',
     duration: '',
     search: '',
@@ -50,9 +50,11 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
           }
         }
 
-        // Industry filter
-        if (filters.industry && session.industry !== filters.industry) {
-          return false;
+        // Industry filter (OR logic - show if session matches ANY selected industry)
+        if (filters.industries.length > 0) {
+          if (!session.industry || !filters.industries.includes(session.industry)) {
+            return false;
+          }
         }
 
         // Grade level filter
@@ -167,7 +169,7 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
           <EmptyState
             onReset={() =>
               setFilters({
-                industry: '',
+                industries: [],
                 gradeLevel: '',
                 duration: '',
                 search: '',

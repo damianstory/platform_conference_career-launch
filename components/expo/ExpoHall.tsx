@@ -55,9 +55,9 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
   const getPopularFilterSuggestions = () => [
     {
-      label: 'Technology & Engineering',
+      label: 'Technology & Manufacturing',
       action: () => {
-        setSelectedIndustries(['Technology', 'Engineering'])
+        setSelectedIndustries(['ICT', 'Manufacturing'])
         setOrganizationType('all')
       }
     },

@@ -20,7 +20,7 @@ export default function Header() {
             <nav aria-label="Main navigation" className="flex items-center gap-2">
               <Link
                 href="/sessions"
-                className={`px-4 py-2 rounded-lg lg:rounded-full transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
+                className={`px-6 py-2.5 rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
                   isSessionsActive
                     ? 'text-brand-navy font-bold border-2 border-primary-blue'
                     : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30 border-2 border-transparent'
@@ -31,7 +31,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/booths"
-                className={`px-4 py-2 rounded-lg lg:rounded-full transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
+                className={`px-6 py-2.5 rounded-lg transition-all focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 ${
                   isBoothsActive
                     ? 'text-brand-navy font-bold border-2 border-primary-blue'
                     : 'text-neutral-5 hover:text-primary-blue hover:bg-light-blue/30 border-2 border-transparent'
