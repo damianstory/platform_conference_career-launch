@@ -1643,7 +1643,7 @@ export const legalServices: PlatinumBoothData = {
 
 export const socialImpact: PlatinumBoothData = {
   id: 'nfte',
-  name: 'NFTE Entrepreneurship',
+  name: 'NFTE Canada',
   slug: 'nfte',
   tier: 'platinum',
   industry: 'Non-Profit',

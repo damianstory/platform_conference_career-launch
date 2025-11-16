@@ -3,6 +3,36 @@
 import React from 'react';
 
 /**
+ * Parses inline markdown formatting (bold with **text** and italic with *text*)
+ *
+ * @param text - Text that may contain markdown formatting
+ * @returns React elements with formatted text
+ */
+function parseInlineFormatting(text: string): React.ReactNode {
+  // First handle bold (**text**), then italic (*text*)
+  // Use a regex that captures both patterns
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+
+  if (parts.length === 1) {
+    // No formatting found
+    return text;
+  }
+
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      // This is bold text - remove the ** markers and wrap in strong tag
+      const boldText = part.slice(2, -2);
+      return <strong key={index} className="font-bold">{boldText}</strong>;
+    } else if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**')) {
+      // This is italic text - remove the * markers and wrap in em tag
+      const italicText = part.slice(1, -1);
+      return <em key={index} className="italic">{italicText}</em>;
+    }
+    return part;
+  });
+}
+
+/**
  * Formats session descriptions with proper line breaks, paragraphs, and bullet points
  *
  * @param description - Raw description text
@@ -17,60 +47,76 @@ export function formatDescription(description: string): React.ReactNode {
   return paragraphs.map((paragraph, index) => {
     const trimmedParagraph = paragraph.trim();
 
-    // Check if this paragraph contains bullet points
+    // Check if this paragraph contains bullet points or numbered lists
     const lines = trimmedParagraph.split('\n');
     const hasBullets = lines.some(line => line.trim().startsWith('•'));
+    const hasNumberedList = lines.some(line => /^\d+\.\s/.test(line.trim()));
 
-    if (hasBullets) {
-      // This is a bulleted list section
+    if (hasBullets || hasNumberedList) {
+      // This is a bulleted or numbered list section
       const listItems: string[] = [];
       let currentText = '';
 
       lines.forEach(line => {
         const trimmedLine = line.trim();
-        if (trimmedLine.startsWith('•')) {
+        if (trimmedLine.startsWith('•') || /^\d+\.\s/.test(trimmedLine)) {
           // If we have accumulated text, add it as a paragraph before the list
           if (currentText) {
             listItems.push(currentText);
             currentText = '';
           }
-          // Add the bullet item (remove the bullet character)
-          listItems.push(trimmedLine.substring(1).trim());
+          // Add the list item (remove the bullet or number prefix)
+          if (trimmedLine.startsWith('•')) {
+            listItems.push(trimmedLine.substring(1).trim());
+          } else {
+            listItems.push(trimmedLine.replace(/^\d+\.\s/, '').trim());
+          }
         } else if (trimmedLine) {
-          // Accumulate non-bullet text
+          // Accumulate non-list text
           currentText += (currentText ? ' ' : '') + trimmedLine;
         }
       });
 
-      // If we have remaining text after the bullets, add it
+      // If we have remaining text after the list, add it
       if (currentText) {
         listItems.push(currentText);
       }
 
-      // Separate text before bullets and bullet items
-      const textBeforeBullets: string[] = [];
-      const bulletItems: string[] = [];
-      let foundFirstBullet = false;
+      // Separate text before list and list items
+      const textBeforeList: string[] = [];
+      const listItemsContent: string[] = [];
+      let foundFirstListItem = false;
 
       lines.forEach(line => {
         const trimmedLine = line.trim();
-        if (trimmedLine.startsWith('•')) {
-          foundFirstBullet = true;
-          bulletItems.push(trimmedLine.substring(1).trim());
-        } else if (!foundFirstBullet && trimmedLine) {
-          textBeforeBullets.push(trimmedLine);
+        if (trimmedLine.startsWith('•') || /^\d+\.\s/.test(trimmedLine)) {
+          foundFirstListItem = true;
+          if (trimmedLine.startsWith('•')) {
+            listItemsContent.push(trimmedLine.substring(1).trim());
+          } else {
+            listItemsContent.push(trimmedLine.replace(/^\d+\.\s/, '').trim());
+          }
+        } else if (!foundFirstListItem && trimmedLine) {
+          textBeforeList.push(trimmedLine);
         }
       });
 
       return (
         <div key={index} className="mb-6 last:mb-0">
-          {textBeforeBullets.length > 0 && (
-            <p className="mb-4">{textBeforeBullets.join(' ')}</p>
+          {textBeforeList.length > 0 && (
+            <p className="mb-4">{parseInlineFormatting(textBeforeList.join(' '))}</p>
           )}
-          {bulletItems.length > 0 && (
-            <ul className="list-disc list-outside ml-5 space-y-2">
-              {bulletItems.map((item, idx) => (
-                <li key={idx} className="pl-1">{item}</li>
+          {listItemsContent.length > 0 && hasNumberedList && (
+            <ol className="pl-6 space-y-2" style={{ listStyleType: 'decimal' }}>
+              {listItemsContent.map((item, idx) => (
+                <li key={idx} style={{ display: 'list-item' }}>{parseInlineFormatting(item)}</li>
+              ))}
+            </ol>
+          )}
+          {listItemsContent.length > 0 && hasBullets && !hasNumberedList && (
+            <ul className="pl-6 space-y-2" style={{ listStyleType: 'disc' }}>
+              {listItemsContent.map((item, idx) => (
+                <li key={idx} style={{ display: 'list-item' }}>{parseInlineFormatting(item)}</li>
               ))}
             </ul>
           )}
@@ -80,7 +126,7 @@ export function formatDescription(description: string): React.ReactNode {
       // Regular paragraph
       return (
         <p key={index} className="mb-4 last:mb-0">
-          {trimmedParagraph.split('\n').join(' ')}
+          {parseInlineFormatting(trimmedParagraph.split('\n').join(' '))}
         </p>
       );
     }
