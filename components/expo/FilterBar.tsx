@@ -13,20 +13,25 @@ interface FilterBarProps {
 }
 
 const INDUSTRIES: Industry[] = [
-  'Technology',
-  'Healthcare',
-  'Finance',
-  'Engineering',
-  'Education',
-  'Manufacturing',
-  'Retail',
+  'Agriculture',
+  'Arts/Culture',
+  'Aviation/Aerospace',
+  'Business',
+  'Construction',
   'Energy',
-  'Marketing',
-  'Consulting',
-  'Skilled Trades',
-  'Arts & Media',
-  'Government',
-  'Non-Profit'
+  'Environment',
+  'Food Processing',
+  'Forestry',
+  'Health/Wellness',
+  'Horticulture',
+  'Hospitality/Tourism',
+  'ICT',
+  'Justice/Emergency',
+  'Manufacturing',
+  'Mining',
+  'Non-Profit/Education',
+  'Sports',
+  'Transportation'
 ]
 
 export default function FilterBar({
