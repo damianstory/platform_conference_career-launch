@@ -1,13 +1,15 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { useRegistrationForm } from '@/lib/hooks/useRegistrationForm';
+import { useRegistrationForm, UserType } from '@/lib/hooks/useRegistrationForm';
 import {
   ONTARIO_BOARDS,
   SCHOOLS_BY_BOARD,
   CLASS_SIZES,
   GRADE_LEVELS
 } from '@/lib/mock-data/registration';
+import UserTypeSelection from './UserTypeSelection';
+import { StudentStep1, StudentStep2 } from './StudentSchoolForm';
 
 interface MultiStepModalProps {
   isOpen: boolean;
@@ -17,7 +19,9 @@ interface MultiStepModalProps {
   onSubmit: (data: any) => void;
 }
 
-type Step = 1 | 2 | 3 | 'confirm';
+type EducatorStep = 1 | 2 | 3 | 'confirm';
+type StudentStep = 'student-1' | 'student-2';
+type ModalStep = 'user-type' | EducatorStep | StudentStep;
 
 export default function MultiStepModal({
   isOpen,
@@ -27,6 +31,9 @@ export default function MultiStepModal({
   onSubmit,
 }: MultiStepModalProps) {
   const {
+    userType,
+    setUserType,
+    resetUserType,
     formData,
     errors,
     isReturningUser,
@@ -35,27 +42,34 @@ export default function MultiStepModal({
     isFormValid,
   } = useRegistrationForm();
 
-  const [currentStep, setCurrentStep] = useState<Step>(isReturningUser ? 'confirm' : 1);
+  const [currentStep, setCurrentStep] = useState<ModalStep>('user-type');
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const firstInputRef = useRef<HTMLInputElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Reset to appropriate step when modal opens
+  // Reset to user-type selection when modal opens
   useEffect(() => {
     if (isOpen) {
-      setCurrentStep(isReturningUser ? 'confirm' : 1);
+      // Start with user-type selection
+      setCurrentStep('user-type');
+      resetUserType();
       document.body.style.overflow = 'hidden';
-
-      // Focus first input after animation completes
-      const timer = setTimeout(() => {
-        firstInputRef.current?.focus();
-      }, 450);
 
       return () => {
         document.body.style.overflow = '';
-        clearTimeout(timer);
       };
     }
-  }, [isOpen, isReturningUser]);
+  }, [isOpen, resetUserType]);
+
+  // Focus first input after step changes
+  useEffect(() => {
+    if (isOpen && currentStep !== 'user-type' && currentStep !== 'confirm') {
+      const timer = setTimeout(() => {
+        firstInputRef.current?.focus();
+      }, 450);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, currentStep]);
 
   // Handle ESC key
   useEffect(() => {
@@ -70,6 +84,25 @@ export default function MultiStepModal({
       return () => document.removeEventListener('keydown', handleEscape);
     }
   }, [isOpen, onClose]);
+
+  const handleUserTypeSelect = (type: UserType) => {
+    if (!type) return;
+
+    setIsTransitioning(true);
+    setUserType(type);
+
+    // Small delay for visual feedback
+    setTimeout(() => {
+      if (type === 'educator') {
+        // For returning educators, go to confirm; otherwise start at step 1
+        setCurrentStep(isReturningUser ? 'confirm' : 1);
+      } else {
+        // Students start at step 1
+        setCurrentStep('student-1');
+      }
+      setIsTransitioning(false);
+    }, 200);
+  };
 
   const handleSubmit = (e?: React.FormEvent) => {
     e?.preventDefault();
@@ -90,7 +123,9 @@ export default function MultiStepModal({
       setCurrentStep(2);
     } else if (currentStep === 2) {
       setCurrentStep(3);
-    } else if (currentStep === 3) {
+    } else if (currentStep === 'student-1') {
+      setCurrentStep('student-2');
+    } else if (currentStep === 3 || currentStep === 'student-2') {
       handleSubmit();
     }
   };
@@ -100,18 +135,29 @@ export default function MultiStepModal({
       setCurrentStep(1);
     } else if (currentStep === 3) {
       setCurrentStep(2);
-    } else if (currentStep === 'confirm') {
-      setCurrentStep(1);
+    } else if (currentStep === 'student-2') {
+      setCurrentStep('student-1');
+    } else if (currentStep === 'confirm' || currentStep === 1 || currentStep === 'student-1') {
+      // Go back to user type selection
+      setCurrentStep('user-type');
+      resetUserType();
     }
   };
 
   const canProceed = () => {
+    if (currentStep === 'user-type') {
+      return false; // Selection cards handle their own navigation
+    }
     if (currentStep === 1) {
       return formData.firstName && formData.email && !errors.firstName && !errors.email;
     } else if (currentStep === 2) {
       return formData.boardId && formData.schoolId && !errors.boardId && !errors.schoolId;
     } else if (currentStep === 3) {
       return formData.classSize && formData.gradeLevel;
+    } else if (currentStep === 'student-1') {
+      return formData.boardId && formData.schoolId && !errors.boardId && !errors.schoolId;
+    } else if (currentStep === 'student-2') {
+      return formData.gradeLevel !== '';
     }
     return false;
   };
@@ -119,6 +165,38 @@ export default function MultiStepModal({
   const availableSchools = formData.boardId
     ? SCHOOLS_BY_BOARD[formData.boardId] || []
     : [];
+
+  const getModalTitle = () => {
+    if (currentStep === 'user-type') {
+      return "Who's watching today?";
+    }
+    if (currentStep === 'confirm') {
+      return 'Review Your Information';
+    }
+    if (currentStep === 'student-1') {
+      return 'Where do you go to School?';
+    }
+    if (currentStep === 'student-2') {
+      return 'What grade are you in?';
+    }
+    if (userType === 'student') {
+      return 'Tell us a bit about you';
+    }
+    return "Who's Watching With You?";
+  };
+
+  const getModalSubtitle = () => {
+    if (currentStep === 'user-type') {
+      return 'Help us measure the impact of Career Launch Week';
+    }
+    if (currentStep === 'student-1' || currentStep === 'student-2') {
+      return ''; // Minimal subtitle for students
+    }
+    if (userType === 'student') {
+      return 'No personal info needed - just help us understand who\'s watching';
+    }
+    return 'Help us measure the impact of Career Launch Week 🤝';
+  };
 
   if (!isOpen) return null;
 
@@ -138,7 +216,7 @@ export default function MultiStepModal({
         style={{
           height: 'auto',
           maxHeight: '90vh',
-          minHeight: '60vh',
+          minHeight: currentStep === 'user-type' ? '50vh' : userType === 'student' ? '55vh' : '60vh',
           borderTopLeftRadius: '24px',
           borderTopRightRadius: '24px',
           boxShadow: '0 -8px 32px rgba(0, 0, 0, 0.12)',
@@ -155,15 +233,15 @@ export default function MultiStepModal({
           />
         </div>
 
-        {/* Progress Indicator */}
-        {currentStep !== 'confirm' && (
+        {/* Progress Indicator - Educator (3 dots) */}
+        {userType === 'educator' && typeof currentStep === 'number' && (
           <div className="px-6 py-3">
             <div className="flex items-center justify-center gap-2">
               {[1, 2, 3].map((step) => (
                 <div
                   key={step}
                   className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                    typeof currentStep === 'number' && step <= currentStep
+                    step <= currentStep
                       ? 'bg-[#0092FF]'
                       : 'bg-gray-300'
                   }`}
@@ -177,16 +255,39 @@ export default function MultiStepModal({
           </div>
         )}
 
+        {/* Progress Indicator - Student (2 dots) */}
+        {userType === 'student' && (currentStep === 'student-1' || currentStep === 'student-2') && (
+          <div className="px-6 py-3">
+            <div className="flex items-center justify-center gap-2">
+              {['student-1', 'student-2'].map((step, index) => (
+                <div
+                  key={step}
+                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                    (currentStep === 'student-1' && index === 0) ||
+                    (currentStep === 'student-2' && index <= 1)
+                      ? 'bg-[#0092FF]'
+                      : 'bg-gray-300'
+                  }`}
+                  aria-label={`Step ${index + 1}${step === currentStep ? ' (current)' : ''}`}
+                />
+              ))}
+            </div>
+            <p className="text-center text-xs text-gray-500 mt-2">
+              Step {currentStep === 'student-1' ? '1' : '2'} of 2
+            </p>
+          </div>
+        )}
+
         {/* Header Section */}
         <div className="bg-[#fafbfc] px-4 md:px-6 py-3 md:py-4 border-b border-gray-200">
           <h2
             id="drawer-title"
             className="text-xl md:text-2xl font-bold text-[#22224C] mb-2"
           >
-            {currentStep === 'confirm' ? 'Review Your Information' : 'Who\'s Watching With You?'}
+            {getModalTitle()}
           </h2>
           <p className="text-sm text-gray-600 mb-3">
-            Help us measure the impact of Career Launch Week 🤝
+            {getModalSubtitle()}
           </p>
 
           {/* Session Info Box */}
@@ -198,11 +299,59 @@ export default function MultiStepModal({
           </div>
         </div>
 
-        {/* Form Content - Steps */}
-        <div className="px-4 md:px-6 py-4 md:py-6 overflow-y-auto" style={{ maxHeight: 'calc(90vh - 350px)' }}>
-          {/* Step 1: Personal Information */}
-          {currentStep === 1 && (
+        {/* Form Content - Dynamic based on step */}
+        <div
+          className={`px-4 md:px-6 py-4 md:py-6 ${currentStep !== 'user-type' ? 'overflow-y-auto' : ''}`}
+          style={{ maxHeight: currentStep !== 'user-type' ? 'calc(90vh - 350px)' : undefined }}
+        >
+          {/* User Type Selection */}
+          {currentStep === 'user-type' && (
+            <UserTypeSelection
+              onSelect={handleUserTypeSelect}
+              isTransitioning={isTransitioning}
+            />
+          )}
+
+          {/* Student Step 1: School Board + School */}
+          {currentStep === 'student-1' && userType === 'student' && (
+            <StudentStep1
+              formData={formData}
+              errors={errors}
+              onUpdateField={updateField}
+              onBack={handleBack}
+            />
+          )}
+
+          {/* Student Step 2: Grade Level */}
+          {currentStep === 'student-2' && userType === 'student' && (
+            <StudentStep2
+              formData={formData}
+              errors={errors}
+              onUpdateField={updateField}
+            />
+          )}
+
+          {/* Educator Step 1: Personal Information */}
+          {currentStep === 1 && userType === 'educator' && (
             <div className="space-y-4 animate-fade-in">
+              {/* Back Navigation */}
+              <button
+                type="button"
+                onClick={handleBack}
+                className="inline-flex items-center gap-2 text-sm text-[#65738B] hover:text-[#485163] mb-2 transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span className="underline">Change selection</span>
+              </button>
+
               <h3 className="text-lg font-semibold text-[#22224C] mb-4">Who are you?</h3>
 
               <div>
@@ -252,8 +401,8 @@ export default function MultiStepModal({
             </div>
           )}
 
-          {/* Step 2: School Information */}
-          {currentStep === 2 && (
+          {/* Educator Step 2: School Information */}
+          {currentStep === 2 && userType === 'educator' && (
             <div className="space-y-4 animate-fade-in">
               <h3 className="text-lg font-semibold text-[#22224C] mb-4">Where do you teach?</h3>
 
@@ -316,8 +465,8 @@ export default function MultiStepModal({
             </div>
           )}
 
-          {/* Step 3: Class Information */}
-          {currentStep === 3 && (
+          {/* Educator Step 3: Class Information */}
+          {currentStep === 3 && userType === 'educator' && (
             <div className="space-y-4 animate-fade-in">
               <h3 className="text-lg font-semibold text-[#22224C] mb-4">About this class</h3>
 
@@ -375,9 +524,27 @@ export default function MultiStepModal({
             </div>
           )}
 
-          {/* Confirmation Screen (Returning Users) */}
-          {currentStep === 'confirm' && (
+          {/* Educator Confirmation Screen (Returning Users) */}
+          {currentStep === 'confirm' && userType === 'educator' && (
             <div className="space-y-4 animate-fade-in">
+              {/* Back Navigation */}
+              <button
+                type="button"
+                onClick={handleBack}
+                className="inline-flex items-center gap-2 text-sm text-[#65738B] hover:text-[#485163] mb-2 transition-colors"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span className="underline">Change selection</span>
+              </button>
+
               <div className="bg-green-50 border-l-4 border-green-500 px-4 py-3 rounded mb-4">
                 <p className="text-sm font-medium text-green-800">
                   Welcome back! We&apos;ve pre-filled your information.
@@ -424,32 +591,74 @@ export default function MultiStepModal({
 
         {/* Footer */}
         <div className="border-t border-gray-200 px-4 md:px-6 py-3 md:py-4 bg-[#fafbfc]">
-          <div className="flex flex-col-reverse sm:flex-row gap-3 sm:justify-between">
-            {currentStep !== 1 && currentStep !== 'confirm' && (
+          {currentStep === 'user-type' ? (
+            <div className="flex justify-end">
               <button
                 type="button"
-                onClick={handleBack}
+                onClick={onClose}
                 className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
               >
-                ← Back
+                Cancel
               </button>
-            )}
-
-            {currentStep === 'confirm' ? (
-              <div className="flex flex-col-reverse sm:flex-row gap-3 w-full sm:justify-end">
+            </div>
+          ) : currentStep === 'confirm' ? (
+            <div className="flex flex-col-reverse sm:flex-row gap-3 w-full sm:justify-end">
+              <button
+                type="button"
+                onClick={() => setCurrentStep(1)}
+                className="px-4 md:px-6 py-2.5 border-2 border-[#0092FF] rounded-lg text-sm font-medium text-[#0092FF] hover:bg-[#0092FF]/5 transition-colors duration-200"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                onClick={handleSubmit}
+                className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] transition-colors duration-200 flex items-center justify-center gap-2"
+              >
+                Start Video
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          ) : userType === 'student' ? (
+            <div className="flex flex-col-reverse sm:flex-row gap-3 sm:justify-between">
+              {/* Back button - only show for student-2 */}
+              {currentStep === 'student-2' && (
                 <button
                   type="button"
                   onClick={handleBack}
-                  className="px-4 md:px-6 py-2.5 border-2 border-[#0092FF] rounded-lg text-sm font-medium text-[#0092FF] hover:bg-[#0092FF]/5 transition-colors duration-200"
+                  className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
                 >
-                  Edit
+                  ← Back
+                </button>
+              )}
+
+              <div className="flex gap-3 justify-end w-full">
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                >
+                  Cancel
                 </button>
                 <button
                   type="button"
-                  onClick={handleSubmit}
-                  className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] transition-colors duration-200 flex items-center justify-center gap-2"
+                  onClick={handleNext}
+                  disabled={!canProceed()}
+                  className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center gap-2 min-h-[44px]"
                 >
-                  Start Video
+                  {currentStep === 'student-2' ? 'Start Video' : 'Next Step'}
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -465,7 +674,19 @@ export default function MultiStepModal({
                   </svg>
                 </button>
               </div>
-            ) : (
+            </div>
+          ) : (
+            <div className="flex flex-col-reverse sm:flex-row gap-3 sm:justify-between">
+              {currentStep !== 1 && (
+                <button
+                  type="button"
+                  onClick={handleBack}
+                  className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                >
+                  ← Back
+                </button>
+              )}
+
               <div className="flex gap-3 justify-end w-full">
                 <button
                   type="button"
@@ -496,8 +717,8 @@ export default function MultiStepModal({
                   </svg>
                 </button>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

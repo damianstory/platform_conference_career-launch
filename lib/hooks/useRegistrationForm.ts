@@ -1,7 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Cookies from 'js-cookie';
+
+export type UserType = 'educator' | 'student' | null;
 
 export interface RegistrationFormData {
   firstName: string;
@@ -25,19 +27,20 @@ const COOKIE_NAME = 'clp_registration';
 const COOKIE_EXPIRY_DAYS = 7;
 
 export function useRegistrationForm() {
+  const [userType, setUserType] = useState<UserType>(null);
   const [formData, setFormData] = useState<RegistrationFormData>({
     firstName: '',
     email: '',
     boardId: '',
     schoolId: '',
     classSize: '25-to-35', // Default selection
-    gradeLevel: '12', // Default selection
+    gradeLevel: '', // Empty for students (no pre-selection)
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isReturningUser, setIsReturningUser] = useState(false);
 
-  // Load saved data from cookie on mount
+  // Load saved data from cookie on mount (only for educators)
   useEffect(() => {
     const savedData = Cookies.get(COOKIE_NAME);
     if (savedData) {
@@ -49,7 +52,7 @@ export function useRegistrationForm() {
           boardId: parsed.boardId || '',
           schoolId: parsed.schoolId || '',
           classSize: parsed.classSize || '25-to-35',
-          gradeLevel: parsed.gradeLevel || '12',
+          gradeLevel: parsed.gradeLevel || '',
         });
         setIsReturningUser(true);
       } catch (e) {
@@ -65,6 +68,13 @@ export function useRegistrationForm() {
   };
 
   const validateField = (name: keyof RegistrationFormData, value: string): string | undefined => {
+    // Student-specific validation: skip firstName, email, and classSize
+    if (userType === 'student') {
+      if (name === 'firstName' || name === 'email' || name === 'classSize') {
+        return undefined; // These fields are not required for students
+      }
+    }
+
     switch (name) {
       case 'firstName':
         if (!value.trim()) return 'First name is required';
@@ -109,7 +119,12 @@ export function useRegistrationForm() {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    (Object.keys(formData) as Array<keyof RegistrationFormData>).forEach(key => {
+    // For students, only validate required fields
+    const fieldsToValidate = userType === 'student'
+      ? ['boardId', 'schoolId', 'gradeLevel'] as Array<keyof RegistrationFormData>
+      : Object.keys(formData) as Array<keyof RegistrationFormData>;
+
+    fieldsToValidate.forEach(key => {
       const error = validateField(key, formData[key]);
       if (error) {
         newErrors[key] = error;
@@ -125,25 +140,50 @@ export function useRegistrationForm() {
       return false;
     }
 
-    // Save to cookie
-    const cookieData = {
-      ...formData,
-      timestamp: new Date().toISOString(),
-    };
+    // Only save cookie for educators (privacy protection for students)
+    if (userType === 'educator') {
+      const cookieData = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+      };
 
-    Cookies.set(COOKIE_NAME, JSON.stringify(cookieData), { expires: COOKIE_EXPIRY_DAYS });
+      Cookies.set(COOKIE_NAME, JSON.stringify(cookieData), { expires: COOKIE_EXPIRY_DAYS });
+    }
+
+    // Prepare submission data based on user type
+    const submissionData = userType === 'student'
+      ? {
+          userType: 'student',
+          boardId: formData.boardId,
+          schoolId: formData.schoolId,
+          gradeLevel: formData.gradeLevel,
+          sessionId,
+          timestamp: new Date().toISOString(),
+        }
+      : {
+          userType: 'educator',
+          ...formData,
+          sessionId,
+          timestamp: new Date().toISOString(),
+        };
 
     // Log submission for now (will be replaced with API call)
-    console.log('Form submitted:', {
-      ...formData,
-      sessionId,
-      timestamp: cookieData.timestamp,
-    });
+    console.log('Form submitted:', submissionData);
 
     return true;
   };
 
   const isFormValid = (): boolean => {
+    if (userType === 'student') {
+      // For students, only require school info and grade
+      return (
+        formData.boardId !== '' &&
+        formData.schoolId !== '' &&
+        formData.gradeLevel !== ''
+      );
+    }
+
+    // For educators, require all fields
     return (
       formData.firstName.trim().length >= 2 &&
       validateEmail(formData.email) &&
@@ -154,7 +194,23 @@ export function useRegistrationForm() {
     );
   };
 
+  const resetUserType = useCallback(() => {
+    setUserType(null);
+    setErrors({});
+  }, []);
+
+  const resetForm = useCallback(() => {
+    setUserType(null);
+    setErrors({});
+    // Keep form data in case they switch back to educator
+    // The cookie pre-fill will remain if they were a returning user
+  }, []);
+
   return {
+    userType,
+    setUserType,
+    resetUserType,
+    resetForm,
     formData,
     errors,
     isReturningUser,

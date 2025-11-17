@@ -3,12 +3,11 @@ import Accordion, { AccordionItem } from './Accordion';
 const faqItems: AccordionItem[] = [
   {
     id: 'faq-1',
-    title: 'How do I access the career sessions?',
+    title: 'How do I access the sessions?',
     content: (
       <p>
-        Simply browse the sessions on this platform, click on any session that interests you,
-        and you&apos;ll be able to watch the video content directly in your browser. No special
-        software or downloads required.
+        Click the sessions button and then scroll, search, or use the filters to find the session
+        you&apos;re most interested in watching.
       </p>
     ),
   },

@@ -40,10 +40,10 @@ export const CLASS_SIZES = [
 ];
 
 export const GRADE_LEVELS = [
-  { id: '7-8', label: '7s and/or 8s' },
+  { id: '7', label: 'Grade 7' },
+  { id: '8', label: 'Grade 8' },
   { id: '9', label: 'Grade 9' },
   { id: '10', label: 'Grade 10' },
   { id: '11', label: 'Grade 11' },
   { id: '12', label: 'Grade 12' },
-  { id: 'mixed', label: 'Mixed Grades' },
 ];
