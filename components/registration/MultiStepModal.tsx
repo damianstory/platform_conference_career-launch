@@ -36,7 +36,6 @@ export default function MultiStepModal({
     resetUserType,
     formData,
     errors,
-    isReturningUser,
     updateField,
     submitForm,
     isFormValid,
@@ -94,8 +93,8 @@ export default function MultiStepModal({
     // Small delay for visual feedback
     setTimeout(() => {
       if (type === 'educator') {
-        // For returning educators, go to confirm; otherwise start at step 1
-        setCurrentStep(isReturningUser ? 'confirm' : 1);
+        // Educators start at step 1
+        setCurrentStep(1);
       } else {
         // Students start at step 1
         setCurrentStep('student-1');
@@ -201,7 +200,7 @@ export default function MultiStepModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center">
+    <div className="fixed inset-0 z-50 flex items-end justify-center pb-6 lg:pb-20">
       {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/40 animate-fade-in"
@@ -217,9 +216,9 @@ export default function MultiStepModal({
           height: 'auto',
           maxHeight: '90vh',
           minHeight: currentStep === 'user-type' ? '50vh' : userType === 'student' ? '55vh' : '60vh',
-          borderTopLeftRadius: '24px',
-          borderTopRightRadius: '24px',
+          borderRadius: '24px',
           boxShadow: '0 -8px 32px rgba(0, 0, 0, 0.12)',
+          overflow: 'hidden',
         }}
         role="dialog"
         aria-modal="true"
