@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import Cookies from 'js-cookie';
+import { useState, useCallback } from 'react';
 
 export type UserType = 'educator' | 'student' | null;
 
@@ -23,9 +22,6 @@ interface FormErrors {
   gradeLevel?: string;
 }
 
-const COOKIE_NAME = 'clp_registration';
-const COOKIE_EXPIRY_DAYS = 7;
-
 export function useRegistrationForm() {
   const [userType, setUserType] = useState<UserType>(null);
   const [formData, setFormData] = useState<RegistrationFormData>({
@@ -38,29 +34,6 @@ export function useRegistrationForm() {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
-  const [isReturningUser, setIsReturningUser] = useState(false);
-
-  // Load saved data from cookie on mount (only for educators)
-  useEffect(() => {
-    const savedData = Cookies.get(COOKIE_NAME);
-    if (savedData) {
-      try {
-        const parsed = JSON.parse(savedData);
-        setFormData({
-          firstName: parsed.firstName || '',
-          email: parsed.email || '',
-          boardId: parsed.boardId || '',
-          schoolId: parsed.schoolId || '',
-          classSize: parsed.classSize || '25-to-35',
-          gradeLevel: parsed.gradeLevel || '',
-        });
-        setIsReturningUser(true);
-      } catch (e) {
-        // Invalid cookie data, ignore
-        console.error('Error parsing registration cookie:', e);
-      }
-    }
-  }, []);
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -140,16 +113,6 @@ export function useRegistrationForm() {
       return false;
     }
 
-    // Only save cookie for educators (privacy protection for students)
-    if (userType === 'educator') {
-      const cookieData = {
-        ...formData,
-        timestamp: new Date().toISOString(),
-      };
-
-      Cookies.set(COOKIE_NAME, JSON.stringify(cookieData), { expires: COOKIE_EXPIRY_DAYS });
-    }
-
     // Prepare submission data based on user type
     const submissionData = userType === 'student'
       ? {
@@ -213,7 +176,6 @@ export function useRegistrationForm() {
     resetForm,
     formData,
     errors,
-    isReturningUser,
     updateField,
     submitForm,
     isFormValid,
