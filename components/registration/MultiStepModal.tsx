@@ -211,11 +211,11 @@ export default function MultiStepModal({
       {/* Drawer */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-[600px] lg:max-w-[700px] bg-white animate-slide-up"
+        className="relative w-full max-w-[600px] lg:max-w-[700px] bg-white animate-slide-up flex flex-col"
         style={{
           height: 'auto',
           maxHeight: '90vh',
-          minHeight: currentStep === 'user-type' ? '50vh' : userType === 'student' ? '55vh' : '60vh',
+          minHeight: currentStep === 'user-type' ? '50vh' : userType === 'student' ? '55vh' : '55vh',
           borderRadius: '24px',
           boxShadow: '0 -8px 32px rgba(0, 0, 0, 0.12)',
           overflow: 'hidden',
@@ -300,8 +300,7 @@ export default function MultiStepModal({
 
         {/* Form Content - Dynamic based on step */}
         <div
-          className={`px-4 md:px-6 py-4 md:py-6 ${currentStep !== 'user-type' ? 'overflow-y-auto' : ''}`}
-          style={{ maxHeight: currentStep !== 'user-type' ? 'calc(90vh - 350px)' : undefined }}
+          className={`px-4 md:px-6 py-4 md:py-6 flex-grow ${currentStep !== 'user-type' ? 'overflow-y-auto' : ''}`}
         >
           {/* User Type Selection */}
           {currentStep === 'user-type' && (
@@ -589,7 +588,7 @@ export default function MultiStepModal({
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-200 px-4 md:px-6 py-3 md:py-4 bg-[#fafbfc]">
+        <div className="flex-shrink-0 border-t border-gray-200 px-4 md:px-6 pt-4 pb-6 bg-[#fafbfc]">
           {currentStep === 'user-type' ? (
             <div className="flex justify-end">
               <button
@@ -698,7 +697,7 @@ export default function MultiStepModal({
                   type="button"
                   onClick={handleNext}
                   disabled={!canProceed()}
-                  className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 flex items-center gap-2"
+                  className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 flex items-center gap-2 min-h-[44px]"
                 >
                   {currentStep === 3 ? 'Start Video' : 'Next Step'}
                   <svg
