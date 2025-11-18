@@ -436,7 +436,7 @@ Whether you're curious about what engineers really do or you're already dreaming
     'Explore earning and business potential',
     'Discover the problem-solving aspects of plumbing'
   ],
-  presenter_name: `Humber's Faculty of Applied Science and Technology`,
+  presenter_name: `Humber FAST`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/angela-dimarco.jpg',
   thumbnail_url: '/images/sessions/plumbing-thumb.jpg',
