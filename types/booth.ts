@@ -8,7 +8,7 @@ export interface VideoContent {
 
 export interface ResourceItem {
   title: string
-  description: string
+  description?: string
   url: string
   type: 'pdf' | 'link' | 'document' | 'video'
   fileSize?: string
@@ -48,7 +48,7 @@ export interface ContactDetails {
     applicationUrl?: string
   }
   socialLinks?: Array<{
-    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube' | 'spotify'
+    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube' | 'spotify' | 'globe'
     url: string
     label?: string
   }>

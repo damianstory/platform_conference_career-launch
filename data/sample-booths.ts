@@ -92,58 +92,56 @@ export const healthFirst: PlatinumBoothData = {
 
 export const futureBuild: PlatinumBoothData = {
   id: 'canadian-armed-forces',
-  name: 'Canadian Armed Forces',
+  name: 'Royal Canadian Air Force',
   slug: 'canadian-armed-forces',
   tier: 'platinum',
   industry: 'Manufacturing',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'FutureBuild Co is a leading engineering firm specializing in sustainable infrastructure and innovative building solutions.',
+  logo: '/logos/Roundel_of_Canada.svg.png',
+  tagline: 'The RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers.',
+  description: 'The Royal Canadian Air Force (RCAF) is part of National Defence and the Canadian Armed Forces. We protect Canadian and North American airspace, support peace missions around the world, and provide space capabilities to help meet national defence goals. Whether at home or abroad, the RCAF works to keep Canadians and their interests safe.\n\nThe RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers. All training is provided, and paid college and university programs are available.',
   website: 'https://futurebuild.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=V3s4is2UC5s',
     type: 'youtube',
-    title: 'Building Tomorrow',
-    description: 'Discover engineering careers'
+    title: 'Rise above with a career in the Royal Canadian Air Force',
+    description: 'Discover career opportunities with the RCAF'
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
+      title: 'RCAF Across Canada',
+      description: 'Explore RCAF locations and operations from coast to coast',
+      url: '/resources/RCAF Across Canada.pdf',
+      type: 'pdf'
     },
     {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
-      type: 'link'
+      title: 'Occupational Brochure',
+      description: 'Discover the full range of career opportunities in the RCAF',
+      url: '/resources/20250114-U-Occupational Brochure-Print-DGM-21324-VT8.pdf',
+      type: 'pdf'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Applicant Brochure',
+      description: 'Learn about the application process and what to expect',
+      url: '/resources/20250113-U-Potential Applicant Brochure-EN-DGM-19624-33M.pdf',
+      type: 'pdf'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'This Is For You',
+      description: 'Find out if a career in the RCAF is right for you',
+      url: '/resources/20231027-U-RCAF TIFY Poster-EN.pdf',
+      type: 'pdf'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Canadian Armed Forces',
+      description: 'Visit the official CAF website for more information',
+      url: 'https://forces.ca/en/',
       type: 'link'
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1bH_bWyDZNlOKopAOJNtGT-fmpnd1mXhk/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -155,17 +153,18 @@ export const futureBuild: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Join Our Team',
-    url: 'https://futurebuild.example.com/careers',
-    type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://futurebuild.example.com/contact',
+    text: 'Ask a Question',
+    url: 'https://affinitas.my.site.com/RCAFContactUs/s/?c__EngagementID=a01Mm00000XsAnS',
     type: 'contact'
   },
+  secondaryCTA: {
+    text: 'Browse Careers',
+    url: 'https://www.forces.ca',
+    type: 'careers'
+  },
   contact: {
-    email: 'careers@futurebuild.example.com',
+    email: 'RCAFApplicants-CandidatsdelARC@forces.gc.ca',
+    website: 'https://www.forces.ca',
     phone: '1-800-555-BUILD',
     headquarters: {
       address: '200 Engineering Drive',
@@ -173,16 +172,8 @@ export const futureBuild: PlatinumBoothData = {
       province: 'ON',
       postalCode: 'K1A 0B1'
     },
-    internshipInfo: {
-      available: true,
-      period: 'Year-round opportunities',
-      applicationUrl: 'https://futurebuild.example.com/apply'
-    },
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@futurebuild' },
-      { platform: 'twitter', url: 'https://twitter.com/futurebuild' },
-      { platform: 'instagram', url: 'https://instagram.com/futurebuild' },
-      { platform: 'facebook', url: 'https://facebook.com/futurebuild' }
+      { platform: 'globe', url: 'https://outlook.office.com/book/RCAFAttractionsTeamApplicantLiaisonCell@018gc.onmicrosoft.com/?ismsaljsauthenabled=true', label: 'Talk to our team' }
     ]
   },
   brandColors: {

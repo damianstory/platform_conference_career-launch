@@ -47,7 +47,15 @@ export default function BoothHeader({
           {/* Company Info */}
           <div className="flex-grow space-y-2">
             <h1 className="text-[40px] font-black text-brand-navy leading-tight tracking-tight">
-              {name}
+              {name === 'Royal Canadian Air Force' ? (
+                <>
+                  Royal Canadian
+                  <br />
+                  Air Force
+                </>
+              ) : (
+                name
+              )}
             </h1>
             <p className="text-[20px] text-neutral-5 font-normal">
               {tagline}

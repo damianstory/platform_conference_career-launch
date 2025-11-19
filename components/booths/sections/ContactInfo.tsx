@@ -25,6 +25,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         return Facebook
       case 'linkedin':
         return Linkedin
+      case 'globe':
+        return Globe
       case 'tiktok':
         return SiTiktok
       case 'spotify':
@@ -121,10 +123,10 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         )}
 
         {/* Social Media Buttons - Pushed to bottom */}
-        {contact.socialLinks && contact.socialLinks.length > 0 && (
+        {contact.socialLinks && contact.socialLinks.filter(social => !social.label).length > 0 && (
           <div className="mt-auto pt-3 flex-shrink-0">
             <div className="flex items-center gap-1.5 flex-wrap">
-              {contact.socialLinks.map((social, index) => {
+              {contact.socialLinks.filter(social => !social.label).map((social, index) => {
                 const Icon = getSocialIcon(social.platform)
 
                 return (

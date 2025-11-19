@@ -826,7 +826,7 @@ Join us to explore how your future can start with service — and how you can ma
     'Explore the physical and mental demands',
     'Discover the team-based nature of firefighting'
   ],
-  presenter_name: `Canadian Armed Forces`,
+  presenter_name: `Royal Canadian Air Force`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/john-davis.jpg',
   thumbnail_url: '/images/sessions/firefighting-thumb.jpg',

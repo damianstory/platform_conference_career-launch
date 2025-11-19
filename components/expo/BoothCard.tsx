@@ -36,7 +36,8 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
       'Kids Help Phone': ['Kids Help', 'Phone'],
       'thinkAG & CAHRC': ['thinkAG &', 'CAHRC'],
       'Vox Pop Labs': ['Vox Pop', 'Labs'],
-      'Ernst & Young': ['Ernst', '& Young']
+      'Ernst & Young': ['Ernst', '& Young'],
+      'Royal Canadian Air Force': ['Royal Canadian', 'Air Force']
     }
 
     if (twoLineExceptions[title]) {
