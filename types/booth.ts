@@ -50,6 +50,7 @@ export interface ContactDetails {
   socialLinks?: Array<{
     platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube' | 'spotify'
     url: string
+    label?: string
   }>
 }
 
@@ -128,7 +129,7 @@ export interface PlatinumBoothData {
   sessionSlides?: SessionSlidesData
   engagementActivity?: EngagementActivityData
   primaryCTA: CTAButton
-  secondaryCTA: CTAButton
+  secondaryCTA?: CTAButton
   contact: ContactDetails
   brandColors: BrandColors
 }
@@ -150,7 +151,7 @@ export interface StandardBoothData {
   googleFormUrl?: string
   externalUrl?: string
   primaryCTA: CTAButton
-  secondaryCTA: CTAButton
+  secondaryCTA?: CTAButton
   contact: ContactDetails
   brandColors: BrandColors
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Mail, Globe, Youtube, Twitter, Instagram, Facebook } from 'lucide-react'
+import { Mail, Globe, Youtube, Twitter, Instagram, Facebook, Linkedin } from 'lucide-react'
 import { SiSpotify, SiTiktok } from 'react-icons/si'
 import { ContactDetails } from '@/types/booth'
 import SectionLabel from '../shared/SectionLabel'
@@ -23,6 +23,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         return Instagram
       case 'facebook':
         return Facebook
+      case 'linkedin':
+        return Linkedin
       case 'tiktok':
         return SiTiktok
       case 'spotify':
@@ -56,6 +58,28 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
               </span>
             </a>
           )}
+
+          {/* Social Links with Labels */}
+          {contact.socialLinks && contact.socialLinks
+            .filter(social => social.label)
+            .map((social, index) => {
+              const Icon = getSocialIcon(social.platform)
+              return (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={getExternalLinkAriaLabel(social.label || social.platform)}
+                  className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+                >
+                  {Icon && <Icon className="w-2 h-2 text-primary-blue flex-shrink-0" />}
+                  <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
+                    {social.label}
+                  </span>
+                </a>
+              )
+            })}
 
           {/* Website */}
           {contact.website && (

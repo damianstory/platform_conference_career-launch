@@ -12,9 +12,9 @@ export const healthFirst: PlatinumBoothData = {
   industry: 'Health/Wellness',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'HealthFirst is Ontario\'s leading healthcare provider with diverse career opportunities in nursing, allied health, and medical technology.',
+  logo: '/logos/agroboticswg-fav.avif',
+  tagline: 'Fostering productivity, resilience and competitiveness in agriculture — by making innovation accessible, practical and grounded in real farming conditions.',
+  description: 'We bring together a network of farmers, researchers, industry mentors, and start-ups. Whether you\'re exploring new robotic solutions, testing emerging farm technologies, or seeking insightful data to guide decisions, we provide the connection, support and ground-truthing you need.\n\nOur promise: to foster productivity, resilience and competitiveness in agriculture — by making innovation accessible, practical and grounded in real farming conditions. We believe strong networks, mentorship, and applied research are the keys to smarter farming today and tomorrow.',
   website: 'https://healthfirst.example.com',
   video: {
     url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
@@ -24,35 +24,33 @@ export const healthFirst: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Different Technologies',
+      description: 'Explore the latest agricultural robotics technologies and innovations',
+      url: 'https://www.agroboticswg.com/agrobotics-working-group-meetings-1',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'AgRobotics Challenge',
+      description: 'Student competition for agricultural robotics innovation',
+      url: 'https://www.innovationfarmson.ca/student-competition',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Upcoming Events',
+      description: 'Stay updated on upcoming AgRobotics Working Group events',
+      url: 'https://www.agroboticswg.com/events',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'The Western Fair District',
+      description: 'Learn about our home and event venue',
+      url: 'https://westernfairdistrict.com/',
+      type: 'link'
+    },
+    {
+      title: 'Innovation Farms Ontario',
+      description: 'Discover our innovation farm network across Ontario',
+      url: 'https://www.innovationfarmson.ca/',
       type: 'link'
     }
   ],
@@ -69,17 +67,11 @@ export const healthFirst: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Positions',
-    url: 'https://healthfirst.example.com/careers',
-    type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://healthfirst.example.com/contact',
+    text: 'Questions',
+    url: 'https://www.agroboticswg.com/contact-us',
     type: 'contact'
   },
   contact: {
-    email: 'recruitment@healthfirst.example.com',
     phone: '1-855-555-CARE',
     headquarters: {
       address: '555 University Avenue',
@@ -88,10 +80,8 @@ export const healthFirst: PlatinumBoothData = {
       postalCode: 'M5G 1X8'
     },
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@healthfirst' },
-      { platform: 'twitter', url: 'https://twitter.com/healthfirst' },
-      { platform: 'instagram', url: 'https://instagram.com/healthfirst' },
-      { platform: 'facebook', url: 'https://facebook.com/healthfirst' }
+      { platform: 'linkedin', url: 'https://www.linkedin.com/showcase/agrobotics-working-group', label: 'AgRobotics Working Group LinkedIn' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/showcase/innovation-farms-on', label: 'Innovation Farms Ontario LinkedIn' }
     ]
   },
   brandColors: {
