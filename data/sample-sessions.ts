@@ -810,16 +810,8 @@ Whether you have a specific path in mind or are exploring several, this intervie
 export const firefighterFirstResponder: Session = {
   id: 'b8aed9f1-6c3b-4fd8-a265-86c4d0d17aa6',
   slug: 'canadian-armed-forces-careers',
-  title: `Serve. Learn. Lead: Careers in the Canadian Armed Forces`,
-  description: `The Canadian Armed Forces (CAF) offers more than just a job — it's a career with purpose, pride, and global impact. Whether you're interested in **engineering, logistics, healthcare, aviation, or skilled trades**, the CAF provides over 100 full- and part-time career options tailored to your strengths and ambitions.
-
-We invest in your future with paid education for both college or university – **we can cover your tuition AND pay you a salary while you study**.
-
-Is college or university not for you? Join us directly upon graduation from high school and let us teach you a cutting-edge trade to kickstart your career.
-
-From coast to coast and around the world, CAF members serve with distinction — gaining leadership experience, teamwork skills, and the opportunity to deploy on meaningful missions across the globe.
-
-Join us to explore how your future can start with service — and how you can make a difference in Canada and beyond.`,
+  title: `Careers in the Royal Canadian Air Force (RCAF)`,
+  description: `The Royal Canadian Air Force (RCAF) is part of National Defence and the Canadian Armed Forces. We protect Canadian and North American airspace, support peace missions around the world, and provide space capabilities to help meet national defence goals. Whether at home or abroad, the RCAF works to keep Canadians and their interests safe. The RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers. All training is provided, and paid college and university programs are available. Visit our virtual booth to learn more. Your Air Force - Your Future.`,
   learning_objectives: [
     'Learn about firefighter responsibilities',
     'Understand recruitment and training',
