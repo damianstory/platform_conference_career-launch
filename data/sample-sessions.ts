@@ -123,7 +123,7 @@ Because the next big event that changes someone's life could be yours to create.
     'Explore the role of paramedics in healthcare',
     'Discover educational pathways and career progression'
   ],
-  presenter_name: `Cielle & Co., Creative Connoisseur, Live Nation, JPdL, encore`,
+  presenter_name: `Encore Canada, Creative Connoisseur, Live Nation, JPdL`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/james-thompson.jpg',
   thumbnail_url: '/images/sessions/paramedic-thumb.jpg',

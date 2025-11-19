@@ -395,7 +395,7 @@ export const eduPath: PlatinumBoothData = {
 
 export const tradesMaster: PlatinumBoothData = {
   id: 'cielle-creative-connoisseur-live-nation-jpdl-encore',
-  name: 'Cielle & Co.',
+  name: 'Encore Canada',
   slug: 'cielle-creative-connoisseur-live-nation-jpdl-encore',
   tier: 'platinum',
   industry: 'Construction',
