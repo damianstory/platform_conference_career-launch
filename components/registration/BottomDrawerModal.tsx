@@ -294,6 +294,7 @@ export default function BottomDrawerModal({
                     errors.classSize ? 'border-red-500' : 'border-gray-300'
                   }`}
                 >
+                  <option value="" disabled>Select a class size</option>
                   {CLASS_SIZES.map((size) => (
                     <option key={size.id} value={size.id}>
                       {size.label}
@@ -321,6 +322,7 @@ export default function BottomDrawerModal({
                     errors.gradeLevel ? 'border-red-500' : 'border-gray-300'
                   }`}
                 >
+                  <option value="" disabled>Select a grade</option>
                   {GRADE_LEVELS.map((grade) => (
                     <option key={grade.id} value={grade.id}>
                       {grade.label}

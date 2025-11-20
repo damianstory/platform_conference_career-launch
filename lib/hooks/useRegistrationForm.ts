@@ -29,8 +29,8 @@ export function useRegistrationForm() {
     email: '',
     boardId: '',
     schoolId: '',
-    classSize: '25-to-35', // Default selection
-    gradeLevel: '', // Empty for students (no pre-selection)
+    classSize: '',
+    gradeLevel: '',
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
