@@ -1334,102 +1334,6 @@ export const bioMedical: PlatinumBoothData = {
   }
 }
 
-export const architectDesign: PlatinumBoothData = {
-  id: 'life-sciences-ontario',
-  name: 'Life Sciences Ontario',
-  slug: 'life-sciences-ontario',
-  tier: 'platinum',
-  industry: 'Manufacturing',
-  organizationType: 'employer',
-  pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'ArchitectDesign is an award-winning architectural firm creating sustainable and innovative building designs.',
-  website: 'https://architectdesign.example.com',
-  video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
-    type: 'youtube',
-    title: 'Architecture Careers',
-    description: 'See our portfolio of projects'
-  },
-  resources: [
-    {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
-      type: 'link'
-    },
-    {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
-    },
-    {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
-    },
-    {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
-      type: 'link'
-    }
-  ],
-  sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
-  },
-  engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
-  },
-  primaryCTA: {
-    text: 'View Opportunities',
-    url: 'https://architectdesign.example.com/careers',
-    type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://architectdesign.example.com/contact',
-    type: 'contact'
-  },
-  contact: {
-    email: 'careers@architectdesign.example.com',
-    phone: '1-800-555-DESIGN',
-    headquarters: {
-      address: '800 Design Street',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5J 2L7'
-    },
-    socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@architectdesign' },
-      { platform: 'twitter', url: 'https://twitter.com/architectdesign' },
-      { platform: 'instagram', url: 'https://instagram.com/architectdesign' },
-      { platform: 'facebook', url: 'https://facebook.com/architectdesign' }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
 export const foodService: PlatinumBoothData = {
   id: 'multiple-conservation-authorities-trca-cvc-npca',
   name: 'TRCA, CVC, & NPCA',
@@ -2198,102 +2102,6 @@ export const fashionDesign: PlatinumBoothData = {
   }
 }
 
-export const aviationAcademy: PlatinumBoothData = {
-  id: 'tks-the-knowledge-society',
-  name: 'The Knowledge Society (TKS)',
-  slug: 'tks-the-knowledge-society',
-  tier: 'platinum',
-  industry: 'Manufacturing',
-  organizationType: 'employer',
-  pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'AviationAcademy trains pilots, aircraft technicians, and aviation management professionals.',
-  website: 'https://aviationacademy.example.com',
-  video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
-    type: 'youtube',
-    title: 'Aviation Careers',
-    description: 'Explore careers in aviation'
-  },
-  resources: [
-    {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
-      type: 'link'
-    },
-    {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
-    },
-    {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
-    },
-    {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
-      type: 'link'
-    }
-  ],
-  sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
-  },
-  engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
-  },
-  primaryCTA: {
-    text: 'Start Training',
-    url: 'https://aviationacademy.example.com/programs',
-    type: 'learn-more'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://aviationacademy.example.com/contact',
-    type: 'contact'
-  },
-  contact: {
-    email: 'info@aviationacademy.example.com',
-    phone: '1-877-555-FLY',
-    headquarters: {
-      address: '1700 Airport Road',
-      city: 'Brampton',
-      province: 'ON',
-      postalCode: 'L6T 5E3'
-    },
-    socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@aviationacademy' },
-      { platform: 'twitter', url: 'https://twitter.com/aviationacademy' },
-      { platform: 'instagram', url: 'https://instagram.com/aviationacademy' },
-      { platform: 'facebook', url: 'https://facebook.com/aviationacademy' }
-    ]
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
 export const hospitalityCollege: PlatinumBoothData = {
   id: 'toronto-police-services',
   name: 'Toronto Police Services',
@@ -2839,7 +2647,6 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   manufactureTech,
   cyberShield,
   bioMedical,
-  architectDesign,
   foodService,
   legalServices,
   socialImpact,
@@ -2848,7 +2655,6 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   environmentalConsulting,
   automotiveTech,
   fashionDesign,
-  aviationAcademy,
   hospitalityCollege,
   publicHealth,
   voxPopLabs,
