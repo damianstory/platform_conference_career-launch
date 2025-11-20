@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Maximize2, Loader2 } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
+import { Maximize2, Loader2, X } from 'lucide-react'
 import { SessionSlidesData } from '@/types/booth'
 
 interface SessionSlidesProps {
@@ -11,6 +12,7 @@ interface SessionSlidesProps {
 export default function SessionSlides({ slides }: SessionSlidesProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const handleIframeLoad = () => {
     setIsLoading(false)
@@ -19,6 +21,31 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
   const handleFullscreenToggle = () => {
     setIsFullscreen(!isFullscreen)
   }
+
+  // Handle component mount for portal
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Handle ESC key to close fullscreen
+  useEffect(() => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isFullscreen) {
+        setIsFullscreen(false)
+      }
+    }
+
+    if (isFullscreen) {
+      document.addEventListener('keydown', handleEscapeKey)
+      // Prevent body scroll when fullscreen
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey)
+      document.body.style.overflow = ''
+    }
+  }, [isFullscreen])
 
   return (
     <div className="bg-white rounded-xl shadow-[0_3px_10px_rgba(34,34,76,0.08),0_1px_3px_rgba(34,34,76,0.04)] border border-gray-200/50 ring-1 ring-primary-blue/5 overflow-hidden transition-all duration-200 hover:shadow-md col-span-12 lg:col-span-6">
@@ -78,21 +105,24 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
         </div>
       )}
 
-      {/* Fullscreen Modal */}
-      {isFullscreen && (
+      {/* Fullscreen Modal - Rendered via Portal */}
+      {mounted && isFullscreen && createPortal(
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex flex-col"
+          className="fixed inset-0 z-[9999] bg-black/90 flex flex-col"
           onClick={handleFullscreenToggle}
         >
           {/* Header */}
-          <div className="p-4 bg-white/10 backdrop-blur-sm flex items-center justify-between">
-            <h3 className="text-body-1 font-bold text-white">{slides.title}</h3>
+          <div className="p-4 bg-white/15 backdrop-blur-md flex items-center justify-between border-b border-white/20">
+            <h3 className="text-body-1 font-bold text-white">myBlueprint Career Launch: Session Deck</h3>
             <button
-              onClick={handleFullscreenToggle}
-              className="p-2 hover:bg-white/20 rounded-lg transition-colors text-white"
+              onClick={(e) => {
+                e.stopPropagation()
+                handleFullscreenToggle()
+              }}
+              className="p-3 bg-white/20 hover:bg-white/30 rounded-lg transition-all duration-200 text-white shadow-lg hover:shadow-xl flex items-center justify-center min-w-[44px] min-h-[44px]"
               aria-label="Close fullscreen"
             >
-              ✕
+              <X className="w-5 h-5" strokeWidth={2.5} />
             </button>
           </div>
 
@@ -105,7 +135,8 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
               allowFullScreen
             />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )
