@@ -110,7 +110,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
       {/* Main Content */}
       <div id="booths" className="max-w-7xl mx-auto px-4 py-6">
         {/* Filter Controls */}
-        <div className="bg-white border-b border-gray-200 sticky top-0 z-10 -mx-4 px-4 md:px-8 lg:px-16 py-6 mb-6">
+        <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10 -mx-4 px-4 md:px-8 lg:px-16 py-6 mb-6 rounded-lg">
           {/* Top Row: Filter Button, Random Button, Results Count */}
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">

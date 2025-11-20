@@ -94,12 +94,12 @@ export default function SessionFilters({
   const totalActiveCount = activeFilterCount + (filters.search ? 1 : 0);
 
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
-      <div className="px-4 md:px-8 lg:px-16 py-4">
+    <div className="bg-off-white border-t sticky top-0 z-10 mb-6 md:mb-8" style={{ borderTopColor: 'rgba(34, 34, 76, 0.12)' }}>
+      <div className="px-4 md:px-8 lg:px-16 py-4 md:py-6">
         {/* Desktop Layout */}
         <div className="hidden md:block">
           {/* Top Row: Filter Button, Search, Results Count */}
-          <div className="flex items-center justify-between gap-4 mb-3">
+          <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               {/* Filter Toggle Button */}
               <button
@@ -165,7 +165,7 @@ export default function SessionFilters({
             </div>
 
             {/* Results Count */}
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-600 py-2">
               Showing <span className="font-semibold">{sessionCount}</span> of <span className="font-semibold">{totalCount}</span> sessions
             </div>
           </div>

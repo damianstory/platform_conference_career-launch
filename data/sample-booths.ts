@@ -17,7 +17,7 @@ export const healthFirst: PlatinumBoothData = {
   description: 'We bring together a network of farmers, researchers, industry mentors, and start-ups. Whether you\'re exploring new robotic solutions, testing emerging farm technologies, or seeking insightful data to guide decisions, we provide the connection, support and ground-truthing you need.\n\nOur promise: to foster productivity, resilience and competitiveness in agriculture — by making innovation accessible, practical and grounded in real farming conditions. We believe strong networks, mentorship, and applied research are the keys to smarter farming today and tomorrow.',
   website: 'https://healthfirst.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/N4Hinc3LDsw',
     type: 'youtube',
     title: 'Healthcare Careers',
     description: 'See the impact you can make'
@@ -197,7 +197,7 @@ export const financeHub: PlatinumBoothData = {
   description: 'FinanceHub is one of Canada\'s leading financial institutions offering exciting career opportunities in banking, investment, and financial planning.',
   website: 'https://financehub.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=fl0QDfr3_iU',
     type: 'youtube',
     title: 'Career in Finance',
     description: 'Explore financial services careers'
@@ -293,7 +293,7 @@ export const eduPath: PlatinumBoothData = {
   description: 'EduPath is a world-renowned institution offering over 200 undergraduate programs with exceptional career preparation.',
   website: 'https://edupath.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/WhB8t_37mp0',
     type: 'youtube',
     title: 'Your Future',
     description: 'Explore campus life'
@@ -389,7 +389,7 @@ export const tradesMaster: PlatinumBoothData = {
   description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
   website: 'https://tradesmaster.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/cFaE3wC-_7I',
     type: 'youtube',
     title: 'Power of Trades',
     description: 'See what our graduates build'
@@ -581,7 +581,7 @@ export const greenPower: PlatinumBoothData = {
   description: 'GreenPower Inc is a leading renewable energy company fighting climate change while creating meaningful careers.',
   website: 'https://greenpower.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/Y1cawe84Lb8',
     type: 'youtube',
     title: 'Green Revolution',
     description: 'Building Ontario\'s clean energy future'
@@ -677,7 +677,7 @@ export const creativeMinds: PlatinumBoothData = {
   description: 'CreativeMinds is Ontario\'s premier institution for arts, design, media, and entertainment programs.',
   website: 'https://creativeminds.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/7ZlVdfHqiRk',
     type: 'youtube',
     title: 'Creativity Unleashed',
     description: 'See award-winning student work'
@@ -773,7 +773,7 @@ export const dataDynamics: PlatinumBoothData = {
   description: 'DataDynamics specializes in data science, analytics, and machine learning solutions for enterprise clients.',
   website: 'https://datadynamics.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=-x6Kxo_5biY',
     type: 'youtube',
     title: 'Data Science Careers',
     description: 'Explore data-driven opportunities'
@@ -967,7 +967,7 @@ export const consultPro: PlatinumBoothData = {
   description: 'ConsultPro is a leading management consulting firm helping organizations achieve transformational results.',
   website: 'https://consultpro.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/1KrY1Zo_WMs',
     type: 'youtube',
     title: 'Consulting Careers',
     description: 'Discover management consulting'
@@ -1063,7 +1063,7 @@ export const manufactureTech: PlatinumBoothData = {
   description: 'ManufactureTech is an advanced manufacturing company producing precision components for automotive and aerospace.',
   website: 'https://manufacturetech.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=1NkOMDzPTMY',
     type: 'youtube',
     title: 'Modern Manufacturing',
     description: 'See our state-of-the-art facility'
@@ -1159,7 +1159,7 @@ export const cyberShield: PlatinumBoothData = {
   description: 'CyberShield provides enterprise cybersecurity solutions protecting organizations from evolving digital threats.',
   website: 'https://cybershield.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/NPy1UyRr7l0',
     type: 'youtube',
     title: 'Security Careers',
     description: 'Explore cybersecurity opportunities'
@@ -1255,7 +1255,7 @@ export const bioMedical: PlatinumBoothData = {
   description: 'BioMedical is a research-focused pharmaceutical company developing breakthrough treatments for critical diseases.',
   website: 'https://biomedical.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=cj1cc2JMQbA',
     type: 'youtube',
     title: 'Medical Innovation',
     description: 'Discover pharmaceutical research careers'
@@ -1448,7 +1448,7 @@ export const legalServices: PlatinumBoothData = {
   description: 'LegalServices is a leading law firm providing comprehensive legal services across multiple practice areas.',
   website: 'https://legalservices.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/shorts/9bnCNakZByM',
     type: 'youtube',
     title: 'Legal Careers',
     description: 'Discover careers in law'
@@ -1640,7 +1640,7 @@ export const urbanPlanning: PlatinumBoothData = {
   description: 'UrbanPlanning works with municipalities to design sustainable, vibrant urban communities across Ontario.',
   website: 'https://urbanplanning.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=9ansl_lNE94',
     type: 'youtube',
     title: 'City Planning',
     description: 'Discover urban planning careers'
@@ -1736,7 +1736,7 @@ export const sportsManagement: PlatinumBoothData = {
   description: 'SportsMgmt manages professional sports facilities and creates career opportunities in sports administration.',
   website: 'https://sportsmgmt.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=YF0IeVUDv3w',
     type: 'youtube',
     title: 'Sports Careers',
     description: 'Explore opportunities in sports'
@@ -1832,8 +1832,8 @@ export const environmentalConsulting: PlatinumBoothData = {
   description: 'EcoConsult provides environmental consulting services helping organizations achieve sustainability goals.',
   website: 'https://ecoconsult.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
-    type: 'youtube',
+    url: 'https://www.instagram.com/reel/DMWfWhqJB9w/?igsh=OWhkYXI0dWZqNmNp',
+    type: 'instagram',
     title: 'Environmental Careers',
     description: 'Explore environmental consulting'
   },
@@ -1928,7 +1928,7 @@ export const automotiveTech: PlatinumBoothData = {
   description: 'AutoTech specializes in electric vehicle technology and advanced automotive systems development.',
   website: 'https://autotech.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/sAI1ioviJTQ',
     type: 'youtube',
     title: 'Automotive Future',
     description: 'Explore automotive technology careers'
@@ -2024,7 +2024,7 @@ export const fashionDesign: PlatinumBoothData = {
   description: 'FashionForward is a leading fashion design school preparing students for careers in the global fashion industry.',
   website: 'https://fashionforward.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtu.be/0F4sfXzSw0Y?t=2',
     type: 'youtube',
     title: 'Fashion Excellence',
     description: 'See student runway shows'
@@ -2120,7 +2120,7 @@ export const hospitalityCollege: PlatinumBoothData = {
   description: 'HospitalityPro College offers comprehensive training in hotel management, culinary arts, and tourism.',
   website: 'https://hospitalitypro.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=wbyWLM9gR94',
     type: 'youtube',
     title: 'Hospitality Excellence',
     description: 'Discover hospitality careers'
@@ -2216,7 +2216,7 @@ export const publicHealth: PlatinumBoothData = {
   description: 'PublicHealth Ontario works to prevent disease and promote health across all Ontario communities.',
   website: 'https://publichealth.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=7n2Bkljvo4U',
     type: 'youtube',
     title: 'Public Health Careers',
     description: 'Make a difference in public health'
@@ -2312,7 +2312,7 @@ export const voxPopLabs: PlatinumBoothData = {
   description: 'Vox Pop Labs creates innovative civic technology solutions to engage citizens and improve democratic participation.',
   website: 'https://voxpoplabs.example.com',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://youtube.com/shorts/k9LR3JqO2Tg',
     type: 'youtube',
     title: 'Civic Technology',
     description: 'Explore careers in civic tech'

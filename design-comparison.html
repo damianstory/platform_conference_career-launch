@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Bar Design Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f9fafb;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #22224C;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            color: #22224C;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .mockup {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Current Booths Page - White Background */
+        .current-booths {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px;
+        }
+
+        /* Proposed Booths Page - Transparent with Blur */
+        .proposed-booths {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px;
+        }
+
+        /* Current Sessions Page */
+        .current-sessions {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px;
+        }
+
+        /* Proposed Sessions Page */
+        .proposed-sessions {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px;
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .filter-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-button.active {
+            background: #0092FF;
+            color: white;
+            border: 2px solid #0092FF;
+            box-shadow: 0 2px 8px rgba(0, 146, 255, 0.3);
+        }
+
+        .filter-button.inactive {
+            background: white;
+            color: #0092FF;
+            border: 2px solid #0092FF;
+        }
+
+        .filter-button.inactive:hover {
+            background: rgba(0, 146, 255, 0.05);
+        }
+
+        .results-count {
+            font-size: 14px;
+            color: #4b5563;
+            font-weight: 500;
+        }
+
+        .results-count strong {
+            color: #22224C;
+            font-weight: 700;
+        }
+
+        /* Sessions Tab Navigation */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            background: #0092FF;
+            color: white;
+        }
+
+        .tab.inactive {
+            color: #6b7280;
+        }
+
+        .tab.inactive:hover {
+            color: #22224C;
+            background: #f3f4f6;
+        }
+
+        .label {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 4px 12px;
+            background: #22224C;
+            color: white;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .label.current {
+            background: #ef4444;
+        }
+
+        .label.proposed {
+            background: #10b981;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+
+        .content-preview {
+            background: #f9fafb;
+            padding: 40px 24px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .highlight-box {
+            background: #eff6ff;
+            border: 2px solid #0092FF;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .highlight-box h3 {
+            color: #22224C;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .highlight-box ul li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Filter Bar Design Comparison</h1>
+
+        <!-- Booths Page Comparison -->
+        <div class="comparison-grid">
+            <!-- Current Booths Page -->
+            <div class="section">
+                <div class="section-title">/booths Page - Current</div>
+                <div class="section-subtitle">Solid white background container</div>
+
+                <div class="mockup">
+                    <div class="current-booths">
+                        <div class="filter-controls">
+                            <div class="button-group">
+                                <div class="filter-button active">
+                                    <span class="icon">🔽</span>
+                                    Filter Booths
+                                    <span class="icon">✓</span>
+                                </div>
+                                <div class="filter-button inactive">
+                                    <span class="icon">🎲</span>
+                                    Random
+                                </div>
+                            </div>
+                            <div class="results-count">
+                                Showing <strong>29</strong> of <strong>29</strong> booths
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-preview">
+                        [Booth Cards Below]
+                    </div>
+                </div>
+
+                <div class="label current">Current Design</div>
+            </div>
+
+            <!-- Proposed Booths Page -->
+            <div class="section">
+                <div class="section-title">/booths Page - Proposed</div>
+                <div class="section-subtitle">Transparent background with subtle blur</div>
+
+                <div class="mockup">
+                    <div class="proposed-booths">
+                        <div class="filter-controls">
+                            <div class="button-group">
+                                <div class="filter-button active">
+                                    <span class="icon">🔽</span>
+                                    Filter Booths
+                                    <span class="icon">✓</span>
+                                </div>
+                                <div class="filter-button inactive">
+                                    <span class="icon">🎲</span>
+                                    Random
+                                </div>
+                            </div>
+                            <div class="results-count">
+                                Showing <strong>29</strong> of <strong>29</strong> booths
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-preview">
+                        [Booth Cards Below]
+                    </div>
+                </div>
+
+                <div class="label proposed">Proposed Design</div>
+            </div>
+        </div>
+
+        <!-- Sessions Page Comparison -->
+        <div class="comparison-grid">
+            <!-- Current Sessions Page -->
+            <div class="section">
+                <div class="section-title">/sessions Page - Current</div>
+                <div class="section-subtitle">Tab navigation on white background</div>
+
+                <div class="mockup">
+                    <div class="current-sessions">
+                        <div class="tab-nav">
+                            <div class="tab active">Conference Schedule</div>
+                            <div class="tab inactive">All Sessions</div>
+                        </div>
+                    </div>
+                    <div class="content-preview">
+                        [Session Cards Below]
+                    </div>
+                </div>
+
+                <div class="label current">Current Design</div>
+            </div>
+
+            <!-- Proposed Sessions Page -->
+            <div class="section">
+                <div class="section-title">/sessions Page - Proposed</div>
+                <div class="section-subtitle">Tab navigation with transparent blur (consistent)</div>
+
+                <div class="mockup">
+                    <div class="proposed-sessions">
+                        <div class="tab-nav">
+                            <div class="tab active">Conference Schedule</div>
+                            <div class="tab inactive">All Sessions</div>
+                        </div>
+                    </div>
+                    <div class="content-preview">
+                        [Session Cards Below]
+                    </div>
+                </div>
+
+                <div class="label proposed">Proposed Design</div>
+            </div>
+        </div>
+
+        <!-- Key Differences Highlight -->
+        <div class="highlight-box">
+            <h3>Key Visual Differences</h3>
+            <ul>
+                <li><strong>Current:</strong> Solid white background creates a "heavy" visual bar that feels separate from content</li>
+                <li><strong>Proposed:</strong> Transparent background (95% opacity) with subtle blur effect feels lighter and more modern</li>
+                <li><strong>Consistency:</strong> Both /booths and /sessions pages will use the same transparent approach</li>
+                <li><strong>Visual Weight:</strong> Reduced visual clutter allows booth/session cards to be the hero content</li>
+                <li><strong>Modern Touch:</strong> Backdrop blur effect (glass-morphism) adds contemporary, professional feel</li>
+                <li><strong>Accessibility:</strong> 95% opacity maintains excellent contrast while feeling lighter</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

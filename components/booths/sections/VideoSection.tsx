@@ -51,6 +51,17 @@ export default function VideoSection({ video }: VideoSectionProps) {
         const fileId = url.match(/\/file\/d\/([^/]+)/)?.[1]
         return fileId ? `https://drive.google.com/file/d/${fileId}/preview` : url
       }
+      case 'instagram': {
+        // Match both /reel/{id} and /p/{id} formats
+        const contentId = url.match(/instagram\.com\/(?:reel|p)\/([^/?]+)/)?.[1]
+        if (contentId) {
+          // Determine if it's a reel or post based on URL
+          const isReel = url.includes('/reel/')
+          const contentType = isReel ? 'reel' : 'p'
+          return `https://www.instagram.com/${contentType}/${contentId}/embed/`
+        }
+        return url
+      }
       default:
         return url
     }
@@ -70,7 +81,7 @@ export default function VideoSection({ video }: VideoSectionProps) {
             src={embedUrl}
             title={video.title}
             className="absolute inset-0 w-full h-full"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             suppressHydrationWarning
           />

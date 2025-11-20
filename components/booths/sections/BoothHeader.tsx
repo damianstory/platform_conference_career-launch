@@ -48,8 +48,8 @@ export default function BoothHeader({
           </div>
 
           {/* Company Info */}
-          <div className="flex-grow space-y-2">
-            <h1 className="text-[40px] font-black text-brand-navy leading-tight tracking-tight">
+          <div className="flex-1 min-w-0 max-w-2xl space-y-2">
+            <h1 className="text-[36px] font-black text-brand-navy leading-tight tracking-tight max-w-[600px]">
               {name === 'Royal Canadian Air Force' ? (
                 <>
                   Royal Canadian
@@ -60,36 +60,23 @@ export default function BoothHeader({
                 name
               )}
             </h1>
-            <p className="text-[20px] text-neutral-5 font-normal">
+            <p className="text-[18px] text-[#4A4A6C] font-normal leading-relaxed max-w-[600px]">
               {tagline}
             </p>
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col gap-3 w-full lg:w-auto lg:flex-row">
+          {/* Primary CTA */}
+          <div className="flex flex-shrink-0 w-full lg:w-auto">
             <a
               href={primaryCTA.url}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={getExternalLinkAriaLabel(primaryCTA.text)}
-              className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] bg-primary-blue text-white rounded-lg font-semibold text-body-2 shadow-md hover:bg-brand-navy hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 w-full lg:w-auto lg:min-w-[220px]"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] bg-primary-blue text-white rounded-lg font-semibold text-body-2 shadow-md hover:bg-brand-navy hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 w-full lg:w-auto lg:min-w-[180px]"
             >
               <span className="truncate">{primaryCTA.text}</span>
               <ExternalLink className="w-3 h-3 flex-shrink-0" />
             </a>
-
-            {secondaryCTA && (
-              <a
-                href={secondaryCTA.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={getExternalLinkAriaLabel(secondaryCTA.text)}
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] bg-white text-primary-blue border-2 border-primary-blue rounded-lg font-semibold text-body-2 hover:bg-primary-blue hover:text-white hover:shadow-[0_6px_16px_rgba(0,146,255,0.25)] hover:-translate-y-1 transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 w-full lg:w-auto lg:min-w-[220px]"
-              >
-                <span className="truncate">{secondaryCTA.text}</span>
-                <ExternalLink className="w-3 h-3 flex-shrink-0" />
-              </a>
-            )}
           </div>
         </div>
       </div>

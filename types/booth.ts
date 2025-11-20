@@ -1,6 +1,6 @@
 export interface VideoContent {
   url: string
-  type: 'youtube' | 'vimeo' | 'google-drive' | 'custom'
+  type: 'youtube' | 'vimeo' | 'google-drive' | 'instagram' | 'custom'
   title: string
   description?: string
   thumbnail?: string
@@ -12,6 +12,7 @@ export interface ResourceItem {
   url: string
   type: 'pdf' | 'link' | 'document' | 'video'
   fileSize?: string
+  isCTA?: boolean // Flag to style as a special CTA card (taller, button-like)
 }
 
 export interface CTAButton {

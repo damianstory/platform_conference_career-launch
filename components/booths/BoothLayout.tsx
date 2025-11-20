@@ -29,7 +29,6 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
           imageScale={booth.imageScale}
           tagline={booth.tagline}
           primaryCTA={booth.primaryCTA}
-          secondaryCTA={booth.secondaryCTA}
           website={booth.website}
         />
 
@@ -50,6 +49,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
           resources={booth.resources}
           colSpan={isPlatinum ? 'lg:col-span-6' : 'lg:col-span-4'}
           layout={isPlatinum ? 'grid' : 'vertical'}
+          secondaryCTA={booth.secondaryCTA}
         />
 
         {/* Session Slides - Platinum only */}

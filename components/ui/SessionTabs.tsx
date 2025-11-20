@@ -45,7 +45,7 @@ export default function SessionTabs({ activeView, className = '' }: SessionTabsP
   };
 
   return (
-    <div className={cn('bg-white border-b border-gray-200', className)}>
+    <div className={cn('bg-white/95 backdrop-blur-sm border-b border-gray-200', className)}>
       <div className="px-8 md:px-16">
         <div
           role="tablist"
