@@ -638,9 +638,9 @@ export default function MultiStepModal({
                 <button
                   type="button"
                   onClick={handleBack}
-                  className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                  className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center"
                 >
-                  ← Back
+                  Back
                 </button>
               )}
 
@@ -681,9 +681,9 @@ export default function MultiStepModal({
                 <button
                   type="button"
                   onClick={handleBack}
-                  className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                  className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center"
                 >
-                  ← Back
+                  Back
                 </button>
               )}
 
