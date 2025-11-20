@@ -2013,7 +2013,7 @@ export const automotiveTech: PlatinumBoothData = {
 
 export const fashionDesign: PlatinumBoothData = {
   id: 'thinkag-canadian-agricultural-human-resource-council',
-  name: 'thinkAG & The Canadian Agricultural Human Resource Council',
+  name: 'thinkAG & CAHRC',
   slug: 'thinkag-canadian-agricultural-human-resource-council',
   tier: 'platinum',
   industry: 'Arts/Culture',
