@@ -1,10 +1,12 @@
-# Bottom Drawer Registration Modal
+# Multi-Step Registration Modal
 
-A polished, mobile-first registration modal that slides up from the bottom of the screen with smooth animations and smart form interactions.
+A polished, mobile-first registration modal that slides up from the bottom of the screen with smooth animations and multi-step wizard interface.
 
 ## Overview
 
-The Bottom Drawer Modal is triggered when users click "Watch with Your Class" on session detail pages. It collects educator information and class context in a single, unified form with intelligent pre-filling for returning users.
+The Multi-Step Modal is triggered when users click "Watch with Your Class" on session detail pages. It features a wizard-style flow that collects educator or student information through progressive steps with intelligent pre-filling for returning users.
+
+**Note**: This README is outdated and describes the previous `BottomDrawerModal` implementation. The current implementation uses `MultiStepModal.tsx` with a multi-step wizard interface. Full documentation update pending.
 
 ## Features
 
@@ -31,7 +33,7 @@ The Bottom Drawer Modal is triggered when users click "Watch with Your Class" on
 
 ```
 /components/registration/
-├── BottomDrawerModal.tsx    # Main modal component
+├── MultiStepModal.tsx        # Main modal component (multi-step wizard)
 └── README.md                 # This file
 
 /lib/
@@ -47,7 +49,7 @@ The Bottom Drawer Modal is triggered when users click "Watch with Your Class" on
 
 ```tsx
 import { useState } from 'react';
-import BottomDrawerModal from '@/components/registration/BottomDrawerModal';
+import MultiStepModal from '@/components/registration/MultiStepModal';
 
 function SessionPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -64,7 +66,7 @@ function SessionPage() {
         Watch with Your Class
       </button>
 
-      <BottomDrawerModal
+      <MultiStepModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         sessionTitle="Building Careers in Construction"

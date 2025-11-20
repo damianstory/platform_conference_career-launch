@@ -87,12 +87,11 @@ Jamstack with Server-Side Rendering (SSR):
 
 /components
 ├── Accordion.tsx            # Reusable accordion with 'blocks' variant
-├── SessionCard.tsx          # Session card with hover effects
 ├── Header.tsx               # Navigation header
 ├── Footer.tsx               # Footer with FAQ
 ├── FAQ.tsx                  # FAQ accordion component
 ├── registration/
-│   └── BottomDrawerModal.tsx # Registration modal (6-field form with cookie pre-fill)
+│   └── MultiStepModal.tsx # Multi-step registration modal (educator + student flows)
 ├── sessions/
 │   ├── AllSessionsView.tsx # Flat list view for "All Sessions" tab
 │   ├── ConferenceScheduleTable.tsx # Table view for conference schedule
@@ -123,12 +122,9 @@ Jamstack with Server-Side Rendering (SSR):
 ├── session/
 │   ├── VideoSection.tsx
 │   ├── DescriptionSection.tsx
-│   └── SpeakerSection.tsx
+│   └── OrganizationSection.tsx
 └── ui/
     ├── SessionTabs.tsx      # Tab navigation (Conference/All Sessions)
-    ├── LoadingSpinner.tsx
-    ├── ErrorBoundary.tsx
-    ├── NetworkError.tsx
     └── EmptyStateIllustration.tsx
 
 /data
@@ -217,18 +213,17 @@ npm run test:coverage    # Run tests with coverage report
   - "Watch with Your Class" button triggers registration modal
   - Session title, description, presenter information
   - Trailer video support (no registration required)
-- **Registration Modal (`/components/registration/BottomDrawerModal.tsx`)**: **COMPLETED**
-  - Bottom drawer slide-up animation (400ms cubic-bezier)
-  - Dynamic height: 88vh for first-time users, 92vh when welcome banner present
-  - 900px max-width on desktop, 600px on tablet/mobile
-  - 6-field form: First Name, Email, School Board, School, Class Size, Grade Level
-  - Cookie-based pre-fill (7-day expiration) using `js-cookie`
-  - Welcome back banner for returning users (compact single-line design)
+- **Registration Modal (`/components/registration/MultiStepModal.tsx`)**: **COMPLETED**
+  - Multi-step wizard with user type selection (educator vs student)
+  - **Educator flow (3 steps):** Step 1: Personal Info (name, email) → Step 2: School Info (board, school) → Step 3: Class Context (size, grade)
+  - **Student flow (2 steps):** Step 1: Personal Info → Step 2: Class Info
+  - Bottom drawer slide-up animation with smooth step transitions
+  - Cookie-based pre-fill (7-day expiration) with confirmation screen for returning users
   - Real-time validation with inline error messages
   - Smart field dependencies (school dropdown updates based on board)
-  - Default selections: "25 to 35 students", "Grade 12"
-  - Keyboard accessible (Tab, Enter, ESC)
-  - Mobile-responsive with stacked layout
+  - Progress indicator for multi-step navigation
+  - Keyboard accessible (Tab, Enter, ESC) with back/next navigation
+  - Mobile-responsive with optimized layouts per step
   - Session title reminder: "You're about to watch: [Session Title]"
 - **Registration Form Logic (`/lib/hooks/useRegistrationForm.ts`)**: **COMPLETED**
   - Form state management with validation
@@ -323,7 +318,7 @@ import { sampleBooths } from '@/data/sample-booths';
 #### Registration Modal Pattern
 ```typescript
 // Modal is integrated into VideoSection component on session detail pages
-import BottomDrawerModal from '@/components/registration/BottomDrawerModal';
+import MultiStepModal from '@/components/registration/MultiStepModal';
 
 // State management
 const [isModalOpen, setIsModalOpen] = useState(false);
@@ -334,7 +329,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 </button>
 
 // Modal component with required props
-<BottomDrawerModal
+<MultiStepModal
   isOpen={isModalOpen}
   onClose={() => setIsModalOpen(false)}
   sessionTitle={session.title}
@@ -347,10 +342,11 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 />
 
 // Modal behavior:
-// - Dynamic height based on isReturningUser (88vh vs 92vh)
+// - User type selection (educator vs student) on first screen
+// - Multi-step wizard with back/next navigation
 // - Cookie name: 'clp_registration' (7-day expiration)
-// - Pre-fills all 6 fields for returning users
-// - Validates before enabling submit button
+// - Returning users see confirmation screen to skip steps
+// - Validates each step before allowing progression
 // - ESC key, overlay click, or Cancel button closes modal
 ```
 
