@@ -168,6 +168,7 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
               width={80}
               height={80}
               className="object-contain w-full h-full"
+              style={booth.imageScale ? { transform: `scale(${booth.imageScale})` } : undefined}
               onError={handleImageError}
               unoptimized
             />

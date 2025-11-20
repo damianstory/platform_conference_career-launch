@@ -99,6 +99,7 @@ export const futureBuild: PlatinumBoothData = {
   organizationType: 'employer',
   pathway: 'university',
   logo: '/logos/Roundel_of_Canada.svg.png',
+  imageScale: 0.9,
   tagline: 'The RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers.',
   description: 'The Royal Canadian Air Force (RCAF) is part of National Defence and the Canadian Armed Forces. We protect Canadian and North American airspace, support peace missions around the world, and provide space capabilities to help meet national defence goals. Whether at home or abroad, the RCAF works to keep Canadians and their interests safe.\n\nThe RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers. All training is provided, and paid college and university programs are available.',
   website: 'https://futurebuild.example.com',
@@ -190,7 +191,8 @@ export const financeHub: PlatinumBoothData = {
   industry: 'Business',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/cnl.webp',
+  imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'FinanceHub is one of Canada\'s leading financial institutions offering exciting career opportunities in banking, investment, and financial planning.',
   website: 'https://financehub.example.com',
@@ -286,7 +288,7 @@ export const eduPath: PlatinumBoothData = {
   industry: 'Non-Profit/Education',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/cansbridge-scholars.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'EduPath is a world-renowned institution offering over 200 undergraduate programs with exceptional career preparation.',
   website: 'https://edupath.example.com',
@@ -382,7 +384,7 @@ export const tradesMaster: PlatinumBoothData = {
   industry: 'Construction',
   organizationType: 'employer',
   pathway: 'apprenticeship',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/encore-canada.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
   website: 'https://tradesmaster.example.com',
@@ -478,7 +480,7 @@ export const worldExplorer: PlatinumBoothData = {
   industry: 'Non-Profit/Education',
   organizationType: 'employer',
   pathway: 'gap-year',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/cpkc.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'WorldExplorer offers structured gap year programs combining volunteer work, cultural immersion, and skill development.',
   website: 'https://worldexplorer.example.com',
@@ -574,7 +576,7 @@ export const greenPower: PlatinumBoothData = {
   industry: 'Energy',
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/cwb.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'GreenPower Inc is a leading renewable energy company fighting climate change while creating meaningful careers.',
   website: 'https://greenpower.example.com',
@@ -670,7 +672,7 @@ export const creativeMinds: PlatinumBoothData = {
   industry: 'Arts/Culture',
   organizationType: 'gap-year',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/discover-year.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'CreativeMinds is Ontario\'s premier institution for arts, design, media, and entertainment programs.',
   website: 'https://creativeminds.example.com',
@@ -766,7 +768,7 @@ export const dataDynamics: PlatinumBoothData = {
   industry: 'ICT',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/diversity-institute.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'DataDynamics specializes in data science, analytics, and machine learning solutions for enterprise clients.',
   website: 'https://datadynamics.example.com',
@@ -862,7 +864,8 @@ export const marketGenius: PlatinumBoothData = {
   industry: 'Business',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/ernst-and-young.jpg',
+  imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'MarketGenius is a full-service marketing agency creating innovative campaigns for leading Canadian brands.',
   website: 'https://marketgenius.example.com',
@@ -958,7 +961,8 @@ export const consultPro: PlatinumBoothData = {
   industry: 'Business',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/humber-fast.png',
+  imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'ConsultPro is a leading management consulting firm helping organizations achieve transformational results.',
   website: 'https://consultpro.example.com',
@@ -1054,7 +1058,7 @@ export const manufactureTech: PlatinumBoothData = {
   industry: 'Manufacturing',
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/hydro-one.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'ManufactureTech is an advanced manufacturing company producing precision components for automotive and aerospace.',
   website: 'https://manufacturetech.example.com',
@@ -1150,7 +1154,7 @@ export const cyberShield: PlatinumBoothData = {
   industry: 'ICT',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/jack-org.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'CyberShield provides enterprise cybersecurity solutions protecting organizations from evolving digital threats.',
   website: 'https://cybershield.example.com',
@@ -1246,7 +1250,7 @@ export const bioMedical: PlatinumBoothData = {
   industry: 'Health/Wellness',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/kids-help-phone.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'BioMedical is a research-focused pharmaceutical company developing breakthrough treatments for critical diseases.',
   website: 'https://biomedical.example.com',
@@ -1342,7 +1346,8 @@ export const foodService: PlatinumBoothData = {
   industry: 'Business',
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/trca.png',
+  imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'FoodService Pro operates 200+ restaurants across Ontario with comprehensive training and advancement opportunities.',
   website: 'https://foodservicepro.example.com',
@@ -1438,7 +1443,7 @@ export const legalServices: PlatinumBoothData = {
   industry: 'Business',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/mydoh.jpeg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'LegalServices is a leading law firm providing comprehensive legal services across multiple practice areas.',
   website: 'https://legalservices.example.com',
@@ -1534,7 +1539,7 @@ export const socialImpact: PlatinumBoothData = {
   industry: 'Non-Profit/Education',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/nfte-canada.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'SocialImpact is a non-profit organization dedicated to community development and social justice initiatives.',
   website: 'https://socialimpact.example.com',
@@ -1630,7 +1635,7 @@ export const urbanPlanning: PlatinumBoothData = {
   industry: 'Non-Profit/Education',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/ontario-water-careers.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'UrbanPlanning works with municipalities to design sustainable, vibrant urban communities across Ontario.',
   website: 'https://urbanplanning.example.com',
@@ -1726,7 +1731,7 @@ export const sportsManagement: PlatinumBoothData = {
   industry: 'Arts/Culture',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/seeking-scholarships.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'SportsMgmt manages professional sports facilities and creates career opportunities in sports administration.',
   website: 'https://sportsmgmt.example.com',
@@ -1822,7 +1827,7 @@ export const environmentalConsulting: PlatinumBoothData = {
   industry: 'Business',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/studenthaus.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'EcoConsult provides environmental consulting services helping organizations achieve sustainability goals.',
   website: 'https://ecoconsult.example.com',
@@ -1918,7 +1923,7 @@ export const automotiveTech: PlatinumBoothData = {
   industry: 'Manufacturing',
   organizationType: 'employer',
   pathway: 'apprenticeship',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/support-ontario-youth.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'AutoTech specializes in electric vehicle technology and advanced automotive systems development.',
   website: 'https://autotech.example.com',
@@ -2014,7 +2019,7 @@ export const fashionDesign: PlatinumBoothData = {
   industry: 'Arts/Culture',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/think-ag.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'FashionForward is a leading fashion design school preparing students for careers in the global fashion industry.',
   website: 'https://fashionforward.example.com',
@@ -2110,7 +2115,7 @@ export const hospitalityCollege: PlatinumBoothData = {
   industry: 'Non-Profit/Education',
   organizationType: 'employer',
   pathway: 'college',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/toronto-police-services.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'HospitalityPro College offers comprehensive training in hotel management, culinary arts, and tourism.',
   website: 'https://hospitalitypro.example.com',
@@ -2206,7 +2211,7 @@ export const publicHealth: PlatinumBoothData = {
   industry: 'Health/Wellness',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/tourism-industry-association.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'PublicHealth Ontario works to prevent disease and promote health across all Ontario communities.',
   website: 'https://publichealth.example.com',
@@ -2302,7 +2307,7 @@ export const voxPopLabs: PlatinumBoothData = {
   industry: 'ICT',
   organizationType: 'employer',
   pathway: 'university',
-  logo: '/logos/industry-immersion-series.png',
+  logo: '/logos/vox-pop-labs.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'Vox Pop Labs creates innovative civic technology solutions to engage citizens and improve democratic participation.',
   website: 'https://voxpoplabs.example.com',
@@ -2632,37 +2637,36 @@ export const industryImmersionSeries: StandardBoothData = {
 // ======================
 
 export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
-  // Platinum Tier (27 booths)
-  healthFirst,
-  futureBuild,
-  financeHub,
-  eduPath,
-  tradesMaster,
-  worldExplorer,
-  greenPower,
-  creativeMinds,
-  dataDynamics,
-  marketGenius,
-  consultPro,
-  manufactureTech,
-  cyberShield,
-  bioMedical,
-  foodService,
-  legalServices,
-  socialImpact,
-  urbanPlanning,
-  sportsManagement,
-  environmentalConsulting,
-  automotiveTech,
-  fashionDesign,
-  hospitalityCollege,
-  publicHealth,
-  voxPopLabs,
-  // Standard Tier (4 booths)
-  universityOfGuelph,
-  communityCollege,
-  careerMythBuster,
-  industryImmersionSeries
+  // All booths in alphabetical order by name
+  healthFirst,                  // AgRobotics Working Group
+  financeHub,                   // Canadian Nuclear Laboratories
+  eduPath,                      // Cansbridge Scholars
+  careerMythBuster,             // Career Myth Buster
+  communityCollege,             // Conestoga College
+  worldExplorer,                // CPKC
+  greenPower,                   // CWB Welding Foundation
+  creativeMinds,                // Discover Year
+  dataDynamics,                 // Diversity Institute
+  tradesMaster,                 // Encore Canada
+  marketGenius,                 // Ernst & Young
+  consultPro,                   // Humber FAST
+  manufactureTech,              // Hydro One
+  industryImmersionSeries,      // Industry Immersion Series
+  cyberShield,                  // Jack.org
+  bioMedical,                   // Kids Help Phone
+  legalServices,                // Mydoh
+  socialImpact,                 // NFTE Canada
+  urbanPlanning,                // Ontario Water Careers
+  futureBuild,                  // Royal Canadian Air Force
+  sportsManagement,             // Seeking Scholarships
+  environmentalConsulting,      // Studenthaus
+  automotiveTech,               // Support Ontario Youth
+  fashionDesign,                // thinkAG & The Canadian Agricultural Human Resource Council
+  hospitalityCollege,           // Toronto Police Services
+  publicHealth,                 // Tourism Industry Association
+  foodService,                  // TRCA, CVC, & NPCA
+  universityOfGuelph,           // University of Guelph
+  voxPopLabs                    // Vox Pop Labs
 ]
 
 export const platinumBooths = allBooths.filter(booth => booth.tier === 'platinum') as PlatinumBoothData[]

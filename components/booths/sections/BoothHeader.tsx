@@ -8,6 +8,7 @@ import { getExternalLinkAriaLabel } from '@/lib/utils/accessibility'
 interface BoothHeaderProps {
   name: string
   logo: string
+  imageScale?: number
   tagline: string
   primaryCTA: CTAButton
   secondaryCTA?: CTAButton
@@ -17,6 +18,7 @@ interface BoothHeaderProps {
 export default function BoothHeader({
   name,
   logo,
+  imageScale,
   tagline,
   primaryCTA,
   secondaryCTA,
@@ -35,6 +37,7 @@ export default function BoothHeader({
                   src={logo}
                   alt={`${name} logo`}
                   className="w-full h-full object-contain"
+                  style={imageScale ? { transform: `scale(${imageScale})` } : undefined}
                 />
               ) : (
                 <div className="text-2xl font-bold text-neutral-3">

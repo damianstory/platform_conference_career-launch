@@ -63,7 +63,7 @@ export default function OrganizationSection({
           {/* Organization Logo */}
           <div className="flex-shrink-0">
             {logo ? (
-              <div className="w-20 h-20 bg-white rounded-lg border border-primary-blue/20 shadow-sm flex items-center justify-center overflow-hidden p-1">
+              <div className="w-20 h-20 bg-white rounded-lg border border-primary-blue/20 shadow-sm flex items-center justify-center overflow-hidden">
                 <Image
                   src={logo}
                   alt={`${name} logo`}

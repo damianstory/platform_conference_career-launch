@@ -26,6 +26,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         <BoothHeader
           name={booth.name}
           logo={booth.logo}
+          imageScale={booth.imageScale}
           tagline={booth.tagline}
           primaryCTA={booth.primaryCTA}
           secondaryCTA={booth.secondaryCTA}
