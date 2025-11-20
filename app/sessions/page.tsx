@@ -78,7 +78,7 @@ function SessionsContent() {
     <div className="min-h-screen">
       {/* Mini Hero Section */}
       <section className="bg-navy text-white py-12">
-        <div className="px-8 md:px-16">
+        <div className="px-8 md:px-16 text-center">
           <h1 className="text-3xl md:text-4xl font-black mb-3">
             Browse All Sessions
           </h1>
@@ -117,7 +117,7 @@ export default function SessionsPage() {
       fallback={
         <div className="min-h-screen">
           <section className="bg-navy text-white py-12">
-            <div className="px-8 md:px-16">
+            <div className="px-8 md:px-16 text-center">
               <h1 className="text-3xl md:text-4xl font-black mb-3">
                 Browse All Sessions
               </h1>

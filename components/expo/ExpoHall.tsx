@@ -110,9 +110,9 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
       {/* Main Content */}
       <div id="booths" className="max-w-7xl mx-auto px-4 py-6">
         {/* Filter Controls */}
-        <div className="bg-white border-b border-gray-200 sticky top-0 z-10 -mx-4 px-4 md:px-8 lg:px-16 py-4 mb-6">
+        <div className="bg-white border-b border-gray-200 sticky top-0 z-10 -mx-4 px-4 md:px-8 lg:px-16 py-6 mb-6">
           {/* Top Row: Filter Button, Random Button, Results Count */}
-          <div className="flex items-center justify-between gap-4 mb-3">
+          <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               {/* Filter Toggle Button */}
               <button
@@ -177,7 +177,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
             id="booth-filter-panel"
             className={`
               overflow-hidden transition-all duration-300 ease-out
-              ${isExpanded ? 'max-h-[500px] opacity-100 mb-3' : 'max-h-0 opacity-0'}
+              ${isExpanded ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
             `}
           >
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -192,7 +192,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
           {/* Active Filter Pills - Always Visible When Filters Applied */}
           {activeFilterCount > 0 && (
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap mt-4">
               <span className="text-xs text-gray-500 font-medium">Active:</span>
               {organizationType !== 'all' && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue/10 text-blue rounded-full text-xs font-medium">
