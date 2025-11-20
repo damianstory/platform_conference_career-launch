@@ -110,74 +110,75 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
       {/* Main Content */}
       <div id="booths" className="max-w-7xl mx-auto px-4 py-6">
         {/* Filter Controls */}
-        <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10 -mx-4 px-4 md:px-8 lg:px-16 py-6 mb-6 rounded-lg">
-          {/* Top Row: Filter Button, Random Button, Results Count */}
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              {/* Filter Toggle Button */}
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className={`
-                  inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200
-                  ${activeFilterCount > 0
-                    ? 'bg-blue text-white hover:bg-blue/90'
-                    : 'bg-white border-2 border-blue text-blue hover:bg-blue/5'
-                  }
-                `}
-                aria-expanded={isExpanded}
-                aria-controls="booth-filter-panel"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
-                </svg>
-                Filter Booths
-                {activeFilterCount > 0 && (
-                  <span className={`
-                    text-xs px-1.5 py-0.5 rounded-full font-bold
-                    ${activeFilterCount > 0 ? 'bg-white text-blue' : 'bg-blue text-white'}
-                  `}>
-                    {activeFilterCount}
-                  </span>
-                )}
-                <svg
-                  className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
-                </svg>
-              </button>
-
-              {/* Random Button */}
-              <div className="relative group/tooltip">
+        <div className="bg-off-white border-t sticky top-0 z-10 mb-6 md:mb-8 rounded-lg" style={{ borderTopColor: 'rgba(34, 34, 76, 0.12)' }}>
+          <div className="px-4 md:px-8 lg:px-16 py-4 md:py-6">
+            {/* Top Row: Filter Button, Random Button, Results Count */}
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                {/* Filter Toggle Button */}
                 <button
-                  onClick={handleRandomSelect}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ease-out bg-white text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue hover:to-brand-navy hover:text-white shadow-[0_2px_8px_rgba(0,146,255,0.12),0_0_0_2px_rgba(0,146,255,0.2)] hover:shadow-[0_4px_16px_rgba(0,146,255,0.35),0_0_0_0px_transparent] hover:-translate-y-0.5"
-                  title="Visit a random booth"
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className={`
+                    inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200
+                    ${activeFilterCount > 0
+                      ? 'bg-blue text-white hover:bg-blue/90'
+                      : 'bg-white border-2 border-blue text-blue hover:bg-blue/5'
+                    }
+                  `}
+                  aria-expanded={isExpanded}
+                  aria-controls="booth-filter-panel"
                 >
-                  <Dices className="w-4 h-4 transition-all duration-300" />
-                  Random
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                  </svg>
+                  Filter Booths
+                  {activeFilterCount > 0 && (
+                    <span className={`
+                      text-xs px-1.5 py-0.5 rounded-full font-bold
+                      ${activeFilterCount > 0 ? 'bg-white text-blue' : 'bg-blue text-white'}
+                    `}>
+                      {activeFilterCount}
+                    </span>
+                  )}
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
+                  </svg>
                 </button>
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1.5 bg-brand-navy text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-200 pointer-events-none z-20">
-                  Surprise me!
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-brand-navy"></div>
+
+                {/* Random Button */}
+                <div className="relative group/tooltip">
+                  <button
+                    onClick={handleRandomSelect}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ease-out bg-white text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue hover:to-brand-navy hover:text-white shadow-[0_2px_8px_rgba(0,146,255,0.12),0_0_0_2px_rgba(0,146,255,0.2)] hover:shadow-[0_4px_16px_rgba(0,146,255,0.35),0_0_0_0px_transparent] hover:-translate-y-0.5"
+                    title="Visit a random booth"
+                  >
+                    <Dices className="w-4 h-4 transition-all duration-300" />
+                    Random
+                  </button>
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1.5 bg-brand-navy text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-200 pointer-events-none z-20">
+                    Surprise me!
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-brand-navy"></div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Results Count */}
-            <div className="text-sm text-gray-600">
-              Showing <span className="font-semibold">{filteredBooths.length}</span> of <span className="font-semibold">{booths.length}</span> booths
+              {/* Results Count */}
+              <div className="text-sm text-gray-600">
+                Showing <span className="font-semibold">{filteredBooths.length}</span> of <span className="font-semibold">{booths.length}</span> booths
+              </div>
             </div>
-          </div>
 
           {/* Expandable Filter Panel */}
           <div
             id="booth-filter-panel"
             className={`
               overflow-hidden transition-all duration-300 ease-out
-              ${isExpanded ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
+              ${isExpanded ? 'max-h-[500px] opacity-100 mb-3' : 'max-h-0 opacity-0'}
             `}
           >
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -192,7 +193,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
           {/* Active Filter Pills - Always Visible When Filters Applied */}
           {activeFilterCount > 0 && (
-            <div className="flex items-center gap-2 flex-wrap mt-4">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="text-xs text-gray-500 font-medium">Active:</span>
               {organizationType !== 'all' && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue/10 text-blue rounded-full text-xs font-medium">
@@ -241,6 +242,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
               </button>
             </div>
           )}
+          </div>
         </div>
 
         {/* Booth Grid */}
