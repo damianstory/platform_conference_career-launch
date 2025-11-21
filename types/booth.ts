@@ -126,7 +126,7 @@ export interface PlatinumBoothData {
   imageScale?: number // Optional: Scale factor for logo (e.g., 0.9 = 90% size, adds breathing room)
   tagline: string
   description: string
-  website: string
+  website?: string
   quickFacts?: QuickFact[]
   video: VideoContent
   resources: ResourceItem[]
@@ -150,7 +150,7 @@ export interface StandardBoothData {
   imageScale?: number // Optional: Scale factor for logo (e.g., 0.9 = 90% size, adds breathing room)
   tagline: string
   description: string
-  website: string
+  website?: string
   video: VideoContent
   resources: ResourceItem[]
   googleFormUrl?: string
