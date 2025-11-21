@@ -623,9 +623,10 @@ export const greenPower: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/1MKmSV8ATdQ2xfHyTl2iOwvhSCtP1dpzv/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
+    type: 'google-slides',
+    title: 'CWB Welding Foundation Presentation',
+    description: 'Learn about welding careers and certification programs'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -719,9 +720,10 @@ export const creativeMinds: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/1OXqcU2hbSrlj-dC5IvYqo7a91VSUJMriXJlDOZRKCwA/edit?usp=sharing',
+    type: 'google-slides',
+    title: 'Discover Year Program Overview',
+    description: 'Explore gap year opportunities and programs'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -1009,9 +1011,10 @@ export const consultPro: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/1fTah5wWTA2EegqKvQ2biKrkvSnS7yMQqVLdgmlSJlyw/edit?usp=sharing',
+    type: 'google-slides',
+    title: 'Humber FAST Program Information',
+    description: 'Discover programs in applied science and technology'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -1105,9 +1108,10 @@ export const manufactureTech: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/173uZo9Dm0_IdfgUVL0IaaVCIUrVkccYY/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
+    type: 'google-slides',
+    title: 'Hydro One Career Opportunities',
+    description: 'Explore careers in Ontario\'s electricity sector'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -1201,9 +1205,10 @@ export const cyberShield: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://drive.google.com/file/d/1VUGk7TLuKFPsRQ_Y4_t8rtwZTD1RZbws/view?usp=sharing',
+    type: 'google-drive-pdf',
+    title: 'Jack.org Mental Health Resources',
+    description: 'Youth mental health support and advocacy'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -1297,9 +1302,10 @@ export const bioMedical: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://drive.google.com/file/d/1CKksmJYxRPRZcHYhiqPyvJk7j9ZoDYFq/view?usp=sharing',
+    type: 'google-drive-pdf',
+    title: 'Kids Help Phone Services',
+    description: '24/7 support for young people across Canada'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -1778,9 +1784,10 @@ export const sportsManagement: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/1DShvWaweroZWpGEsP7uXKs2oxetbVuGSOarXPoEw70I/edit?usp=sharing',
+    type: 'google-slides',
+    title: 'Scholarship Opportunities Guide',
+    description: 'Find and apply for scholarships and financial aid'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -1874,9 +1881,10 @@ export const environmentalConsulting: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/1PZSqs122bSJUj54Nkz2n62jCknIqotPC/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
+    type: 'google-slides',
+    title: 'Studenthaus Gap Year Programs',
+    description: 'Gap year opportunities and international experiences'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -2066,9 +2074,10 @@ export const fashionDesign: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://drive.google.com/file/d/1s4HjPDbo4woC6gVEE1kND0XLjjSN341G/view?usp=sharing',
+    type: 'google-drive-pdf',
+    title: 'Agriculture Career Pathways',
+    description: 'Explore careers in Canadian agriculture'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -2258,9 +2267,10 @@ export const publicHealth: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/1Zl4PXixJ_Uf8KHNHbaSIY_8zFP34Q7jXtrwITPaj0NU/edit?usp=sharing',
+    type: 'google-slides',
+    title: 'Tourism Career Opportunities',
+    description: 'Careers in Ontario\'s tourism and hospitality sector'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -2354,9 +2364,10 @@ export const voxPopLabs: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    embedUrl: 'https://docs.google.com/presentation/d/195AsBqKRhNdLGUETvfQmidEFgYMxbMkT3Idj4o-lDbk/edit?usp=sharing',
+    type: 'google-slides',
+    title: 'Vox Pop Labs Civic Technology',
+    description: 'Innovative civic engagement and technology solutions'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
