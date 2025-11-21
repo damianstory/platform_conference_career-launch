@@ -293,7 +293,7 @@ export const eduPath: PlatinumBoothData = {
   logo: '/logos/cansbridge-scholars.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'EduPath is a world-renowned institution offering over 200 undergraduate programs with exceptional career preparation.',
-  website: 'https://edupath.example.com',
+  website: 'https://cansbridgescholars.com',
   video: {
     url: 'https://youtu.be/WhB8t_37mp0',
     type: 'youtube',
@@ -358,7 +358,8 @@ export const eduPath: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'admissions@edupath.example.com',
+    email: 'lyn@cansbridgescholars.com',
+    website: 'https://cansbridgescholars.com',
     phone: '1-800-555-LEARN',
     headquarters: {
       address: '1000 University Drive',
@@ -367,10 +368,8 @@ export const eduPath: PlatinumBoothData = {
       postalCode: 'M3J 1P3'
     },
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@edupath' },
-      { platform: 'twitter', url: 'https://twitter.com/edupath' },
-      { platform: 'instagram', url: 'https://instagram.com/edupath' },
-      { platform: 'facebook', url: 'https://facebook.com/edupath' }
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/cansbridgescholars' },
+      { platform: 'instagram', url: 'https://www.instagram.com/cansbridgescholars' }
     ]
   },
   brandColors: {
@@ -582,7 +581,7 @@ export const greenPower: PlatinumBoothData = {
   logo: '/logos/cwb.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'GreenPower Inc is a leading renewable energy company fighting climate change while creating meaningful careers.',
-  website: 'https://greenpower.example.com',
+  website: 'https://www.cwbweldingfoundation.org/',
   video: {
     url: 'https://youtu.be/Y1cawe84Lb8',
     type: 'youtube',
@@ -647,19 +646,12 @@ export const greenPower: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@greenpower.example.com',
-    phone: '1-866-555-GREEN',
-    headquarters: {
-      address: '888 Renewable Way',
-      city: 'Ottawa',
-      province: 'ON',
-      postalCode: 'K1A 0B1'
-    },
+    website: 'https://www.cwbweldingfoundation.org/',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@greenpower' },
-      { platform: 'twitter', url: 'https://twitter.com/greenpower' },
-      { platform: 'instagram', url: 'https://instagram.com/greenpower' },
-      { platform: 'facebook', url: 'https://facebook.com/greenpower' }
+      { platform: 'facebook', url: 'https://www.facebook.com/cwbweldingfoundation' },
+      { platform: 'instagram', url: 'https://www.instagram.com/cwbweldingfoundation/' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/cwb-welding-foundation/' },
+      { platform: 'twitter', url: 'https://x.com/cwb_foundation' }
     ]
   },
   brandColors: {
