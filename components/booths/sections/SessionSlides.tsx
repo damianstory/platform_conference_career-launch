@@ -9,10 +9,57 @@ interface SessionSlidesProps {
   slides: SessionSlidesData
 }
 
+/**
+ * Converts Google sharing URLs to embed URLs
+ * Supports both Google Slides and Google Drive PDFs
+ */
+function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-pdf'): string {
+  // If already an embed URL, return as is
+  if (url.includes('/embed') || url.includes('/preview')) {
+    return url
+  }
+
+  // Auto-detect type if not provided
+  let detectedType = type
+  if (!detectedType) {
+    if (url.includes('docs.google.com/presentation')) {
+      detectedType = 'google-slides'
+    } else if (url.includes('drive.google.com/file')) {
+      detectedType = 'google-drive-pdf'
+    }
+  }
+
+  // Convert Google Slides URLs
+  if (detectedType === 'google-slides') {
+    // Extract presentation ID from URLs like:
+    // /d/{ID}/edit or /d/{ID}/edit?params
+    const slideMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
+    if (slideMatch && slideMatch[1]) {
+      return `https://docs.google.com/presentation/d/${slideMatch[1]}/embed?start=false&loop=false`
+    }
+  }
+
+  // Convert Google Drive PDF URLs
+  if (detectedType === 'google-drive-pdf') {
+    // Extract file ID from URLs like:
+    // /d/{FILE_ID}/view or /file/d/{FILE_ID}/view
+    const driveMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
+    if (driveMatch && driveMatch[1]) {
+      return `https://drive.google.com/file/d/${driveMatch[1]}/preview`
+    }
+  }
+
+  // If no conversion needed or format not recognized, return original
+  return url
+}
+
 export default function SessionSlides({ slides }: SessionSlidesProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [mounted, setMounted] = useState(false)
+
+  // Convert URL to proper embed format
+  const embedUrl = convertToEmbedUrl(slides.embedUrl, slides.type)
 
   const handleIframeLoad = () => {
     setIsLoading(false)
@@ -72,7 +119,7 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
         )}
 
         <iframe
-          src={slides.embedUrl}
+          src={embedUrl}
           className="absolute inset-0 w-full h-full"
           onLoad={handleIframeLoad}
           title={slides.title}
@@ -129,7 +176,7 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
           {/* Fullscreen Iframe */}
           <div className="flex-grow relative" onClick={(e) => e.stopPropagation()}>
             <iframe
-              src={slides.embedUrl}
+              src={embedUrl}
               className="w-full h-full"
               title={slides.title}
               allowFullScreen

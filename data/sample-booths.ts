@@ -237,9 +237,10 @@ export const financeHub: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1jquwMp9MQeHigJQljm405mE5WOabBkou/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
     title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    description: 'Interactive presentation on career opportunities',
+    type: 'google-slides'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',
@@ -333,9 +334,10 @@ export const eduPath: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://drive.google.com/file/d/1x4CNtjeQqXuJbDj2rHEM7zi7CP73UvrK/view',
     title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
+    description: 'Interactive presentation on career opportunities',
+    type: 'google-drive-pdf'
   },
   engagementActivity: {
     embedUrl: 'https://gemini.google.com/share/451c917ba735',

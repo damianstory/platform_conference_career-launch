@@ -59,6 +59,7 @@ export interface SessionSlidesData {
   embedUrl: string
   title: string
   description: string
+  type?: 'google-slides' | 'google-drive-pdf'
   metadata?: {
     date: string
     duration: string

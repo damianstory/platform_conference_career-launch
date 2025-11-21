@@ -109,7 +109,7 @@ describe('Visual Treatment System', () => {
     })
 
     it('SessionSlides should have standard card styling', () => {
-      const { container } = render(<SessionSlides slides={{ title: 'Test', embedUrl: '#' }} />)
+      const { container } = render(<SessionSlides slides={{ title: 'Test', description: 'Test description', embedUrl: '#' }} />)
 
       const card = container.firstChild
       expect(card).toHaveClass('bg-white')

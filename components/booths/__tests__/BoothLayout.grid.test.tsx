@@ -82,6 +82,7 @@ const mockPlatinumBooth: PlatinumBoothData = {
   },
   sessionSlides: {
     title: 'Test Slides',
+    description: 'Test slides description',
     embedUrl: 'https://example.com/slides',
   },
   quickFacts: [
