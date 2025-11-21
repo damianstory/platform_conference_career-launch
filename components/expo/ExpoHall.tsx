@@ -5,8 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Industry, OrganizationType, PlatinumBoothData, StandardBoothData } from '@/types/booth'
 import BoothCard from './BoothCard'
 import FilterBar from './FilterBar'
-import EmptyStateIllustration from '@/components/ui/EmptyStateIllustration'
-import { Building, Users, Briefcase, Dices } from 'lucide-react'
+import { Dices } from 'lucide-react'
 
 interface ExpoHallProps {
   booths: (PlatinumBoothData | StandardBoothData)[]
@@ -54,30 +53,6 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
     setSelectedIndustries([])
     setOrganizationType('all')
   }
-
-  const getPopularFilterSuggestions = () => [
-    {
-      label: 'Technology & Manufacturing',
-      action: () => {
-        setSelectedIndustries(['ICT', 'Manufacturing'])
-        setOrganizationType('all')
-      }
-    },
-    {
-      label: 'University Programs',
-      action: () => {
-        setOrganizationType('post-secondary')
-        setSelectedIndustries([])
-      }
-    },
-    {
-      label: 'Employer Opportunities',
-      action: () => {
-        setOrganizationType('employer')
-        setSelectedIndustries([])
-      }
-    }
-  ]
 
   const handleRandomSelect = () => {
     if (filteredBooths.length === 0) return
@@ -301,31 +276,10 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
         ) : (
           <div className="text-center py-20">
             <div className="max-w-lg mx-auto">
-              <EmptyStateIllustration type="no-results" className="mb-6" />
               <h3 className="text-2xl font-semibold text-brand-navy mb-3">No booths match your filters</h3>
               <p className="text-neutral-4 mb-8">
                 We couldn&apos;t find any organizations that match your current filter combination.
-                Try adjusting your filters or explore some popular categories below.
               </p>
-
-              {/* Popular Filter Suggestions */}
-              <div className="mb-8">
-                <p className="text-sm font-medium text-neutral-5 mb-4">Try these popular combinations:</p>
-                <div className="flex flex-wrap justify-center gap-3">
-                  {getPopularFilterSuggestions().map((suggestion, index) => (
-                    <button
-                      key={suggestion.label}
-                      onClick={suggestion.action}
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary-blue/10 text-primary-blue rounded-full hover:bg-primary-blue/20 transition-all hover:scale-105 active:scale-95 text-sm font-medium"
-                    >
-                      {index === 0 && <Building className="w-4 h-4" />}
-                      {index === 1 && <Users className="w-4 h-4" />}
-                      {index === 2 && <Briefcase className="w-4 h-4" />}
-                      {suggestion.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
 
               <button
                 onClick={clearAllFilters}
