@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import { Mail, Globe, Youtube, Twitter, Instagram, Facebook, Linkedin } from 'lucide-react'
-import { SiSpotify, SiTiktok } from 'react-icons/si'
+import { Mail, Phone, Globe, Youtube, Twitter, Instagram, Facebook, Linkedin } from 'lucide-react'
+import { SiSpotify, SiTiktok, SiPinterest } from 'react-icons/si'
 import { ContactDetails } from '@/types/booth'
 import SectionLabel from '../shared/SectionLabel'
 import { getExternalLinkAriaLabel } from '@/lib/utils/accessibility'
@@ -31,6 +31,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         return SiTiktok
       case 'spotify':
         return SiSpotify
+      case 'pinterest':
+        return SiPinterest
       default:
         return null
     }
@@ -57,6 +59,20 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
               <Mail className="w-2 h-2 text-primary-blue flex-shrink-0" />
               <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors break-all leading-tight">
                 {contact.email}
+              </span>
+            </a>
+          )}
+
+          {/* Phone */}
+          {contact.phone && (
+            <a
+              href={`tel:${contact.phone}`}
+              aria-label={`Call ${contact.phone}`}
+              className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+            >
+              <Phone className="w-2 h-2 text-primary-blue flex-shrink-0" />
+              <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
+                {contact.phone}
               </span>
             </a>
           )}

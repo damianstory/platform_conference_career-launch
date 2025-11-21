@@ -49,7 +49,7 @@ export interface ContactDetails {
     applicationUrl?: string
   }
   socialLinks?: Array<{
-    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube' | 'spotify' | 'globe'
+    platform: 'linkedin' | 'twitter' | 'instagram' | 'facebook' | 'tiktok' | 'youtube' | 'spotify' | 'pinterest' | 'globe'
     url: string
     label?: string
   }>

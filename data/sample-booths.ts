@@ -389,7 +389,7 @@ export const tradesMaster: PlatinumBoothData = {
   logo: '/logos/encore-canada.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
-  website: 'https://tradesmaster.example.com',
+  website: 'https://www.encore-can.com/',
   video: {
     url: 'https://youtu.be/cFaE3wC-_7I',
     type: 'youtube',
@@ -453,19 +453,11 @@ export const tradesMaster: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'info@tradesmaster.example.com',
-    phone: '1-888-555-TRADE',
-    headquarters: {
-      address: '789 Industrial Parkway',
-      city: 'Mississauga',
-      province: 'ON',
-      postalCode: 'L4W 2T7'
-    },
+    website: 'https://www.encore-can.com/',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@tradesmaster' },
-      { platform: 'twitter', url: 'https://twitter.com/tradesmaster' },
-      { platform: 'instagram', url: 'https://instagram.com/tradesmaster' },
-      { platform: 'facebook', url: 'https://facebook.com/tradesmaster' }
+      { platform: 'instagram', url: 'https://www.instagram.com/encore_global/' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/encore-canada/?originalSubdomain=ca' },
+      { platform: 'facebook', url: 'https://www.facebook.com/encoreglobal1/' }
     ]
   },
   brandColors: {
@@ -849,7 +841,7 @@ export const marketGenius: PlatinumBoothData = {
   imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'MarketGenius is a full-service marketing agency creating innovative campaigns for leading Canadian brands.',
-  website: 'https://marketgenius.example.com',
+  website: 'https://www.ey.com/en_ca',
   video: {
     url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
@@ -913,19 +905,11 @@ export const marketGenius: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@marketgenius.example.com',
-    phone: '1-855-555-MARKET',
-    headquarters: {
-      address: '300 Creative Drive',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5H 3Y2'
-    },
+    website: 'https://www.ey.com/en_ca',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@marketgenius' },
-      { platform: 'twitter', url: 'https://twitter.com/marketgenius' },
-      { platform: 'instagram', url: 'https://instagram.com/marketgenius' },
-      { platform: 'facebook', url: 'https://facebook.com/marketgenius' }
+      { platform: 'youtube', url: 'https://www.youtube.com/@EYCanada_' },
+      { platform: 'instagram', url: 'https://www.instagram.com/eycanada_/' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/ernstandyoung/posts/?feedView=all' }
     ]
   },
   brandColors: {
@@ -1011,19 +995,12 @@ export const consultPro: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'recruiting@consultpro.example.com',
-    phone: '1-800-555-CONSULT',
-    headquarters: {
-      address: '400 Business Plaza',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5K 1E3'
-    },
+    email: 'student.recruitment@humber.ca',
+    phone: '416-675-3111',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@consultpro' },
-      { platform: 'twitter', url: 'https://twitter.com/consultpro' },
-      { platform: 'instagram', url: 'https://instagram.com/consultpro' },
-      { platform: 'facebook', url: 'https://facebook.com/consultpro' }
+      { platform: 'instagram', url: 'https://www.instagram.com/humberpoly/' },
+      { platform: 'tiktok', url: 'https://www.tiktok.com/@humberpoly' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@humberpoly' }
     ]
   },
   brandColors: {
@@ -1043,7 +1020,7 @@ export const manufactureTech: PlatinumBoothData = {
   logo: '/logos/hydro-one.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'ManufactureTech is an advanced manufacturing company producing precision components for automotive and aerospace.',
-  website: 'https://manufacturetech.example.com',
+  website: 'https://www.hydroone.com/',
   video: {
     url: 'https://www.youtube.com/watch?v=1NkOMDzPTMY',
     type: 'youtube',
@@ -1108,19 +1085,13 @@ export const manufactureTech: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'hr@manufacturetech.example.com',
-    phone: '905-555-5678',
-    headquarters: {
-      address: '45 Industrial Drive',
-      city: 'Hamilton',
-      province: 'ON',
-      postalCode: 'L8E 2X9'
-    },
+    website: 'https://www.hydroone.com/',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@manufacturetech' },
-      { platform: 'twitter', url: 'https://twitter.com/manufacturetech' },
-      { platform: 'instagram', url: 'https://instagram.com/manufacturetech' },
-      { platform: 'facebook', url: 'https://facebook.com/manufacturetech' }
+      { platform: 'instagram', url: 'https://www.instagram.com/hydrooneofficial' },
+      { platform: 'facebook', url: 'https://www.facebook.com/HydroOneOfficial' },
+      { platform: 'youtube', url: 'https://www.youtube.com/c/hydroonechannel' },
+      { platform: 'twitter', url: 'https://twitter.com/HydroOne' },
+      { platform: 'linkedin', url: 'https://ca.linkedin.com/company/hydro-one' }
     ]
   },
   brandColors: {
@@ -1205,19 +1176,12 @@ export const cyberShield: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@cybershield.example.com',
-    phone: '1-888-555-CYBER',
-    headquarters: {
-      address: '600 Security Way',
-      city: 'Ottawa',
-      province: 'ON',
-      postalCode: 'K2P 0R4'
-    },
+    email: 'hello@jack.org',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@cybershield' },
-      { platform: 'twitter', url: 'https://twitter.com/cybershield' },
-      { platform: 'instagram', url: 'https://instagram.com/cybershield' },
-      { platform: 'facebook', url: 'https://facebook.com/cybershield' }
+      { platform: 'globe', url: 'https://www.jack.org/campaigns/thatfeeling', label: 'Join our mailing list' },
+      { platform: 'instagram', url: 'https://www.instagram.com/p/DQeseY8DnvM/' },
+      { platform: 'tiktok', url: 'https://www.tiktok.com/@jackdotorg?lang=en' },
+      { platform: 'pinterest', url: 'https://ca.pinterest.com/jackdotorgg/' }
     ]
   },
   brandColors: {
