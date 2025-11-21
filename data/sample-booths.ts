@@ -15,7 +15,6 @@ export const healthFirst: PlatinumBoothData = {
   logo: '/logos/agroboticswg-fav.avif',
   tagline: 'Fostering productivity, resilience and competitiveness in agriculture — by making innovation accessible, practical and grounded in real farming conditions.',
   description: 'We bring together a network of farmers, researchers, industry mentors, and start-ups. Whether you\'re exploring new robotic solutions, testing emerging farm technologies, or seeking insightful data to guide decisions, we provide the connection, support and ground-truthing you need.\n\nOur promise: to foster productivity, resilience and competitiveness in agriculture — by making innovation accessible, practical and grounded in real farming conditions. We believe strong networks, mentorship, and applied research are the keys to smarter farming today and tomorrow.',
-  website: 'https://healthfirst.example.com',
   video: {
     url: 'https://youtu.be/N4Hinc3LDsw',
     type: 'youtube',
@@ -72,7 +71,6 @@ export const healthFirst: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    phone: '1-855-555-CARE',
     headquarters: {
       address: '555 University Avenue',
       city: 'Toronto',
@@ -102,7 +100,6 @@ export const futureBuild: PlatinumBoothData = {
   imageScale: 0.9,
   tagline: 'The RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers.',
   description: 'The Royal Canadian Air Force (RCAF) is part of National Defence and the Canadian Armed Forces. We protect Canadian and North American airspace, support peace missions around the world, and provide space capabilities to help meet national defence goals. Whether at home or abroad, the RCAF works to keep Canadians and their interests safe.\n\nThe RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers. All training is provided, and paid college and university programs are available.',
-  website: 'https://futurebuild.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=V3s4is2UC5s',
     type: 'youtube',
@@ -166,7 +163,6 @@ export const futureBuild: PlatinumBoothData = {
   contact: {
     email: 'RCAFApplicants-CandidatsdelARC@forces.gc.ca',
     website: 'https://www.forces.ca',
-    phone: '1-800-555-BUILD',
     headquarters: {
       address: '200 Engineering Drive',
       city: 'Ottawa',
@@ -262,7 +258,6 @@ export const financeHub: PlatinumBoothData = {
   contact: {
     email: 'communications@cnl.ca',
     website: 'https://www.cnl.ca/',
-    phone: '1-800-555-MONEY',
     headquarters: {
       address: '1 Financial Place',
       city: 'Toronto',
@@ -360,7 +355,6 @@ export const eduPath: PlatinumBoothData = {
   contact: {
     email: 'lyn@cansbridgescholars.com',
     website: 'https://cansbridgescholars.com',
-    phone: '1-800-555-LEARN',
     headquarters: {
       address: '1000 University Drive',
       city: 'Toronto',
@@ -477,7 +471,6 @@ export const worldExplorer: PlatinumBoothData = {
   logo: '/logos/cpkc.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'WorldExplorer offers structured gap year programs combining volunteer work, cultural immersion, and skill development.',
-  website: 'https://worldexplorer.example.com',
   video: {
     url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
@@ -541,20 +534,12 @@ export const worldExplorer: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'hello@worldexplorer.example.com',
-    phone: '1-877-555-WORLD',
     headquarters: {
       address: '250 Queen Street East',
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5A 1S1'
-    },
-    socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@worldexplorer' },
-      { platform: 'twitter', url: 'https://twitter.com/worldexplorer' },
-      { platform: 'instagram', url: 'https://instagram.com/worldexplorer' },
-      { platform: 'facebook', url: 'https://facebook.com/worldexplorer' }
-    ]
+    }
   },
   brandColors: {
     primary: '#0092FF',
@@ -930,7 +915,6 @@ export const consultPro: PlatinumBoothData = {
   imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'ConsultPro is a leading management consulting firm helping organizations achieve transformational results.',
-  website: 'https://consultpro.example.com',
   video: {
     url: 'https://youtu.be/1KrY1Zo_WMs',
     type: 'youtube',
@@ -1111,7 +1095,6 @@ export const cyberShield: PlatinumBoothData = {
   logo: '/logos/jack-org.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'CyberShield provides enterprise cybersecurity solutions protecting organizations from evolving digital threats.',
-  website: 'https://cybershield.example.com',
   video: {
     url: 'https://youtu.be/NPy1UyRr7l0',
     type: 'youtube',
@@ -1201,7 +1184,6 @@ export const bioMedical: PlatinumBoothData = {
   logo: '/logos/kids-help-phone.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'BioMedical is a research-focused pharmaceutical company developing breakthrough treatments for critical diseases.',
-  website: 'https://biomedical.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=cj1cc2JMQbA',
     type: 'youtube',
@@ -1470,7 +1452,6 @@ export const socialImpact: PlatinumBoothData = {
   logo: '/logos/nfte-canada.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'SocialImpact is a non-profit organization dedicated to community development and social justice initiatives.',
-  website: 'https://socialimpact.example.com',
   video: {
     url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
@@ -1534,20 +1515,12 @@ export const socialImpact: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@socialimpact.example.com',
-    phone: '1-855-555-IMPACT',
     headquarters: {
       address: '1100 Community Way',
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M4Y 1J6'
-    },
-    socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@socialimpact' },
-      { platform: 'twitter', url: 'https://twitter.com/socialimpact' },
-      { platform: 'instagram', url: 'https://instagram.com/socialimpact' },
-      { platform: 'facebook', url: 'https://facebook.com/socialimpact' }
-    ]
+    }
   },
   brandColors: {
     primary: '#0092FF',
@@ -1745,7 +1718,6 @@ export const environmentalConsulting: PlatinumBoothData = {
   logo: '/logos/studenthaus.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'Studenthaus helps housing developers, post-secondary institutions, municipalities, and charities understand what young renters want.',
-  website: 'https://ecoconsult.example.com',
   video: {
     url: 'https://www.instagram.com/reel/DMWfWhqJB9w/?igsh=OWhkYXI0dWZqNmNp',
     type: 'instagram',
@@ -1923,7 +1895,6 @@ export const fashionDesign: PlatinumBoothData = {
   logo: '/logos/think-ag.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'FashionForward is a leading fashion design school preparing students for careers in the global fashion industry.',
-  website: 'https://fashionforward.example.com',
   video: {
     url: 'https://youtu.be/0F4sfXzSw0Y?t=2',
     type: 'youtube',
@@ -2014,7 +1985,6 @@ export const hospitalityCollege: PlatinumBoothData = {
   logo: '/logos/toronto-police-services.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'HospitalityPro College offers comprehensive training in hotel management, culinary arts, and tourism.',
-  website: 'https://hospitalitypro.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=wbyWLM9gR94',
     type: 'youtube',
@@ -2109,7 +2079,6 @@ export const publicHealth: PlatinumBoothData = {
   logo: '/logos/tourism-industry-association.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'PublicHealth Ontario works to prevent disease and promote health across all Ontario communities.',
-  website: 'https://publichealth.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=7n2Bkljvo4U',
     type: 'youtube',
@@ -2292,7 +2261,6 @@ export const universityOfGuelph: StandardBoothData = {
   logo: '/logos/university-of-guelph.png',
   tagline: 'The University of Guelph reached a major milestone, ranking as the second largest university co-op program in Ontario and the fifth largest in Canada.',
   description: 'At the University of Guelph, everyone who studies here, explores here, teaches here and works here is committed to one simple purpose: to Improve Life.\n\nNo matter where you\'re from, once you enroll at U of G, you\'re part of a community – a network of fellow students and staff who will help you achieve your goals and set you up for success.\n\nConnect with us to learn more about our programs, upcoming events, webinars, and more!',
-  website: 'https://localmake.example.com',
   video: {
     url: 'https://www.youtube.com/embed/VfUmm2nfcyQ',
     type: 'youtube',
