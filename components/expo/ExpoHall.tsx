@@ -17,6 +17,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
   const [selectedIndustries, setSelectedIndustries] = useState<Industry[]>([])
   const [organizationType, setOrganizationType] = useState<'all' | OrganizationType>('all')
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   // Filter booths based on selected criteria
   const filteredBooths = useMemo(() => {
@@ -117,7 +118,14 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
               <div className="flex items-center gap-3">
                 {/* Filter Toggle Button */}
                 <button
-                  onClick={() => setIsExpanded(!isExpanded)}
+                  onClick={() => {
+                    // Mobile: open drawer, Desktop: toggle expansion
+                    if (window.innerWidth < 768) {
+                      setIsDrawerOpen(true)
+                    } else {
+                      setIsExpanded(!isExpanded)
+                    }
+                  }}
                   className={`
                     inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200
                     ${activeFilterCount > 0
@@ -173,11 +181,11 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
               </div>
             </div>
 
-          {/* Expandable Filter Panel */}
+          {/* Expandable Filter Panel - Desktop Only */}
           <div
             id="booth-filter-panel"
             className={`
-              overflow-hidden transition-all duration-300 ease-out
+              hidden md:block overflow-hidden transition-all duration-300 ease-out
               ${isExpanded ? 'max-h-[500px] opacity-100 mb-3' : 'max-h-0 opacity-0'}
             `}
           >
@@ -193,7 +201,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
           {/* Active Filter Pills - Always Visible When Filters Applied */}
           {activeFilterCount > 0 && (
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap mt-4">
               <span className="text-xs text-gray-500 font-medium">Active:</span>
               {organizationType !== 'all' && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue/10 text-blue rounded-full text-xs font-medium">
@@ -329,6 +337,87 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
           </div>
         )}
       </div>
+
+      {/* Mobile Filter Drawer */}
+      {isDrawerOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={() => setIsDrawerOpen(false)}
+            aria-hidden="true"
+          />
+
+          {/* Drawer */}
+          <div
+            className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 md:hidden animate-slideUp max-h-[85vh] overflow-y-auto"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Filter booths"
+          >
+            {/* Drawer Handle */}
+            <div className="flex justify-center pt-3 pb-2 sticky top-0 bg-white">
+              <div className="w-12 h-1 bg-gray-300 rounded-full" aria-hidden="true" />
+            </div>
+
+            {/* Drawer Content */}
+            <div className="px-6 pb-6 relative">
+              {/* Close Button */}
+              <button
+                onClick={() => setIsDrawerOpen(false)}
+                className="absolute top-0 right-0 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                aria-label="Close filters"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              <h2 className="text-lg font-bold text-navy mb-4">Filter Booths</h2>
+
+              <div className="space-y-6">
+                <FilterBar
+                  selectedIndustries={selectedIndustries}
+                  organizationType={organizationType}
+                  onIndustriesChange={setSelectedIndustries}
+                  onOrganizationTypeChange={setOrganizationType}
+                />
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3 mt-6">
+                <button
+                  onClick={clearAllFilters}
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-md text-sm font-medium text-navy bg-white hover:bg-gray-50 transition-colors"
+                >
+                  Reset
+                </button>
+                <button
+                  onClick={() => setIsDrawerOpen(false)}
+                  className="flex-1 px-4 py-3 rounded-md text-sm font-medium text-white bg-blue hover:bg-opacity-90 transition-colors"
+                >
+                  Apply Filters
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* Add slide-up animation */}
+      <style jsx>{`
+        @keyframes slideUp {
+          from {
+            transform: translateY(100%);
+          }
+          to {
+            transform: translateY(0);
+          }
+        }
+        .animate-slideUp {
+          animation: slideUp 0.3s ease-out;
+        }
+      `}</style>
     </div>
   )
 }
