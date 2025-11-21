@@ -304,7 +304,7 @@ export default function MultiStepModal({
 
         {/* Form Content - Dynamic based on step */}
         <div
-          className={`px-4 md:px-6 py-4 md:py-6 flex-grow ${currentStep !== 'user-type' ? 'overflow-y-auto' : ''}`}
+          className={`px-4 md:px-6 py-2 md:py-3 flex-grow ${currentStep !== 'user-type' ? 'overflow-y-auto' : ''}`}
         >
           {/* User Type Selection */}
           {currentStep === 'user-type' && (
@@ -335,12 +335,12 @@ export default function MultiStepModal({
 
           {/* Educator Step 1: Personal Information */}
           {currentStep === 1 && userType === 'educator' && (
-            <div className="space-y-4 animate-fade-in">
+            <div className="space-y-3 animate-fade-in">
               {/* Back Navigation */}
               <button
                 type="button"
                 onClick={handleBack}
-                className="inline-flex items-center gap-2 text-sm text-[#65738B] hover:text-[#485163] mb-2 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-[#65738B] hover:text-[#485163] transition-colors"
               >
                 <svg
                   className="w-4 h-4"
@@ -354,12 +354,12 @@ export default function MultiStepModal({
                 <span className="underline">Change selection</span>
               </button>
 
-              <h3 className="text-lg font-semibold text-[#22224C] mb-4">Who are you?</h3>
+              <h3 className="text-lg font-semibold text-[#22224C] mb-3">Who are you?</h3>
 
               <div>
                 <label
                   htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700 mb-1.5"
+                  className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   First Name
                 </label>
@@ -370,19 +370,19 @@ export default function MultiStepModal({
                   value={formData.firstName}
                   onChange={(e) => updateField('firstName', e.target.value)}
                   placeholder="Jane"
-                  className={`w-full px-3.5 py-2.5 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] ${
+                  className={`w-full px-3.5 py-2 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] ${
                     errors.firstName ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
                 {errors.firstName && (
-                  <p className="mt-1.5 text-sm text-red-600">{errors.firstName}</p>
+                  <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
                 )}
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1.5"
+                  className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Email
                 </label>
@@ -392,12 +392,12 @@ export default function MultiStepModal({
                   value={formData.email}
                   onChange={(e) => updateField('email', e.target.value)}
                   placeholder="jane.smith@board.ca"
-                  className={`w-full px-3.5 py-2.5 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] ${
+                  className={`w-full px-3.5 py-2 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] ${
                     attemptedSubmit && errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
                 {attemptedSubmit && errors.email && (
-                  <p className="mt-1.5 text-sm text-red-600">{errors.email}</p>
+                  <p className="mt-1 text-sm text-red-600">{errors.email}</p>
                 )}
               </div>
             </div>
@@ -594,7 +594,7 @@ export default function MultiStepModal({
         </div>
 
         {/* Footer */}
-        <div className="flex-shrink-0 border-t border-gray-200 px-4 md:px-6 pt-4 pb-6 bg-[#fafbfc]">
+        <div className="flex-shrink-0 border-t border-gray-200 px-4 md:px-6 pt-3 pb-4 bg-[#fafbfc]">
           {currentStep === 'user-type' ? (
             <div className="flex justify-end">
               <button

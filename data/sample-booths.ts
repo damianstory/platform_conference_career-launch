@@ -195,7 +195,7 @@ export const financeHub: PlatinumBoothData = {
   imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'FinanceHub is one of Canada\'s leading financial institutions offering exciting career opportunities in banking, investment, and financial planning.',
-  website: 'https://financehub.example.com',
+  website: 'https://www.cnl.ca/',
   video: {
     url: 'https://www.youtube.com/watch?v=fl0QDfr3_iU',
     type: 'youtube',
@@ -260,7 +260,8 @@ export const financeHub: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'students@financehub.example.com',
+    email: 'communications@cnl.ca',
+    website: 'https://www.cnl.ca/',
     phone: '1-800-555-MONEY',
     headquarters: {
       address: '1 Financial Place',
@@ -269,10 +270,10 @@ export const financeHub: PlatinumBoothData = {
       postalCode: 'M5X 1H3'
     },
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@financehub' },
-      { platform: 'twitter', url: 'https://twitter.com/financehub' },
-      { platform: 'instagram', url: 'https://instagram.com/financehub' },
-      { platform: 'facebook', url: 'https://facebook.com/financehub' }
+      { platform: 'facebook', url: 'https://www.facebook.com/CanadianNuclearLaboratories' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/canadian-nuclear-laboratories/' },
+      { platform: 'instagram', url: 'https://www.instagram.com/canadiannuclearlaboratories/' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@CNLCanada/videos' }
     ]
   },
   brandColors: {
