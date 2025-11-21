@@ -471,6 +471,7 @@ export const worldExplorer: PlatinumBoothData = {
   logo: '/logos/CPKC-Logo.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'WorldExplorer offers structured gap year programs combining volunteer work, cultural immersion, and skill development.',
+  website: 'https://www.cpkcr.com/en/careers',
   video: {
     url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
@@ -512,7 +513,7 @@ export const worldExplorer: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1jcKG6MEE3c5igzOBveD9a2nodIiOM7sOhmPyT9JVQ5E/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -539,7 +540,14 @@ export const worldExplorer: PlatinumBoothData = {
       city: 'Toronto',
       province: 'ON',
       postalCode: 'M5A 1S1'
-    }
+    },
+    socialLinks: [
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/cpkcrail/' },
+      { platform: 'instagram', url: 'https://www.instagram.com/cpkcrail/' },
+      { platform: 'twitter', url: 'https://x.com/CPKCrail' },
+      { platform: 'facebook', url: 'https://www.facebook.com/cpkcr' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@CPKCrail' }
+    ]
   },
   brandColors: {
     primary: '#0092FF',
