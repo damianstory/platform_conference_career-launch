@@ -1382,7 +1382,7 @@ export const legalServices: PlatinumBoothData = {
   logo: '/logos/mydoh.jpeg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'LegalServices is a leading law firm providing comprehensive legal services across multiple practice areas.',
-  website: 'https://legalservices.example.com',
+  website: 'https://www.mydoh.ca',
   video: {
     url: 'https://www.youtube.com/shorts/9bnCNakZByM',
     type: 'youtube',
@@ -1446,19 +1446,11 @@ export const legalServices: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'recruitment@legalservices.example.com',
-    phone: '1-800-555-LEGAL',
-    headquarters: {
-      address: '1000 Law Street',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5H 1H1'
-    },
+    website: 'https://www.mydoh.ca',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@legalservices' },
-      { platform: 'twitter', url: 'https://twitter.com/legalservices' },
-      { platform: 'instagram', url: 'https://instagram.com/legalservices' },
-      { platform: 'facebook', url: 'https://facebook.com/legalservices' }
+      { platform: 'globe', url: 'https://www.indigo.ca/en-ca/making-bank-money-skills-for-real-life/9781443469814.html', label: 'Making Bank: Money Skills for Real Life' },
+      { platform: 'instagram', url: 'https://www.instagram.com/mydohapp/?hl=en' },
+      { platform: 'linkedin', url: 'https://ca.linkedin.com/company/mydohapp' }
     ]
   },
   brandColors: {
@@ -1574,7 +1566,7 @@ export const urbanPlanning: PlatinumBoothData = {
   logo: '/logos/ontario-water-careers.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'UrbanPlanning works with municipalities to design sustainable, vibrant urban communities across Ontario.',
-  website: 'https://urbanplanning.example.com',
+  website: 'https://ontariowatercareers.com/contact/',
   video: {
     url: 'https://www.youtube.com/watch?v=9ansl_lNE94',
     type: 'youtube',
@@ -1638,19 +1630,13 @@ export const urbanPlanning: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'jobs@urbanplanning.example.com',
-    phone: '1-866-555-URBAN',
-    headquarters: {
-      address: '1200 City Hall Drive',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5H 2N2'
-    },
+    website: 'https://ontariowatercareers.com/contact/',
+    email: 'info@ontariowatercareers.com',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@urbanplanning' },
-      { platform: 'twitter', url: 'https://twitter.com/urbanplanning' },
-      { platform: 'instagram', url: 'https://instagram.com/urbanplanning' },
-      { platform: 'facebook', url: 'https://facebook.com/urbanplanning' }
+      { platform: 'linkedin', url: 'https://www.linkedin.com/showcase/ontariowatercareers' },
+      { platform: 'tiktok', url: 'https://www.tiktok.com/@ontariowatercareers?_t=8r971pWTbjv&_r=1' },
+      { platform: 'instagram', url: 'https://www.instagram.com/ontariowatercareers/?hl=en' },
+      { platform: 'facebook', url: 'https://www.facebook.com/people/Ontario-Water-Careers/61568605020011/' }
     ]
   },
   brandColors: {
@@ -1669,8 +1655,8 @@ export const sportsManagement: PlatinumBoothData = {
   pathway: 'college',
   logo: '/logos/seeking-scholarships.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'SportsMgmt manages professional sports facilities and creates career opportunities in sports administration.',
-  website: 'https://sportsmgmt.example.com',
+  description: 'For over a decade, we\'ve supported Ontario schools, students, and families with trusted tools to navigate the path to funding postsecondary education. Our up-to-date resources support guidance counsellors and help students and families understand their options. Whether heading to university, college, or skilled trades, every student deserves to feel informed and prepared.',
+  website: 'https://seekingscholarships.com/',
   video: {
     url: 'https://www.youtube.com/watch?v=YF0IeVUDv3w',
     type: 'youtube',
@@ -1735,19 +1721,11 @@ export const sportsManagement: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@sportsmgmt.example.com',
-    phone: '1-800-555-SPORT',
-    headquarters: {
-      address: '1300 Arena Boulevard',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5J 2H7'
-    },
+    website: 'https://seekingscholarships.com/',
+    email: 'seekingscholarshipscanada@gmail.com',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@sportsmgmt' },
-      { platform: 'twitter', url: 'https://twitter.com/sportsmgmt' },
-      { platform: 'instagram', url: 'https://instagram.com/sportsmgmt' },
-      { platform: 'facebook', url: 'https://facebook.com/sportsmgmt' }
+      { platform: 'linkedin', url: 'https://www.linkedin.com/in/glenda-healy-ba-bed-oct-9772b0163/' },
+      { platform: 'twitter', url: 'https://x.com/SkgScholarships' }
     ]
   },
   brandColors: {
@@ -1766,7 +1744,7 @@ export const environmentalConsulting: PlatinumBoothData = {
   pathway: 'university',
   logo: '/logos/studenthaus.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'EcoConsult provides environmental consulting services helping organizations achieve sustainability goals.',
+  description: 'Studenthaus helps housing developers, post-secondary institutions, municipalities, and charities understand what young renters want.',
   website: 'https://ecoconsult.example.com',
   video: {
     url: 'https://www.instagram.com/reel/DMWfWhqJB9w/?igsh=OWhkYXI0dWZqNmNp',
@@ -1832,19 +1810,11 @@ export const environmentalConsulting: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@ecoconsult.example.com',
-    phone: '1-855-555-ENVIRO',
-    headquarters: {
-      address: '1400 Green Street',
-      city: 'Ottawa',
-      province: 'ON',
-      postalCode: 'K1P 5N7'
-    },
+    email: 'julian@studenthousinginitiative.com',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@ecoconsult' },
-      { platform: 'twitter', url: 'https://twitter.com/ecoconsult' },
-      { platform: 'instagram', url: 'https://instagram.com/ecoconsult' },
-      { platform: 'facebook', url: 'https://facebook.com/ecoconsult' }
+      { platform: 'instagram', url: 'https://www.instagram.com/studenthaushq/' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/studenthaus/' },
+      { platform: 'tiktok', url: 'https://www.tiktok.com/@studenthaus' }
     ]
   },
   brandColors: {
@@ -1864,7 +1834,7 @@ export const automotiveTech: PlatinumBoothData = {
   logo: '/logos/support-ontario-youth.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'AutoTech specializes in electric vehicle technology and advanced automotive systems development.',
-  website: 'https://autotech.example.com',
+  website: 'https://www.supportontarioyouth.ca/',
   video: {
     url: 'https://youtu.be/sAI1ioviJTQ',
     type: 'youtube',
@@ -1928,19 +1898,12 @@ export const automotiveTech: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'hr@autotech.example.com',
-    phone: '1-866-555-AUTO',
-    headquarters: {
-      address: '1500 Motor Parkway',
-      city: 'Windsor',
-      province: 'ON',
-      postalCode: 'N9A 6J3'
-    },
+    website: 'https://www.supportontarioyouth.ca/',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@autotech' },
-      { platform: 'twitter', url: 'https://twitter.com/autotech' },
-      { platform: 'instagram', url: 'https://instagram.com/autotech' },
-      { platform: 'facebook', url: 'https://facebook.com/autotech' }
+      { platform: 'instagram', url: 'https://www.instagram.com/supportonyouth/' },
+      { platform: 'tiktok', url: 'https://www.tiktok.com/@supportontarioyouth' },
+      { platform: 'youtube', url: 'https://www.youtube.com/channel/UCpOgnFr4a08w0hJpCyocH0g/featured' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/support-ontario-youth/' }
     ]
   },
   brandColors: {
@@ -2025,19 +1988,13 @@ export const fashionDesign: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'admissions@fashionforward.example.com',
-    phone: '1-800-555-STYLE',
-    headquarters: {
-      address: '1600 Fashion Avenue',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5V 3C6'
-    },
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@fashionforward' },
-      { platform: 'twitter', url: 'https://twitter.com/fashionforward' },
-      { platform: 'instagram', url: 'https://instagram.com/fashionforward' },
-      { platform: 'facebook', url: 'https://facebook.com/fashionforward' }
+      { platform: 'email', url: 'mailto:mlockhart@cahrc-ccrha.ca', label: 'mlockhart@cahrc-ccrha.ca' },
+      { platform: 'email', url: 'mailto:khanrahan@aitc-canada.ca', label: 'khanrahan@aitc-canada.ca' },
+      { platform: 'linktree', url: 'https://linktr.ee/cahrc' },
+      { platform: 'instagram', url: 'https://www.instagram.com/cdnaghrcouncil/?hl=en' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/agriculture-in-the-classroom-canada/' },
+      { platform: 'instagram', url: 'https://www.instagram.com/aitccanada/?hl=en' }
     ]
   },
   brandColors: {
@@ -2121,8 +2078,7 @@ export const hospitalityCollege: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'admissions@hospitalitypro.example.com',
-    phone: '1-800-555-HOTEL',
+    email: 'policerecruiters@tps.ca',
     headquarters: {
       address: '1800 Service Boulevard',
       city: 'Niagara Falls',
@@ -2130,10 +2086,10 @@ export const hospitalityCollege: PlatinumBoothData = {
       postalCode: 'L2E 6T2'
     },
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@hospitalitypro' },
-      { platform: 'twitter', url: 'https://twitter.com/hospitalitypro' },
-      { platform: 'instagram', url: 'https://instagram.com/hospitalitypro' },
-      { platform: 'facebook', url: 'https://facebook.com/hospitalitypro' }
+      { platform: 'linktree', url: 'https://linktr.ee/tpsrecruiting' },
+      { platform: 'instagram', url: 'https://www.instagram.com/tpsrecruiting/' },
+      { platform: 'facebook', url: 'https://www.facebook.com/TPSRecruiting/' },
+      { platform: 'twitter', url: 'https://x.com/TPSRecruiting' }
     ]
   },
   brandColors: {
@@ -2218,19 +2174,13 @@ export const publicHealth: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@publichealth.example.com',
-    phone: '1-866-555-HEALTH',
-    headquarters: {
-      address: '1900 Health Street',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5G 1V2'
-    },
+    email: 'info@tiaontario.ca',
+    phone: '416-483-1691',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@publichealth' },
-      { platform: 'twitter', url: 'https://twitter.com/publichealth' },
-      { platform: 'instagram', url: 'https://instagram.com/publichealth' },
-      { platform: 'facebook', url: 'https://facebook.com/publichealth' }
+      { platform: 'facebook', url: 'https://www.facebook.com/TIAONTARIO/' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/tiaontario/' },
+      { platform: 'instagram', url: 'https://www.instagram.com/tiaogram' },
+      { platform: 'twitter', url: 'https://x.com/TIAOntario' }
     ]
   },
   brandColors: {
@@ -2250,7 +2200,7 @@ export const voxPopLabs: PlatinumBoothData = {
   logo: '/logos/vox-pop-labs.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'Vox Pop Labs creates innovative civic technology solutions to engage citizens and improve democratic participation.',
-  website: 'https://voxpoplabs.example.com',
+  website: 'https://voxpoplabs.com/',
   video: {
     url: 'https://youtube.com/shorts/k9LR3JqO2Tg',
     type: 'youtube',
@@ -2315,19 +2265,10 @@ export const voxPopLabs: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'careers@voxpoplabs.example.com',
-    phone: '1-866-555-TECH',
-    headquarters: {
-      address: '100 Tech Avenue',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5V 1V2'
-    },
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@voxpoplabs' },
-      { platform: 'twitter', url: 'https://twitter.com/voxpoplabs' },
-      { platform: 'instagram', url: 'https://instagram.com/voxpoplabs' },
-      { platform: 'facebook', url: 'https://facebook.com/voxpoplabs' }
+      { platform: 'twitter', url: 'https://x.com/voxpoplabs' },
+      { platform: 'linkedin', url: 'https://ca.linkedin.com/company/voxpoplabs' },
+      { platform: 'facebook', url: 'https://www.facebook.com/voxpoplabs' }
     ]
   },
   brandColors: {

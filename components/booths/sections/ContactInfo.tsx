@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Mail, Phone, Globe, Youtube, Twitter, Instagram, Facebook, Linkedin } from 'lucide-react'
+import { Mail, Phone, Globe, Youtube, Twitter, Instagram, Facebook, Linkedin, TreePalm } from 'lucide-react'
 import { SiSpotify, SiTiktok, SiPinterest } from 'react-icons/si'
 import { SnapchatOutline } from '@/components/icons/SnapchatOutline'
 import { ContactDetails } from '@/types/booth'
@@ -28,6 +28,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         return Linkedin
       case 'globe':
         return Globe
+      case 'email':
+        return Mail
       case 'tiktok':
         return SiTiktok
       case 'spotify':
@@ -36,6 +38,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         return SiPinterest
       case 'snapchat':
         return SnapchatOutline
+      case 'linktree':
+        return TreePalm
       default:
         return null
     }

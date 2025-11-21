@@ -64,7 +64,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         />
 
         {/* Contact Info - Always shown */}
-        <ContactInfo contact={booth.contact} />
+        <ContactInfo contact={{ ...booth.contact, website: booth.website }} />
 
       </div>
     </div>
