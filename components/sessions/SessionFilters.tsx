@@ -262,7 +262,7 @@ export default function SessionFilters({
 
           {/* Active Filter Pills - Always Visible When Filters Applied */}
           {activeFilterCount > 0 && (
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-3 flex-wrap mt-4">
               <span className="text-xs text-gray-500 font-medium">Active:</span>
               {filters.industries.map(industry => (
                 <span key={industry} className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue/10 text-blue rounded-full text-xs font-medium">
@@ -320,7 +320,7 @@ export default function SessionFilters({
               )}
               <button
                 onClick={handleReset}
-                className="text-xs text-blue hover:text-blue/70 font-medium ml-2"
+                className="text-xs text-blue hover:text-blue/70 font-medium ml-4"
               >
                 Clear all
               </button>
@@ -399,7 +399,7 @@ export default function SessionFilters({
         {/* Mobile: Active Filter Pills + Results Count */}
         <div className="md:hidden mt-3">
           {activeFilterCount > 0 && (
-            <div className="flex items-center gap-2 flex-wrap mb-2">
+            <div className="flex items-center gap-3 flex-wrap mb-2">
               <span className="text-xs text-gray-500 font-medium">Active:</span>
               {filters.industries.map(industry => (
                 <span key={industry} className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-blue/10 text-blue rounded-full text-xs font-medium">
@@ -447,7 +447,7 @@ export default function SessionFilters({
               )}
               <button
                 onClick={handleReset}
-                className="text-xs text-blue hover:text-blue/70 font-medium"
+                className="text-xs text-blue hover:text-blue/70 font-medium ml-3"
               >
                 Clear
               </button>

@@ -36,46 +36,73 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
 
   // Filter and sort sessions
   const filteredSessions = useMemo(() => {
-    return sessions
-      .filter((session) => {
-        // Search filter (case-insensitive, searches title and description)
-        if (filters.search) {
-          const searchLower = filters.search.toLowerCase();
-          const titleMatch = session.title.toLowerCase().includes(searchLower);
-          const descriptionMatch = session.description?.toLowerCase().includes(searchLower);
-          const presenterMatch = session.presenter_name?.toLowerCase().includes(searchLower);
+    // First, filter sessions
+    const filtered = sessions.filter((session) => {
+      // Search filter (case-insensitive, searches title and description)
+      if (filters.search) {
+        const searchLower = filters.search.toLowerCase();
+        const titleMatch = session.title.toLowerCase().includes(searchLower);
+        const descriptionMatch = session.description?.toLowerCase().includes(searchLower);
+        const presenterMatch = session.presenter_name?.toLowerCase().includes(searchLower);
 
-          if (!titleMatch && !descriptionMatch && !presenterMatch) {
-            return false;
-          }
+        if (!titleMatch && !descriptionMatch && !presenterMatch) {
+          return false;
         }
+      }
 
-        // Industry filter (OR logic - show if session matches ANY selected industry)
-        if (filters.industries.length > 0) {
-          if (!session.industries.some(industry => filters.industries.includes(industry))) {
-            return false;
-          }
+      // Industry filter (OR logic - show if session matches ANY selected industry)
+      if (filters.industries.length > 0) {
+        if (!session.industries.some(industry => filters.industries.includes(industry))) {
+          return false;
         }
+      }
 
-        // Grade level filter
-        if (filters.gradeLevel) {
-          const normalized = normalizeGradeLevel(session.grade_level);
-          if (normalized !== filters.gradeLevel) {
-            return false;
-          }
+      // Grade level filter
+      if (filters.gradeLevel) {
+        const normalized = normalizeGradeLevel(session.grade_level);
+        if (normalized !== filters.gradeLevel) {
+          return false;
         }
+      }
 
-        // Duration filter
-        if (filters.duration && session.duration) {
-          const duration = session.duration;
-          if (filters.duration === 'under-20' && duration >= 20) return false;
-          if (filters.duration === '20-30' && (duration < 20 || duration > 30)) return false;
-          if (filters.duration === 'over-30' && duration <= 30) return false;
-        }
+      // Duration filter
+      if (filters.duration && session.duration) {
+        const duration = session.duration;
+        if (filters.duration === 'under-20' && duration >= 20) return false;
+        if (filters.duration === '20-30' && (duration < 20 || duration > 30)) return false;
+        if (filters.duration === 'over-30' && duration <= 30) return false;
+      }
 
-        return true;
-      })
-      .sort((a, b) => a.title.localeCompare(b.title)); // Alphabetical sort
+      return true;
+    });
+
+    // Then, apply priority sorting if industry filter is active
+    if (filters.industries.length === 0) {
+      // No industry filter: simple alphabetical sort
+      return filtered.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    // Industry filter active: priority sort (primary matches first, then secondary)
+    const primaryMatches: Session[] = [];
+    const secondaryMatches: Session[] = [];
+
+    filtered.forEach(session => {
+      // Check if ANY selected industry is the primary industry (first in array)
+      const isPrimaryMatch = filters.industries.includes(session.industries[0]);
+
+      if (isPrimaryMatch) {
+        primaryMatches.push(session);
+      } else {
+        secondaryMatches.push(session);
+      }
+    });
+
+    // Sort each group alphabetically
+    primaryMatches.sort((a, b) => a.title.localeCompare(b.title));
+    secondaryMatches.sort((a, b) => a.title.localeCompare(b.title));
+
+    // Return primary matches first, then secondary
+    return [...primaryMatches, ...secondaryMatches];
   }, [sessions, filters]);
 
   // Handle row toggle
