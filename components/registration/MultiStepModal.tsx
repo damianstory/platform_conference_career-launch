@@ -36,6 +36,8 @@ export default function MultiStepModal({
     resetUserType,
     formData,
     errors,
+    attemptedSubmit,
+    setAttemptedSubmit,
     updateField,
     submitForm,
     isFormValid,
@@ -119,6 +121,8 @@ export default function MultiStepModal({
 
   const handleNext = () => {
     if (currentStep === 1) {
+      // Set attempted submit flag for email validation error display
+      setAttemptedSubmit(true);
       setCurrentStep(2);
     } else if (currentStep === 2) {
       setCurrentStep(3);
@@ -389,10 +393,10 @@ export default function MultiStepModal({
                   onChange={(e) => updateField('email', e.target.value)}
                   placeholder="jane.smith@board.ca"
                   className={`w-full px-3.5 py-2.5 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                    attemptedSubmit && errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
-                {errors.email && (
+                {attemptedSubmit && errors.email && (
                   <p className="mt-1.5 text-sm text-red-600">{errors.email}</p>
                 )}
               </div>

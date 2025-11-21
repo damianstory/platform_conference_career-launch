@@ -34,6 +34,7 @@ export function useRegistrationForm() {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
+  const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -85,8 +86,14 @@ export function useRegistrationForm() {
       return newData;
     });
 
-    // Clear error for this field when user starts typing
-    setErrors(prev => ({ ...prev, [name]: undefined }));
+    // Real-time validation for email field (educators only)
+    if (name === 'email' && userType === 'educator') {
+      const error = validateField(name, value);
+      setErrors(prev => ({ ...prev, [name]: error }));
+    } else {
+      // Clear error for other fields when user starts typing
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const validateForm = (): boolean => {
@@ -160,11 +167,13 @@ export function useRegistrationForm() {
   const resetUserType = useCallback(() => {
     setUserType(null);
     setErrors({});
+    setAttemptedSubmit(false);
   }, []);
 
   const resetForm = useCallback(() => {
     setUserType(null);
     setErrors({});
+    setAttemptedSubmit(false);
     // Keep form data in case they switch back to educator
     // The cookie pre-fill will remain if they were a returning user
   }, []);
@@ -176,6 +185,8 @@ export function useRegistrationForm() {
     resetForm,
     formData,
     errors,
+    attemptedSubmit,
+    setAttemptedSubmit,
     updateField,
     submitForm,
     isFormValid,
