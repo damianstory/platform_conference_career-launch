@@ -468,7 +468,7 @@ export const worldExplorer: PlatinumBoothData = {
   industries: ['Transportation', 'ICT'],
   organizationType: 'employer',
   pathway: 'gap-year',
-  logo: '/logos/cpkc.png',
+  logo: '/logos/CPKC-Logo.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'WorldExplorer offers structured gap year programs combining volunteer work, cultural immersion, and skill development.',
   video: {
