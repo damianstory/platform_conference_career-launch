@@ -99,6 +99,7 @@ export type Industry =
   | 'Hospitality/Tourism'
   | 'ICT'
   | 'Justice/Emergency'
+  | 'Life Skills'
   | 'Manufacturing'
   | 'Mining'
   | 'Non-Profit/Education'
@@ -118,7 +119,7 @@ export interface PlatinumBoothData {
   name: string
   slug: string
   tier: 'platinum'
-  industry: Industry
+  industries: Industry[]
   organizationType: OrganizationType
   pathway: Pathway
   logo: string
@@ -142,7 +143,7 @@ export interface StandardBoothData {
   name: string
   slug: string
   tier: 'standard'
-  industry: Industry
+  industries: Industry[]
   organizationType: OrganizationType
   pathway: Pathway
   logo: string

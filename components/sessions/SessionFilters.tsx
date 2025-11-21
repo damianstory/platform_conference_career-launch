@@ -31,6 +31,7 @@ const INDUSTRIES = [
   'Hospitality/Tourism',
   'ICT',
   'Justice/Emergency',
+  'Life Skills',
   'Manufacturing',
   'Mining',
   'Non-Profit/Education',

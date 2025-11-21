@@ -29,7 +29,9 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
     // Filter by industries
     if (selectedIndustries.length > 0) {
-      filtered = filtered.filter(booth => selectedIndustries.includes(booth.industry))
+      filtered = filtered.filter(booth =>
+        booth.industries.some(industry => selectedIndustries.includes(industry))
+      )
     }
 
     // Sort by tier priority: platinum > standard

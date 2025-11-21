@@ -96,7 +96,7 @@ export default function SessionTableRow({
 
         {/* Industry Column (140px) - Hidden on mobile */}
         <td className="py-5 hidden md:table-cell text-center">
-          <IndustryBadge industry={session.industry} />
+          <IndustryBadge industry={session.industries[0]} />
         </td>
 
         {/* Duration Column (100px) - Hidden on mobile */}
@@ -140,7 +140,7 @@ export default function SessionTableRow({
             >
               {/* Mobile-only Industry Badge */}
               <div className="md:hidden mb-4">
-                <IndustryBadge industry={session.industry} />
+                <IndustryBadge industry={session.industries[0]} />
               </div>
 
               {/* Description Section */}

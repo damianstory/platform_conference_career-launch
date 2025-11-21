@@ -52,7 +52,7 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
 
         // Industry filter (OR logic - show if session matches ANY selected industry)
         if (filters.industries.length > 0) {
-          if (!session.industry || !filters.industries.includes(session.industry)) {
+          if (!session.industries.some(industry => filters.industries.includes(industry))) {
             return false;
           }
         }

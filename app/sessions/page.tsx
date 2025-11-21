@@ -19,7 +19,8 @@ const BLOCK_COLORS: Record<BlockNumber, string> = {
 
 // Helper function to get unique industries and create a preview string
 function getIndustryPreview(sessions: Session[]): string {
-  const uniqueIndustries = Array.from(new Set(sessions.map(s => s.industry)));
+  const allIndustries = sessions.flatMap(s => s.industries);
+  const uniqueIndustries = Array.from(new Set(allIndustries));
   const preview = uniqueIndustries.slice(0, 3).join(', ');
   return preview;
 }

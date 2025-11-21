@@ -18,7 +18,7 @@ export interface Session {
   full_video_url: string | null;
   duration: number | null;
   block_number: BlockNumber;
-  industry: string | null;
+  industries: string[];
   grade_level: string | null;
   created_at: string;
   updated_at: string;
