@@ -1266,19 +1266,14 @@ export const bioMedical: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'talent@biomedical.example.com',
-    phone: '1-800-555-BIOMED',
-    headquarters: {
-      address: '700 Research Parkway',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M2N 6K1'
-    },
+    website: 'https://kidshelpphone.ca/',
+    email: 'YouthEngagement@kidshelpphone.ca',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@biomedical' },
-      { platform: 'twitter', url: 'https://twitter.com/biomedical' },
-      { platform: 'instagram', url: 'https://instagram.com/biomedical' },
-      { platform: 'facebook', url: 'https://facebook.com/biomedical' }
+      { platform: 'instagram', url: 'https://www.instagram.com/kidshelpphone/?hl=en' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@KidsHelpPhone' },
+      { platform: 'twitter', url: 'https://x.com/KidsHelpPhone?lang=en' },
+      { platform: 'facebook', url: 'https://www.facebook.com/KidsHelpPhone/' },
+      { platform: 'snapchat', url: 'https://www.snapchat.com/@kidshelp_phone' }
     ]
   },
   brandColors: {
@@ -1299,7 +1294,7 @@ export const foodService: PlatinumBoothData = {
   imageScale: 0.9,
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'FoodService Pro operates 200+ restaurants across Ontario with comprehensive training and advancement opportunities.',
-  website: 'https://foodservicepro.example.com',
+  website: 'https://trca.ca',
   video: {
     url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
     type: 'youtube',
@@ -1363,19 +1358,11 @@ export const foodService: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'jobs@foodservicepro.example.com',
-    phone: '1-877-555-FOOD',
-    headquarters: {
-      address: '900 Restaurant Row',
-      city: 'Mississauga',
-      province: 'ON',
-      postalCode: 'L5B 1M2'
-    },
+    website: 'https://trca.ca',
+    email: 'Peel.education@trca.ca',
+    phone: '416-661-6600',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@foodservicepro' },
-      { platform: 'twitter', url: 'https://twitter.com/foodservicepro' },
-      { platform: 'instagram', url: 'https://instagram.com/foodservicepro' },
-      { platform: 'facebook', url: 'https://facebook.com/foodservicepro' }
+      { platform: 'instagram', url: 'https://www.instagram.com/trca_hq/?hl=en' }
     ]
   },
   brandColors: {

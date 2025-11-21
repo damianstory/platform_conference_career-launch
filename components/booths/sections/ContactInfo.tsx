@@ -3,6 +3,7 @@
 import React from 'react'
 import { Mail, Phone, Globe, Youtube, Twitter, Instagram, Facebook, Linkedin } from 'lucide-react'
 import { SiSpotify, SiTiktok, SiPinterest } from 'react-icons/si'
+import { SnapchatOutline } from '@/components/icons/SnapchatOutline'
 import { ContactDetails } from '@/types/booth'
 import SectionLabel from '../shared/SectionLabel'
 import { getExternalLinkAriaLabel } from '@/lib/utils/accessibility'
@@ -33,6 +34,8 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
         return SiSpotify
       case 'pinterest':
         return SiPinterest
+      case 'snapchat':
+        return SnapchatOutline
       default:
         return null
     }
@@ -49,6 +52,22 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
 
         {/* Contact Methods - Compact Layout */}
         <div className="space-y-0.5 flex-shrink-0">
+          {/* Website */}
+          {contact.website && (
+            <a
+              href={contact.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit website"
+              className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
+            >
+              <Globe className="w-2 h-2 text-primary-blue flex-shrink-0" />
+              <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
+                {contact.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+              </span>
+            </a>
+          )}
+
           {/* Email */}
           {contact.email && (
             <a
@@ -98,22 +117,6 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
                 </a>
               )
             })}
-
-          {/* Website */}
-          {contact.website && (
-            <a
-              href={contact.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit website"
-              className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
-            >
-              <Globe className="w-2 h-2 text-primary-blue flex-shrink-0" />
-              <span className="text-xs text-gray-700 group-hover:text-primary-blue transition-colors leading-tight">
-                {contact.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
-              </span>
-            </a>
-          )}
         </div>
 
         {/* Internship Info (if available) */}
@@ -140,7 +143,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
 
         {/* Social Media Buttons - Pushed to bottom */}
         {contact.socialLinks && contact.socialLinks.filter(social => !social.label).length > 0 && (
-          <div className="mt-auto pt-3 flex-shrink-0">
+          <div className="mt-auto pt-1.5 flex-shrink-0">
             <div className="flex items-center gap-1.5 flex-wrap">
               {contact.socialLinks.filter(social => !social.label).map((social, index) => {
                 const Icon = getSocialIcon(social.platform)
