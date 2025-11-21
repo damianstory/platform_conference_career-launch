@@ -470,13 +470,13 @@ export const worldExplorer: PlatinumBoothData = {
   pathway: 'gap-year',
   logo: '/logos/CPKC-Logo.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'WorldExplorer offers structured gap year programs combining volunteer work, cultural immersion, and skill development.',
+  description: 'Join CPKC, North America\'s first transnational railroad connecting the U.S. Canada and Mexico, where your career drives progress and safety is paramount. We connect communities, fuel economic growth, and provide meaningful work in a culture that values diversity, accountability, and pride. With opportunities for training, development, and advancement, you\'re not just building a career—you\'re part of something bigger. Together, we move goods, connect people, and create lasting change. Your future starts here.',
   website: 'https://www.cpkcr.com/en/careers',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=lns0jDx4CXY',
     type: 'youtube',
-    title: 'Year of Change',
-    description: 'Hear from gap year students'
+    title: 'Go places no one else can go with CPKC',
+    description: 'Discover career opportunities with CPKC'
   },
   resources: [
     {
