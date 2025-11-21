@@ -114,8 +114,8 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
         <div className="bg-off-white border-t sticky top-0 z-10 mb-6 md:mb-8 rounded-lg" style={{ borderTopColor: 'rgba(34, 34, 76, 0.12)' }}>
           <div className="px-4 md:px-8 lg:px-16 py-4 md:py-6">
             {/* Top Row: Filter Button, Random Button, Results Count */}
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
                 {/* Filter Toggle Button */}
                 <button
                   onClick={() => {
@@ -127,7 +127,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
                     }
                   }}
                   className={`
-                    inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200
+                    inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 w-full sm:w-auto
                     ${activeFilterCount > 0
                       ? 'bg-blue text-white hover:bg-blue/90'
                       : 'bg-white border-2 border-blue text-blue hover:bg-blue/5'
@@ -159,10 +159,10 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
                 </button>
 
                 {/* Random Button */}
-                <div className="relative group/tooltip">
+                <div className="relative group/tooltip w-full sm:w-auto">
                   <button
                     onClick={handleRandomSelect}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ease-out bg-white text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue hover:to-brand-navy hover:text-white shadow-[0_2px_8px_rgba(0,146,255,0.12),0_0_0_2px_rgba(0,146,255,0.2)] hover:shadow-[0_4px_16px_rgba(0,146,255,0.35),0_0_0_0px_transparent] hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ease-out bg-white text-primary-blue hover:bg-gradient-to-r hover:from-primary-blue hover:to-brand-navy hover:text-white shadow-[0_2px_8px_rgba(0,146,255,0.12),0_0_0_2px_rgba(0,146,255,0.2)] hover:shadow-[0_4px_16px_rgba(0,146,255,0.35),0_0_0_0px_transparent] hover:-translate-y-0.5 w-full sm:w-auto"
                     title="Visit a random booth"
                   >
                     <Dices className="w-4 h-4 transition-all duration-300" />
@@ -176,7 +176,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
               </div>
 
               {/* Results Count */}
-              <div className="text-sm text-gray-600">
+              <div className="text-xs sm:text-sm text-gray-600 text-center md:text-left">
                 Showing <span className="font-semibold">{filteredBooths.length}</span> of <span className="font-semibold">{booths.length}</span> booths
               </div>
             </div>
