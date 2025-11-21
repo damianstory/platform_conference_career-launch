@@ -671,6 +671,7 @@ export const creativeMinds: PlatinumBoothData = {
   logo: '/logos/discover-year.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'CreativeMinds is Ontario\'s premier institution for arts, design, media, and entertainment programs.',
+  website: 'https://discoveryear.ca',
   video: {
     url: 'https://youtu.be/7ZlVdfHqiRk',
     type: 'youtube',
@@ -759,6 +760,7 @@ export const dataDynamics: PlatinumBoothData = {
   logo: '/logos/diversity-institute.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'DataDynamics specializes in data science, analytics, and machine learning solutions for enterprise clients.',
+  website: 'https://torontomu.ca/diversity',
   video: {
     url: 'https://www.youtube.com/watch?v=-x6Kxo_5biY',
     type: 'youtube',
