@@ -671,7 +671,6 @@ export const creativeMinds: PlatinumBoothData = {
   logo: '/logos/discover-year.jpg',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'CreativeMinds is Ontario\'s premier institution for arts, design, media, and entertainment programs.',
-  website: 'https://creativeminds.example.com',
   video: {
     url: 'https://youtu.be/7ZlVdfHqiRk',
     type: 'youtube',
@@ -736,19 +735,11 @@ export const creativeMinds: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'admissions@creativeminds.example.com',
-    phone: '1-855-555-CREATE',
-    headquarters: {
-      address: '123 Artistic Avenue',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5T 1R8'
-    },
+    email: 'outreach@discoveryear.ca',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@creativeminds' },
-      { platform: 'twitter', url: 'https://twitter.com/creativeminds' },
-      { platform: 'instagram', url: 'https://instagram.com/creativeminds' },
-      { platform: 'facebook', url: 'https://facebook.com/creativeminds' }
+      { platform: 'globe', url: 'https://discoveryear.ca/book-a-call/', label: 'Book a call' },
+      { platform: 'instagram', url: 'https://www.instagram.com/discoveryear' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/school/discover-year' }
     ]
   },
   brandColors: {
@@ -768,7 +759,6 @@ export const dataDynamics: PlatinumBoothData = {
   logo: '/logos/diversity-institute.png',
   tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
   description: 'DataDynamics specializes in data science, analytics, and machine learning solutions for enterprise clients.',
-  website: 'https://datadynamics.example.com',
   video: {
     url: 'https://www.youtube.com/watch?v=-x6Kxo_5biY',
     type: 'youtube',
@@ -832,19 +822,11 @@ export const dataDynamics: PlatinumBoothData = {
     type: 'contact'
   },
   contact: {
-    email: 'talent@datadynamics.example.com',
-    phone: '1-800-555-DATA',
-    headquarters: {
-      address: '500 Tech Boulevard',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M5V 2T6'
-    },
+    email: 'diversityinstitute@torontomu.ca',
+    website: 'https://torontomu.ca/diversity',
     socialLinks: [
-      { platform: 'youtube', url: 'https://youtube.com/@datadynamics' },
-      { platform: 'twitter', url: 'https://twitter.com/datadynamics' },
-      { platform: 'instagram', url: 'https://instagram.com/datadynamics' },
-      { platform: 'facebook', url: 'https://facebook.com/datadynamics' }
+      { platform: 'linkedin', url: 'https://ca.linkedin.com/company/diversity-institute' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@diversityinstitute5448' }
     ]
   },
   brandColors: {
