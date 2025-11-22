@@ -246,8 +246,8 @@ export const financeHub: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Opportunities',
-    url: 'https://financehub.example.com/careers',
+    text: 'Learn More',
+    url: 'https://www.cnl.ca/',
     type: 'careers'
   },
   secondaryCTA: {
@@ -343,8 +343,8 @@ export const eduPath: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply Now',
-    url: 'https://edupath.example.com/apply',
+    text: 'Learn More',
+    url: 'https://www.cansbridgescholars.com/',
     type: 'application'
   },
   secondaryCTA: {
@@ -437,8 +437,8 @@ export const tradesMaster: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Programs',
-    url: 'https://tradesmaster.example.com/programs',
+    text: 'Learn More',
+    url: 'https://www.encore-can.com/about/working-at-encore/',
     type: 'careers'
   },
   secondaryCTA: {
@@ -525,8 +525,8 @@ export const worldExplorer: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Explore Programs',
-    url: 'https://worldexplorer.example.com/programs',
+    text: 'Make Big Moves',
+    url: 'https://www.cpkcr.com/en/careers',
     type: 'learn-more'
   },
   secondaryCTA: {
@@ -621,8 +621,8 @@ export const greenPower: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply for Training',
-    url: 'https://greenpower.example.com/apply',
+    text: 'Bursaries & Awards',
+    url: 'https://www.cwbweldingfoundation.org/programs/#scholarships-and-bursaries',
     type: 'application'
   },
   secondaryCTA: {
@@ -711,8 +711,8 @@ export const creativeMinds: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Explore Programs',
-    url: 'https://creativeminds.example.com/programs',
+    text: 'Info Sessions',
+    url: 'https://discoveryear.ca/events/',
     type: 'learn-more'
   },
   secondaryCTA: {
@@ -799,8 +799,8 @@ export const dataDynamics: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Join Our Team',
-    url: 'https://datadynamics.example.com/careers',
+    text: 'Learn More',
+    url: 'https://www.torontomu.ca/diversity/',
     type: 'careers'
   },
   secondaryCTA: {
@@ -888,8 +888,8 @@ export const marketGenius: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Openings',
-    url: 'https://marketgenius.example.com/careers',
+    text: 'Learn More',
+    url: 'https://www.ey.com/en_ca/careers/what-we-look-for',
     type: 'careers'
   },
   secondaryCTA: {
@@ -977,8 +977,8 @@ export const consultPro: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply Now',
-    url: 'https://consultpro.example.com/careers',
+    text: 'Career Areas',
+    url: 'https://humber.ca/search/full-time/career-areas.html',
     type: 'application'
   },
   secondaryCTA: {
@@ -1067,8 +1067,8 @@ export const manufactureTech: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply Today',
-    url: 'https://manufacturetech.example.com/apply',
+    text: 'Explore Careers',
+    url: 'https://www.hydroone.com/careers',
     type: 'application'
   },
   secondaryCTA: {
@@ -1157,8 +1157,8 @@ export const cyberShield: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Join Our Team',
-    url: 'https://cybershield.example.com/careers',
+    text: 'Start a Chapter',
+    url: 'https://www.jack.org/communities',
     type: 'careers'
   },
   secondaryCTA: {
@@ -1246,8 +1246,8 @@ export const bioMedical: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Positions',
-    url: 'https://biomedical.example.com/careers',
+    text: 'Get Involved',
+    url: 'https://kidshelpphone.ca/get-involved/participate/volunteer',
     type: 'careers'
   },
   secondaryCTA: {
@@ -1338,8 +1338,8 @@ export const foodService: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply Now',
-    url: 'https://foodservicepro.example.com/apply',
+    text: 'Find Your CA',
+    url: 'https://conservationontario.ca/conservation-authorities/find-a-conservation-authority',
     type: 'application'
   },
   secondaryCTA: {
@@ -1427,7 +1427,7 @@ export const legalServices: PlatinumBoothData = {
   },
   primaryCTA: {
     text: 'Learn More',
-    url: 'https://legalservices.example.com/careers',
+    url: 'https://www.mydoh.ca/',
     type: 'learn-more'
   },
   secondaryCTA: {
@@ -1601,8 +1601,8 @@ export const urbanPlanning: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Positions',
-    url: 'https://urbanplanning.example.com/careers',
+    text: 'Explore Careers',
+    url: 'https://ontariowatercareers.com/careers/',
     type: 'careers'
   },
   secondaryCTA: {
@@ -1692,8 +1692,8 @@ export const sportsManagement: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Openings',
-    url: 'https://sportsmgmt.example.com/careers',
+    text: 'Scholarship Report',
+    url: 'https://seekingscholarships.com/the-scholarship-report/',
     type: 'careers'
   },
   secondaryCTA: {
@@ -1780,8 +1780,8 @@ export const environmentalConsulting: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Join Our Team',
-    url: 'https://ecoconsult.example.com/careers',
+    text: 'Tell Your Story',
+    url: 'https://studenthaus.typeform.com/to/uRT2TWTT',
     type: 'careers'
   },
   secondaryCTA: {
@@ -1868,8 +1868,8 @@ export const automotiveTech: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply Now',
-    url: 'https://autotech.example.com/apply',
+    text: 'Tools in the Trades',
+    url: 'https://toolsinthetrades.ca/',
     type: 'application'
   },
   secondaryCTA: {
@@ -1957,8 +1957,8 @@ export const fashionDesign: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply Today',
-    url: 'https://fashionforward.example.com/apply',
+    text: 'Explore Careers',
+    url: 'https://thinkag.ca/en-ca/explore-careers',
     type: 'application'
   },
   secondaryCTA: {
@@ -2046,8 +2046,8 @@ export const hospitalityCollege: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Apply Now',
-    url: 'https://hospitalitypro.example.com/apply',
+    text: 'Explore Careers',
+    url: 'https://www.tps.ca/careers/',
     type: 'application'
   },
   secondaryCTA: {
@@ -2141,8 +2141,8 @@ export const publicHealth: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Positions',
-    url: 'https://publichealth.example.com/careers',
+    text: 'Get Inspired',
+    url: 'https://www.skillsthattravel.ca/skills-that-travel',
     type: 'careers'
   },
   secondaryCTA: {
@@ -2232,8 +2232,8 @@ export const voxPopLabs: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'View Positions',
-    url: 'https://voxpoplabs.example.com/careers',
+    text: 'Get Involved',
+    url: 'https://voxpoplabs.com/signup',
     type: 'careers'
   },
   secondaryCTA: {
