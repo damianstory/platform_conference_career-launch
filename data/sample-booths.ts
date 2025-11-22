@@ -54,7 +54,7 @@ export const healthFirst: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1xhpdR_pCvO21z-ARG-bM3GdJ68bzMPkKDtls36GWhms/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -1275,9 +1275,9 @@ export const bioMedical: PlatinumBoothData = {
 }
 
 export const foodService: PlatinumBoothData = {
-  id: 'multiple-conservation-authorities-trca-cvc-npca',
-  name: 'TRCA, CVC, & NPCA',
-  slug: 'multiple-conservation-authorities-trca-cvc-npca',
+  id: 'multiple-conservation-authorities-trca-ch-npca',
+  name: 'TRCA, CH, & NPCA',
+  slug: 'multiple-conservation-authorities-trca-ch-npca',
   tier: 'platinum',
   industries: ['Environment', 'Forestry', 'Horticulture'],
   organizationType: 'employer',
@@ -1288,10 +1288,10 @@ export const foodService: PlatinumBoothData = {
   description: 'Conservation authorities are watershed-based resource management agencies, unique to Ontario, that work to protect and manage natural resources through programs balancing human, environmental, and economic needs. Their responsibilities include managing natural hazards like flooding and erosion, protecting source water, and overseeing land use planning and development in their watersheds.',
   website: 'https://trca.ca',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/watch?v=RSoW_5KX3lQ',
     type: 'youtube',
-    title: 'Hospitality Careers',
-    description: 'Explore food service opportunities'
+    title: 'TTP - 2025 New Sustainable Cities and Human Settlements Award for Ecological Restoration Excellence',
+    description: 'Award-winning ecological restoration work'
   },
   resources: [
     {
@@ -1328,7 +1328,7 @@ export const foodService: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1IVyKj5TOdI4xT9x9nNliKuCVWDleCnqeaYblN5aOlXc/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -1352,7 +1352,6 @@ export const foodService: PlatinumBoothData = {
   contact: {
     website: 'https://trca.ca',
     email: 'Peel.education@trca.ca',
-    phone: '416-661-6600',
     socialLinks: [
       { platform: 'instagram', url: 'https://www.instagram.com/trca_hq/?hl=en' }
     ]
@@ -1591,7 +1590,7 @@ export const urbanPlanning: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1lz746QaZ0s4w0e8S-dKTQjN96iK57bD134KQYY5yKKI/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -1858,7 +1857,7 @@ export const automotiveTech: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1KAoJ8G42xScBQsdP3seDEoQMvxm4CP1hNSmCRC-2UBs/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -2036,7 +2035,7 @@ export const hospitalityCollege: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1PmMR148jxjarfCqu_GMdvhOJMyGyby8suzC2JrZRM20/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -2524,7 +2523,7 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   fashionDesign,                // thinkAG & The Canadian Agricultural Human Resource Council
   hospitalityCollege,           // Toronto Police Services
   publicHealth,                 // Tourism Industry Association
-  foodService,                  // TRCA, CVC, & NPCA
+  foodService,                  // TRCA, CH, & NPCA
   universityOfGuelph,           // University of Guelph
   voxPopLabs                    // Vox Pop Labs
 ]

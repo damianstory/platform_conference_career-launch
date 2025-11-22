@@ -310,7 +310,7 @@ Whether you're passionate about nature, science, community engagement, or proble
     'Explore design tools and methodologies',
     'Discover career paths in digital design'
   ],
-  presenter_name: `Multiple Conservation Authorities: TRCA, CVC, & NPCA`,
+  presenter_name: `Multiple Conservation Authorities: TRCA, CH, & NPCA`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/emma-thompson.jpg',
   thumbnail_url: '/images/sessions/ux-design-thumb.jpg',
