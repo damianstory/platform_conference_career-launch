@@ -194,6 +194,44 @@
 }
 
 @layer utilities {
+  /* Diagonal Split Hero Styles */
+  .diagonal-split-container {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  /* Desktop: Diagonal split effect */
+  @media (min-width: 768px) {
+    .diagonal-split-left {
+      width: 100%;
+      clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+      z-index: 2;
+      position: relative;
+    }
+
+    .diagonal-split-right {
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%);
+      z-index: 1;
+    }
+  }
+
+  /* Mobile: No diagonal, normal stacking */
+  @media (max-width: 767px) {
+    .diagonal-split-left,
+    .diagonal-split-right {
+      clip-path: none;
+      margin-left: 0;
+      width: 100%;
+      position: relative;
+    }
+  }
+
   /* Skeleton loader */
   .skeleton {
     background: linear-gradient(
