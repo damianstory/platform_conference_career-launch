@@ -15,6 +15,24 @@ const faqItems: AccordionItem[] = [
     ),
   },
   {
+    id: 'faq-9',
+    title: 'What\'s the difference between the Conference and All Sessions tab on the Sessions page?',
+    content: (
+      <p>
+        The difference between the two tabs is how the sessions are organized. In the Conference tab, all 27 sessions have been split up evenly over the course of four different blocks.
+        <br />
+        <br />
+        This supports the schools where everybody is watching sessions as part of a single-day delivery of Career Launch where all classes watch concurrently throughout the day. The blocks ensure that no student watches the same session twice in the same day. In this tab, it&apos;s set up with a similar structure to how a conference would operate in the real world.
+        <br />
+        <br />
+        The All Sessions tab is a list of all the sessions that are available, not organized by blocks. They&apos;re the same sessions in each tab.
+        <br />
+        <br />
+        Follow your curiosity. Use the filter buttons to explore something new.
+      </p>
+    ),
+  },
+  {
     id: 'faq-2',
     title: 'Are sessions live or pre-recorded?',
     content: (

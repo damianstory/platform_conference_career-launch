@@ -124,19 +124,21 @@ export default function SessionDetailHeader({
 
       {/* Mobile Layout (<768px) */}
       <div className="md:hidden">
-        <div className="grid grid-cols-[auto_1fr] gap-4 items-center h-20 px-4">
+        <div className="grid grid-cols-3 items-center h-20 px-4">
           {/* Left: Back arrow */}
-          <Link
-            href={backHref}
-            onClick={handleBackClick}
-            className="flex items-center text-brand-navy hover:text-primary-blue p-2 -ml-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-            aria-label={ariaLabel}
-          >
-            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-          </Link>
+          <div>
+            <Link
+              href={backHref}
+              onClick={handleBackClick}
+              className="flex items-center text-brand-navy hover:text-primary-blue p-2 -ml-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+              aria-label={ariaLabel}
+            >
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+            </Link>
+          </div>
 
-          {/* Right: Logo */}
-          <div className="flex items-center justify-end">
+          {/* Center: Logo */}
+          <div className="flex items-center justify-center">
             <Link
               href="/"
               className="flex items-center hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
@@ -152,6 +154,9 @@ export default function SessionDetailHeader({
               />
             </Link>
           </div>
+
+          {/* Right: Empty spacer for balance */}
+          <div aria-hidden="true" />
         </div>
       </div>
     </header>

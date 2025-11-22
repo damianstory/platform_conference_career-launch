@@ -21,7 +21,7 @@ export default function HomePage() {
           href="/sessions"
           className="group relative block w-full bg-blue text-white overflow-hidden diagonal-split-left"
         >
-          <div className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-center items-start text-left md:pl-16 md:pr-[45%] px-8 py-24 transition-all duration-300">
+          <div className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-center items-center text-center md:items-start md:text-left md:pl-16 md:pr-[45%] px-8 py-24 transition-all duration-300">
             {/* Content Container */}
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter uppercase">
@@ -52,7 +52,7 @@ export default function HomePage() {
           href="/booths"
           className="group relative block w-full bg-navy text-white overflow-hidden diagonal-split-right"
         >
-          <div className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-center items-end text-right md:pr-16 md:pl-[45%] px-8 py-24 transition-all duration-300">
+          <div className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-center items-center text-center md:items-end md:text-right md:pr-16 md:pl-[45%] px-8 py-24 transition-all duration-300">
             {/* Content Container */}
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter uppercase">
