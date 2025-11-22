@@ -2298,18 +2298,17 @@ export const universityOfGuelph: StandardBoothData = {
   ],
   googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdXXXXXXXXXXXX/viewform?embedded=true',
   primaryCTA: {
-    text: 'Learn More',
-    url: 'https://apply.uoguelph.ca/register/?id=410f4687-a8f0-43f1-82a2-799607493e20',
-    type: 'application'
-  },
-  secondaryCTA: {
     text: 'Visit Us',
     url: 'https://www.uoguelph.ca/admission/undergraduate/events/',
     type: 'contact'
   },
+  secondaryCTA: {
+    text: 'Learn More',
+    url: 'https://apply.uoguelph.ca/register/?id=410f4687-a8f0-43f1-82a2-799607493e20',
+    type: 'application'
+  },
   contact: {
     website: 'https://www.uoguelph.ca/admission/undergraduate/',
-    phone: '905-555-5678',
     headquarters: {
       address: '45 Industrial Drive',
       city: 'Hamilton',
@@ -2317,10 +2316,12 @@ export const universityOfGuelph: StandardBoothData = {
       postalCode: 'L8E 2X9'
     },
     socialLinks: [
+      { platform: 'globe', url: 'https://www.uoguelph.ca/admission/undergraduate/', label: 'Undergraduate Admissions' },
       { platform: 'instagram', url: 'https://www.instagram.com/uofgadmission/' },
       { platform: 'tiktok', url: 'https://www.tiktok.com/@uofgadmission?lang=en' },
       { platform: 'spotify', url: 'https://open.spotify.com/user/neuro38hfoyaojlkjoqvywkpp' },
-      { platform: 'youtube', url: 'https://www.youtube.com/user/UofGAdmissions/featured' }
+      { platform: 'youtube', url: 'https://www.youtube.com/user/UofGAdmissions/featured' },
+      { platform: 'globe', url: 'https://apply.uoguelph.ca/register/?id=410f4687-a8f0-43f1-82a2-799607493e20', label: 'Sign Up to Learn More' }
     ]
   },
   brandColors: {
