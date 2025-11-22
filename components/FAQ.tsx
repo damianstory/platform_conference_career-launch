@@ -8,6 +8,9 @@ const faqItems: AccordionItem[] = [
       <p>
         Click the sessions button and then scroll, search, or use the filters to find the session
         you&apos;re most interested in watching.
+        <br />
+        <br />
+        Watch this 2-minute video for a complete overview of how this platform works.
       </p>
     ),
   },
@@ -16,9 +19,8 @@ const faqItems: AccordionItem[] = [
     title: 'Are sessions live or pre-recorded?',
     content: (
       <p>
-        All sessions are pre-recorded, which means you can watch them at any time that fits
-        your school schedule during the event week. This flexibility allows you to integrate
-        career education seamlessly into your classroom.
+        All sessions are pre-recorded. myBlueprint has vetted the content from each session to
+        make sure that everything is applicable and appropriate for your students.
       </p>
     ),
   },
@@ -27,9 +29,10 @@ const faqItems: AccordionItem[] = [
     title: 'Can students watch on their own devices?',
     content: (
       <p>
-        Yes! The platform is fully responsive and works on desktops, tablets, and smartphones.
-        Students can watch on their own devices in class or you can project the sessions on
-        your classroom display.
+        Yes, absolutely. As long as students have internet access, they&apos;ll be able to watch
+        any of the sessions. They&apos;ll be asked to select their school board and school but not
+        enter any personally identifiable information. This is simply for reporting purposes to be
+        able to report to our board partners about participation in the event.
       </p>
     ),
   },
@@ -38,9 +41,12 @@ const faqItems: AccordionItem[] = [
     title: 'How long are the sessions?',
     content: (
       <p>
-        Session lengths vary, but most are between 30-45 minutes. Each session page displays
-        the exact duration so you can plan accordingly. You can also pause and resume sessions
-        as needed.
+        Most sessions are going to fall somewhere between 15 and 45 minutes. Next to each session title
+        you&apos;ll see the duration listed, and you&apos;ll also be able to filter by duration.
+        <br />
+        <br />
+        Because these are pre-recorded, that also means you can split up sessions over multiple classes if needed.
+
       </p>
     ),
   },
@@ -49,20 +55,26 @@ const faqItems: AccordionItem[] = [
     title: 'Do I need to register in advance?',
     content: (
       <p>
-        You can browse all session content without registration. When you&apos;re ready to watch a
-        session with your class, you&apos;ll be asked to provide some quick information about your
-        viewing context. This helps us measure the program&apos;s reach and impact.
+        You don&apos;t need to create an account with an email and a password to access this platform,
+        but before watching a session, you will be prompted to enter some basic information.
+        <br />
+        <br />
+        For students, we simply ask for your school board and school (if you&apos;re watching on your own)
+        for reporting purposes.
+        <br />
+        <br />
+        For educators, we ask for your name, email, school, school board, and how many students
+        you&apos;re watching it with (again for reporting purposes).
       </p>
     ),
   },
   {
     id: 'faq-6',
-    title: 'Are sessions available after the event?',
+    title: 'How long do we have access to these recordings for?',
     content: (
       <p>
-        Session availability after the event week depends on each presenter&apos;s preferences.
-        Check back for updates on extended access, or contact us for more information about
-        specific sessions you&apos;d like to revisit.
+        Yes. You and your students will have access to all Career Launch recordings to watch
+        on-demand for the remainder of the 25-26 school year.
       </p>
     ),
   },
@@ -71,31 +83,17 @@ const faqItems: AccordionItem[] = [
     title: 'What technology do I need?',
     content: (
       <p>
-        All you need is a device with internet access and a modern web browser (Chrome, Firefox,
-        Safari, or Edge). For classroom viewing, you may want to connect to a projector or large
-        display for better visibility.
+        Any device with internet connectivity should work to allow you or your students to watch
+        this content.
       </p>
     ),
   },
   {
     id: 'faq-8',
-    title: 'Can I download session materials?',
+    title: 'How do we contact the presenters?',
     content: (
       <p>
-        Some sessions may include downloadable resources or supplementary materials. These will
-        be available on the individual session pages. Virtual expo booths may also provide
-        additional resources from sponsor organizations.
-      </p>
-    ),
-  },
-  {
-    id: 'faq-9',
-    title: 'How do I get a certificate of participation?',
-    content: (
-      <p>
-        Certificates of participation may be available for educators who engage with the platform
-        during the event week. Contact your school board administrator or reach out to us directly
-        for information about professional development recognition.
+        Presenters and sponsors will have left any relevant contact information within their booths.
       </p>
     ),
   },
@@ -104,12 +102,25 @@ const faqItems: AccordionItem[] = [
     title: 'Who can I contact for technical support?',
     content: (
       <p>
-        If you experience any technical issues or have questions about using the platform,
-        please contact us at{' '}
-        <a href="mailto:support@careerlaunch.ca" className="text-blue hover:underline">
-          support@careerlaunch.ca
+        You can email Damian (
+        <a href="mailto:damian.matheson@myblueprint.ca" className="text-blue hover:underline">
+          damian.matheson@myblueprint.ca
         </a>
-        . We&apos;re here to help ensure your experience is smooth and successful.
+        ) for any questions regarding the Career Launch event.
+      </p>
+    ),
+  },
+  {
+    id: 'faq-11',
+    title: 'My school board isn\'t listed in the options to select from.',
+    content: (
+      <p>
+        If you don&apos;t see your school board listed but you want access to these recordings,
+        please email Damian (
+        <a href="mailto:damian.matheson@myblueprint.ca" className="text-blue hover:underline">
+          damian.matheson@myblueprint.ca
+        </a>
+        ).
       </p>
     ),
   },
