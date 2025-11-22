@@ -659,7 +659,6 @@ export const creativeMinds: PlatinumBoothData = {
   logo: '/logos/discover-year.jpg',
   tagline: 'At Discover Year, we help young adults better understand what they want in life and build the skills they need to get it.',
   description: 'At Discover Year, we help young adults better understand what they want in life and build the skills they need to get it. Our purposeful gap year program helps students gain what they need to thrive in adulthood through meaningful self-discovery, crucial skills development, coaching and mentorship, and work, travel, and volunteer experience. At the end of the year, our students graduate with a Double Certificate in Career and Leadership Skills.',
-  website: 'https://discoveryear.ca',
   video: {
     url: 'https://youtu.be/7ZlVdfHqiRk',
     type: 'youtube',
