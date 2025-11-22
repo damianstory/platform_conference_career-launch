@@ -40,8 +40,8 @@ export default function HomePage() {
 
             {/* Arrow Button */}
             <div className="absolute top-1/2 -translate-y-1/2 right-4 md:top-auto md:bottom-12 md:translate-y-0 md:left-16 md:right-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:group-hover:translate-x-2">
-              <div className="bg-white/60 md:bg-white/90 md:hover:bg-white rounded-full p-2.5 shadow-md md:shadow-lg md:hover:shadow-xl border border-white/40 md:border-0 transition-all duration-200 active:scale-95">
-                <ArrowRight className="w-5 h-5 text-navy" aria-hidden="true" />
+              <div className="bg-transparent md:bg-white/90 md:hover:bg-white rounded-none md:rounded-full p-0 md:p-2.5 shadow-none md:shadow-lg md:hover:shadow-xl border-0 transition-all duration-200 md:active:scale-95">
+                <ArrowRight className="w-5 h-5 text-white md:text-navy" aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -71,8 +71,8 @@ export default function HomePage() {
 
             {/* Arrow Button */}
             <div className="absolute top-1/2 -translate-y-1/2 right-4 md:top-auto md:bottom-12 md:translate-y-0 md:right-16 md:left-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:group-hover:translate-x-2">
-              <div className="bg-white/60 md:bg-white/90 md:hover:bg-white rounded-full p-2.5 shadow-md md:shadow-lg md:hover:shadow-xl border border-white/40 md:border-0 transition-all duration-200 active:scale-95">
-                <ArrowRight className="w-5 h-5 text-navy" aria-hidden="true" />
+              <div className="bg-transparent md:bg-white/90 md:hover:bg-white rounded-none md:rounded-full p-0 md:p-2.5 shadow-none md:shadow-lg md:hover:shadow-xl border-0 transition-all duration-200 md:active:scale-95">
+                <ArrowRight className="w-5 h-5 text-white md:text-navy" aria-hidden="true" />
               </div>
             </div>
           </div>
