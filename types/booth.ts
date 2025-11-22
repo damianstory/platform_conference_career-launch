@@ -132,6 +132,7 @@ export interface PlatinumBoothData {
   resources: ResourceItem[]
   sessionSlides?: SessionSlidesData
   engagementActivity?: EngagementActivityData
+  associatedSessionSlug?: string // Optional: Links to the session this organization presented (e.g., 'building-tomorrow-construction-careers')
   primaryCTA: CTAButton
   secondaryCTA?: CTAButton
   contact: ContactDetails
@@ -155,6 +156,7 @@ export interface StandardBoothData {
   resources: ResourceItem[]
   googleFormUrl?: string
   externalUrl?: string
+  associatedSessionSlug?: string // Optional: Links to the session this organization presented (e.g., 'building-tomorrow-construction-careers')
   primaryCTA: CTAButton
   secondaryCTA?: CTAButton
   contact: ContactDetails

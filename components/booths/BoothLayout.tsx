@@ -7,6 +7,7 @@ import VideoSection from './sections/VideoSection'
 import EngagementActivity from './sections/EngagementActivity'
 import ResourceCards from './sections/ResourceCards'
 import SessionSlides from './sections/SessionSlides'
+import SessionBanner from './sections/SessionBanner'
 import CompanyStory from './sections/CompanyStory'
 import ContactInfo from './sections/ContactInfo'
 
@@ -55,6 +56,11 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         {/* Session Slides - Platinum only */}
         {isPlatinum && booth.tier === 'platinum' && booth.sessionSlides && (
           <SessionSlides slides={booth.sessionSlides} />
+        )}
+
+        {/* Session Banner - Platinum only, if associated session exists */}
+        {isPlatinum && booth.tier === 'platinum' && booth.associatedSessionSlug && (
+          <SessionBanner sessionSlug={booth.associatedSessionSlug} />
         )}
 
         {/* Company Story - Always shown */}
