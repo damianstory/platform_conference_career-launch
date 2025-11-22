@@ -39,9 +39,9 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Arrow Button */}
-            <div className="absolute bottom-8 left-8 md:bottom-12 md:left-16 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:group-hover:translate-x-2">
-              <div className="bg-white/90 hover:bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200">
-                <ArrowRight className="w-4 h-4 text-navy" aria-hidden="true" />
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 md:top-auto md:bottom-12 md:translate-y-0 md:left-16 md:right-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:group-hover:translate-x-2">
+              <div className="bg-white/60 md:bg-white/90 md:hover:bg-white rounded-full p-2.5 shadow-md md:shadow-lg md:hover:shadow-xl border border-white/40 md:border-0 transition-all duration-200 active:scale-95">
+                <ArrowRight className="w-5 h-5 text-navy" aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -70,20 +70,13 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-br from-navy/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Arrow Button */}
-            <div className="absolute bottom-8 right-8 md:bottom-12 md:right-16 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:group-hover:translate-x-2">
-              <div className="bg-white/90 hover:bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-200">
-                <ArrowRight className="w-4 h-4 text-navy" aria-hidden="true" />
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 md:top-auto md:bottom-12 md:translate-y-0 md:right-16 md:left-auto opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:group-hover:translate-x-2">
+              <div className="bg-white/60 md:bg-white/90 md:hover:bg-white rounded-full p-2.5 shadow-md md:shadow-lg md:hover:shadow-xl border border-white/40 md:border-0 transition-all duration-200 active:scale-95">
+                <ArrowRight className="w-5 h-5 text-navy" aria-hidden="true" />
               </div>
             </div>
           </div>
         </Link>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="bg-off-white py-6 text-center">
-        <p className="text-sm text-gray-500">
-          ↓ FAQs Below ↓
-        </p>
       </div>
 
       {/* FAQ Section */}
