@@ -157,7 +157,7 @@ export const futureBuild: PlatinumBoothData = {
   },
   secondaryCTA: {
     text: 'Browse Careers',
-    url: 'https://www.forces.ca',
+    url: 'https://forces.ca/en/careers/env_2',
     type: 'careers'
   },
   contact: {
@@ -170,7 +170,10 @@ export const futureBuild: PlatinumBoothData = {
       postalCode: 'K1A 0B1'
     },
     socialLinks: [
-      { platform: 'globe', url: 'https://outlook.office.com/book/RCAFAttractionsTeamApplicantLiaisonCell@018gc.onmicrosoft.com/?ismsaljsauthenabled=true', label: 'Talk to our team' }
+      { platform: 'globe', url: 'https://outlook.office.com/book/RCAFAttractionsTeamApplicantLiaisonCell@018gc.onmicrosoft.com/?ismsaljsauthenabled=true', label: 'Talk to our team' },
+      { platform: 'instagram', url: 'https://www.instagram.com/forcesjobs.forcesemplois/' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/canadianforces-forcescanada/' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@CanadianForcescanadiennes' }
     ]
   },
   brandColors: {
