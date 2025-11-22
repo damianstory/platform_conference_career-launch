@@ -88,9 +88,16 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
   const handleRandomSelect = () => {
     if (filteredBooths.length === 0) return
 
-    // Select random booth and navigate directly
-    const randomIndex = Math.floor(Math.random() * filteredBooths.length)
-    const randomBooth = filteredBooths[randomIndex]
+    // Exclude specific booths from random selection
+    const excludedBoothIds = ['career-myth-buster', 'industry-immersion-series']
+    const selectableBooths = filteredBooths.filter(booth => !excludedBoothIds.includes(booth.id))
+
+    // If no selectable booths after exclusions, do nothing
+    if (selectableBooths.length === 0) return
+
+    // Select random booth from selectable booths and navigate directly
+    const randomIndex = Math.floor(Math.random() * selectableBooths.length)
+    const randomBooth = selectableBooths[randomIndex]
 
     // Check if this is an external booth
     const isExternalBooth = randomBooth.tier === 'standard' && 'externalUrl' in randomBooth && randomBooth.externalUrl
