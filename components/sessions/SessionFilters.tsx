@@ -95,7 +95,7 @@ export default function SessionFilters({
   const totalActiveCount = activeFilterCount + (filters.search ? 1 : 0);
 
   return (
-    <div className="bg-off-white border-t sticky top-0 z-10 mb-1 md:mb-1.5" style={{ borderTopColor: 'rgba(34, 34, 76, 0.12)' }}>
+    <div className="bg-off-white border-t sticky top-0 z-10 mb-0.5 md:mb-0.5" style={{ borderTopColor: 'rgba(34, 34, 76, 0.12)' }}>
       <div className="px-4 md:px-8 lg:px-16 py-4 md:py-6">
         {/* Desktop Layout */}
         <div className="hidden md:block">

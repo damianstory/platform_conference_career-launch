@@ -166,7 +166,23 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
                 <tr>
                   <th className="w-6" aria-label="Expand row"></th>
                   <th className="text-left py-3 px-4 text-sm font-semibold text-gray-700">
-                    Title
+                    <span className="inline-flex items-center gap-1">
+                      Title
+                      <svg
+                        className="w-3.5 h-3.5 text-gray-700 md:hidden"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </span>
                   </th>
                   <th className="text-center py-3 text-sm font-semibold text-gray-700 w-36 hidden md:table-cell">
                     Industry
