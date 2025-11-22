@@ -24,7 +24,7 @@ export default function HomePage() {
           <div className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-center items-start text-left md:pl-16 md:pr-[45%] px-8 py-24 transition-all duration-300">
             {/* Content Container */}
             <div className="relative z-10 max-w-2xl">
-              <h2 className="text-7xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter uppercase">
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter uppercase">
                 Sessions
               </h2>
               <p className="text-xl md:text-2xl lg:text-3xl opacity-95 font-semibold mb-4">
@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-center items-end text-right md:pr-16 md:pl-[45%] px-8 py-24 transition-all duration-300">
             {/* Content Container */}
             <div className="relative z-10 max-w-2xl">
-              <h2 className="text-7xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter uppercase">
+              <h2 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter uppercase">
                 Booths
               </h2>
               <p className="text-xl md:text-2xl lg:text-3xl opacity-95 font-semibold mb-4">
