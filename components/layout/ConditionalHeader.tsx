@@ -72,7 +72,7 @@ export default function ConditionalHeader() {
 
   // If we're on a session page and have session data, show SessionDetailHeader
   if (isSessionPage && sessionData) {
-    return <SessionDetailHeader sessionTitle={sessionData.title} />
+    return <SessionDetailHeader sessionTitle={sessionData.title} sessionSlug={sessionData.slug} />
   }
 
   // Otherwise, show the regular Header

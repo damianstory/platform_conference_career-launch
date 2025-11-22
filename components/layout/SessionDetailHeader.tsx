@@ -3,14 +3,38 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft } from 'lucide-react'
+import { useSessionContext } from '@/lib/hooks/useSessionContext'
 
 interface SessionDetailHeaderProps {
   sessionTitle: string
+  sessionSlug: string
 }
 
 export default function SessionDetailHeader({
   sessionTitle,
+  sessionSlug,
 }: SessionDetailHeaderProps) {
+  const { context, clearContext } = useSessionContext()
+
+  // Only show "Back to Booth" if context exists AND matches current session
+  const isFromBooth = context && context.sessionSlug === sessionSlug
+
+  const backHref = isFromBooth
+    ? `/booths/${context.boothSlug}`
+    : '/sessions'
+
+  const backLabel = isFromBooth ? 'Back to Booth' : 'All Sessions'
+
+  const ariaLabel = isFromBooth
+    ? `Return to booth: ${context.sessionTitle}` // sessionTitle stored is actually the booth name when coming from booth
+    : 'Return to All Sessions'
+
+  // Clear context when navigating back via contextual link (prevents infinite loop)
+  const handleBackClick = () => {
+    if (isFromBooth) {
+      clearContext()
+    }
+  }
   return (
     <header
       role="banner"
@@ -23,12 +47,13 @@ export default function SessionDetailHeader({
             {/* Left: Back Button */}
             <div>
               <Link
-                href="/sessions"
+                href={backHref}
+                onClick={handleBackClick}
                 className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-3 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-                aria-label="Return to All Sessions"
+                aria-label={ariaLabel}
               >
                 <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-                <span>All Sessions</span>
+                <span>{backLabel}</span>
               </Link>
             </div>
 
@@ -63,12 +88,13 @@ export default function SessionDetailHeader({
             {/* Left: Back Button */}
             <div>
               <Link
-                href="/sessions"
+                href={backHref}
+                onClick={handleBackClick}
                 className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-2 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-                aria-label="Return to All Sessions"
+                aria-label={ariaLabel}
               >
                 <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-                <span className="text-compact">All Sessions</span>
+                <span className="text-compact">{backLabel}</span>
               </Link>
             </div>
 
@@ -101,9 +127,10 @@ export default function SessionDetailHeader({
         <div className="grid grid-cols-[auto_1fr] gap-4 items-center h-20 px-4">
           {/* Left: Back arrow */}
           <Link
-            href="/sessions"
+            href={backHref}
+            onClick={handleBackClick}
             className="flex items-center text-brand-navy hover:text-primary-blue p-2 -ml-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-            aria-label="Return to All Sessions"
+            aria-label={ariaLabel}
           >
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
           </Link>

@@ -14,7 +14,7 @@ export default function BoothDetailHeader({
   boothName,
   boothSlug,
 }: BoothDetailHeaderProps) {
-  const { context } = useSessionContext()
+  const { context, clearContext } = useSessionContext()
 
   // Only show "Back to Session" if context exists AND matches current booth
   const isFromSession = context && context.boothSlug === boothSlug
@@ -29,6 +29,13 @@ export default function BoothDetailHeader({
   const ariaLabel = isFromSession
     ? `Return to session: ${context.sessionTitle}`
     : 'Return to All Booths'
+
+  // Clear context when navigating back via contextual link (prevents infinite loop)
+  const handleBackClick = () => {
+    if (isFromSession) {
+      clearContext()
+    }
+  }
   return (
     <header
       role="banner"
@@ -42,6 +49,7 @@ export default function BoothDetailHeader({
             <div>
               <Link
                 href={backHref}
+                onClick={handleBackClick}
                 className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-3 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
                 aria-label={ariaLabel}
               >
@@ -82,6 +90,7 @@ export default function BoothDetailHeader({
             <div>
               <Link
                 href={backHref}
+                onClick={handleBackClick}
                 className="flex items-center gap-2 text-brand-navy font-medium hover:text-primary-blue hover:bg-primary-blue/5 px-2 py-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
                 aria-label={ariaLabel}
               >
@@ -120,6 +129,7 @@ export default function BoothDetailHeader({
           {/* Left: Back arrow */}
           <Link
             href={backHref}
+            onClick={handleBackClick}
             className="flex items-center text-brand-navy hover:text-primary-blue p-2 -ml-2 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
             aria-label={ariaLabel}
           >

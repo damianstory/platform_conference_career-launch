@@ -60,7 +60,11 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
 
         {/* Session Banner - Platinum only, if associated session exists */}
         {isPlatinum && booth.tier === 'platinum' && booth.associatedSessionSlug && (
-          <SessionBanner sessionSlug={booth.associatedSessionSlug} />
+          <SessionBanner
+            sessionSlug={booth.associatedSessionSlug}
+            boothSlug={booth.slug}
+            boothName={booth.name}
+          />
         )}
 
         {/* Company Story - Always shown */}

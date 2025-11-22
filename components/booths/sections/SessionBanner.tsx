@@ -1,15 +1,22 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { ExternalLink } from 'lucide-react'
 import { getSessionBySlug } from '@/data/sample-sessions'
+import { useSessionContext } from '@/lib/hooks/useSessionContext'
 
 interface SessionBannerProps {
   sessionSlug: string
+  boothSlug: string
+  boothName: string
 }
 
-export default function SessionBanner({ sessionSlug }: SessionBannerProps) {
+export default function SessionBanner({ sessionSlug, boothSlug, boothName }: SessionBannerProps) {
+  const router = useRouter()
+  const { saveContext } = useSessionContext()
+  // Navigation from booth to session with context tracking
+
   // Fetch session data
   const session = getSessionBySlug(sessionSlug)
 
@@ -19,10 +26,19 @@ export default function SessionBanner({ sessionSlug }: SessionBannerProps) {
     return null
   }
 
+  // Handle click: Save booth context before navigating to session
+  const handleWatchSession = () => {
+    // Save context: sessionSlug (where going), sessionTitle, boothSlug (where coming from)
+    // When on session page, we can check if context.sessionSlug matches current session
+    // and show "Back to Booth" linking to context.boothSlug
+    saveContext(sessionSlug, session.title, boothSlug)
+    router.push(`/sessions/${session.slug}`)
+  }
+
   return (
-    <Link
-      href={`/sessions/${session.slug}`}
-      className="col-span-12 block group"
+    <button
+      onClick={handleWatchSession}
+      className="col-span-12 block group w-full text-left"
       aria-label={`Watch career session: ${session.title} from Block ${session.block_number}`}
     >
       <div className="
@@ -65,6 +81,6 @@ export default function SessionBanner({ sessionSlug }: SessionBannerProps) {
           </div>
         </div>
       </div>
-    </Link>
+    </button>
   )
 }
