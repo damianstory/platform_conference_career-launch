@@ -1,6 +1,7 @@
 'use client';
 
 import { UserType } from '@/lib/hooks/useRegistrationForm';
+import { GraduationCap, User } from 'lucide-react';
 
 interface UserTypeSelectionProps {
   onSelect: (type: UserType) => void;
@@ -23,19 +24,8 @@ export default function UserTypeSelection({
       >
         {/* Icon */}
         <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-[#E6F4FF] rounded-full flex items-center justify-center group-hover:bg-[#C6E7FF] transition-colors">
-            <svg
-              className="w-6 h-6 md:w-7 md:h-7 text-[#0092FF]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 3L1 9l11 6 9-5.5V17h2V9L12 3z" />
-              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
-            </svg>
-          </div>
+          <GraduationCap className="w-6 h-6 md:w-7 md:h-7 text-[#0092FF]" strokeWidth={2} />
+        </div>
 
         {/* Content */}
         <div className="flex-1 text-left">
@@ -71,18 +61,7 @@ export default function UserTypeSelection({
       >
         {/* Icon */}
         <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-[#E6F4FF] rounded-full flex items-center justify-center group-hover:bg-[#C6E7FF] transition-colors">
-          <svg
-            className="w-6 h-6 md:w-7 md:h-7 text-[#0092FF]"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="8" r="4" />
-            <path d="M12 14c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z" />
-          </svg>
+          <User className="w-6 h-6 md:w-7 md:h-7 text-[#0092FF]" strokeWidth={2} />
         </div>
 
         {/* Content */}
