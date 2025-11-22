@@ -85,7 +85,7 @@ This session will break down common perceptions, highlight **emerging opportunit
     'Understand educational requirements and certification',
     'Discover career opportunities in diagnostic medicine'
   ],
-  presenter_name: `thinkAG & The Canadian Agricultural Human Resource Council`,
+  presenter_name: `Agriculture in the Classroom Canada (AITC-C) & The Canadian Agricultural Human Resource Council (CAHRC)`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/robert-kim.jpg',
   thumbnail_url: '/images/sessions/lab-tech-thumb.jpg',

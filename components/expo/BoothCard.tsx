@@ -34,7 +34,7 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
     // Hardcoded exceptions for specific titles that should display on 2 lines
     const twoLineExceptions: { [key: string]: [string, string] } = {
       'Kids Help Phone': ['Kids Help', 'Phone'],
-      'thinkAG & CAHRC': ['thinkAG', '& CAHRC'],
+      'AITC-C & CAHRC': ['AITC-C', '& CAHRC'],
       'Vox Pop Labs': ['Vox Pop', 'Labs'],
       'Ernst & Young': ['Ernst', '& Young'],
       'Royal Canadian Air Force': ['Royal Canadian', 'Air Force']
