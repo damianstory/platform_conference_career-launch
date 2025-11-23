@@ -110,6 +110,12 @@ export const futureBuild: PlatinumBoothData = {
   },
   resources: [
     {
+      title: 'Air Force Career Profiles',
+      description: 'Explore detailed career profiles and opportunities in the Royal Canadian Air Force',
+      url: 'https://forces.ca/en/careers/env_2',
+      type: 'link'
+    },
+    {
       title: 'RCAF Across Canada',
       description: 'Explore RCAF locations and operations from coast to coast',
       url: '/resources/RCAF Across Canada.pdf',
@@ -381,34 +387,38 @@ export const tradesMaster: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
+      title: 'Coming Soon',
+      description: 'Coming Soon',
       url: '#',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
+      title: 'Coming Soon',
+      description: 'Coming Soon',
       url: '#',
-      type: 'video'
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
+      title: 'Coming Soon',
+      description: 'Coming Soon',
       url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
+      title: 'Coming Soon',
+      description: 'Coming Soon',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Coming Soon',
+      description: 'Coming Soon',
+      url: '#',
+      type: 'link'
+    },
+    {
+      title: 'Coming Soon',
+      description: 'Coming Soon',
       url: '#',
       type: 'link'
     }
@@ -738,35 +748,39 @@ export const dataDynamics: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
+      title: 'Perceptions of Trades Training Gaining Traction Over University Report',
+      description: 'Research on shifting perspectives toward skilled trades and vocational training',
+      url: 'https://www.torontomu.ca/diversity/reports/perceptions-of-trades-training-gaining-traction-over-university/',
+      type: 'pdf'
     },
     {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'ADaPT for Black Youth',
+      description: 'Program supporting Black youth in developing future-ready skills',
+      url: 'https://www.torontomu.ca/diversity/research/future-skills/adaptforblackyouth/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Newcomer Employment and Entrepreneurship Knowledge Hub (NEESH)',
+      description: 'Resources and programs supporting newcomer entrepreneurs and employment',
+      url: 'https://scaddingcourt.org/programs/program-category/entrepreneurship-programs/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Ecosystem Map of Skills Organizations',
+      description: 'Comprehensive mapping of skills development organizations across Canada',
+      url: 'https://www.torontomu.ca/diversity/research/future-skills/eco-system-map-of-skills-organization/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Bridging the AI Gap in SMEs in Canada Report',
+      description: 'Research on AI adoption challenges and opportunities for small and medium enterprises',
+      url: 'https://www.torontomu.ca/diversity/reports/bridging-the-ai-gap-in-smes-in-canada/',
+      type: 'pdf'
+    },
+    {
+      title: 'Meet the DI Team',
+      description: 'Learn about the researchers and leaders at the Diversity Institute',
+      url: 'https://www.torontomu.ca/diversity/about/team/#!tab-1605106727445-team',
       type: 'link'
     }
   ],
@@ -823,35 +837,39 @@ export const marketGenius: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'What You Can Do Here',
+      description: 'Explore diverse career opportunities and service lines at EY',
+      url: 'https://www.ey.com/en_ca/careers/what-you-can-do-here',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'What It\'s Like to Work Here',
+      description: 'Discover EY\'s culture, values, and employee experience',
+      url: 'https://www.ey.com/en_ca/careers/what-its-like-to-work-here',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'How to Join Us',
+      description: 'Learn about the application process and recruitment timeline',
+      url: 'https://www.ey.com/en_ca/careers/how-to-join-us',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Student Job Search',
+      description: 'Browse and apply for student positions, internships, and co-op opportunities',
+      url: 'https://eyglobal.yello.co/job_boards/c1riT--B2O-KySgYWsZO1Q?locale=en',
+      type: 'link'
+    },
+    {
+      title: 'Our People & Purpose',
+      description: 'Learn about EY\'s commitment to making a positive impact in the world',
+      url: 'https://www.ey.com/en_ca/about-us#our-people',
+      type: 'link'
+    },
+    {
+      title: 'Alumni at EY',
+      description: 'Stay connected with the EY alumni network and opportunities',
+      url: 'https://www.ey.com/en_ca/alumni',
       type: 'link'
     }
   ],
@@ -907,35 +925,39 @@ export const consultPro: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Future Students | Visit Campus',
+      description: 'Explore Humber campus and discover what it\'s like to be a student',
+      url: 'https://humber.ca/future-students.html',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Career Finder',
+      description: 'Interactive tool to help you find the perfect Humber program for your career goals',
+      url: 'https://humbercareerfinder.com/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Engineer Your Dream Career',
+      description: 'Explore engineering programs and pathways at Humber',
+      url: 'https://appliedtechnology.humber.ca/future-students/explore/full-time/related-programs/engineering.html',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'What is Work Integrated Learning (WIL)',
+      description: 'Learn how Humber integrates real-world work experience into your education',
+      url: 'https://humber.ca/work-integrated-learning/',
+      type: 'link'
+    },
+    {
+      title: 'The Barrett STEAM Academy',
+      description: 'Innovative programs in Science, Technology, Engineering, Arts, and Mathematics',
+      url: 'https://humber.ca/barrett-centre-for-technology-innovation/steam-academy.html',
+      type: 'link'
+    },
+    {
+      title: 'Faculty of Applied Science & Technology',
+      description: 'Explore FAST programs, open house events, and campus tours',
+      url: 'https://humber.ca/future-students/tours-events/open-house/faculties-programs/fast.html',
       type: 'link'
     }
   ],
@@ -993,35 +1015,39 @@ export const manufactureTech: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Working at Hydro One',
+      description: 'Explore career opportunities at Ontario\'s largest electricity provider',
+      url: 'https://www.hydroone.com/careers',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'About Hydro One',
+      description: 'Learn about our mission, values, and role in powering Ontario',
+      url: 'https://www.hydroone.com/about/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Indigenous Partnerships',
+      description: 'Our commitment to building meaningful relationships with Indigenous communities',
+      url: 'https://www.hydroone.com/about/indigenous-partnerships',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Community Investment',
+      description: 'Building safe communities through investment and support programs',
+      url: 'https://www.hydroone.com/about/sustainability/building-safe-communities',
+      type: 'link'
+    },
+    {
+      title: 'Diversity',
+      description: 'Our commitment to fostering an inclusive and diverse workplace',
+      url: 'https://www.hydroone.com/careers/diversity',
+      type: 'link'
+    },
+    {
+      title: 'Sustainability',
+      description: 'Environmental stewardship and sustainable energy practices at Hydro One',
+      url: 'https://www.hydroone.com/Sustainability/',
       type: 'link'
     }
   ],
@@ -1079,35 +1105,39 @@ export const cyberShield: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Complete Your Be There Certificate',
+      description: 'Free mental health training to help you support others in need',
+      url: 'https://www.betherecertificate.org/?referral=myblueprintcareerlaunch&utm_source=myblueprint&utm_medium=contest&utm_campaign=immersion',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Jack Amplified',
+      description: 'Our podcast featuring young people sharing their mental health journeys',
+      url: 'https://open.spotify.com/show/5cWPTXeVfdY7szJ9U9OvpO?si=90aeed6f021d4c25&nd=1&dlsi=efc97b5ef40d4382',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Start a Chapter or Become a Champion!',
+      description: 'Bring Jack.org to your school or community and make a difference',
+      url: 'https://www.jack.org/communities',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'For Educators: Visit Our EdHub',
+      description: 'Resources, lesson plans, and support materials for educators',
+      url: 'https://edhub.jack.org',
+      type: 'link'
+    },
+    {
+      title: 'Be There Poster',
+      description: 'Download and share this poster about mental health support',
+      url: '/resources/be-there-poster.pdf',
+      type: 'pdf'
+    },
+    {
+      title: 'Join Our Mailing List',
+      description: 'Stay connected with Jack.org news, events, and mental health resources',
+      url: 'https://www.jack.org/campaigns/thatfeeling',
       type: 'link'
     }
   ],
@@ -1164,35 +1194,39 @@ export const bioMedical: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Student Resources',
+      description: 'Comprehensive toolkit with mental health resources designed for students',
+      url: 'https://khp-student-toolkit.carrd.co/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'National Youth Council - Kids Help Phone',
+      description: 'Join our youth leadership council and help shape mental health services for young people',
+      url: 'https://kidshelpphone.ca/opportunities/national-youth-council/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Cam\'s Kids Ambassador Program',
+      description: 'Become a mental health advocate and champion in your community',
+      url: 'https://kidshelpphone.ca/get-involved/programs-resources/cams-kids-ambassadors/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'We Rise: A Black Engagement Program',
+      description: 'Culturally responsive mental health support and engagement for Black youth',
+      url: 'https://kidshelpphone.ca/opportunities/we-rise-a-black-engagement-program/',
+      type: 'link'
+    },
+    {
+      title: 'Paving Paths: A Newcomer Engagement Program',
+      description: 'Mental health resources and support specifically for newcomer youth',
+      url: 'https://kidshelpphone.ca/opportunities/paving-paths-a-newcomer-engagement-program-by-kids-help-phone/',
+      type: 'link'
+    },
+    {
+      title: 'For Educators: Counsellor in the Classroom',
+      description: 'Register for mental health education and support resources for your classroom',
+      url: 'https://kidshelpphone.ca/get-involved/are-you-an-educator-check-out-counsellor-in-the-classroom',
       type: 'link'
     }
   ],
@@ -1336,35 +1370,39 @@ export const legalServices: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Should I Buy It Quiz',
+      description: 'Interactive quiz to help teens make smart purchasing decisions',
+      url: 'https://www.mydoh.ca/tools/should-i-buy-it-quiz/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'How to Write a Resume',
+      description: 'Step-by-step guide with examples for teens creating their first resume',
+      url: 'https://www.mydoh.ca/learn/blog/career/how-to-make-a-resume-for-teens-with-examples/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Part Time Jobs for Teens',
+      description: 'Discover 14 of the best part-time job opportunities for teens',
+      url: 'https://www.mydoh.ca/learn/blog/career/14-best-part-time-jobs-for-teens/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Mydoh - How it Works',
+      description: 'Learn how Mydoh helps teens manage money, earn, save, and spend safely',
+      url: 'https://www.mydoh.ca/how-it-works/',
+      type: 'link'
+    },
+    {
+      title: 'Money Talks | Blog',
+      description: 'Financial literacy articles covering earning, saving, spending, and career topics',
+      url: 'https://www.mydoh.ca/learn/blog/',
+      type: 'link'
+    },
+    {
+      title: 'Careers at Mydoh',
+      description: 'Explore career opportunities at Mydoh and join our team',
+      url: 'https://www.mydoh.ca/careers/',
       type: 'link'
     }
   ],
@@ -1503,36 +1541,40 @@ export const urbanPlanning: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Infrastructure Construction Industry',
+      description: 'Explore career opportunities in Ontario\'s water infrastructure construction sector',
+      url: 'https://ontariowatercareers.com/careers/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
-    },
-    {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
-    },
-    {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Find Your Perfect Role',
+      description: 'Discover entry-level positions that match your interests and skills',
+      url: 'https://ontariowatercareers.com/jobs/entry-level-interest/',
       type: 'link'
+    },
+    {
+      title: 'Why Work In Water?',
+      description: 'Learn about the benefits, impact, and opportunities in the water infrastructure sector',
+      url: 'https://ontariowatercareers.com/why-water/',
+      type: 'link'
+    },
+    {
+      title: 'Educator Resources',
+      description: 'Resources and materials for educators to teach about water infrastructure careers',
+      url: 'https://ontariowatercareers.com/educator-resources/',
+      type: 'link'
+    },
+    {
+      title: 'Talking Points & Salary Guide',
+      description: 'Comprehensive guide for guidance counselors with salary information and career talking points',
+      url: '/resources/oswca-talking-points-salary-guide.pdf',
+      type: 'pdf'
+    },
+    {
+      title: 'Trading Cards',
+      description: 'Interactive trading cards featuring water infrastructure careers and roles',
+      url: '/resources/oswca-trading-cards.pdf',
+      type: 'pdf'
     }
   ],
   sessionSlides: {
