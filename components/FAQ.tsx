@@ -2,21 +2,8 @@ import Accordion, { AccordionItem } from './Accordion';
 
 const faqItems: AccordionItem[] = [
   {
-    id: 'faq-1',
-    title: 'How do I access the sessions?',
-    content: (
-      <p>
-        Click the sessions button and then scroll, search, or use the filters to find the session
-        you&apos;re most interested in watching.
-        <br />
-        <br />
-        Watch this 2-minute video for a complete overview of how this platform works.
-      </p>
-    ),
-  },
-  {
     id: 'faq-9',
-    title: 'What\'s the difference between the Conference and All Sessions tab on the Sessions page?',
+    title: 'What\'s the difference between the Conference Schedule and All Sessions tab on the Sessions page?',
     content: (
       <p>
         The difference between the two tabs is how the sessions are organized. In the Conference tab, all 27 sessions have been split up evenly over the course of four different blocks.
