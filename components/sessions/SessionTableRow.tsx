@@ -138,11 +138,6 @@ export default function SessionTableRow({
               role="region"
               aria-label={`Details for ${session.title}`}
             >
-              {/* Mobile-only Industry Badge */}
-              <div className="lg:hidden mb-4">
-                <IndustryBadge industry={session.industries[0]} />
-              </div>
-
               {/* Description Section */}
               {session.description && (
                 <div className="mb-4">
@@ -181,10 +176,10 @@ export default function SessionTableRow({
                   variant === 'conference' ? 'text-white/80' : 'text-gray-600'
                 }`}>
                   <div>
-                    <span className="font-medium">Duration:</span> {session.duration} minutes
+                    <span className="font-medium">Industry:</span> {session.industries[0]}
                   </div>
                   <div>
-                    <span className="font-medium">Block:</span> {session.block_number}
+                    <span className="font-medium">Duration:</span> {session.duration} minutes
                   </div>
                   <div>
                     <span className="font-medium">Grades:</span> {formatGradeLevel(session.grade_level)}
