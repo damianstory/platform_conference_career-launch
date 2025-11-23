@@ -2072,35 +2072,39 @@ export const publicHealth: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Discover Tourism Career Pathways',
+      description: 'Explore diverse career pathways in Ontario\'s tourism and hospitality industry',
+      url: 'https://discovertourism.ca/guidebook/career-pathways/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Featured Tourism Career Stories',
+      description: 'Read inspiring stories from tourism professionals across Ontario',
+      url: 'https://discovertourism.ca/featured-stories/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Is Tourism Right for Me?',
+      description: 'Take our interactive quiz to discover if tourism careers align with your interests',
+      url: 'https://discovertourism.ca/tool/is-tourism-right-for-me/#quiz',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Skills That Travel',
+      description: 'Discover how skills developed in tourism transfer to opportunities worldwide',
+      url: 'https://www.skillsthattravel.ca/skills-that-travel',
+      type: 'link'
+    },
+    {
+      title: 'Tourism: What Is It Really Like?',
+      description: 'Get an insider\'s perspective on what working in tourism is truly like',
+      url: 'https://discovertourism.ca/tool/tourism-what-is-it-really-like/',
+      type: 'link'
+    },
+    {
+      title: 'Stay Connected',
+      description: 'Subscribe to TIAO updates and stay informed about tourism industry news',
+      url: 'https://www.tiaontario.ca/cpages/subscription',
       type: 'link'
     }
   ],
@@ -2159,35 +2163,39 @@ export const voxPopLabs: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Meet the VPL Team',
+      description: 'Get to know the team behind Vox Pop Labs and our mission',
+      url: 'https://voxpoplabs.com/about#TeamMembers',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'DegreeHub',
+      description: 'Explore postsecondary programs and career pathways with AI-powered guidance',
+      url: 'https://degreehub.com/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Vote Compass Youth Edition',
+      description: 'Interactive civic engagement tool designed for young voters',
+      url: 'https://youth.votecompass.com/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Career Myth Buster',
+      description: 'Debunk common career myths and discover evidence-based career information',
+      url: 'https://degreehub.com/careermythbuster',
+      type: 'link'
+    },
+    {
+      title: 'About Us',
+      description: 'Learn about Vox Pop Labs\' mission to combine human and AI to help communities',
+      url: 'https://voxpoplabs.com/about#TeamMembers',
+      type: 'link'
+    },
+    {
+      title: 'B Corp Impact Score',
+      description: 'See our B Corporation certification and commitment to social and environmental impact',
+      url: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/vox-pop-labs/',
       type: 'link'
     }
   ],
