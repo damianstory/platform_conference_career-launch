@@ -154,7 +154,7 @@ export default function SessionTableRow({
 
               {/* Presenter Section */}
               {session.presenter_name && (
-                <div className="mb-4">
+                <div className="mb-4 text-center sm:text-left">
                   <h4 className={`text-sm font-semibold mb-2 ${
                     variant === 'conference' ? 'text-white/90' : 'text-gray-700'
                   }`}>Organization</h4>
@@ -168,11 +168,11 @@ export default function SessionTableRow({
               )}
 
               {/* Session Details (Mobile Duration) */}
-              <div className="mb-4 lg:hidden">
+              <div className="mb-4 lg:hidden text-center sm:text-left">
                 <h4 className={`text-sm font-semibold mb-2 ${
                   variant === 'conference' ? 'text-white/90' : 'text-gray-700'
                 }`}>Session Details</h4>
-                <div className={`flex flex-wrap gap-4 text-sm ${
+                <div className={`flex flex-col sm:flex-row gap-4 text-sm ${
                   variant === 'conference' ? 'text-white/80' : 'text-gray-600'
                 }`}>
                   <div>
