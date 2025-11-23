@@ -61,7 +61,7 @@ export default function SessionDetailHeader({
             <div className="flex items-center justify-center">
               <Link
                 href="/"
-                className="flex items-center hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
+                className="flex items-center flex-shrink-0 hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
                 aria-label="myBlueprint home"
               >
                 <Image
@@ -102,7 +102,7 @@ export default function SessionDetailHeader({
             <div className="flex items-center justify-center">
               <Link
                 href="/"
-                className="flex items-center hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
+                className="flex items-center flex-shrink-0 hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
                 aria-label="myBlueprint home"
               >
                 <Image
@@ -141,7 +141,7 @@ export default function SessionDetailHeader({
           <div className="flex items-center justify-center">
             <Link
               href="/"
-              className="flex items-center hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
+              className="flex items-center flex-shrink-0 hover:opacity-90 transition-opacity focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 rounded"
               aria-label="myBlueprint home"
             >
               <Image
