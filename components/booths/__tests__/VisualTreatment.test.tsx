@@ -87,7 +87,6 @@ describe('Visual Treatment System', () => {
           logo="/logo.png"
           tagline="Test"
           primaryCTA={{ text: 'Test', url: '#' }}
-          secondaryCTA={{ text: 'Test', url: '#' }}
         />
       )
 

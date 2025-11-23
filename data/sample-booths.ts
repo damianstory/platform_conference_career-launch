@@ -157,11 +157,6 @@ export const futureBuild: PlatinumBoothData = {
     url: 'https://affinitas.my.site.com/RCAFContactUs/s/?c__EngagementID=a01Mm00000XsAnS',
     type: 'contact'
   },
-  secondaryCTA: {
-    text: 'Browse Careers',
-    url: 'https://forces.ca/en/careers/env_2',
-    type: 'careers'
-  },
   contact: {
     email: 'RCAFApplicants-CandidatsdelARC@forces.gc.ca',
     website: 'https://www.forces.ca',
@@ -206,35 +201,39 @@ export const financeHub: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Youth Outreach',
+      description: 'Programs and opportunities for youth to engage with nuclear science and technology',
+      url: 'https://www.cnl.ca/youth-outreach/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'CNL Careers',
+      description: 'Explore career opportunities at Canada\'s premier nuclear science organization',
+      url: 'https://www.cnl.ca/about-cnl/work-with-us/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Academic Partnership Program',
+      description: 'Collaborative research and learning opportunities with CNL',
+      url: 'https://www.cnl.ca/about-cnl/academic-partnership-program/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Student Careers',
+      description: 'Co-op placements, internships, and entry-level opportunities for students',
+      url: 'https://www.cnl.ca/about-cnl/student-careers/',
+      type: 'link'
+    },
+    {
+      title: 'Health Sciences: Meet the Team',
+      description: 'Discover the professionals advancing medical isotopes and health innovations',
+      url: 'https://www.cnl.ca/health-science-2/meet-the-team-health-sciences',
+      type: 'link'
+    },
+    {
+      title: 'Clean Energy: Meet the Team',
+      description: 'Meet the experts developing Canada\'s clean energy future',
+      url: 'https://www.cnl.ca/clean-energy/meet-the-team-clean-energy/',
       type: 'link'
     }
   ],
@@ -255,11 +254,6 @@ export const financeHub: PlatinumBoothData = {
     text: 'Learn More',
     url: 'https://www.cnl.ca/',
     type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://financehub.example.com/contact',
-    type: 'contact'
   },
   contact: {
     email: 'communications@cnl.ca',
@@ -304,35 +298,27 @@ export const eduPath: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'About Us',
+      description: 'Learn about our mission to help young people develop high agency and entrepreneurial thinking',
+      url: 'https://www.cansbridgescholars.com/about',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Foundations Course',
+      description: 'Our flagship cohort-based entrepreneurship program for students aged 18-25',
+      url: 'https://www.cansbridgescholars.com/courses/foundations',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Cansbridge Fellowship',
+      description: 'Join our community of young leaders and entrepreneurs',
+      url: 'https://cansbridgefellowship.com/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Connect with Lyn',
+      description: 'Connect with Lyn Chen, founder of Cansbridge Scholars, on LinkedIn',
+      url: 'https://www.linkedin.com/in/lynchen/',
       type: 'link'
     }
   ],
@@ -353,11 +339,6 @@ export const eduPath: PlatinumBoothData = {
     text: 'Learn More',
     url: 'https://www.cansbridgescholars.com/',
     type: 'application'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://edupath.example.com/contact',
-    type: 'contact'
   },
   contact: {
     email: 'lyn@cansbridgescholars.com',
@@ -449,11 +430,6 @@ export const tradesMaster: PlatinumBoothData = {
     url: 'https://www.encore-can.com/about/working-at-encore/',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://tradesmaster.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     website: 'https://www.encore-can.com/',
     socialLinks: [
@@ -489,35 +465,39 @@ export const worldExplorer: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Careers at CPKC',
+      description: 'Explore career opportunities across North America\'s first transnational railroad',
+      url: 'https://www.cpkcr.com/en/careers',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'CPKC Job Map',
+      description: 'Interactive map showing available positions across the network',
+      url: 'https://careers.cpr.ca/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Innovation & Technology',
+      description: 'Discover how CPKC is leading the rail industry with cutting-edge technology',
+      url: 'https://www.cpkcr.com/en/safety/Innovation',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Connecting a Continent',
+      description: 'Learn how CPKC connects Canada, the U.S., and Mexico',
+      url: 'https://www.cpkcr.com/en/our-advantage/connecting-a-continent',
+      type: 'link'
+    },
+    {
+      title: 'Sustainability Driven',
+      description: 'Our commitment to environmental responsibility and sustainable operations',
+      url: 'https://www.cpkcr.com/en/sustainability',
+      type: 'link'
+    },
+    {
+      title: 'Our History',
+      description: 'The rich heritage of Canadian Pacific and Kansas City Southern railways',
+      url: 'https://www.cpkcr.com/en/about-cpkc/history',
       type: 'link'
     }
   ],
@@ -537,11 +517,6 @@ export const worldExplorer: PlatinumBoothData = {
     text: 'Make Big Moves',
     url: 'https://www.cpkcr.com/en/careers',
     type: 'learn-more'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://worldexplorer.example.com/contact',
-    type: 'contact'
   },
   contact: {
     headquarters: {
@@ -585,35 +560,39 @@ export const greenPower: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Career Profiles',
+      description: 'Explore diverse career paths in welding, fabrication, and allied technologies',
+      url: 'https://www.cwbweldingfoundation.org/pathways/#career-profiles',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Programs & Events',
+      description: 'Youth programs, workshops, and events to explore welding careers',
+      url: 'https://www.cwbweldingfoundation.org/programs/#programs-for-youth',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Post-Secondary Program Support',
+      description: 'Financial support and resources for post-secondary welding students',
+      url: 'https://www.cwbweldingfoundation.org/programs/post-secondary-support/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Curriculum Support Program',
+      description: 'Resources and support for educators teaching welding and fabrication',
+      url: 'https://www.cwbweldingfoundation.org/programs/curriculum-support-program/',
+      type: 'link'
+    },
+    {
+      title: 'Equipment and Technology Advancement Program',
+      description: 'Funding to help schools upgrade welding equipment and technology',
+      url: 'https://www.cwbweldingfoundation.org/programs/equipment-and-technology-advancement-program/',
+      type: 'link'
+    },
+    {
+      title: 'Women of Steel',
+      description: 'Empowering women in welding and skilled trades through mentorship and support',
+      url: 'https://www.cwbweldingfoundation.org/programs/wos/',
       type: 'link'
     }
   ],
@@ -634,11 +613,6 @@ export const greenPower: PlatinumBoothData = {
     text: 'Bursaries & Awards',
     url: 'https://www.cwbweldingfoundation.org/programs/#scholarships-and-bursaries',
     type: 'application'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://greenpower.example.com/contact',
-    type: 'contact'
   },
   contact: {
     website: 'https://www.cwbweldingfoundation.org/',
@@ -675,35 +649,39 @@ export const creativeMinds: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
+      title: 'Discover Year Flyer',
+      description: 'Download our program overview and learn about the transformative gap year experience',
+      url: '/resources/discover-year-flyer.pdf',
+      type: 'pdf'
     },
     {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Apply to Discover Year',
+      description: 'Start your application for the transformative gap year program',
+      url: 'https://discoveryear.ca/apply/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
+      title: 'Hear from Our Graduates',
+      description: 'Student stories and testimonials from Discover Year alumni',
+      url: 'https://discoveryear.ca/student-stories/',
+      type: 'link'
+    },
+    {
+      title: 'Gap Year: A Path to Purposeful Education',
+      description: 'TED Talk by Jay Gosselin on the power of gap year programs',
+      url: 'https://www.ted.com/talks/jay_gosselin_gap_year_a_path_to_purposeful_education',
       type: 'video'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Program Structure',
+      description: 'Learn about the curriculum, timeline, and key components of Discover Year',
+      url: 'https://discoveryear.ca/program-structure/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Learn About Our 2026 Winter/Spring Term',
+      description: 'Explore the upcoming 2026 Winter/Spring program and application details',
+      url: 'https://discoveryear.ca/2026-winter-term/',
       type: 'link'
     }
   ],
@@ -724,11 +702,6 @@ export const creativeMinds: PlatinumBoothData = {
     text: 'Info Sessions',
     url: 'https://discoveryear.ca/events/',
     type: 'learn-more'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://creativeminds.example.com/contact',
-    type: 'contact'
   },
   contact: {
     email: 'outreach@discoveryear.ca',
@@ -813,11 +786,6 @@ export const dataDynamics: PlatinumBoothData = {
     text: 'Learn More',
     url: 'https://www.torontomu.ca/diversity/',
     type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://datadynamics.example.com/contact',
-    type: 'contact'
   },
   contact: {
     email: 'diversityinstitute@torontomu.ca',
@@ -904,11 +872,6 @@ export const marketGenius: PlatinumBoothData = {
     url: 'https://www.ey.com/en_ca/careers/what-we-look-for',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://marketgenius.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     website: 'https://www.ey.com/en_ca',
     socialLinks: [
@@ -993,11 +956,6 @@ export const consultPro: PlatinumBoothData = {
     text: 'Career Areas',
     url: 'https://humber.ca/search/full-time/career-areas.html',
     type: 'application'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://consultpro.example.com/contact',
-    type: 'contact'
   },
   contact: {
     email: 'student.recruitment@humber.ca',
@@ -1085,11 +1043,6 @@ export const manufactureTech: PlatinumBoothData = {
     url: 'https://www.hydroone.com/careers',
     type: 'application'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://manufacturetech.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     website: 'https://www.hydroone.com/',
     socialLinks: [
@@ -1176,11 +1129,6 @@ export const cyberShield: PlatinumBoothData = {
     url: 'https://www.jack.org/communities',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://cybershield.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     email: 'hello@jack.org',
     socialLinks: [
@@ -1265,11 +1213,6 @@ export const bioMedical: PlatinumBoothData = {
     text: 'Get Involved',
     url: 'https://kidshelpphone.ca/get-involved/participate/volunteer',
     type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://biomedical.example.com/contact',
-    type: 'contact'
   },
   contact: {
     website: 'https://kidshelpphone.ca/',
@@ -1359,11 +1302,6 @@ export const foodService: PlatinumBoothData = {
     url: 'https://conservationontario.ca/conservation-authorities/find-a-conservation-authority',
     type: 'application'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://foodservicepro.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     website: 'https://trca.ca',
     email: 'Peel.education@trca.ca',
@@ -1446,11 +1384,6 @@ export const legalServices: PlatinumBoothData = {
     text: 'Learn More',
     url: 'https://www.mydoh.ca/',
     type: 'learn-more'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://legalservices.example.com/contact',
-    type: 'contact'
   },
   contact: {
     website: 'https://www.mydoh.ca',
@@ -1535,11 +1468,6 @@ export const socialImpact: PlatinumBoothData = {
     url: 'https://socialimpact.example.com/careers',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://socialimpact.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     headquarters: {
       address: '1100 Community Way',
@@ -1623,11 +1551,6 @@ export const urbanPlanning: PlatinumBoothData = {
     text: 'Explore Careers',
     url: 'https://ontariowatercareers.com/careers/',
     type: 'careers'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://urbanplanning.example.com/contact',
-    type: 'contact'
   },
   contact: {
     website: 'https://ontariowatercareers.com/contact/',
@@ -1716,11 +1639,6 @@ export const sportsManagement: PlatinumBoothData = {
     url: 'https://seekingscholarships.com/the-scholarship-report/',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://sportsmgmt.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     website: 'https://seekingscholarships.com/',
     email: 'seekingscholarshipscanada@gmail.com',
@@ -1805,11 +1723,6 @@ export const environmentalConsulting: PlatinumBoothData = {
     url: 'https://studenthaus.typeform.com/to/uRT2TWTT',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://ecoconsult.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     email: 'julian@studenthousinginitiative.com',
     socialLinks: [
@@ -1893,11 +1806,6 @@ export const automotiveTech: PlatinumBoothData = {
     text: 'Tools in the Trades',
     url: 'https://toolsinthetrades.ca/',
     type: 'application'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://autotech.example.com/contact',
-    type: 'contact'
   },
   contact: {
     website: 'https://www.supportontarioyouth.ca/',
@@ -1988,11 +1896,6 @@ export const fashionDesign: PlatinumBoothData = {
     url: 'https://thinkag.ca/en-ca/explore-careers',
     type: 'application'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://fashionforward.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     socialLinks: [
       { platform: 'email', url: 'mailto:mlockhart@cahrc-ccrha.ca', label: 'mlockhart@cahrc-ccrha.ca' },
@@ -2077,11 +1980,6 @@ export const hospitalityCollege: PlatinumBoothData = {
     text: 'Explore Careers',
     url: 'https://www.tps.ca/careers/',
     type: 'application'
-  },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://hospitalitypro.example.com/contact',
-    type: 'contact'
   },
   contact: {
     email: 'policerecruiters@tps.ca',
@@ -2174,11 +2072,6 @@ export const publicHealth: PlatinumBoothData = {
     url: 'https://www.skillsthattravel.ca/skills-that-travel',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://publichealth.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     email: 'info@tiaontario.ca',
     phone: '416-483-1691',
@@ -2266,11 +2159,6 @@ export const voxPopLabs: PlatinumBoothData = {
     url: 'https://voxpoplabs.com/signup',
     type: 'careers'
   },
-  secondaryCTA: {
-    text: 'Contact Us',
-    url: 'https://voxpoplabs.example.com/contact',
-    type: 'contact'
-  },
   contact: {
     socialLinks: [
       { platform: 'twitter', url: 'https://x.com/voxpoplabs' },
@@ -2330,11 +2218,6 @@ export const universityOfGuelph: StandardBoothData = {
     text: 'Visit Us',
     url: 'https://www.uoguelph.ca/admission/undergraduate/events/',
     type: 'contact'
-  },
-  secondaryCTA: {
-    text: 'Learn More',
-    url: 'https://apply.uoguelph.ca/register/?id=410f4687-a8f0-43f1-82a2-799607493e20',
-    type: 'application'
   },
   contact: {
     website: 'https://www.uoguelph.ca/admission/undergraduate/',
@@ -2397,11 +2280,6 @@ export const communityCollege: StandardBoothData = {
     url: 'https://www.conestogac.on.ca/future-students/meet-our-recruiters',
     type: 'contact'
   },
-  secondaryCTA: {
-    text: 'Big Giveaway Contest',
-    url: 'https://lp.constantcontactpages.com/sl/2L9LEfG/HSV',
-    type: 'application'
-  },
   contact: {
     email: 'recruitment@conestogac.on.ca',
     website: 'https://www.conestogac.on.ca',
@@ -2462,11 +2340,6 @@ export const careerMythBuster: StandardBoothData = {
     url: 'https://degreehub.com/careermythbuster',
     type: 'learn-more'
   },
-  secondaryCTA: {
-    text: 'Learn More',
-    url: 'https://degreehub.com/careermythbuster',
-    type: 'website'
-  },
   contact: {
     email: 'info@degreehub.com',
     socialLinks: [
@@ -2505,11 +2378,6 @@ export const industryImmersionSeries: StandardBoothData = {
     text: 'Learn More',
     url: 'https://industryimmersionseries.myblueprint.ca/',
     type: 'learn-more'
-  },
-  secondaryCTA: {
-    text: 'Visit Website',
-    url: 'https://industryimmersionseries.myblueprint.ca/',
-    type: 'website'
   },
   contact: {
     email: 'info@myblueprint.ca',

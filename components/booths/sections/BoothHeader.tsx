@@ -11,7 +11,6 @@ interface BoothHeaderProps {
   imageScale?: number
   tagline: string
   primaryCTA: CTAButton
-  secondaryCTA?: CTAButton
   website?: string
 }
 
@@ -21,7 +20,6 @@ export default function BoothHeader({
   imageScale,
   tagline,
   primaryCTA,
-  secondaryCTA,
   website
 }: BoothHeaderProps) {
   return (

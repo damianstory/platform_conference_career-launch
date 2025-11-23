@@ -208,7 +208,6 @@ describe('Comprehensive Final Test Suite', () => {
             logo="/logo.png"
             tagline="Tagline"
             primaryCTA={{ text: 'Visit Website', url: '#' }}
-            secondaryCTA={{ text: 'Contact', url: '#' }}
           />
         )
 
@@ -259,7 +258,6 @@ describe('Comprehensive Final Test Suite', () => {
             logo="/logo.png"
             tagline="Tagline"
             primaryCTA={{ text: 'Primary', url: '#' }}
-            secondaryCTA={{ text: 'Secondary', url: '#' }}
           />
         )
 
@@ -336,7 +334,6 @@ describe('Comprehensive Final Test Suite', () => {
           logo="/logo.png"
           tagline="Tagline"
           primaryCTA={{ text: 'Primary', url: '#' }}
-          secondaryCTA={{ text: 'Secondary', url: '#' }}
         />
       )
 

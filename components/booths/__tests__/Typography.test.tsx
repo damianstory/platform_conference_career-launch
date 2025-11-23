@@ -52,7 +52,6 @@ describe('Typography System', () => {
           logo="/logo.png"
           tagline="Test tagline"
           primaryCTA={{ text: 'Test', url: '#' }}
-          secondaryCTA={{ text: 'Test', url: '#' }}
         />
       )
 
@@ -69,7 +68,6 @@ describe('Typography System', () => {
           logo="/logo.png"
           tagline="Innovative solutions"
           primaryCTA={{ text: 'Test', url: '#' }}
-          secondaryCTA={{ text: 'Test', url: '#' }}
         />
       )
 

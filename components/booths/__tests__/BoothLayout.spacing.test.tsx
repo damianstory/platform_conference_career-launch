@@ -19,7 +19,6 @@ const mockPlatinumBooth: PlatinumBoothData = {
   tagline: 'Test tagline for spacing',
   description: 'Test description with enough content to verify spacing patterns are applied correctly throughout the component.',
   primaryCTA: { text: 'Learn More', url: 'https://example.com' },
-  secondaryCTA: { text: 'Contact Us', url: 'https://example.com/contact' },
   website: 'https://example.com',
   video: {
     title: 'Test Video',
@@ -85,7 +84,6 @@ describe('BoothLayout Spacing System', () => {
           logo="/logo.png"
           tagline="Test tagline"
           primaryCTA={{ text: 'Test', url: '#' }}
-          secondaryCTA={{ text: 'Test', url: '#' }}
         />
       )
 
@@ -166,7 +164,6 @@ describe('BoothLayout Spacing System', () => {
           logo="/logo.png"
           tagline="Test tagline"
           primaryCTA={{ text: 'Test', url: '#' }}
-          secondaryCTA={{ text: 'Test', url: '#' }}
         />
       )
 
@@ -242,7 +239,6 @@ describe('BoothLayout Spacing System', () => {
           logo="/logo.png"
           tagline="Test tagline"
           primaryCTA={{ text: 'Test', url: '#' }}
-          secondaryCTA={{ text: 'Test', url: '#' }}
         />
       )
 

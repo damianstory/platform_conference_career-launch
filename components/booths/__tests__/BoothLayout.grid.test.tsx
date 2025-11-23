@@ -48,7 +48,6 @@ const mockStandardBooth: StandardBoothData = {
   tagline: 'Test tagline',
   description: 'Test description',
   primaryCTA: { text: 'Learn More', url: 'https://example.com' },
-  secondaryCTA: { text: 'Contact Us', url: 'https://example.com/contact' },
   website: 'https://example.com',
   video: {
     title: 'Test Video',
