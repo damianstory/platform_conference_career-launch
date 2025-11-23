@@ -387,44 +387,44 @@ export const tradesMaster: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Coming Soon',
-      description: 'Coming Soon',
-      url: '#',
+      title: 'Encore Canada | What We Do',
+      description: 'Discover how Encore creates amazing experiences for live events, meetings, and conferences',
+      url: 'https://www.encore-can.com/what-we-do/',
       type: 'link'
     },
     {
-      title: 'Coming Soon',
-      description: 'Coming Soon',
-      url: '#',
+      title: 'Encore Canada Careers',
+      description: 'Explore career opportunities with Encore and join our team of event professionals',
+      url: 'https://jobs.encoreglobal.com/en?utm_source=encoreglobal.com&utm_medium=referral&utm_campaign=corporate-site&utm_content=footer',
       type: 'link'
     },
     {
-      title: 'Coming Soon',
-      description: 'Coming Soon',
-      url: '#',
+      title: 'Cielle & Co.',
+      description: 'Boutique event production and design company creating unforgettable experiences',
+      url: 'https://cielleandco.com/',
       type: 'link'
     },
     {
-      title: 'Coming Soon',
-      description: 'Coming Soon',
-      url: '#',
+      title: 'Live Nation',
+      description: 'Canada\'s leading live entertainment company producing concerts and events',
+      url: 'https://www.livenation.ca/',
       type: 'link'
     },
     {
-      title: 'Coming Soon',
-      description: 'Coming Soon',
-      url: '#',
+      title: 'JPdL',
+      description: 'Full-service event production and design company specializing in corporate events',
+      url: 'https://www.jpdl.com/',
       type: 'link'
     },
     {
-      title: 'Coming Soon',
-      description: 'Coming Soon',
-      url: '#',
+      title: 'The Creative Connoisseur',
+      description: 'Event design and production services for luxury and corporate events',
+      url: 'https://the-cc.ca/',
       type: 'link'
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1pI__8Js2dXuSzPswViHVgqDUrETmzt7gBFqdDilMFpA/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -1287,35 +1287,39 @@ export const foodService: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
+      title: 'Conservation Authorities Infographic',
+      description: 'Learn how conservation authorities create a resilient Ontario through watershed management',
+      url: 'https://conservationontario.ca/fileadmin/pdf/conservation_authorities_section/CO_Resilient_Ontario_2021_FINAL.pdf',
+      type: 'pdf'
     },
     {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'TRCA | Events Calendar',
+      description: 'Discover upcoming conservation events, programs, and community activities',
+      url: 'https://trca.ca/events-calendar/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'TRCA | Get Involved',
+      description: 'Explore volunteer opportunities, community programs, and ways to participate in conservation',
+      url: 'https://trca.ca/get-involved/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'Niagara Peninsula Conservation Authority',
+      description: 'Learn about conservation work in the Niagara Peninsula region',
+      url: 'https://npca.ca/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Conservation Halton',
+      description: 'Discover conservation initiatives and programs in the Halton region',
+      url: 'https://www.conservationhalton.ca/',
+      type: 'link'
+    },
+    {
+      title: 'Conservation Ontario',
+      description: 'Explore the network of 36 conservation authorities across Ontario',
+      url: 'https://conservationontario.ca/',
       type: 'link'
     }
   ],
@@ -1620,7 +1624,7 @@ export const sportsManagement: PlatinumBoothData = {
   organizationType: 'employer',
   pathway: 'college',
   logo: '/logos/seeking-scholarships.png',
-  tagline: 'For over a decade, we\'ve supported Ontario schools, students, and families with trusted tools to navigate the path to funding postsecondary education.',
+  tagline: 'Our mission is to provide Ontario schools and families with the information they need to support the pathways of all students as they plan for postsecondary destinations.',
   description: 'For over a decade, we\'ve supported Ontario schools, students, and families with trusted tools to navigate the path to funding postsecondary education. Our up-to-date resources support guidance counsellors and help students and families understand their options. Whether heading to university, college, or skilled trades, every student deserves to feel informed and prepared.',
   website: 'https://seekingscholarships.com/',
   video: {
@@ -1631,35 +1635,27 @@ export const sportsManagement: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Scholarship Report Library',
+      description: 'Access our comprehensive library of scholarship opportunities and funding resources',
+      url: 'https://seekingscholarships.com/the-scholarship-report/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'The Trades Report',
+      description: 'Explore scholarships and funding opportunities specifically for skilled trades education',
+      url: 'https://seekingscholarships.com/the-trades-report',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'About Us',
+      description: 'Learn about our mission to help Ontario students fund their postsecondary education',
+      url: 'https://seekingscholarships.com/about',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Contact Us',
+      description: 'Get in touch with our team for questions about scholarships and funding resources',
+      url: 'https://seekingscholarships.com/contact-us/',
       type: 'link'
     }
   ],
@@ -1715,35 +1711,39 @@ export const environmentalConsulting: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Studenthaus Website',
+      description: 'Learn about how Studenthaus helps understand what young renters want',
+      url: 'https://www.studenthaus.ca/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Housing Survey for High School Students',
+      description: 'Share your thoughts and help shape the future of student housing',
+      url: 'https://studenthaus.typeform.com/to/uRT2TWTT',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'About Studenthaus',
+      description: 'Discover our mission and approach to understanding young renters',
+      url: 'https://www.studenthaus.ca/about',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Haus Hacks Newsletter',
+      description: 'Subscribe to our newsletter for tips, insights, and student housing news',
+      url: 'https://haushacks.beehiiv.com/',
+      type: 'link'
+    },
+    {
+      title: 'Studenthaus Case Studies',
+      description: 'See examples of our work with developers, institutions, and communities',
+      url: 'https://www.studenthaus.ca/work',
+      type: 'link'
+    },
+    {
+      title: 'Julian Builds Things Instagram',
+      description: 'Follow Julian\'s journey building Studenthaus and creating solutions',
+      url: 'https://www.instagram.com/julianbuildsthings/',
       type: 'link'
     }
   ],
@@ -1800,35 +1800,39 @@ export const automotiveTech: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Support Ontario Youth Website',
+      description: 'Learn about our mission to transform skilled trades education and support apprentices',
+      url: 'https://www.supportontarioyouth.ca/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'Tools in the Trades',
+      description: 'Explore our innovative program providing hands-on tool experiences across multiple trades',
+      url: 'https://toolsinthetrades.ca/',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'How to Get Started',
+      description: 'Step-by-step guide to beginning your apprenticeship journey in the skilled trades',
+      url: 'https://www.supportontarioyouth.ca/how-to-get-started/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Apprenticeship Toolkit',
+      description: 'Comprehensive toolkit with resources and guidance for apprentices',
+      url: 'https://drive.google.com/file/d/18jTSEA8zhn-PWcRHRbBHNygfFBGsPUnJ/view',
+      type: 'pdf'
+    },
+    {
+      title: 'Trades Readiness Program',
+      description: 'Discover our program offering safety training, mentorship, and employability skills',
+      url: 'https://www.supportontarioyouth.ca/trades-readiness-program/',
+      type: 'link'
+    },
+    {
+      title: 'Apprentice Resources',
+      description: 'Access resources, tools, and support materials for apprentices and journeypersons',
+      url: 'https://www.supportontarioyouth.ca/apprentice-resources/',
       type: 'link'
     }
   ],
@@ -1974,35 +1978,39 @@ export const hospitalityCollege: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Careers | Toronto Police Services',
+      description: 'Explore career opportunities with Toronto Police Services and learn about our diverse roles',
+      url: 'https://www.tps.ca/careers/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: 'TPS Uniform Recruitment Process',
+      description: 'Step-by-step guide to the uniform recruitment process and requirements',
+      url: 'https://drive.google.com/file/d/1cSc_I-ZJOPbee97Wg8IvayP9eblqVjfC/view',
+      type: 'pdf'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'TPS Recruiting Events',
+      description: 'Find upcoming recruiting events and connect with our team',
+      url: 'https://linktr.ee/TPSRecruitingEvents',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Apply to Join the Service',
+      description: 'Start your application to become a Toronto Police Officer',
+      url: 'https://www.tps.ca/careers/join-service/',
+      type: 'link'
+    },
+    {
+      title: 'Youth in Policing Initiative',
+      description: 'Summer employment program for youth aged 15-18 to explore policing careers',
+      url: 'https://www.tps.ca/youth-policing-initiative/',
+      type: 'link'
+    },
+    {
+      title: 'Connect with Us!',
+      description: 'Get in touch with our recruiting team and ask questions about TPS careers',
+      url: 'https://docs.google.com/forms/d/e/1FAIpQLSeUyq2Y2jNOyNCjQk-5azMtjkryR6UyzkjpAxac55d8Wq47sw/viewform',
       type: 'link'
     }
   ],
