@@ -66,7 +66,7 @@ export default function SessionTableRow({
         aria-label={`${session.title}. Click to ${isExpanded ? 'collapse' : 'expand'} details.`}
       >
         {/* Chevron Column (24px) */}
-        <td className="py-5 pl-6 w-6">
+        <td className="py-5 pl-2 sm:pl-4 lg:pl-6 w-6">
           <svg
             className={`w-4 h-4 transition-transform duration-200 ${
               variant === 'conference' ? 'text-white/60' : 'text-gray-400'
@@ -95,28 +95,28 @@ export default function SessionTableRow({
         </td>
 
         {/* Industry Column (140px) - Hidden on mobile */}
-        <td className="py-5 hidden md:table-cell text-center">
+        <td className="py-5 hidden lg:table-cell text-center">
           <IndustryBadge industry={session.industries[0]} />
         </td>
 
         {/* Duration Column (100px) - Hidden on mobile */}
-        <td className={`py-5 text-sm hidden md:table-cell text-center ${
+        <td className={`py-5 text-sm hidden lg:table-cell text-center ${
           variant === 'conference' ? 'text-white/80' : 'text-gray-600'
         }`}>
           {session.duration} min
         </td>
 
         {/* Grade Level Column (120px) - Hidden on mobile */}
-        <td className={`py-5 text-sm hidden md:table-cell text-center ${
+        <td className={`py-5 text-sm hidden lg:table-cell text-center ${
           variant === 'conference' ? 'text-white/80' : 'text-gray-600'
         }`}>
           {formatGradeLevel(session.grade_level)}
         </td>
 
         {/* Action Column (180px) */}
-        <td className="py-5 pr-6">
+        <td className="py-5 pr-2 sm:pr-4 lg:pr-6">
           <button
-            className="btn-primary text-sm w-full md:w-28 px-4 py-2"
+            className="btn-primary text-sm w-20 sm:w-24 lg:w-28 px-2 sm:px-3 lg:px-4 py-2"
             onClick={handleWatchClick}
             aria-label={`Watch ${session.title} with your class`}
           >
@@ -130,7 +130,7 @@ export default function SessionTableRow({
         <tr>
           <td colSpan={6} className="p-0">
             <div
-              className={`px-6 md:px-24 py-6 border-t animate-fadeIn ${
+              className={`px-3 sm:px-6 lg:px-24 py-6 border-t animate-fadeIn ${
                 variant === 'conference'
                   ? 'bg-white/5 border-white/20'
                   : 'bg-gray-50 border-gray-200'
@@ -139,7 +139,7 @@ export default function SessionTableRow({
               aria-label={`Details for ${session.title}`}
             >
               {/* Mobile-only Industry Badge */}
-              <div className="md:hidden mb-4">
+              <div className="lg:hidden mb-4">
                 <IndustryBadge industry={session.industries[0]} />
               </div>
 
@@ -173,7 +173,7 @@ export default function SessionTableRow({
               )}
 
               {/* Session Details (Mobile Duration) */}
-              <div className="mb-4 md:hidden">
+              <div className="mb-4 lg:hidden">
                 <h4 className={`text-sm font-semibold mb-2 ${
                   variant === 'conference' ? 'text-white/90' : 'text-gray-700'
                 }`}>Session Details</h4>

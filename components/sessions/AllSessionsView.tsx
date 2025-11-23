@@ -158,7 +158,7 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
       />
 
       {/* Table */}
-      <div className="px-4 md:px-8 lg:px-16 py-6">
+      <div className="px-2 sm:px-4 md:px-8 lg:px-16 py-6">
         {filteredSessions.length > 0 ? (
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -169,7 +169,7 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
                     <span className="inline-flex items-center gap-1">
                       Title
                       <svg
-                        className="w-3.5 h-3.5 text-gray-700 md:hidden"
+                        className="w-3.5 h-3.5 text-gray-700 lg:hidden"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -184,16 +184,16 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
                       </svg>
                     </span>
                   </th>
-                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-36 hidden md:table-cell">
+                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-36 hidden lg:table-cell">
                     Industry
                   </th>
-                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-24 hidden md:table-cell">
+                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-24 hidden lg:table-cell">
                     Duration
                   </th>
-                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-32 hidden md:table-cell">
+                  <th className="text-center py-3 text-sm font-semibold text-gray-700 w-32 hidden lg:table-cell">
                     Grades
                   </th>
-                  <th className="w-44" aria-label="Actions"></th>
+                  <th className="w-24 sm:w-32 lg:w-44" aria-label="Actions"></th>
                 </tr>
               </thead>
               <tbody>
