@@ -37,7 +37,8 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
       'AITC-C & CAHRC': ['AITC-C', '& CAHRC'],
       'Vox Pop Labs': ['Vox Pop', 'Labs'],
       'Ernst & Young': ['Ernst', '& Young'],
-      'Royal Canadian Air Force': ['Royal Canadian', 'Air Force']
+      'Royal Canadian Air Force': ['Royal Canadian', 'Air Force'],
+      'DegreeHub Survey': ['DegreeHub', 'Survey']
     }
 
     if (twoLineExceptions[title]) {

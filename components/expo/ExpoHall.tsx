@@ -36,20 +36,20 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
 
     // Sort logic: tier priority + industry priority
     if (selectedIndustries.length === 0) {
-      // No industry filter: sort by tier, then alphabetically
-      filtered.sort((a, b) => {
-        const tierOrder = { platinum: 0, standard: 1 }
-        const tierDiff = tierOrder[a.tier] - tierOrder[b.tier]
-        if (tierDiff !== 0) return tierDiff
-        return a.name.localeCompare(b.name)
-      })
+      // No industry filter: sort platinum alphabetically, preserve standard booth order
+      const platinumBooths = filtered.filter(b => b.tier === 'platinum')
+      const standardBooths = filtered.filter(b => b.tier === 'standard')
+
+      platinumBooths.sort((a, b) => a.name.localeCompare(b.name))
+
+      filtered = [...platinumBooths, ...standardBooths]
     } else {
       // Industry filter active: apply priority sorting within each tier
       const platinumBooths = filtered.filter(b => b.tier === 'platinum')
       const standardBooths = filtered.filter(b => b.tier === 'standard')
 
-      // Helper to sort by industry priority
-      const sortByPriority = (booths: typeof filtered) => {
+      // Helper to sort by industry priority (platinum only - alphabetically)
+      const sortPlatinumByPriority = (booths: typeof filtered) => {
         const primaryMatches = booths.filter(booth =>
           selectedIndustries.includes(booth.industries[0])
         )
@@ -63,10 +63,10 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
         return [...primaryMatches, ...secondaryMatches]
       }
 
-      const sortedPlatinum = sortByPriority(platinumBooths)
-      const sortedStandard = sortByPriority(standardBooths)
+      const sortedPlatinum = sortPlatinumByPriority(platinumBooths)
+      // For standard booths, preserve original order (no alphabetical sorting)
 
-      filtered = [...sortedPlatinum, ...sortedStandard]
+      filtered = [...sortedPlatinum, ...standardBooths]
     }
 
     return filtered
@@ -89,7 +89,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
     if (filteredBooths.length === 0) return
 
     // Exclude specific booths from random selection
-    const excludedBoothIds = ['career-myth-buster', 'industry-immersion-series']
+    const excludedBoothIds = ['career-myth-buster', 'industry-immersion-series', 'degree-hub']
     const selectableBooths = filteredBooths.filter(booth => !excludedBoothIds.includes(booth.id))
 
     // If no selectable booths after exclusions, do nothing

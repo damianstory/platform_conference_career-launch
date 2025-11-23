@@ -2447,17 +2447,51 @@ export const industryImmersionSeries: StandardBoothData = {
   }
 }
 
+// DegreeHub - External Booth
+export const degreeHub: StandardBoothData = {
+  id: 'degree-hub',
+  name: 'DegreeHub Survey',
+  slug: 'degree-hub',
+  tier: 'standard',
+  industries: ['Non-Profit/Education'],
+  organizationType: 'activities',
+  pathway: 'general',
+  logo: '/logos/degree-hub.png',
+  tagline: 'Explore postsecondary programs and career pathways with AI-powered guidance',
+  description: 'DegreeHub helps students navigate their postsecondary journey with AI-powered tools and evidence-based career information. Discover programs, explore career pathways, and make informed decisions about your future.',
+  website: 'https://degreehub.com/',
+  externalUrl: 'https://degreehub.com/',
+  video: {
+    url: 'https://degreehub.com/',
+    type: 'custom',
+    title: 'DegreeHub',
+    description: 'AI-powered postsecondary program and career pathway guidance'
+  },
+  resources: [],
+  primaryCTA: {
+    text: 'Explore Programs',
+    url: 'https://degreehub.com/',
+    type: 'learn-more'
+  },
+  contact: {
+    email: 'info@degreehub.com',
+    socialLinks: []
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
 // ======================
 // EXPORTS
 // ======================
 
 export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
-  // All booths in alphabetical order by name
+  // Platinum booths in alphabetical order by name
   healthFirst,                  // AgRobotics Working Group
   financeHub,                   // Canadian Nuclear Laboratories
   eduPath,                      // Cansbridge Scholars
-  careerMythBuster,             // Career Myth Buster
-  communityCollege,             // Conestoga College
   worldExplorer,                // CPKC
   greenPower,                   // CWB Welding Foundation
   creativeMinds,                // Discover Year
@@ -2466,7 +2500,6 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   marketGenius,                 // Ernst & Young
   consultPro,                   // Humber FAST
   manufactureTech,              // Hydro One
-  industryImmersionSeries,      // Industry Immersion Series
   cyberShield,                  // Jack.org
   bioMedical,                   // Kids Help Phone
   legalServices,                // Mydoh
@@ -2480,8 +2513,13 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   hospitalityCollege,           // Toronto Police Services
   publicHealth,                 // Tourism Industry Association
   foodService,                  // TRCA, CH, & NPCA
+  voxPopLabs,                   // Vox Pop Labs
+  // Standard booths in custom order
+  communityCollege,             // Conestoga College
   universityOfGuelph,           // University of Guelph
-  voxPopLabs                    // Vox Pop Labs
+  industryImmersionSeries,      // Industry Immersion Series
+  careerMythBuster,             // Career Myth Buster
+  degreeHub                     // DegreeHub Survey
 ]
 
 export const platinumBooths = allBooths.filter(booth => booth.tier === 'platinum') as PlatinumBoothData[]
