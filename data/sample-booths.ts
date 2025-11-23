@@ -1934,35 +1934,39 @@ export const fashionDesign: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
+      title: 'Identifying and Addressing Barriers to Careers in Agriculture',
+      description: 'Research document exploring barriers students face when considering agricultural careers',
+      url: 'https://cahrc-ccrha.ca/resources/document/identifying-and-addressing-barriers-careers-agriculture',
+      type: 'pdf'
     },
     {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
+      title: 'Find Yourself in Agriculture - Kareero Virtual Reality Tool',
+      description: 'Kareero game experience',
+      url: 'https://kareero.vrts.ca/webgl/',
       type: 'link'
     },
     {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
+      title: '"I Am Agriculture" Career Exploration Tool',
+      description: 'Discover agricultural careers that match your interests and skills',
+      url: 'https://www.iamag.ca',
+      type: 'link'
     },
     {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
+      title: 'AITC-C National Resource Library',
+      description: 'Comprehensive collection of agriculture education resources for Ontario educators',
+      url: 'https://aitcdashboard.ca/resource_matrix/NATIONAL/',
+      type: 'link'
     },
     {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
+      title: 'Agriculture Labour Market Forecast 2023-2030',
+      description: 'CAHRC\'s comprehensive analysis of workforce trends and career opportunities in Canadian agriculture',
+      url: 'https://cahrc-ccrha.ca/sites/default/files/2024-02/CAHRC_LMI-Report_FEB_2024_EN%20%281%29.pdf',
+      type: 'pdf'
+    },
+    {
+      title: 'CAHRC x AITC-C In-Person Career Counsellor Event (Ottawa)',
+      description: 'Join us for a professional development event focused on building awareness of careers in agriculture',
+      url: 'https://www.eventbrite.ca/e/building-awareness-of-careers-in-agriculture-tickets-1974900117414?aff=oddtdtcreator',
       type: 'link'
     }
   ],
