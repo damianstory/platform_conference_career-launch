@@ -52,16 +52,11 @@ export default function OrganizationSection({
   return (
     <div className={`grid grid-cols-1 ${booth ? 'lg:grid-cols-2' : ''} gap-6 mb-6`}>
       {/* Left Card: Organization Info */}
-      <div className="bg-white rounded-xl border border-[#E5E9F1] p-6 shadow-[0_4px_24px_rgba(34,34,76,0.08)] transition-all duration-200 hover:border-primary-blue/30 hover:shadow-[0_8px_24px_rgba(34,34,76,0.12)]">
-        {/* Header */}
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-navy/60 mb-4">
-          Organization
-        </h3>
-
+      <div className="bg-white rounded-xl border border-[#E5E9F1] p-6 shadow-[0_4px_24px_rgba(34,34,76,0.08)] transition-all duration-200 hover:border-primary-blue/30 hover:shadow-[0_8px_24px_rgba(34,34,76,0.12)] flex items-center">
         {/* Content */}
         <div className="flex items-center gap-4">
           {/* Organization Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 self-center">
             {logo ? (
               <div className="w-20 h-20 bg-white rounded-lg border border-primary-blue/20 shadow-sm flex items-center justify-center overflow-hidden">
                 <Image
@@ -81,7 +76,7 @@ export default function OrganizationSection({
           </div>
 
           {/* Organization Info */}
-          <div className="flex-1 min-w-0">
+          <div>
             <h4 className="text-lg font-bold text-navy mb-1">{name}</h4>
             {title && <p className="text-sm text-navy/80 mb-1">{title}</p>}
             {company && <p className="text-sm text-navy/60">{company}</p>}
