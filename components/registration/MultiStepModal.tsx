@@ -156,7 +156,7 @@ export default function MultiStepModal({
     } else if (currentStep === 2) {
       return formData.boardId && formData.schoolId && !errors.boardId && !errors.schoolId;
     } else if (currentStep === 3) {
-      return formData.classSize && formData.gradeLevel;
+      return formData.classSize !== '' && formData.gradeLevel !== '';
     } else if (currentStep === 'student-1') {
       return formData.boardId && formData.schoolId && !errors.boardId && !errors.schoolId;
     } else if (currentStep === 'student-2') {
@@ -164,6 +164,33 @@ export default function MultiStepModal({
     }
     return false;
   };
+
+  // Handle Enter key to advance steps
+  useEffect(() => {
+    const handleEnter = (e: KeyboardEvent) => {
+      // Only handle Enter key when modal is open
+      if (!isOpen || e.key !== 'Enter') return;
+
+      // Don't interfere with Enter on user-type selection or confirm screen
+      if (currentStep === 'user-type' || currentStep === 'confirm') return;
+
+      // Don't interfere with Enter in text inputs (they handle their own submission)
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' && (target as HTMLInputElement).type === 'text') return;
+      if (target.tagName === 'INPUT' && (target as HTMLInputElement).type === 'email') return;
+
+      // Check if we can proceed to next step
+      if (canProceed()) {
+        e.preventDefault();
+        handleNext();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEnter);
+      return () => document.removeEventListener('keydown', handleEnter);
+    }
+  }, [isOpen, currentStep, formData, errors]);
 
   const availableSchools = formData.boardId
     ? SCHOOLS_BY_BOARD[formData.boardId] || []

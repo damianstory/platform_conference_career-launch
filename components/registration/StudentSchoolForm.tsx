@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { RegistrationFormData } from '@/lib/hooks/useRegistrationForm';
 import {
   ONTARIO_BOARDS,
@@ -136,6 +137,23 @@ export function StudentStep2({
   errors,
   onUpdateField,
 }: StudentStep2Props) {
+  // Determine which grades to show based on selected school
+  const availableGrades = useMemo(() => {
+    // Look up the selected school
+    if (formData.boardId && formData.schoolId) {
+      const schools = SCHOOLS_BY_BOARD[formData.boardId] || [];
+      const selectedSchool = schools.find(school => school.id === formData.schoolId);
+
+      // If school name includes "Grade 7s and 8s", only show grades 7 and 8
+      if (selectedSchool?.name.includes('Grade 7s and 8s')) {
+        return GRADE_LEVELS.filter(grade => grade.id === '7' || grade.id === '8');
+      }
+    }
+
+    // For students, exclude "Mixed Grades" (students are individuals in one grade)
+    return GRADE_LEVELS.filter(grade => grade.id !== 'mixed');
+  }, [formData.boardId, formData.schoolId]);
+
   return (
     <div className="animate-fade-in">
       <div className="space-y-5">
@@ -159,7 +177,7 @@ export function StudentStep2({
             aria-invalid={!!errors.gradeLevel}
           >
             <option value="">Select your grade...</option>
-            {GRADE_LEVELS.map((grade) => (
+            {availableGrades.map((grade) => (
               <option key={grade.id} value={grade.id}>
                 {grade.label}
               </option>

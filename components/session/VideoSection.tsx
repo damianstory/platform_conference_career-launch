@@ -76,8 +76,8 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
             {(videoState === 'playing' || videoState === 'paused') && (
               <div className="flex flex-col items-center justify-center gap-4">
                 <div className="text-4xl">▶️</div>
-                <p className="text-lg">Video playing...</p>
-                <p className="text-sm opacity-75">(Vimeo player will replace this)</p>
+                <p className="text-lg font-medium">This is where the video will play</p>
+                <p className="text-sm opacity-75">(Vimeo player will be embedded here during launch week)</p>
               </div>
             )}
 

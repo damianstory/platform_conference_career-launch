@@ -31,7 +31,7 @@ export const ONTARIO_BOARDS = [
 
 export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }>> = {
   'bluewater': [
-    { id: 'bluewater-7s-and-8s', name: 'Bluewater 7s and 8s' },
+    { id: 'bluewater-7s-and-8s', name: 'Bluewater Grade 7s and 8s' },
     { id: 'bluewater-alternative-education-school', name: 'Bluewater Alternative Education School' },
     { id: 'bluewater-continuing-education-day-school', name: 'Bluewater Continuing Education Day School' },
     { id: 'bluewater-continuing-education-night-school', name: 'Bluewater Continuing Education Night School' },
@@ -47,7 +47,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'walkerton-district-community-school', name: 'Walkerton District Community School' },
   ],
   'grand-erie': [
-    { id: 'grand-erie-7s-and-8s', name: 'Grand Erie 7s and 8s' },
+    { id: 'grand-erie-7s-and-8s', name: 'Grand Erie Grade 7s and 8s' },
     { id: 'brantford-collegiate-institute-and-vs', name: 'Brantford Collegiate Institute and V.S.' },
     { id: 'cayuga-secondary-school', name: 'Cayuga Secondary School' },
     { id: 'delhi-district-secondary-school', name: 'Delhi District Secondary School' },
@@ -66,7 +66,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'waterford-district-high-school', name: 'Waterford District High School' },
   ],
   'upper-canada': [
-    { id: 'ucdsb-7s-and-8s', name: 'UCDSB 7s and 8s' },
+    { id: 'ucdsb-7s-and-8s', name: 'UCDSB Grade 7s and 8s' },
     { id: 'almonte-district-hs', name: 'Almonte & District HS' },
     { id: 'athens-district-hs', name: 'Athens District HS' },
     { id: 'brockville-collegiate', name: 'Brockville Collegiate' },
@@ -91,12 +91,12 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'vankleek-hill-ci', name: 'Vankleek Hill CI' },
   ],
   'northwest-cdsb': [
-    { id: 'northwest-7s-and-8s', name: 'Northwest 7s and 8s' },
+    { id: 'northwest-7s-and-8s', name: 'Northwest Grade 7s and 8s' },
     { id: 'dryden-high-school', name: 'Dryden High School' },
     { id: 'sioux-north-high-school', name: 'Sioux North High School' },
   ],
   'dufferin-peel': [
-    { id: 'dufferin-peel-7s-and-8s', name: 'Dufferin-Peel 7s and 8s' },
+    { id: 'dufferin-peel-7s-and-8s', name: 'Dufferin-Peel Grade 7s and 8s' },
     { id: 'ascension-of-our-lord-ss', name: 'Ascension of Our Lord SS' },
     { id: 'bj-fleming-adult-learning-center', name: 'BJ Fleming Adult Learning Center' },
     { id: 'cardinal-ambrozic', name: 'Cardinal Ambrozic' },
@@ -129,7 +129,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'st-thomas-aquinas-ss', name: 'St. Thomas Aquinas SS' },
   ],
   'toronto-catholic': [
-    { id: 'tcdsb-7s-and-8s', name: 'TCDSB 7s and 8s' },
+    { id: 'tcdsb-7s-and-8s', name: 'TCDSB Grade 7s and 8s' },
     { id: 'bishop-allen-academy', name: 'Bishop Allen Academy' },
     { id: 'bishop-marrocco-thomas-merton', name: 'Bishop Marrocco/Thomas Merton' },
     { id: 'brebeuf-college', name: 'Brebeuf College' },
@@ -173,7 +173,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'st-patrick', name: 'St. Patrick' },
   ],
   'algoma-dsb': [
-    { id: 'algoma-7s-and-8s', name: 'Algoma 7s and 8s' },
+    { id: 'algoma-7s-and-8s', name: 'Algoma Grade 7s and 8s' },
     { id: 'adult-and-continuing-ed-blind-river', name: 'Adult and Continuing Ed Blind River' },
     { id: 'alexander-henry-high-school', name: 'Alexander Henry High School' },
     { id: 'algoma-education-connection', name: 'Algoma Education Connection' },
@@ -190,7 +190,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'white-pines-cvs', name: 'White Pines C&VS' },
   ],
   'lambton-kent': [
-    { id: 'lambton-kent-7s-and-8s', name: 'Lambton Kent 7s and 8s' },
+    { id: 'lambton-kent-7s-and-8s', name: 'Lambton Kent Grade 7s and 8s' },
     { id: 'alexander-mackenzie', name: 'Alexander Mackenzie' },
     { id: 'alternative-and-continuing-education-centre', name: 'Alternative and Continuing Education Centre' },
     { id: 'blenheim-district-hs', name: 'Blenheim District HS' },
@@ -208,7 +208,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'wallaceburg-district', name: 'Wallaceburg District' },
   ],
   'peel-dsb': [
-    { id: 'peel-7s-and-8s', name: 'Peel 7s and 8s' },
+    { id: 'peel-7s-and-8s', name: 'Peel Grade 7s and 8s' },
     { id: 'applewood-heights-secondary', name: 'Applewood Heights Secondary' },
     { id: 'applewood-school', name: 'Applewood School' },
     { id: 'bramalea-secondary-school', name: 'Bramalea Secondary School' },
@@ -286,7 +286,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'west-credit-secondary-school', name: 'West Credit Secondary School' },
   ],
   'renfrew-county': [
-    { id: 'renfrew-county-7s-and-8s', name: 'Renfrew County 7s and 8s' },
+    { id: 'renfrew-county-7s-and-8s', name: 'Renfrew County Grade 7s and 8s' },
     { id: 'adult-day-school', name: 'Adult Day School' },
     { id: 'arnprior-district-high-school', name: 'Arnprior District High School' },
     { id: 'continuing-education', name: 'Continuing Education' },
@@ -299,7 +299,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'valour-jk-12-school', name: 'Valour JK – 12 School' },
   ],
   'hamilton-wentworth': [
-    { id: 'hamilton-wentworth-7s-and-8s', name: 'Hamilton-Wentworth 7s and 8s' },
+    { id: 'hamilton-wentworth-7s-and-8s', name: 'Hamilton-Wentworth Grade 7s and 8s' },
     { id: 'adult-on-line-night-school', name: 'Adult On-Line Night School' },
     { id: 'ancaster-high-school', name: 'Ancaster High School' },
     { id: 'arrell-youth-centre', name: 'Arrell Youth Centre' },
@@ -332,7 +332,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'woodview-day-program', name: 'Woodview Day Program' },
   ],
   'upper-grand': [
-    { id: 'upper-grand-7s-and-8s', name: 'Upper Grand 7s and 8s' },
+    { id: 'upper-grand-7s-and-8s', name: 'Upper Grand Grade 7s and 8s' },
     { id: 'ariss-place', name: 'Ariss Place' },
     { id: 'avalon-horizons', name: 'Avalon Horizons' },
     { id: 'avalon-specialized-services', name: 'Avalon Specialized Services' },
@@ -372,7 +372,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'youth-options', name: 'Youth Options' },
   ],
   'ottawa-catholic': [
-    { id: 'ottawa-catholic-7s-and-8s', name: 'Ottawa Catholic 7s and 8s' },
+    { id: 'ottawa-catholic-7s-and-8s', name: 'Ottawa Catholic Grade 7s and 8s' },
     { id: 'all-saints-high-school', name: 'All Saints High School' },
     { id: 'holy-trinity-high-school', name: 'Holy Trinity High School' },
     { id: 'immaculata-high-school', name: 'Immaculata High School' },
@@ -395,10 +395,10 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'st-pius-x-high-school', name: 'St. Pius X High School' },
   ],
   'northeastern-cdsb': [
-    { id: 'northeastern-7s-and-8s', name: 'Northeastern 7s and 8s' },
+    { id: 'northeastern-7s-and-8s', name: 'Northeastern Grade 7s and 8s' },
   ],
   'algonquin-lakeshore': [
-    { id: 'algonquin-lakeshore-7s-and-8s', name: 'Algonquin & Lakeshore 7s and 8s' },
+    { id: 'algonquin-lakeshore-7s-and-8s', name: 'Algonquin & Lakeshore Grade 7s and 8s' },
     { id: 'holy-cross', name: 'Holy Cross' },
     { id: 'loyola-community-learning-centre', name: 'Loyola Community Learning Centre' },
     { id: 'nicholson-catholic-college', name: 'Nicholson Catholic College' },
@@ -407,7 +407,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'st-theresa-catholic-ss', name: 'St. Theresa Catholic S.S.' },
   ],
   'dsbone': [
-    { id: 'dsbone-7s-and-8s', name: 'DSBONE 7s and 8s' },
+    { id: 'dsbone-7s-and-8s', name: 'DSBONE Grade 7s and 8s' },
     { id: 'ecole-secondaire-cochrane-high-school', name: 'Ecole Secondaire Cochrane High School' },
     { id: 'englehart-high-school', name: 'Englehart High School' },
     { id: 'hearst-high-school', name: 'Hearst High School' },
@@ -421,7 +421,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'timmins-high-and-vocational-school', name: 'Timmins High and Vocational School' },
   ],
   'simcoe-county': [
-    { id: 'simcoe-county-7s-and-8s', name: 'Simcoe County 7s and 8s' },
+    { id: 'simcoe-county-7s-and-8s', name: 'Simcoe County Grade 7s and 8s' },
     { id: 'banting-memorial-high-school', name: 'Banting Memorial High School' },
     { id: 'barrie-north-collegiate-institute', name: 'Barrie North Collegiate Institute' },
     { id: 'bear-creek-secondary-school', name: 'Bear Creek Secondary School' },
@@ -444,7 +444,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'twin-lakes-secondary-school', name: 'Twin Lakes Secondary School' },
   ],
   'york-catholic': [
-    { id: 'york-catholic-7s-and-8s', name: 'York Catholic 7s and 8s' },
+    { id: 'york-catholic-7s-and-8s', name: 'York Catholic Grade 7s and 8s' },
     { id: 'cardinal-carter-chs', name: 'Cardinal Carter CHS' },
     { id: 'father-bressani', name: 'Father Bressani' },
     { id: 'father-michael-mcgivney-ca', name: 'Father Michael McGivney CA' },
@@ -466,7 +466,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'york-academy', name: 'York Academy' },
   ],
   'pvnc-dsb': [
-    { id: 'pvnc-7s-and-8s', name: 'PVNC 7s and 8s' },
+    { id: 'pvnc-7s-and-8s', name: 'PVNC Grade 7s and 8s' },
     { id: 'day-school-e-learning', name: 'Day School e-Learning' },
     { id: 'enterphase', name: 'Enterphase' },
     { id: 'enterphase-child-and-family-services', name: 'Enterphase Child and Family Services' },
@@ -480,7 +480,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'st-thomas-aquinas-virtual-catholic-secondary-school', name: 'St. Thomas Aquinas Virtual Catholic Secondary School' },
   ],
   'durham-dsb': [
-    { id: 'durham-7s-and-8s', name: 'Durham 7s and 8s' },
+    { id: 'durham-7s-and-8s', name: 'Durham Grade 7s and 8s' },
     { id: 'ajax-high-school', name: 'Ajax High School' },
     { id: 'anderson-collegiate-and-vocational-institute', name: 'Anderson Collegiate and Vocational Institute' },
     { id: 'brock-high-school', name: 'Brock High School' },
@@ -505,13 +505,13 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'uxbridge-secondary-school', name: 'Uxbridge Secondary School' },
   ],
   'bruce-grey-catholic': [
-    { id: 'bruce-grey-catholic-7s-and-8s', name: 'Bruce-Grey Catholic 7s and 8s' },
+    { id: 'bruce-grey-catholic-7s-and-8s', name: 'Bruce-Grey Catholic Grade 7s and 8s' },
     { id: 'continuing-education-bruce-grey', name: 'Continuing Education' },
     { id: 'sacred-heart-high-school', name: 'Sacred Heart High School' },
     { id: 'st-marys-high-school', name: "St. Mary's High School" },
   ],
   'greater-essex-country': [
-    { id: 'greater-essex-country-7s-and-8s', name: 'Greater Essex Country 7s and 8s' },
+    { id: 'greater-essex-country-7s-and-8s', name: 'Greater Essex Country Grade 7s and 8s' },
     { id: 'adult-and-continuing-education', name: 'Adult and Continuing Education' },
     { id: 'belle-river-district-high-school', name: 'Belle River District High School' },
     { id: 'erie-migration-district-school', name: 'Erie Migration District School' },
@@ -531,7 +531,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'westview-freedom-academy', name: 'Westview Freedom Academy' },
   ],
   'keewatin-patricia': [
-    { id: 'keewatin-patricia-7s-and-8s', name: 'Keewatin-Patricia 7s and 8s' },
+    { id: 'keewatin-patricia-7s-and-8s', name: 'Keewatin-Patricia Grade 7s and 8s' },
     { id: 'adult-education', name: 'Adult Education' },
     { id: 'alternative-education', name: 'Alternative Education' },
     { id: 'beaver-brae-ss', name: 'Beaver Brae SS' },
@@ -545,7 +545,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'sioux-north-hs', name: 'Sioux North HS' },
   ],
   'cdsb-eastern-ontario': [
-    { id: 'cdsb-eastern-ontario-7s-and-8s', name: 'CDSB Eastern Ontario 7s and 8s' },
+    { id: 'cdsb-eastern-ontario-7s-and-8s', name: 'CDSB Eastern Ontario Grade 7s and 8s' },
     { id: 'holy-trinity-css', name: 'Holy Trinity CSS' },
     { id: 'notre-dame-chs', name: 'Notre Dame CHS' },
     { id: 'st-francis-xavier-chs', name: 'St. Francis Xavier CHS' },
@@ -559,7 +559,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'st-thomas-aquinas-chs', name: 'St. Thomas Aquinas CHS' },
   ],
   'waterloo-region': [
-    { id: 'wrdsb-7s-and-8s', name: 'WRDSB 7s and 8s' },
+    { id: 'wrdsb-7s-and-8s', name: 'WRDSB Grade 7s and 8s' },
     { id: 'ace', name: 'ACE' },
     { id: 'alternative-choices', name: 'Alternative Choices' },
     { id: 'blair-outdoor-and-environmental-education-centre', name: 'Blair Outdoor and Environmental Education Centre' },
@@ -590,7 +590,7 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'wrigley-corners-outdoor-and-environmental-education-centre', name: 'Wrigley Corners Outdoor and Environmental Education Centre' },
   ],
   'thames-valley': [
-    { id: 'thames-valley-7s-and-8s', name: 'Thames Valley 7s and 8s' },
+    { id: 'thames-valley-7s-and-8s', name: 'Thames Valley Grade 7s and 8s' },
     { id: 'ab-lucas-secondary-school', name: 'A.B. Lucas Secondary School' },
     { id: 'arthur-voaden-secondary-school', name: 'Arthur Voaden Secondary School' },
     { id: 'central-elgin-collegiate-institute', name: 'Central Elgin Collegiate Institute' },
@@ -631,9 +631,11 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
 };
 
 export const CLASS_SIZES = [
+  { id: 'exploring-solo', label: 'Just exploring. Not watching with students.' },
   { id: 'less-than-25', label: 'Less than 25 students' },
   { id: '25-to-35', label: '25 to 35 students' },
-  { id: 'large-group', label: 'Large group (35+ students)' },
+  { id: 'large-group', label: 'More than 35 students' },
+  { id: 'assembly', label: 'More than 100 students' },
 ];
 
 export const GRADE_LEVELS = [
@@ -643,4 +645,5 @@ export const GRADE_LEVELS = [
   { id: '10', label: 'Grade 10' },
   { id: '11', label: 'Grade 11' },
   { id: '12', label: 'Grade 12' },
+  { id: 'mixed', label: 'Mixed Grades' },
 ];
