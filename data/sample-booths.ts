@@ -963,7 +963,7 @@ export const consultPro: PlatinumBoothData = {
   sessionSlides: {
     embedUrl: 'https://docs.google.com/presentation/d/1fTah5wWTA2EegqKvQ2biKrkvSnS7yMQqVLdgmlSJlyw/edit?usp=sharing',
     type: 'google-slides',
-    title: 'Humber FAST Program Information',
+    title: 'Humber Polytechnic Program Information',
     description: 'Discover programs in applied science and technology'
   },
   engagementActivity: {
