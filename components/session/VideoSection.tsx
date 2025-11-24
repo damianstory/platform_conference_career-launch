@@ -59,7 +59,7 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
                   onClick={handleWatchClick}
                   className="btn-primary hidden md:inline-flex md:min-w-[280px]"
                 >
-                  Watch with Your Class
+                  Watch Session
                 </button>
               </>
             )}
@@ -104,13 +104,13 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
               onClick={handleWatchClick}
               className="btn-primary w-full"
             >
-              Watch with Your Class
+              Watch Session
             </button>
           </div>
         )}
 
         <p className="text-sm text-gray-600 mt-4 md:mt-6 text-center">
-          Click &ldquo;Watch with Your Class&rdquo; to register and start the video.
+          Click &ldquo;Watch Session&rdquo; to register and start the video.
         </p>
       </div>
 

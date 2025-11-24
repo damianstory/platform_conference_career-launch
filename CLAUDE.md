@@ -204,6 +204,8 @@ npm run test:coverage    # Run tests with coverage report
   - FAQ section at bottom
 - **Sessions Page (`/sessions`)**: Two-tab navigation system
   - **Conference Schedule Tab** (default): 4-block table view with "Watch Session" buttons
+    - Block headers show session count only (e.g., "7 sessions") without industry names
+    - Sessions organized by display_order within each block
   - **All Sessions Tab** (`?view=all`): Flat list of all 27 sessions (sorted alphabetically)
   - URL param-based navigation with `useSearchParams` and `useRouter`
   - Centered tab design with background highlight for active state
@@ -216,11 +218,15 @@ npm run test:coverage    # Run tests with coverage report
 - **Registration Modal (`/components/registration/MultiStepModal.tsx`)**: **COMPLETED**
   - Multi-step wizard with user type selection (educator vs student)
   - **Educator flow (3 steps):** Step 1: Personal Info (name, email) → Step 2: School Info (board, school) → Step 3: Class Context (size, grade)
-  - **Student flow (2 steps):** Step 1: Personal Info → Step 2: Class Info
+  - **Student flow (2 steps):** Step 1: School Info (board, school) → Step 2: Grade Level
   - Bottom drawer slide-up animation with smooth step transitions
   - Cookie-based pre-fill (7-day expiration) with confirmation screen for returning users
   - Real-time validation with inline error messages
   - Smart field dependencies (school dropdown updates based on board)
+  - **Guest option:** "Not Listed - Watching as Guest" available in both educator and student flows
+    - Appears as last option in board dropdown
+    - When selected, school dropdown automatically disables and shows "Not Listed"
+    - Form validation accepts guest/not-listed as valid values
   - Progress indicator for multi-step navigation
   - Keyboard accessible (Tab, Enter, ESC) with back/next navigation
   - Mobile-responsive with optimized layouts per step
@@ -231,9 +237,11 @@ npm run test:coverage    # Run tests with coverage report
   - Pre-fill detection and field population
   - Form submission handling (console.log for now, backend integration pending)
 - **Mock Registration Data (`/lib/mock-data/registration.ts`)**: **COMPLETED**
-  - 5 Ontario school boards with 14 schools
-  - Class size options (less-than-25, 25-to-35, large-group)
-  - Grade level options (7-8, 9, 10, 11, 12, mixed)
+  - 29 Ontario school boards with hundreds of schools (comprehensive coverage)
+  - **Guest option:** "Not Listed - Watching as Guest" at bottom of boards dropdown
+  - When guest selected: school dropdown automatically disabled showing "Not Listed"
+  - Class size options (exploring-solo, less-than-25, 25-to-35, large-group, assembly)
+  - Grade level options (7, 8, 9, 10, 11, 12, mixed)
 - **Booths Page (`/booths`)**: Expo hall with grid layout
   - Filter by industry (Agriculture, Construction, Energy, Launch, Trades)
   - Filter by tier (All, Platinum, Standard)
@@ -245,7 +253,7 @@ npm run test:coverage    # Run tests with coverage report
   - Responsive breakpoints with proper stacking
 - **Design System**: Complete myBlueprint brand compliance with custom Tailwind tokens
 - **Sample Data**:
-  - 27 sessions in `/data/sample-sessions.ts` (Block 1: 6, Block 2: 6, Block 3: 7, Block 4: 8)
+  - 27 sessions in `/data/sample-sessions.ts` (Block 1: 7, Block 2: 7, Block 3: 7, Block 4: 6)
   - Multiple booths in `/data/sample-booths.ts` (Platinum and Standard tiers)
 
 ### Component Patterns
@@ -397,7 +405,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
 ### 4-Block Structure
 Sessions organized into 4 time blocks matching Ontario high school schedules:
 - Prevents students from seeing duplicate content across classes
-- ~6-8 sessions per block (Block 1: 6, Block 2: 6, Block 3: 7, Block 4: 8)
+- ~6-7 sessions per block (Block 1: 7, Block 2: 7, Block 3: 7, Block 4: 6)
 - Manual curation ensures industry diversity in each block
 
 ### Booth Tiers
