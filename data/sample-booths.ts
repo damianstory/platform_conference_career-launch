@@ -1094,7 +1094,7 @@ export const cyberShield: PlatinumBoothData = {
   organizationType: 'employer',
   pathway: 'college',
   logo: '/logos/jack-org.png',
-  tagline: 'If your school doesn\'t have a Jack Chapter, you can be the person who brings one to life. Build community, run events, and make mental health support normal at your school.',
+  tagline: 'Learn to support someone struggling with their mental health through this online course created by Jack.org in partnership with Born This Way Foundation.',
   description: 'We believe in the extraordinary power of young people to transform the mental health landscape. Young people often recognize when their peers are struggling before anyone else. They are trusted sources of support and information, and their voices carry the power to normalize difficult conversations around mental health. By equipping young people with resources, knowledge, and community to drive change, we\'re not only supporting individuals but strengthening entire communities through peer-to-peer connection and support.',
   video: {
     url: 'https://youtu.be/NPy1UyRr7l0',
@@ -1154,8 +1154,8 @@ export const cyberShield: PlatinumBoothData = {
     duration: '10 minutes'
   },
   primaryCTA: {
-    text: 'Start a Chapter',
-    url: 'https://www.jack.org/communities',
+    text: 'Be There Certificate',
+    url: 'https://www.betherecertificate.org/?referral=myblueprintcareerlaunch&utm_source=myblueprint&utm_medium=contest&utm_campaign=immersion',
     type: 'careers'
   },
   contact: {
