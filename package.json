@@ -11,9 +11,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:security": "jest tests/security/",
     "security:audit": "npm audit --audit-level=high",
-    "security:scan": "npm run security:audit && npm run test:security",
+    "security:scan": "npm run security:audit",
     "security:fix": "npm audit fix"
   },
   "dependencies": {
