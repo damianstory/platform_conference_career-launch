@@ -1,0 +1,43 @@
+# Prevent deployment of sensitive/unnecessary files
+
+# Design mockups (contain CDN scripts)
+*.html
+design-mockups/
+filter-mockup.html
+design-comparison.html
+
+# Security and documentation
+SECURITY_TESTING_REPORT.md
+*.test.ts
+*.test.tsx
+tests/
+
+# Development files
+.env.local
+.env.development
+.env.test
+
+# Design documentation
+design-documentation/
+
+# Git files
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp

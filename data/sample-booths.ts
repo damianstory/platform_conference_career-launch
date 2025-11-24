@@ -376,8 +376,8 @@ export const tradesMaster: PlatinumBoothData = {
   organizationType: 'employer',
   pathway: 'apprenticeship',
   logo: '/logos/encore-canada.png',
-  tagline: 'We are your global event production partner for event technology, production, exhibit and tradeshow services.',
-  description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
+  tagline: 'Canada\'s Largest Event Technology and Production Partner.',
+  description: 'Encore Canada is a proud part of the communities they serve. Their Canadian team members live, work, and lead in cities across the country, making an impact that goes beyond events. As the leading provider of event technology and production in the country they have 80 years of expertise.\n\nTheir comprehensive range of services includes creative services, professional videography, cutting-edge audiovisual technology, innovative scenic and fabrication, expert event design and decor, digital solutions, and seamless production management.',
   website: 'https://www.encore-can.com/',
   video: {
     url: 'https://youtu.be/cFaE3wC-_7I',
