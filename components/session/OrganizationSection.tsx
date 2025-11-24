@@ -96,7 +96,7 @@ export default function OrganizationSection({
           <div className="flex flex-col gap-4">
             {/* Value Proposition */}
             <p className="text-sm leading-relaxed text-navy/80">
-              Visit their expo booth to explore additional videos, career resources, and downloadable materials from {name}.
+              Visit their expo booth to explore additional videos, career resources, and materials from {name}.
             </p>
 
             {/* CTA Button */}
