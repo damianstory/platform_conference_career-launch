@@ -8,7 +8,7 @@ export default function HomePage() {
       {/* Top Branding Bar */}
       <div className="bg-navy py-4 px-8">
         <div className="max-w-7xl mx-auto flex justify-center items-center">
-          <h1 className="text-2xl md:text-3xl font-black text-white tracking-wide">
+          <h1 className="text-2xl md:text-3xl font-black text-white tracking-wide text-center">
             Career Launch - Officially Starts on December 1st 🎉
           </h1>
         </div>
