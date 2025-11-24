@@ -2053,7 +2053,7 @@ export const hospitalityCollege: PlatinumBoothData = {
 
 export const publicHealth: PlatinumBoothData = {
   id: 'tourism-industry-association-ontario',
-  name: 'Tourism Industry Association',
+  name: 'Tourism Industry Association of Ontario',
   slug: 'tourism-industry-association-ontario',
   associatedSessionSlug: 'tourism-careers-ontario',
   tier: 'platinum',
@@ -2062,7 +2062,7 @@ export const publicHealth: PlatinumBoothData = {
   pathway: 'university',
   logo: '/logos/tourism-industry-association.png',
   tagline: 'The Tourism Industry Association of Ontario (TIAO) is the voice of Ontario\'s tourism industry and host of award-winning Ontario Tourism Summit.',
-  description: 'At TIAO, we work on behalf of our membership, collectively representing the majority of tourism businesses and workers across the province, to take on pressing policy issues that impact the Ontario tourism industry.\n\nTIAO is committed to supporting Ontario\'s future tourism workforce because it is the foundation of a strong and sustainable industry. Investing in skills and career pathways today builds resilience and readiness for change. For TIAO, supporting the workforce isn\'t just about filling roles—it\'s about shaping leaders who will drive tourism forward.',
+  description: 'At TIAO, we work on behalf of our membership, collectively representing the majority of tourism businesses and workers across the province, to take on pressing policy issues that impact the Ontario tourism industry.\n\nTIAO is committed to supporting Ontario\'s future tourism workforce because it is the foundation of a strong and sustainable industry. Investing in skills and career pathways today builds resilience and readiness for change. For TIAO, supporting the workforce is about shaping leaders who will drive tourism forward.',
   video: {
     url: 'https://www.youtube.com/watch?v=7n2Bkljvo4U',
     type: 'youtube',

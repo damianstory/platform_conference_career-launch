@@ -54,6 +54,12 @@ export default function BoothHeader({
                   <br />
                   Air Force
                 </>
+              ) : name === 'Tourism Industry Association of Ontario' ? (
+                <>
+                  Tourism Industry Association
+                  <br />
+                  of Ontario
+                </>
               ) : (
                 name
               )}
