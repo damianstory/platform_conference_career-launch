@@ -387,16 +387,16 @@ export const tradesMaster: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Encore Canada | What We Do',
-      description: 'Discover how Encore creates amazing experiences for live events, meetings, and conferences',
-      url: 'https://www.encore-can.com/what-we-do/',
-      type: 'link'
-    },
-    {
       title: 'Encore Canada Careers',
       description: 'Explore career opportunities with Encore and join our team of event professionals',
       url: 'https://jobs.encoreglobal.com/en?utm_source=encoreglobal.com&utm_medium=referral&utm_campaign=corporate-site&utm_content=footer',
       type: 'link'
+    },
+    {
+      title: 'Introduction to Event Technology & Hospitality',
+      description: 'Learn about career paths in event technology and hospitality',
+      url: '/Users/damianmatheson/Desktop/Career Launch_Company Logos/Career Launch_Booth Logos/encore pdf .pdf',
+      type: 'pdf'
     },
     {
       title: 'Cielle & Co.',
@@ -443,9 +443,8 @@ export const tradesMaster: PlatinumBoothData = {
   contact: {
     website: 'https://www.encore-can.com/',
     socialLinks: [
-      { platform: 'instagram', url: 'https://www.instagram.com/encore_global/' },
-      { platform: 'linkedin', url: 'https://www.linkedin.com/company/encore-canada/?originalSubdomain=ca' },
-      { platform: 'facebook', url: 'https://www.facebook.com/encoreglobal1/' }
+      { platform: 'instagram', url: 'https://www.instagram.com/encore.canada/' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/encore-canada/' }
     ]
   },
   brandColors: {
