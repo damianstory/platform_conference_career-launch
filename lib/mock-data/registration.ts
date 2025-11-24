@@ -27,6 +27,7 @@ export const ONTARIO_BOARDS = [
   { id: 'upper-grand', name: 'Upper Grand' },
   { id: 'waterloo-region', name: 'Waterloo Region' },
   { id: 'york-catholic', name: 'York Catholic' },
+  { id: 'guest', name: 'Not Listed - Watching as Guest' },
 ];
 
 export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }>> = {

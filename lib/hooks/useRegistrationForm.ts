@@ -62,6 +62,7 @@ export function useRegistrationForm() {
         if (!value) return 'Please select a school board';
         break;
       case 'schoolId':
+        // Accept 'not-listed' for guest board selection
         if (!value) return 'Please select a school';
         break;
       case 'classSize':
@@ -78,9 +79,15 @@ export function useRegistrationForm() {
     setFormData(prev => {
       const newData = { ...prev, [name]: value };
 
-      // Reset school when board changes
-      if (name === 'boardId' && value !== prev.boardId) {
-        newData.schoolId = '';
+      // Handle guest board selection
+      if (name === 'boardId') {
+        if (value === 'guest') {
+          // Automatically set school to 'not-listed' for guest
+          newData.schoolId = 'not-listed';
+        } else if (value !== prev.boardId) {
+          // Reset school when board changes (non-guest)
+          newData.schoolId = '';
+        }
       }
 
       return newData;

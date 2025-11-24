@@ -25,7 +25,9 @@ export function StudentStep1({
   onUpdateField,
   onBack,
 }: StudentStep1Props) {
-  const availableSchools = formData.boardId
+  // Handle guest board selection - no schools available
+  const isGuestBoard = formData.boardId === 'guest';
+  const availableSchools = formData.boardId && !isGuestBoard
     ? SCHOOLS_BY_BOARD[formData.boardId] || []
     : [];
 
@@ -95,7 +97,7 @@ export function StudentStep1({
             id="student-schoolId"
             value={formData.schoolId}
             onChange={(e) => onUpdateField('schoolId', e.target.value)}
-            disabled={!formData.boardId}
+            disabled={!formData.boardId || isGuestBoard}
             className={`w-full px-3.5 py-3 border rounded-lg text-base transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] bg-white disabled:bg-gray-50 disabled:cursor-not-allowed ${
               errors.schoolId ? 'border-red-500' : 'border-gray-300'
             }`}
@@ -104,9 +106,13 @@ export function StudentStep1({
             aria-invalid={!!errors.schoolId}
           >
             <option value="">
-              {formData.boardId ? 'Select your school...' : 'Select a board first'}
+              {isGuestBoard
+                ? 'Not Listed'
+                : formData.boardId
+                  ? 'Select your school...'
+                  : 'Select a board first'}
             </option>
-            {availableSchools.map((school) => (
+            {!isGuestBoard && availableSchools.map((school) => (
               <option key={school.id} value={school.id}>
                 {school.name}
               </option>

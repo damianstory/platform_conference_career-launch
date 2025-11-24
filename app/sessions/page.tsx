@@ -17,13 +17,6 @@ const BLOCK_COLORS: Record<BlockNumber, string> = {
   4: 'block4',
 };
 
-// Helper function to get unique industries and create a preview string
-function getIndustryPreview(sessions: Session[]): string {
-  const allIndustries = sessions.flatMap(s => s.industries);
-  const uniqueIndustries = Array.from(new Set(allIndustries));
-  const preview = uniqueIndustries.slice(0, 3).join(', ');
-  return preview;
-}
 
 type ViewType = 'conference' | 'all';
 
@@ -52,14 +45,13 @@ function SessionsContent() {
 
   // Create accordion items for each block
   const accordionItems: AccordionItem[] = ([1, 2, 3, 4] as BlockNumber[]).map((blockNum) => {
-    const blockSessions = sessionsByBlock[blockNum] || [];
+    const blockSessions = (sessionsByBlock[blockNum] || []).sort((a, b) => a.display_order - b.display_order);
     const sessionCount = blockSessions.length;
-    const industryPreview = getIndustryPreview(blockSessions);
 
     return {
       id: `block-${blockNum}`,
       title: `Block ${blockNum}`,
-      subtitle: `${sessionCount} session${sessionCount !== 1 ? 's' : ''} • ${industryPreview}`,
+      subtitle: `${sessionCount} session${sessionCount !== 1 ? 's' : ''}`,
       blockColor: BLOCK_COLORS[blockNum],
       content: (
         <div>

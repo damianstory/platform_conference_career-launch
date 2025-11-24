@@ -64,12 +64,12 @@ Join our session to learn more about how you can become an Agricultural Innovato
   trailer_url: 'https://vimeo.com/dental-hygiene-trailer',
   full_video_url: 'https://vimeo.com/dental-hygiene-full',
   duration: 0,
-  block_number: 1,
+  block_number: 2,
   industries: ['Agriculture', 'Food Processing', 'ICT'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 2
+  display_order: 1
 };
 
 export const medicalLabTechnologist: Session = {
@@ -97,7 +97,7 @@ This session will break down common perceptions, highlight **emerging opportunit
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 3
+  display_order: 2
 };
 
 export const paramedicFirstResponder: Session = {
@@ -135,7 +135,7 @@ Because the next big event that changes someone's life could be yours to create.
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 4
+  display_order: 3
 };
 
 export const registeredNurseEmergency: Session = {
@@ -160,12 +160,12 @@ Be a part of something bigger with opportunities ranging from operations to corp
   trailer_url: 'https://vimeo.com/emergency-nursing-trailer',
   full_video_url: 'https://vimeo.com/emergency-nursing-full',
   duration: 0,
-  block_number: 1,
+  block_number: 3,
   industries: ['Transportation', 'ICT'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5
+  display_order: 1
 };
 
 export const mentalHealthCounseling: Session = {
@@ -190,7 +190,7 @@ In this session, we'll bust myths about the industry, discuss various you career
   grade_level: '7-12',
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
-  display_order: 6
+  display_order: 4
 };
 
 // ============================================================================
@@ -225,12 +225,12 @@ No matter what challenges they face, Kids Help Phone is here for them.`,
   trailer_url: 'https://vimeo.com/game-dev-trailer',
   full_video_url: 'https://vimeo.com/game-dev-full',
   duration: 0,
-  block_number: 2,
+  block_number: 3,
   industries: ['Life Skills'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 1
+  display_order: 5
 };
 
 export const dataScientistAnalytics: Session = {
@@ -256,7 +256,7 @@ export const dataScientistAnalytics: Session = {
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 2
+  display_order: 5
 };
 
 export const softwareDeveloperJourney: Session = {
@@ -283,12 +283,12 @@ In this session you will learn about the process, and the career opportunities a
   trailer_url: 'https://vimeo.com/software-dev-trailer',
   full_video_url: 'https://vimeo.com/software-dev-full',
   duration: 0,
-  block_number: 2,
+  block_number: 1,
   industries: ['Justice/Emergency', 'Health/Wellness', 'ICT'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 3
+  display_order: 5
 };
 
 export const uxUiDesigner: Session = {
@@ -317,12 +317,12 @@ Whether you're passionate about nature, science, community engagement, or proble
   trailer_url: 'https://vimeo.com/ux-design-trailer',
   full_video_url: 'https://vimeo.com/ux-design-full',
   duration: 0,
-  block_number: 2,
+  block_number: 3,
   industries: ['Environment', 'Forestry', 'Horticulture'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 4
+  display_order: 3
 };
 
 export const cybersecuritySpecialist: Session = {
@@ -354,7 +354,7 @@ Come find out how tourism can be your first step toward a future full of possibi
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5
+  display_order: 3
 };
 
 export const aiMachineLearning: Session = {
@@ -375,12 +375,12 @@ export const aiMachineLearning: Session = {
   trailer_url: 'https://vimeo.com/987654373',
   full_video_url: 'https://vimeo.com/987654374',
   duration: 0,
-  block_number: 2,
+  block_number: 3,
   industries: ['Business', 'ICT'],
   grade_level: '7-12',
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
-  display_order: 6
+  display_order: 4
 };
 
 // ============================================================================
@@ -409,12 +409,12 @@ We'll also share **the latest labour-market insights and trends we're seeing in 
   trailer_url: 'https://vimeo.com/carpentry-trailer',
   full_video_url: 'https://vimeo.com/carpentry-full',
   duration: 0,
-  block_number: 3,
+  block_number: 4,
   industries: ['Life Skills', 'ICT'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 1
+  display_order: 4
 };
 
 export const plumberEssentialTrade: Session = {
@@ -443,12 +443,12 @@ Whether you're curious about what engineers really do or you're already dreaming
   trailer_url: 'https://vimeo.com/plumbing-trailer',
   full_video_url: 'https://vimeo.com/plumbing-full',
   duration: 0,
-  block_number: 3,
+  block_number: 2,
   industries: ['Construction', 'Business', 'Energy', 'Environment'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 2
+  display_order: 4
 };
 
 export const welderFabricator: Session = {
@@ -480,7 +480,7 @@ Whether you're exploring your options or ready to get started, this session will
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 3
+  display_order: 2
 };
 
 export const electricianPowerCareer: Session = {
@@ -511,12 +511,12 @@ Note: This session was recorded as part of a TYKTWD event in 2025.`,
   trailer_url: 'https://vimeo.com/electrician-trailer',
   full_video_url: 'https://vimeo.com/electrician-full',
   duration: 0,
-  block_number: 3,
+  block_number: 2,
   industries: ['Energy', 'Environment'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 4
+  display_order: 1
 };
 
 export const automotiveTechnicianModern: Session = {
@@ -541,12 +541,12 @@ You'll walk away with a better idea of what it takes to build a company and **wh
   trailer_url: 'https://vimeo.com/automotive-trailer',
   full_video_url: 'https://vimeo.com/automotive-full',
   duration: 0,
-  block_number: 3,
+  block_number: 1,
   industries: ['Business', 'Construction', 'Non-Profit/Education'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5
+  display_order: 6
 };
 
 export const hvacTechnicianCareer: Session = {
@@ -579,7 +579,7 @@ This session will explore:
   trailer_url: 'https://vimeo.com/hvac-trailer',
   full_video_url: 'https://vimeo.com/hvac-full',
   duration: 0,
-  block_number: 3,
+  block_number: 2,
   industries: ['Life Skills'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
@@ -615,12 +615,12 @@ Super-intelligence is becoming a commodity—this session is about learning how 
   trailer_url: 'https://vimeo.com/family-medicine-trailer',
   full_video_url: 'https://vimeo.com/family-medicine-full',
   duration: 0,
-  block_number: 3,
+  block_number: 4,
   industries: ['Life Skills'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
-  display_order: 7
+  display_order: 5
 };
 
 // ============================================================================
@@ -655,12 +655,12 @@ Bonus - if you complete the exercise in full, you can reach out to lyn at Lyn@ca
   trailer_url: 'https://vimeo.com/financial-planning-trailer',
   full_video_url: 'https://vimeo.com/financial-planning-full',
   duration: 0,
-  block_number: 4,
+  block_number: 1,
   industries: ['Life Skills'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 1
+  display_order: 7
 };
 
 export const socialWorkerHelping: Session = {
@@ -772,7 +772,7 @@ Presented by Roxanne Challenger, NFTE Canada`,
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 4
+  display_order: 6
 };
 
 export const environmentalScientist: Session = {
@@ -799,12 +799,12 @@ Whether you have a specific path in mind or are exploring several, this intervie
   trailer_url: 'https://vimeo.com/environmental-science-trailer',
   full_video_url: 'https://vimeo.com/environmental-science-full',
   duration: 0,
-  block_number: 4,
+  block_number: 2,
   industries: ['Health/Wellness', 'Business'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5
+  display_order: 7
 };
 
 export const firefighterFirstResponder: Session = {
@@ -825,12 +825,12 @@ export const firefighterFirstResponder: Session = {
   trailer_url: 'https://vimeo.com/firefighting-trailer',
   full_video_url: 'https://vimeo.com/firefighting-full',
   duration: 0,
-  block_number: 4,
+  block_number: 3,
   industries: ['Aviation/Aerospace', 'Justice/Emergency', 'ICT', 'Health/Wellness'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 6
+  display_order: 7
 };
 
 export const digitalMarketingSpecialist: Session = {
@@ -853,12 +853,12 @@ This session highlights **exciting career paths in the skilled trades, technolog
   trailer_url: 'https://vimeo.com/digital-marketing-trailer',
   full_video_url: 'https://vimeo.com/digital-marketing-full',
   duration: 0,
-  block_number: 4,
+  block_number: 3,
   industries: ['Manufacturing', 'Construction', 'Transportation', 'Energy'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 7
+  display_order: 6
 };
 
 export const cloudArchitectAws: Session = {
@@ -892,7 +892,7 @@ From the workshops and coaching they took part in to their travels, work experie
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
-  display_order: 8
+  display_order: 1
 };
 
 // ============================================================================
