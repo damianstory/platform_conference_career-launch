@@ -369,14 +369,14 @@ export const eduPath: PlatinumBoothData = {
 export const tradesMaster: PlatinumBoothData = {
   id: 'cielle-creative-connoisseur-live-nation-jpdl-encore',
   name: 'Encore Canada',
-  slug: 'cielle-creative-connoisseur-live-nation-jpdl-encore',
+  slug: 'encore-canada',
   associatedSessionSlug: 'behind-magic-events-concerts',
   tier: 'platinum',
   industries: ['Hospitality/Tourism', 'Business', 'Arts/Culture', 'ICT'],
   organizationType: 'employer',
   pathway: 'apprenticeship',
   logo: '/logos/encore-canada.png',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+  tagline: 'We are your global event production partner for event technology, production, exhibit and tradeshow services.',
   description: 'Conestoga is a leader in polytechnic education delivering a full range of career-focused education, training and applied research programs to prepare students for success in the new knowledge economy and promote economic prosperity throughout our region and across Ontario.',
   website: 'https://www.encore-can.com/',
   video: {
