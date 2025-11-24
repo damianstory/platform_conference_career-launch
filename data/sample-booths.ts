@@ -905,7 +905,7 @@ export const marketGenius: PlatinumBoothData = {
 
 export const consultPro: PlatinumBoothData = {
   id: 'humber-faculty-applied-science-technology',
-  name: 'Humber FAST',
+  name: 'Humber Polytechnic',
   slug: 'humber-faculty-applied-science-technology',
   associatedSessionSlug: 'humber-engineering-dream',
   tier: 'platinum',
@@ -924,26 +924,26 @@ export const consultPro: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Future Students | Visit Campus',
-      description: 'Explore Humber campus and discover what it\'s like to be a student',
+      title: 'Future Students',
+      description: 'Explore Humber',
       url: 'https://humber.ca/future-students.html',
       type: 'link'
     },
     {
       title: 'Career Finder',
-      description: 'Interactive tool to help you find the perfect Humber program for your career goals',
+      description: 'Find your career match',
       url: 'https://humbercareerfinder.com/',
       type: 'link'
     },
     {
       title: 'Engineer Your Dream Career',
-      description: 'Explore engineering programs and pathways at Humber',
+      description: 'Explore Engineering programs',
       url: 'https://appliedtechnology.humber.ca/future-students/explore/full-time/related-programs/engineering.html',
       type: 'link'
     },
     {
-      title: 'What is Work Integrated Learning (WIL)',
-      description: 'Learn how Humber integrates real-world work experience into your education',
+      title: 'Work Integrated Learning',
+      description: 'Working while studying',
       url: 'https://humber.ca/work-integrated-learning/',
       type: 'link'
     },
