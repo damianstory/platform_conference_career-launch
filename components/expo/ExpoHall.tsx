@@ -353,11 +353,11 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
             </div>
 
             {/* Drawer Content */}
-            <div className="px-6 pt-4 pb-6 relative">
+            <div className="px-6 pt-8 pb-6 relative">
               {/* Close Button */}
               <button
                 onClick={() => setIsDrawerOpen(false)}
-                className="absolute top-2 right-2 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors"
                 aria-label="Close filters"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
