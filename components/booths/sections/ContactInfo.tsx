@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Mail, Phone, Globe, Youtube, Twitter, Instagram, Facebook, Linkedin, TreePalm } from 'lucide-react'
-import { SiSpotify, SiTiktok, SiPinterest } from 'react-icons/si'
+import { SiSpotify, SiTiktok, SiPinterest, SiX } from 'react-icons/si'
 import { SnapchatOutline } from '@/components/icons/SnapchatOutline'
 import { ContactDetails } from '@/types/booth'
 import SectionLabel from '../shared/SectionLabel'
@@ -37,6 +37,8 @@ export default function ContactInfo({ contact, boothId, boothName }: ContactInfo
         return Youtube
       case 'twitter':
         return Twitter
+      case 'x':
+        return SiX
       case 'instagram':
         return Instagram
       case 'facebook':

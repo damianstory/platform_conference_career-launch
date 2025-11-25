@@ -2342,8 +2342,8 @@ export const communityCollege: StandardBoothData = {
     email: 'recruitment@conestogac.on.ca',
     website: 'https://www.conestogac.on.ca',
     socialLinks: [
-      { platform: 'twitter', url: 'https://x.com/ThinkConestoga' },
-      { platform: 'facebook', url: 'https://www.facebook.com/ThinkConestoga' },
+      { platform: 'x', url: 'https://x.com/ConestogaC' },
+      { platform: 'facebook', url: 'https://www.facebook.com/ConestogaCollege' },
       { platform: 'instagram', url: 'https://www.instagram.com/explore/tags/thinkconestoga/' },
       { platform: 'youtube', url: 'https://www.youtube.com/@ThinkConestoga' }
     ]
