@@ -2065,7 +2065,7 @@ export const publicHealth: PlatinumBoothData = {
   pathway: 'university',
   logo: '/logos/tourism-industry-association.png',
   tagline: 'The Tourism Industry Association of Ontario (TIAO) is the voice of Ontario\'s tourism industry.',
-  description: 'At TIAO, we work on behalf of our membership, collectively representing the majority of tourism businesses and workers across the province, to take on pressing policy issues that impact the Ontario tourism industry.\n\nTIAO is committed to supporting Ontario\'s future tourism workforce because it is the foundation of a strong and sustainable industry. Investing in skills and career pathways today builds resilience and readiness for change. For TIAO, supporting the workforce is about shaping leaders who will drive tourism forward.',
+  description: 'TIAO represents the majority of Ontario\'s tourism businesses and workers, advocating on critical policy issues that shape the industry. We are committed to supporting Ontario\'s future tourism workforce because it is the foundation of a strong and sustainable industry. Investing in skills and career pathways today builds resilience and readiness for change.\n\nFor TIAO, supporting the workforce isn\'t just about filling roles, it\'s about shaping leaders who will drive tourism forward.',
   video: {
     url: 'https://www.youtube.com/watch?v=7n2Bkljvo4U',
     type: 'youtube',
@@ -2074,14 +2074,14 @@ export const publicHealth: PlatinumBoothData = {
   },
   resources: [
     {
-      title: 'Discover Tourism Career Pathways',
-      description: 'Explore diverse career pathways in Ontario\'s tourism and hospitality industry',
+      title: 'Tourism Career Pathways',
+      description: 'Map your own pathway in tourism.',
       url: 'https://discovertourism.ca/guidebook/career-pathways/',
       type: 'link'
     },
     {
-      title: 'Featured Tourism Career Stories',
-      description: 'Read inspiring stories from tourism professionals across Ontario',
+      title: 'Tourism Career Stories',
+      description: 'Get inspired by real stories.',
       url: 'https://discovertourism.ca/featured-stories/',
       type: 'link'
     },
@@ -2092,15 +2092,15 @@ export const publicHealth: PlatinumBoothData = {
       type: 'link'
     },
     {
-      title: 'Skills That Travel',
-      description: 'Discover how skills developed in tourism transfer to opportunities worldwide',
-      url: 'https://www.skillsthattravel.ca/skills-that-travel',
+      title: 'What Is Tourism Really Like?',
+      description: 'Fact or fiction – take the quiz to find out.',
+      url: 'https://discovertourism.ca/tool/tourism-what-is-it-really-like/',
       type: 'link'
     },
     {
-      title: 'Tourism: What Is It Really Like?',
-      description: 'Get an insider\'s perspective on what working in tourism is truly like',
-      url: 'https://discovertourism.ca/tool/tourism-what-is-it-really-like/',
+      title: 'Skills That Travel',
+      description: 'Discover how skills developed in tourism transfer to opportunities worldwide',
+      url: 'https://www.skillsthattravel.ca/skills-that-travel',
       type: 'link'
     },
     {
