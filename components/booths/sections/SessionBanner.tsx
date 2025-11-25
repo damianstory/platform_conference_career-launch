@@ -5,14 +5,16 @@ import { useRouter } from 'next/navigation'
 import { ExternalLink } from 'lucide-react'
 import { getSessionBySlug } from '@/data/sample-sessions'
 import { useSessionContext } from '@/lib/hooks/useSessionContext'
+import { BoothDetailAnalytics } from '@/lib/analytics'
 
 interface SessionBannerProps {
   sessionSlug: string
   boothSlug: string
   boothName: string
+  boothId?: string
 }
 
-export default function SessionBanner({ sessionSlug, boothSlug, boothName }: SessionBannerProps) {
+export default function SessionBanner({ sessionSlug, boothSlug, boothName, boothId }: SessionBannerProps) {
   const router = useRouter()
   const { saveContext } = useSessionContext()
   // Navigation from booth to session with context tracking
@@ -28,6 +30,10 @@ export default function SessionBanner({ sessionSlug, boothSlug, boothName }: Ses
 
   // Handle click: Save booth context before navigating to session
   const handleWatchSession = () => {
+    // Track the click
+    if (boothId) {
+      BoothDetailAnalytics.sessionBannerClicked(boothId, boothName, sessionSlug)
+    }
     // Save context: sessionSlug (where going), sessionTitle, boothSlug (where coming from)
     // When on session page, we can check if context.sessionSlug matches current session
     // and show "Back to Booth" linking to context.boothSlug

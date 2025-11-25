@@ -4,9 +4,12 @@ import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { Maximize2, Loader2, X } from 'lucide-react'
 import { SessionSlidesData } from '@/types/booth'
+import { BoothDetailAnalytics } from '@/lib/analytics'
 
 interface SessionSlidesProps {
   slides: SessionSlidesData
+  boothId?: string
+  boothName?: string
 }
 
 /**
@@ -53,7 +56,7 @@ function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-p
   return url
 }
 
-export default function SessionSlides({ slides }: SessionSlidesProps) {
+export default function SessionSlides({ slides, boothId, boothName }: SessionSlidesProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -66,7 +69,12 @@ export default function SessionSlides({ slides }: SessionSlidesProps) {
   }
 
   const handleFullscreenToggle = () => {
-    setIsFullscreen(!isFullscreen)
+    const newFullscreenState = !isFullscreen
+    setIsFullscreen(newFullscreenState)
+    // Track fullscreen toggle
+    if (boothId && boothName) {
+      BoothDetailAnalytics.slidesFullscreenToggled(boothId, boothName, newFullscreenState)
+    }
   }
 
   // Handle component mount for portal

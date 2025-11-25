@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { PlatinumBoothData, StandardBoothData } from '@/types/booth'
+import { BoothDetailAnalytics } from '@/lib/analytics'
 
 interface BoothCardProps {
   booth: PlatinumBoothData | StandardBoothData
@@ -136,6 +137,11 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
   const linkUrl = (isExternalBooth && 'externalUrl' in booth && booth.externalUrl) ? booth.externalUrl : `/booths/${booth.slug}`
   const ctaText = 'Visit Booth →'
 
+  // Track booth card click
+  const handleCardClick = () => {
+    BoothDetailAnalytics.cardClicked(booth.id, booth.name, booth.tier)
+  }
+
   // Enhanced wrapper component for platinum cards only
   const PlatinumCardEnhancements = ({ children, tier }: { children: React.ReactNode, tier: string }) => {
     if (tier === 'platinum') {
@@ -213,11 +219,11 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
     <PlatinumCardEnhancements tier={booth.tier}>
       <div className={`${styles.wrapper} booth-card-wrapper`}>
         {isExternalBooth ? (
-          <a href={linkUrl} target="_blank" rel="noopener noreferrer">
+          <a href={linkUrl} target="_blank" rel="noopener noreferrer" onClick={handleCardClick}>
             <CardContent />
           </a>
         ) : (
-          <Link href={linkUrl}>
+          <Link href={linkUrl} onClick={handleCardClick}>
             <CardContent />
           </Link>
         )}

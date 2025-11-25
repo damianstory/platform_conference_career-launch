@@ -2,13 +2,17 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { VideoContent } from '@/types/booth'
+import { BoothDetailAnalytics } from '@/lib/analytics'
 
 interface VideoSectionProps {
   video: VideoContent
+  boothId?: string
+  boothName?: string
 }
 
-export default function VideoSection({ video }: VideoSectionProps) {
+export default function VideoSection({ video, boothId, boothName }: VideoSectionProps) {
   const [isVisible, setIsVisible] = useState(false)
+  const [hasTrackedView, setHasTrackedView] = useState(false)
   const videoRef = useRef<HTMLDivElement>(null)
 
   // Intersection Observer for lazy loading
@@ -19,6 +23,11 @@ export default function VideoSection({ video }: VideoSectionProps) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true)
+            // Track video view when it becomes visible (once)
+            if (!hasTrackedView && boothId && boothName) {
+              BoothDetailAnalytics.videoViewed(boothId, boothName, video.type)
+              setHasTrackedView(true)
+            }
           }
         })
       },
@@ -34,7 +43,7 @@ export default function VideoSection({ video }: VideoSectionProps) {
         observer.unobserve(currentRef)
       }
     }
-  }, [])
+  }, [boothId, boothName, video.type, hasTrackedView])
 
   // Convert video URL to embed URL
   const getEmbedUrl = (url: string, type: string): string => {

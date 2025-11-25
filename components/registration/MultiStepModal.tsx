@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { useRegistrationForm, UserType } from '@/lib/hooks/useRegistrationForm';
+import { RegistrationAnalytics } from '@/lib/analytics';
 import {
   ONTARIO_BOARDS,
   SCHOOLS_BY_BOARD,
@@ -51,6 +52,9 @@ export default function MultiStepModal({
   // Reset to user-type selection when modal opens
   useEffect(() => {
     if (isOpen) {
+      // Track registration started
+      RegistrationAnalytics.started(sessionId, sessionTitle);
+
       // Start with user-type selection
       setCurrentStep('user-type');
       resetUserType();
@@ -60,7 +64,7 @@ export default function MultiStepModal({
         document.body.style.overflow = '';
       };
     }
-  }, [isOpen, resetUserType]);
+  }, [isOpen, resetUserType, sessionId, sessionTitle]);
 
   // Focus first input after step changes
   useEffect(() => {
@@ -72,22 +76,32 @@ export default function MultiStepModal({
     }
   }, [isOpen, currentStep]);
 
-  // Handle ESC key
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      return () => document.removeEventListener('keydown', handleEscape);
+  // Handle ESC key - defined after handleCancel
+  const handleEscapeKey = (e: KeyboardEvent) => {
+    if (e.key === 'Escape' && isOpen) {
+      // Track cancellation with current step info
+      const stepNumber = typeof currentStep === 'number'
+        ? currentStep
+        : currentStep === 'student-1' ? 1
+        : currentStep === 'student-2' ? 2
+        : 0;
+      RegistrationAnalytics.cancelled(stepNumber, userType || undefined);
+      onClose();
     }
-  }, [isOpen, onClose]);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscapeKey);
+      return () => document.removeEventListener('keydown', handleEscapeKey);
+    }
+  }, [isOpen, currentStep, userType]);
 
   const handleUserTypeSelect = (type: UserType) => {
     if (!type) return;
+
+    // Track user type selection
+    RegistrationAnalytics.userTypeSelected(type);
 
     setIsTransitioning(true);
     setUserType(type);
@@ -114,6 +128,16 @@ export default function MultiStepModal({
     try {
       const success = await submitForm(sessionId, sessionTitle);
       if (success) {
+        // Track successful registration
+        RegistrationAnalytics.submitted({
+          userType: userType || 'unknown',
+          sessionId,
+          sessionTitle,
+          board: formData.boardId,
+          school: formData.schoolId,
+          classSize: formData.classSize,
+          gradeLevel: formData.gradeLevel,
+        });
         onSubmit(formData);
       }
     } finally {
@@ -121,20 +145,35 @@ export default function MultiStepModal({
     }
   };
 
+  const handleCancel = () => {
+    // Track cancellation with current step info
+    const stepNumber = typeof currentStep === 'number'
+      ? currentStep
+      : currentStep === 'student-1' ? 1
+      : currentStep === 'student-2' ? 2
+      : 0;
+    RegistrationAnalytics.cancelled(stepNumber, userType || undefined);
+    onClose();
+  };
+
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleCancel();
     }
   };
 
   const handleNext = () => {
     if (currentStep === 1) {
+      // Track step completion
+      RegistrationAnalytics.stepCompleted(1, userType || 'educator');
       // Set attempted submit flag for email validation error display
       setAttemptedSubmit(true);
       setCurrentStep(2);
     } else if (currentStep === 2) {
+      RegistrationAnalytics.stepCompleted(2, userType || 'educator');
       setCurrentStep(3);
     } else if (currentStep === 'student-1') {
+      RegistrationAnalytics.stepCompleted(1, 'student');
       setCurrentStep('student-2');
     } else if (currentStep === 3 || currentStep === 'student-2') {
       handleSubmit();
@@ -640,7 +679,7 @@ export default function MultiStepModal({
             <div className="flex justify-end">
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleCancel}
                 className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
               >
                 Cancel
@@ -695,7 +734,7 @@ export default function MultiStepModal({
               <div className="flex gap-3 justify-end w-full">
                 <button
                   type="button"
-                  onClick={onClose}
+                  onClick={handleCancel}
                   className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
                 >
                   Cancel
@@ -740,7 +779,7 @@ export default function MultiStepModal({
               <div className="flex gap-3 justify-end w-full">
                 <button
                   type="button"
-                  onClick={onClose}
+                  onClick={handleCancel}
                   className="px-4 md:px-6 py-2.5 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200"
                 >
                   Cancel

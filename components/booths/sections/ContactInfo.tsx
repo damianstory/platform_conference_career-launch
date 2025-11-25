@@ -7,12 +7,29 @@ import { SnapchatOutline } from '@/components/icons/SnapchatOutline'
 import { ContactDetails } from '@/types/booth'
 import SectionLabel from '../shared/SectionLabel'
 import { getExternalLinkAriaLabel } from '@/lib/utils/accessibility'
+import { BoothDetailAnalytics } from '@/lib/analytics'
 
 interface ContactInfoProps {
   contact: ContactDetails
+  boothId?: string
+  boothName?: string
 }
 
-export default function ContactInfo({ contact }: ContactInfoProps) {
+export default function ContactInfo({ contact, boothId, boothName }: ContactInfoProps) {
+  // Track contact clicks
+  const handleContactClick = (contactType: 'website' | 'email' | 'phone') => {
+    if (boothId && boothName) {
+      BoothDetailAnalytics.contactClicked(boothId, boothName, contactType)
+    }
+  }
+
+  // Track social clicks
+  const handleSocialClick = (platform: string) => {
+    if (boothId && boothName) {
+      BoothDetailAnalytics.socialClicked(boothId, boothName, platform)
+    }
+  }
+
   // Get social media icon
   const getSocialIcon = (platform: string) => {
     switch (platform.toLowerCase()) {
@@ -63,6 +80,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit website"
+              onClick={() => handleContactClick('website')}
               className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
             >
               <Globe className="w-2 h-2 text-primary-blue flex-shrink-0" />
@@ -77,6 +95,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
             <a
               href={`mailto:${contact.email}`}
               aria-label={`Email ${contact.email}`}
+              onClick={() => handleContactClick('email')}
               className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
             >
               <Mail className="w-2 h-2 text-primary-blue flex-shrink-0" />
@@ -91,6 +110,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
             <a
               href={`tel:${contact.phone}`}
               aria-label={`Call ${contact.phone}`}
+              onClick={() => handleContactClick('phone')}
               className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
             >
               <Phone className="w-2 h-2 text-primary-blue flex-shrink-0" />
@@ -112,6 +132,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={getExternalLinkAriaLabel(social.label || social.platform)}
+                  onClick={() => handleSocialClick(social.platform)}
                   className="flex items-center gap-2 py-1 md:py-2.5 min-h-[24px] md:min-h-[44px] px-2 -ml-2 rounded-md hover:text-primary-blue hover:bg-primary-blue/5 hover:-translate-x-1 transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
                 >
                   {Icon && <Icon className="w-2 h-2 text-primary-blue flex-shrink-0" />}
@@ -158,6 +179,7 @@ export default function ContactInfo({ contact }: ContactInfoProps) {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => handleSocialClick(social.platform)}
                     className="w-6 h-6 flex items-center justify-center bg-gray-100 rounded transition-all duration-200 hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-primary-blue focus-visible:outline-offset-2"
                     aria-label={getExternalLinkAriaLabel(social.platform)}
                   >

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import { SessionFilterAnalytics } from '@/lib/analytics';
 
 export interface FilterState {
   industries: string[];
@@ -64,6 +65,8 @@ export default function SessionFilters({
   const hasActiveFilters = filters.industries.length > 0 || filters.gradeLevel || filters.duration || filters.search;
 
   const handleReset = () => {
+    // Track filters cleared
+    SessionFilterAnalytics.filtersCleared();
     onFilterChange({
       industries: [],
       gradeLevel: '',
@@ -81,6 +84,10 @@ export default function SessionFilters({
 
   const toggleIndustry = (industry: string) => {
     const isSelected = filters.industries.includes(industry);
+    // Track filter applied when adding
+    if (!isSelected) {
+      SessionFilterAnalytics.filterApplied('industry', industry);
+    }
     const newIndustries = isSelected
       ? filters.industries.filter(i => i !== industry)
       : [...filters.industries, industry];
@@ -332,7 +339,10 @@ export default function SessionFilters({
         <div className="flex md:hidden gap-3 items-center">
           {/* Filter Button */}
           <button
-            onClick={() => setIsDrawerOpen(true)}
+            onClick={() => {
+              SessionFilterAnalytics.filterDrawerToggled(true, activeFilterCount);
+              setIsDrawerOpen(true);
+            }}
             className={`
               flex-1 px-4 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent
               ${activeFilterCount > 0

@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import ConditionalHeader from '@/components/layout/ConditionalHeader';
 import Footer from '@/components/Footer';
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -35,6 +38,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={openSans.variable}>
+      {/* Google Analytics */}
+      {GA_MEASUREMENT_ID && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                page_title: document.title,
+                page_location: window.location.href,
+              });
+            `}
+          </Script>
+        </>
+      )}
       <body className="min-h-screen flex flex-col overflow-x-hidden">
         <ConditionalHeader />
         <main className="flex-1 overflow-x-hidden">{children}</main>

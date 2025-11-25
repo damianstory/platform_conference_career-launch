@@ -6,6 +6,7 @@ import { Industry, OrganizationType, PlatinumBoothData, StandardBoothData } from
 import BoothCard from './BoothCard'
 import FilterBar from './FilterBar'
 import { Dices } from 'lucide-react'
+import { BoothAnalytics } from '@/lib/analytics'
 
 interface ExpoHallProps {
   booths: (PlatinumBoothData | StandardBoothData)[]
@@ -81,6 +82,8 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
   }, [filteredBooths])
 
   const clearAllFilters = () => {
+    // Track filters cleared
+    BoothAnalytics.filtersCleared()
     setSelectedIndustries([])
     setOrganizationType('all')
   }
@@ -98,6 +101,9 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
     // Select random booth from selectable booths and navigate directly
     const randomIndex = Math.floor(Math.random() * selectableBooths.length)
     const randomBooth = selectableBooths[randomIndex]
+
+    // Track random booth selection
+    BoothAnalytics.randomSelected(randomBooth.id, randomBooth.name)
 
     // Check if this is an external booth
     const isExternalBooth = randomBooth.tier === 'standard' && 'externalUrl' in randomBooth && randomBooth.externalUrl
@@ -119,6 +125,21 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
     setSelectedIndustries(selectedIndustries.filter(i => i !== industry))
   }
 
+  // Wrapper functions for filter tracking
+  const handleIndustriesChange = (industries: Industry[]) => {
+    // Track when industries are added or removed
+    if (industries.length > selectedIndustries.length) {
+      const newIndustry = industries.find(i => !selectedIndustries.includes(i))
+      if (newIndustry) BoothAnalytics.filterApplied('industry', newIndustry)
+    }
+    setSelectedIndustries(industries)
+  }
+
+  const handleOrganizationTypeChange = (type: 'all' | OrganizationType) => {
+    BoothAnalytics.filterApplied('tier', type)
+    setOrganizationType(type)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background-light to-white">
       {/* Main Content */}
@@ -134,8 +155,10 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
                   onClick={() => {
                     // Mobile: open drawer, Desktop: toggle expansion
                     if (window.innerWidth < 768) {
+                      BoothAnalytics.filterDrawerToggled(true)
                       setIsDrawerOpen(true)
                     } else {
+                      BoothAnalytics.filterDrawerToggled(!isExpanded)
                       setIsExpanded(!isExpanded)
                     }
                   }}
@@ -206,8 +229,8 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
               <FilterBar
                 selectedIndustries={selectedIndustries}
                 organizationType={organizationType}
-                onIndustriesChange={setSelectedIndustries}
-                onOrganizationTypeChange={setOrganizationType}
+                onIndustriesChange={handleIndustriesChange}
+                onOrganizationTypeChange={handleOrganizationTypeChange}
               />
             </div>
           </div>
@@ -371,8 +394,8 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
                 <FilterBar
                   selectedIndustries={selectedIndustries}
                   organizationType={organizationType}
-                  onIndustriesChange={setSelectedIndustries}
-                  onOrganizationTypeChange={setOrganizationType}
+                  onIndustriesChange={handleIndustriesChange}
+                  onOrganizationTypeChange={handleOrganizationTypeChange}
                 />
               </div>
 

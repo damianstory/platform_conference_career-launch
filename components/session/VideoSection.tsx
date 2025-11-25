@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import MultiStepModal from '@/components/registration/MultiStepModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
+import { SessionAnalytics } from '@/lib/analytics';
 
 interface VideoSectionProps {
   sessionSlug: string;
@@ -20,6 +21,8 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   }
 
   const handleWatchClick = () => {
+    // Track watch button click
+    SessionAnalytics.watchClicked(session.id, session.title, 'detail');
     setIsModalOpen(true);
   };
 
@@ -34,6 +37,8 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
     // (In production, this will be triggered by Vimeo player's onPlay event)
     setTimeout(() => {
       setVideoState('playing');
+      // Track video started
+      SessionAnalytics.videoStarted(session.id, session.title, data.userType);
     }, 500); // Half-second simulates video initialization
   };
 

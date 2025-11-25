@@ -3,6 +3,7 @@
 import React from 'react'
 import { GraduationCap, Briefcase, Lightbulb, Sparkles } from 'lucide-react'
 import { Industry, OrganizationType } from '@/types/booth'
+import { BoothAnalytics } from '@/lib/analytics'
 
 interface FilterBarProps {
   selectedIndustries: Industry[]

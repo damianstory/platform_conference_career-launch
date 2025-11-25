@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { SessionAnalytics } from '@/lib/analytics';
 
 type ViewType = 'conference' | 'all';
 
@@ -15,6 +16,9 @@ export default function SessionTabs({ activeView, className = '' }: SessionTabsP
   const searchParams = useSearchParams();
 
   const handleTabChange = (view: ViewType) => {
+    // Track view change
+    SessionAnalytics.viewChanged(view, activeView);
+
     // Create new URLSearchParams with the updated view
     const params = new URLSearchParams(searchParams.toString());
 

@@ -31,11 +31,12 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
           tagline={booth.tagline}
           primaryCTA={booth.primaryCTA}
           website={booth.website}
+          boothId={booth.id}
         />
 
         {/* Video Section - Always shown */}
         <div className={`col-span-12 h-[450px] lg:h-[500px] ${isPlatinum ? 'lg:col-span-4' : 'lg:col-span-8'}`}>
-          <VideoSection video={booth.video} />
+          <VideoSection video={booth.video} boothId={booth.id} boothName={booth.name} />
         </div>
 
         {/* Engagement Activity - Platinum only */}
@@ -48,13 +49,14 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         {/* Resources - Always shown */}
         <ResourceCards
           resources={booth.resources}
+          boothId={booth.id}
           colSpan={isPlatinum ? 'lg:col-span-6' : 'lg:col-span-4'}
           layout={isPlatinum ? 'grid' : 'vertical'}
         />
 
         {/* Session Slides - Platinum only */}
         {isPlatinum && booth.tier === 'platinum' && booth.sessionSlides && (
-          <SessionSlides slides={booth.sessionSlides} />
+          <SessionSlides slides={booth.sessionSlides} boothId={booth.id} boothName={booth.name} />
         )}
 
         {/* Session Banner - Platinum only, if associated session exists */}
@@ -63,6 +65,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
             sessionSlug={booth.associatedSessionSlug}
             boothSlug={booth.slug}
             boothName={booth.name}
+            boothId={booth.id}
           />
         )}
 
@@ -73,7 +76,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         />
 
         {/* Contact Info - Always shown */}
-        <ContactInfo contact={{ ...booth.contact, website: booth.website }} />
+        <ContactInfo contact={{ ...booth.contact, website: booth.website }} boothId={booth.id} boothName={booth.name} />
 
       </div>
     </div>

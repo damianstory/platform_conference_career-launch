@@ -4,6 +4,7 @@ import type { Session } from '@/types';
 import IndustryBadge from './IndustryBadge';
 import { formatDescription } from '@/lib/formatDescription';
 import { useRouter } from 'next/navigation';
+import { SessionAnalytics } from '@/lib/analytics';
 
 interface SessionTableRowProps {
   session: Session;
@@ -33,13 +34,23 @@ export default function SessionTableRow({
 }: SessionTableRowProps) {
   const router = useRouter();
 
+  const handleToggleWithTracking = () => {
+    // Track expand/collapse
+    SessionAnalytics.expanded(session.id, session.title, !isExpanded);
+    onToggle();
+  };
+
   const handleWatchClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    // Track watch click from table
+    SessionAnalytics.watchClicked(session.id, session.title, 'table');
     router.push(`/sessions/${session.slug}`);
   };
 
   const handleTrailerClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    // Track trailer view
+    SessionAnalytics.trailerViewed(session.id, session.title);
     console.log('Watch trailer:', session.id);
     // TODO: Implement trailer playback when needed
   };
@@ -53,13 +64,13 @@ export default function SessionTableRow({
             ? 'border-white/20 hover:bg-white/10'
             : 'border-gray-200 hover:bg-neutral-1'
         }`}
-        onClick={onToggle}
+        onClick={handleToggleWithTracking}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            onToggle();
+            handleToggleWithTracking();
           }
         }}
         aria-expanded={isExpanded}
