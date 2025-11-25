@@ -52,6 +52,49 @@ const faqItems: AccordionItem[] = [
     ),
   },
   {
+    id: 'faq-13',
+    title: 'Are there prizes for students?',
+    content: (
+      <p>
+        Not as part of Career Launch, however, through the <strong>Industry Immersion Series</strong> we&apos;re giving away $10,000 CAD to students EACH month this school year, in the form of 20 x $500 micro grants.
+        <br />
+        <br />
+        You can learn more here:{' '}
+        <a href="https://industryimmersionseries.myblueprint.ca/" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+          industryimmersionseries.myblueprint.ca
+        </a>
+      </p>
+    ),
+  },
+  {
+    id: 'faq-5',
+    title: 'Do I need to register in advance?',
+    content: (
+      <p>
+        You don&apos;t need to create an account with an email and a password to access this platform,
+        but before watching a session, you will be prompted to enter some basic information.
+        <br />
+        <br />
+        For students, we simply ask for your school board and school (if you&apos;re watching on your own)
+        for reporting purposes.
+        <br />
+        <br />
+        For educators, we ask for your name, email, school, school board, and how many students
+        you&apos;re watching it with (again for reporting purposes).
+      </p>
+    ),
+  },
+  {
+    id: 'faq-6',
+    title: 'How long do we have access to these recordings for?',
+    content: (
+      <p>
+        You and your students will have access to all Career Launch recordings to watch
+        on-demand for the remainder of the 25-26 school year.
+      </p>
+    ),
+  },
+  {
     id: 'faq-2',
     title: 'Are sessions live or pre-recorded?',
     content: (
@@ -88,34 +131,6 @@ const faqItems: AccordionItem[] = [
     ),
   },
   {
-    id: 'faq-5',
-    title: 'Do I need to register in advance?',
-    content: (
-      <p>
-        You don&apos;t need to create an account with an email and a password to access this platform,
-        but before watching a session, you will be prompted to enter some basic information.
-        <br />
-        <br />
-        For students, we simply ask for your school board and school (if you&apos;re watching on your own)
-        for reporting purposes.
-        <br />
-        <br />
-        For educators, we ask for your name, email, school, school board, and how many students
-        you&apos;re watching it with (again for reporting purposes).
-      </p>
-    ),
-  },
-  {
-    id: 'faq-6',
-    title: 'How long do we have access to these recordings for?',
-    content: (
-      <p>
-        You and your students will have access to all Career Launch recordings to watch
-        on-demand for the remainder of the 25-26 school year.
-      </p>
-    ),
-  },
-  {
     id: 'faq-7',
     title: 'What technology do I need?',
     content: (
@@ -123,6 +138,44 @@ const faqItems: AccordionItem[] = [
         Any device with internet connectivity should work to allow you or your students to watch
         this content.
       </p>
+    ),
+  },
+  {
+    id: 'faq-14',
+    title: 'Do you have any communications we can share with families?',
+    content: (
+      <div>
+        <p>
+          You can copy and paste the content below. Please modify and update for your needs:
+        </p>
+        <br />
+        <p>
+          In collaboration with myBlueprint.ca &lt;OUR BOARD/SCHOOL&gt; grade 7-12 students now have access to 25+ engaging session recordings from Ontario employers looking to connect with Ontario students to speak to the types of opportunities and roles that are available to them within their organizations and industries.
+        </p>
+        <br />
+        <p>
+          Students will have opportunities to watch and reflect with this content as part of different curriculum activities, however, they are not limited to only watching at school. Students and families can access the Career Launch platform and recordings from home, using any device that has an internet connection.
+        </p>
+        <br />
+        <p>
+          These session recordings will be available throughout the remainder of the 2025-26 school year.
+        </p>
+        <br />
+        <p>
+          Families can visit{' '}
+          <a href="https://careerlaunch.myblueprint.ca" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+            careerlaunch.myblueprint.ca
+          </a>{' '}
+          to learn more.
+        </p>
+        <br />
+        <p>
+          You can also print a{' '}
+          <a href="https://drive.google.com/file/d/1LNKjbnNJJWg3UVsY_ZMnksHRMfY8HCZd/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+            one-pager with QR code here
+          </a>.
+        </p>
+      </div>
     ),
   },
   {
