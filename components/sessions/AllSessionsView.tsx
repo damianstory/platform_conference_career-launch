@@ -13,9 +13,8 @@ interface AllSessionsViewProps {
 const normalizeGradeLevel = (gradeLevel: string | null): string => {
   if (!gradeLevel) return 'All Grades';
   if (gradeLevel.includes('All')) return 'All Grades';
-  if (gradeLevel.match(/7.*12/)) return '7-12';
-  if (gradeLevel.match(/9.*10/)) return '9-10';
-  if (gradeLevel.match(/11.*12/)) return '11-12';
+  // Only sessions specifically for grades 11-12 (not 7-12) get the '11-12' tag
+  if (gradeLevel.match(/11.*12/) && !gradeLevel.match(/7/)) return '11-12';
   return 'All Grades';
 };
 
@@ -68,9 +67,10 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
       // Duration filter
       if (filters.duration && session.duration) {
         const duration = session.duration;
-        if (filters.duration === 'under-20' && duration >= 20) return false;
-        if (filters.duration === '20-30' && (duration < 20 || duration > 30)) return false;
-        if (filters.duration === 'over-30' && duration <= 30) return false;
+        if (filters.duration === 'under-15' && duration >= 15) return false;
+        if (filters.duration === '15-30' && (duration < 15 || duration > 30)) return false;
+        if (filters.duration === '30-45' && (duration < 30 || duration > 45)) return false;
+        if (filters.duration === 'over-45' && duration <= 45) return false;
       }
 
       return true;

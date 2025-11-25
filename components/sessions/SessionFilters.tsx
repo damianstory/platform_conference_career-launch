@@ -41,15 +41,15 @@ const INDUSTRIES = [
 
 const GRADE_LEVELS = [
   { value: '', label: 'All Grades' },
-  { value: '9-10', label: 'Grades 9-10' },
-  { value: '11-12', label: 'Grades 11-12' },
+  { value: '11-12', label: 'Grades 11-12 Only' },
 ];
 
 const DURATIONS = [
   { value: '', label: 'All Durations' },
-  { value: 'under-20', label: 'Under 20 min' },
-  { value: '20-30', label: '20-30 min' },
-  { value: 'over-30', label: 'Over 30 min' },
+  { value: 'under-15', label: '< 15 min' },
+  { value: '15-30', label: '15-30 min' },
+  { value: '30-45', label: '30-45 min' },
+  { value: 'over-45', label: '> 45 min' },
 ];
 
 export default function SessionFilters({
