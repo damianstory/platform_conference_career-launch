@@ -826,14 +826,14 @@ export const marketGenius: PlatinumBoothData = {
   pathway: 'college',
   logo: '/logos/ernst-and-young.jpg',
   imageScale: 0.9,
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'MarketGenius is a full-service marketing agency creating innovative campaigns for leading Canadian brands.',
+  tagline: 'At EY, we develop you with future-focused skills, and equip you with world-class experiences. We empower you in a flexible environment, and fuel you and your extraordinary talents in a diverse and inclusive culture of globally connected teams.',
+  description: 'At EY, our purpose is Building a better working world. The insights and quality services we provide help build trust and confidence in the capital markets and in economies the world over. We develop outstanding leaders who team to deliver on our promises to all our stakeholders. In so doing, we play a critical role in building a better working world for our people, for our clients and for our communities.',
   website: 'https://www.ey.com/en_ca',
   video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
+    url: 'https://www.youtube.com/embed/v-tWYAvJ08s',
     type: 'youtube',
-    title: 'Marketing Excellence',
-    description: 'See our award-winning campaigns'
+    title: 'Reframe Your Future',
+    description: 'Discover career opportunities at EY'
   },
   resources: [
     {
@@ -874,7 +874,8 @@ export const marketGenius: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: '/slides/ey-presentation.pdf',
+    type: 'local-pdf',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
@@ -1376,38 +1377,38 @@ export const legalServices: PlatinumBoothData = {
   resources: [
     {
       title: 'Should I Buy It Quiz',
-      description: 'Interactive quiz to help teens make smart purchasing decisions',
-      url: 'https://www.mydoh.ca/tools/should-i-buy-it-quiz/',
+      description: 'This spending tool can help you figure out if your next planned purchase is really worth it',
+      url: 'https://www.mydoh.ca/tools/should-i-buy-it-quiz/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
       type: 'link'
     },
     {
       title: 'How to Write a Resume',
-      description: 'Step-by-step guide with examples for teens creating their first resume',
-      url: 'https://www.mydoh.ca/learn/blog/career/how-to-make-a-resume-for-teens-with-examples/',
+      description: 'Get advice about how to make a resume for teens, including resume examples for teens and tips for what should be on a resume for a teenager.',
+      url: 'https://www.mydoh.ca/learn/blog/career/how-to-make-a-resume-for-teens-with-examples/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
       type: 'link'
     },
     {
       title: 'Part Time Jobs for Teens',
-      description: 'Discover 14 of the best part-time job opportunities for teens',
-      url: 'https://www.mydoh.ca/learn/blog/career/14-best-part-time-jobs-for-teens/',
+      description: 'Are you a teen thinking about applying for your first job? Here\'s a list of the most popular part-time jobs for teens and tips on how to balance work with school.',
+      url: 'https://www.mydoh.ca/learn/blog/career/14-best-part-time-jobs-for-teens/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
+      type: 'link'
+    },
+    {
+      title: 'How to Help Teens with ADHD Manage Their Money',
+      description: 'Help kids and teens with ADHD or ADD develop money skills. We share 8 tips to help them with impulsivity, improve decision-making and financial literacy.',
+      url: 'https://www.mydoh.ca/learn/blog/banking/how-to-help-teens-with-adhd-manage-their-money/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
+      type: 'link'
+    },
+    {
+      title: 'Career Tools',
+      description: 'Resources to help teens land their first job or turn a hobby into a profit.',
+      url: 'https://www.mydoh.ca/learn/blog/category/career/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
       type: 'link'
     },
     {
       title: 'Mydoh - How it Works',
-      description: 'Learn how Mydoh helps teens manage money, earn, save, and spend safely',
-      url: 'https://www.mydoh.ca/how-it-works/',
-      type: 'link'
-    },
-    {
-      title: 'Money Talks | Blog',
-      description: 'Financial literacy articles covering earning, saving, spending, and career topics',
-      url: 'https://www.mydoh.ca/learn/blog/',
-      type: 'link'
-    },
-    {
-      title: 'Careers at Mydoh',
-      description: 'Explore career opportunities at Mydoh and join our team',
-      url: 'https://www.mydoh.ca/careers/',
+      description: 'Learn more about how Mydoh works',
+      url: 'https://www.mydoh.ca/how-it-works/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
       type: 'link'
     }
   ],
@@ -1425,11 +1426,11 @@ export const legalServices: PlatinumBoothData = {
   },
   primaryCTA: {
     text: 'Learn More',
-    url: 'https://www.mydoh.ca/',
+    url: 'https://www.mydoh.ca/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
     type: 'learn-more'
   },
   contact: {
-    website: 'https://www.mydoh.ca',
+    website: 'https://www.mydoh.ca/?utm_medium=partnership&utm_source=partnerships&utm_campaign=myblueprint&utm_content=careerlaunch2025',
     socialLinks: [
       { platform: 'globe', url: 'https://www.indigo.ca/en-ca/making-bank-money-skills-for-real-life/9781443469814.html', label: 'Making Bank: Money Skills for Real Life' },
       { platform: 'instagram', url: 'https://www.instagram.com/mydohapp/?hl=en' },
