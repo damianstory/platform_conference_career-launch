@@ -148,9 +148,9 @@ const faqItems: AccordionItem[] = [
         <p>
           You can copy and paste the content below. Please modify and update for your needs:
         </p>
-        <br />
+        <p className="text-gray-400 my-2">--</p>
         <p>
-          In collaboration with myBlueprint.ca &lt;OUR BOARD/SCHOOL&gt; grade 7-12 students now have access to 25+ engaging session recordings from Ontario employers looking to connect with Ontario students to speak to the types of opportunities and roles that are available to them within their organizations and industries.
+          In collaboration with myBlueprint.ca, which students use as a tool to support their post-secondary, career, and life planning journey, &lt;OUR BOARD/SCHOOL&gt; grade 7-12 students now have access to 25+ engaging session recordings from Ontario employers looking to connect with Ontario students to speak to the types of opportunities and roles that are available to them within their organizations and industries.
         </p>
         <br />
         <p>
@@ -168,7 +168,7 @@ const faqItems: AccordionItem[] = [
           </a>{' '}
           to learn more.
         </p>
-        <br />
+        <p className="text-gray-400 my-2">--</p>
         <p>
           You can also print a{' '}
           <a href="https://drive.google.com/file/d/1LNKjbnNJJWg3UVsY_ZMnksHRMfY8HCZd/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
