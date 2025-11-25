@@ -21,7 +21,7 @@ export function middleware(request: NextRequest) {
     "font-src 'self' https://fonts.gstatic.com",
     "img-src 'self' data: https: blob:",
     "media-src 'self' https://player.vimeo.com https://www.youtube.com",
-    "frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://docs.google.com https://drive.google.com https://forms.google.com https://www.instagram.com https://claude.site",
+    "frame-src 'self' https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://docs.google.com https://drive.google.com https://forms.google.com https://www.instagram.com https://claude.site https://view.officeapps.live.com",
     "connect-src 'self' https://*.supabase.co https://www.google-analytics.com https://www.googletagmanager.com",
     "object-src 'none'",
     "base-uri 'self'",
@@ -75,6 +75,6 @@ export const config = {
      * - favicon.ico (favicon file)
      * - public folder
      */
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|pdf)$).*)',
   ],
 }

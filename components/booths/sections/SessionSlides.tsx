@@ -14,9 +14,9 @@ interface SessionSlidesProps {
 
 /**
  * Converts sharing URLs to embed URLs
- * Supports Google Slides, Google Drive PDFs, Dropbox PPTX, and local PPTX files
+ * Supports Google Slides, Google Drive PDFs, Dropbox PPTX, local PPTX, and local PDF files
  */
-function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-pdf' | 'dropbox-pptx' | 'local-pptx'): string {
+function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-pdf' | 'dropbox-pptx' | 'local-pptx' | 'local-pdf'): string {
   // If already an embed URL, return as is
   if (url.includes('/embed') || url.includes('/preview') || url.includes('view.officeapps.live.com')) {
     return url
@@ -33,6 +33,8 @@ function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-p
       detectedType = 'dropbox-pptx'
     } else if (url.startsWith('/') && url.includes('.pptx')) {
       detectedType = 'local-pptx'
+    } else if (url.startsWith('/') && url.includes('.pdf')) {
+      detectedType = 'local-pdf'
     }
   }
 
@@ -78,6 +80,12 @@ function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-p
     }
     // Return original URL for local dev (will show download option)
     return url
+  }
+
+  // Local PDF files - can be embedded directly in iframe
+  if (detectedType === 'local-pdf') {
+    // Add parameters to hide toolbar/sidebar in browser PDF viewer
+    return `${url}#toolbar=0&navpanes=0&view=FitH`
   }
 
   // If no conversion needed or format not recognized, return original
