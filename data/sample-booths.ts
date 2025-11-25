@@ -747,34 +747,34 @@ export const dataDynamics: PlatinumBoothData = {
   },
   resources: [
     {
+      title: 'MyStartr Future Skills and Careers',
+      description: 'A one-stop-shop of resources to help students discover their strengths, learn more about possible careers, and provide next steps to move towards career goals.',
+      url: 'https://mystartr.ca/careers/',
+      type: 'link'
+    },
+    {
       title: 'Perceptions of Trades Training Gaining Traction Over University Report',
-      description: 'Research on shifting perspectives toward skilled trades and vocational training',
+      description: 'Find out what Canadians are most likely to recommend - trades or university.',
       url: 'https://www.torontomu.ca/diversity/reports/perceptions-of-trades-training-gaining-traction-over-university/',
       type: 'pdf'
     },
     {
+      title: 'Ecosystem Map of Skills Organizations',
+      description: 'Search from a list of 4,814 skills training and employment organizations.',
+      url: 'https://www.torontomu.ca/diversity/research/future-skills/eco-system-map-of-skills-organization/',
+      type: 'link'
+    },
+    {
       title: 'ADaPT for Black Youth',
-      description: 'Program supporting Black youth in developing future-ready skills',
+      description: 'Level up your digital skills and stand out in the job market by joining our Winter 2026 cohort.',
       url: 'https://www.torontomu.ca/diversity/research/future-skills/adaptforblackyouth/',
       type: 'link'
     },
     {
       title: 'Newcomer Employment and Entrepreneurship Knowledge Hub (NEESH)',
-      description: 'Resources and programs supporting newcomer entrepreneurs and employment',
+      description: 'Jumpstart your job search or business with in-demand training tailored to your goals.',
       url: 'https://scaddingcourt.org/programs/program-category/entrepreneurship-programs/',
       type: 'link'
-    },
-    {
-      title: 'Ecosystem Map of Skills Organizations',
-      description: 'Comprehensive mapping of skills development organizations across Canada',
-      url: 'https://www.torontomu.ca/diversity/research/future-skills/eco-system-map-of-skills-organization/',
-      type: 'link'
-    },
-    {
-      title: 'Bridging the AI Gap in SMEs in Canada Report',
-      description: 'Research on AI adoption challenges and opportunities for small and medium enterprises',
-      url: 'https://www.torontomu.ca/diversity/reports/bridging-the-ai-gap-in-smes-in-canada/',
-      type: 'pdf'
     },
     {
       title: 'Meet the DI Team',
@@ -784,7 +784,7 @@ export const dataDynamics: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1RF5u4yEwFfABTTLAn5KfXqDQEln2vx6C/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
