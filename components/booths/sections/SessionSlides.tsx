@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { Maximize2, Loader2, X } from 'lucide-react'
+import { Maximize2, Loader2, X, Download, FileText } from 'lucide-react'
 import { SessionSlidesData } from '@/types/booth'
 import { BoothDetailAnalytics } from '@/lib/analytics'
 
@@ -13,12 +13,12 @@ interface SessionSlidesProps {
 }
 
 /**
- * Converts Google sharing URLs to embed URLs
- * Supports both Google Slides and Google Drive PDFs
+ * Converts sharing URLs to embed URLs
+ * Supports Google Slides, Google Drive PDFs, Dropbox PPTX, and local PPTX files
  */
-function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-pdf'): string {
+function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-pdf' | 'dropbox-pptx' | 'local-pptx'): string {
   // If already an embed URL, return as is
-  if (url.includes('/embed') || url.includes('/preview')) {
+  if (url.includes('/embed') || url.includes('/preview') || url.includes('view.officeapps.live.com')) {
     return url
   }
 
@@ -29,6 +29,10 @@ function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-p
       detectedType = 'google-slides'
     } else if (url.includes('drive.google.com/file')) {
       detectedType = 'google-drive-pdf'
+    } else if (url.includes('dropbox.com') && url.includes('.pptx')) {
+      detectedType = 'dropbox-pptx'
+    } else if (url.startsWith('/') && url.includes('.pptx')) {
+      detectedType = 'local-pptx'
     }
   }
 
@@ -52,14 +56,57 @@ function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-p
     }
   }
 
+  // Convert Dropbox PPTX URLs to Office Online viewer
+  if (detectedType === 'dropbox-pptx') {
+    // Convert Dropbox sharing URL to raw/direct link
+    // Change dl=0 to raw=1 for direct access
+    let rawUrl = url.replace(/dl=0/, 'raw=1').replace(/&e=\d+/, '')
+    // Use Microsoft Office Online viewer to embed the PPTX
+    return `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(rawUrl)}`
+  }
+
+  // Local PPTX files - construct full URL for Office Online
+  if (detectedType === 'local-pptx') {
+    // In production, construct the full public URL
+    if (typeof window !== 'undefined') {
+      const baseUrl = window.location.origin
+      const fullUrl = `${baseUrl}${url}`
+      // Only use Office Online in production (not localhost)
+      if (!baseUrl.includes('localhost')) {
+        return `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(fullUrl)}`
+      }
+    }
+    // Return original URL for local dev (will show download option)
+    return url
+  }
+
   // If no conversion needed or format not recognized, return original
   return url
+}
+
+/**
+ * Check if we're in local development
+ */
+function isLocalDev(): boolean {
+  if (typeof window !== 'undefined') {
+    return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  }
+  return false
 }
 
 export default function SessionSlides({ slides, boothId, boothName }: SessionSlidesProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [isLocal, setIsLocal] = useState(false)
+
+  // Check if local dev on mount
+  useEffect(() => {
+    setIsLocal(isLocalDev())
+  }, [])
+
+  // Check if this is a local PPTX that can't be embedded in dev
+  const isLocalPptxInDev = isLocal && slides.type === 'local-pptx'
 
   // Convert URL to proper embed format
   const embedUrl = convertToEmbedUrl(slides.embedUrl, slides.type)
@@ -120,20 +167,40 @@ export default function SessionSlides({ slides, boothId, boothName }: SessionSli
 
       {/* Slides Embed */}
       <div className="relative aspect-[16/10]">
-        {isLoading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-neutral-1">
-            <Loader2 className="w-10 h-10 text-primary-blue animate-spin" />
+        {isLocalPptxInDev ? (
+          /* Local dev fallback for PPTX files */
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-neutral-1 p-8">
+            <FileText className="w-16 h-16 text-neutral-4 mb-4" />
+            <p className="text-neutral-5 text-center mb-4">
+              PowerPoint preview is available in production.
+            </p>
+            <a
+              href={slides.embedUrl}
+              download
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-blue text-white rounded-lg hover:bg-primary-blue/90 transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Download Presentation
+            </a>
           </div>
-        )}
+        ) : (
+          <>
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-neutral-1">
+                <Loader2 className="w-10 h-10 text-primary-blue animate-spin" />
+              </div>
+            )}
 
-        <iframe
-          src={embedUrl}
-          className="absolute inset-0 w-full h-full"
-          onLoad={handleIframeLoad}
-          title={slides.title}
-          allowFullScreen
-          suppressHydrationWarning
-        />
+            <iframe
+              src={embedUrl}
+              className="absolute inset-0 w-full h-full"
+              onLoad={handleIframeLoad}
+              title={slides.title}
+              allowFullScreen
+              suppressHydrationWarning
+            />
+          </>
+        )}
       </div>
 
       {/* Metadata Footer (if available) */}

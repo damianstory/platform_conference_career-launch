@@ -424,7 +424,8 @@ export const tradesMaster: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/1pI__8Js2dXuSzPswViHVgqDUrETmzt7gBFqdDilMFpA/embed?start=false&loop=false',
+    embedUrl: '/slides/encore-career-presentation.pptx',
+    type: 'local-pptx',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
