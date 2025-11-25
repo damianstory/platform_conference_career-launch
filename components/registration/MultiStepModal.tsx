@@ -105,11 +105,19 @@ export default function MultiStepModal({
     }, 200);
   };
 
-  const handleSubmit = (e?: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e?: React.FormEvent) => {
     e?.preventDefault();
 
-    if (submitForm(sessionId)) {
-      onSubmit(formData);
+    setIsSubmitting(true);
+    try {
+      const success = await submitForm(sessionId, sessionTitle);
+      if (success) {
+        onSubmit(formData);
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -650,22 +658,25 @@ export default function MultiStepModal({
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] transition-colors duration-200 flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                Start Video
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                {isSubmitting ? 'Saving...' : 'Start Video'}
+                {!isSubmitting && (
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                )}
               </button>
             </div>
           ) : userType === 'student' ? (
@@ -692,23 +703,25 @@ export default function MultiStepModal({
                 <button
                   type="button"
                   onClick={handleNext}
-                  disabled={!canProceed()}
+                  disabled={!canProceed() || (currentStep === 'student-2' && isSubmitting)}
                   className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center gap-2 min-h-[44px]"
                 >
-                  {currentStep === 'student-2' ? 'Start Video' : 'Next Step'}
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                  {currentStep === 'student-2' ? (isSubmitting ? 'Saving...' : 'Start Video') : 'Next Step'}
+                  {!(currentStep === 'student-2' && isSubmitting) && (
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  )}
                 </button>
               </div>
             </div>
@@ -735,23 +748,25 @@ export default function MultiStepModal({
                 <button
                   type="button"
                   onClick={handleNext}
-                  disabled={!canProceed()}
+                  disabled={!canProceed() || (currentStep === 3 && isSubmitting)}
                   className="px-4 md:px-6 py-2.5 bg-[#0092FF] text-white rounded-lg text-sm font-medium hover:bg-[#0082E6] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 flex items-center gap-2 min-h-[44px]"
                 >
-                  {currentStep === 3 ? 'Start Video' : 'Next Step'}
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+                  {currentStep === 3 ? (isSubmitting ? 'Saving...' : 'Start Video') : 'Next Step'}
+                  {!(currentStep === 3 && isSubmitting) && (
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  )}
                 </button>
               </div>
             </div>

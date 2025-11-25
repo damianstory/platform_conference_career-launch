@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { supabase, RegistrationRecord } from '@/lib/supabase/client';
+import { ONTARIO_BOARDS, SCHOOLS_BY_BOARD } from '@/lib/mock-data/registration';
 
 export type UserType = 'educator' | 'student' | null;
 
@@ -20,6 +22,20 @@ interface FormErrors {
   schoolId?: string;
   classSize?: string;
   gradeLevel?: string;
+}
+
+// Helper to look up board name from ID
+function getBoardName(boardId: string): string {
+  const board = ONTARIO_BOARDS.find(b => b.id === boardId);
+  return board?.name || boardId;
+}
+
+// Helper to look up school name from ID
+function getSchoolName(boardId: string, schoolId: string): string {
+  if (schoolId === 'not-listed') return 'Not Listed';
+  const schools = SCHOOLS_BY_BOARD[boardId] || [];
+  const school = schools.find(s => s.id === schoolId);
+  return school?.name || schoolId;
 }
 
 export function useRegistrationForm() {
@@ -122,32 +138,54 @@ export function useRegistrationForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const submitForm = (sessionId: string): boolean => {
+  const submitForm = async (sessionId: string, sessionTitle?: string): Promise<boolean> => {
     if (!validateForm()) {
       return false;
     }
 
-    // Prepare submission data based on user type
-    const submissionData = userType === 'student'
-      ? {
-          userType: 'student',
-          boardId: formData.boardId,
-          schoolId: formData.schoolId,
-          gradeLevel: formData.gradeLevel,
-          sessionId,
-          timestamp: new Date().toISOString(),
-        }
-      : {
-          userType: 'educator',
-          ...formData,
-          sessionId,
-          timestamp: new Date().toISOString(),
-        };
+    // Prepare registration record for Supabase
+    const registrationData: RegistrationRecord = {
+      user_type: userType as 'educator' | 'student',
+      session_id: sessionId,
+      session_title: sessionTitle,
+      board_id: formData.boardId,
+      board_name: getBoardName(formData.boardId),
+      school_id: formData.schoolId,
+      school_name: getSchoolName(formData.boardId, formData.schoolId),
+      is_guest: formData.boardId === 'guest',
+      grade_level: formData.gradeLevel,
+    };
 
-    // Log submission for now (will be replaced with API call)
-    console.log('Form submitted:', submissionData);
+    // Add educator-specific fields
+    if (userType === 'educator') {
+      registrationData.first_name = formData.firstName;
+      registrationData.email = formData.email;
+      registrationData.class_size = formData.classSize;
+    }
 
-    return true;
+    try {
+      console.log('Attempting to save registration:', registrationData);
+
+      const { data, error } = await supabase
+        .from('registrations')
+        .insert([registrationData])
+        .select()
+        .single();
+
+      if (error) {
+        console.error('Error saving registration (raw):', error);
+        console.error('Error as JSON:', JSON.stringify(error, null, 2));
+        console.error('Error message:', error.message);
+        console.error('Error code:', error.code);
+        return false;
+      }
+
+      console.log('Registration saved successfully:', data);
+      return true;
+    } catch (err) {
+      console.error('Unexpected error saving registration:', err);
+      return false;
+    }
   };
 
   const isFormValid = (): boolean => {

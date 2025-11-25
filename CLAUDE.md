@@ -14,9 +14,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Architecture & Tech Stack
 
 ### Core Technologies
-- **Frontend:** Next.js 14 (App Router) with React 18
+- **Frontend:** Next.js 15 (App Router) with React 18
 - **Styling:** Tailwind CSS with custom design tokens
-- **Backend:** Supabase (PostgreSQL)
+- **Backend:** Supabase (PostgreSQL) - credentials hardcoded in `lib/supabase/client.ts`
 - **Video:** Vimeo Pro with Player SDK
 - **Hosting:** Vercel
 - **Forms:** React Hook Form
@@ -154,21 +154,23 @@ Jamstack with Server-Side Rendering (SSR):
     └── 001_sample_data.sql
 ```
 
-## Database Schema
+## Database Schema (Supabase)
 
 ### Core Tables
-- **users:** Educator profile (name, email, board, school, role)
-- **sessions:** 27 career sessions with metadata
-- **viewing_events:** Each time an educator shows a video (includes class_size, grade_level)
-- **booths:** Sponsor booth data with tier (platinum/standard)
-- **booth_interactions:** Track educator engagement with booths
-- **boards:** Ontario school boards
-- **schools:** Schools within boards
+- **registrations:** Each form submission (user_type, name, email, board, school, class_size, grade_level, session_id)
+- **viewing_events:** Video watch tracking (registration_id, watch_duration, completion_percentage, completed)
 
-### Key Relationships
-- Users belong to schools, schools belong to boards
-- ViewingEvents link users to sessions with viewing context
-- No traditional auth tables (cookie-based recognition)
+### Key Fields in `registrations`
+- `user_type`: 'educator' | 'student'
+- `board_id`, `board_name`: School board selection
+- `school_id`, `school_name`: School selection
+- `is_guest`: Boolean for "Not Listed - Watching as Guest" selections
+- `class_size`: For educators only
+- `grade_level`: For both user types
+- `session_id`, `session_title`: Which session they registered for
+
+### RLS Policies
+Both tables have Row Level Security enabled with public INSERT/SELECT policies for the anon key.
 
 ## Development Commands
 
@@ -235,7 +237,7 @@ npm run test:coverage    # Run tests with coverage report
   - Form state management with validation
   - Cookie read/write functionality
   - Pre-fill detection and field population
-  - Form submission handling (console.log for now, backend integration pending)
+  - **Supabase integration**: Form submissions save to `registrations` table
 - **Mock Registration Data (`/lib/mock-data/registration.ts`)**: **COMPLETED**
   - 29 Ontario school boards with hundreds of schools (comprehensive coverage)
   - **Guest option:** "Not Listed - Watching as Guest" at bottom of boards dropdown
@@ -527,15 +529,28 @@ Two-tier sponsor booth system:
 
 ## Environment Variables
 
-Required in `.env.local`:
+**Note:** Supabase credentials are HARDCODED in `lib/supabase/client.ts` due to Next.js 15 env var caching issues (see Known Issues below).
+
+Other vars in `.env.local`:
 ```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
 NEXT_PUBLIC_GA_MEASUREMENT_ID=
 COOKIE_DOMAIN=careerlaunch.myblueprint.ca
 CONTACT_EMAIL=damian.matheson@myblueprint.ca
 ```
+
+## Known Issues
+
+### Next.js 15 Environment Variable Caching
+Next.js 15 aggressively caches `NEXT_PUBLIC_*` environment variables at build time into webpack chunks. If you update `.env.local` while the dev server is running, the changes will NOT take effect until you:
+1. Kill ALL Node/Next.js processes (`pkill -9 -f "next"`)
+2. Delete `.next` folder (`rm -rf .next`)
+3. Delete node_modules cache (`rm -rf node_modules/.cache`)
+4. Restart the dev server
+
+**Current solution:** Supabase credentials are hardcoded in `lib/supabase/client.ts` to avoid this issue. This is acceptable because:
+- These are public values (exposed in browser bundle anyway)
+- Security is enforced via Supabase RLS policies, not key secrecy
+- The anon key is designed to be public
 
 ## Documentation References
 
