@@ -110,7 +110,7 @@ const faqItems: AccordionItem[] = [
     title: 'How long do we have access to these recordings for?',
     content: (
       <p>
-        Yes. You and your students will have access to all Career Launch recordings to watch
+        You and your students will have access to all Career Launch recordings to watch
         on-demand for the remainder of the 25-26 school year.
       </p>
     ),
