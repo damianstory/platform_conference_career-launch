@@ -166,21 +166,15 @@ export function useRegistrationForm() {
     try {
       console.log('Attempting to save registration:', registrationData);
 
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('registrations')
-        .insert([registrationData])
-        .select()
-        .single();
+        .insert([registrationData]);
 
       if (error) {
-        console.error('Error saving registration (raw):', error);
-        console.error('Error as JSON:', JSON.stringify(error, null, 2));
-        console.error('Error message:', error.message);
-        console.error('Error code:', error.code);
+        console.error('Error saving registration:', error.message);
         return false;
       }
 
-      console.log('Registration saved successfully:', data);
       return true;
     } catch (err) {
       console.error('Unexpected error saving registration:', err);

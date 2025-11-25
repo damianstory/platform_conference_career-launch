@@ -170,7 +170,12 @@ Jamstack with Server-Side Rendering (SSR):
 - `session_id`, `session_title`: Which session they registered for
 
 ### RLS Policies
-Both tables have Row Level Security enabled with public INSERT/SELECT policies for the anon key.
+Both tables have Row Level Security enabled with **INSERT-only** policies for the anon key:
+- ✅ Public can INSERT new registrations (required for form submission)
+- ❌ Public cannot SELECT/read any data (protects educator privacy)
+- ❌ Public cannot UPDATE or DELETE (data integrity)
+
+Only the Service Role Key (server-side only) can read data for reporting.
 
 ## Development Commands
 
