@@ -10,6 +10,17 @@ interface CompanyStoryProps {
   quickFacts?: QuickFact[]
 }
 
+// Helper function to parse **bold** text
+function parseFormattedText(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g)
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index} className="font-semibold text-gray-800">{part.slice(2, -2)}</strong>
+    }
+    return part
+  })
+}
+
 export default function CompanyStory({ description, quickFacts }: CompanyStoryProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [needsExpansion, setNeedsExpansion] = useState(false)
@@ -69,7 +80,7 @@ export default function CompanyStory({ description, quickFacts }: CompanyStoryPr
         >
           {/* Description */}
           <p className="text-base leading-relaxed text-gray-600 whitespace-pre-line">
-            {description}
+            {parseFormattedText(description)}
           </p>
 
           {/* Quick Facts (if available) */}
