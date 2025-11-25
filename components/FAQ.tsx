@@ -20,6 +20,38 @@ const faqItems: AccordionItem[] = [
     ),
   },
   {
+    id: 'faq-12',
+    title: 'How do the Educator Prizes work?',
+    content: (
+      <div>
+        <p className="mb-2">There are a few different types of participation based prizes available for educators.</p>
+
+        <p><strong>Educator Prizes (5 x $100 Prizes):</strong></p>
+        <ul className="list-disc ml-6 mt-2 mb-4">
+          <li>At the end of EACH school day during the week of Dec 1-5, we will randomly draw ONE educator&apos;s name/email out of the pool of educators who watched a session that day.</li>
+          <li>Each session watched that day counts as an entry. So if you watch 4 sessions that day (1/block) that&apos;s 4 entries for that day.</li>
+          <li>If your name is drawn that day, you&apos;ll be getting $100 CAD.</li>
+        </ul>
+
+        <p><strong>School Prize (1 x $500 Prize):</strong></p>
+        <ul className="list-disc ml-6 mt-2 mb-4">
+          <li>Every unique educator from your school that has watched at least one session at some point between Dec 1-5 with their students will count as one vote for your school.</li>
+          <li>At the end of the week (after Dec 5th), we will randomly draw one school to win $500 CAD to use as they please. Maybe for the staff holiday party.</li>
+          <li>The higher the number of individual/unique educators that participate at each school, the better your odds. Career education is for everyone. Career Launch makes it easy.</li>
+        </ul>
+
+        <p><strong>Board Prize (Attend Career Launch 2026 for Free):</strong></p>
+        <ul className="list-disc ml-6 mt-2 mb-4">
+          <li>Next year, this will be a national initiative that will happen on and around Take Your Kids to Work Day, at a much larger scale.</li>
+          <li>Each school from your board that watches 50+ sessions total over the course of the Dec 1-5 week will count as one entry for your board.</li>
+          <li>The more schools in your board that watch 50+ sessions, the better your odds.</li>
+        </ul>
+
+        <p className="text-sm italic pb-2">Note: All grade 7s and 8s are collectively counted as one school for the board.</p>
+      </div>
+    ),
+  },
+  {
     id: 'faq-2',
     title: 'Are sessions live or pre-recorded?',
     content: (
