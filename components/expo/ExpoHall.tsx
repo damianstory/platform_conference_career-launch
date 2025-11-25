@@ -222,7 +222,7 @@ export default function ExpoHall({ booths }: ExpoHallProps) {
             id="booth-filter-panel"
             className={`
               hidden md:block overflow-hidden transition-all duration-300 ease-out
-              ${isExpanded ? 'max-h-[500px] opacity-100 mb-3' : 'max-h-0 opacity-0'}
+              ${isExpanded ? 'max-h-[500px] opacity-100 mt-4 mb-3' : 'max-h-0 opacity-0'}
             `}
           >
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
