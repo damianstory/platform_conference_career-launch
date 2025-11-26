@@ -558,7 +558,7 @@ export const greenPower: PlatinumBoothData = {
   industries: ['Manufacturing', 'Construction', 'Transportation', 'Energy'],
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
-  logo: '/logos/cwb.png',
+  logo: '/logos/cwb-foundation-bilingual.png',
   tagline: 'We envision a future where all individuals have the opportunity to explore and gain the knowledge and awareness to choose a career that allows them to reach their full potential.',
   description: 'The CWB Foundation is a Canadian-based not-for-profit registered charity founded by the Canadian Welding Bureau (CWB) in 2013. With the support of government, educators, industry, corporate partners, and community organizations, we address the needs of the North American industry for skilled professionals in welding, fabrication, and allied processes and technologies.',
   website: 'https://www.cwbweldingfoundation.org/',
@@ -1006,12 +1006,12 @@ export const manufactureTech: PlatinumBoothData = {
   pathway: 'direct-to-workplace',
   logo: '/logos/hydro-one.jpg',
   tagline: 'Our team is made up of some of Ontario\'s best and brightest people, from engineers and project managers to customer service specialists and communications professionals.',
-  description: 'At Hydro One, we deliver electricity to nearly 1.5 million people across Ontario. We have become Ontario\'s largest electricity transmission and distribution services provider. We are building the future of energy. Our team is made up of some of Ontario\'s best and brightest people – from engineers and project managers to customer service specialists and communications professionals.',
+  description: 'At Hydro One, we deliver electricity to nearly 1.5 million people across Ontario. We have become Ontario\'s largest electricity transmission and distribution services provider. We are building the future of energy.\n\nOur team is made up of some of Ontario\'s best and brightest people – from engineers and project managers to customer service specialists and communications professionals.',
   website: 'https://www.hydroone.com/',
   video: {
-    url: 'https://www.youtube.com/watch?v=1NkOMDzPTMY',
+    url: 'https://www.youtube.com/watch?v=7LvDmU-QG10',
     type: 'youtube',
-    title: 'Modern Manufacturing',
+    title: 'Connecting power and possibility',
     description: 'See our state-of-the-art facility'
   },
   resources: [
@@ -1053,7 +1053,7 @@ export const manufactureTech: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/173uZo9Dm0_IdfgUVL0IaaVCIUrVkccYY/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
+    embedUrl: 'https://docs.google.com/presentation/d/1iXBAgNPJzJT8LO4ij1XWfFvDmK7P5rvX/embed?start=false&loop=false&delayms=3000',
     type: 'google-slides',
     title: 'Hydro One Career Opportunities',
     description: 'Explore careers in Ontario\'s electricity sector'
