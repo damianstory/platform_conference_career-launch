@@ -21,7 +21,7 @@ export function middleware(request: NextRequest) {
     "font-src 'self' https://fonts.gstatic.com",
     "img-src 'self' data: https: blob:",
     "media-src 'self' https://player.vimeo.com https://www.youtube.com",
-    "frame-src 'self' https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://docs.google.com https://drive.google.com https://forms.google.com https://www.instagram.com https://claude.site https://view.officeapps.live.com",
+    "frame-src 'self' https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com https://docs.google.com https://drive.google.com https://forms.google.com https://www.instagram.com https://claude.site https://view.officeapps.live.com https://www.loom.com",
     "connect-src 'self' https://*.supabase.co https://www.google-analytics.com https://www.googletagmanager.com",
     "object-src 'none'",
     "base-uri 'self'",

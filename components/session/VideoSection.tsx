@@ -5,6 +5,9 @@ import MultiStepModal from '@/components/registration/MultiStepModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
 import { SessionAnalytics } from '@/lib/analytics';
 
+// Temporary Loom embed URL - will be replaced with Vimeo when final videos are ready
+const TEMP_VIDEO_EMBED_URL = 'https://www.loom.com/embed/6338bd9371f84f5c81873bcb0938ef5b';
+
 interface VideoSectionProps {
   sessionSlug: string;
 }
@@ -53,8 +56,22 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
         </h2>
 
         {/* Video Container - 16:9 aspect ratio */}
-        <div className="aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-blue to-navy">
-          <div className="flex flex-col items-center justify-center h-full text-white p-4 md:p-6 gap-4 md:gap-6">
+        <div className={`aspect-video rounded-lg overflow-hidden relative ${videoState === 'playing' ? 'bg-black' : 'bg-gradient-to-br from-blue to-navy'}`}>
+          {/* Loom iframe - shown when playing */}
+          {videoState === 'playing' && (
+            <iframe
+              src={TEMP_VIDEO_EMBED_URL}
+              frameBorder={0}
+              allowFullScreen
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              className="absolute inset-0 w-full h-full"
+              title="Session Video"
+            />
+          )}
+
+          {/* Other states content */}
+          <div className={`flex flex-col items-center justify-center h-full text-white p-4 md:p-6 gap-4 md:gap-6 ${videoState === 'playing' ? 'hidden' : ''}`}>
 
             {/* Initial State: Show button only (no placeholder text) */}
             {videoState === 'initial' && showButton && (
@@ -77,12 +94,11 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
               </div>
             )}
 
-            {/* Playing/Paused State: Placeholder for Vimeo player */}
-            {(videoState === 'playing' || videoState === 'paused') && (
+            {/* Paused State: Show resume message */}
+            {videoState === 'paused' && (
               <div className="flex flex-col items-center justify-center gap-4">
-                <div className="text-4xl">▶️</div>
-                <p className="text-lg font-medium">This is where the video will play</p>
-                <p className="text-sm opacity-75">(Vimeo player will be embedded here during launch week)</p>
+                <div className="text-4xl">⏸️</div>
+                <p className="text-lg font-medium">Video paused</p>
               </div>
             )}
 
