@@ -830,9 +830,9 @@ export const marketGenius: PlatinumBoothData = {
   description: 'At EY, our purpose is Building a better working world. The insights and quality services we provide help build trust and confidence in the capital markets and in economies the world over. We develop outstanding leaders who team to deliver on our promises to all our stakeholders. In so doing, we play a critical role in building a better working world for our people, for our clients and for our communities.',
   website: 'https://www.ey.com/en_ca',
   video: {
-    url: 'https://www.youtube.com/embed/v-tWYAvJ08s',
+    url: 'https://www.youtube.com/embed/Lx6zmV-JYUM',
     type: 'youtube',
-    title: 'Reframe Your Future',
+    title: 'Generations',
     description: 'Discover career opportunities at EY'
   },
   resources: [

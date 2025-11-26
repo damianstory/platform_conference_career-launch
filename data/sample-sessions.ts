@@ -869,9 +869,7 @@ export const cloudArchitectAws: Session = {
 • Not feeling ready to make the transition to a fully independent life as an adult?
 • **Looking to build more confidence and life skills** that will help you to thrive at school and work in the future?
 
-These are a few of the typical **reasons students are choosing a purposeful gap year** when they leave high school.
-
-Join us to explore how a purposeful gap year can set you on a path to long-term success. You'll **hear from Discover Year graduates** about the most important lessons and experiences from their gap years that helped them find success and happiness in life after high school.
+These are a few of the typical **reasons students are choosing a purposeful gap year** when they leave high school. Join us to explore how a purposeful gap year can set you on a path to long-term success. You'll **hear from Discover Year graduates** about the most important lessons and experiences from their gap years that helped them find success and happiness in life after high school.
 
 From the workshops and coaching they took part in to their travels, work experiences, and community projects, their stories will leave you inspired and excited about venturing off of the well-worn path and discovering yourself and the world around you.`,
   learning_objectives: [
