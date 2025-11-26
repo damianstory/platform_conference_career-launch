@@ -35,7 +35,8 @@ Though the work itself is very rewarding, Hydro One offers an engaging work cult
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 1
+  display_order: 1,
+  lesson_plan_url: null
 };
 
 export const dentalHygienistCareer: Session = {
@@ -57,7 +58,7 @@ Join our session to learn more about how you can become an Agricultural Innovato
     'Explore career opportunities in various settings',
     'Discover the importance of preventive oral healthcare'
   ],
-  presenter_name: `AgRobotics Working Group & Innovation Farms Ontario`,
+  presenter_name: `AgRobotics Working Group`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/jennifer-martinez.jpg',
   thumbnail_url: '/images/sessions/dental-hygiene-thumb.jpg',
@@ -69,7 +70,8 @@ Join our session to learn more about how you can become an Agricultural Innovato
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 1
+  display_order: 1,
+  lesson_plan_url: null
 };
 
 export const medicalLabTechnologist: Session = {
@@ -97,7 +99,8 @@ This session will break down common perceptions, highlight **emerging opportunit
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 2
+  display_order: 2,
+  lesson_plan_url: null
 };
 
 export const paramedicFirstResponder: Session = {
@@ -123,7 +126,7 @@ Because the next big event that changes someone's life could be yours to create.
     'Explore the role of paramedics in healthcare',
     'Discover educational pathways and career progression'
   ],
-  presenter_name: `Encore Canada, Creative Connoisseur, Live Nation, JPdL`,
+  presenter_name: `Encore Canada`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/james-thompson.jpg',
   thumbnail_url: '/images/sessions/paramedic-thumb.jpg',
@@ -135,7 +138,8 @@ Because the next big event that changes someone's life could be yours to create.
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 3
+  display_order: 3,
+  lesson_plan_url: null
 };
 
 export const registeredNurseEmergency: Session = {
@@ -165,7 +169,8 @@ Be a part of something bigger with opportunities ranging from operations to corp
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 1
+  display_order: 1,
+  lesson_plan_url: null
 };
 
 export const mentalHealthCounseling: Session = {
@@ -190,7 +195,8 @@ In this session, we'll bust myths about the industry, discuss various you career
   grade_level: '7-12',
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
-  display_order: 4
+  display_order: 4,
+  lesson_plan_url: null
 };
 
 // ============================================================================
@@ -230,7 +236,8 @@ No matter what challenges they face, Kids Help Phone is here for them.`,
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5
+  display_order: 5,
+  lesson_plan_url: null
 };
 
 export const dataScientistAnalytics: Session = {
@@ -256,7 +263,8 @@ export const dataScientistAnalytics: Session = {
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5
+  display_order: 5,
+  lesson_plan_url: null
 };
 
 export const softwareDeveloperJourney: Session = {
@@ -288,7 +296,8 @@ In this session you will learn about the process, and the career opportunities a
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5
+  display_order: 5,
+  lesson_plan_url: null
 };
 
 export const uxUiDesigner: Session = {
@@ -310,7 +319,7 @@ Whether you're passionate about nature, science, community engagement, or proble
     'Explore design tools and methodologies',
     'Discover career paths in digital design'
   ],
-  presenter_name: `Multiple Conservation Authorities: TRCA, CH, & NPCA`,
+  presenter_name: `multiple Conservation Authorities`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/emma-thompson.jpg',
   thumbnail_url: '/images/sessions/ux-design-thumb.jpg',
@@ -322,7 +331,8 @@ Whether you're passionate about nature, science, community engagement, or proble
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 3
+  display_order: 3,
+  lesson_plan_url: null
 };
 
 export const cybersecuritySpecialist: Session = {
@@ -342,7 +352,7 @@ Come find out how tourism can be your first step toward a future full of possibi
     'Explore certification paths and education',
     'Discover the growing demand for security professionals'
   ],
-  presenter_name: `Tourism Industry Association of Ontario`,
+  presenter_name: `the Tourism Industry Association of Ontario`,
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/maria-rodriguez.jpg',
   thumbnail_url: '/images/sessions/cybersecurity-thumb.jpg',
@@ -354,7 +364,8 @@ Come find out how tourism can be your first step toward a future full of possibi
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 3
+  display_order: 3,
+  lesson_plan_url: null
 };
 
 export const aiMachineLearning: Session = {
@@ -380,7 +391,8 @@ export const aiMachineLearning: Session = {
   grade_level: '7-12',
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
-  display_order: 4
+  display_order: 4,
+  lesson_plan_url: null
 };
 
 // ============================================================================
@@ -414,7 +426,8 @@ We'll also share **the latest labour-market insights and trends we're seeing in 
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 4
+  display_order: 4,
+  lesson_plan_url: null
 };
 
 export const plumberEssentialTrade: Session = {
@@ -448,7 +461,8 @@ Whether you're curious about what engineers really do or you're already dreaming
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 4
+  display_order: 4,
+  lesson_plan_url: null
 };
 
 export const welderFabricator: Session = {
@@ -480,7 +494,8 @@ Whether you're exploring your options or ready to get started, this session will
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 2
+  display_order: 2,
+  lesson_plan_url: null
 };
 
 export const electricianPowerCareer: Session = {
@@ -516,7 +531,8 @@ Note: This session was recorded as part of a TYKTWD event in 2025.`,
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 1
+  display_order: 1,
+  lesson_plan_url: null
 };
 
 export const automotiveTechnicianModern: Session = {
@@ -546,7 +562,8 @@ You'll walk away with a better idea of what it takes to build a company and **wh
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 6
+  display_order: 6,
+  lesson_plan_url: null
 };
 
 export const hvacTechnicianCareer: Session = {
@@ -584,7 +601,8 @@ This session will explore:
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 6
+  display_order: 6,
+  lesson_plan_url: null
 };
 
 export const familyPhysicianPractice: Session = {
@@ -620,7 +638,8 @@ Super-intelligence is becoming a commodity—this session is about learning how 
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
-  display_order: 5
+  display_order: 5,
+  lesson_plan_url: null
 };
 
 // ============================================================================
@@ -660,7 +679,8 @@ Bonus - if you complete the exercise in full, you can reach out to lyn at Lyn@ca
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 7
+  display_order: 7,
+  lesson_plan_url: null
 };
 
 export const socialWorkerHelping: Session = {
@@ -690,7 +710,8 @@ Learn how to break down expenses, spend with intention and build realistic habit
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 2
+  display_order: 2,
+  lesson_plan_url: null
 };
 
 export const policeOfficerServeProtect: Session = {
@@ -730,7 +751,8 @@ This session is designed to change that. By the end of this session, you will ha
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 3
+  display_order: 3,
+  lesson_plan_url: null
 };
 
 export const teacherShapingFutures: Session = {
@@ -772,7 +794,8 @@ Presented by Roxanne Challenger, NFTE Canada`,
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 6
+  display_order: 6,
+  lesson_plan_url: null
 };
 
 export const environmentalScientist: Session = {
@@ -804,7 +827,8 @@ Whether you have a specific path in mind or are exploring several, this intervie
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 7
+  display_order: 7,
+  lesson_plan_url: null
 };
 
 export const firefighterFirstResponder: Session = {
@@ -830,7 +854,8 @@ export const firefighterFirstResponder: Session = {
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 7
+  display_order: 7,
+  lesson_plan_url: null
 };
 
 export const digitalMarketingSpecialist: Session = {
@@ -858,7 +883,8 @@ This session highlights **exciting career paths in the skilled trades, technolog
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 6
+  display_order: 6,
+  lesson_plan_url: null
 };
 
 export const cloudArchitectAws: Session = {
@@ -890,7 +916,8 @@ From the workshops and coaching they took part in to their travels, work experie
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
-  display_order: 1
+  display_order: 1,
+  lesson_plan_url: null
 };
 
 // ============================================================================

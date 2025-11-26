@@ -1268,7 +1268,7 @@ export const bioMedical: PlatinumBoothData = {
 
 export const foodService: PlatinumBoothData = {
   id: 'multiple-conservation-authorities-trca-ch-npca',
-  name: 'TRCA, CH, & NPCA',
+  name: 'Conservation Authorities',
   slug: 'multiple-conservation-authorities-trca-ch-npca',
   associatedSessionSlug: 'conservation-careers',
   tier: 'platinum',

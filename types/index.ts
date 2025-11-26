@@ -23,6 +23,7 @@ export interface Session {
   created_at: string;
   updated_at: string;
   display_order: number;
+  lesson_plan_url: string | null;
 }
 
 // ============================================================================

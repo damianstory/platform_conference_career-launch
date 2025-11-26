@@ -58,9 +58,7 @@ export default async function SessionPage({ params }: SessionPageProps) {
           {/* Organization Section */}
           <OrganizationSection
             name={session.presenter_name || 'Speaker'}
-            title={session.presenter_bio || ''}
-            company={''}
-            logo={booth?.logo}
+            lessonPlanUrl={session.lesson_plan_url}
             booth={booth}
             sessionSlug={session.slug}
             sessionTitle={session.title}
