@@ -6,7 +6,7 @@ import { Session, BlockNumber } from '@/types';
 
 export const pharmacistMedicationExpert: Session = {
   id: '1483445e-c6cc-415a-8913-0dc54136e5c1',
-  slug: 'hydro-one-future',
+  slug: 'hydro-one',
   title: `A better and brighter future for all: Hydro One`,
   description: `At Hydro One, we deliver electricity to nearly 1.5 million people across Ontario. We have become Ontario's largest electricity transmission and distribution services provider. **We are building the future of energy.**
 
@@ -41,7 +41,7 @@ Though the work itself is very rewarding, Hydro One offers an engaging work cult
 
 export const dentalHygienistCareer: Session = {
   id: '4517a216-9ff3-47a7-908c-02897c384ebd',
-  slug: 'agrobotics-farm-kids',
+  slug: 'agrobotics',
   title: `AgRobotics – Not just for Farm Kids!`,
   description: `Many people have the same thought – "I didn't grow up on a farm, so how can I get involved?".
 
@@ -105,7 +105,7 @@ This session will break down common perceptions, highlight **emerging opportunit
 
 export const paramedicFirstResponder: Session = {
   id: '7a663d94-46b2-48a6-a3b3-645474ba6c94',
-  slug: 'behind-magic-events-concerts',
+  slug: 'behind-the-magic',
   title: `Behind the Magic: Exploring the World of Events, Concerts & Experiences`,
   description: `Ever wonder **who plans the concerts, conferences, festivals, and brand activations that bring people together?**
 
@@ -144,7 +144,7 @@ Because the next big event that changes someone's life could be yours to create.
 
 export const registeredNurseEmergency: Session = {
   id: 'b4a07447-b25a-4589-8b1a-ee0e7d14ec04',
-  slug: 'cpkc-big-moves',
+  slug: 'cpkc',
   title: `Big moves start here and take you anywhere! Connecting North America Across Three Nations`,
   description: `CPKC is a freight rail company with **careers that drive sustainability, support communities, and shape the future of transportation.**
 
@@ -175,7 +175,7 @@ Be a part of something bigger with opportunities ranging from operations to corp
 
 export const mentalHealthCounseling: Session = {
   id: '46a0c2c0-aeb3-41d5-a930-09c770cbb823',
-  slug: 'water-careers-ontario',
+  slug: 'ontario-water-careers',
   title: `Build Big Things, Make Big Money – Water Careers You Can Start Now!`,
   description: `**Want a career that pays well, doesn't require years of school, and actually makes a difference?**
 
@@ -205,7 +205,7 @@ In this session, we'll bust myths about the industry, discuss various you career
 
 export const gameDeveloperCareer: Session = {
   id: '02d9bf78-9235-42d4-98dd-20fa81e20378',
-  slug: 'kids-help-phone-leadership',
+  slug: 'kids-help-phone',
   title: `Building Your Future Through Leadership and Volunteerism`,
   description: `What does it mean to make a difference, and **how can volunteering help you discover your purpose?**
 
@@ -242,7 +242,7 @@ No matter what challenges they face, Kids Help Phone is here for them.`,
 
 export const dataScientistAnalytics: Session = {
   id: '1800b8ce-7372-43e3-8e39-0fb601c8d311',
-  slug: 'vox-pop-labs-careers',
+  slug: 'vox-pop-labs',
   title: `Built to Make You Think: The People Behind Vote Compass Youth & DegreeHub`,
   description: `Join Vox Pop Labs' Jesse McMullen-Crummey (**Data Engineer**) and Cara Poblador (**Research Lead**) as they talk about what led them to **DegreeHub** and **Vote Compass Youth** — including the studies they pursued, the jobs they held, and how it all shaped the work they're doing now.`,
   learning_objectives: [
@@ -269,7 +269,7 @@ export const dataScientistAnalytics: Session = {
 
 export const softwareDeveloperJourney: Session = {
   id: '2ab93296-5a80-405f-ad99-9ea31a264e73',
-  slug: 'toronto-police-careers',
+  slug: 'toronto-police-service',
   title: `Careers at the Toronto Police Service`,
   description: `The Toronto Police Service (TPS) is the primary agency responsible for providing law enforcement and police services in Toronto.
 
@@ -370,7 +370,7 @@ Come find out how tourism can be your first step toward a future full of possibi
 
 export const aiMachineLearning: Session = {
   id: 'a87308f8-69d5-4a09-80ea-2d5239a3dfb7',
-  slug: 'ernst-young-consulting',
+  slug: 'ernst-young',
   title: `Consulting, Accounting, Digital Transformation and More - We solve big problems in business`,
   description: `In this session, you'll learn about:
 
@@ -401,7 +401,7 @@ export const aiMachineLearning: Session = {
 
 export const constructionCarpenter: Session = {
   id: '78644bd5-2efb-4559-af1f-49fa084c8ac7',
-  slug: 'decode-job-market-data',
+  slug: 'diversity-institute',
   title: `Decode the Job Market: How to Use Data to Choose Your Career`,
   description: `Curious which careers are growing, what they pay, and **what skills actually matter?**
 
@@ -432,7 +432,7 @@ We'll also share **the latest labour-market insights and trends we're seeing in 
 
 export const plumberEssentialTrade: Session = {
   id: 'a1527555-ea6a-422e-b528-51b1cbbe2fa2',
-  slug: 'humber-engineering-dream',
+  slug: 'humber-engineering',
   title: `Engineer Your Dream Career: Your Path in Engineering Starts at Humber`,
   description: `*Discover how technicians, technologists, and engineers shape the world.*
 
@@ -467,7 +467,7 @@ Whether you're curious about what engineers really do or you're already dreaming
 
 export const welderFabricator: Session = {
   id: 'b57553d4-0386-490a-ac4f-af51b73925a7',
-  slug: 'support-ontario-youth-trades',
+  slug: 'support-ontario-youth',
   title: `From High School to High Demand: Start Your Skilled Trades Journey`,
   description: `**Are you a Grade 11 or 12 student** interested in a hands-on, high-demand, and rewarding career path? Join *Support Ontario Youth (SOY)* for an inspiring and informative conversation designed just for you!
 
@@ -537,7 +537,7 @@ Note: This session was recorded as part of a TYKTWD event in 2025.`,
 
 export const automotiveTechnicianModern: Session = {
   id: 'c064eb75-c763-41cc-9af1-08c37df5a14f',
-  slug: 'studenthaus-entrepreneurship',
+  slug: 'studenthaus',
   title: `From Student to Industry Leader: Building Your Career Through Entrepreneurship`,
   description: `**At 21, I made the leap from student to full-time entrepreneur in the housing industry.** It wasn't the path I expected to take when I started my undergrad, but it's been **the best decision of my life.**
 
@@ -568,7 +568,7 @@ You'll walk away with a better idea of what it takes to build a company and **wh
 
 export const hvacTechnicianCareer: Session = {
   id: 'de8efa5c-7577-41ee-9867-e09447e195e1',
-  slug: 'seeking-scholarships-funding',
+  slug: 'seeking-scholarships',
   title: `Funding Postsecondary Education: Scholarships, Bursaries & OSAP`,
   description: `This session will help students **understand the true costs of college and university** and **explore practical ways to pay** for postsecondary education.
 
@@ -607,7 +607,7 @@ This session will explore:
 
 export const familyPhysicianPractice: Session = {
   id: 'e67213d2-54a3-48a0-96bc-a6221baf3862',
-  slug: 'tks-ai-future-jobs',
+  slug: 'future-of-jobs',
   title: `How AI is Impacting the Future of Jobs`,
   description: `**AI is moving faster than most people realize**—entire apps can now be built in minutes, new drugs discovered in months, and even brain tumors analyzed in minutes.
 
@@ -648,7 +648,7 @@ Super-intelligence is becoming a commodity—this session is about learning how 
 
 export const financialAdvisorPlanning: Session = {
   id: '0fc55bd2-1e94-443d-bfb1-59ed5fc56787',
-  slug: 'cansbridge-figure-out-life',
+  slug: 'cansbridge-scholars',
   title: `How to figure out what to do with your life`,
   description: `This session is going to be **part talk with stories, and part workshop where you design a life experiments plan.**
 
@@ -685,7 +685,7 @@ Bonus - if you complete the exercise in full, you can reach out to lyn at Lyn@ca
 
 export const socialWorkerHelping: Session = {
   id: '3e0766f4-f216-4400-a4b6-15a9a21a3c9e',
-  slug: 'mydoh-making-bank',
+  slug: 'money-skills',
   title: `Making Bank - Money Skills for Real Life`,
   description: `Whether you're babysitting, getting an allowance, flipping sneakers, or working part-time, **your money matters.**
 
@@ -716,7 +716,7 @@ Learn how to break down expenses, spend with intention and build realistic habit
 
 export const policeOfficerServeProtect: Session = {
   id: '5b42e541-b645-46c3-a326-0cd7841c6995',
-  slug: 'jack-org-mental-health',
+  slug: 'mental-health-skills',
   title: `Mental Health Skills for Life: A Youth-Led Mental Health Conversation with Jack.org`,
   description: `**Mental health is a skill you'll use in school and work.**
 
@@ -757,7 +757,7 @@ This session is designed to change that. By the end of this session, you will ha
 
 export const teacherShapingFutures: Session = {
   id: '68e60ad6-225b-4662-971d-b810fabbbdc7',
-  slug: 'nfte-no-degree-no-problem',
+  slug: 'no-degree-no-problem',
   title: `No Degree? No Problem! Building Success Without the College/University Track`,
   description: `Not everyone's path to success looks the same, and that's perfectly fine!
 
@@ -800,7 +800,7 @@ Presented by Roxanne Challenger, NFTE Canada`,
 
 export const environmentalScientist: Session = {
   id: '6eaf03cb-99fe-41a1-a7ca-23bda589f32d',
-  slug: 'life-sciences-ontario-panel',
+  slug: 'life-sciences-ontario',
   title: `Panel Interview - Careers in the Life Sciences Sector`,
   description: `Are you curious about working in **agriculture, bio-energy, health sciences and healthcare?**
 
@@ -833,7 +833,7 @@ Whether you have a specific path in mind or are exploring several, this intervie
 
 export const firefighterFirstResponder: Session = {
   id: 'b8aed9f1-6c3b-4fd8-a265-86c4d0d17aa6',
-  slug: 'canadian-armed-forces-careers',
+  slug: 'air-force',
   title: `Careers in the Royal Canadian Air Force (RCAF)`,
   description: `The Royal Canadian Air Force (RCAF) is part of National Defence and the Canadian Armed Forces. We protect Canadian and North American airspace, support peace missions around the world, and provide space capabilities to help meet national defence goals. Whether at home or abroad, the RCAF works to keep Canadians and their interests safe. The RCAF is hiring now for many exciting career opportunities from aircraft technicians to air traffic controllers. All training is provided, and paid college and university programs are available. Visit our virtual booth to learn more. Your Air Force - Your Future.`,
   learning_objectives: [
@@ -860,7 +860,7 @@ export const firefighterFirstResponder: Session = {
 
 export const digitalMarketingSpecialist: Session = {
   id: 'cdb10105-2742-423a-bffa-88a1daacd321',
-  slug: 'cwb-welding-materials',
+  slug: 'world-of-welding',
   title: `The World of Welding and Materials Joining`,
   description: `**Explore how welding and materials joining shape the world we live in** – from cars and airplanes to clean energy and even art.
 
@@ -889,7 +889,7 @@ This session highlights **exciting career paths in the skilled trades, technolog
 
 export const cloudArchitectAws: Session = {
   id: '56d9ce6b-f3a0-4433-be6d-f6feb14367f5',
-  slug: 'discover-year-gap-year',
+  slug: 'discover-year',
   title: `Benefits of a Purposeful Gap Year: Inspiring Stories from Discover Year Graduates`,
   description: `• Not sure what you'd like to study in university or college?
 • Not feeling ready to make the transition to a fully independent life as an adult?
