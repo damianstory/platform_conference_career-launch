@@ -689,7 +689,7 @@ export const creativeMinds: PlatinumBoothData = {
       type: 'link'
     },
     {
-      title: 'Learn About Our 2026 Winter/Spring Term',
+      title: 'Victory Lap Students',
       description: 'Explore the upcoming 2026 Winter/Spring program and application details',
       url: 'https://discoveryear.ca/2026-winter-term/',
       type: 'link'

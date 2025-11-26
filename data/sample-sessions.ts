@@ -864,7 +864,7 @@ This session highlights **exciting career paths in the skilled trades, technolog
 export const cloudArchitectAws: Session = {
   id: '56d9ce6b-f3a0-4433-be6d-f6feb14367f5',
   slug: 'discover-year-gap-year',
-  title: `The benefits of a Purposeful Gap Year: inspiring stories from Discover Year graduates`,
+  title: `Benefits of a Purposeful Gap Year: Inspiring Stories from Discover Year Graduates`,
   description: `• Not sure what you'd like to study in university or college?
 • Not feeling ready to make the transition to a fully independent life as an adult?
 • **Looking to build more confidence and life skills** that will help you to thrive at school and work in the future?
