@@ -558,7 +558,7 @@ export const greenPower: PlatinumBoothData = {
   industries: ['Manufacturing', 'Construction', 'Transportation', 'Energy'],
   organizationType: 'employer',
   pathway: 'direct-to-workplace',
-  logo: '/logos/cwb-foundation-bilingual.png',
+  logo: '/logos/cwb.png',
   tagline: 'We envision a future where all individuals have the opportunity to explore and gain the knowledge and awareness to choose a career that allows them to reach their full potential.',
   description: 'The CWB Foundation is a Canadian-based not-for-profit registered charity founded by the Canadian Welding Bureau (CWB) in 2013. With the support of government, educators, industry, corporate partners, and community organizations, we address the needs of the North American industry for skilled professionals in welding, fabrication, and allied processes and technologies.',
   website: 'https://www.cwbweldingfoundation.org/',
