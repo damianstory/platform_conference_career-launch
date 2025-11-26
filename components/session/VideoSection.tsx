@@ -63,8 +63,6 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
               src={TEMP_VIDEO_EMBED_URL}
               frameBorder={0}
               allowFullScreen
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
               className="absolute inset-0 w-full h-full"
               title="Session Video"
             />
