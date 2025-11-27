@@ -470,10 +470,10 @@ export const tradesMaster: PlatinumBoothData = {
         },
         {
           id: 'q5',
-          question: "The 'Web Summit' (Collision) brings leaders together. Harpreet traveled to which country for this?",
+          question: "The 'Web Summit' (Collision) brings leaders together. Sam traveled to which country for this?",
           options: ["United Kingdom", "Qatar", "Japan", "Brazil"],
           correctIndex: 1,
-          explanation: "Harpreet traveled to Qatar! If you work hard, you can produce experiences all over the world."
+          explanation: "Sam traveled to Qatar! If you work hard, you can produce experiences all over the world."
         },
         {
           id: 'q6',
