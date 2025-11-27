@@ -608,11 +608,102 @@ export const worldExplorer: PlatinumBoothData = {
     description: 'Interactive presentation on career opportunities'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'CPKC Career Quiz',
+    description: 'Test your knowledge about careers at North America\'s first transnational railroad',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'CPKC: Connecting a Continent, Building Careers',
+      description: 'Test your knowledge and discover your future in rail!',
+      badgeImageUrl: '/badges/badge-1.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'q1',
+          question: 'What makes CPKC\'s rail network unique in North America?',
+          options: ['It only operates in Canada', 'It\'s the first single-line network connecting Canada, the US, and Mexico', 'It only moves passengers', 'It only operates during daytime'],
+          correctIndex: 1,
+          explanation: 'CPKC is the first single-line rail network connecting all three North American countries, created when Canadian Pacific and Kansas City Southern joined forces.'
+        },
+        {
+          id: 'q2',
+          question: 'By how much can rail freight cut greenhouse gas emissions compared to trucks?',
+          options: ['25%', '50%', '75%', '90%'],
+          correctIndex: 2,
+          explanation: 'Rail can cut greenhouse gas emissions by up to 75% compared to trucks, making it one of the greenest ways to move goods across the continent.'
+        },
+        {
+          id: 'q3',
+          question: 'How many trucks can one train replace?',
+          options: ['50 trucks', '100 trucks', '300 trucks', '500 trucks'],
+          correctIndex: 2,
+          explanation: 'One train can replace 300 trucks on the road. CPKC removes 60,000 trucks from highways every year, meaning cleaner air and safer roads.'
+        },
+        {
+          id: 'q4',
+          question: 'What do you need to start an entry-level career at CPKC?',
+          options: ['A university degree', '5 years of experience', 'A high school diploma and valid driver\'s license', 'A trade certification'],
+          correctIndex: 2,
+          explanation: 'You don\'t need years of experience to start at CPKC. With a high school diploma and valid driver\'s license, you can begin careers as a train conductor, diesel service attendant, track laborer, or signal maintainer.'
+        },
+        {
+          id: 'q5',
+          question: 'What is the average annual salary for a train conductor at CPKC?',
+          options: ['$45,000', '$65,000', '$85,000', '$105,000'],
+          correctIndex: 2,
+          explanation: 'Train conductors at CPKC earn an average salary of $85,000 annually. The role combines physical work with critical thinking and comes with training and career growth opportunities.'
+        },
+        {
+          id: 'q6',
+          question: 'What groundbreaking technology is CPKC developing for zero-emission locomotives?',
+          options: ['Solar-powered trains', 'Hydrogen-powered locomotives that only output water', 'Electric trains with extension cords', 'Wind-powered rail cars'],
+          correctIndex: 1,
+          explanation: 'CPKC is developing hydrogen-powered locomotives that only output water as exhaust. They\'ve built two fully functional prototypes that are on the cusp of entering service.'
+        },
+        {
+          id: 'q7',
+          question: 'What does a signal and communication maintainer do at CPKC?',
+          options: ['Drive the trains', 'Install, test, and repair signal systems at crossings and tracks', 'Sell tickets to passengers', 'Cook meals for train crews'],
+          correctIndex: 1,
+          explanation: 'Signal and communication maintainers install, test, and repair the signal systems that keep rail crossings and trains operating safely. CPKC trains you and pays you while you learn.'
+        },
+        {
+          id: 'q8',
+          question: 'What does CPKC\'s wayside detector technology measure on trains?',
+          options: ['Passenger comfort levels', 'Temperature, vibration, and other safety attributes', 'Train ticket sales', 'Weather forecasts'],
+          correctIndex: 1,
+          explanation: 'Wayside detectors are devices along the rail that measure temperature, vibration, and other attributes. This data creates algorithms to find defects and safety issues before they become problems.'
+        },
+        {
+          id: 'q9',
+          question: 'How many employees does CPKC have across North America?',
+          options: ['5,000', '10,000', '20,000+', '50,000'],
+          correctIndex: 2,
+          explanation: 'CPKC has over 20,000 employees across Canada, the US, and Mexico. They are neighbors, family, and friends—part of communities throughout North America.'
+        },
+        {
+          id: 'q10',
+          question: 'Since 1999, how much has the CPKC Holiday Train raised for food banks?',
+          options: ['$5 million', '$10 million', '$26 million', '$50 million'],
+          correctIndex: 2,
+          explanation: 'The CPKC Holiday Train has raised more than $26 million and collected about 5.4 million pounds of food for community food banks across Canada and the US since 1999.'
+        },
+        {
+          id: 'q11',
+          question: 'Which corporate roles does CPKC offer for those with post-secondary education?',
+          options: ['Only train conductor positions', 'Engineering, information technology, and project management', 'Only outdoor manual labor', 'Only customer service'],
+          correctIndex: 1,
+          explanation: 'CPKC offers dynamic corporate roles in engineering, information technology, project management, and more—designed for innovators, leaders, and problem solvers ready to shape the future.'
+        },
+        {
+          id: 'q12',
+          question: 'Which hands-on mechanic roles are available at CPKC?',
+          options: ['Only office jobs', 'Diesel mechanic and rail car mechanic', 'Only driving positions', 'Only technology jobs'],
+          correctIndex: 1,
+          explanation: 'As a diesel mechanic, you work on powerful locomotives. As a rail car mechanic, you inspect, repair, and maintain the rail cars that carry goods across North America. Great for those who love fixing things.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Make Big Moves',
@@ -881,11 +972,102 @@ export const dataDynamics: PlatinumBoothData = {
     description: 'Interactive presentation on career opportunities'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Career Exploration Quiz',
+    description: 'Test your knowledge about career exploration and pathways',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Career Exploration: Using Data to Choose Your Future',
+      description: 'Test your knowledge and discover tools to plan your career!',
+      badgeImageUrl: '/badges/badge-3.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'q1',
+          question: 'According to research, approximately how many job titles are currently classified in Canada?',
+          options: ['5,000', '15,000', '40,000+', '100,000'],
+          correctIndex: 2,
+          explanation: 'There are over 40,000 job titles currently classified, and new ones appear every year. This is why exploring widely is so important—you can\'t choose something you\'ve never heard of.'
+        },
+        {
+          id: 'q2',
+          question: 'What percentage of jobs are never publicly advertised and are filled through connections and networking?',
+          options: ['30%', '50%', '70%', '90%'],
+          correctIndex: 2,
+          explanation: 'Approximately 70% of jobs are never advertised—this is called the hidden job market. People are often hired through connections, which is why building your network is so important.'
+        },
+        {
+          id: 'q3',
+          question: 'Career planning across Canada focuses on four key questions. Which of these is one of them?',
+          options: ['How much money will I make?', 'What are my strengths and interests?', 'What do my parents want me to do?', 'Which job is easiest to get?'],
+          correctIndex: 1,
+          explanation: 'The four key questions are: What are my strengths and interests? What are my opportunities? What do I want to become? What is my plan for achieving my goals?'
+        },
+        {
+          id: 'q4',
+          question: 'How many foundational transferable skills does Canada\'s Skills for Success framework identify?',
+          options: ['3', '5', '9', '15'],
+          correctIndex: 2,
+          explanation: 'The Skills for Success framework identifies 9 foundational skills: creativity and innovation, problem solving, reading, digital, collaboration, adaptability, writing, numeracy, and communication.'
+        },
+        {
+          id: 'q5',
+          question: 'How many green job opportunities are expected by 2030 in Canada?',
+          options: ['50,000', '150,000', '300,000', '500,000'],
+          correctIndex: 2,
+          explanation: 'Around 300,000 green job opportunities are expected by 2030. These include ecologists, solar consultants, energy efficiency specialists, and environmental health professionals.'
+        },
+        {
+          id: 'q6',
+          question: 'How many skilled trade workers are there in Ontario, and across how many different trades?',
+          options: ['500,000 workers across 50 trades', '1.3 million workers across 140+ trades', '2 million workers across 200 trades', '100,000 workers across 30 trades'],
+          correctIndex: 1,
+          explanation: 'Ontario has around 1.3 million skilled trade workers across more than 140 different trades—showing just how diverse and in-demand this career pathway is.'
+        },
+        {
+          id: 'q7',
+          question: 'Over the next 10 years, how fast are tech jobs expected to grow compared to other jobs?',
+          options: ['At the same rate', 'Slightly faster', 'Almost twice as fast', 'Three times as fast'],
+          correctIndex: 2,
+          explanation: 'Tech jobs are expected to grow almost twice as fast as other jobs over the next 10 years. These roles exist in almost every industry—healthcare, sports, entertainment, and business.'
+        },
+        {
+          id: 'q8',
+          question: 'What is the Ontario Youth Apprenticeship Program (OYAP)?',
+          options: ['A university scholarship program', 'A program for high school students to start apprenticeship training', 'An online coding bootcamp', 'A summer job placement service'],
+          correctIndex: 1,
+          explanation: 'OYAP lets high school students (as young as 15) get a head start on apprenticeship training, learning hands-on skills while still in school.'
+        },
+        {
+          id: 'q9',
+          question: 'Why are transferable skills like communication, adaptability, and problem-solving so important?',
+          options: ['They only matter for office jobs', 'They help you thrive no matter how jobs evolve', 'They\'re only needed for university', 'They replace technical skills'],
+          correctIndex: 1,
+          explanation: 'Transferable skills help you adapt as jobs change with AI and automation. They make you valuable to employers and help you bridge gaps when changing careers or starting out.'
+        },
+        {
+          id: 'q10',
+          question: 'Which of these is a major trend shaping the future of jobs?',
+          options: ['Fewer people retiring', 'Decreased use of technology', 'Aging population increasing demand for healthcare', 'Less global connection'],
+          correctIndex: 2,
+          explanation: 'Major trends include: aging population (healthcare demand), climate change (environmental jobs), globalization (remote work), and technology/AI growth.'
+        },
+        {
+          id: 'q11',
+          question: 'On average, which educational pathway costs the most per year in Ontario?',
+          options: ['Apprenticeship training', 'College diploma', 'University undergraduate', 'They all cost the same'],
+          correctIndex: 2,
+          explanation: 'Average annual costs: Apprenticeships ~$1,400 (but you earn while learning), College diplomas ~$2,400, University undergraduate ~$8,958. All pathways are valid—understanding trade-offs helps you choose what fits.'
+        },
+        {
+          id: 'q12',
+          question: 'What is an informational interview?',
+          options: ['A job interview for an entry-level position', 'A conversation where you ask questions to learn about a career or organization', 'A test you take to assess your skills', 'A formal application process'],
+          correctIndex: 1,
+          explanation: 'Informational interviews are conversations where you ask insightful questions to learn about careers, industries, or organizations from people working in those fields—a powerful networking tool.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Learn More',
@@ -1331,11 +1513,162 @@ export const cyberShield: PlatinumBoothData = {
     description: 'Youth mental health support and advocacy'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Jack.org Mental Health Quiz',
+    description: 'Test your knowledge about youth mental health advocacy and peer support skills',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Jack.org: Be There for Others',
+      description: 'Learn about youth mental health advocacy and how you can make a difference!',
+      badgeImageUrl: '/badges/badge-11.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'jack1',
+          question: 'What is Jack.org?',
+          options: [
+            'A therapy clinic for youth',
+            'A national Canadian organization focused on youth empowerment and mental health prevention',
+            'A government mental health hotline',
+            'A school counseling service'
+          ],
+          correctIndex: 1,
+          explanation: 'Jack.org is a national Canadian organization that empowers young people with the skills to start conversations about mental health and support themselves and others.'
+        },
+        {
+          id: 'jack2',
+          question: 'What is Jack.org\'s main approach to mental health?',
+          options: [
+            'Only helping during crisis situations',
+            'Prevention - providing resources and skills before a crisis happens',
+            'Diagnosing mental illnesses',
+            'Prescribing medication'
+          ],
+          correctIndex: 1,
+          explanation: 'Jack.org focuses on prevention - providing young people with resources, tools, and strategies before a crisis situation, building community and connection early on.'
+        },
+        {
+          id: 'jack3',
+          question: 'What are Jack Talks?',
+          options: [
+            'Professional therapy sessions',
+            'Young people speaking in schools and communities to share personal stories about mental health',
+            'Phone counseling services',
+            'Online chat support'
+          ],
+          correctIndex: 1,
+          explanation: 'Jack Talks are presentations where young people go into schools and community groups to speak to other young people, share personal stories, and help others learn about mental health.'
+        },
+        {
+          id: 'jack4',
+          question: 'What are Jack Chapters?',
+          options: [
+            'Textbook sections about mental health',
+            'Groups of young people in schools and communities working together to create change around mental health',
+            'Professional counselor meetings',
+            'Government health departments'
+          ],
+          correctIndex: 1,
+          explanation: 'Jack Chapters are groups of young people in their schools and communities who work together to bring about positive change surrounding mental health and build a sense of belonging.'
+        },
+        {
+          id: 'jack5',
+          question: 'What is the Be There Certificate?',
+          options: [
+            'A medical degree',
+            'A free, self-paced online learning module that teaches peer support skills, delivered with Born This Way Foundation',
+            'A first aid certification',
+            'A therapy license'
+          ],
+          correctIndex: 1,
+          explanation: 'The Be There Certificate is a free, self-paced online course delivered in partnership with Born This Way Foundation that teaches youth how to support others using the Golden Rules framework.'
+        },
+        {
+          id: 'jack6',
+          question: 'How long does it take to complete the Be There Certificate?',
+          options: [
+            'Several months',
+            'A few hours',
+            'One full year',
+            'Just 10 minutes'
+          ],
+          correctIndex: 1,
+          explanation: 'The Be There Certificate takes just a few hours to complete, is completely free, and you receive a certificate at the end - great for your resume!'
+        },
+        {
+          id: 'jack7',
+          question: 'What is the first of the "Be There Golden Rules"?',
+          options: [
+            'Diagnose their condition',
+            'Say what you see - state the facts without judging',
+            'Tell them to see a doctor immediately',
+            'Give them advice on how to fix their problems'
+          ],
+          correctIndex: 1,
+          explanation: 'The first Golden Rule is "Say what you see" - break the ice by stating facts without judging. For example: "Hey, I noticed you haven\'t been at practice lately. Is everything okay?"'
+        },
+        {
+          id: 'jack8',
+          question: 'What does "Know Your Role" mean in the Golden Rules framework?',
+          options: [
+            'You should become a therapist',
+            'Set boundaries - you\'re a supporter and friend, not a mental health professional',
+            'Take full responsibility for your friend\'s mental health',
+            'Avoid talking about mental health entirely'
+          ],
+          correctIndex: 1,
+          explanation: 'Know Your Role means setting boundaries - you can validate, support, and be a cheerleader for your friend, but you\'re not a therapist or mental health expert. Connect them to professional help.'
+        },
+        {
+          id: 'jack9',
+          question: 'According to Jack.org, can someone have good mental health while also having a diagnosed mental illness?',
+          options: [
+            'No, that\'s impossible',
+            'Yes, with appropriate treatment and support, someone with a mental illness can still have optimal mental health',
+            'Only if they\'re cured',
+            'Mental health and mental illness are the same thing'
+          ],
+          correctIndex: 1,
+          explanation: 'Yes! With appropriate treatment like therapy or medication, someone with a mental illness can still manage their mental health well. Mental health and mental illness are two different spectrums.'
+        },
+        {
+          id: 'jack10',
+          question: 'What distinguishes a mental health struggle from just having a bad day?',
+          options: [
+            'There\'s no difference',
+            'It\'s intense, long-lasting (usually 2+ weeks), and has a big impact on daily life',
+            'Only a doctor can tell',
+            'A struggle means you need hospitalization'
+          ],
+          correctIndex: 1,
+          explanation: 'A mental health struggle is typically intense, long-lasting (2 weeks or longer), and has a significant impact on day-to-day life - like withdrawing from activities you used to enjoy.'
+        },
+        {
+          id: 'jack11',
+          question: 'Do you need to be a mental health professional to support others with their mental health?',
+          options: [
+            'Yes, only licensed therapists can help',
+            'No - anyone can learn peer support skills to be there for others',
+            'Only if you have a psychology degree',
+            'You need at least 5 years of training'
+          ],
+          correctIndex: 1,
+          explanation: 'No! Jack.org believes anyone can learn peer support skills. You don\'t need to be a therapist - just a caring person willing to listen, validate, and connect others to help.'
+        },
+        {
+          id: 'jack12',
+          question: 'What three components does Jack.org recommend for a good self-care practice?',
+          options: [
+            'Medication, therapy, and hospitalization',
+            'Something you\'re good at (competence), something that gives you control, and community connection',
+            'Only exercise, sleep, and nutrition',
+            'Social media, gaming, and streaming'
+          ],
+          correctIndex: 1,
+          explanation: 'Good self-care includes: something you feel competent at, something that gives you a sense of control (like organizing), and something that connects you with community and others.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Be There Certificate',
@@ -1420,11 +1753,162 @@ export const bioMedical: PlatinumBoothData = {
     description: '24/7 support for young people across Canada'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Kids Help Phone Volunteer Quiz',
+    description: 'Test your knowledge about volunteering and mental health support at Kids Help Phone',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Kids Help Phone: Get Involved',
+      description: 'Discover volunteer opportunities and learn about Canada\'s leading youth mental health service!',
+      badgeImageUrl: '/badges/badge-10.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'khp1',
+          question: 'What is Kids Help Phone?',
+          options: [
+            'A hospital for children',
+            'Canada\'s only 24/7 e-mental health service offering free, multilingual, confidential support',
+            'A phone company for teenagers',
+            'A government crisis hotline'
+          ],
+          correctIndex: 1,
+          explanation: 'Kids Help Phone is Canada\'s only 24/7 e-mental health service that offers free, multilingual, and confidential support for young people across Canada.'
+        },
+        {
+          id: 'khp2',
+          question: 'How can young people access Kids Help Phone services?',
+          options: [
+            'Only by phone call',
+            'Only through a school counselor referral',
+            'By calling, texting, or using online chat',
+            'Only by visiting in person'
+          ],
+          correctIndex: 2,
+          explanation: 'Kids Help Phone offers multiple ways to access support - you can call, text, or use online chat on their website, making help accessible however you\'re most comfortable.'
+        },
+        {
+          id: 'khp3',
+          question: 'When should someone reach out to Kids Help Phone?',
+          options: [
+            'Only during a mental health crisis',
+            'Only during school hours',
+            'Anytime you need support - you don\'t have to be in crisis',
+            'Only if referred by a doctor'
+          ],
+          correctIndex: 2,
+          explanation: 'You don\'t have to be in crisis to reach out. Kids Help Phone is there to support you anytime you need it, whether it\'s something big or small.'
+        },
+        {
+          id: 'khp4',
+          question: 'What professional certifications can CAMS Kids volunteers receive?',
+          options: [
+            'No certifications are offered',
+            'Mental Health First Aid training and Peer Support training',
+            'Only a participation certificate',
+            'CPR certification only'
+          ],
+          correctIndex: 1,
+          explanation: 'CAMS Kids volunteers can receive valuable professional certifications including Mental Health First Aid training and Peer Support training - real credentials for your resume.'
+        },
+        {
+          id: 'khp5',
+          question: 'What is the Paving Paths program at Kids Help Phone?',
+          options: [
+            'A hiking club',
+            'A National Youth Advisory group for ages 14-18 focused on mental health advocacy',
+            'A career counseling service',
+            'A university scholarship program'
+          ],
+          correctIndex: 1,
+          explanation: 'Paving Paths is a National Youth Advisory group for teens ages 14-18 who are passionate about mental health advocacy, service improvement, and supporting young people across Canada.'
+        },
+        {
+          id: 'khp6',
+          question: 'What age range can join the Kids Help Phone National Youth Council?',
+          options: [
+            '10-14 years old',
+            '14-24 years old',
+            '18-25 years old',
+            '25-35 years old'
+          ],
+          correctIndex: 1,
+          explanation: 'The National Youth Council is open to youth ages 14-24 across Canada. Members represent Kids Help Phone at events, work on mental health projects, and engage in youth advocacy.'
+        },
+        {
+          id: 'khp7',
+          question: 'What skills do volunteers develop at Kids Help Phone that are valuable for future careers?',
+          options: [
+            'Only administrative skills',
+            'Empathy, communication, leadership, and staying calm under pressure',
+            'Only public speaking',
+            'Only social media skills'
+          ],
+          correctIndex: 1,
+          explanation: 'Volunteers develop transferable skills including empathy, patience, communication, leadership, confidence, and the ability to stay calm and think on their feet - skills valuable in any career.'
+        },
+        {
+          id: 'khp8',
+          question: 'Do you need perfect grades to become a Kids Help Phone volunteer?',
+          options: [
+            'Yes, you need at least an 85% average',
+            'No - passion and willingness to learn matter more than grades',
+            'Yes, grades are the main selection criteria',
+            'You need to be in the top 10% of your class'
+          ],
+          correctIndex: 1,
+          explanation: 'Kids Help Phone doesn\'t even request grades! What matters most is your passion for mental health, your reason for wanting to volunteer, and your willingness to learn.'
+        },
+        {
+          id: 'khp9',
+          question: 'According to Kids Help Phone volunteers, do universities and employers actually value volunteer experience?',
+          options: [
+            'No, they only care about paid work experience',
+            'Yes, and quality of involvement matters more than quantity',
+            'Only if you have 500+ volunteer hours',
+            'Only for specific career fields'
+          ],
+          correctIndex: 1,
+          explanation: 'Universities and employers do care about volunteer work. Quality is more important than quantity - doing meaningful work aligned with your values stands out more than a long list of activities.'
+        },
+        {
+          id: 'khp10',
+          question: 'What is CAMS Kids?',
+          options: [
+            'A children\'s cartoon show',
+            'A campus ambassador program for high school and university students supporting mental health',
+            'A summer camp',
+            'A kids\' fitness program'
+          ],
+          correctIndex: 1,
+          explanation: 'CAMS Kids is a campus ambassador program where high school and university students support mental health awareness through events, tabling, and connecting peers with resources.'
+        },
+        {
+          id: 'khp11',
+          question: 'What makes Kids Help Phone unique as a volunteer opportunity?',
+          options: [
+            'It\'s the smallest mental health organization',
+            'National scale, recognized brand, and professional training with certifications',
+            'It only operates in Ontario',
+            'It doesn\'t offer any training'
+          ],
+          correctIndex: 1,
+          explanation: 'Kids Help Phone is a well-known national organization - you\'ve probably seen their logo on chocolate bars, milk cartons, or billboards. Volunteers gain real professional training and certifications.'
+        },
+        {
+          id: 'khp12',
+          question: 'What advice did Kids Help Phone volunteers give about balancing volunteering with school?',
+          options: [
+            'You should quit all other activities to focus on volunteering',
+            'Use organizational tools, know your priorities, plan ahead, and be willing to say no sometimes',
+            'Volunteering should always come first',
+            'Only volunteer during summer break'
+          ],
+          correctIndex: 1,
+          explanation: 'Successful volunteers use calendars and planning tools, know their priorities, plan in advance, and aren\'t afraid to say no sometimes. Balance is a continual process that can be managed.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Get Involved',
@@ -2304,11 +2788,162 @@ export const fashionDesign: PlatinumBoothData = {
     description: 'Explore careers in Canadian agriculture'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Agriculture Careers Quiz',
+    description: 'Test your knowledge about careers in Canada\'s agriculture and agri-food sector',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Discover Agriculture Careers',
+      description: 'Test your knowledge about the opportunities waiting in Canadian agriculture!',
+      badgeImageUrl: '/badges/badge-9.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'ag1',
+          question: 'How many jobs does Canada\'s agriculture and agri-food sector support?',
+          options: [
+            'About 500,000 jobs',
+            'About 1 million jobs',
+            'About 2.3 million jobs',
+            'About 5 million jobs'
+          ],
+          correctIndex: 2,
+          explanation: 'Canada\'s agriculture and agri-food sector employs about 2.3 million people, making it one of the largest employment sectors in the country.'
+        },
+        {
+          id: 'ag2',
+          question: 'According to CAHRC research, what percentage of high school students cannot name a single job in agriculture besides "farmer"?',
+          options: [
+            '25%',
+            '37%',
+            '54%',
+            '72%'
+          ],
+          correctIndex: 2,
+          explanation: '54% of high school students could not name a single job in agriculture other than farmer, highlighting a major awareness gap about the diversity of careers available.'
+        },
+        {
+          id: 'ag3',
+          question: 'How many workers is the agriculture industry projected to be short by 2030?',
+          options: [
+            '25,000 workers',
+            '50,000 workers',
+            '100,000+ workers',
+            '200,000 workers'
+          ],
+          correctIndex: 2,
+          explanation: 'The agriculture industry is facing a significant labour gap and is projected to be short over 100,000 workers by 2030, creating abundant job opportunities.'
+        },
+        {
+          id: 'ag4',
+          question: 'Which of these is an emerging career path in modern agriculture?',
+          options: [
+            'Agricultural biotechnology',
+            'Precision agriculture and data analytics',
+            'Agricultural technology development',
+            'All of the above'
+          ],
+          correctIndex: 3,
+          explanation: 'Modern agriculture includes diverse career paths like biotechnology, precision agriculture with data analytics, and technology development - it\'s not just traditional farming anymore.'
+        },
+        {
+          id: 'ag5',
+          question: 'Do you need to come from a farming background to work in agriculture?',
+          options: [
+            'Yes, you need farming experience',
+            'No - 60.7% of new ag workers come from non-agricultural programs',
+            'Only for management positions',
+            'Only for field work positions'
+          ],
+          correctIndex: 1,
+          explanation: '60.7% of new agriculture workers come from non-agricultural college and university programs. The industry welcomes people from all backgrounds.'
+        },
+        {
+          id: 'ag6',
+          question: 'What did CAHRC research find about public perception of agriculture careers?',
+          options: [
+            '76% have a positive view, and 47% would consider a career in agriculture',
+            'Most people think agriculture jobs are low-paying',
+            'Only rural residents are interested in agriculture careers',
+            'Young people are not interested in agriculture'
+          ],
+          correctIndex: 0,
+          explanation: 'CAHRC research found that 76% of Canadians have a positive view of agriculture, and 47% would consider a career in the sector - there\'s strong interest once people learn about the opportunities.'
+        },
+        {
+          id: 'ag7',
+          question: 'What is "Work Integrated Learning" (WIL) in the context of agriculture careers?',
+          options: [
+            'Online farming courses',
+            'Programs that combine classroom learning with hands-on work experience',
+            'Learning to work with farm equipment',
+            'Integration of technology with traditional farming'
+          ],
+          correctIndex: 1,
+          explanation: 'Work Integrated Learning (WIL) programs combine classroom education with practical work experience in the agriculture sector, helping students gain real-world skills before graduation.'
+        },
+        {
+          id: 'ag8',
+          question: 'What percentage of Ontario\'s agriculture workforce is expected to retire by 2030?',
+          options: [
+            '15%',
+            '25%',
+            '37%',
+            '50%'
+          ],
+          correctIndex: 2,
+          explanation: '37% of Ontario\'s agriculture workforce is expected to retire by 2030, creating significant opportunities for young people entering the industry.'
+        },
+        {
+          id: 'ag9',
+          question: 'What skills are increasingly in demand in modern agriculture?',
+          options: [
+            'Digital literacy and automation',
+            'Data analysis and interpretation',
+            'Technology operation and maintenance',
+            'All of the above'
+          ],
+          correctIndex: 3,
+          explanation: 'Modern agriculture demands a combination of digital literacy, automation skills, data analysis capabilities, and technology expertise - the industry is rapidly evolving.'
+        },
+        {
+          id: 'ag10',
+          question: 'How many Work Integrated Learning opportunities are available across Canada in the agriculture sector?',
+          options: [
+            'About 500 programs',
+            'About 1,200 programs',
+            'About 3,400 programs',
+            'About 10,000 programs'
+          ],
+          correctIndex: 2,
+          explanation: 'There are approximately 3,400 Work Integrated Learning opportunities available across Canada in the agriculture sector, providing many pathways into the industry.'
+        },
+        {
+          id: 'ag11',
+          question: 'Who can pursue a career in Canada\'s agriculture and agri-food sector?',
+          options: [
+            'Only people from rural areas',
+            'Only people with farming families',
+            'Only people with agriculture degrees',
+            'People from all backgrounds and education paths'
+          ],
+          correctIndex: 3,
+          explanation: 'Agriculture welcomes people from all backgrounds - urban or rural, with various educational paths. The industry needs diverse skills including IT, business, science, engineering, and more.'
+        },
+        {
+          id: 'ag12',
+          question: 'What is the Canadian Agricultural Human Resource Council (CAHRC)?',
+          options: [
+            'A farming equipment company',
+            'A government department',
+            'An organization that provides research and resources to strengthen the agriculture workforce',
+            'A university agriculture program'
+          ],
+          correctIndex: 2,
+          explanation: 'CAHRC is a national organization that provides research, tools, and resources to help address workforce challenges and strengthen Canada\'s agriculture sector.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Explore Careers',
@@ -2913,11 +3548,88 @@ export const hsmcBooth: PlatinumBoothData = {
     description: 'Learn about the Canadian Fire Alarm Technology Program'
   },
   engagementActivity: {
-    embedUrl: '',
-    embedType: 'iframe',
-    title: 'Coming Soon',
-    description: 'Engagement activity coming soon',
-    duration: ''
+    title: 'Fire Alarm Technician Career Quiz',
+    description: 'Test your knowledge about careers in fire safety and life protection',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Fire Alarm Technician: A Career That Keeps People Safe',
+      description: 'Test your knowledge and discover if this career is right for you!',
+      badgeImageUrl: '/badges/badge-4.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'q1',
+          question: 'What is the primary role of a fire alarm technician?',
+          options: ['Run into burning buildings to fight fires', 'Test, inspect, repair, and maintain fire alarm systems', 'Design new buildings', 'Sell fire alarm equipment'],
+          correctIndex: 1,
+          explanation: 'Fire alarm technicians are trained professionals who ensure fire alarm systems work properly so people get early warnings before emergencies become life-threatening.'
+        },
+        {
+          id: 'q2',
+          question: 'In which types of buildings do fire alarm technicians typically work?',
+          options: ['Only hospitals', 'Only residential homes', 'Schools, hospitals, malls, apartments, factories, and offices', 'Only government buildings'],
+          correctIndex: 2,
+          explanation: 'Fire alarm technicians work in almost every type of building—anywhere fire alarm systems need testing, inspection, and maintenance.'
+        },
+        {
+          id: 'q3',
+          question: 'Why is there currently high demand for fire alarm technicians?',
+          options: ['Many technicians are retiring', 'There are more job openings than trained people to fill them', 'The job is being automated', 'Fewer buildings need fire alarms'],
+          correctIndex: 1,
+          explanation: 'Service companies, building owners, and engineering firms all need qualified technicians, but there aren\'t enough trained people to fill the positions.'
+        },
+        {
+          id: 'q4',
+          question: 'Why is fire alarm technician work considered "future ready" and hard to automate?',
+          options: ['It\'s done entirely by computer', 'It requires on-site work, human judgment, and physical checks', 'Robots already do most of it', 'It only uses paper records'],
+          correctIndex: 1,
+          explanation: 'Fire alarm work is done on site and requires human judgment, physical checks, and communication with building staff—making it a stable career even as technology changes.'
+        },
+        {
+          id: 'q5',
+          question: 'Fire alarm technician experience can be a stepping stone into which related fields?',
+          options: ['Only retail sales', 'Firefighting, fire prevention, life safety consulting, and occupational health and safety', 'Only teaching', 'Only office administration'],
+          correctIndex: 1,
+          explanation: 'Many people use fire alarm experience to move into firefighting, fire prevention inspections, life safety consulting, system design, or occupational health and safety roles.'
+        },
+        {
+          id: 'q6',
+          question: 'What does C-F-A-T-P stand for?',
+          options: ['Canadian Fire Association Training Plan', 'Canadian Fire Alarm Technology Program', 'Certified Fire Alarm Testing Protocol', 'Community Fire Alert Training Program'],
+          correctIndex: 1,
+          explanation: 'The Canadian Fire Alarm Technology Program (C-F-A-T-P) is a theory-based training program approved by the Canadian Fire Alarm Association that prepares you to become a registered fire alarm technician.'
+        },
+        {
+          id: 'q7',
+          question: 'How long does it take to complete the five C-F-A-T-P theory courses at HSMC?',
+          options: ['About 4 years', 'About 2 years', 'About 11 weekends', 'About 6 months full-time'],
+          correctIndex: 2,
+          explanation: 'The program is accelerated and weekend-based, allowing you to complete all five theory courses in about 11 weekends while keeping up with school or work during the week.'
+        },
+        {
+          id: 'q8',
+          question: 'What do you receive after passing the CFAA theory exam?',
+          options: ['A university degree', 'Your CFAA Fire Alarm Technician number', 'A firefighter badge', 'A building permit'],
+          correctIndex: 1,
+          explanation: 'When you pass the CFAA theory exam, you receive your official CFAA Fire Alarm Technician number, which registers you as a qualified technician.'
+        },
+        {
+          id: 'q9',
+          question: 'Which traits suggest you might enjoy working as a fire alarm technician?',
+          options: ['Prefer sitting at a desk all day', 'Dislike technology and tools', 'Enjoy solving problems and notice small details others miss', 'Prefer working alone without interacting with anyone'],
+          correctIndex: 2,
+          explanation: 'Fire alarm technicians need to enjoy working with technology, solving puzzles, noticing small details, caring about safety, and moving around to different sites rather than sitting at a desk.'
+        },
+        {
+          id: 'q10',
+          question: 'How many continuing education courses must fire alarm technicians complete annually to maintain their CFAA registration?',
+          options: ['2 courses', '4 courses', '8 courses', '12 courses'],
+          correctIndex: 2,
+          explanation: 'Each year, registered fire alarm technicians complete 8 continuing education courses to stay current with new technology, standards, and maintain their CFAA registration.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Learn More',
