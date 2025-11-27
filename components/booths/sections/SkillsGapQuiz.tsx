@@ -1,14 +1,17 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { X, Check, XIcon, Download, Maximize2, RotateCcw, ArrowRight } from 'lucide-react'
 import { QuizData } from '@/types/booth'
+import { getSessionBySlug } from '@/data/sample-sessions'
 
 interface SkillsGapQuizProps {
   quizData: QuizData
   boothId?: string
   boothName?: string
+  sessionTitle?: string
+  associatedSessionSlug?: string
 }
 
 type QuizState = 'start' | 'in-progress' | 'results'
@@ -31,7 +34,11 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled
 }
 
-export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGapQuizProps) {
+export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTitle, associatedSessionSlug }: SkillsGapQuizProps) {
+  // Look up session title from slug if available
+  const session = associatedSessionSlug ? getSessionBySlug(associatedSessionSlug) : null
+  const resolvedSessionTitle = sessionTitle || session?.title || boothName || 'session'
+
   const [quizState, setQuizState] = useState<QuizState>('start')
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<Map<string, number>>(new Map())
@@ -41,6 +48,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
   const [hasAnswered, setHasAnswered] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [selectedBadge, setSelectedBadge] = useState<string | null>(null)
+  const feedbackRef = useRef<HTMLParagraphElement>(null)
 
   // Handle component mount for portal
   useEffect(() => {
@@ -65,6 +73,18 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
       document.body.style.overflow = ''
     }
   }, [isFullscreen])
+
+  // Auto-scroll to feedback after answering a question
+  useEffect(() => {
+    if (hasAnswered && feedbackRef.current) {
+      setTimeout(() => {
+        feedbackRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest'
+        })
+      }, 150)
+    }
+  }, [hasAnswered])
 
   const handleStartQuiz = () => {
     // Shuffle questions on start
@@ -143,10 +163,10 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
   }
 
   const getScoreColor = (percentage: number) => {
-    if (percentage >= 90) return { color: 'text-green-600', bg: 'bg-green-50', message: 'Outstanding!' }
-    if (percentage >= 70) return { color: 'text-blue-600', bg: 'bg-blue-50', message: 'Great job!' }
-    if (percentage >= 50) return { color: 'text-amber-600', bg: 'bg-amber-50', message: 'Good effort!' }
-    return { color: 'text-[#22224C]', bg: 'bg-gray-50', message: 'Keep learning!' }
+    if (percentage >= 90) return { color: 'text-green-600', bg: 'bg-green-50', message: 'Niceee 👌' }
+    if (percentage >= 70) return { color: 'text-blue-600', bg: 'bg-blue-50', message: 'Solid job 🤝' }
+    if (percentage >= 50) return { color: 'text-amber-600', bg: 'bg-amber-50', message: 'Try again?' }
+    return { color: 'text-[#22224C]', bg: 'bg-gray-50', message: 'Try again?' }
   }
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex]
@@ -161,15 +181,15 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/60 rounded-full blur-2xl" />
 
       {/* Content */}
-      <div className="relative h-full flex flex-col items-center justify-center p-6 text-center">
-        <div className="max-w-md w-full space-y-5">
-          {/* Eyebrow label */}
-          <span className="inline-block text-xs uppercase tracking-widest text-[#0092FF] font-medium animate-in fade-in slide-in-from-bottom-2 duration-500">
+      <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-6 text-center overflow-y-auto">
+        <div className="max-w-md w-full space-y-3 sm:space-y-5">
+          {/* Eyebrow label - hidden on mobile */}
+          <span className="hidden sm:inline-block text-xs uppercase tracking-widest text-[#0092FF] font-medium animate-in fade-in slide-in-from-bottom-2 duration-500">
             Interactive Challenge
           </span>
 
           {/* Title */}
-          <h2 className="text-3xl sm:text-4xl font-black text-[#22224C] leading-tight animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#22224C] leading-tight animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100">
             {quizData.title}
           </h2>
 
@@ -179,7 +199,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
           </p>
 
           {/* Info pills */}
-          <div className="flex flex-wrap items-center justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/60 backdrop-blur-sm rounded-full text-sm text-[#22224C]/80">
               <span className="w-1.5 h-1.5 bg-[#0092FF] rounded-full" />
               {quizData.questions.length} Questions
@@ -195,7 +215,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
           {/* CTA Button */}
           <button
             onClick={handleStartQuiz}
-            className="group inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] min-w-[180px] bg-[#0092FF] text-white rounded-lg font-semibold shadow-md hover:bg-[#22224C] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out animate-in fade-in slide-in-from-bottom-4 duration-500 delay-400 focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2"
+            className="group inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] w-full sm:w-auto sm:min-w-[180px] bg-[#0092FF] text-white rounded-lg font-semibold shadow-md hover:bg-[#22224C] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out animate-in fade-in slide-in-from-bottom-4 duration-500 delay-400 focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2"
           >
             Start Quiz
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -285,9 +305,12 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
 
           {/* Feedback Box - Compact but substantial */}
           {hasAnswered && (
-            <p className={`text-sm px-3 py-2 rounded-lg mt-1 ${
-              isCorrect ? 'bg-green-50 text-green-800' : 'bg-amber-50 text-amber-800'
-            }`}>
+            <p
+              ref={feedbackRef}
+              className={`text-sm px-3 py-2 rounded-lg mt-1 ${
+                isCorrect ? 'bg-green-50 text-green-800' : 'bg-amber-50 text-amber-800'
+              }`}
+            >
               {currentQuestion.explanation}
             </p>
           )}
@@ -321,36 +344,42 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/60 rounded-full blur-2xl" />
 
         {/* Content */}
-        <div className="relative min-h-full flex flex-col items-center pt-4 pb-2 px-6 text-center">
+        <div className="relative min-h-full flex flex-col items-center pt-0 pb-2 px-6 text-center">
           <div className="max-w-md w-full">
-            {/* Score */}
-            <h2 className="text-5xl sm:text-6xl font-black text-[#22224C] leading-tight animate-in fade-in slide-in-from-bottom-4 duration-500">
-              {score.percentage}%
-            </h2>
-
             {/* Message */}
-            <p className="mt-3 text-xl sm:text-2xl font-semibold text-[#22224C] animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
+            <p className="mt-2 sm:mt-3 text-lg sm:text-xl lg:text-2xl font-semibold text-[#22224C] animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
               {scoreStyle.message}
             </p>
 
-            {/* Summary */}
-            <p className="mt-3 text-base sm:text-lg text-[#65738B] animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
+            {/* Summary - shown first */}
+            <p className="mt-2 sm:mt-3 text-sm sm:text-base lg:text-lg text-[#65738B] animate-in fade-in slide-in-from-bottom-4 duration-500 delay-250">
               You got {score.correct} out of {score.total} questions correct
             </p>
 
+            {/* Conditional encouragement text - same size as summary */}
+            {score.percentage >= 80 ? (
+              <p className="mt-2 sm:mt-3 text-sm sm:text-base lg:text-lg text-[#65738B] max-w-sm mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
+                If you collect 10 or more of these badges, you will be able to enter a draw for a prize. Visit the FAQ on the main page for all the details.
+              </p>
+            ) : (
+              <p className="mt-2 sm:mt-3 text-sm sm:text-base lg:text-lg text-[#65738B] max-w-sm mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
+                Want to improve your score? These questions were created from the {resolvedSessionTitle} session.
+              </p>
+            )}
+
             {/* Instructional text - only shown when badge earned (80%+) */}
             {selectedBadge && score.percentage >= 80 && (
-              <p className="mt-4 text-sm sm:text-base text-[#65738B] max-w-sm mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 delay-[350ms]">
-                Good job. Now add this session completion badge to your portfolio in myBlueprint with your session takeaways/reflection.
+              <p className="mt-2 sm:mt-4 text-xs sm:text-sm lg:text-base text-[#65738B] max-w-sm mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500 delay-[350ms]">
+                Now add this session completion badge to your Career Launch portfolio in myBlueprint with your session takeaways/reflection.
               </p>
             )}
 
             {/* Buttons */}
-            <div className="mt-5 flex flex-col items-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-400">
+            <div className="mt-3 sm:mt-5 flex flex-col items-center gap-2 sm:gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-400">
               {selectedBadge && score.percentage >= 80 && (
                 <button
                   onClick={handleDownloadBadge}
-                  className="group inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] min-w-[180px] bg-[#0092FF] text-white rounded-lg font-semibold shadow-md hover:bg-[#22224C] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2"
+                  className="group inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] w-full sm:w-auto sm:min-w-[180px] bg-[#0092FF] text-white rounded-lg font-semibold shadow-md hover:bg-[#22224C] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2"
                 >
                   <Download className="w-5 h-5" />
                   Download Your Badge
@@ -359,7 +388,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName }: SkillsGa
 
               <button
                 onClick={handleRetakeQuiz}
-                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] min-w-[180px] bg-white/60 backdrop-blur-sm text-[#22224C] rounded-lg font-semibold border border-[#22224C]/10 hover:bg-white hover:-translate-y-1 transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2"
+                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] w-full sm:w-auto sm:min-w-[180px] bg-white/60 backdrop-blur-sm text-[#22224C] rounded-lg font-semibold border border-[#22224C]/10 hover:bg-white hover:-translate-y-1 transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2"
               >
                 <RotateCcw className="w-5 h-5" />
                 Retake Quiz

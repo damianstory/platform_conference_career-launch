@@ -231,12 +231,12 @@ No matter what challenges they face, Kids Help Phone is here for them.`,
   trailer_url: 'https://vimeo.com/game-dev-trailer',
   full_video_url: 'https://vimeo.com/game-dev-full',
   duration: 0,
-  block_number: 3,
+  block_number: 4,
   industries: ['Life Skills'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 5,
+  display_order: 7,
   lesson_plan_url: null
 };
 
@@ -920,6 +920,30 @@ From the workshops and coaching they took part in to their travels, work experie
   lesson_plan_url: null
 };
 
+export const fireAlarmTechnician: Session = {
+  id: 'f8a2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d',
+  slug: 'fire-alarm-technician',
+  title: `Fire Alarm Technician: A Career that Helps Keep People Safe`,
+  description: `In this session, students will explore the role of a Fire Alarm Technician, and learn why the career is in demand.
+
+Discover how the Canadian Fire Alarm Technology Program at Health and Safety Management College prepares you for registration, and understand the step-by-step pathway from student to Registered Fire Alarm Technician.`,
+  learning_objectives: null,
+  presenter_name: `Health and Safety Management College (HSMC)`,
+  presenter_bio: null,
+  presenter_photo_url: null,
+  thumbnail_url: null,
+  trailer_url: null,
+  full_video_url: null,
+  duration: 0,
+  block_number: 3,
+  industries: ['Justice/Emergency', 'Construction', 'Energy'],
+  grade_level: '7-12',
+  created_at: '2025-11-27T00:00:00.000000+00:00',
+  updated_at: '2025-11-27T00:00:00.000000+00:00',
+  display_order: 8,
+  lesson_plan_url: null
+};
+
 // ============================================================================
 // EXPORTED COLLECTIONS
 // ============================================================================
@@ -956,6 +980,7 @@ export const allSessions: Session[] = [
   firefighterFirstResponder,
   digitalMarketingSpecialist,
   cloudArchitectAws,
+  fireAlarmTechnician,
 ];
 
 // Filtered arrays by block

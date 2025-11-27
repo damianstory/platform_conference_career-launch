@@ -33,6 +33,10 @@ export default async function SessionPage({ params }: SessionPageProps) {
   // Get booth data for the presenter to display organization logo
   const booth = session.presenter_name ? getBoothByPresenterName(session.presenter_name) : undefined;
 
+  // Show booth placeholder for sessions that will have booths but don't yet
+  const sessionsWithBoothPlaceholder: string[] = [];
+  const showBoothPlaceholder = !booth && sessionsWithBoothPlaceholder.includes(session.slug);
+
   return (
     <div className="bg-off-white min-h-screen">
       {/* Hero Section */}
@@ -62,6 +66,7 @@ export default async function SessionPage({ params }: SessionPageProps) {
             booth={booth}
             sessionSlug={session.slug}
             sessionTitle={session.title}
+            showBoothPlaceholder={showBoothPlaceholder}
           />
         </div>
       </section>

@@ -11,6 +11,7 @@ interface OrganizationSectionProps {
   booth?: PlatinumBoothData | StandardBoothData;
   sessionSlug: string;
   sessionTitle: string;
+  showBoothPlaceholder?: boolean;
 }
 
 export default function OrganizationSection({
@@ -19,6 +20,7 @@ export default function OrganizationSection({
   booth,
   sessionSlug,
   sessionTitle,
+  showBoothPlaceholder = false,
 }: OrganizationSectionProps) {
   const router = useRouter();
   const { saveContext } = useSessionContext();
@@ -38,10 +40,13 @@ export default function OrganizationSection({
     }
   };
 
+  // Show booth card if booth exists OR if placeholder is requested
+  const showBoothCard = booth || showBoothPlaceholder;
+
   return (
-    <div className={`grid grid-cols-1 ${booth ? 'lg:grid-cols-2' : ''} gap-6 mb-6`}>
-      {/* Left Card: Booth Discovery CTA (only shown if booth exists) */}
-      {booth && (
+    <div className={`grid grid-cols-1 ${showBoothCard ? 'lg:grid-cols-2' : ''} gap-6 mb-6`}>
+      {/* Left Card: Booth Discovery CTA (shown if booth exists or placeholder requested) */}
+      {showBoothCard && (
         <div className="flex flex-col bg-gradient-to-br from-light-blue/20 to-blue/10 rounded-xl border border-primary-blue/20 p-6 shadow-[0_4px_24px_rgba(34,34,76,0.08)] transition-all duration-300 hover:border-primary-blue hover:shadow-[0_8px_32px_rgba(0,146,255,0.2)] hover:-translate-y-0.5">
           {/* Header */}
           <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-blue mb-4">
@@ -55,9 +60,9 @@ export default function OrganizationSection({
               Visit their booth to explore additional resources from {name}.
             </p>
 
-            {/* CTA Button */}
+            {/* CTA Button - only functional if booth exists */}
             <button
-              onClick={handleVisitBooth}
+              onClick={booth ? handleVisitBooth : undefined}
               className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 h-[56px] bg-primary-blue text-white rounded-lg font-semibold text-base shadow-md hover:bg-brand-navy hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,146,255,0.35)] transition-all duration-300 ease-out focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 mt-auto"
             >
               <span>Visit Booth</span>

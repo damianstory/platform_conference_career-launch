@@ -39,7 +39,8 @@ export default function BoothCard({ booth, index = 0 }: BoothCardProps) {
       'Vox Pop Labs': ['Vox Pop', 'Labs'],
       'Ernst & Young': ['Ernst', '& Young'],
       'Royal Canadian Air Force': ['Royal Canadian', 'Air Force'],
-      'DegreeHub Survey': ['DegreeHub', 'Survey']
+      'DegreeHub Survey': ['DegreeHub', 'Survey'],
+      'Health and Safety Management College (HSMC)': ['Health and', 'Safety MC']
     }
 
     if (twoLineExceptions[title]) {

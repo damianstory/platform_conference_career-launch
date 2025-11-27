@@ -491,7 +491,7 @@ export const tradesMaster: PlatinumBoothData = {
         },
         {
           id: 'q8',
-          question: 'How do experts predict AI will change the events industry?',
+          question: 'How does Carly predict AI will change the events industry?',
           options: ["Replace all humans", "Create opportunities for creativity", "Stop in-person meetings", "It won't change anything"],
           correctIndex: 1,
           explanation: "AI will handle boring automation tasks, leaving humans more time for connection and creativity."
@@ -2562,6 +2562,89 @@ export const degreeHub: StandardBoothData = {
   }
 }
 
+export const hsmcBooth: PlatinumBoothData = {
+  id: 'health-safety-management-college',
+  name: 'Health and Safety Management College (HSMC)',
+  slug: 'health-safety-management-college',
+  tier: 'platinum',
+  associatedSessionSlug: 'fire-alarm-technician',
+  industries: ['Justice/Emergency', 'Construction', 'Energy'],
+  organizationType: 'employer',
+  pathway: 'college',
+  logo: '/logos/hsmc-logo.jpg',
+  tagline: 'Through Canadian Fire Alarm Technology Program, offered by Health and Safety Management College, students gain the foundational expertise necessary to become skilled Fire Alarm Technicians, ready to take on the responsibility of protecting public safety.',
+  description: 'Health and Safety Management College (HSMC) is a leading career college based in Ontario, dedicated to providing high-quality education in workplace health and safety.\n\nAs an approved training partner of the Canadian Fire Alarm Association (CFAA) and a registered career college under the Ontario Career Colleges Act, 2005, we specialize in equipping students with the knowledge and skills needed for success in the fire alarm and safety industry.',
+  video: {
+    url: 'https://www.youtube.com/watch?v=qgCiN6AZ3vw',
+    type: 'youtube',
+    title: 'A Career in Fire & Life Safety',
+    description: 'Learn about careers in the fire alarm industry'
+  },
+  resources: [
+    {
+      title: 'About HSMC',
+      description: 'Learn about Health and Safety Management College',
+      url: 'https://hsmcollege.ca/about-us/',
+      type: 'link'
+    },
+    {
+      title: 'Program Details',
+      description: 'Explore the Canadian Fire Alarm Technology Program',
+      url: 'https://hsmcollege.ca/the-canadian-fire-alarm-technology-program/',
+      type: 'link'
+    },
+    {
+      title: 'A Rewarding Career',
+      description: 'Discover why fire alarm technician is a rewarding career',
+      url: 'https://youtu.be/Jkjw503EBqc?si=C-eqbsZaYasM6eCx',
+      type: 'link'
+    },
+    {
+      title: 'Part 1: Day in the Life',
+      description: 'See what a typical day looks like for a fire alarm technician',
+      url: 'https://youtu.be/yMROFazPza0?si=vM9Tp_vfJBPyKnl5',
+      type: 'link'
+    },
+    {
+      title: 'Part 2: Day in the Life',
+      description: 'Continue exploring the daily work of a fire alarm technician',
+      url: 'https://youtu.be/RMuTllqHP_0?si=5uMEo-NZZf5GPdbU',
+      type: 'link'
+    }
+  ],
+  sessionSlides: {
+    embedUrl: 'https://drive.google.com/file/d/1RJxTIR2V6FBnOdEz6pQq6e5ABfuGGlHu/view?usp=sharing',
+    type: 'google-drive-pdf',
+    title: 'HSMC Program Information',
+    description: 'Learn about the Canadian Fire Alarm Technology Program'
+  },
+  engagementActivity: {
+    embedUrl: '',
+    embedType: 'iframe',
+    title: 'Coming Soon',
+    description: 'Engagement activity coming soon',
+    duration: ''
+  },
+  primaryCTA: {
+    text: 'Learn More',
+    url: 'https://hsmcollege.ca/the-canadian-fire-alarm-technology-program/',
+    type: 'link'
+  },
+  contact: {
+    email: 'info@hsmcollege.ca',
+    website: 'https://hsmcollege.ca/',
+    socialLinks: [
+      { platform: 'globe', url: 'https://hsmcollege.ca/the-canadian-fire-alarm-technology-program/', label: 'Program Info' },
+      { platform: 'linkedin', url: 'https://www.linkedin.com/company/health-and-safety-management-college/' },
+      { platform: 'youtube', url: 'https://www.youtube.com/@hsmcollege-ca' }
+    ]
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
 // ======================
 // EXPORTS
 // ======================
@@ -2579,6 +2662,7 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   marketGenius,                 // Ernst & Young
   consultPro,                   // Humber FAST
   manufactureTech,              // Hydro One
+  hsmcBooth,                    // Health and Safety Management College (HSMC)
   cyberShield,                  // Jack.org
   bioMedical,                   // Kids Help Phone
   legalServices,                // Mydoh

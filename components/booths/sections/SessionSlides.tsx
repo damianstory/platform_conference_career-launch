@@ -84,8 +84,8 @@ function convertToEmbedUrl(url: string, type?: 'google-slides' | 'google-drive-p
 
   // Local PDF files - can be embedded directly in iframe
   if (detectedType === 'local-pdf') {
-    // Add parameters to hide toolbar/sidebar in browser PDF viewer
-    return `${url}#toolbar=0&navpanes=0&view=FitH`
+    // Add parameters to show one page at a time, fit to width, hide sidebar
+    return `${url}#toolbar=0&navpanes=0&scrollbar=0&view=Fit&pagemode=none`
   }
 
   // If no conversion needed or format not recognized, return original
