@@ -2628,7 +2628,7 @@ export const hsmcBooth: PlatinumBoothData = {
   primaryCTA: {
     text: 'Learn More',
     url: 'https://hsmcollege.ca/the-canadian-fire-alarm-technology-program/',
-    type: 'link'
+    type: 'learn-more'
   },
   contact: {
     email: 'info@hsmcollege.ca',
