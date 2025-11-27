@@ -433,82 +433,96 @@ export const tradesMaster: PlatinumBoothData = {
     title: 'Behind the Magic Career Quiz',
     description: 'Test your knowledge about careers in the events industry',
     embedType: 'skills-gap-quiz',
-    duration: '2-3 minutes',
+    duration: '3-4 minutes',
     quizData: {
-      title: 'Behind the Magic: Event Industry Trivia',
-      description: 'Test your knowledge and discover your future career!',
+      title: 'Behind the Magic: Event Industry Careers',
+      description: 'Test your knowledge and discover your future in events!',
       badgeImageUrl: '/badges/encore-canada-badge.png',
-      duration: '2-3 minutes',
+      duration: '3-4 minutes',
       questions: [
         {
           id: 'q1',
-          question: 'About how many direct jobs does the Canadian business events industry create?',
-          options: ['50,000', '120,000', '242,000', '10 million'],
+          question: 'How much does the Canadian business events industry contribute to the economy in direct economic impact?',
+          options: ['$12 billion', '$27 billion', '$47 billion', '$85 billion'],
           correctIndex: 2,
-          explanation: "It's huge! The industry creates 242,000 direct jobs in Canada and contributes $47 billion to the economy."
+          explanation: 'The Canadian business events industry generates $47 billion in direct economic impact, making it a major contributor to our national economy.'
         },
         {
           id: 'q2',
-          question: 'Many people think Event Planners just plan parties. What is the actual reality?',
-          options: ["It's mostly blowing up balloons", "It's strategic business planning", "Just ordering pizza", "No math involved"],
-          correctIndex: 1,
-          explanation: "Professional event planning involves business strategy, logistics, marketing, and experience design."
+          question: 'How many direct jobs does the business events industry create in Canada?',
+          options: ['50,000', '120,000', '242,000', '500,000'],
+          correctIndex: 2,
+          explanation: 'The industry creates 242,000 direct jobs in Canada—part of the 10.9 million direct jobs generated globally.'
         },
         {
           id: 'q3',
-          question: 'One panelist started in Pharmacy before switching to Events. What does this prove?',
-          options: ["You need a science degree", "Stick to your first major", "Skills are transferable", "Pharmacists make good DJs"],
+          question: 'What percentage of all tourism spending in Canada comes from the business events industry?',
+          options: ['15%', '25%', '40%', '60%'],
           correctIndex: 2,
-          explanation: "Skills are transferable! You can pivot from almost any background into the events industry."
+          explanation: 'Business events account for 40% of all tourism spending in Canada, showing how significant conferences, meetings, and events are to the tourism sector.'
         },
         {
           id: 'q4',
-          question: 'Our moderator Krista worked in South Korea and Germany supporting which organization?',
-          options: ["The USO", "The NBA", "Cirque du Soleil", "Greenpeace"],
-          correctIndex: 0,
-          explanation: "Events take you global! She organized entertainment for troops with the USO while living abroad."
+          question: 'What is one of the biggest misconceptions about event professionals?',
+          options: ['They only work weekends', 'They\'re just party planners, not strategic planners', 'They don\'t need education', 'They only work outdoors'],
+          correctIndex: 1,
+          explanation: 'Professional event planners are strategic planners who blend business strategy, logistics, creativity, and experience design—not just party planning.'
         },
         {
           id: 'q5',
-          question: "The 'Web Summit' (Collision) brings leaders together. Sam traveled to which country for this?",
-          options: ["United Kingdom", "Qatar", "Japan", "Brazil"],
+          question: 'In the events industry, what does "DMC" stand for?',
+          options: ['Digital Media Creator', 'Destination Management Company', 'Direct Marketing Channel', 'Design Management Consultant'],
           correctIndex: 1,
-          explanation: "Sam traveled to Qatar! If you work hard, you can produce experiences all over the world."
+          explanation: 'A DMC (Destination Management Company) is the local expert in a destination, providing services like tours, transportation, and end-to-end event planning.'
         },
         {
           id: 'q6',
-          question: 'For a client in Whistler, Encore Canada built a simulator to replicate which experience indoors?',
-          options: ["A bobsled run", "A bear encounter", "A gondola ride", "A snowstorm"],
-          correctIndex: 2,
-          explanation: "They built a digital immersive gondola experience indoors. Problem-solving is a huge part of the job!"
+          question: 'What does "DMO" stand for in the events industry?',
+          options: ['Destination Marketing Organization', 'Digital Meeting Operator', 'Direct Management Office', 'Design Media Outlet'],
+          correctIndex: 0,
+          explanation: 'A DMO (Destination Marketing Organization), like Destination Toronto, markets a city globally to attract meetings, conferences, and events for economic impact.'
         },
         {
           id: 'q7',
-          question: "The industry loves acronyms. 'DMC' is a common company type. What does it stand for?",
-          options: ["Digital Media Creator", "Destination Management Company", "Direct Marketing Control", "Dance Music Club"],
-          correctIndex: 1,
-          explanation: "Destination Management Company. They are the local experts who plan everything when a conference comes to town."
+          question: 'Which of these roles can you pursue in the events industry?',
+          options: ['Only event planner', 'Only catering staff', 'AV technician, show producer, catering manager, and many more', 'Only hotel front desk'],
+          correctIndex: 2,
+          explanation: 'The events industry offers diverse roles: AV technicians, show callers, producers, catering managers, videographers, sales, finance, HR, legal, and more.'
         },
         {
           id: 'q8',
-          question: 'How does Carly predict AI will change the events industry?',
-          options: ["Replace all humans", "Create opportunities for creativity", "Stop in-person meetings", "It won't change anything"],
+          question: 'What foundational skills are most valuable in the events industry?',
+          options: ['Only technical certifications', 'Communication, emotional intelligence, and relationship building', 'Only physical strength', 'Only computer programming'],
           correctIndex: 1,
-          explanation: "AI will handle boring automation tasks, leaving humans more time for connection and creativity."
+          explanation: 'Events is a relationship-based industry. Communication, emotional intelligence, and the ability to build relationships are transferable skills that serve you throughout your career.'
         },
         {
           id: 'q9',
-          question: 'What is the #1 suggested way for a student to get their foot in the door?',
-          options: ["Wait for calls", "Volunteer & join associations", "Send spam emails", "Have lots of money"],
+          question: 'Which organization can students join to network with event professionals and find mentors?',
+          options: ['FIFA', 'MPI (Meeting Professionals International)', 'NHL', 'NASA'],
           correctIndex: 1,
-          explanation: "Get involved! Volunteering and joining associations (MPI, PCMA) is the best way to find mentors."
+          explanation: 'MPI, PCMA, and CSEP are industry associations where students can volunteer, join committees, attend events, and find mentors—often with subsidized student memberships.'
         },
         {
           id: 'q10',
-          question: 'Which of these is a real global organization for event professionals?',
-          options: ["MPI", "FIFA", "WHO", "NASA"],
-          correctIndex: 0,
-          explanation: "MPI (Meeting Professionals International) is a huge community where you can meet mentors."
+          question: 'How is the events industry evolving according to industry professionals?',
+          options: ['Moving entirely online', 'Becoming more interactive with less "talking at" audiences', 'Eliminating in-person gatherings', 'Reducing human involvement'],
+          correctIndex: 1,
+          explanation: 'The future of events is about engagement and human connection. Audiences want to participate and interact, not just sit passively listening to speakers.'
+        },
+        {
+          id: 'q11',
+          question: 'What types of events fall under "business events" in this industry?',
+          options: ['Only birthday parties', 'Only music concerts', 'Conferences, trade shows, brand activations, and corporate events', 'Only weddings'],
+          correctIndex: 2,
+          explanation: 'Business events include conferences, trade shows, brand activations, incentive programs, corporate meetings, and user conferences—each with strategic business objectives.'
+        },
+        {
+          id: 'q12',
+          question: 'What is the #1 recommended way for students to break into the events industry?',
+          options: ['Wait for job postings', 'Volunteer and join industry associations', 'Only apply to large companies', 'Get a graduate degree first'],
+          correctIndex: 1,
+          explanation: 'The panelists all emphasized: volunteer, join associations like MPI or PCMA, get on committees, and build relationships. That\'s how doors open in this industry.'
         }
       ]
     }
@@ -1136,11 +1150,102 @@ export const manufactureTech: PlatinumBoothData = {
     description: 'Explore careers in Ontario\'s electricity sector'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Hydro One Career Quiz',
+    description: 'Test your knowledge about careers at Ontario\'s largest electricity provider',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Hydro One: Powering Ontario Careers',
+      description: 'Test your knowledge and discover your future in energy!',
+      badgeImageUrl: '/badges/badge-1.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'q1',
+          question: 'What does Hydro One actually do with electricity?',
+          options: ['Generate electricity at nuclear plants', 'Transmit and distribute electricity across Ontario', 'Sell electricity directly to international markets', 'Build solar panels and wind turbines'],
+          correctIndex: 1,
+          explanation: 'Hydro One doesn\'t produce any electricity—that\'s done by partners like OPG and Bruce Power. Hydro One moves electricity around the province through transmission and distribution lines.'
+        },
+        {
+          id: 'q2',
+          question: 'How much of Ontario\'s transmission capacity does Hydro One\'s system account for?',
+          options: ['About 50%', 'About 75%', 'About 92%', '100%'],
+          correctIndex: 2,
+          explanation: 'Hydro One\'s system accounts for approximately 92% of Ontario\'s transmission capacity with about 30,000 circuit kilometers of high voltage transmission lines.'
+        },
+        {
+          id: 'q3',
+          question: 'What types of skills do field workers at Hydro One need?',
+          options: ['Only computer programming', 'Technical skills like climbing poles, operating bucket trucks, and working with electrical equipment', 'Only customer service skills', 'Only management and supervision skills'],
+          correctIndex: 1,
+          explanation: 'Field workers at Hydro One need hands-on technical skills including climbing poles, operating bucket trucks, and working safely with electrical equipment in all weather conditions.'
+        },
+        {
+          id: 'q4',
+          question: 'What apprenticeship programs does Hydro One offer in the skilled trades?',
+          options: ['None—they only hire experienced workers', 'Powerline Technician and other electrical trades apprenticeships', 'Only management training programs', 'Only summer internships'],
+          correctIndex: 1,
+          explanation: 'Hydro One runs apprenticeship programs including Powerline Technician training, developing the next generation of skilled tradespeople for Ontario\'s electricity grid.'
+        },
+        {
+          id: 'q5',
+          question: 'What types of technology and innovation roles exist at Hydro One?',
+          options: ['Only electrical engineering', 'Cybersecurity, data architecture, and project management', 'Only field work', 'Marketing and sales only'],
+          correctIndex: 1,
+          explanation: 'Hydro One has technology roles including cybersecurity, data architecture, and project management. They work on smart meters, data systems, and keeping everything cyber secure.'
+        },
+        {
+          id: 'q6',
+          question: 'How many co-op students does Hydro One welcome each year?',
+          options: ['About 50', 'About 100', 'More than 200', 'About 500'],
+          correctIndex: 2,
+          explanation: 'Hydro One welcomes more than 200 university and college students each year for co-op positions across engineering, business, legal, real estate, HR, and more.'
+        },
+        {
+          id: 'q7',
+          question: 'What is Hydro One\'s New Grad Program?',
+          options: ['A one-month internship', 'A two-year rotation program to develop new graduates', 'A scholarship for high school students', 'A summer job program'],
+          correctIndex: 1,
+          explanation: 'The New Grad Program is a two-year rotation program that trains and develops new university graduates, giving them experience across different areas of the company.'
+        },
+        {
+          id: 'q8',
+          question: 'What types of engineering roles are available at Hydro One?',
+          options: ['Only software engineering', 'Electrical, civil, mechanical, and systems engineering', 'Only chemical engineering', 'They don\'t hire engineers'],
+          correctIndex: 1,
+          explanation: 'Hydro One employs various types of engineers including electrical engineers for power systems, civil engineers for infrastructure, mechanical engineers for equipment, and systems engineers for grid operations.'
+        },
+        {
+          id: 'q9',
+          question: 'What kinds of educational backgrounds do Hydro One employees come from?',
+          options: ['Only electrical engineering degrees', 'Diverse backgrounds including engineering, business, arts, and skilled trades', 'Only college diplomas', 'Only graduate degrees'],
+          correctIndex: 1,
+          explanation: 'Hydro One employees come from diverse educational backgrounds. Some panelists started in commerce before switching to engineering, showing there are many paths into the company.'
+        },
+        {
+          id: 'q10',
+          question: 'What are the "One Awards" at Hydro One?',
+          options: ['A sports competition', 'Employee recognition awards celebrating safety, customer service, and company values', 'An industry conference', 'A training certification'],
+          correctIndex: 1,
+          explanation: 'The One Awards are Hydro One\'s employee recognition program celebrating staff who demonstrate excellence in safety, customer service, and living the company\'s values.'
+        },
+        {
+          id: 'q11',
+          question: 'What value is most central to Hydro One\'s workplace culture?',
+          options: ['Speed and efficiency above all', 'Safety first in everything they do', 'Individual competition', 'Working the longest hours'],
+          correctIndex: 1,
+          explanation: 'Safety is the core value at Hydro One. Working with high-voltage electricity means safety protocols and training are paramount in everything they do.'
+        },
+        {
+          id: 'q12',
+          question: 'Besides electricity, what other business does Hydro One operate?',
+          options: ['Natural gas distribution', 'A telecommunications network using their infrastructure', 'Solar panel manufacturing', 'Electric vehicle charging stations'],
+          correctIndex: 1,
+          explanation: 'Hydro One operates a telecommunications business using their extensive network infrastructure across Ontario, providing another career pathway within the company.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Explore Careers',
@@ -1407,11 +1512,102 @@ export const foodService: PlatinumBoothData = {
     description: 'Interactive presentation on career opportunities'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Conservation Careers Quiz',
+    description: 'Test your knowledge about careers protecting Ontario\'s watersheds',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Conservation Authorities: Protecting Ontario\'s Watersheds',
+      description: 'Test your knowledge and discover your future in conservation!',
+      badgeImageUrl: '/badges/badge-2.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'q1',
+          question: 'What major event led to the creation of conservation authorities in Ontario?',
+          options: ['The Great Depression', 'Hurricane Hazel in 1954', 'The founding of Confederation', 'World War II'],
+          correctIndex: 1,
+          explanation: 'Hurricane Hazel hit Ontario in 1954, causing devastating flooding that killed over 80 people. This tragedy led to the creation of conservation authorities to manage flood risks and protect communities.'
+        },
+        {
+          id: 'q2',
+          question: 'How many conservation authorities exist across Ontario today?',
+          options: ['12', '24', '36', '48'],
+          correctIndex: 2,
+          explanation: 'There are 36 conservation authorities across Ontario, each responsible for managing and protecting the natural resources within their specific watershed.'
+        },
+        {
+          id: 'q3',
+          question: 'What is a watershed?',
+          options: ['A building that stores water', 'An area of land where all water drains to a common point like a lake or river', 'A type of dam', 'A water treatment facility'],
+          correctIndex: 1,
+          explanation: 'A watershed is an area of land where all precipitation drains into a common water body like a stream, river, or lake. Conservation authorities are organized around these natural boundaries.'
+        },
+        {
+          id: 'q4',
+          question: 'How are conservation authority boundaries determined?',
+          options: ['By municipal boundaries', 'By provincial riding boundaries', 'By natural watershed drainage patterns', 'By population density'],
+          correctIndex: 2,
+          explanation: 'Conservation authority boundaries follow natural watershed patterns—where water flows—rather than political boundaries. Water doesn\'t care about municipal lines!'
+        },
+        {
+          id: 'q5',
+          question: 'What types of monitoring do conservation authority staff regularly perform?',
+          options: ['Only wildlife counting', 'Water quality, water levels, and weather monitoring', 'Only building inspections', 'Traffic monitoring'],
+          correctIndex: 1,
+          explanation: 'CA staff monitor water quality at sampling stations, track water levels in streams and lakes, and maintain weather stations to predict flooding and protect communities.'
+        },
+        {
+          id: 'q6',
+          question: 'Why are customer service skills important in conservation careers?',
+          options: ['They\'re not—it\'s all fieldwork', 'Because staff regularly interact with the public, landowners, and permit applicants', 'Only for management positions', 'Only for gift shop workers'],
+          correctIndex: 1,
+          explanation: 'Conservation authority staff regularly work with the public—answering questions from park visitors, helping landowners understand regulations, and processing permit applications.'
+        },
+        {
+          id: 'q7',
+          question: 'What educational paths can lead to a career at a conservation authority?',
+          options: ['Only environmental science degrees', 'Various paths including environmental studies, ecology, GIS, forestry, and skilled trades', 'Only graduate degrees', 'Only apprenticeships'],
+          correctIndex: 1,
+          explanation: 'Conservation authorities hire people with diverse educational backgrounds including environmental studies, ecology, GIS/mapping, forestry, horticulture, civil engineering, and skilled trades.'
+        },
+        {
+          id: 'q8',
+          question: 'How does weather affect the work of conservation authority staff?',
+          options: ['It doesn\'t—they only work indoors', 'Storms create flooding emergencies requiring immediate response and monitoring', 'They only work in good weather', 'Weather only affects summer staff'],
+          correctIndex: 1,
+          explanation: 'Weather directly impacts CA work. Storms can create flooding emergencies where staff must monitor water levels, close trails, and protect public safety—sometimes working through the night.'
+        },
+        {
+          id: 'q9',
+          question: 'How do conservation authorities measure success in their work?',
+          options: ['Only by counting visitors to parks', 'Through water quality metrics, flood damage prevention, and ecosystem health indicators', 'Only by revenue generated', 'By the number of staff employed'],
+          correctIndex: 1,
+          explanation: 'CAs measure success through environmental outcomes like improved water quality, reduced flood damage to properties, healthy fish populations, and protected natural areas.'
+        },
+        {
+          id: 'q10',
+          question: 'What unexpected tasks might conservation authority staff handle at parks and conservation areas?',
+          options: ['Only leading nature walks', 'Facility maintenance including managing porta-potties, fixing trails, and emergency repairs', 'Only selling admission tickets', 'Only wildlife research'],
+          correctIndex: 1,
+          explanation: 'CA staff handle diverse tasks including facility maintenance, trail repairs, washroom servicing, and emergency repairs—whatever it takes to keep parks safe and operational for visitors.'
+        },
+        {
+          id: 'q11',
+          question: 'What diverse work do watershed management teams perform?',
+          options: ['Only office paperwork', 'Tree planting, stream restoration, water sampling, permit reviews, and flood forecasting', 'Only enforcement of bylaws', 'Only public education'],
+          correctIndex: 1,
+          explanation: 'Watershed teams do varied work: planting trees for restoration, sampling water quality, reviewing development permits, forecasting floods, and restoring natural habitats.'
+        },
+        {
+          id: 'q12',
+          question: 'What do conservation authorities typically look for when hiring new staff?',
+          options: ['Only people with 10+ years experience', 'Diverse backgrounds, passion for the environment, and willingness to learn', 'Only people with specific degrees', 'Only local residents'],
+          correctIndex: 1,
+          explanation: 'CAs value diverse backgrounds, genuine passion for environmental protection, willingness to learn, and the ability to work as part of a team. Many entry-level positions are available for those starting their careers.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Find Your CA',
@@ -1495,11 +1691,109 @@ export const legalServices: PlatinumBoothData = {
     description: 'Interactive presentation on career opportunities'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Making Bank: Money Skills Quiz',
+    description: 'Test your knowledge about managing money and building financial habits',
+    embedType: 'skills-gap-quiz',
+    duration: '3-4 minutes',
+    quizData: {
+      title: 'Making Bank: Money Skills for Real Life',
+      description: 'Test your knowledge and master your money!',
+      badgeImageUrl: '/badges/badge-1.png',
+      duration: '3-4 minutes',
+      questions: [
+        {
+          id: 'q1',
+          question: 'Why does Shannon say it\'s harder for your generation to manage money than previous generations?',
+          options: ['There\'s less money available', 'Contactless payments make spending invisible', 'Banks charge more fees now', 'Parents don\'t give allowances anymore'],
+          correctIndex: 1,
+          explanation: 'Tap technology and contactless payments mean you rarely see physical money, making it much harder to track spending and budget effectively.'
+        },
+        {
+          id: 'q2',
+          question: 'What are the five money habits Shannon says you need to practice?',
+          options: ['Earning, spending, borrowing, investing, retiring', 'Tracking, saving, spending, enjoying, growing', 'Budgeting, investing, trading, lending, donating', 'Working, shopping, banking, taxing, retiring'],
+          correctIndex: 1,
+          explanation: 'The five habits are: tracking your money, saving your money, spending (budgeting), enjoying your money, and growing your money.'
+        },
+        {
+          id: 'q3',
+          question: 'When calculating your "regular income," what type of money should you NOT include?',
+          options: ['Predictable income', 'Reoccurring income', 'Random income', 'Employment income'],
+          correctIndex: 2,
+          explanation: 'Random income (like unexpected birthday money) shouldn\'t be counted because you don\'t know when it\'s coming or how much. Only include predictable and reoccurring income.'
+        },
+        {
+          id: 'q4',
+          question: 'According to Shannon, what\'s MORE important than the dollar amount you save?',
+          options: ['The interest rate you earn', 'The habit of saving itself', 'Having a savings account', 'Telling your friends about it'],
+          correctIndex: 1,
+          explanation: 'The habit of putting money aside—even $5—and not spending it all is the life skill that matters. The dollar amounts will grow as your income increases.'
+        },
+        {
+          id: 'q5',
+          question: 'What\'s the difference between "short-term savings" and "long-term savings"?',
+          options: ['Short-term is cash, long-term is digital', 'Short-term is for expensive purchases, long-term improves your financial future', 'Short-term is weekly, long-term is monthly', 'There\'s no real difference'],
+          correctIndex: 1,
+          explanation: 'Short-term savings is for buying something expensive (like concert tickets or a grad dress). Long-term savings improves your future—like education that leads to higher income.'
+        },
+        {
+          id: 'q6',
+          question: 'Shannon describes a "line in the sand" in budgeting. What does this separate?',
+          options: ['Wants vs. needs', 'Money you can spend vs. money you cannot spend', 'Cash vs. credit', 'Income vs. expenses'],
+          correctIndex: 1,
+          explanation: 'The line separates money you CAN\'T spend (fixed expenses + savings) from money you CAN spend (everything left over). That\'s your realistic budget.'
+        },
+        {
+          id: 'q7',
+          question: 'What is EROI and how does Shannon suggest using it?',
+          options: ['Electronic Return On Investment—an app for tracking stocks', 'Emotional Return On Investment—rating purchases 1-5 based on happiness', 'Estimated Return On Income—calculating future earnings', 'Extended Rate Of Interest—comparing bank accounts'],
+          correctIndex: 1,
+          explanation: 'EROI (Emotional Return on Investment) means rating your spending 1-5. Cut the 1s and 2s (regret purchases), keep the 4s and 5s (things that truly make you happy).'
+        },
+        {
+          id: 'q8',
+          question: 'How does Shannon suggest saying no to friends who want to spend money on something you don\'t value?',
+          options: ['Just lie and say you\'re busy', 'Say it\'s a low EROI for you, but acknowledge it might be high for them', 'Never hang out with friends who spend money', 'Always say yes to avoid conflict'],
+          correctIndex: 1,
+          explanation: 'You can say "That\'s a 2 for me, but I get it\'s a 5 for you." This gives you permission to say no without feeling like a jerk—it\'s not about rejecting friends.'
+        },
+        {
+          id: 'q9',
+          question: 'What\'s the key difference between SAVING money and INVESTING money?',
+          options: ['Saving is digital, investing is physical', 'Saving can\'t lose value, investing has potential growth AND risk', 'Saving is for adults, investing is for teens', 'There\'s no real difference'],
+          correctIndex: 1,
+          explanation: 'Saved money (in a savings account) won\'t go down. Invested money (stocks, ETFs) can grow OR shrink. That\'s why investing involves risk.'
+        },
+        {
+          id: 'q10',
+          question: 'At what age can you open investment accounts like a TFSA or RRSP in Canada?',
+          options: ['Any age with parental permission', '16', 'Age of majority (18 in most provinces)', '21'],
+          correctIndex: 2,
+          explanation: 'You must be the age of majority (18 in Ontario) to open investment accounts. That\'s why practicing saving habits NOW is so important—so you\'re ready when you can invest.'
+        },
+        {
+          id: 'q11',
+          question: 'Shannon says you should only invest money that you don\'t need for how long?',
+          options: ['1 month', '1 year', 'At least 5 years', '10+ years only'],
+          correctIndex: 2,
+          explanation: 'Only invest money you won\'t need for at least 5 years. If you need it sooner (like for rent or tuition), keep it in a savings account where it can\'t lose value.'
+        },
+        {
+          id: 'q12',
+          question: 'Why does Shannon recommend getting a debit card NOW, before you turn 18?',
+          options: ['Debit cards have better rewards', 'To practice contactless budgeting before it\'s attached to a credit card', 'Banks give better interest rates to young people', 'Credit cards aren\'t accepted everywhere'],
+          correctIndex: 1,
+          explanation: 'Your adult life will be mostly contactless payments. Practice budgeting with tap technology now using a debit card—so when you get a credit card at 18, you already know how to manage it.'
+        },
+        {
+          id: 'q13',
+          question: 'What does Shannon say is your greatest asset in the whole world?',
+          options: ['Your savings account', 'Your credit score', 'Your future income', 'Your investment portfolio'],
+          correctIndex: 2,
+          explanation: 'Your future income is your greatest asset. That\'s why investing in education (even with student loans) can be worthwhile—it increases your earning potential for life.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Learn More',
