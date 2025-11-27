@@ -42,7 +42,11 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
         {/* Engagement Activity - Platinum only */}
         {isPlatinum && booth.tier === 'platinum' && booth.engagementActivity && (
           <div className="col-span-12 lg:col-span-8 h-[450px] lg:h-[500px]">
-            <EngagementActivity />
+            <EngagementActivity
+              activity={booth.engagementActivity}
+              boothId={booth.id}
+              boothName={booth.name}
+            />
           </div>
         )}
 

@@ -68,8 +68,24 @@ export interface SessionSlidesData {
   status?: 'live' | 'recorded' | 'upcoming'
 }
 
+export interface QuizQuestion {
+  id: string
+  question: string
+  options: string[]
+  correctIndex: number
+  explanation: string
+}
+
+export interface QuizData {
+  title: string
+  description: string
+  questions: QuizQuestion[]
+  badgeImageUrl?: string
+  duration?: string
+}
+
 export interface EngagementActivityData {
-  embedUrl: string
+  embedUrl?: string
   title: string
   description: string
   prize?: {
@@ -78,6 +94,7 @@ export interface EngagementActivityData {
   }
   duration?: string
   embedType?: 'iframe' | 'skills-gap-quiz' | 'google-form'
+  quizData?: QuizData
 }
 
 export type BoothTier = 'platinum' | 'standard'

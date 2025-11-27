@@ -430,11 +430,88 @@ export const tradesMaster: PlatinumBoothData = {
     description: 'Interactive presentation on career opportunities'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Behind the Magic Career Quiz',
+    description: 'Test your knowledge about careers in the events industry',
+    embedType: 'skills-gap-quiz',
+    duration: '2-3 minutes',
+    quizData: {
+      title: 'Behind the Magic: Event Industry Trivia',
+      description: 'Test your knowledge and discover your future career!',
+      badgeImageUrl: '/badges/encore-canada-badge.png',
+      duration: '2-3 minutes',
+      questions: [
+        {
+          id: 'q1',
+          question: 'About how many direct jobs does the Canadian business events industry create?',
+          options: ['50,000', '120,000', '242,000', '10 million'],
+          correctIndex: 2,
+          explanation: "It's huge! The industry creates 242,000 direct jobs in Canada and contributes $47 billion to the economy."
+        },
+        {
+          id: 'q2',
+          question: 'Many people think Event Planners just plan parties. What is the actual reality?',
+          options: ["It's mostly blowing up balloons", "It's strategic business planning", "Just ordering pizza", "No math involved"],
+          correctIndex: 1,
+          explanation: "Professional event planning involves business strategy, logistics, marketing, and experience design."
+        },
+        {
+          id: 'q3',
+          question: 'One panelist started in Pharmacy before switching to Events. What does this prove?',
+          options: ["You need a science degree", "Stick to your first major", "Skills are transferable", "Pharmacists make good DJs"],
+          correctIndex: 2,
+          explanation: "Skills are transferable! You can pivot from almost any background into the events industry."
+        },
+        {
+          id: 'q4',
+          question: 'Our moderator Krista worked in South Korea and Germany supporting which organization?',
+          options: ["The USO", "The NBA", "Cirque du Soleil", "Greenpeace"],
+          correctIndex: 0,
+          explanation: "Events take you global! She organized entertainment for troops with the USO while living abroad."
+        },
+        {
+          id: 'q5',
+          question: "The 'Web Summit' (Collision) brings leaders together. Harpreet traveled to which country for this?",
+          options: ["United Kingdom", "Qatar", "Japan", "Brazil"],
+          correctIndex: 1,
+          explanation: "Harpreet traveled to Qatar! If you work hard, you can produce experiences all over the world."
+        },
+        {
+          id: 'q6',
+          question: 'For a client in Whistler, Encore Canada built a simulator to replicate which experience indoors?',
+          options: ["A bobsled run", "A bear encounter", "A gondola ride", "A snowstorm"],
+          correctIndex: 2,
+          explanation: "They built a digital immersive gondola experience indoors. Problem-solving is a huge part of the job!"
+        },
+        {
+          id: 'q7',
+          question: "The industry loves acronyms. 'DMC' is a common company type. What does it stand for?",
+          options: ["Digital Media Creator", "Destination Management Company", "Direct Marketing Control", "Dance Music Club"],
+          correctIndex: 1,
+          explanation: "Destination Management Company. They are the local experts who plan everything when a conference comes to town."
+        },
+        {
+          id: 'q8',
+          question: 'How do experts predict AI will change the events industry?',
+          options: ["Replace all humans", "Create opportunities for creativity", "Stop in-person meetings", "It won't change anything"],
+          correctIndex: 1,
+          explanation: "AI will handle boring automation tasks, leaving humans more time for connection and creativity."
+        },
+        {
+          id: 'q9',
+          question: 'What is the #1 suggested way for a student to get their foot in the door?',
+          options: ["Wait for calls", "Volunteer & join associations", "Send spam emails", "Have lots of money"],
+          correctIndex: 1,
+          explanation: "Get involved! Volunteering and joining associations (MPI, PCMA) is the best way to find mentors."
+        },
+        {
+          id: 'q10',
+          question: 'Which of these is a real global organization for event professionals?',
+          options: ["MPI", "FIFA", "WHO", "NASA"],
+          correctIndex: 0,
+          explanation: "MPI (Meeting Professionals International) is a huge community where you can meet mentors."
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Learn More',
