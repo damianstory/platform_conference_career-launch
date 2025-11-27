@@ -3581,11 +3581,11 @@ export const environmentalConsulting: PlatinumBoothData = {
     description: 'Gap year opportunities and international experiences'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
+    embedUrl: 'https://studenthaus.typeform.com/to/uRT2TWTT',
     embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Housing Survey',
+    description: 'Share your thoughts and help shape the future of student housing',
+    duration: '2-3 minutes'
   },
   primaryCTA: {
     text: 'Tell Your Story',
