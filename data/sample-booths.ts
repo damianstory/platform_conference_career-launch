@@ -60,11 +60,102 @@ export const healthFirst: PlatinumBoothData = {
     description: 'Interactive presentation on career opportunities'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'AgRobotics Career Quiz',
+    description: 'Test your knowledge about careers in agricultural robotics',
+    embedType: 'skills-gap-quiz',
+    duration: '2-3 minutes',
+    quizData: {
+      title: 'Agricultural Robotics: Future of Farming',
+      description: 'Discover where technology meets agriculture!',
+      badgeImageUrl: '/badges/badge-24.png',
+      duration: '2-3 minutes',
+      questions: [
+        {
+          id: 'agro1',
+          question: 'What types of professionals work together in agricultural robotics?',
+          options: ['Only farmers', 'Engineers, programmers, agronomists, data scientists, and entrepreneurs', 'Only computer scientists', 'Only mechanical engineers'],
+          correctIndex: 1,
+          explanation: 'Agricultural robotics brings together engineers, programmers, agronomists, data scientists, and entrepreneurs all working to make farming smarter and more sustainable.'
+        },
+        {
+          id: 'agro2',
+          question: 'Why is robotics becoming essential in agriculture?',
+          options: ['To replace all human workers permanently', 'To solve labor challenges and reduce backbreaking work', 'To make farming more expensive', 'To eliminate crop variety'],
+          correctIndex: 1,
+          explanation: 'Robotics helps solve labor challenges, as finding workers willing to do difficult harvesting work at affordable costs is increasingly difficult.'
+        },
+        {
+          id: 'agro3',
+          question: 'What programming languages are useful for careers in agricultural robotics?',
+          options: ['HTML and CSS only', 'Python, C++, and MATLAB', 'Only assembly language', 'No programming is needed'],
+          correctIndex: 1,
+          explanation: 'Coding experience in Python, C++, or MATLAB can open doors in agricultural robotics careers.'
+        },
+        {
+          id: 'agro4',
+          question: 'What does RTK technology enable agricultural robots to do?',
+          options: ['Play music in fields', 'Provide high-precision GPS navigation for autonomous operation', 'Change crop colors', 'Control weather patterns'],
+          correctIndex: 1,
+          explanation: 'RTK (Real-Time Kinematic) technology provides high-precision GPS that enables robots to navigate autonomously and work as close to crops as possible.'
+        },
+        {
+          id: 'agro5',
+          question: 'What educational pathways can lead to careers in ag robotics?',
+          options: ['Only PhDs are accepted', 'College diplomas in robotics/precision ag or university degrees in mechatronics/agricultural engineering', 'No education is required', 'Only farming experience counts'],
+          correctIndex: 1,
+          explanation: 'Pathways include college diplomas in robotics automation or precision agriculture, and university degrees in mechatronics, computer science, or agricultural engineering.'
+        },
+        {
+          id: 'agro6',
+          question: 'Do you need to come from a farm family to work in agricultural robotics?',
+          options: ['Yes, it\'s required', 'No, the industry welcomes people from all backgrounds', 'Only if you want leadership roles', 'Yes, for at least three generations'],
+          correctIndex: 1,
+          explanation: 'You don\'t need to come from a farm family. The industry needs engineers, programmers, data scientists, and problem solvers from every background.'
+        },
+        {
+          id: 'agro7',
+          question: 'What tasks can the OZ robot from Naio Technologies perform autonomously?',
+          options: ['Only mowing grass', 'Weeding and planting without human intervention', 'Building barns', 'Selling produce at markets'],
+          correctIndex: 1,
+          explanation: 'The OZ robot is an autonomous multi-task robot capable of weeding and planting without human intervention.'
+        },
+        {
+          id: 'agro8',
+          question: 'What combination of knowledge makes the best ag robotics innovators?',
+          options: ['Only mechanical skills', 'Understanding both technology and biology/agriculture', 'Only business skills', 'Only computer skills'],
+          correctIndex: 1,
+          explanation: 'The best innovators understand both the tech and the biology, designing machines that truly work for farmers and for the planet.'
+        },
+        {
+          id: 'agro9',
+          question: 'How can high school students start preparing for ag robotics careers now?',
+          options: ['Wait until university to start learning', 'Join robotics clubs, try coding tutorials, or volunteer on local farms', 'Only focus on non-technical subjects', 'Avoid all technology until graduation'],
+          correctIndex: 1,
+          explanation: 'Students can join robotics clubs, try coding tutorials online, build robot kits at home, or volunteer on local farms to understand food production.'
+        },
+        {
+          id: 'agro10',
+          question: 'What soft skills are important in agricultural robotics careers?',
+          options: ['Only technical skills matter', 'Problem-solving, communication, and teamwork', 'Working completely alone', 'Avoiding collaboration'],
+          correctIndex: 1,
+          explanation: 'Strong problem-solving, communication, and teamwork skills are essential as you\'ll collaborate with farmers, engineers, and researchers who speak different technical languages.'
+        },
+        {
+          id: 'agro11',
+          question: 'What technical areas should aspiring ag robotics professionals study?',
+          options: ['Only art history', 'Mechanical/electrical engineering, computer vision, AI, and data analytics', 'Only foreign languages', 'Only physical education'],
+          correctIndex: 1,
+          explanation: 'Key areas include mechanical and electrical engineering, robotics and control systems, computer vision and AI, and data analytics.'
+        },
+        {
+          id: 'agro12',
+          question: 'What background did Kaya have before becoming a research coordinator at Haggerty Ag Robotics?',
+          options: ['Only farming experience', 'Arts and science with mathematics, geography, electrical trades, and environmental sustainability', 'Only computer science', 'No prior education'],
+          correctIndex: 1,
+          explanation: 'Kaya had diverse training including arts and science with minors in mathematics and geography, an electrical trades certificate, and a Master\'s in Environment and Sustainability.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Questions',
@@ -152,11 +243,102 @@ export const futureBuild: PlatinumBoothData = {
     description: 'Interactive presentation on career opportunities'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'RCAF Career Quiz',
+    description: 'Test your knowledge about careers in the Royal Canadian Air Force',
+    embedType: 'skills-gap-quiz',
+    duration: '2-3 minutes',
+    quizData: {
+      title: 'Royal Canadian Air Force: Career Pathways',
+      description: 'Discover opportunities in Canada\'s Air Force!',
+      badgeImageUrl: '/badges/badge-22.png',
+      duration: '2-3 minutes',
+      questions: [
+        {
+          id: 'rcaf1',
+          question: 'What are the two main categories of service in the Canadian Armed Forces?',
+          options: ['Army and Navy', 'Regular Force and Reserve Force', 'Combat and Support', 'Enlisted and Officer'],
+          correctIndex: 1,
+          explanation: 'Regular Force is full-time military service, while Reserve Force is part-time alongside civilian careers or education.'
+        },
+        {
+          id: 'rcaf2',
+          question: 'What is the minimum age to join the Canadian Armed Forces?',
+          options: ['14 years old', '16 years old', '18 years old', '21 years old'],
+          correctIndex: 1,
+          explanation: 'You can join as young as 16, though some programs have higher age requirements.'
+        },
+        {
+          id: 'rcaf3',
+          question: 'What does ROTP stand for in military education programs?',
+          options: ['Reserve Officer Training Plan', 'Regular Officer Training Program', 'Royal Officer Training Protocol', 'Recruit Officer Transition Path'],
+          correctIndex: 1,
+          explanation: 'ROTP pays for your university degree while you train to become an officer.'
+        },
+        {
+          id: 'rcaf4',
+          question: 'How much can new recruits earn per month while in training?',
+          options: ['Less than $1,000', '$1,500-$2,000', '$3,000 or more', 'Training is unpaid'],
+          correctIndex: 2,
+          explanation: 'New recruits can earn $3,000+ per month even during basic training.'
+        },
+        {
+          id: 'rcaf5',
+          question: 'What is the minimum education requirement to join the Canadian Armed Forces?',
+          options: ['No education required', 'Grade 10', 'High school diploma', 'College certificate'],
+          correctIndex: 1,
+          explanation: 'Grade 10 is the minimum, though some occupations require higher education.'
+        },
+        {
+          id: 'rcaf6',
+          question: 'How many vacation days do Regular Force members receive annually?',
+          options: ['10 days', '15 days', '20 days', '25 days'],
+          correctIndex: 2,
+          explanation: 'Members receive 20 paid vacation days per year plus additional leave options.'
+        },
+        {
+          id: 'rcaf7',
+          question: 'What does the NCM-STEP program provide?',
+          options: ['Combat training for officers', 'Subsidized education for Non-Commissioned Members', 'Medical training certification', 'Language learning courses'],
+          correctIndex: 1,
+          explanation: 'NCM-STEP subsidizes college or university education for enlisted members seeking to advance.'
+        },
+        {
+          id: 'rcaf8',
+          question: 'What is an AC Op (Aerospace Control Operator)?',
+          options: ['A pilot who flies fighter jets', 'A controller who manages air traffic and airspace', 'A mechanic who repairs aircraft', 'A cook who works on air bases'],
+          correctIndex: 1,
+          explanation: 'AC Ops manage airspace, direct aircraft, and support air operations from ground stations.'
+        },
+        {
+          id: 'rcaf9',
+          question: 'What citizenship requirement exists to join the Canadian Armed Forces?',
+          options: ['Any citizenship accepted', 'Must be Canadian citizen', 'Must be Commonwealth citizen', 'Must be NATO country citizen'],
+          correctIndex: 1,
+          explanation: 'You must be a Canadian citizen to join the Canadian Armed Forces.'
+        },
+        {
+          id: 'rcaf10',
+          question: 'Which occupation involves maintaining aircraft navigation and communication systems?',
+          options: ['AVN (Aviation Technician)', 'AVS (Avionics Systems Technician)', 'ACS (Airfield Combat Systems)', 'AEC (Aerospace Engineering Controller)'],
+          correctIndex: 1,
+          explanation: 'AVS technicians maintain and repair aircraft electronic, navigation, and communication systems.'
+        },
+        {
+          id: 'rcaf11',
+          question: 'What healthcare benefits do Canadian Armed Forces members receive?',
+          options: ['Basic medical only', 'Medical and dental coverage', 'No healthcare benefits', 'Only emergency coverage'],
+          correctIndex: 1,
+          explanation: 'Members receive comprehensive medical and dental coverage as part of their benefits package.'
+        },
+        {
+          id: 'rcaf12',
+          question: 'How does Reserve Force service differ from Regular Force?',
+          options: ['Reserves cannot deploy overseas', 'Reserves serve part-time while maintaining civilian careers', 'Reserves receive no pay', 'Reserves only serve during wartime'],
+          correctIndex: 1,
+          explanation: 'Reserve Force members serve part-time, allowing them to maintain civilian jobs or continue education.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Ask a Question',
@@ -253,12 +435,12 @@ export const financeHub: PlatinumBoothData = {
     title: 'Canadian Nuclear Laboratories Career Quiz',
     description: 'Test your knowledge about diverse careers at Canada\'s premier nuclear science organization',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'CNL: Powering Canada\'s Future',
       description: 'Test your knowledge about careers at Canadian Nuclear Laboratories!',
       badgeImageUrl: '/badges/badge-21.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'cnl1',
@@ -429,12 +611,12 @@ export const eduPath: PlatinumBoothData = {
     title: 'Cansbridge Scholars Career Quiz',
     description: 'Test your knowledge about building your own career path',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Cansbridge Scholars: Pave Your Own Path',
       description: 'Test your knowledge about career development, mentorship, and building high agency!',
       badgeImageUrl: '/badges/badge-15.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'cansbridge1',
@@ -615,12 +797,12 @@ export const tradesMaster: PlatinumBoothData = {
     title: 'Behind the Magic Career Quiz',
     description: 'Test your knowledge about careers in the events industry',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Behind the Magic: Event Industry Careers',
       description: 'Test your knowledge and discover your future in events!',
       badgeImageUrl: '/badges/encore-canada-badge.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'q1',
@@ -793,12 +975,12 @@ export const worldExplorer: PlatinumBoothData = {
     title: 'CPKC Career Quiz',
     description: 'Test your knowledge about careers at North America\'s first transnational railroad',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'CPKC: Connecting a Continent, Building Careers',
       description: 'Test your knowledge and discover your future in rail!',
       badgeImageUrl: '/badges/badge-1.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'q1',
@@ -980,12 +1162,12 @@ export const greenPower: PlatinumBoothData = {
     title: 'CWB Welding Career Quiz',
     description: 'Test your knowledge about careers in welding and materials joining',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'CWB Welding Foundation: The World of Welding',
       description: 'Test your knowledge about welding careers, pathways, and opportunities!',
       badgeImageUrl: '/badges/badge-20.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'cwb1',
@@ -1157,11 +1339,102 @@ export const creativeMinds: PlatinumBoothData = {
     description: 'Explore gap year opportunities and programs'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Discover Year Quiz',
+    description: 'Test your knowledge about gap years and career development',
+    embedType: 'skills-gap-quiz',
+    duration: '2-3 minutes',
+    quizData: {
+      title: 'Discover Year: Purposeful Gap Years',
+      description: 'Learn about structured gap year programs!',
+      badgeImageUrl: '/badges/badge-25.png',
+      duration: '2-3 minutes',
+      questions: [
+        {
+          id: 'dy1',
+          question: 'What type of program is Discover Year?',
+          options: ['A four-year university degree', 'A structured gap year program offering a certificate in career and leadership skills', 'A high school diploma program', 'An online-only course'],
+          correctIndex: 1,
+          explanation: 'Discover Year is a structured and purposeful gap year program that offers a post-secondary certificate in career and leadership skills over one year.'
+        },
+        {
+          id: 'dy2',
+          question: 'What prestigious university has been recommending gap years to admitted students for over 50 years?',
+          options: ['Oxford University', 'University of Toronto', 'Harvard University', 'Stanford University'],
+          correctIndex: 2,
+          explanation: 'Harvard University has been actively suggesting purposeful gap years to every admitted undergraduate student for over 50 years.'
+        },
+        {
+          id: 'dy3',
+          question: 'How do Canadian universities generally view gap years on applications?',
+          options: ['They automatically reject gap year students', 'They don\'t look down on gap years and ask students to confirm what they did during that time', 'They require gap year students to reapply', 'They consider gap years as academic failures'],
+          correctIndex: 1,
+          explanation: 'Universities like the University of Ottawa don\'t look down on gap years but ask students to confirm what they did during that time.'
+        },
+        {
+          id: 'dy4',
+          question: 'What is a key component of a structured gap year that helps students develop skills?',
+          options: ['Avoiding all work', 'Paid work experience while learning', 'Only academic study', 'Complete isolation'],
+          correctIndex: 1,
+          explanation: 'Work is a key component as it encourages experiential learning and skill application while allowing students to earn savings.'
+        },
+        {
+          id: 'dy5',
+          question: 'How much can students potentially earn during a gap year while working in Ontario?',
+          options: ['Nothing - gap years are unpaid', 'Around $20,000 or more working near full-time', 'Only $1,000 total', 'Minimum $50,000 guaranteed'],
+          correctIndex: 1,
+          explanation: 'Students working almost full-time can earn about $20,000 or more at minimum wage over the year.'
+        },
+        {
+          id: 'dy6',
+          question: 'What role does a "life path coach" serve in the Discover Year program?',
+          options: ['Teaching sports techniques', 'Helping students understand their interests, values, and talents to increase confidence and self-awareness', 'Grading academic papers', 'Managing student finances'],
+          correctIndex: 1,
+          explanation: 'The coach helps students understand how to make use of their authentic interests, values, and talents while increasing confidence and self-awareness.'
+        },
+        {
+          id: 'dy7',
+          question: 'What communication skills did students specifically develop during their gap year?',
+          options: ['Only writing skills', 'Listening effectively and asking good questions', 'Only public speaking', 'Only email etiquette'],
+          correctIndex: 1,
+          explanation: 'Students learned to listen effectively and ask good questions, skills that are crucial for meaningful conversations and often underrated.'
+        },
+        {
+          id: 'dy8',
+          question: 'Where can students find gap year resources and scholarships in Canada?',
+          options: ['Only through banks', 'The Canadian Gap Year Association (CAN Gap)', 'Only government offices', 'Only travel agencies'],
+          correctIndex: 1,
+          explanation: 'CAN Gap (Canadian Gap Year Association at cangap.ca) offers resources and scholarships for gap years.'
+        },
+        {
+          id: 'dy9',
+          question: 'What career did Reese pursue after completing Discover Year in 2020?',
+          options: ['Software engineer', 'Firefighter paramedic in Yellowknife', 'Lawyer', 'Chef'],
+          correctIndex: 1,
+          explanation: 'Reese became a firefighter paramedic in Yellowknife, discovering these career interests during the gap year that weren\'t even on his radar before.'
+        },
+        {
+          id: 'dy10',
+          question: 'What distinguishes a "purposeful gap year" from simply taking time off?',
+          options: ['They are exactly the same thing', 'Intentional planning, goals, and focus on growth rather than avoiding decisions', 'Just traveling for fun', 'Working without any personal development'],
+          correctIndex: 1,
+          explanation: 'A purposeful gap year involves planning, thought about goals, and intentionality about growth, rather than simply avoiding making decisions.'
+        },
+        {
+          id: 'dy11',
+          question: 'How does the cohort model benefit students in a structured gap year?',
+          options: ['Students never interact with each other', 'Students learn from diverse perspectives and build meaningful relationships with peers', 'Students compete against each other for grades', 'Students are isolated throughout the program'],
+          correctIndex: 1,
+          explanation: 'The cohort model (25-35 students) allows students to learn from different perspectives, build close friendships, and support each other through growth challenges.'
+        },
+        {
+          id: 'dy12',
+          question: 'What did multiple graduates say about academic readiness after a gap year?',
+          options: ['They forgot everything and failed', 'They were refreshed, more motivated, and often performed better academically', 'They could never return to school', 'They lost all interest in learning'],
+          correctIndex: 1,
+          explanation: 'Graduates reported feeling refreshed, more motivated, and excited to return to academics, with some performing better than before the gap year.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Info Sessions',
@@ -1248,12 +1521,12 @@ export const dataDynamics: PlatinumBoothData = {
     title: 'Career Exploration Quiz',
     description: 'Test your knowledge about career exploration and pathways',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Career Exploration: Using Data to Choose Your Future',
       description: 'Test your knowledge and discover tools to plan your career!',
       badgeImageUrl: '/badges/badge-3.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'q1',
@@ -1429,12 +1702,12 @@ export const marketGenius: PlatinumBoothData = {
     title: 'Ernst & Young Career Quiz',
     description: 'Test your knowledge about careers at one of the Big Four professional services firms',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'EY: Building a Better Working World',
       description: 'Test your knowledge about career pathways and opportunities at Ernst & Young!',
       badgeImageUrl: '/badges/badge-17.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'ey1',
@@ -1609,12 +1882,12 @@ export const consultPro: PlatinumBoothData = {
     title: 'Humber Engineering Career Quiz',
     description: 'Test your knowledge about engineering careers and pathways via Humber Polytechnic',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Humber Polytechnic: Engineer Your Dream Career',
       description: 'Test your knowledge about engineering careers, specializations, and pathways!',
       badgeImageUrl: '/badges/badge-19.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'humber1',
@@ -1790,12 +2063,12 @@ export const manufactureTech: PlatinumBoothData = {
     title: 'Hydro One Career Quiz',
     description: 'Test your knowledge about careers at Ontario\'s largest electricity provider',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Hydro One: Powering Ontario Careers',
       description: 'Test your knowledge and discover your future in energy!',
       badgeImageUrl: '/badges/badge-1.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'q1',
@@ -1971,12 +2244,12 @@ export const cyberShield: PlatinumBoothData = {
     title: 'Jack.org Mental Health Quiz',
     description: 'Test your knowledge about youth mental health advocacy and peer support skills',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Jack.org: Be There for Others',
       description: 'Learn about youth mental health advocacy and how you can make a difference!',
       badgeImageUrl: '/badges/badge-11.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'jack1',
@@ -2211,12 +2484,12 @@ export const bioMedical: PlatinumBoothData = {
     title: 'Kids Help Phone Volunteer Quiz',
     description: 'Test your knowledge about volunteering and mental health support at Kids Help Phone',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Kids Help Phone: Get Involved',
       description: 'Discover volunteer opportunities and learn about Canada\'s leading youth mental health service!',
       badgeImageUrl: '/badges/badge-10.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'khp1',
@@ -2454,12 +2727,12 @@ export const foodService: PlatinumBoothData = {
     title: 'Conservation Careers Quiz',
     description: 'Test your knowledge about careers protecting Ontario\'s watersheds',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Conservation Authorities: Protecting Ontario\'s Watersheds',
       description: 'Test your knowledge and discover your future in conservation!',
       badgeImageUrl: '/badges/badge-2.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'q1',
@@ -2633,12 +2906,12 @@ export const legalServices: PlatinumBoothData = {
     title: 'Making Bank: Money Skills Quiz',
     description: 'Test your knowledge about managing money and building financial habits',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Making Bank: Money Skills for Real Life',
       description: 'Test your knowledge and master your money!',
       badgeImageUrl: '/badges/badge-1.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'q1',
@@ -2902,12 +3175,12 @@ export const urbanPlanning: PlatinumBoothData = {
     title: 'Ontario Water Careers Quiz',
     description: 'Test your knowledge about careers in water infrastructure construction',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Ontario Water Careers: Build Critical Infrastructure',
       description: 'Test your knowledge about careers in Ontario\'s water infrastructure industry!',
       badgeImageUrl: '/badges/badge-18.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'owc1',
@@ -3072,12 +3345,12 @@ export const sportsManagement: PlatinumBoothData = {
     title: 'Funding Your Future Quiz',
     description: 'Test your knowledge about scholarships, bursaries, and paying for post-secondary education',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Funding Post-Secondary Education',
       description: 'Learn how to find and win scholarships, bursaries, and other financial aid!',
       badgeImageUrl: '/badges/badge-14.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'ss1',
@@ -3399,12 +3672,12 @@ export const automotiveTech: PlatinumBoothData = {
     title: 'Skilled Trades Apprenticeship Quiz',
     description: 'Test your knowledge about apprenticeships and skilled trades careers in Ontario',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Discover Skilled Trades',
       description: 'Learn about apprenticeship pathways and high-demand skilled trades careers!',
       badgeImageUrl: '/badges/badge-13.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'soy1',
@@ -3639,12 +3912,12 @@ export const fashionDesign: PlatinumBoothData = {
     title: 'Agriculture Careers Quiz',
     description: 'Test your knowledge about careers in Canada\'s agriculture and agri-food sector',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Discover Agriculture Careers',
       description: 'Test your knowledge about the opportunities waiting in Canadian agriculture!',
       badgeImageUrl: '/badges/badge-9.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'ag1',
@@ -3879,12 +4152,12 @@ export const hospitalityCollege: PlatinumBoothData = {
     title: 'Toronto Police Services Career Quiz',
     description: 'Test your knowledge about careers with Canada\'s largest municipal police service',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Toronto Police Services: Serve Your City',
       description: 'Test your knowledge about career pathways and requirements at Toronto Police Service!',
       badgeImageUrl: '/badges/badge-16.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'tps1',
@@ -4065,12 +4338,12 @@ export const publicHealth: PlatinumBoothData = {
     title: 'Tourism Careers Quiz',
     description: 'Test your knowledge about careers in Ontario\'s tourism and hospitality industry',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Discover Tourism Careers',
       description: 'Explore the exciting world of tourism and hospitality careers in Ontario!',
       badgeImageUrl: '/badges/badge-12.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'tiao1',
@@ -4304,11 +4577,102 @@ export const voxPopLabs: PlatinumBoothData = {
     description: 'Innovative civic engagement and technology solutions'
   },
   engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
+    title: 'Vox Pop Labs Career Quiz',
+    description: 'Test your knowledge about careers in civic technology and data science',
+    embedType: 'skills-gap-quiz',
+    duration: '2-3 minutes',
+    quizData: {
+      title: 'Vox Pop Labs: Civic Tech Careers',
+      description: 'Discover how data science meets democracy!',
+      badgeImageUrl: '/badges/badge-23.png',
+      duration: '2-3 minutes',
+      questions: [
+        {
+          id: 'vpl1',
+          question: 'What type of company is Vox Pop Labs?',
+          options: ['A publicly traded tech company', 'A B corporation founded and run by academics', 'A government research agency', 'A non-profit charity'],
+          correctIndex: 1,
+          explanation: 'Vox Pop Labs is a B corporation founded and run by academics, with a team of social scientists and developers.'
+        },
+        {
+          id: 'vpl2',
+          question: 'What is a data engineer\'s primary responsibility at Vox Pop Labs?',
+          options: ['Designing company logos', 'Building pipelines to move and transform data', 'Writing news articles', 'Managing office supplies'],
+          correctIndex: 1,
+          explanation: 'Data engineers build pipelines to move data from one place to another, transforming survey answers into tables for analysis.'
+        },
+        {
+          id: 'vpl3',
+          question: 'What educational background helped Jesse transition into data engineering?',
+          options: ['Marketing degree', 'PhD in applied and engineering physics', 'Law degree', 'Journalism diploma'],
+          correctIndex: 1,
+          explanation: 'His PhD gave him a toolkit of math, programming, and engineering that allowed him to work in various technical areas.'
+        },
+        {
+          id: 'vpl4',
+          question: 'What does a Research Lead do at Vox Pop Labs?',
+          options: ['Manages large research projects that shape government policy', 'Repairs computer hardware', 'Delivers mail to clients', 'Designs office furniture'],
+          correctIndex: 0,
+          explanation: 'The Research Lead manages large research projects that help shape government policy and give voice to people.'
+        },
+        {
+          id: 'vpl5',
+          question: 'What is Degree Hub?',
+          options: ['A social media platform', 'A machine learning tool that matches students with undergraduate programs', 'A video game', 'A banking application'],
+          correctIndex: 1,
+          explanation: 'Degree Hub is powered by machine learning and matches prospective students with the undergraduate programs and schools they will love.'
+        },
+        {
+          id: 'vpl6',
+          question: 'What are psychometric scales used for in research?',
+          options: ['Measuring weight and height', 'Assessing personality, interests, and learning styles', 'Calculating shipping costs', 'Tracking weather patterns'],
+          correctIndex: 1,
+          explanation: 'Established psychometric scales from social science research are used to assess personality, interests, and learning styles for personalized assessments.'
+        },
+        {
+          id: 'vpl7',
+          question: 'What is Vote Compass Youth Edition designed to help students understand?',
+          options: ['How to play sports', 'The political landscape and how parties really work', 'How to cook meals', 'Music theory'],
+          correctIndex: 1,
+          explanation: 'Vote Compass Youth Edition helps high school students understand the political landscape and the issues that matter most to Canadians.'
+        },
+        {
+          id: 'vpl8',
+          question: 'What advantage do small companies like Vox Pop Labs offer employees?',
+          options: ['Less work responsibility', 'Work doesn\'t get lost in the crowd and you see results firsthand', 'Guaranteed promotions every month', 'No need to learn new skills'],
+          correctIndex: 1,
+          explanation: 'At small companies, your work doesn\'t get lost in the crowd, you wear lots of hats, see results firsthand, and work directly with people in charge.'
+        },
+        {
+          id: 'vpl9',
+          question: 'What military experience contributed to Cara\'s leadership skills?',
+          options: ['Army infantry training', 'Lieutenant in the Royal Canadian Naval Reserve', 'Air Force pilot training', 'Coast Guard rescue operations'],
+          correctIndex: 1,
+          explanation: 'She served as a lieutenant in the Royal Canadian Naval Reserve, where she learned to lead teams and be led by others.'
+        },
+        {
+          id: 'vpl10',
+          question: 'What field did Cara study for her Master\'s degree?',
+          options: ['Computer Science', 'European and Russian Studies with a focus on electoral systems', 'Medicine', 'Accounting'],
+          correctIndex: 1,
+          explanation: 'She completed a Master\'s in European and Russian studies at the Munk School of Global Affairs, focusing on electoral systems and divided societies.'
+        },
+        {
+          id: 'vpl11',
+          question: 'What does "mission-driven" work mean at Vox Pop Labs?',
+          options: ['Working only for profit', 'Helping students, voters, and democracy as a whole', 'Competing against other companies', 'Avoiding all challenges'],
+          correctIndex: 1,
+          explanation: 'Mission-driven work means always trying to help students, voters, or democracy and society as a whole with impactful work.'
+        },
+        {
+          id: 'vpl12',
+          question: 'How did the speakers define career success?',
+          options: ['By job title and salary alone', 'Having work that makes a positive difference while maintaining life outside work', 'Working the longest hours possible', 'Avoiding all responsibility'],
+          correctIndex: 1,
+          explanation: 'Success is defined on your own terms—having a job that makes a positive difference in the world while still having a life outside of work.'
+        }
+      ]
+    }
   },
   primaryCTA: {
     text: 'Get Involved',
@@ -4641,12 +5005,12 @@ export const hsmcBooth: PlatinumBoothData = {
     title: 'Fire Alarm Technician Career Quiz',
     description: 'Test your knowledge about careers in fire safety and life protection',
     embedType: 'skills-gap-quiz',
-    duration: '3-4 minutes',
+    duration: '2-3 minutes',
     quizData: {
       title: 'Fire Alarm Technician: A Career That Keeps People Safe',
       description: 'Test your knowledge and discover if this career is right for you!',
       badgeImageUrl: '/badges/badge-4.png',
-      duration: '3-4 minutes',
+      duration: '2-3 minutes',
       questions: [
         {
           id: 'q1',
