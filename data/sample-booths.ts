@@ -225,10 +225,10 @@ export const futureBuild: PlatinumBoothData = {
       type: 'pdf'
     },
     {
-      title: 'This Is For You',
-      description: 'Find out if a career in the RCAF is right for you',
-      url: '/resources/20231027-U-RCAF TIFY Poster-EN.pdf',
-      type: 'pdf'
+      title: 'Paid Education',
+      description: 'Canadian Armed Forces (CAF)',
+      url: 'https://forces.ca/en/paid-education/',
+      type: 'link'
     },
     {
       title: 'Canadian Armed Forces',
@@ -734,7 +734,7 @@ export const tradesMaster: PlatinumBoothData = {
   pathway: 'apprenticeship',
   logo: '/logos/encore-canada.png',
   tagline: 'Canada\'s Largest Event Technology and Production Partner.',
-  description: 'Encore Canada is a proud part of the communities they serve. Their Canadian team members live, work, and lead in cities across the country, making an impact that goes beyond events.\n\nAs the leading provider of event technology and production in the country they have 80 years of expertise.\n\nInterested in joining our team, check out our career page today!',
+  description: 'At Encore Canada, we\'re a proud part of the communities we serve. Our Canadian team members live, work, and lead in cities across the country, making an impact that goes beyond events.\n\nAs the leading provider of event technology and production in the country we have 80 years of expertise.\n\nInterested in joining our team, check out our career page today!',
   website: 'https://www.encore-can.com/',
   video: {
     url: 'https://youtu.be/cFaE3wC-_7I',
