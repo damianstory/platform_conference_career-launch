@@ -214,6 +214,29 @@ const faqItems: AccordionItem[] = [
       </p>
     ),
   },
+  {
+    id: 'faq-15',
+    title: 'Why are these sessions only for Ontario school boards?',
+    content: (
+      <p>
+        This is our first year running this event. We wanted to start small, test the concepts,
+        and use this as an opportunity to incorporate feedback in a way that will allow us to
+        run an even bigger event next year.
+        <br />
+        <br />
+        Our plan at this time is to organize a national career launch event that will take place
+        on and around Take Your Kids To Work Day in November 2026.
+        <br />
+        <br />
+        If you would like to get involved or have suggestions about who should participate,
+        we would love to talk. Reach out to Damian (
+        <a href="mailto:damian.matheson@myblueprint.ca" className="text-blue hover:underline">
+          damian.matheson@myblueprint.ca
+        </a>
+        ) at any point.
+      </p>
+    ),
+  },
 ];
 
 export default function FAQ() {
