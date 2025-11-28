@@ -752,7 +752,7 @@ export const tradesMaster: PlatinumBoothData = {
     {
       title: 'Introduction to Event Technology & Hospitality',
       description: 'Learn about career paths in event technology and hospitality',
-      url: '/Users/damianmatheson/Desktop/Career Launch_Company Logos/Career Launch_Booth Logos/encore pdf .pdf',
+      url: 'https://tbcdn.talentbrew.com/company/6228/v3_0/docs/wave_certification_instructions-2025.pdf',
       type: 'pdf'
     },
     {
