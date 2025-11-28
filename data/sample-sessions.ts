@@ -755,49 +755,6 @@ This session is designed to change that. By the end of this session, you will ha
   lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
-export const teacherShapingFutures: Session = {
-  id: '68e60ad6-225b-4662-971d-b810fabbbdc7',
-  slug: 'no-degree-no-problem',
-  title: `No Degree? No Problem! Building Success Without the College/University Track`,
-  description: `Not everyone's path to success looks the same, and that's perfectly fine!
-
-In this workshop, we will **explore the various exciting opportunities available beyond traditional college or university routes.**
-
-Some options include skilled trades, entrepreneurship, air traffic control, aviation, firefighting, creative industries, community programs, and other self-directed careers.
-
-Students will learn how to:
-
-• Identify their personal strengths, interests, and goals
-• Explore career pathways that don't require a traditional degree
-• Build essential life and employability skills for the real world
-• Utilize tools to map out their unique journey
-• Gain the confidence to make choices that align with their vision of success
-
-Whether you're ready to enter the workforce, pursue training, travel, or explore something entirely new, this session will help you create a plan that is practical, empowering, and true to who you are.
-
-Presented by Roxanne Challenger, NFTE Canada`,
-  learning_objectives: [
-    'Explore pathways to becoming a teacher',
-    'Learn about teacher education programs',
-    'Understand the rewards and challenges',
-    'Discover different teaching environments'
-  ],
-  presenter_name: `NFTE Canada`,
-  presenter_bio: null,
-  presenter_photo_url: '/images/presenters/mark-robinson.jpg',
-  thumbnail_url: '/images/sessions/teaching-thumb.jpg',
-  trailer_url: 'https://vimeo.com/teaching-trailer',
-  full_video_url: 'https://vimeo.com/teaching-full',
-  duration: 0,
-  block_number: 4,
-  industries: ['Life Skills'],
-  grade_level: '7-12',
-  created_at: '2025-10-30T09:26:33.650063+00:00',
-  updated_at: '2025-10-30T09:54:14.398521+00:00',
-  display_order: 6,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
-};
-
 export const environmentalScientist: Session = {
   id: '6eaf03cb-99fe-41a1-a7ca-23bda589f32d',
   slug: 'life-sciences-ontario',
@@ -975,7 +932,6 @@ export const allSessions: Session[] = [
   financialAdvisorPlanning,
   socialWorkerHelping,
   policeOfficerServeProtect,
-  teacherShapingFutures,
   environmentalScientist,
   firefighterFirstResponder,
   digitalMarketingSpecialist,

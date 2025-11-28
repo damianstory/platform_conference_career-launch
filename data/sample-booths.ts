@@ -3019,89 +3019,6 @@ export const legalServices: PlatinumBoothData = {
   }
 }
 
-export const socialImpact: PlatinumBoothData = {
-  id: 'nfte',
-  name: 'NFTE Canada',
-  slug: 'nfte',
-  associatedSessionSlug: 'no-degree-no-problem',
-  tier: 'platinum',
-  industries: ['Non-Profit/Education'],
-  organizationType: 'employer',
-  pathway: 'college',
-  logo: '/logos/nfte-canada.jpg',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  description: 'SocialImpact is a non-profit organization dedicated to community development and social justice initiatives.',
-  video: {
-    url: 'https://www.youtube.com/shorts/87uU-eFE4_E',
-    type: 'youtube',
-    title: 'Make a Difference',
-    description: 'See our community impact'
-  },
-  resources: [
-    {
-      title: 'Career Pathways Guide',
-      description: 'Explore different career paths in technology and find your perfect fit',
-      url: '#',
-      type: 'pdf',
-      fileSize: '2.4 MB'
-    },
-    {
-      title: 'Summer Internship Program',
-      description: 'Learn about our 12-week immersive internship experience',
-      url: '#',
-      type: 'link'
-    },
-    {
-      title: 'Tech Skills Workshop Series',
-      description: 'Free online workshops covering AI, web development, and...',
-      url: '#',
-      type: 'video'
-    },
-    {
-      title: 'Company Culture Handbook',
-      description: 'Discover our values, benefits, and what makes us unique',
-      url: '#',
-      type: 'pdf',
-      fileSize: '1.8 MB'
-    },
-    {
-      title: 'Student Success Stories',
-      description: 'Read about students who launched their careers with TechCorp',
-      url: '#',
-      type: 'link'
-    }
-  ],
-  sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/18O-hzJezWclyodc2-miroqEuJeErPGBi90b5mhNhTKQ/embed?start=false&loop=false',
-    title: 'Career Pathways Presentation',
-    description: 'Interactive presentation on career opportunities'
-  },
-  engagementActivity: {
-    embedUrl: 'https://gemini.google.com/share/451c917ba735',
-    embedType: 'iframe',
-    title: 'Career Skills Assessment',
-    description: 'Test your knowledge and discover career opportunities',
-    duration: '10 minutes'
-  },
-  primaryCTA: {
-    text: 'Join Our Mission',
-    url: 'https://socialimpact.example.com/careers',
-    type: 'careers'
-  },
-  contact: {
-    headquarters: {
-      address: '1100 Community Way',
-      city: 'Toronto',
-      province: 'ON',
-      postalCode: 'M4Y 1J6'
-    }
-  },
-  brandColors: {
-    primary: '#0092FF',
-    secondary: '#22224C'
-  }
-}
-
 export const urbanPlanning: PlatinumBoothData = {
   id: 'ontario-water-careers',
   name: 'Ontario Water Careers',
@@ -5120,7 +5037,6 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   cyberShield,                  // Jack.org
   bioMedical,                   // Kids Help Phone
   legalServices,                // Mydoh
-  socialImpact,                 // NFTE Canada
   urbanPlanning,                // Ontario Water Careers
   futureBuild,                  // Royal Canadian Air Force
   sportsManagement,             // Seeking Scholarships
