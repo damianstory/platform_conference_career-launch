@@ -3,8 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { X, Check, XIcon, Download, Maximize2, RotateCcw, ArrowRight } from 'lucide-react'
-import { QuizData } from '@/types/booth'
+import { QuizData, QuizQuestion } from '@/types/booth'
 import { getSessionBySlug } from '@/data/sample-sessions'
+
+// Extended question type with shuffled options
+interface ShuffledQuestion extends QuizQuestion {
+  shuffledOptions: string[]
+  shuffledCorrectIndex: number
+}
 
 interface SkillsGapQuizProps {
   quizData: QuizData
@@ -24,7 +30,7 @@ const BADGE_OPTIONS = [
   '/badges/badge-4.png',
 ]
 
-// Fisher-Yates shuffle algorithm for randomizing questions
+// Fisher-Yates shuffle algorithm for randomizing arrays
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array]
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -32,6 +38,25 @@ function shuffleArray<T>(array: T[]): T[] {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
   return shuffled
+}
+
+// Shuffle options within a question and track the new correct index
+function shuffleQuestionOptions(question: QuizQuestion): ShuffledQuestion {
+  // Create array of {option, originalIndex} pairs
+  const optionsWithIndices = question.options.map((opt, idx) => ({ opt, idx }))
+
+  // Shuffle the pairs
+  const shuffled = shuffleArray(optionsWithIndices)
+
+  // Extract shuffled options and find new correct index
+  const shuffledOptions = shuffled.map(item => item.opt)
+  const shuffledCorrectIndex = shuffled.findIndex(item => item.idx === question.correctIndex)
+
+  return {
+    ...question,
+    shuffledOptions,
+    shuffledCorrectIndex
+  }
 }
 
 export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTitle, associatedSessionSlug }: SkillsGapQuizProps) {
@@ -42,7 +67,9 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
   const [quizState, setQuizState] = useState<QuizState>('start')
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<Map<string, number>>(new Map())
-  const [shuffledQuestions, setShuffledQuestions] = useState(quizData.questions)
+  const [shuffledQuestions, setShuffledQuestions] = useState<ShuffledQuestion[]>(
+    quizData.questions.map(shuffleQuestionOptions)
+  )
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
   const [hasAnswered, setHasAnswered] = useState(false)
@@ -87,8 +114,9 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
   }, [hasAnswered])
 
   const handleStartQuiz = () => {
-    // Shuffle questions on start
-    setShuffledQuestions(shuffleArray(quizData.questions))
+    // Shuffle questions AND options within each question on start
+    const shuffledWithOptions = shuffleArray(quizData.questions).map(shuffleQuestionOptions)
+    setShuffledQuestions(shuffledWithOptions)
     setQuizState('in-progress')
     setCurrentQuestionIndex(0)
     setSelectedAnswers(new Map())
@@ -151,7 +179,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
     let correct = 0
     shuffledQuestions.forEach(question => {
       const userAnswer = selectedAnswers.get(question.id)
-      if (userAnswer === question.correctIndex) {
+      if (userAnswer === question.shuffledCorrectIndex) {
         correct++
       }
     })
@@ -170,7 +198,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
   }
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex]
-  const isCorrect = selectedOption === currentQuestion?.correctIndex
+  const isCorrect = selectedOption === currentQuestion?.shuffledCorrectIndex
   const progress = ((currentQuestionIndex + 1) / shuffledQuestions.length) * 100
 
   // Start Screen
@@ -253,9 +281,9 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
 
           {/* Answer Options Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {currentQuestion.options.map((option, index) => {
+            {currentQuestion.shuffledOptions.map((option, index) => {
               const isSelected = selectedOption === index
-              const isThisCorrect = index === currentQuestion.correctIndex
+              const isThisCorrect = index === currentQuestion.shuffledCorrectIndex
               const showFeedback = hasAnswered
 
               let buttonClasses = 'w-full p-2 sm:p-3 rounded-lg border-2 text-left transition-all duration-200 focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2 min-h-[44px] font-medium'
@@ -459,9 +487,9 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
 
               {/* Answer Options Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                {currentQuestion.options.map((option, index) => {
+                {currentQuestion.shuffledOptions.map((option, index) => {
                   const isSelected = selectedOption === index
-                  const isThisCorrect = index === currentQuestion.correctIndex
+                  const isThisCorrect = index === currentQuestion.shuffledCorrectIndex
                   const showFeedback = hasAnswered
 
                   let buttonClasses = 'w-full p-6 sm:p-8 rounded-2xl border-2 text-left transition-all duration-200 focus-visible:outline-2 focus-visible:outline-[#0092FF] focus-visible:outline-offset-2 min-h-[44px] font-medium text-lg'

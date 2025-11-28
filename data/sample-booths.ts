@@ -4350,12 +4350,12 @@ export const publicHealth: PlatinumBoothData = {
           question: 'What is the Tourism Industry Association of Ontario (TIAO)?',
           options: [
             'A hotel chain',
-            'An organization that helps tourism businesses get funding, fair policies, and programs to grow',
+            'An organization that supports Ontario\'s tourism businesses by advocating for changes, to help them grow',
             'A travel agency',
             'A government tourism office'
           ],
           correctIndex: 1,
-          explanation: 'TIAO is the voice of Ontario\'s tourism industry, working to help tourism businesses get funding, fair policies, and programs that help them grow while supporting communities.'
+          explanation: 'TIAO is the voice of Ontario\'s tourism industry, helping to bring forward policy and regulation issues that prevent tourism-related businesses from growing and provide recommendations for change.'
         },
         {
           id: 'tiao2',
