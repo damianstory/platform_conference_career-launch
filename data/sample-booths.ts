@@ -263,9 +263,9 @@ export const futureBuild: PlatinumBoothData = {
         {
           id: 'rcaf2',
           question: 'What is the minimum age to join the Canadian Armed Forces?',
-          options: ['14 years old', '16 years old', '18 years old', '21 years old'],
+          options: ['15 years old', '18, or 16 with parental consent', '21 years old', '14 years old'],
           correctIndex: 1,
-          explanation: 'You can join as young as 16, though some programs have higher age requirements.'
+          explanation: 'You can join at 18, or at 16 with parental consent.'
         },
         {
           id: 'rcaf3',
@@ -300,7 +300,7 @@ export const futureBuild: PlatinumBoothData = {
           question: 'What does the NCM-STEP program provide?',
           options: ['Combat training for officers', 'Subsidized education for Non-Commissioned Members', 'Medical training certification', 'Language learning courses'],
           correctIndex: 1,
-          explanation: 'NCM-STEP subsidizes college or university education for enlisted members seeking to advance.'
+          explanation: 'NCM-STEP subsidizes college education for NCMs seeking to advance.'
         },
         {
           id: 'rcaf8',
@@ -308,13 +308,6 @@ export const futureBuild: PlatinumBoothData = {
           options: ['A pilot who flies fighter jets', 'A controller who manages air traffic and airspace', 'A mechanic who repairs aircraft', 'A cook who works on air bases'],
           correctIndex: 1,
           explanation: 'AC Ops manage airspace, direct aircraft, and support air operations from ground stations.'
-        },
-        {
-          id: 'rcaf9',
-          question: 'What citizenship requirement exists to join the Canadian Armed Forces?',
-          options: ['Any citizenship accepted', 'Must be Canadian citizen', 'Must be Commonwealth citizen', 'Must be NATO country citizen'],
-          correctIndex: 1,
-          explanation: 'You must be a Canadian citizen to join the Canadian Armed Forces.'
         },
         {
           id: 'rcaf10',
