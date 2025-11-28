@@ -3807,9 +3807,9 @@ export const fashionDesign: PlatinumBoothData = {
       type: 'pdf'
     },
     {
-      title: 'CAHRC x AITC-C In-Person Career Counsellor Event (Ottawa)',
-      description: 'Join us for a professional development event focused on building awareness of careers in agriculture',
-      url: 'https://www.eventbrite.ca/e/building-awareness-of-careers-in-agriculture-tickets-1974900117414?aff=oddtdtcreator',
+      title: 'Earn a $500 micro grant',
+      description: 'Industry Immersion Series',
+      url: 'https://www.industryimmersionseries.ca/december',
       type: 'link'
     }
   ],
