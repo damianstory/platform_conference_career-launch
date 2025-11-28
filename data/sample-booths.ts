@@ -2094,9 +2094,9 @@ export const manufactureTech: PlatinumBoothData = {
         {
           id: 'q4',
           question: 'What apprenticeship programs does Hydro One offer in the skilled trades?',
-          options: ['None—they only hire experienced workers', 'Powerline Technician and other electrical trades apprenticeships', 'Only management training programs', 'Only summer internships'],
+          options: ['None—they only hire experienced workers', 'Powerline technician, Utility Arborist, Construction and Utility Electrician, Truck and Coach Technician', 'Only management training programs', 'Only summer internships'],
           correctIndex: 1,
-          explanation: 'Hydro One runs apprenticeship programs including Powerline Technician training, developing the next generation of skilled tradespeople for Ontario\'s electricity grid.'
+          explanation: 'Hydro One offers apprenticeship programs in Powerline Technician, Utility Arborist, Construction and Utility Electrician, and Truck and Coach Technician, developing the next generation of skilled tradespeople for Ontario\'s electricity grid.'
         },
         {
           id: 'q5',
@@ -2108,9 +2108,9 @@ export const manufactureTech: PlatinumBoothData = {
         {
           id: 'q6',
           question: 'How many co-op students does Hydro One welcome each year?',
-          options: ['About 50', 'About 100', 'More than 200', 'About 500'],
+          options: ['About 50', 'About 100', 'About 150', 'About 500'],
           correctIndex: 2,
-          explanation: 'Hydro One welcomes more than 200 university and college students each year for co-op positions across engineering, business, legal, real estate, HR, and more.'
+          explanation: 'Hydro One welcomes about 150 university and college students each year for co-op positions across a variety of roles.'
         },
         {
           id: 'q7',
@@ -2129,16 +2129,16 @@ export const manufactureTech: PlatinumBoothData = {
         {
           id: 'q9',
           question: 'What kinds of educational backgrounds do Hydro One employees come from?',
-          options: ['Only electrical engineering degrees', 'Diverse backgrounds including engineering, business, arts, and skilled trades', 'Only college diplomas', 'Only graduate degrees'],
+          options: ['Only electrical engineering degrees', 'Engineering, Business, Legal, Real Estate, HR, and many more', 'Only college diplomas', 'Only graduate degrees'],
           correctIndex: 1,
-          explanation: 'Hydro One employees come from diverse educational backgrounds. Some panelists started in commerce before switching to engineering, showing there are many paths into the company.'
+          explanation: 'Hydro One employees come from diverse educational backgrounds including Engineering, Business, Legal, Real Estate, HR, and many more, showing there are many paths into the company.'
         },
         {
           id: 'q10',
           question: 'What are the "One Awards" at Hydro One?',
-          options: ['A sports competition', 'Employee recognition awards celebrating safety, customer service, and company values', 'An industry conference', 'A training certification'],
+          options: ['A sports competition', 'Three distinct awards recognizing high-potential students from underrepresented backgrounds, offering a monetary award and a paid work placement', 'An industry conference', 'A training certification'],
           correctIndex: 1,
-          explanation: 'The One Awards are Hydro One\'s employee recognition program celebrating staff who demonstrate excellence in safety, customer service, and living the company\'s values.'
+          explanation: 'The One Awards are three distinct awards recognizing high-potential students from underrepresented backgrounds, offering a monetary award and a paid work placement at Hydro One.'
         },
         {
           id: 'q11',
