@@ -3242,7 +3242,7 @@ export const sportsManagement: PlatinumBoothData = {
       title: 'Write a Winning Essay',
       description: 'How to guide (downloadable pdf)',
       url: 'https://docs.google.com/viewerng/viewer?url=https://seekingscholarships.com/wp-content/uploads/2025/11/Seeking-Scholarships-Resource-How-to-Write-a-Winning-Essay-for-Your-Scholarship-Application-1.pdf&hl=en_US',
-      type: 'download'
+      type: 'pdf'
     }
   ],
   sessionSlides: {
