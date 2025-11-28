@@ -2537,12 +2537,12 @@ export const bioMedical: PlatinumBoothData = {
           question: 'What is the Paving Paths program at Kids Help Phone?',
           options: [
             'A hiking club',
-            'A National Youth Advisory group for ages 14-18 focused on mental health advocacy',
+            'A volunteer program for newcomer and ethno-cultural individuals ages 15+ passionate about mental health',
             'A career counseling service',
             'A university scholarship program'
           ],
           correctIndex: 1,
-          explanation: 'Paving Paths is a National Youth Advisory group for teens ages 14-18 who are passionate about mental health advocacy, service improvement, and supporting young people across Canada.'
+          explanation: 'Paving Paths is a volunteer program for newcomer and ethno-cultural individuals who are 15 years and older and passionate about mental health.'
         },
         {
           id: 'khp6',
