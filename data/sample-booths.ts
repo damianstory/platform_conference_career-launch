@@ -1022,7 +1022,7 @@ export const worldExplorer: PlatinumBoothData = {
           question: 'What groundbreaking technology is CPKC developing for zero-emission locomotives?',
           options: ['Solar-powered trains', 'Hydrogen-powered locomotives that only output water', 'Electric trains with extension cords', 'Wind-powered rail cars'],
           correctIndex: 1,
-          explanation: 'CPKC is developing hydrogen-powered locomotives that only output water as exhaust. They\'ve built two fully functional prototypes that are on the cusp of entering service.'
+          explanation: 'CPKC has deployed three fully functional hydrogen-powered locomotives that are now in regular commercial operations. These are trains that only output water as exhaust!'
         },
         {
           id: 'q7',
