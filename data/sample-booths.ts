@@ -270,9 +270,9 @@ export const futureBuild: PlatinumBoothData = {
         {
           id: 'rcaf3',
           question: 'What does ROTP stand for in military education programs?',
-          options: ['Reserve Officer Training Plan', 'Regular Officer Training Program', 'Royal Officer Training Protocol', 'Recruit Officer Transition Path'],
+          options: ['Reserve Officer Training Plan', 'Regular Officer Training Plan', 'Royal Officer Training Protocol', 'Recruit Officer Transition Path'],
           correctIndex: 1,
-          explanation: 'ROTP pays for your university degree while you train to become an officer.'
+          explanation: 'As part of our ROTP you\'ll receive a fully paid degree, and a salary while you study.'
         },
         {
           id: 'rcaf4',
@@ -293,7 +293,7 @@ export const futureBuild: PlatinumBoothData = {
           question: 'How many vacation days do Regular Force members receive annually?',
           options: ['10 days', '15 days', '20 days', '25 days'],
           correctIndex: 2,
-          explanation: 'Members receive 20 paid vacation days per year plus additional leave options.'
+          explanation: 'New Members receive 20 paid vacation days per year increasing to 25 after 5 years.'
         },
         {
           id: 'rcaf7',
