@@ -7,15 +7,16 @@ import SkillsGapQuiz from './SkillsGapQuiz'
 interface EngagementActivityProps {
   activity: EngagementActivityData
   boothId?: string
+  boothSlug?: string
   boothName?: string
   sessionTitle?: string
   associatedSessionSlug?: string
 }
 
-export default function EngagementActivity({ activity, boothId, boothName, sessionTitle, associatedSessionSlug }: EngagementActivityProps) {
+export default function EngagementActivity({ activity, boothId, boothSlug, boothName, sessionTitle, associatedSessionSlug }: EngagementActivityProps) {
   // If this is a quiz activity, render the SkillsGapQuiz component
   if (activity.embedType === 'skills-gap-quiz' && activity.quizData) {
-    return <SkillsGapQuiz quizData={activity.quizData} boothId={boothId} boothName={boothName} sessionTitle={sessionTitle} associatedSessionSlug={associatedSessionSlug} />
+    return <SkillsGapQuiz quizData={activity.quizData} boothId={boothId} boothSlug={boothSlug} boothName={boothName} sessionTitle={sessionTitle} associatedSessionSlug={associatedSessionSlug} />
   }
 
   // If embedUrl is empty, show a placeholder

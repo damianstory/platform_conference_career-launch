@@ -300,7 +300,7 @@ export const futureBuild: PlatinumBoothData = {
           question: 'What does the NCM-STEP program provide?',
           options: ['Combat training for officers', 'Subsidized education for Non-Commissioned Members', 'Medical training certification', 'Language learning courses'],
           correctIndex: 1,
-          explanation: 'NCM-STEP subsidizes college education for NCMs seeking to advance.'
+          explanation: 'NCM-STEP covers college expenses and pays a salary while you study.'
         },
         {
           id: 'rcaf8',
@@ -3826,6 +3826,7 @@ export const automotiveTech: PlatinumBoothData = {
   },
   contact: {
     website: 'https://www.supportontarioyouth.ca/',
+    email: 'info@supportontarioyouth.ca',
     socialLinks: [
       { platform: 'instagram', url: 'https://www.instagram.com/supportonyouth/' },
       { platform: 'tiktok', url: 'https://www.tiktok.com/@supportontarioyouth' },

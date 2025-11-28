@@ -45,6 +45,7 @@ export default function BoothLayout({ booth }: BoothLayoutProps) {
             <EngagementActivity
               activity={booth.engagementActivity}
               boothId={booth.id}
+              boothSlug={booth.slug}
               boothName={booth.name}
               associatedSessionSlug={booth.associatedSessionSlug}
             />

@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import { PlatinumBoothData, StandardBoothData } from '@/types/booth';
 import { useSessionContext } from '@/lib/hooks/useSessionContext';
+import { LessonPlanAnalytics } from '@/lib/analytics';
 
 interface OrganizationSectionProps {
   name: string;
@@ -36,6 +37,7 @@ export default function OrganizationSection({
 
   const handleViewLessonPlan = () => {
     if (lessonPlanUrl) {
+      LessonPlanAnalytics.opened(sessionSlug, sessionTitle);
       window.open(lessonPlanUrl, '_blank', 'noopener,noreferrer');
     }
   };

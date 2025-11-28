@@ -36,7 +36,7 @@ Though the work itself is very rewarding, Hydro One offers an engaging work cult
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const dentalHygienistCareer: Session = {
@@ -71,7 +71,7 @@ Join our session to learn more about how you can become an Agricultural Innovato
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const medicalLabTechnologist: Session = {
@@ -100,7 +100,7 @@ This session will break down common perceptions, highlight **emerging opportunit
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 2,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const paramedicFirstResponder: Session = {
@@ -139,7 +139,7 @@ Because the next big event that changes someone's life could be yours to create.
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const registeredNurseEmergency: Session = {
@@ -170,7 +170,7 @@ Be a part of something bigger with opportunities ranging from operations to corp
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const mentalHealthCounseling: Session = {
@@ -196,7 +196,7 @@ In this session, we'll bust myths about the industry, discuss various you career
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
   display_order: 4,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 // ============================================================================
@@ -237,7 +237,7 @@ No matter what challenges they face, Kids Help Phone is here for them.`,
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const dataScientistAnalytics: Session = {
@@ -264,7 +264,7 @@ export const dataScientistAnalytics: Session = {
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 5,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const softwareDeveloperJourney: Session = {
@@ -297,7 +297,7 @@ In this session you will learn about the process, and the career opportunities a
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 5,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const uxUiDesigner: Session = {
@@ -332,7 +332,7 @@ Whether you're passionate about nature, science, community engagement, or proble
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const cybersecuritySpecialist: Session = {
@@ -365,7 +365,7 @@ Come find out how tourism can be your first step toward a future full of possibi
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const aiMachineLearning: Session = {
@@ -392,7 +392,7 @@ export const aiMachineLearning: Session = {
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
   display_order: 4,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 // ============================================================================
@@ -427,7 +427,7 @@ We'll also share **the latest labour-market insights and trends we're seeing in 
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 4,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const plumberEssentialTrade: Session = {
@@ -462,7 +462,7 @@ Whether you're curious about what engineers really do or you're already dreaming
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 4,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const welderFabricator: Session = {
@@ -495,7 +495,7 @@ Whether you're exploring your options or ready to get started, this session will
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 2,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const electricianPowerCareer: Session = {
@@ -532,7 +532,7 @@ Note: This session was recorded as part of a TYKTWD event in 2025.`,
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const automotiveTechnicianModern: Session = {
@@ -563,7 +563,7 @@ You'll walk away with a better idea of what it takes to build a company and **wh
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const hvacTechnicianCareer: Session = {
@@ -602,7 +602,7 @@ This session will explore:
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const familyPhysicianPractice: Session = {
@@ -639,7 +639,7 @@ Super-intelligence is becoming a commodity—this session is about learning how 
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
   display_order: 5,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 // ============================================================================
@@ -680,7 +680,7 @@ Bonus - if you complete the exercise in full, you can reach out to lyn at Lyn@ca
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const socialWorkerHelping: Session = {
@@ -711,7 +711,7 @@ Learn how to break down expenses, spend with intention and build realistic habit
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 2,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const policeOfficerServeProtect: Session = {
@@ -752,7 +752,7 @@ This session is designed to change that. By the end of this session, you will ha
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const teacherShapingFutures: Session = {
@@ -795,7 +795,7 @@ Presented by Roxanne Challenger, NFTE Canada`,
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const environmentalScientist: Session = {
@@ -828,7 +828,7 @@ Whether you have a specific path in mind or are exploring several, this intervie
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const firefighterFirstResponder: Session = {
@@ -855,7 +855,7 @@ export const firefighterFirstResponder: Session = {
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const digitalMarketingSpecialist: Session = {
@@ -884,7 +884,7 @@ This session highlights **exciting career paths in the skilled trades, technolog
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const cloudArchitectAws: Session = {
@@ -917,7 +917,7 @@ From the workshops and coaching they took part in to their travels, work experie
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
   display_order: 1,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 export const fireAlarmTechnician: Session = {
@@ -941,7 +941,7 @@ Discover how the Canadian Fire Alarm Technology Program at Health and Safety Man
   created_at: '2025-11-27T00:00:00.000000+00:00',
   updated_at: '2025-11-27T00:00:00.000000+00:00',
   display_order: 8,
-  lesson_plan_url: null
+  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
 };
 
 // ============================================================================

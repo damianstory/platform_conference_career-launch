@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import { X, Check, XIcon, Download, Maximize2, RotateCcw, ArrowRight } from 'lucide-react'
 import { QuizData, QuizQuestion } from '@/types/booth'
 import { getSessionBySlug } from '@/data/sample-sessions'
+import { QuizAnalytics } from '@/lib/analytics'
 
 // Extended question type with shuffled options
 interface ShuffledQuestion extends QuizQuestion {
@@ -15,6 +16,7 @@ interface ShuffledQuestion extends QuizQuestion {
 interface SkillsGapQuizProps {
   quizData: QuizData
   boothId?: string
+  boothSlug?: string
   boothName?: string
   sessionTitle?: string
   associatedSessionSlug?: string
@@ -59,7 +61,7 @@ function shuffleQuestionOptions(question: QuizQuestion): ShuffledQuestion {
   }
 }
 
-export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTitle, associatedSessionSlug }: SkillsGapQuizProps) {
+export default function SkillsGapQuiz({ quizData, boothId, boothSlug, boothName, sessionTitle, associatedSessionSlug }: SkillsGapQuizProps) {
   // Look up session title from slug if available
   const session = associatedSessionSlug ? getSessionBySlug(associatedSessionSlug) : null
   const resolvedSessionTitle = sessionTitle || session?.title || boothName || 'session'
@@ -114,6 +116,10 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
   }, [hasAnswered])
 
   const handleStartQuiz = () => {
+    // Track quiz start
+    if (boothSlug && boothName) {
+      QuizAnalytics.started(boothSlug, boothName)
+    }
     // Shuffle questions AND options within each question on start
     const shuffledWithOptions = shuffleArray(quizData.questions).map(shuffleQuestionOptions)
     setShuffledQuestions(shuffledWithOptions)
@@ -147,6 +153,18 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
       setHasAnswered(false)
     } else {
       // Quiz complete, show results
+      // Calculate score for tracking
+      let correctCount = 0
+      shuffledQuestions.forEach(question => {
+        const userAnswer = selectedAnswers.get(question.id)
+        if (userAnswer === question.shuffledCorrectIndex) {
+          correctCount++
+        }
+      })
+      // Track quiz completion
+      if (boothSlug && boothName) {
+        QuizAnalytics.completed(boothSlug, boothName, correctCount, shuffledQuestions.length)
+      }
       // Randomly select a badge for this completion
       const randomBadge = BADGE_OPTIONS[Math.floor(Math.random() * BADGE_OPTIONS.length)]
       setSelectedBadge(randomBadge)
@@ -156,6 +174,11 @@ export default function SkillsGapQuiz({ quizData, boothId, boothName, sessionTit
 
   const handleDownloadBadge = () => {
     if (!selectedBadge) return
+
+    // Track badge download
+    if (boothSlug && boothName) {
+      QuizAnalytics.badgeDownloaded(boothSlug, boothName)
+    }
 
     // Fetch the badge image and trigger download
     fetch(selectedBadge)

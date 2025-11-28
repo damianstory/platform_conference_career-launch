@@ -327,3 +327,43 @@ export const BoothDetailAnalytics = {
     });
   },
 };
+
+/**
+ * Lesson Plan Events
+ */
+export const LessonPlanAnalytics = {
+  opened: (sessionSlug: string, sessionTitle: string) => {
+    trackEvent('lesson_plan_opened', {
+      session_slug: sessionSlug,
+      session_title: sessionTitle,
+    });
+  },
+};
+
+/**
+ * Quiz Events (Engagement Activity)
+ */
+export const QuizAnalytics = {
+  started: (boothSlug: string, boothName: string) => {
+    trackEvent('quiz_started', {
+      booth_slug: boothSlug,
+      booth_name: boothName,
+    });
+  },
+
+  completed: (boothSlug: string, boothName: string, score: number, totalQuestions: number) => {
+    trackEvent('quiz_completed', {
+      booth_slug: boothSlug,
+      booth_name: boothName,
+      score,
+      total_questions: totalQuestions,
+    });
+  },
+
+  badgeDownloaded: (boothSlug: string, boothName: string) => {
+    trackEvent('quiz_badge_downloaded', {
+      booth_slug: boothSlug,
+      booth_name: boothName,
+    });
+  },
+};
