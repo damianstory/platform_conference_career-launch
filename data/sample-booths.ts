@@ -1359,7 +1359,7 @@ export const creativeMinds: PlatinumBoothData = {
         {
           id: 'dy3',
           question: 'How do Canadian universities generally view gap years on applications?',
-          options: ['They automatically reject gap year students', 'They don\'t look down on gap years and ask students to confirm what they did during that time', 'They require gap year students to reapply', 'They consider gap years as academic failures'],
+          options: ['They automatically reject gap year students', 'They don\'t look down on gap years and may ask students to confirm what they did during that time', 'They require gap year students to reapply', 'They consider gap years as academic failures'],
           correctIndex: 1,
           explanation: 'Universities like the University of Ottawa don\'t look down on gap years but ask students to confirm what they did during that time.'
         },
@@ -1380,9 +1380,9 @@ export const creativeMinds: PlatinumBoothData = {
         {
           id: 'dy6',
           question: 'What role does a "life path coach" serve in the Discover Year program?',
-          options: ['Teaching sports techniques', 'Helping students understand their interests, values, and talents to increase confidence and self-awareness', 'Grading academic papers', 'Managing student finances'],
+          options: ['Teaching sports techniques', 'Helping students understand their interests, values, and strengths to support achieving goals', 'Grading academic papers', 'Managing student finances'],
           correctIndex: 1,
-          explanation: 'The coach helps students understand how to make use of their authentic interests, values, and talents while increasing confidence and self-awareness.'
+          explanation: 'The coach helps students understand how to set and achieve goals by making use of their authentic interests, values, and strengths.'
         },
         {
           id: 'dy7',
@@ -1394,16 +1394,16 @@ export const creativeMinds: PlatinumBoothData = {
         {
           id: 'dy8',
           question: 'Where can students find gap year resources and scholarships in Canada?',
-          options: ['Only through banks', 'The Canadian Gap Year Association (CAN Gap)', 'Only government offices', 'Only travel agencies'],
+          options: ['Only through banks', 'Canadian Gap Year Association (CanGap)', 'Only government offices', 'Only travel agencies'],
           correctIndex: 1,
           explanation: 'CAN Gap (Canadian Gap Year Association at cangap.ca) offers resources and scholarships for gap years.'
         },
         {
           id: 'dy9',
-          question: 'What career did Reese pursue after completing Discover Year in 2020?',
+          question: 'What career did Rhys pursue after completing Discover Year in 2020?',
           options: ['Software engineer', 'Firefighter paramedic in Yellowknife', 'Lawyer', 'Chef'],
           correctIndex: 1,
-          explanation: 'Reese became a firefighter paramedic in Yellowknife, discovering these career interests during the gap year that weren\'t even on his radar before.'
+          explanation: 'Rhys became a firefighter paramedic in Yellowknife, discovering these career interests during the gap year that weren\'t even on his radar before.'
         },
         {
           id: 'dy10',
@@ -3228,7 +3228,7 @@ export const sportsManagement: PlatinumBoothData = {
     },
     {
       title: 'The Trades Report',
-      description: 'Explore scholarships and funding opportunities specifically for skilled trades education',
+      description: 'Explore skilled trades and apprenticeships.',
       url: 'https://seekingscholarships.com/the-trades-report',
       type: 'link'
     },
@@ -3239,10 +3239,10 @@ export const sportsManagement: PlatinumBoothData = {
       type: 'link'
     },
     {
-      title: 'Contact Us',
-      description: 'Get in touch with our team for questions about scholarships and funding resources',
-      url: 'https://seekingscholarships.com/contact-us/',
-      type: 'link'
+      title: 'Write a Winning Essay',
+      description: 'How to guide (downloadable pdf)',
+      url: 'https://docs.google.com/viewerng/viewer?url=https://seekingscholarships.com/wp-content/uploads/2025/11/Seeking-Scholarships-Resource-How-to-Write-a-Winning-Essay-for-Your-Scholarship-Application-1.pdf&hl=en_US',
+      type: 'download'
     }
   ],
   sessionSlides: {
@@ -3410,12 +3410,12 @@ export const sportsManagement: PlatinumBoothData = {
     }
   },
   primaryCTA: {
-    text: 'Scholarship Report',
-    url: 'https://seekingscholarships.com/the-scholarship-report/',
+    text: 'Learn More',
+    url: 'https://seekingscholarships.com/',
     type: 'careers'
   },
   contact: {
-    website: 'https://seekingscholarships.com/',
+    website: 'https://seekingscholarships.com/contact-us/',
     email: 'seekingscholarshipscanada@gmail.com',
     socialLinks: [
       { platform: 'linkedin', url: 'https://www.linkedin.com/in/glenda-healy-ba-bed-oct-9772b0163/' },
