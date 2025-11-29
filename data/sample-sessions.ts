@@ -36,7 +36,7 @@ Though the work itself is very rewarding, Hydro One offers an engaging work cult
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/17rxoHitWAiS6CmMRdxstOo4inmdPlIPR/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const dentalHygienistCareer: Session = {
@@ -71,7 +71,7 @@ Join our session to learn more about how you can become an Agricultural Innovato
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1eopeoyGQh3dRa4lGsrEOCvFUtmKhNXAW/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const medicalLabTechnologist: Session = {
@@ -100,7 +100,7 @@ This session will break down common perceptions, highlight **emerging opportunit
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 2,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1-n7ekJJhXGRkxQBc-AgC94w24qp316fV/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const paramedicFirstResponder: Session = {
@@ -139,7 +139,7 @@ Because the next big event that changes someone's life could be yours to create.
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1eYsuwMRUe92bYRkvNefBXBHN10JfDg76/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const registeredNurseEmergency: Session = {
@@ -170,7 +170,7 @@ Be a part of something bigger with opportunities ranging from operations to corp
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1moizCWA0AUkOnbceXWU7KP248e1avjhY/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const mentalHealthCounseling: Session = {
@@ -196,7 +196,7 @@ In this session, we'll bust myths about the industry, discuss various you career
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
   display_order: 4,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1bIfV4ET-hGUuXwF1-4vnt1gEM2oftabx/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 // ============================================================================
@@ -237,7 +237,7 @@ No matter what challenges they face, Kids Help Phone is here for them.`,
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1iAvIWUBGheuHceF3WbguhxCJZIhV2dgb/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const dataScientistAnalytics: Session = {
@@ -264,7 +264,7 @@ export const dataScientistAnalytics: Session = {
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 5,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1YFFfqHsBaxANAGKxd_hL7dNbuZ-fzDrw/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const softwareDeveloperJourney: Session = {
@@ -297,7 +297,7 @@ In this session you will learn about the process, and the career opportunities a
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 5,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1FckDckmkWgkmOE-p8cRqRBpjUaBwoJDC/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const uxUiDesigner: Session = {
@@ -332,7 +332,7 @@ Whether you're passionate about nature, science, community engagement, or proble
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1l043SfWazqkBx1DcOrBVLeERb6X3Pbu7/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const cybersecuritySpecialist: Session = {
@@ -365,7 +365,7 @@ Come find out how tourism can be your first step toward a future full of possibi
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1MolaA3tnOmKLK3td0j0vElqVDHGXTt94/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const aiMachineLearning: Session = {
@@ -392,7 +392,7 @@ export const aiMachineLearning: Session = {
   created_at: '2025-11-06T19:43:16.57669+00:00',
   updated_at: '2025-11-06T19:43:16.57669+00:00',
   display_order: 4,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/17VByYkX-TLZTizqou0U2oweUqZgnnsKi/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 // ============================================================================
@@ -427,7 +427,7 @@ We'll also share **the latest labour-market insights and trends we're seeing in 
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 4,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1IZi0heSAm_OwAeqUiyXFmotm4TMmX6Fa/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const plumberEssentialTrade: Session = {
@@ -462,7 +462,7 @@ Whether you're curious about what engineers really do or you're already dreaming
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 4,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1dbZkqtgDe3-yjZ5CvyAIfshelRKwJMRJ/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const welderFabricator: Session = {
@@ -495,7 +495,7 @@ Whether you're exploring your options or ready to get started, this session will
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 2,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1MIHMcJa7vIj0O_W53JxeUaekE85TXTCO/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const electricianPowerCareer: Session = {
@@ -532,7 +532,7 @@ Note: This session was recorded as part of a TYKTWD event in 2025.`,
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 1,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1WobCl901SKLk2FwYzWYVtQNmNgATV8y9/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const automotiveTechnicianModern: Session = {
@@ -563,7 +563,7 @@ You'll walk away with a better idea of what it takes to build a company and **wh
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/117c9zbmLjjN0_PqKcGNA6EJd_6MUHEe9/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const hvacTechnicianCareer: Session = {
@@ -602,7 +602,7 @@ This session will explore:
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1uV8FnST2EOcT3NKPsCeRUoH53a-2X4E2/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const familyPhysicianPractice: Session = {
@@ -639,7 +639,7 @@ Super-intelligence is becoming a commodity—this session is about learning how 
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
   display_order: 5,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/17vtnvcCb6kJhP-6HqXgBFmc6GQ89OWnA/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 // ============================================================================
@@ -680,7 +680,7 @@ Bonus - if you complete the exercise in full, you can reach out to lyn at Lyn@ca
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1utNZFOMbgNTybLqcFudvHPXzT_2CYEcU/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const socialWorkerHelping: Session = {
@@ -711,7 +711,7 @@ Learn how to break down expenses, spend with intention and build realistic habit
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 2,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1Oc6S3i0pZK2EHr488JL5EcZOXfsxGHAw/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const policeOfficerServeProtect: Session = {
@@ -752,7 +752,7 @@ This session is designed to change that. By the end of this session, you will ha
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 3,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1bHubEd8SrkjApL2eEVkzZeb3vkWjcGWr/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const environmentalScientist: Session = {
@@ -785,7 +785,7 @@ Whether you have a specific path in mind or are exploring several, this intervie
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1UoKocKtWmNzpVqYiNMsjjQrOwFloFLX2/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const firefighterFirstResponder: Session = {
@@ -812,7 +812,7 @@ export const firefighterFirstResponder: Session = {
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 7,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1dUtyYGaTcQrqeBdJP66kkPe-3WFuSAlE/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const digitalMarketingSpecialist: Session = {
@@ -841,7 +841,7 @@ This session highlights **exciting career paths in the skilled trades, technolog
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1XECWuACCLrG-vqNNcKjw6nMH8TZMUSoU/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const cloudArchitectAws: Session = {
@@ -874,7 +874,7 @@ From the workshops and coaching they took part in to their travels, work experie
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-11-06T19:37:10.462436+00:00',
   display_order: 1,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1oJHg7GYF-nVy186pV8Szz7gBxqQR2cDw/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const fireAlarmTechnician: Session = {
@@ -898,7 +898,7 @@ Discover how the Canadian Fire Alarm Technology Program at Health and Safety Man
   created_at: '2025-11-27T00:00:00.000000+00:00',
   updated_at: '2025-11-27T00:00:00.000000+00:00',
   display_order: 8,
-  lesson_plan_url: 'https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX'
+  lesson_plan_url: 'https://docs.google.com/document/d/1xy45XBbwTHCpjqJ4SsYDB3ENZqSaLkw3/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 // ============================================================================

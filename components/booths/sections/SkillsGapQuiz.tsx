@@ -165,9 +165,9 @@ export default function SkillsGapQuiz({ quizData, boothId, boothSlug, boothName,
       if (boothSlug && boothName) {
         QuizAnalytics.completed(boothSlug, boothName, correctCount, shuffledQuestions.length)
       }
-      // Randomly select a badge for this completion
-      const randomBadge = BADGE_OPTIONS[Math.floor(Math.random() * BADGE_OPTIONS.length)]
-      setSelectedBadge(randomBadge)
+      // Use booth-specific badge if available, otherwise fall back to random selection
+      const badgeUrl = quizData.badgeImageUrl || BADGE_OPTIONS[Math.floor(Math.random() * BADGE_OPTIONS.length)]
+      setSelectedBadge(badgeUrl)
       setQuizState('results')
     }
   }

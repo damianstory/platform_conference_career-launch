@@ -67,7 +67,7 @@ export const healthFirst: PlatinumBoothData = {
     quizData: {
       title: 'Agricultural Robotics: Future of Farming',
       description: 'Discover where technology meets agriculture!',
-      badgeImageUrl: '/badges/badge-24.png',
+      badgeImageUrl: '/badges/badge-agrobotics.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -250,7 +250,7 @@ export const futureBuild: PlatinumBoothData = {
     quizData: {
       title: 'Royal Canadian Air Force: Career Pathways',
       description: 'Discover opportunities in Canada\'s Air Force!',
-      badgeImageUrl: '/badges/badge-22.png',
+      badgeImageUrl: '/badges/badge-rcaf.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -432,7 +432,7 @@ export const financeHub: PlatinumBoothData = {
     quizData: {
       title: 'CNL: Powering Canada\'s Future',
       description: 'Test your knowledge about careers at Canadian Nuclear Laboratories!',
-      badgeImageUrl: '/badges/badge-21.png',
+      badgeImageUrl: '/badges/badge-cnl.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -608,7 +608,7 @@ export const eduPath: PlatinumBoothData = {
     quizData: {
       title: 'Cansbridge Scholars: Pave Your Own Path',
       description: 'Test your knowledge about career development, mentorship, and building high agency!',
-      badgeImageUrl: '/badges/badge-15.png',
+      badgeImageUrl: '/badges/badge-cansbridge.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -794,7 +794,7 @@ export const tradesMaster: PlatinumBoothData = {
     quizData: {
       title: 'Behind the Magic: Event Industry Careers',
       description: 'Test your knowledge and discover your future in events!',
-      badgeImageUrl: '/badges/encore-canada-badge.png',
+      badgeImageUrl: '/badges/badge-encore.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -972,7 +972,7 @@ export const worldExplorer: PlatinumBoothData = {
     quizData: {
       title: 'CPKC: Connecting a Continent, Building Careers',
       description: 'Test your knowledge and discover your future in rail!',
-      badgeImageUrl: '/badges/badge-1.png',
+      badgeImageUrl: '/badges/badge-cpkc.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -1159,7 +1159,7 @@ export const greenPower: PlatinumBoothData = {
     quizData: {
       title: 'CWB Welding Foundation: The World of Welding',
       description: 'Test your knowledge about welding careers, pathways, and opportunities!',
-      badgeImageUrl: '/badges/badge-20.png',
+      badgeImageUrl: '/badges/badge-cwb-welding.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -1339,7 +1339,7 @@ export const creativeMinds: PlatinumBoothData = {
     quizData: {
       title: 'Discover Year: Purposeful Gap Years',
       description: 'Learn about structured gap year programs!',
-      badgeImageUrl: '/badges/badge-25.png',
+      badgeImageUrl: '/badges/badge-discover-year.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -1518,7 +1518,7 @@ export const dataDynamics: PlatinumBoothData = {
     quizData: {
       title: 'Career Exploration: Using Data to Choose Your Future',
       description: 'Test your knowledge and discover tools to plan your career!',
-      badgeImageUrl: '/badges/badge-3.png',
+      badgeImageUrl: '/badges/badge-diversity-institute.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -1699,7 +1699,7 @@ export const marketGenius: PlatinumBoothData = {
     quizData: {
       title: 'EY: Building a Better Working World',
       description: 'Test your knowledge about career pathways and opportunities at Ernst & Young!',
-      badgeImageUrl: '/badges/badge-17.png',
+      badgeImageUrl: '/badges/badge-ey.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -1879,7 +1879,7 @@ export const consultPro: PlatinumBoothData = {
     quizData: {
       title: 'Humber Polytechnic: Engineer Your Dream Career',
       description: 'Test your knowledge about engineering careers, specializations, and pathways!',
-      badgeImageUrl: '/badges/badge-19.png',
+      badgeImageUrl: '/badges/badge-humber-engineering.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -2060,7 +2060,7 @@ export const manufactureTech: PlatinumBoothData = {
     quizData: {
       title: 'Hydro One: Powering Ontario Careers',
       description: 'Test your knowledge and discover your future in energy!',
-      badgeImageUrl: '/badges/badge-1.png',
+      badgeImageUrl: '/badges/badge-hydro-one.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -2241,7 +2241,7 @@ export const cyberShield: PlatinumBoothData = {
     quizData: {
       title: 'Jack.org: Be There for Others',
       description: 'Learn about youth mental health advocacy and how you can make a difference!',
-      badgeImageUrl: '/badges/badge-11.png',
+      badgeImageUrl: '/badges/badge-jack-org.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -2481,7 +2481,7 @@ export const bioMedical: PlatinumBoothData = {
     quizData: {
       title: 'Kids Help Phone: Get Involved',
       description: 'Discover volunteer opportunities and learn about Canada\'s leading youth mental health service!',
-      badgeImageUrl: '/badges/badge-10.png',
+      badgeImageUrl: '/badges/badge-kids-help-phone.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -2724,7 +2724,7 @@ export const foodService: PlatinumBoothData = {
     quizData: {
       title: 'Conservation Authorities: Protecting Ontario\'s Watersheds',
       description: 'Test your knowledge and discover your future in conservation!',
-      badgeImageUrl: '/badges/badge-2.png',
+      badgeImageUrl: '/badges/badge-conservation.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -2903,7 +2903,7 @@ export const legalServices: PlatinumBoothData = {
     quizData: {
       title: 'Making Bank: Money Skills for Real Life',
       description: 'Test your knowledge and master your money!',
-      badgeImageUrl: '/badges/badge-1.png',
+      badgeImageUrl: '/badges/badge-money-skills.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -3089,7 +3089,7 @@ export const urbanPlanning: PlatinumBoothData = {
     quizData: {
       title: 'Ontario Water Careers: Build Critical Infrastructure',
       description: 'Test your knowledge about careers in Ontario\'s water infrastructure industry!',
-      badgeImageUrl: '/badges/badge-18.png',
+      badgeImageUrl: '/badges/badge-build-big-things.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -3259,7 +3259,7 @@ export const sportsManagement: PlatinumBoothData = {
     quizData: {
       title: 'Funding Post-Secondary Education',
       description: 'Learn how to find and win scholarships, bursaries, and other financial aid!',
-      badgeImageUrl: '/badges/badge-14.png',
+      badgeImageUrl: '/badges/badge-seeking-scholarships.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -3586,7 +3586,7 @@ export const automotiveTech: PlatinumBoothData = {
     quizData: {
       title: 'Discover Skilled Trades',
       description: 'Learn about apprenticeship pathways and high-demand skilled trades careers!',
-      badgeImageUrl: '/badges/badge-13.png',
+      badgeImageUrl: '/badges/badge-soy.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -3827,7 +3827,7 @@ export const fashionDesign: PlatinumBoothData = {
     quizData: {
       title: 'Discover Agriculture Careers',
       description: 'Test your knowledge about the opportunities waiting in Canadian agriculture!',
-      badgeImageUrl: '/badges/badge-9.png',
+      badgeImageUrl: '/badges/badge-agriculture-agri-food.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -4067,7 +4067,7 @@ export const hospitalityCollege: PlatinumBoothData = {
     quizData: {
       title: 'Toronto Police Services: Serve Your City',
       description: 'Test your knowledge about career pathways and requirements at Toronto Police Service!',
-      badgeImageUrl: '/badges/badge-16.png',
+      badgeImageUrl: '/badges/badge-toronto-police.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -4253,7 +4253,7 @@ export const publicHealth: PlatinumBoothData = {
     quizData: {
       title: 'Discover Tourism Careers',
       description: 'Explore the exciting world of tourism and hospitality careers in Ontario!',
-      badgeImageUrl: '/badges/badge-12.png',
+      badgeImageUrl: '/badges/badge-tourism.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -4495,7 +4495,7 @@ export const voxPopLabs: PlatinumBoothData = {
     quizData: {
       title: 'Vox Pop Labs: Civic Tech Careers',
       description: 'Discover how data science meets democracy!',
-      badgeImageUrl: '/badges/badge-23.png',
+      badgeImageUrl: '/badges/badge-vox-pop-labs.png',
       duration: '2-3 minutes',
       questions: [
         {
@@ -4920,7 +4920,7 @@ export const hsmcBooth: PlatinumBoothData = {
     quizData: {
       title: 'Fire Alarm Technician: A Career That Keeps People Safe',
       description: 'Test your knowledge and discover if this career is right for you!',
-      badgeImageUrl: '/badges/badge-4.png',
+      badgeImageUrl: '/badges/badge-fire-alarm.png',
       duration: '2-3 minutes',
       questions: [
         {
