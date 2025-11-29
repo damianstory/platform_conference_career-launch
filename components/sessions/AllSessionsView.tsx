@@ -193,7 +193,6 @@ export default function AllSessionsView({ sessions }: AllSessionsViewProps) {
                   <th className="text-center py-3 text-sm font-semibold text-gray-700 w-32 hidden lg:table-cell">
                     Grades
                   </th>
-                  <th className="w-24 sm:w-32 lg:w-44" aria-label="Actions"></th>
                 </tr>
               </thead>
               <tbody>

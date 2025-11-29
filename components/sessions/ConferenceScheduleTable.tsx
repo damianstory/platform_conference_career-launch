@@ -33,7 +33,6 @@ export default function ConferenceScheduleTable({ sessions }: ConferenceSchedule
             <th className="text-center py-3 text-sm font-semibold text-gray-700 w-32">
               Grades
             </th>
-            <th className="w-44" aria-label="Actions"></th>
           </tr>
         </thead>
         <tbody>

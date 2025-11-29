@@ -124,22 +124,12 @@ export default function SessionTableRow({
           {formatGradeLevel(session.grade_level)}
         </td>
 
-        {/* Action Column (180px) */}
-        <td className="py-5 pr-2 sm:pr-4 lg:pr-6">
-          <button
-            className="btn-primary text-sm w-20 sm:w-24 lg:w-28 px-2 sm:px-3 lg:px-4 py-2"
-            onClick={handleWatchClick}
-            aria-label={`Watch ${session.title} with your class`}
-          >
-            Watch
-          </button>
-        </td>
       </tr>
 
       {/* Expanded Row */}
       {isExpanded && (
         <tr>
-          <td colSpan={6} className="p-0">
+          <td colSpan={5} className="p-0">
             <div
               className={`px-3 sm:px-6 lg:px-24 py-6 border-t animate-fadeIn ${
                 variant === 'conference'
