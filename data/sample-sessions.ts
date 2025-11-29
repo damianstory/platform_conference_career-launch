@@ -675,7 +675,7 @@ Bonus - if you complete the exercise in full, you can reach out to lyn at Lyn@ca
   full_video_url: 'https://vimeo.com/financial-planning-full',
   duration: 0,
   block_number: 1,
-  industries: ['Life Skills'],
+  industries: ['Life Skills', 'Business'],
   grade_level: '7-12',
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
