@@ -20,6 +20,21 @@ const faqItems: AccordionItem[] = [
     ),
   },
   {
+    id: 'faq-16',
+    title: 'Are there lesson plans to support these sessions?',
+    content: (
+      <p>
+        Yes. Each session page has a button at the bottom where you can access a session specific lesson plan. They are formatted as a Google Doc.
+        <br />
+        <br />
+        Can&apos;t access Google Docs at your school? Download a .zip file of all lesson plans as{' '}
+        <a href="/Career Launch Lesson Plans.zip" download className="text-blue hover:underline">
+          Word docs here
+        </a>.
+      </p>
+    ),
+  },
+  {
     id: 'faq-12',
     title: 'How do the Educator Prizes work?',
     content: (
