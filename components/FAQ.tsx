@@ -31,6 +31,12 @@ const faqItems: AccordionItem[] = [
         <a href="/Career Launch Lesson Plans.zip" download className="text-blue hover:underline">
           Word docs here
         </a>.
+        <br />
+        <br />
+        Want all lesson plans in one Google Drive folder?{' '}
+        <a href="https://drive.google.com/drive/folders/1ud16ubaMC0o9XBIZVZxhAsKrFNjLokzX?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+          Click here
+        </a>.
       </p>
     ),
   },
