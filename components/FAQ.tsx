@@ -24,7 +24,7 @@ const faqItems: AccordionItem[] = [
     title: 'Are there lesson plans to support these sessions?',
     content: (
       <p>
-        Yes. Each session page has a button at the bottom where you can access a session specific lesson plan. They are formatted as a Google Doc.
+        Yes. Each session page has a button at the bottom where you can access a session specific pre/post type of activity. They are formatted as a Google Doc.
         <br />
         <br />
         Can&apos;t access Google Docs at your school? Download a .zip file of all lesson plans as{' '}
