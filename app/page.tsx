@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className="bg-navy py-4 px-8">
         <div className="max-w-7xl mx-auto flex justify-center items-center">
           <h1 className="text-2xl md:text-3xl font-black text-white tracking-wide text-center">
-            Career Launch - Officially Starts on December 1st 🎉
+            Career Launch is Live 🎉 Visit FAQ at Bottom to Learn How Educators Can Win Prizes This Week.
           </h1>
         </div>
       </div>
