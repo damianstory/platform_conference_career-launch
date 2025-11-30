@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MultiStepModal from '@/components/registration/MultiStepModal';
 import TrailerModal from '@/components/session/TrailerModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
@@ -19,7 +19,19 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTrailerModalOpen, setIsTrailerModalOpen] = useState(false);
   const [videoState, setVideoState] = useState<VideoState>('initial');
+  const [hideTrailerButton, setHideTrailerButton] = useState(false);
   const session = getSessionBySlug(sessionSlug);
+
+  // Check if user came from trailer modal - hide button if so
+  useEffect(() => {
+    if (typeof window !== 'undefined' && session) {
+      const cameFromTrailer = sessionStorage.getItem('came_from_trailer');
+      if (cameFromTrailer === session.slug) {
+        setHideTrailerButton(true);
+        sessionStorage.removeItem('came_from_trailer');
+      }
+    }
+  }, [session]);
 
   if (!session) {
     return null;
@@ -95,13 +107,15 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
                 >
                   Watch Session
                 </button>
-                {/* Desktop: Watch Trailer button */}
-                <button
-                  onClick={handleTrailerClick}
-                  className="btn-secondary md:min-w-[280px]"
-                >
-                  Watch Trailer
-                </button>
+                {/* Desktop: Watch Trailer button - hidden if came from trailer */}
+                {!hideTrailerButton && (
+                  <button
+                    onClick={handleTrailerClick}
+                    className="btn-secondary md:min-w-[280px]"
+                  >
+                    Watch Trailer
+                  </button>
+                )}
               </div>
             )}
 
@@ -146,12 +160,14 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
             >
               Watch Session
             </button>
-            <button
-              onClick={handleTrailerClick}
-              className="btn-secondary w-full"
-            >
-              Watch Trailer
-            </button>
+            {!hideTrailerButton && (
+              <button
+                onClick={handleTrailerClick}
+                className="btn-secondary w-full"
+              >
+                Watch Trailer
+              </button>
+            )}
           </div>
         )}
 

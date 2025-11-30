@@ -89,7 +89,9 @@ export default function TrailerModal({
       // If callback provided (from detail page), trigger registration modal
       onWatchFullSession();
     } else {
-      // Otherwise navigate to session detail page
+      // Save flag so VideoSection knows user came from trailer
+      sessionStorage.setItem('came_from_trailer', sessionSlug);
+      // Navigate to session detail page
       router.push(`/sessions/${sessionSlug}`);
     }
   };
