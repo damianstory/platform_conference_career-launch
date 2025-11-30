@@ -208,9 +208,6 @@ export default function TrailerModal({
           >
             Watch Full Session
           </button>
-          <p className="text-center text-xs text-gray-500 mt-3">
-            Registration required to watch the full session
-          </p>
         </div>
       </div>
     </div>,
