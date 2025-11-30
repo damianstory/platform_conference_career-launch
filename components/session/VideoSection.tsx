@@ -6,8 +6,6 @@ import TrailerModal from '@/components/session/TrailerModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
 import { SessionAnalytics } from '@/lib/analytics';
 
-// Temporary Loom embed URL - will be replaced with Vimeo when final videos are ready
-const TEMP_VIDEO_EMBED_URL = 'https://www.loom.com/embed/6338bd9371f84f5c81873bcb0938ef5b';
 
 interface VideoSectionProps {
   sessionSlug: string;
@@ -83,10 +81,10 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
 
         {/* Video Container - 16:9 aspect ratio */}
         <div className={`aspect-video rounded-lg overflow-hidden relative ${videoState === 'playing' ? 'bg-black' : 'bg-gradient-to-br from-blue to-navy'}`}>
-          {/* Loom iframe - shown when playing */}
-          {videoState === 'playing' && (
+          {/* Video iframe - shown when playing */}
+          {videoState === 'playing' && session.full_video_url && (
             <iframe
-              src={TEMP_VIDEO_EMBED_URL}
+              src={session.full_video_url}
               frameBorder={0}
               allowFullScreen
               className="absolute inset-0 w-full h-full"
