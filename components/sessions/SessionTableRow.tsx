@@ -1,10 +1,12 @@
 'use client'
 
+import { useState } from 'react';
 import type { Session } from '@/types';
 import IndustryBadge from './IndustryBadge';
 import { formatDescription } from '@/lib/formatDescription';
 import { useRouter } from 'next/navigation';
 import { SessionAnalytics } from '@/lib/analytics';
+import TrailerModal from '@/components/session/TrailerModal';
 
 interface SessionTableRowProps {
   session: Session;
@@ -33,6 +35,7 @@ export default function SessionTableRow({
   variant = 'default',
 }: SessionTableRowProps) {
   const router = useRouter();
+  const [isTrailerModalOpen, setIsTrailerModalOpen] = useState(false);
 
   const handleToggleWithTracking = () => {
     // Track expand/collapse
@@ -49,10 +52,8 @@ export default function SessionTableRow({
 
   const handleTrailerClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    // Track trailer view
-    SessionAnalytics.trailerViewed(session.id, session.title);
-    console.log('Watch trailer:', session.id);
-    // TODO: Implement trailer playback when needed
+    // Open trailer modal (analytics tracked inside modal)
+    setIsTrailerModalOpen(true);
   };
 
   return (
@@ -209,6 +210,16 @@ export default function SessionTableRow({
           </td>
         </tr>
       )}
+
+      {/* Trailer Modal */}
+      <TrailerModal
+        isOpen={isTrailerModalOpen}
+        onClose={() => setIsTrailerModalOpen(false)}
+        sessionTitle={session.title}
+        sessionSlug={session.slug}
+        trailerUrl={session.trailer_url || ''}
+        sessionId={session.id}
+      />
     </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import MultiStepModal from '@/components/registration/MultiStepModal';
+import TrailerModal from '@/components/session/TrailerModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
 import { SessionAnalytics } from '@/lib/analytics';
 
@@ -16,6 +17,7 @@ type VideoState = 'initial' | 'loading' | 'playing' | 'paused' | 'completed' | '
 
 export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTrailerModalOpen, setIsTrailerModalOpen] = useState(false);
   const [videoState, setVideoState] = useState<VideoState>('initial');
   const session = getSessionBySlug(sessionSlug);
 
@@ -26,6 +28,18 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   const handleWatchClick = () => {
     // Track watch button click
     SessionAnalytics.watchClicked(session.id, session.title, 'detail');
+    setIsModalOpen(true);
+  };
+
+  const handleTrailerClick = () => {
+    // Prevent opening trailer when registration modal is open
+    if (isModalOpen) return;
+    setIsTrailerModalOpen(true);
+  };
+
+  const handleWatchFullSessionFromTrailer = () => {
+    // Close trailer modal and open registration modal
+    setIsTrailerModalOpen(false);
     setIsModalOpen(true);
   };
 
@@ -71,17 +85,24 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
           {/* Other states content */}
           <div className={`flex flex-col items-center justify-center h-full text-white p-4 md:p-6 gap-4 md:gap-6 ${videoState === 'playing' ? 'hidden' : ''}`}>
 
-            {/* Initial State: Show button only (no placeholder text) */}
+            {/* Initial State: Show buttons (no placeholder text) */}
             {videoState === 'initial' && showButton && (
-              <>
-                {/* Desktop: Button inside video */}
+              <div className="hidden md:flex flex-col items-center gap-3">
+                {/* Desktop: Watch Session button */}
                 <button
                   onClick={handleWatchClick}
-                  className="btn-primary hidden md:inline-flex md:min-w-[280px]"
+                  className="btn-primary md:min-w-[280px]"
                 >
                   Watch Session
                 </button>
-              </>
+                {/* Desktop: Watch Trailer button */}
+                <button
+                  onClick={handleTrailerClick}
+                  className="btn-secondary md:min-w-[280px]"
+                >
+                  Watch Trailer
+                </button>
+              </div>
             )}
 
             {/* Loading State: Spinner */}
@@ -116,14 +137,20 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
           </div>
         </div>
 
-        {/* Mobile: Button below video - Only show in initial state */}
+        {/* Mobile: Buttons below video - Only show in initial state */}
         {showButton && (
-          <div className="mt-4 md:hidden">
+          <div className="mt-4 md:hidden space-y-3">
             <button
               onClick={handleWatchClick}
               className="btn-primary w-full"
             >
               Watch Session
+            </button>
+            <button
+              onClick={handleTrailerClick}
+              className="btn-secondary w-full"
+            >
+              Watch Trailer
             </button>
           </div>
         )}
@@ -139,6 +166,16 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
         sessionTitle={session.title}
         sessionId={session.id}
         onSubmit={handleRegistrationSuccess}
+      />
+
+      <TrailerModal
+        isOpen={isTrailerModalOpen}
+        onClose={() => setIsTrailerModalOpen(false)}
+        sessionTitle={session.title}
+        sessionSlug={session.slug}
+        trailerUrl={session.trailer_url || ''}
+        sessionId={session.id}
+        onWatchFullSession={handleWatchFullSessionFromTrailer}
       />
     </>
   );

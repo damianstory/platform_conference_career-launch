@@ -62,7 +62,7 @@ Join our session to learn more about how you can become an Agricultural Innovato
   presenter_bio: null,
   presenter_photo_url: '/images/presenters/jennifer-martinez.jpg',
   thumbnail_url: '/images/sessions/dental-hygiene-thumb.jpg',
-  trailer_url: 'https://vimeo.com/dental-hygiene-trailer',
+  trailer_url: 'https://share.descript.com/embed/Bg2y0Ei20FQ',
   full_video_url: 'https://vimeo.com/dental-hygiene-full',
   duration: 0,
   block_number: 2,
