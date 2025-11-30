@@ -128,10 +128,58 @@ export const SessionAnalytics = {
     });
   },
 
+  // Video progress milestone tracking (25%, 50%, 75%)
+  videoProgress: (sessionId: string, sessionTitle: string, milestone: 25 | 50 | 75, watchDuration: number) => {
+    trackEvent('session_video_progress', {
+      session_id: sessionId,
+      session_title: sessionTitle,
+      milestone_percent: milestone,
+      watch_duration_seconds: watchDuration,
+    });
+  },
+
+  // Video completion tracking (80%+ watched)
+  videoCompleted: (sessionId: string, sessionTitle: string, watchDuration: number, totalDuration: number) => {
+    trackEvent('session_video_completed', {
+      session_id: sessionId,
+      session_title: sessionTitle,
+      watch_duration_seconds: watchDuration,
+      total_duration_seconds: totalDuration,
+      completion_percent: Math.round((watchDuration / totalDuration) * 100),
+    });
+  },
+
   trailerViewed: (sessionId: string, sessionTitle: string) => {
     trackEvent('session_trailer_viewed', {
       session_id: sessionId,
       session_title: sessionTitle,
+    });
+  },
+
+  // Trailer to full session conversion (clicked "Watch Full Session" from trailer)
+  trailerToSessionClicked: (sessionId: string, sessionTitle: string, source: 'modal' | 'table') => {
+    trackEvent('trailer_to_session_clicked', {
+      session_id: sessionId,
+      session_title: sessionTitle,
+      source,
+    });
+  },
+
+  // Trailer closed without converting
+  trailerClosed: (sessionId: string, sessionTitle: string, watchDuration?: number) => {
+    trackEvent('trailer_closed', {
+      session_id: sessionId,
+      session_title: sessionTitle,
+      watch_duration_seconds: watchDuration,
+    });
+  },
+
+  // Session detail page viewed
+  detailViewed: (sessionId: string, sessionTitle: string, referrer?: string) => {
+    trackEvent('session_detail_viewed', {
+      session_id: sessionId,
+      session_title: sessionTitle,
+      referrer,
     });
   },
 

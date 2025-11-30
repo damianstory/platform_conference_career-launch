@@ -65,6 +65,8 @@ export default function TrailerModal({
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
+        // Track trailer closed without conversion
+        SessionAnalytics.trailerClosed(sessionId, sessionTitle);
         onClose();
       }
     };
@@ -73,17 +75,23 @@ export default function TrailerModal({
       document.addEventListener('keydown', handleEscape);
       return () => document.removeEventListener('keydown', handleEscape);
     }
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, sessionId, sessionTitle]);
 
   // Handle overlay click
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleClose();
     }
   };
 
   // Handle Watch Full Session click
   const handleWatchFullSession = () => {
+    // Track trailer to session conversion
+    SessionAnalytics.trailerToSessionClicked(
+      sessionId,
+      sessionTitle,
+      onWatchFullSession ? 'modal' : 'table'
+    );
     onClose();
     if (onWatchFullSession) {
       // If callback provided (from detail page), trigger registration modal
@@ -94,6 +102,13 @@ export default function TrailerModal({
       // Navigate to session detail page
       router.push(`/sessions/${sessionSlug}`);
     }
+  };
+
+  // Handle close without converting
+  const handleClose = () => {
+    // Track trailer closed without conversion
+    SessionAnalytics.trailerClosed(sessionId, sessionTitle);
+    onClose();
   };
 
   // Handle iframe load
@@ -157,7 +172,7 @@ export default function TrailerModal({
           {/* Close Button */}
           <button
             ref={closeButtonRef}
-            onClick={onClose}
+            onClick={handleClose}
             className="flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-blue focus:ring-offset-2"
             aria-label="Close trailer"
           >

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Player from '@vimeo/player';
 import MultiStepModal from '@/components/registration/MultiStepModal';
 import TrailerModal from '@/components/session/TrailerModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
@@ -20,9 +21,20 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   const [hideTrailerButton, setHideTrailerButton] = useState(false);
   const session = getSessionBySlug(sessionSlug);
 
-  // Check if user came from trailer modal - hide button if so
+  // Vimeo player tracking
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const playerRef = useRef<Player | null>(null);
+  const milestonesTracked = useRef<Set<25 | 50 | 75>>(new Set());
+  const hasTrackedCompletion = useRef(false);
+
+  // Track page view and check if user came from trailer modal
   useEffect(() => {
     if (typeof window !== 'undefined' && session) {
+      // Track session detail page view
+      const referrer = document.referrer || undefined;
+      SessionAnalytics.detailViewed(session.id, session.title, referrer);
+
+      // Check if came from trailer modal - hide button if so
       const cameFromTrailer = sessionStorage.getItem('came_from_trailer');
       if (cameFromTrailer === session.slug) {
         setHideTrailerButton(true);
@@ -30,6 +42,58 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
       }
     }
   }, [session]);
+
+  // Initialize Vimeo player and track video progress
+  useEffect(() => {
+    if (videoState === 'playing' && iframeRef.current && session && !playerRef.current) {
+      try {
+        const player = new Player(iframeRef.current);
+        playerRef.current = player;
+
+        // Track video progress milestones
+        player.on('timeupdate', async (data) => {
+          const percent = data.percent * 100;
+          const watchDuration = Math.round(data.seconds);
+
+          // Track 25%, 50%, 75% milestones (each only once)
+          const milestones: (25 | 50 | 75)[] = [25, 50, 75];
+          for (const milestone of milestones) {
+            if (percent >= milestone && !milestonesTracked.current.has(milestone)) {
+              milestonesTracked.current.add(milestone);
+              SessionAnalytics.videoProgress(session.id, session.title, milestone, watchDuration);
+            }
+          }
+
+          // Track completion at 80%+
+          if (percent >= 80 && !hasTrackedCompletion.current) {
+            hasTrackedCompletion.current = true;
+            const duration = await player.getDuration();
+            SessionAnalytics.videoCompleted(session.id, session.title, watchDuration, Math.round(duration));
+          }
+        });
+
+        // Also track completion when video ends
+        player.on('ended', async () => {
+          if (!hasTrackedCompletion.current) {
+            hasTrackedCompletion.current = true;
+            const duration = await player.getDuration();
+            SessionAnalytics.videoCompleted(session.id, session.title, Math.round(duration), Math.round(duration));
+          }
+        });
+      } catch (error) {
+        console.error('Failed to initialize Vimeo player:', error);
+      }
+    }
+
+    // Cleanup on unmount
+    return () => {
+      if (playerRef.current) {
+        playerRef.current.off('timeupdate');
+        playerRef.current.off('ended');
+        playerRef.current = null;
+      }
+    };
+  }, [videoState, session]);
 
   if (!session) {
     return null;
@@ -84,6 +148,7 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
           {/* Video iframe - shown when playing */}
           {videoState === 'playing' && session.full_video_url && (
             <iframe
+              ref={iframeRef}
               src={session.full_video_url}
               frameBorder={0}
               allowFullScreen
