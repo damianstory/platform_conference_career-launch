@@ -800,9 +800,9 @@ export const tradesMaster: PlatinumBoothData = {
         {
           id: 'q1',
           question: 'How much does the Canadian business events industry contribute to the economy in direct economic impact?',
-          options: ['$12 billion', '$27 billion', '$47 billion', '$85 billion'],
+          options: ['$12 billion', '$27 billion', '$47 billion', '$5 billion'],
           correctIndex: 2,
-          explanation: 'The Canadian business events industry generates $47 billion in direct economic impact, making it a major contributor to our national economy.'
+          explanation: 'The Canadian business events industry generates $47 billion in direct economic impact, making it a major contributor to our national economy. [Learn more here](https://www.destinationcanada.com/en-ca/news/international-business-events-powering-canadas-economic-future)'
         },
         {
           id: 'q2',
@@ -848,17 +848,17 @@ export const tradesMaster: PlatinumBoothData = {
         },
         {
           id: 'q8',
-          question: 'What foundational skills are most valuable in the events industry?',
-          options: ['Only technical certifications', 'Communication, emotional intelligence, and relationship building', 'Only physical strength', 'Only computer programming'],
-          correctIndex: 1,
-          explanation: 'Events is a relationship-based industry. Communication, emotional intelligence, and the ability to build relationships are transferable skills that serve you throughout your career.'
+          question: 'What is a benefit to working in events that were highlighted in the video?',
+          options: ['Travel', 'Happiness and life fulfillment', 'Community & Partnership', 'All the above'],
+          correctIndex: 3,
+          explanation: 'A career in hospitality and events lets you create moments that matter. Every day is different, filled with creativity, connection, and opportunities to shape experiences people remember long after they happen.'
         },
         {
           id: 'q9',
           question: 'Which organization can students join to network with event professionals and find mentors?',
           options: ['FIFA', 'MPI (Meeting Professionals International)', 'NHL', 'NASA'],
           correctIndex: 1,
-          explanation: 'MPI, PCMA, and CSEP are industry associations where students can volunteer, join committees, attend events, and find mentors—often with subsidized student memberships.'
+          explanation: 'MPI, PCMA, and CanSPEP offer student memberships, volunteering, committees, and mentorship.'
         },
         {
           id: 'q10',

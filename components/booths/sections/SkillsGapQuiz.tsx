@@ -61,6 +61,41 @@ function shuffleQuestionOptions(question: QuizQuestion): ShuffledQuestion {
   }
 }
 
+// Parse markdown-style links [text](url) into clickable anchor elements
+function parseExplanationWithLinks(text: string): React.ReactNode {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+  const parts: React.ReactNode[] = []
+  let lastIndex = 0
+  let match
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+    // Add the link
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue hover:underline font-medium"
+      >
+        {match[1]}
+      </a>
+    )
+    lastIndex = match.index + match[0].length
+  }
+
+  // Add remaining text after last link
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+
+  return parts.length > 0 ? parts : text
+}
+
 export default function SkillsGapQuiz({ quizData, boothId, boothSlug, boothName, sessionTitle, associatedSessionSlug }: SkillsGapQuizProps) {
   // Look up session title from slug if available
   const session = associatedSessionSlug ? getSessionBySlug(associatedSessionSlug) : null
@@ -362,7 +397,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothSlug, boothName,
                 isCorrect ? 'bg-green-50 text-green-800' : 'bg-amber-50 text-amber-800'
               }`}
             >
-              {currentQuestion.explanation}
+              {parseExplanationWithLinks(currentQuestion.explanation)}
             </p>
           )}
         </div>
@@ -582,7 +617,7 @@ export default function SkillsGapQuiz({ quizData, boothId, boothSlug, boothName,
                         {isCorrect ? 'Correct!' : 'Not quite!'}
                       </p>
                       <p className="text-base text-gray-700">
-                        {currentQuestion.explanation}
+                        {parseExplanationWithLinks(currentQuestion.explanation)}
                       </p>
                     </div>
                   </div>
