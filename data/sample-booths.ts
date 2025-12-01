@@ -238,7 +238,7 @@ export const futureBuild: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/1bH_bWyDZNlOKopAOJNtGT-fmpnd1mXhk/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1QdPmFRPPPgxhyTrKnl7YCBx_6LTTTDgo/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
