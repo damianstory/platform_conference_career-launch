@@ -2891,7 +2891,7 @@ export const legalServices: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/15Is3efUPPUh7X1qQuCGi8oca_P0fzEAE/embed?start=false&loop=false',
+    embedUrl: 'https://docs.google.com/presentation/d/1b7dAV5fupFs9B-SKeV3rhOG-el_6Br4e/embed?start=false&loop=false',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities'
   },
