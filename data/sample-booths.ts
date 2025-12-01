@@ -419,7 +419,7 @@ export const financeHub: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/1jquwMp9MQeHigJQljm405mE5WOabBkou/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
+    embedUrl: 'https://docs.google.com/presentation/d/1WKuAbyqjEX19QEV-j35bas9n1UZ0ROWO/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
     title: 'Career Pathways Presentation',
     description: 'Interactive presentation on career opportunities',
     type: 'google-slides'
@@ -1146,7 +1146,7 @@ export const greenPower: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/1MKmSV8ATdQ2xfHyTl2iOwvhSCtP1dpzv/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
+    embedUrl: 'https://docs.google.com/presentation/d/1bQd3L0VgQjYt_On_OgLpD0j43frtoX8A/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
     type: 'google-slides',
     title: 'CWB Welding Foundation Presentation',
     description: 'Learn about welding careers and certification programs'
@@ -2468,7 +2468,7 @@ export const bioMedical: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://drive.google.com/file/d/1CKksmJYxRPRZcHYhiqPyvJk7j9ZoDYFq/view?usp=sharing',
+    embedUrl: 'https://drive.google.com/file/d/1b9D6FnQXzgrzDHWaOsNtDfWdldx8vyTU/view?usp=sharing',
     type: 'google-drive-pdf',
     title: 'Kids Help Phone Services',
     description: '24/7 support for young people across Canada'
@@ -3246,7 +3246,7 @@ export const sportsManagement: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/1DShvWaweroZWpGEsP7uXKs2oxetbVuGSOarXPoEw70I/edit?usp=sharing',
+    embedUrl: 'https://docs.google.com/presentation/d/1qzZSwd91eGn5i1SiuyXUc2hh_ATJH-kg9_NwipSUQEE/edit?usp=sharing',
     type: 'google-slides',
     title: 'Scholarship Opportunities Guide',
     description: 'Find and apply for scholarships and financial aid'
@@ -3814,7 +3814,7 @@ export const fashionDesign: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://drive.google.com/file/d/1s4HjPDbo4woC6gVEE1kND0XLjjSN341G/view?usp=sharing',
+    embedUrl: 'https://drive.google.com/file/d/1GnIHsb-3leM3O4jgUHJyME2OXJg-kqTv/view?usp=sharing',
     type: 'google-drive-pdf',
     title: 'Agriculture Career Pathways',
     description: 'Explore careers in Canadian agriculture'
@@ -4240,7 +4240,7 @@ export const publicHealth: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://docs.google.com/presentation/d/1Zl4PXixJ_Uf8KHNHbaSIY_8zFP34Q7jXtrwITPaj0NU/edit?usp=sharing',
+    embedUrl: 'https://docs.google.com/presentation/d/18QLIsWFdJt6emIBb2jW42hN60TjIA9RLwUd4FblLsIE/edit?usp=sharing',
     type: 'google-slides',
     title: 'Tourism Career Opportunities',
     description: 'Careers in Ontario\'s tourism and hospitality sector'
@@ -4907,7 +4907,7 @@ export const hsmcBooth: PlatinumBoothData = {
     }
   ],
   sessionSlides: {
-    embedUrl: 'https://drive.google.com/file/d/1RJxTIR2V6FBnOdEz6pQq6e5ABfuGGlHu/view?usp=sharing',
+    embedUrl: 'https://drive.google.com/file/d/1-mnd-8Jp9wfNeMGtiTf44ql39EUHmFtX/view?usp=sharing',
     type: 'google-drive-pdf',
     title: 'HSMC Program Information',
     description: 'Learn about the Canadian Fire Alarm Technology Program'
