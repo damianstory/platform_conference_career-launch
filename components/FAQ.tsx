@@ -45,7 +45,7 @@ const faqItems: AccordionItem[] = [
     title: 'How do the Educator Prizes work?',
     content: (
       <div>
-        <p className="mb-2">There are a few different types of participation based prizes available for educators.</p>
+        <p className="mb-2">There are a few different types of participation based prizes available for educators during the week of December 1st through 5th.</p>
 
         <p><strong>Educator Prizes (5 x $100 Prizes):</strong></p>
         <ul className="list-disc ml-6 mt-2 mb-4">
@@ -134,6 +134,15 @@ const faqItems: AccordionItem[] = [
         any of the sessions. They&apos;ll be asked to select their school board and school but not
         enter any personally identifiable information. This is simply for reporting purposes to be
         able to report to our board partners about participation in the event.
+      </p>
+    ),
+  },
+  {
+    id: 'faq-18',
+    title: 'Can students/families watch from home?',
+    content: (
+      <p>
+        Absolutely. Career Launch is better with popcorn.
       </p>
     ),
   },
@@ -256,6 +265,38 @@ const faqItems: AccordionItem[] = [
         </a>
         ) at any point.
       </p>
+    ),
+  },
+  {
+    id: 'faq-17',
+    title: 'What is your privacy policy and terms of use?',
+    content: (
+      <div>
+        <p>
+          Because Career Launch is being run by myBlueprint, by registering for a session, you are consenting to the myBlueprint privacy policy and terms of service.
+          <br />
+          <br />
+          If you are already a user of myBlueprint, you agreed to this when creating your account, however, by registering for a session you also consent to the privacy policy and terms of use.
+          <br />
+          <br />
+          Access the myBlueprint{' '}
+          <a href="https://myblueprint.ca/privacy" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+            Privacy Policy
+          </a>
+          {' '}and{' '}
+          <a href="https://myblueprint.ca/terms" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+            Terms of Use
+          </a>.
+        </p>
+        <p className="text-gray-400 my-2">--</p>
+        <p className="font-semibold mb-2">Specific to Career Launch:</p>
+        <ul className="list-disc ml-6">
+          <li>We do not collect student name or email as part of registration. We ask for school board, school, and grade for reporting purposes.</li>
+          <li>All Career Launch related data will be destroyed in July, 2026.</li>
+          <li>Educators can request to have their registration data deleted at any point.</li>
+          <li>Registration data is only being collected for reporting purposes to share with school boards and presenters.</li>
+        </ul>
+      </div>
     ),
   },
 ];
