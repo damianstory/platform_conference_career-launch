@@ -27,7 +27,6 @@ interface RegistrationPayload {
   user_type: 'educator' | 'student';
   session_id: string;
   session_title?: string;
-  first_name?: string;
   email?: string;
   board_id: string;
   board_name: string;
@@ -104,10 +103,6 @@ export async function POST(request: NextRequest) {
 
     // Educator-specific validation
     if (body.user_type === 'educator') {
-      if (!body.first_name || body.first_name.trim().length === 0) {
-        errors.push('First name is required');
-      }
-
       if (!body.email || !validateEmail(body.email)) {
         errors.push('Valid email is required');
       }
@@ -156,7 +151,6 @@ export async function POST(request: NextRequest) {
 
     // Build cookie data (only for educators who have identifiable info)
     const cookieData = body.user_type === 'educator' ? {
-      firstName: body.first_name,
       email: body.email,
       boardId: body.board_id,
       schoolId: body.school_id,

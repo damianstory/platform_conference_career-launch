@@ -12,7 +12,6 @@ import { ONTARIO_BOARDS, SCHOOLS_BY_BOARD } from '@/lib/mock-data/registration';
 export type UserType = 'educator' | 'student' | null;
 
 export interface RegistrationFormData {
-  firstName: string;
   email: string;
   boardId: string;
   schoolId: string;
@@ -21,7 +20,6 @@ export interface RegistrationFormData {
 }
 
 interface FormErrors {
-  firstName?: string;
   email?: string;
   boardId?: string;
   schoolId?: string;
@@ -46,7 +44,6 @@ function getSchoolName(boardId: string, schoolId: string): string {
 export function useRegistrationForm() {
   const [userType, setUserType] = useState<UserType>(null);
   const [formData, setFormData] = useState<RegistrationFormData>({
-    firstName: '',
     email: '',
     boardId: '',
     schoolId: '',
@@ -68,18 +65,14 @@ export function useRegistrationForm() {
   };
 
   const validateField = (name: keyof RegistrationFormData, value: string): string | undefined => {
-    // Student-specific validation: skip firstName, email, and classSize
+    // Student-specific validation: skip email and classSize
     if (userType === 'student') {
-      if (name === 'firstName' || name === 'email' || name === 'classSize') {
+      if (name === 'email' || name === 'classSize') {
         return undefined; // These fields are not required for students
       }
     }
 
     switch (name) {
-      case 'firstName':
-        if (!value.trim()) return 'First name is required';
-        // Allow single-character names (some people have them)
-        break;
       case 'email':
         if (!value.trim()) return 'Email is required';
         if (!validateEmail(value)) return 'Please enter a valid email address';
@@ -176,7 +169,6 @@ export function useRegistrationForm() {
       grade_level: formData.gradeLevel,
       // Educator-specific fields
       ...(userType === 'educator' && {
-        first_name: formData.firstName,
         email: formData.email,
         class_size: formData.classSize,
       }),
@@ -258,9 +250,8 @@ export function useRegistrationForm() {
       );
     }
 
-    // For educators, require all fields
+    // For educators, require all fields (except firstName which was removed)
     return (
-      formData.firstName.trim().length >= 2 &&
       validateEmail(formData.email) &&
       formData.boardId !== '' &&
       formData.schoolId !== '' &&

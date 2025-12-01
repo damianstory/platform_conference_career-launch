@@ -206,7 +206,7 @@ export default function MultiStepModal({
       return false; // Selection cards handle their own navigation
     }
     if (currentStep === 1) {
-      return formData.firstName && formData.email && !errors.firstName && !errors.email;
+      return formData.email && !errors.email;
     } else if (currentStep === 2) {
       return formData.boardId && formData.schoolId && !errors.boardId && !errors.schoolId;
     } else if (currentStep === 3) {
@@ -460,35 +460,13 @@ export default function MultiStepModal({
 
               <div>
                 <label
-                  htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  First Name
-                </label>
-                <input
-                  ref={firstInputRef}
-                  id="firstName"
-                  type="text"
-                  value={formData.firstName}
-                  onChange={(e) => updateField('firstName', e.target.value)}
-                  placeholder="Jane"
-                  className={`w-full px-3.5 py-2 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] ${
-                    errors.firstName ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                />
-                {errors.firstName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
-                )}
-              </div>
-
-              <div>
-                <label
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Email
                 </label>
                 <input
+                  ref={firstInputRef}
                   id="email"
                   type="email"
                   value={formData.email}
@@ -662,10 +640,6 @@ export default function MultiStepModal({
               </div>
 
               <div className="bg-gray-50 rounded-lg p-4 space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Name:</span>
-                  <span className="text-sm font-medium text-gray-900">{formData.firstName}</span>
-                </div>
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-600">Email:</span>
                   <span className="text-sm font-medium text-gray-900">{formData.email}</span>

@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Player from '@vimeo/player';
-import MultiStepModal from '@/components/registration/MultiStepModal';
+import InlineRegistrationFlow from '@/components/session/InlineRegistrationFlow';
 import TrailerModal from '@/components/session/TrailerModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
 import { SessionAnalytics } from '@/lib/analytics';
@@ -12,10 +12,9 @@ interface VideoSectionProps {
   sessionSlug: string;
 }
 
-type VideoState = 'initial' | 'loading' | 'playing' | 'paused' | 'completed' | 'error';
+type VideoState = 'initial' | 'registration' | 'loading' | 'playing' | 'paused' | 'completed' | 'error';
 
 export default function VideoSection({ sessionSlug }: VideoSectionProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTrailerModalOpen, setIsTrailerModalOpen] = useState(false);
   const [videoState, setVideoState] = useState<VideoState>('initial');
   const [hideTrailerButton, setHideTrailerButton] = useState(false);
@@ -102,35 +101,37 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   const handleWatchClick = () => {
     // Track watch button click
     SessionAnalytics.watchClicked(session.id, session.title, 'detail');
-    setIsModalOpen(true);
+    setVideoState('registration');
   };
 
   const handleTrailerClick = () => {
-    // Prevent opening trailer when registration modal is open
-    if (isModalOpen) return;
+    // Prevent opening trailer when registration is in progress
+    if (videoState === 'registration') return;
     setIsTrailerModalOpen(true);
   };
 
   const handleWatchFullSessionFromTrailer = () => {
-    // Close trailer modal and open registration modal
+    // Close trailer modal and show inline registration
     setIsTrailerModalOpen(false);
-    setIsModalOpen(true);
+    setVideoState('registration');
   };
 
-  const handleRegistrationSuccess = (data: any) => {
-    console.log('Form data:', data);
-    setIsModalOpen(false);
+  const handleRegistrationSuccess = (data: { userType: string | null }) => {
+    console.log('Registration complete:', data);
 
-    // Simulate video loading → playing transition
+    // Transition to loading state
     setVideoState('loading');
 
-    // After brief delay, simulate video playing
-    // (In production, this will be triggered by Vimeo player's onPlay event)
+    // After brief delay, start video playing
     setTimeout(() => {
       setVideoState('playing');
       // Track video started
-      SessionAnalytics.videoStarted(session.id, session.title, data.userType);
-    }, 500); // Half-second simulates video initialization
+      SessionAnalytics.videoStarted(session.id, session.title, data.userType || 'unknown');
+    }, 500);
+  };
+
+  const handleRegistrationCancel = () => {
+    setVideoState('initial');
   };
 
   // Button only visible in initial state
@@ -143,75 +144,89 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
           Watch Session
         </h2>
 
-        {/* Video Container - 16:9 aspect ratio */}
-        <div className={`aspect-video rounded-lg overflow-hidden relative ${videoState === 'playing' ? 'bg-black' : 'bg-gradient-to-br from-blue to-navy'}`}>
-          {/* Video iframe - shown when playing */}
-          {videoState === 'playing' && session.full_video_url && (
-            <iframe
-              ref={iframeRef}
-              src={session.full_video_url}
-              frameBorder={0}
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-              title="Session Video"
+        {/* Video Container - wrapper that allows expansion below */}
+        <div className="relative">
+          {/* Video/Registration Container */}
+          {videoState === 'registration' ? (
+            // Registration Flow - uses its own container structure
+            <InlineRegistrationFlow
+              sessionId={session.id}
+              sessionTitle={session.title}
+              onRegistrationComplete={handleRegistrationSuccess}
+              onCancel={handleRegistrationCancel}
             />
-          )}
+          ) : (
+            // Standard Video Container - 16:9 aspect ratio
+            <div className={`aspect-video rounded-lg overflow-hidden relative ${videoState === 'playing' ? 'bg-black' : 'bg-gradient-to-br from-blue to-navy'}`}>
+              {/* Video iframe - shown when playing */}
+              {videoState === 'playing' && session.full_video_url && (
+                <iframe
+                  ref={iframeRef}
+                  src={session.full_video_url}
+                  frameBorder={0}
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                  title="Session Video"
+                />
+              )}
 
-          {/* Other states content */}
-          <div className={`flex flex-col items-center justify-center h-full text-white p-4 md:p-6 gap-4 md:gap-6 ${videoState === 'playing' ? 'hidden' : ''}`}>
+              {/* Other states content */}
+              <div className={`flex flex-col items-center justify-center h-full text-white p-4 md:p-6 gap-4 md:gap-6 ${videoState === 'playing' ? 'hidden' : ''}`}>
 
-            {/* Initial State: Show buttons (no placeholder text) */}
-            {videoState === 'initial' && showButton && (
-              <div className="hidden md:flex flex-col items-center gap-3">
-                {/* Desktop: Watch Session button */}
-                <button
-                  onClick={handleWatchClick}
-                  className="btn-primary md:min-w-[280px]"
-                >
-                  Watch Session
-                </button>
-                {/* Desktop: Watch Trailer button - hidden if came from trailer */}
-                {!hideTrailerButton && (
-                  <button
-                    onClick={handleTrailerClick}
-                    className="btn-secondary md:min-w-[280px]"
-                  >
-                    Watch Trailer
-                  </button>
+                {/* Initial State: Show buttons (no placeholder text) */}
+                {videoState === 'initial' && showButton && (
+                  <div className="hidden md:flex flex-col items-center gap-3">
+                    {/* Desktop: Watch Session button */}
+                    <button
+                      onClick={handleWatchClick}
+                      className="btn-primary md:min-w-[280px]"
+                    >
+                      Watch Session
+                    </button>
+                    {/* Desktop: Watch Trailer button - hidden if came from trailer */}
+                    {!hideTrailerButton && (
+                      <button
+                        onClick={handleTrailerClick}
+                        className="btn-secondary md:min-w-[280px]"
+                      >
+                        Watch Trailer
+                      </button>
+                    )}
+                  </div>
+                )}
+
+                {/* Loading State: Spinner */}
+                {videoState === 'loading' && (
+                  <div className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent" />
+                    <span className="sr-only">Loading video...</span>
+                  </div>
+                )}
+
+                {/* Paused State: Show resume message */}
+                {videoState === 'paused' && (
+                  <div className="flex flex-col items-center justify-center gap-4">
+                    <div className="text-4xl">⏸️</div>
+                    <p className="text-lg font-medium">Video paused</p>
+                  </div>
+                )}
+
+                {/* Error State: Retry option */}
+                {videoState === 'error' && (
+                  <div className="flex flex-col items-center justify-center gap-4">
+                    <div className="text-4xl">⚠️</div>
+                    <p className="text-lg">Video unavailable</p>
+                    <button
+                      onClick={() => setVideoState('initial')}
+                      className="btn-primary"
+                    >
+                      Try Again
+                    </button>
+                  </div>
                 )}
               </div>
-            )}
-
-            {/* Loading State: Spinner */}
-            {videoState === 'loading' && (
-              <div className="flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent" />
-                <span className="sr-only">Loading video...</span>
-              </div>
-            )}
-
-            {/* Paused State: Show resume message */}
-            {videoState === 'paused' && (
-              <div className="flex flex-col items-center justify-center gap-4">
-                <div className="text-4xl">⏸️</div>
-                <p className="text-lg font-medium">Video paused</p>
-              </div>
-            )}
-
-            {/* Error State: Retry option */}
-            {videoState === 'error' && (
-              <div className="flex flex-col items-center justify-center gap-4">
-                <div className="text-4xl">⚠️</div>
-                <p className="text-lg">Video unavailable</p>
-                <button
-                  onClick={() => setVideoState('initial')}
-                  className="btn-primary"
-                >
-                  Try Again
-                </button>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Mobile: Buttons below video - Only show in initial state */}
@@ -238,14 +253,6 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
           Click &ldquo;Watch Session&rdquo; to register and start the video.
         </p>
       </div>
-
-      <MultiStepModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        sessionTitle={session.title}
-        sessionId={session.id}
-        onSubmit={handleRegistrationSuccess}
-      />
 
       <TrailerModal
         isOpen={isTrailerModalOpen}
