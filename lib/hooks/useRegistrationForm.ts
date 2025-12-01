@@ -1,8 +1,13 @@
 'use client';
 
-import { useState, useCallback } from 'react';
-import { supabase, RegistrationRecord } from '@/lib/supabase/client';
+import { useState, useCallback, useRef } from 'react';
 import { ONTARIO_BOARDS, SCHOOLS_BY_BOARD } from '@/lib/mock-data/registration';
+
+// =============================================================================
+// REVERT INSTRUCTIONS: If the API route causes issues, uncomment the line below
+// and change submitForm to use the OLD DIRECT SUPABASE VERSION at the bottom
+// =============================================================================
+// import { supabase, RegistrationRecord } from '@/lib/supabase/client';
 
 export type UserType = 'educator' | 'student' | null;
 
@@ -52,6 +57,11 @@ export function useRegistrationForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
+  // Spam protection: track when form was loaded
+  const formLoadedAt = useRef<number>(Date.now());
+  // Honeypot field value (should always be empty for real users)
+  const honeypotValue = useRef<string>('');
+
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -68,7 +78,7 @@ export function useRegistrationForm() {
     switch (name) {
       case 'firstName':
         if (!value.trim()) return 'First name is required';
-        if (value.trim().length < 2) return 'First name must be at least 2 characters';
+        // Allow single-character names (some people have them)
         break;
       case 'email':
         if (!value.trim()) return 'Email is required';
@@ -138,13 +148,23 @@ export function useRegistrationForm() {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Function to update honeypot value (called from hidden field in modal)
+  const setHoneypot = useCallback((value: string) => {
+    honeypotValue.current = value;
+  }, []);
+
+  // Reset form loaded timestamp (call when modal opens)
+  const resetFormTimestamp = useCallback(() => {
+    formLoadedAt.current = Date.now();
+  }, []);
+
   const submitForm = async (sessionId: string, sessionTitle?: string): Promise<boolean> => {
     if (!validateForm()) {
       return false;
     }
 
-    // Prepare registration record for Supabase
-    const registrationData: RegistrationRecord = {
+    // Prepare registration data for API
+    const registrationPayload = {
       user_type: userType as 'educator' | 'student',
       session_id: sessionId,
       session_title: sessionTitle,
@@ -154,33 +174,79 @@ export function useRegistrationForm() {
       school_name: getSchoolName(formData.boardId, formData.schoolId),
       is_guest: formData.boardId === 'guest',
       grade_level: formData.gradeLevel,
+      // Educator-specific fields
+      ...(userType === 'educator' && {
+        first_name: formData.firstName,
+        email: formData.email,
+        class_size: formData.classSize,
+      }),
+      // Spam protection fields
+      _honeypot: honeypotValue.current,
+      _timestamp: formLoadedAt.current,
     };
 
-    // Add educator-specific fields
-    if (userType === 'educator') {
-      registrationData.first_name = formData.firstName;
-      registrationData.email = formData.email;
-      registrationData.class_size = formData.classSize;
-    }
-
     try {
-      console.log('Attempting to save registration:', registrationData);
+      console.log('Submitting registration via API:', { sessionId, userType });
 
-      const { error } = await supabase
-        .from('registrations')
-        .insert([registrationData]);
+      const response = await fetch('/api/submit-registration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(registrationPayload),
+      });
 
-      if (error) {
-        console.error('Error saving registration:', error.message);
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        console.error('Registration API error:', result.error, result.details);
         return false;
       }
 
+      console.log('Registration successful:', result.id);
       return true;
     } catch (err) {
-      console.error('Unexpected error saving registration:', err);
+      console.error('Unexpected error submitting registration:', err);
       return false;
     }
   };
+
+  // =============================================================================
+  // OLD DIRECT SUPABASE VERSION - Uncomment this and comment out the above
+  // submitForm if you need to revert quickly
+  // =============================================================================
+  // const submitFormDirectSupabase = async (sessionId: string, sessionTitle?: string): Promise<boolean> => {
+  //   if (!validateForm()) {
+  //     return false;
+  //   }
+  //   const registrationData: RegistrationRecord = {
+  //     user_type: userType as 'educator' | 'student',
+  //     session_id: sessionId,
+  //     session_title: sessionTitle,
+  //     board_id: formData.boardId,
+  //     board_name: getBoardName(formData.boardId),
+  //     school_id: formData.schoolId,
+  //     school_name: getSchoolName(formData.boardId, formData.schoolId),
+  //     is_guest: formData.boardId === 'guest',
+  //     grade_level: formData.gradeLevel,
+  //   };
+  //   if (userType === 'educator') {
+  //     registrationData.first_name = formData.firstName;
+  //     registrationData.email = formData.email;
+  //     registrationData.class_size = formData.classSize;
+  //   }
+  //   try {
+  //     const { error } = await supabase.from('registrations').insert([registrationData]);
+  //     if (error) {
+  //       console.error('Error saving registration:', error.message);
+  //       return false;
+  //     }
+  //     return true;
+  //   } catch (err) {
+  //     console.error('Unexpected error saving registration:', err);
+  //     return false;
+  //   }
+  // };
 
   const isFormValid = (): boolean => {
     if (userType === 'student') {
@@ -230,5 +296,8 @@ export function useRegistrationForm() {
     submitForm,
     isFormValid,
     validateForm,
+    // Spam protection helpers
+    setHoneypot,
+    resetFormTimestamp,
   };
 }

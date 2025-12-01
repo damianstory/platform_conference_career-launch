@@ -42,6 +42,9 @@ export default function MultiStepModal({
     updateField,
     submitForm,
     isFormValid,
+    // Spam protection
+    setHoneypot,
+    resetFormTimestamp,
   } = useRegistrationForm();
 
   const [currentStep, setCurrentStep] = useState<ModalStep>('user-type');
@@ -58,13 +61,17 @@ export default function MultiStepModal({
       // Start with user-type selection
       setCurrentStep('user-type');
       resetUserType();
+
+      // Reset spam protection timestamp when modal opens
+      resetFormTimestamp();
+
       document.body.style.overflow = 'hidden';
 
       return () => {
         document.body.style.overflow = '';
       };
     }
-  }, [isOpen, resetUserType, sessionId, sessionTitle]);
+  }, [isOpen, resetUserType, resetFormTimestamp, sessionId, sessionTitle]);
 
   // Focus first input after step changes
   useEffect(() => {
@@ -382,6 +389,25 @@ export default function MultiStepModal({
         <div
           className={`px-4 md:px-6 py-2 md:py-3 flex-grow ${currentStep !== 'user-type' ? 'overflow-y-auto' : ''}`}
         >
+          {/* Honeypot field - hidden from real users, bots will fill it */}
+          <input
+            type="text"
+            name="website_url"
+            tabIndex={-1}
+            autoComplete="off"
+            onChange={(e) => setHoneypot(e.target.value)}
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+              top: '-9999px',
+              opacity: 0,
+              height: 0,
+              width: 0,
+              zIndex: -1,
+            }}
+            aria-hidden="true"
+          />
+
           {/* User Type Selection */}
           {currentStep === 'user-type' && (
             <UserTypeSelection

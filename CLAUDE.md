@@ -80,10 +80,9 @@ Jamstack with Server-Side Rendering (SSR):
 │   ├── page.tsx            # Booths expo hall with filtering (PUBLIC)
 │   └── [slug]/
 │       └── page.tsx        # Booth detail page with bento layout (PUBLIC)
-└── api/                     # API routes (to be implemented)
-    ├── submit-registration/
-    ├── update-viewing-event/
-    └── complete-viewing-event/
+└── api/
+    └── submit-registration/
+        └── route.ts         # Registration API with spam protection (IMPLEMENTED)
 
 /components
 ├── Accordion.tsx            # Reusable accordion with 'blocks' variant
@@ -242,7 +241,9 @@ npm run test:coverage    # Run tests with coverage report
   - Form state management with validation
   - Cookie read/write functionality
   - Pre-fill detection and field population
-  - **Supabase integration**: Form submissions save to `registrations` table
+  - **API Route integration**: Form submissions go through `/api/submit-registration` with spam protection
+  - Honeypot field and timing-based spam detection (school-friendly, no IP blocking)
+  - Fallback: Direct Supabase code commented out with revert instructions
 - **Mock Registration Data (`/lib/mock-data/registration.ts`)**: **COMPLETED**
   - 29 Ontario school boards with hundreds of schools (comprehensive coverage)
   - **Guest option:** "Not Listed - Watching as Guest" at bottom of boards dropdown
@@ -473,40 +474,69 @@ Two-tier sponsor booth system:
 
 ## API Routes
 
-### POST /api/submit-registration
-**Purpose:** Process combined registration form (THE ONLY form in the entire platform)
-**Trigger:** User clicks "Start Video" button in modal after filling all 6 required fields
-**Payload:** `{ email, name, boardId, schoolId, role, classSize, gradeLevel, sessionId }`
+### POST /api/submit-registration (IMPLEMENTED)
+**Purpose:** Process registration form with spam protection
+**Trigger:** User clicks "Start Video" button in modal after filling required fields
+
+**Payload:**
+```typescript
+{
+  user_type: 'educator' | 'student',
+  session_id: string,
+  session_title?: string,
+  board_id: string,
+  board_name: string,
+  school_id: string,
+  school_name: string,
+  is_guest?: boolean,
+  grade_level: string,
+  // Educator-only fields:
+  first_name?: string,
+  email?: string,
+  class_size?: string,
+  // Spam protection (stripped before DB insert):
+  _honeypot?: string,    // Should be empty (bots fill this)
+  _timestamp?: number,   // When form was loaded
+}
+```
+
+**Spam Protection (non-IP-based, school-friendly):**
+1. **Honeypot field:** Hidden field that bots fill but humans never see
+   - If filled → silently return fake success (don't tip off bots)
+2. **Timing check:** Reject submissions faster than 1 second
+   - Real users take several seconds to review/submit
+   - If < 1 second → silently return fake success
+
 **Logic:**
-1. Validate all 6 fields are present and valid
-2. Check if user exists (by email)
-3. If new user: INSERT into users table
-4. If existing user: UPDATE user profile (name, board, school, role can change)
-5. Always: INSERT new viewing_event record (even for same session - captures different class contexts)
-6. Set/update 7-day cookie with all form values
-7. Return success with IDs
-**Response:** `{ success: true, userId, viewingEventId }`
+1. Check honeypot field (reject if filled)
+2. Check timing (reject if < 1 second)
+3. Validate required fields (user_type, session_id, board_id, school_id, grade_level)
+4. Validate educator-specific fields if user_type === 'educator'
+5. INSERT into `registrations` table (no SELECT due to RLS)
+6. Set secure cookie for educators (7-day expiration)
+7. Return success
+
+**Response:** `{ success: true, userType: string }`
+
 **Error Cases:**
-- Missing required fields → 400 Bad Request
-- Invalid email format → 400 Bad Request
-- Invalid boardId/schoolId → 400 Bad Request
-- Database error → 500 Internal Server Error
+- Validation failed → 400 with `{ success: false, error: 'Validation failed', details: [...] }`
+- Database error → 500 with `{ success: false, error: 'Failed to save registration' }`
 
-### POST /api/update-viewing-event
-**Purpose:** Track video progress (called every 5 seconds)
-**Payload:** `{ viewingEventId, watchDuration, completionPercentage }`
-**Logic:** UPDATE viewing_events SET watch_duration, completion_percentage
+**Revert Instructions:** If issues occur, the old direct Supabase code is commented out in `/lib/hooks/useRegistrationForm.ts` with "OLD DIRECT SUPABASE VERSION" label.
 
-### POST /api/complete-viewing-event
-**Purpose:** Mark video as completed (≥80% watched)
-**Payload:** `{ viewingEventId }`
-**Logic:** UPDATE viewing_events SET completed = true, completed_at = NOW()
+### Video Tracking (GA4 Only)
+Video progress tracking is handled via Google Analytics 4 in `/lib/analytics.ts`:
+- `SessionAnalytics.videoStarted()` - When video begins playing
+- `SessionAnalytics.videoProgress()` - At 25%, 50%, 75% milestones
+- `SessionAnalytics.videoCompleted()` - At 80%+ watched or video ended
 
-### POST /api/track-booth-interaction
-**Purpose:** Track educator engagement with booth content
-**Payload:** `{ boothId, interactionType, resourceId? }`
-**Logic:** INSERT into booth_interactions (educator_id, booth_id, type)
-**Interaction Types:** view, resource_download, video_watch, link_click
+**Note:** The `viewing_events` Supabase table exists but is not currently populated. Video tracking goes to GA4 only.
+
+### Future API Routes (Not Yet Implemented)
+The following routes were planned but not yet built:
+- `POST /api/update-viewing-event` - Track video progress to Supabase
+- `POST /api/complete-viewing-event` - Mark video as completed
+- `POST /api/track-booth-interaction` - Track booth engagement
 
 ## Accessibility Requirements
 
