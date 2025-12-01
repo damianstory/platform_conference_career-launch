@@ -24,6 +24,7 @@ export interface Session {
   updated_at: string;
   display_order: number;
   lesson_plan_url: string | null;
+  isFeatured?: boolean;
 }
 
 // ============================================================================
