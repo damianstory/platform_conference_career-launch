@@ -4856,6 +4856,43 @@ export const degreeHub: StandardBoothData = {
   }
 }
 
+// Shad Canada - External Booth
+export const shadCanada: StandardBoothData = {
+  id: 'shad-canada',
+  name: 'Shad Canada Scholarships',
+  slug: 'shad-canada',
+  tier: 'standard',
+  industries: ['Non-Profit/Education'],
+  organizationType: 'activities',
+  pathway: 'general',
+  logo: '/logos/shad-canada.png',
+  imageScale: 0.8,
+  tagline: 'Earn one of 5 Shad Entrance Scholarships!',
+  description: 'Shad Canada offers entrance scholarships to exceptional students. Explore opportunities to earn one of 5 Shad Entrance Scholarships and launch your future.',
+  website: 'https://www.industryimmersionseries.ca/sponsors/shad',
+  externalUrl: 'https://www.industryimmersionseries.ca/sponsors/shad',
+  video: {
+    url: 'https://www.industryimmersionseries.ca/sponsors/shad',
+    type: 'custom',
+    title: 'Shad Canada Scholarships',
+    description: 'Earn one of 5 Shad Entrance Scholarships!'
+  },
+  resources: [],
+  primaryCTA: {
+    text: 'Learn More',
+    url: 'https://www.industryimmersionseries.ca/sponsors/shad',
+    type: 'learn-more'
+  },
+  contact: {
+    email: 'info@shad.ca',
+    socialLinks: []
+  },
+  brandColors: {
+    primary: '#0092FF',
+    secondary: '#22224C'
+  }
+}
+
 export const hsmcBooth: PlatinumBoothData = {
   id: 'health-safety-management-college',
   name: 'Health and Safety Management College (HSMC)',
@@ -5052,7 +5089,8 @@ export const allBooths: Array<PlatinumBoothData | StandardBoothData> = [
   universityOfGuelph,           // University of Guelph
   industryImmersionSeries,      // Industry Immersion Series
   careerMythBuster,             // Career Myth Buster
-  degreeHub                     // DegreeHub Survey
+  degreeHub,                    // DegreeHub Survey
+  shadCanada                    // Shad Canada Entrance Scholarship
 ]
 
 export const platinumBooths = allBooths.filter(booth => booth.tier === 'platinum') as PlatinumBoothData[]
