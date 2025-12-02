@@ -423,7 +423,9 @@ export default function InlineRegistrationFlow({
               {/* Grade Level Buttons */}
               {currentScreen === 'grade' && (
                 <div className="flex flex-wrap justify-center gap-2">
-                  {GRADE_LEVELS.map(grade => (
+                  {GRADE_LEVELS
+                    .filter(grade => userType === 'educator' || grade.id !== 'mixed')
+                    .map(grade => (
                     <button
                       key={grade.id}
                       onClick={() => updateField('gradeLevel', grade.id)}
@@ -573,7 +575,9 @@ export default function InlineRegistrationFlow({
           {currentScreen === 'grade' && (
             <div className="w-full">
               <div className="flex flex-wrap gap-3 justify-center">
-                {GRADE_LEVELS.map(grade => (
+                {GRADE_LEVELS
+                  .filter(grade => userType === 'educator' || grade.id !== 'mixed')
+                  .map(grade => (
                   <button
                     key={grade.id}
                     onClick={() => updateField('gradeLevel', grade.id)}
