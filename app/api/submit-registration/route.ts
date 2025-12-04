@@ -34,7 +34,7 @@ interface RegistrationPayload {
   school_name: string;
   is_guest?: boolean;
   class_size?: string;
-  grade_level: string;
+  grade_level?: string; // Optional for solo educators
   // Spam protection fields
   _honeypot?: string; // Should be empty (bots fill this)
   _timestamp?: number; // When form was loaded (for timing check)
@@ -97,7 +97,9 @@ export async function POST(request: NextRequest) {
       errors.push('School is required');
     }
 
-    if (!body.grade_level || body.grade_level.trim().length === 0) {
+    // Grade level is required UNLESS educator is exploring solo
+    const isSoloEducator = body.user_type === 'educator' && body.class_size === 'exploring-solo';
+    if (!isSoloEducator && (!body.grade_level || body.grade_level.trim().length === 0)) {
       errors.push('Grade level is required');
     }
 

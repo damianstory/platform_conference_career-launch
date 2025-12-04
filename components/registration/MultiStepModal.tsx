@@ -210,6 +210,10 @@ export default function MultiStepModal({
     } else if (currentStep === 2) {
       return formData.boardId && formData.schoolId && !errors.boardId && !errors.schoolId;
     } else if (currentStep === 3) {
+      // Solo educators only need class size, others need both class size and grade level
+      if (formData.classSize === 'exploring-solo') {
+        return true;  // Solo selection is complete
+      }
       return formData.classSize !== '' && formData.gradeLevel !== '';
     } else if (currentStep === 'student-1') {
       return formData.boardId && formData.schoolId && !errors.boardId && !errors.schoolId;
@@ -583,32 +587,35 @@ export default function MultiStepModal({
                 )}
               </div>
 
-              <div>
-                <label
-                  htmlFor="gradeLevel"
-                  className="block text-sm font-medium text-gray-700 mb-1.5"
-                >
-                  Grade Level
-                </label>
-                <select
-                  id="gradeLevel"
-                  value={formData.gradeLevel}
-                  onChange={(e) => updateField('gradeLevel', e.target.value)}
-                  className={`w-full px-3.5 py-2.5 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] bg-white ${
-                    errors.gradeLevel ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                >
-                  <option value="" disabled>Select a grade</option>
-                  {GRADE_LEVELS.map((grade) => (
-                    <option key={grade.id} value={grade.id}>
-                      {grade.label}
-                    </option>
-                  ))}
-                </select>
-                {errors.gradeLevel && (
-                  <p className="mt-1.5 text-sm text-red-600">{errors.gradeLevel}</p>
-                )}
-              </div>
+              {/* Only show Grade Level if not exploring solo */}
+              {formData.classSize !== 'exploring-solo' && (
+                <div>
+                  <label
+                    htmlFor="gradeLevel"
+                    className="block text-sm font-medium text-gray-700 mb-1.5"
+                  >
+                    Grade Level
+                  </label>
+                  <select
+                    id="gradeLevel"
+                    value={formData.gradeLevel}
+                    onChange={(e) => updateField('gradeLevel', e.target.value)}
+                    className={`w-full px-3.5 py-2.5 border rounded-lg text-[15px] transition-all duration-200 focus:outline-none focus:ring-3 focus:ring-[#0092FF]/10 focus:border-[#0092FF] bg-white ${
+                      errors.gradeLevel ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                  >
+                    <option value="" disabled>Select a grade</option>
+                    {GRADE_LEVELS.map((grade) => (
+                      <option key={grade.id} value={grade.id}>
+                        {grade.label}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.gradeLevel && (
+                    <p className="mt-1.5 text-sm text-red-600">{errors.gradeLevel}</p>
+                  )}
+                </div>
+              )}
             </div>
           )}
 

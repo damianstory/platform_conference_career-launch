@@ -223,13 +223,17 @@ export default function InlineRegistrationFlow({
   const handleContinue = () => {
     if (currentScreen === 'grade') {
       handleSubmit();
+    } else if (currentScreen === 'class-size' && formData.classSize === 'exploring-solo') {
+      // Solo educators skip grade selection
+      handleSubmit();
     } else {
       goNext();
     }
   };
 
-  // Check if on last screen
-  const isLastScreen = currentScreen === 'grade';
+  // Check if on last screen (grade, or class-size when solo)
+  const isLastScreen = currentScreen === 'grade' ||
+    (currentScreen === 'class-size' && formData.classSize === 'exploring-solo');
 
   // Don't render until we've checked for cookies
   if (!hasCheckedCookie) return null;

@@ -125,10 +125,16 @@ export function useRegistrationForm() {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    // For students, only validate required fields
-    const fieldsToValidate = userType === 'student'
-      ? ['boardId', 'schoolId', 'gradeLevel'] as Array<keyof RegistrationFormData>
-      : Object.keys(formData) as Array<keyof RegistrationFormData>;
+    // Determine which fields to validate based on user type and class size
+    let fieldsToValidate: Array<keyof RegistrationFormData>;
+    if (userType === 'student') {
+      fieldsToValidate = ['boardId', 'schoolId', 'gradeLevel'];
+    } else if (formData.classSize === 'exploring-solo') {
+      // Solo educators don't need grade level
+      fieldsToValidate = ['email', 'boardId', 'schoolId', 'classSize'];
+    } else {
+      fieldsToValidate = Object.keys(formData) as Array<keyof RegistrationFormData>;
+    }
 
     fieldsToValidate.forEach(key => {
       const error = validateField(key, formData[key]);
@@ -250,7 +256,17 @@ export function useRegistrationForm() {
       );
     }
 
-    // For educators, require all fields (except firstName which was removed)
+    // For solo educators, don't require grade level
+    if (formData.classSize === 'exploring-solo') {
+      return (
+        validateEmail(formData.email) &&
+        formData.boardId !== '' &&
+        formData.schoolId !== '' &&
+        formData.classSize !== ''
+      );
+    }
+
+    // For educators with students, require all fields
     return (
       validateEmail(formData.email) &&
       formData.boardId !== '' &&
