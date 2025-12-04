@@ -563,8 +563,7 @@ You'll walk away with a better idea of what it takes to build a company and **wh
   created_at: '2025-10-30T09:26:33.650063+00:00',
   updated_at: '2025-10-30T09:54:14.398521+00:00',
   display_order: 6,
-  lesson_plan_url: 'https://docs.google.com/document/d/117c9zbmLjjN0_PqKcGNA6EJd_6MUHEe9/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true',
-  isFeatured: true
+  lesson_plan_url: 'https://docs.google.com/document/d/117c9zbmLjjN0_PqKcGNA6EJd_6MUHEe9/edit?usp=sharing&ouid=104643732425535067008&rtpof=true&sd=true'
 };
 
 export const hvacTechnicianCareer: Session = {

@@ -8,7 +8,7 @@ export const ONTARIO_BOARDS = [
   { id: 'dufferin-peel', name: 'Dufferin-Peel' },
   { id: 'durham-dsb', name: 'Durham DSB' },
   { id: 'grand-erie', name: 'Grand Erie' },
-  { id: 'greater-essex-country', name: 'Greater Essex Country' },
+  { id: 'greater-essex-county', name: 'Greater Essex County' },
   { id: 'hamilton-wentworth', name: 'Hamilton-Wentworth' },
   { id: 'keewatin-patricia', name: 'Keewatin-Patricia' },
   { id: 'lambton-kent', name: 'Lambton Kent' },
@@ -511,8 +511,8 @@ export const SCHOOLS_BY_BOARD: Record<string, Array<{ id: string; name: string }
     { id: 'sacred-heart-high-school', name: 'Sacred Heart High School' },
     { id: 'st-marys-high-school', name: "St. Mary's High School" },
   ],
-  'greater-essex-country': [
-    { id: 'greater-essex-country-7s-and-8s', name: 'Greater Essex Country Grade 7s and 8s' },
+  'greater-essex-county': [
+    { id: 'greater-essex-county-7s-and-8s', name: 'Greater Essex County Grade 7s and 8s' },
     { id: 'adult-and-continuing-education', name: 'Adult and Continuing Education' },
     { id: 'belle-river-district-high-school', name: 'Belle River District High School' },
     { id: 'erie-migration-district-school', name: 'Erie Migration District School' },
