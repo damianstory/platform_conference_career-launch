@@ -261,8 +261,7 @@ export function useRegistrationForm() {
       return (
         validateEmail(formData.email) &&
         formData.boardId !== '' &&
-        formData.schoolId !== '' &&
-        formData.classSize !== ''
+        formData.schoolId !== ''
       );
     }
 
