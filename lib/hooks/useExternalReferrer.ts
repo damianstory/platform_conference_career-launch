@@ -63,12 +63,13 @@ export function useExternalReferrer(): ExternalReferrerState {
         const referrerUrl = new URL(referrer);
         const referrerHost = referrerUrl.hostname.toLowerCase();
 
-        // Check if coming from myBlueprint app (but NOT from careerlaunch subdomain)
+        // Check if coming from myBlueprint app (but NOT from careerlaunch or education subdomains)
         const isFromMyBlueprint =
           (referrerHost === 'app.myblueprint.ca' ||
            referrerHost === 'myblueprint.ca' ||
            referrerHost.endsWith('.myblueprint.ca')) &&
-          !referrerHost.includes('careerlaunch');
+          !referrerHost.includes('careerlaunch') &&
+          referrerHost !== 'education.myblueprint.ca';
 
         if (isFromMyBlueprint) {
           // Store for the duration of their session
