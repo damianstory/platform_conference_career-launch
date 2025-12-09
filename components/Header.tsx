@@ -71,7 +71,7 @@ export default function Header() {
           <div className="flex items-center justify-center h-20 px-8 md:px-16">
             <Link
               href="/"
-              className="flex items-center hover:opacity-90 transition-opacity"
+              className="flex items-center gap-4 hover:opacity-90 transition-opacity"
             >
               <Image
                 src="/images/logo.png"
@@ -81,6 +81,8 @@ export default function Header() {
                 className="h-12 w-auto"
                 priority
               />
+              <div className="h-8 w-px bg-neutral-3" aria-hidden="true" />
+              <span className="text-xl font-bold text-brand-navy">Career Launch</span>
             </Link>
           </div>
         )}
@@ -139,16 +141,18 @@ export default function Header() {
           <div className="flex items-center justify-center h-20 px-8">
             <Link
               href="/"
-              className="flex items-center hover:opacity-90 transition-opacity"
+              className="flex items-center gap-3 hover:opacity-90 transition-opacity"
             >
               <Image
                 src="/images/logo.png"
                 alt="myBlueprint"
                 width={240}
                 height={80}
-                className="h-12 w-auto"
+                className="h-10 w-auto"
                 priority
               />
+              <div className="h-6 w-px bg-neutral-3" aria-hidden="true" />
+              <span className="text-lg font-bold text-brand-navy">Career Launch</span>
             </Link>
           </div>
         )}

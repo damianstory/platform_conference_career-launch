@@ -5,15 +5,6 @@ import { ArrowRight } from 'lucide-react';
 export default function HomePage() {
   return (
     <div className="bg-off-white min-h-screen">
-      {/* Top Branding Bar */}
-      <div className="bg-navy py-4 px-8">
-        <div className="max-w-7xl mx-auto flex justify-center items-center">
-          <h1 className="text-2xl md:text-3xl font-black text-white tracking-wide text-center">
-            Career Launch
-          </h1>
-        </div>
-      </div>
-
       {/* Diagonal Split Hero Sections */}
       <div className="diagonal-split-container flex flex-col md:flex-row w-full relative">
         {/* Sessions Section */}
