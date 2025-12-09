@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft } from 'lucide-react'
 import { useSessionContext } from '@/lib/hooks/useSessionContext'
+import { useExternalReferrer } from '@/lib/hooks/useExternalReferrer'
 
 interface SessionDetailHeaderProps {
   sessionTitle: string
@@ -15,6 +16,7 @@ export default function SessionDetailHeader({
   sessionSlug,
 }: SessionDetailHeaderProps) {
   const { context, clearContext } = useSessionContext()
+  const { isFromMyBlueprintApp } = useExternalReferrer()
 
   // Only show "Back to Booth" if context exists AND matches current session
   const isFromBooth = context && context.sessionSlug === sessionSlug
@@ -35,10 +37,14 @@ export default function SessionDetailHeader({
       clearContext()
     }
   }
+
+  // When user came from myBlueprint, the back banner is sticky instead of this header
+  const stickyClass = isFromMyBlueprintApp ? '' : 'sticky top-0 z-50'
+
   return (
     <header
       role="banner"
-      className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
+      className={`${stickyClass} bg-white/95 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]`}
     >
       {/* Desktop Layout (>=1024px) */}
       <div className="hidden lg:block">

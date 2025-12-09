@@ -3,15 +3,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useExternalReferrer } from '@/lib/hooks/useExternalReferrer';
 
 export default function Header() {
   const pathname = usePathname();
+  const { isFromMyBlueprintApp } = useExternalReferrer();
   const isSessionsActive = pathname === '/sessions';
   const isBoothsActive = pathname === '/booths';
   const showNavigation = isSessionsActive || isBoothsActive;
 
+  // When user came from myBlueprint, the back banner is sticky instead of this header
+  const stickyClass = isFromMyBlueprintApp ? '' : 'sticky top-0 z-50';
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+    <header className={`${stickyClass} bg-white/95 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]`}>
       {/* Desktop/Tablet Layout (≥1024px) */}
       <div className="hidden lg:block">
         {showNavigation ? (

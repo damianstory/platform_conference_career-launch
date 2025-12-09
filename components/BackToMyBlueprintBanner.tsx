@@ -17,16 +17,14 @@ export default function BackToMyBlueprintBanner() {
   }
 
   return (
-    <div className="bg-primary-blue text-white">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 md:px-16">
+    <div className="sticky top-0 z-50 bg-primary-blue text-white">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 md:px-16 h-20 flex items-center">
         <a
           href={backUrl}
-          className="flex items-center gap-2 py-3 hover:opacity-90 transition-opacity group"
+          className="flex items-center gap-3 hover:opacity-90 transition-opacity"
         >
-          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 group-hover:bg-white/30 transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-          </div>
-          <span className="font-medium">Back to myBlueprint</span>
+          <ArrowLeft className="w-5 h-5" />
+          <span className="font-medium">Back to myBlueprint Account</span>
         </a>
       </div>
     </div>
