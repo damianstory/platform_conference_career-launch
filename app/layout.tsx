@@ -4,6 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import ConditionalHeader from '@/components/layout/ConditionalHeader';
 import Footer from '@/components/Footer';
+import BackToMyBlueprintBanner from '@/components/BackToMyBlueprintBanner';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -59,6 +60,7 @@ export default function RootLayout({
         </>
       )}
       <body className="min-h-screen flex flex-col overflow-x-hidden">
+        <BackToMyBlueprintBanner />
         <ConditionalHeader />
         <main className="flex-1 overflow-x-hidden">{children}</main>
         <Footer />
