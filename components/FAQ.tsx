@@ -2,24 +2,6 @@ import Accordion, { AccordionItem } from './Accordion';
 
 const faqItems: AccordionItem[] = [
   {
-    id: 'faq-9',
-    title: 'What\'s the difference between the Conference Schedule and All Sessions tab on the Sessions page?',
-    content: (
-      <p>
-        The difference between the two tabs is how the sessions are organized. The same 27 sessions appear in each tab.
-        <br />
-        <br />
-        In the Conference tab, all 27 sessions have been split up evenly over the course of four different blocks. This supports the schools where everybody is watching sessions as part of a single-day delivery of Career Launch where all classes across the school watch sessions throughout the day. The blocks ensure that no student watches the same session twice in the same day. In this tab, it&apos;s set up with a similar structure to how a conference would operate in the real world.
-        <br />
-        <br />
-        The All Sessions tab is a list of all the sessions that are available, not organized by blocks.
-        <br />
-        <br />
-        Pro tip: Use the filter buttons to explore something new.
-      </p>
-    ),
-  },
-  {
     id: 'faq-16',
     title: 'Are there lesson plans to support these sessions?',
     content: (
@@ -70,6 +52,24 @@ const faqItems: AccordionItem[] = [
         <br />
         For educators, we ask for your name, email, school, school board, and how many students
         you&apos;re watching it with (again for reporting purposes).
+      </p>
+    ),
+  },
+  {
+    id: 'faq-9',
+    title: 'All Sessions tab vs. Conference Schedule tab. What\'s the difference?',
+    content: (
+      <p>
+        The difference between the two tabs is how the sessions are organized. The same 27 sessions appear in each tab.
+        <br />
+        <br />
+        In the Conference tab, all 27 sessions have been split up evenly over the course of four different blocks. This supports the schools where everybody is watching sessions as part of a single-day delivery of Career Launch where all classes across the school watch sessions throughout the day. The blocks ensure that no student watches the same session twice in the same day. In this tab, it&apos;s set up with a similar structure to how a conference would operate in the real world.
+        <br />
+        <br />
+        The All Sessions tab is a list of all the sessions that are available, not organized by blocks.
+        <br />
+        <br />
+        Pro tip: Use the filter buttons to explore something new.
       </p>
     ),
   },
