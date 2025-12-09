@@ -4,24 +4,19 @@ import Link from 'next/link'
 import { LucideIcon, ArrowRight } from 'lucide-react'
 
 export type StatsCardTheme = 'blue' | 'navy' | 'slate';
-export type StatsCardStatus = 'ready' | 'coming-soon';
 
 interface StatsCardProps {
   title: string;
-  description: string;
   href: string;
   icon: LucideIcon;
   theme: StatsCardTheme;
-  status?: StatsCardStatus;
 }
 
 export default function StatsCard({
   title,
-  description,
   href,
   icon: Icon,
   theme,
-  status = 'ready'
 }: StatsCardProps) {
   const getThemeStyles = () => {
     switch (theme) {
@@ -53,7 +48,6 @@ export default function StatsCard({
   }
 
   const styles = getThemeStyles()
-  const isComingSoon = status === 'coming-soon'
 
   return (
     <Link
@@ -62,42 +56,30 @@ export default function StatsCard({
         group relative block rounded-xl p-6 cursor-pointer
         border-2 transition-all duration-200
         ${styles.card}
-        ${isComingSoon ? 'opacity-75' : ''}
-        h-[220px]
+        h-[140px]
         shadow-[0_2px_6px_rgba(34,34,76,0.04)]
         hover:shadow-[0_8px_24px_rgba(0,146,255,0.15),0_4px_12px_rgba(34,34,76,0.08)]
         hover:scale-[1.02]
         active:scale-[0.98]
+        flex flex-col items-center justify-center
       `}
     >
       {/* Icon */}
       <div className={`
-        w-12 h-12 rounded-lg flex items-center justify-center mb-4
+        w-12 h-12 rounded-lg flex items-center justify-center mb-3
         ${styles.icon}
       `}>
         <Icon className="w-6 h-6" />
       </div>
 
-      {/* Content */}
-      <div className="flex-grow">
-        <div className="flex items-center gap-2 mb-2">
-          <h3 className="text-xl font-bold text-brand-navy">
-            {title}
-          </h3>
-          {isComingSoon && (
-            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-neutral-2 text-neutral-5">
-              Soon
-            </span>
-          )}
-        </div>
-        <p className="text-body-2 text-neutral-5 line-clamp-3">
-          {description}
-        </p>
-      </div>
+      {/* Title */}
+      <h3 className="text-xl font-bold text-brand-navy text-center">
+        {title}
+      </h3>
 
       {/* Arrow - appears on hover */}
       <div className={`
-        absolute bottom-6 right-6
+        absolute bottom-4 right-4
         opacity-0 translate-x-0
         group-hover:opacity-100 group-hover:translate-x-1
         transition-all duration-200
