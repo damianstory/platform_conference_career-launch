@@ -2,6 +2,16 @@ import Accordion, { AccordionItem } from './Accordion';
 
 const faqItems: AccordionItem[] = [
   {
+    id: 'faq-6',
+    title: 'How long do we have access to these recordings for?',
+    content: (
+      <p>
+        You and your students will have access to all Career Launch recordings to watch
+        on-demand for the remainder of the 25-26 school year.
+      </p>
+    ),
+  },
+  {
     id: 'faq-16',
     title: 'Are there lesson plans to support these sessions?',
     content: (
@@ -70,16 +80,6 @@ const faqItems: AccordionItem[] = [
         <br />
         <br />
         Pro tip: Use the filter buttons to explore something new.
-      </p>
-    ),
-  },
-  {
-    id: 'faq-6',
-    title: 'How long do we have access to these recordings for?',
-    content: (
-      <p>
-        You and your students will have access to all Career Launch recordings to watch
-        on-demand for the remainder of the 25-26 school year.
       </p>
     ),
   },
