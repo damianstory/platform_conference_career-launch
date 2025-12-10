@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { LucideIcon, ArrowRight } from 'lucide-react'
+import { LucideIcon, ArrowRight, Sparkles } from 'lucide-react'
 
 export type StatsCardTheme = 'blue' | 'navy' | 'slate';
 
@@ -10,6 +10,9 @@ interface StatsCardProps {
   href: string;
   icon: LucideIcon;
   theme: StatsCardTheme;
+  featured?: boolean;
+  description?: string;
+  badge?: string;
 }
 
 export default function StatsCard({
@@ -17,8 +20,19 @@ export default function StatsCard({
   href,
   icon: Icon,
   theme,
+  featured = false,
+  description,
+  badge,
 }: StatsCardProps) {
   const getThemeStyles = () => {
+    if (featured) {
+      return {
+        card: 'bg-gradient-to-br from-light-blue via-light-blue/80 to-primary-blue/20 border-primary-blue/30 hover:border-primary-blue',
+        icon: 'text-primary-blue bg-white',
+        arrow: 'text-primary-blue'
+      }
+    }
+
     switch (theme) {
       case 'blue':
         return {
@@ -49,42 +63,88 @@ export default function StatsCard({
 
   const styles = getThemeStyles()
 
+  if (featured) {
+    return (
+      <Link
+        href={href}
+        className={`
+          group relative block rounded-2xl p-6 cursor-pointer
+          border-2 transition-all duration-300
+          ${styles.card}
+          shadow-[0_4px_12px_rgba(0,146,255,0.1)]
+          hover:shadow-[0_12px_32px_rgba(0,146,255,0.2),0_4px_12px_rgba(34,34,76,0.08)]
+          hover:scale-[1.01]
+          active:scale-[0.99]
+        `}
+      >
+        {/* Badge */}
+        {badge && (
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-blue text-white text-sm font-semibold mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            {badge}
+          </div>
+        )}
+
+        <div className="flex items-center gap-5">
+          {/* Icon */}
+          <div className={`
+            w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0
+            ${styles.icon}
+            shadow-md
+          `}>
+            <Icon className="w-7 h-7" />
+          </div>
+
+          <div className="flex-1 min-w-0">
+            {/* Title */}
+            <h3 className="text-xl font-bold text-brand-navy mb-1">
+              {title}
+            </h3>
+
+            {/* Description */}
+            {description && (
+              <p className="text-neutral-5 text-sm leading-relaxed">
+                {description}
+              </p>
+            )}
+          </div>
+
+          {/* Arrow */}
+          <div className={`
+            flex-shrink-0 self-center
+            opacity-60 translate-x-0
+            group-hover:opacity-100 group-hover:translate-x-2
+            transition-all duration-300
+            ${styles.arrow}
+          `}>
+            <ArrowRight className="w-5 h-5" />
+          </div>
+        </div>
+      </Link>
+    )
+  }
+
   return (
     <Link
       href={href}
       className={`
-        group relative block rounded-xl p-6 cursor-pointer
-        border-2 transition-all duration-200
-        ${styles.card}
-        h-[140px]
-        shadow-[0_2px_6px_rgba(34,34,76,0.04)]
-        hover:shadow-[0_8px_24px_rgba(0,146,255,0.15),0_4px_12px_rgba(34,34,76,0.08)]
-        hover:scale-[1.02]
-        active:scale-[0.98]
-        flex flex-col items-center justify-center
+        group relative block rounded-2xl p-6 cursor-pointer
+        transition-all duration-200
+        bg-gradient-to-br from-brand-navy via-brand-navy to-brand-navy/90
+        shadow-[0_4px_12px_rgba(34,34,76,0.15)]
+        hover:shadow-[0_8px_24px_rgba(34,34,76,0.25),0_4px_12px_rgba(0,146,255,0.1)]
+        hover:scale-[1.01]
+        active:scale-[0.99]
+        flex items-center justify-between
       `}
     >
-      {/* Icon */}
-      <div className={`
-        w-12 h-12 rounded-lg flex items-center justify-center mb-3
-        ${styles.icon}
-      `}>
-        <Icon className="w-6 h-6" />
-      </div>
-
       {/* Title */}
-      <h3 className="text-xl font-bold text-brand-navy text-center">
+      <h3 className="text-xl font-bold text-white">
         {title}
       </h3>
 
-      {/* Arrow - appears on hover */}
-      <div className={`
-        absolute bottom-4 right-4
-        opacity-0 translate-x-0
-        group-hover:opacity-100 group-hover:translate-x-1
-        transition-all duration-200
-        ${styles.arrow}
-      `}>
+      {/* Arrow */}
+      <div className="opacity-60 translate-x-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200 text-light-blue">
         <ArrowRight className="w-5 h-5" />
       </div>
     </Link>
