@@ -85,16 +85,7 @@ export default function StatsCard({
           </div>
         )}
 
-        <div className="flex items-center gap-5">
-          {/* Icon */}
-          <div className={`
-            w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0
-            ${styles.icon}
-            shadow-md
-          `}>
-            <Icon className="w-7 h-7" />
-          </div>
-
+        <div className="flex items-center justify-between">
           <div className="flex-1 min-w-0">
             {/* Title */}
             <h3 className="text-xl font-bold text-brand-navy mb-1">
@@ -111,7 +102,7 @@ export default function StatsCard({
 
           {/* Arrow */}
           <div className={`
-            flex-shrink-0 self-center
+            flex-shrink-0 self-center ml-4
             opacity-60 translate-x-0
             group-hover:opacity-100 group-hover:translate-x-2
             transition-all duration-300

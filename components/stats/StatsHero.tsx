@@ -7,7 +7,7 @@ interface StatsHeroProps {
 
 export function StatsHero({
   title = "Career Launch 2025 Analytics",
-  subtitle = "Explore your event performance and engagement metrics"
+  subtitle = "Explore Dec 1-5, 2025 Career Launch performance and engagement metrics"
 }: StatsHeroProps) {
   return (
     <section className="relative bg-brand-navy text-white py-8 overflow-hidden">
