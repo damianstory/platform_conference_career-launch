@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import Header from '@/components/Header'
 import BoothDetailHeader from '@/components/layout/BoothDetailHeader'
 import SessionDetailHeader from '@/components/layout/SessionDetailHeader'
+import StatsDetailHeader from '@/components/layout/StatsDetailHeader'
 import { getBoothBySlug } from '@/data/sample-booths'
 import { getSessionBySlug } from '@/data/sample-sessions'
 
@@ -24,6 +25,9 @@ export default function ConditionalHeader() {
 
   // Detect if we're on a session detail page
   const isSessionPage = pathname?.startsWith('/sessions/') && pathname !== '/sessions'
+
+  // Detect if we're on a stats subpage (general, companies, boards)
+  const isStatsSubpage = pathname?.startsWith('/stats/') && pathname !== '/stats'
 
   useEffect(() => {
     if (isBoothPage) {
@@ -73,6 +77,11 @@ export default function ConditionalHeader() {
   // If we're on a session page and have session data, show SessionDetailHeader
   if (isSessionPage && sessionData) {
     return <SessionDetailHeader sessionTitle={sessionData.title} sessionSlug={sessionData.slug} />
+  }
+
+  // If we're on a stats subpage, show StatsDetailHeader
+  if (isStatsSubpage) {
+    return <StatsDetailHeader />
   }
 
   // Otherwise, show the regular Header
