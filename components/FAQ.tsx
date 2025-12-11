@@ -236,6 +236,18 @@ const faqItems: AccordionItem[] = [
     ),
   },
   {
+    id: 'faq-19',
+    title: 'Are there stats on how the December 1-5 event went?',
+    content: (
+      <p>
+        Yes, you can view general, school board, and company-specific{' '}
+        <a href="/stats" className="text-blue hover:underline">
+          stats here
+        </a>.
+      </p>
+    ),
+  },
+  {
     id: 'faq-17',
     title: 'What is your privacy policy and terms of use?',
     content: (
