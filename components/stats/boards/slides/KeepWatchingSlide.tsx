@@ -16,7 +16,7 @@ export default function KeepWatchingSlide({ board }: KeepWatchingSlideProps) {
           Keep Watching
         </div>
         <h1 className="text-4xl font-extrabold text-brand-navy leading-tight">
-          The Week Is Over.<br />The Sessions Aren't.
+          The Week Is Over.<br />The Sessions Aren&apos;t.
         </h1>
       </div>
 
@@ -79,7 +79,7 @@ export default function KeepWatchingSlide({ board }: KeepWatchingSlideProps) {
           <div className="text-center text-sm text-gray-600">
             You explored <span className="font-bold text-primary-blue">{board.sessions_explored} of 27</span> sessions during Career Launch week.
             <br />
-            There's still more to discover!
+            There&apos;s still more to discover!
           </div>
         )}
       </div>

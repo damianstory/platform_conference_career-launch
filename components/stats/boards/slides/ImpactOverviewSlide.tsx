@@ -22,7 +22,7 @@ export default function ImpactOverviewSlide({ board }: ImpactOverviewSlideProps)
           Career Launch 2025 Report
         </h1>
         <p className="text-sm text-gray-500">
-          December 1–5, 2025 • Your Board's Engagement
+          December 1–5, 2025 • Your Board&apos;s Engagement
         </p>
       </div>
 
