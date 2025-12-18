@@ -60,10 +60,7 @@ export default function BarChart({
 
             {/* Bar */}
             <div
-              className={`
-                relative bg-off-white rounded-lg overflow-hidden
-                ${compact ? 'h-7' : 'h-11'}
-              `}
+              className="relative bg-off-white rounded-lg overflow-hidden h-9"
             >
               <div
                 className={`

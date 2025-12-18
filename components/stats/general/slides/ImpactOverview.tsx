@@ -1,4 +1,3 @@
-import { Users, Building2, School, User } from 'lucide-react';
 import SlideCard from '../SlideCard';
 import StatCard from '../charts/StatCard';
 import { heroStats } from '../data/statsData';
@@ -22,25 +21,21 @@ export default function ImpactOverview() {
       {/* Stats Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <StatCard
-          icon={Users}
           value={heroStats.studentsReached}
           label="Students Reached"
           color="blue"
         />
         <StatCard
-          icon={Building2}
           value={heroStats.schoolBoards}
           label="School Boards"
           color="green"
         />
         <StatCard
-          icon={School}
           value={heroStats.schools}
           label="Participating Schools"
           color="purple"
         />
         <StatCard
-          icon={User}
           value={heroStats.educators}
           label="Unique Educators"
           color="orange"

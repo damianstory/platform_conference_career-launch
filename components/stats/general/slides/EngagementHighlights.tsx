@@ -1,4 +1,3 @@
-import { Play, CheckCircle, ClipboardCheck, Sparkles } from 'lucide-react';
 import SlideCard from '../SlideCard';
 import StatCard from '../charts/StatCard';
 import { engagementStats } from '../data/statsData';
@@ -22,25 +21,21 @@ export default function EngagementHighlights() {
       {/* Stats Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <StatCard
-          icon={Play}
           value={engagementStats.sessionsWatched.toLocaleString()}
           label="Sessions Watched"
           color="blue"
         />
         <StatCard
-          icon={CheckCircle}
           value={`${engagementStats.completionRate}%`}
           label="Session Completion"
           color="green"
         />
         <StatCard
-          icon={ClipboardCheck}
           value={`${engagementStats.quizzesCompleted}%`}
           label="Booth Quizzes Completed"
           color="purple"
         />
         <StatCard
-          icon={Sparkles}
           value={engagementStats.badgesEarned.toLocaleString()}
           label="Badges Earned from Quizzes"
           color="orange"
