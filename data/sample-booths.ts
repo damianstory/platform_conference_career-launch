@@ -4903,7 +4903,7 @@ export const hsmcBooth: PlatinumBoothData = {
   organizationType: 'employer',
   pathway: 'college',
   logo: '/logos/hsmc-logo.jpg',
-  tagline: 'Through Canadian Fire Alarm Technology Program, offered by Health and Safety Management College, students gain the foundational expertise necessary to become skilled Fire Alarm Technicians, ready to take on the responsibility of protecting public safety.',
+  tagline: 'Through the CFAA Canadian Fire Alarm Technology Program, offered by Health and Safety Management College, students gain the foundational expertise necessary to become skilled Fire Alarm Technicians, ready to take on the responsibility of protecting public safety.',
   description: 'Health and Safety Management College (HSMC) is a leading career college based in Ontario, dedicated to providing high-quality education in workplace health and safety.\n\nAs an approved training partner of the Canadian Fire Alarm Association (CFAA) and a registered career college under the Ontario Career Colleges Act, 2005, we specialize in equipping students with the knowledge and skills needed for success in the fire alarm and safety industry.',
   video: {
     url: 'https://www.youtube.com/watch?v=qgCiN6AZ3vw',
