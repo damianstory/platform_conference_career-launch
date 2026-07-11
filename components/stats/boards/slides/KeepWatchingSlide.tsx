@@ -59,7 +59,7 @@ export default function KeepWatchingSlide({ board }: KeepWatchingSlideProps) {
                 2
               </div>
               <p className="text-sm leading-relaxed opacity-90">
-                Select <strong>{board.name}</strong> when registering
+                Choose any session and select <strong>Watch Session</strong>
               </p>
             </div>
 

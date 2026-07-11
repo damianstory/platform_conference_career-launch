@@ -51,64 +51,6 @@ export function trackEvent(
 }
 
 /**
- * Registration Flow Events
- */
-export const RegistrationAnalytics = {
-  started: (sessionId: string, sessionTitle: string) => {
-    trackEvent('registration_started', {
-      session_id: sessionId,
-      session_title: sessionTitle,
-    });
-  },
-
-  userTypeSelected: (userType: 'educator' | 'student') => {
-    trackEvent('registration_user_type_selected', {
-      user_type: userType,
-    });
-  },
-
-  stepCompleted: (step: number, userType: string) => {
-    trackEvent('registration_step_completed', {
-      step,
-      user_type: userType,
-    });
-  },
-
-  submitted: (data: {
-    userType: string;
-    sessionId: string;
-    sessionTitle: string;
-    board?: string;
-    school?: string;
-    classSize?: string;
-    gradeLevel?: string;
-  }) => {
-    trackEvent('registration_submitted', {
-      user_type: data.userType,
-      session_id: data.sessionId,
-      session_title: data.sessionTitle,
-      board: data.board,
-      school: data.school,
-      class_size: data.classSize,
-      grade_level: data.gradeLevel,
-    });
-  },
-
-  cancelled: (step: number, userType?: string) => {
-    trackEvent('registration_cancelled', {
-      step,
-      user_type: userType,
-    });
-  },
-
-  returningUserDetected: (sessionId: string) => {
-    trackEvent('registration_returning_user', {
-      session_id: sessionId,
-    });
-  },
-};
-
-/**
  * Session Video Events
  */
 export const SessionAnalytics = {

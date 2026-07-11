@@ -52,16 +52,9 @@ const faqItems: AccordionItem[] = [
     title: 'Do I need to register in advance?',
     content: (
       <p>
-        You don&apos;t need to create an account with an email and a password to access this platform,
-        but before watching a session, you will be prompted to enter some basic information.
-        <br />
-        <br />
-        For students, we simply ask for your school board and school (if you&apos;re watching on your own)
-        for reporting purposes.
-        <br />
-        <br />
-        For educators, we ask for your name, email, school, school board, and how many students
-        you&apos;re watching it with (again for reporting purposes).
+        No. Choose any session and select &ldquo;Watch Session&rdquo; to open the video directly.
+        You do not need an account and we do not ask for your email, school, school board,
+        class size, grade, or other viewer details.
       </p>
     ),
   },
@@ -253,13 +246,7 @@ const faqItems: AccordionItem[] = [
     content: (
       <div>
         <p>
-          Because Career Launch is being run by myBlueprint, by registering for a session, you are consenting to the myBlueprint privacy policy and terms of service.
-          <br />
-          <br />
-          If you are already a user of myBlueprint, you agreed to this when creating your account, however, by registering for a session you also consent to the privacy policy and terms of use.
-          <br />
-          <br />
-          Access the myBlueprint{' '}
+          Career Launch is operated by myBlueprint and is subject to the myBlueprint{' '}
           <a href="https://myblueprint.ca/privacy" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
             Privacy Policy
           </a>
@@ -271,10 +258,10 @@ const faqItems: AccordionItem[] = [
         <p className="text-gray-400 my-2">--</p>
         <p className="font-semibold mb-2">Specific to Career Launch:</p>
         <ul className="list-disc ml-6">
-          <li>We do not collect student name or email as part of registration. We ask for school board, school, and grade for reporting purposes.</li>
+          <li>Watching sessions no longer requires registration, and we no longer collect viewer profile, school, class, or grade details.</li>
+          <li>We continue to use usage analytics to understand session starts, progress, and completion.</li>
           <li>All Career Launch related data will be destroyed in July, 2026.</li>
-          <li>Educators can request to have their registration data deleted at any point.</li>
-          <li>Registration data is only being collected for reporting purposes to share with school boards and presenters.</li>
+          <li>Educators can request to have their historical registration data deleted at any point.</li>
         </ul>
       </div>
     ),

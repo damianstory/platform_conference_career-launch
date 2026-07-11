@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useRouter } from 'next/navigation';
 import { SessionAnalytics } from '@/lib/analytics';
+import { requestSessionPlayback } from '@/lib/sessionPlayback';
 
 interface TrailerModalProps {
   isOpen: boolean;
@@ -94,12 +95,10 @@ export default function TrailerModal({
     );
     onClose();
     if (onWatchFullSession) {
-      // If callback provided (from detail page), trigger registration modal
+      // Detail pages can open the full player without navigating.
       onWatchFullSession();
     } else {
-      // Save flag so VideoSection knows user came from trailer
-      sessionStorage.setItem('came_from_trailer', sessionSlug);
-      // Navigate to session detail page
+      requestSessionPlayback(sessionSlug);
       router.push(`/sessions/${sessionSlug}`);
     }
   };

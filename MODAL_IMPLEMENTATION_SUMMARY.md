@@ -1,5 +1,7 @@
 # Bottom Drawer Registration Modal - Implementation Summary
 
+> **Historical — registration flow retired July 2026.** This document describes the former event-week implementation and is retained for reference only.
+
 ## What Was Built
 
 A professional, mobile-first registration modal that appears when users click "Watch with Your Class" on session detail pages.

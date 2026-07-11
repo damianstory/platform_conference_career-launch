@@ -180,9 +180,6 @@ jobs:
 
       - name: Build application
         run: npm run build
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: https://dummy.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: dummy-key
 
       - name: Check for HTML mockup files in build
         run: |
@@ -232,8 +229,6 @@ jobs:
           npm start &
           sleep 10
         env:
-          NEXT_PUBLIC_SUPABASE_URL: https://dummy.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: dummy-key
           PORT: 3000
 
       - name: Test security headers

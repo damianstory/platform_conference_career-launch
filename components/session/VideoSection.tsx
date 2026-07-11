@@ -1,92 +1,116 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Player from '@vimeo/player';
-import InlineRegistrationFlow from '@/components/session/InlineRegistrationFlow';
 import TrailerModal from '@/components/session/TrailerModal';
 import { getSessionBySlug } from '@/data/sample-sessions';
 import { SessionAnalytics } from '@/lib/analytics';
-
+import { buildAutoplayUrl, consumeSessionPlaybackRequest } from '@/lib/sessionPlayback';
 
 interface VideoSectionProps {
   sessionSlug: string;
 }
 
-type VideoState = 'initial' | 'registration' | 'loading' | 'playing' | 'paused' | 'completed' | 'error';
+type VideoState = 'checking' | 'initial' | 'playing' | 'error';
 
 export default function VideoSection({ sessionSlug }: VideoSectionProps) {
   const [isTrailerModalOpen, setIsTrailerModalOpen] = useState(false);
-  const [videoState, setVideoState] = useState<VideoState>('initial');
-  const [hideTrailerButton, setHideTrailerButton] = useState(false);
+  const [videoState, setVideoState] = useState<VideoState>('checking');
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const session = getSessionBySlug(sessionSlug);
 
-  // Vimeo player tracking
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const playerRef = useRef<Player | null>(null);
   const milestonesTracked = useRef<Set<25 | 50 | 75>>(new Set());
+  const hasTrackedStart = useRef(false);
   const hasTrackedCompletion = useRef(false);
 
-  // Track page view and check if user came from trailer modal
-  useEffect(() => {
-    if (typeof window !== 'undefined' && session) {
-      // Track session detail page view
-      const referrer = document.referrer || undefined;
-      SessionAnalytics.detailViewed(session.id, session.title, referrer);
+  const startPlayback = useCallback(() => {
+    const autoplayUrl = session?.full_video_url
+      ? buildAutoplayUrl(session.full_video_url)
+      : null;
 
-      // Check if came from trailer modal - hide button if so
-      const cameFromTrailer = sessionStorage.getItem('came_from_trailer');
-      if (cameFromTrailer === session.slug) {
-        setHideTrailerButton(true);
-        sessionStorage.removeItem('came_from_trailer');
-      }
+    if (!autoplayUrl) {
+      setVideoUrl(null);
+      setVideoState('error');
+      return;
     }
+
+    setVideoUrl(autoplayUrl);
+    setVideoState('playing');
   }, [session]);
 
-  // Initialize Vimeo player and track video progress
   useEffect(() => {
-    if (videoState === 'playing' && iframeRef.current && session && !playerRef.current) {
-      try {
-        const player = new Player(iframeRef.current);
-        playerRef.current = player;
+    if (!session) return;
 
-        // Track video progress milestones
-        player.on('timeupdate', async (data) => {
-          const percent = data.percent * 100;
-          const watchDuration = Math.round(data.seconds);
+    const referrer = document.referrer || undefined;
+    SessionAnalytics.detailViewed(session.id, session.title, referrer);
 
-          // Track 25%, 50%, 75% milestones (each only once)
-          const milestones: (25 | 50 | 75)[] = [25, 50, 75];
-          for (const milestone of milestones) {
-            if (percent >= milestone && !milestonesTracked.current.has(milestone)) {
-              milestonesTracked.current.add(milestone);
-              SessionAnalytics.videoProgress(session.id, session.title, milestone, watchDuration);
-            }
-          }
+    const shouldStartPlayback = consumeSessionPlaybackRequest(session.slug);
+    if (!session.full_video_url || !buildAutoplayUrl(session.full_video_url)) {
+      setVideoState('error');
+    } else if (shouldStartPlayback) {
+      startPlayback();
+    } else {
+      setVideoState('initial');
+    }
+  }, [session, startPlayback]);
 
-          // Track completion at 80%+
-          if (percent >= 80 && !hasTrackedCompletion.current) {
-            hasTrackedCompletion.current = true;
-            const duration = await player.getDuration();
-            SessionAnalytics.videoCompleted(session.id, session.title, watchDuration, Math.round(duration));
-          }
-        });
-
-        // Also track completion when video ends
-        player.on('ended', async () => {
-          if (!hasTrackedCompletion.current) {
-            hasTrackedCompletion.current = true;
-            const duration = await player.getDuration();
-            SessionAnalytics.videoCompleted(session.id, session.title, Math.round(duration), Math.round(duration));
-          }
-        });
-      } catch (error) {
-        console.error('Failed to initialize Vimeo player:', error);
-      }
+  useEffect(() => {
+    if (videoState !== 'playing' || !iframeRef.current || !session || playerRef.current) {
+      return;
     }
 
-    // Cleanup on unmount
+    try {
+      const player = new Player(iframeRef.current);
+      playerRef.current = player;
+
+      player.on('play', () => {
+        if (!hasTrackedStart.current) {
+          hasTrackedStart.current = true;
+          SessionAnalytics.videoStarted(session.id, session.title);
+        }
+      });
+
+      player.on('timeupdate', async (data) => {
+        const percent = data.percent * 100;
+        const watchDuration = Math.round(data.seconds);
+        const milestones: (25 | 50 | 75)[] = [25, 50, 75];
+
+        for (const milestone of milestones) {
+          if (percent >= milestone && !milestonesTracked.current.has(milestone)) {
+            milestonesTracked.current.add(milestone);
+            SessionAnalytics.videoProgress(session.id, session.title, milestone, watchDuration);
+          }
+        }
+
+        if (percent >= 80 && !hasTrackedCompletion.current) {
+          hasTrackedCompletion.current = true;
+          const duration = await player.getDuration();
+          SessionAnalytics.videoCompleted(session.id, session.title, watchDuration, Math.round(duration));
+        }
+      });
+
+      player.on('ended', async () => {
+        if (!hasTrackedCompletion.current) {
+          hasTrackedCompletion.current = true;
+          const duration = await player.getDuration();
+          SessionAnalytics.videoCompleted(
+            session.id,
+            session.title,
+            Math.round(duration),
+            Math.round(duration)
+          );
+        }
+      });
+    } catch (error) {
+      console.error('Failed to initialize Vimeo player:', error);
+      setVideoState('error');
+    }
+
     return () => {
       if (playerRef.current) {
+        playerRef.current.off('play');
         playerRef.current.off('timeupdate');
         playerRef.current.off('ended');
         playerRef.current = null;
@@ -94,48 +118,19 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
     };
   }, [videoState, session]);
 
-  if (!session) {
-    return null;
-  }
+  if (!session) return null;
 
   const handleWatchClick = () => {
-    // Track watch button click
     SessionAnalytics.watchClicked(session.id, session.title, 'detail');
-    setVideoState('registration');
-  };
-
-  const handleTrailerClick = () => {
-    // Prevent opening trailer when registration is in progress
-    if (videoState === 'registration') return;
-    setIsTrailerModalOpen(true);
+    startPlayback();
   };
 
   const handleWatchFullSessionFromTrailer = () => {
-    // Close trailer modal and show inline registration
     setIsTrailerModalOpen(false);
-    setVideoState('registration');
+    startPlayback();
   };
 
-  const handleRegistrationSuccess = (data: { userType: string | null }) => {
-    console.log('Registration complete:', data);
-
-    // Transition to loading state
-    setVideoState('loading');
-
-    // After brief delay, start video playing
-    setTimeout(() => {
-      setVideoState('playing');
-      // Track video started
-      SessionAnalytics.videoStarted(session.id, session.title, data.userType || 'unknown');
-    }, 500);
-  };
-
-  const handleRegistrationCancel = () => {
-    setVideoState('initial');
-  };
-
-  // Button only visible in initial state
-  const showButton = videoState === 'initial';
+  const showButtons = videoState === 'initial';
 
   return (
     <>
@@ -144,114 +139,71 @@ export default function VideoSection({ sessionSlug }: VideoSectionProps) {
           Watch Session
         </h2>
 
-        {/* Video Container - wrapper that allows expansion below */}
-        <div className="relative">
-          {/* Video/Registration Container */}
-          {videoState === 'registration' ? (
-            // Registration Flow - uses its own container structure
-            <InlineRegistrationFlow
-              sessionId={session.id}
-              sessionTitle={session.title}
-              onRegistrationComplete={handleRegistrationSuccess}
-              onCancel={handleRegistrationCancel}
+        <div className={`aspect-video rounded-lg overflow-hidden relative ${videoState === 'playing' ? 'bg-black' : 'bg-gradient-to-br from-blue to-navy'}`}>
+          {videoState === 'playing' && videoUrl && (
+            <iframe
+              ref={iframeRef}
+              src={videoUrl}
+              frameBorder={0}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+              title="Session Video"
             />
-          ) : (
-            // Standard Video Container - 16:9 aspect ratio
-            <div className={`aspect-video rounded-lg overflow-hidden relative ${videoState === 'playing' ? 'bg-black' : 'bg-gradient-to-br from-blue to-navy'}`}>
-              {/* Video iframe - shown when playing */}
-              {videoState === 'playing' && session.full_video_url && (
-                <iframe
-                  ref={iframeRef}
-                  src={session.full_video_url}
-                  frameBorder={0}
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                  title="Session Video"
-                />
+          )}
+
+          {videoState !== 'playing' && (
+            <div className="flex flex-col items-center justify-center h-full text-white p-4 md:p-6 gap-4 md:gap-6">
+              {videoState === 'checking' && (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent" />
+                  <span className="sr-only">Loading session...</span>
+                </div>
               )}
 
-              {/* Other states content */}
-              <div className={`flex flex-col items-center justify-center h-full text-white p-4 md:p-6 gap-4 md:gap-6 ${videoState === 'playing' ? 'hidden' : ''}`}>
+              {showButtons && (
+                <div className="hidden md:flex flex-col items-center gap-3">
+                  <button onClick={handleWatchClick} className="btn-primary md:min-w-[280px]">
+                    Watch Session
+                  </button>
+                  <button
+                    onClick={() => setIsTrailerModalOpen(true)}
+                    className="btn-secondary md:min-w-[280px]"
+                  >
+                    Watch Trailer
+                  </button>
+                </div>
+              )}
 
-                {/* Initial State: Show buttons (no placeholder text) */}
-                {videoState === 'initial' && showButton && (
-                  <div className="hidden md:flex flex-col items-center gap-3">
-                    {/* Desktop: Watch Session button */}
-                    <button
-                      onClick={handleWatchClick}
-                      className="btn-primary md:min-w-[280px]"
-                    >
-                      Watch Session
-                    </button>
-                    {/* Desktop: Watch Trailer button - hidden if came from trailer */}
-                    {!hideTrailerButton && (
-                      <button
-                        onClick={handleTrailerClick}
-                        className="btn-secondary md:min-w-[280px]"
-                      >
-                        Watch Trailer
-                      </button>
-                    )}
-                  </div>
-                )}
-
-                {/* Loading State: Spinner */}
-                {videoState === 'loading' && (
-                  <div className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent" />
-                    <span className="sr-only">Loading video...</span>
-                  </div>
-                )}
-
-                {/* Paused State: Show resume message */}
-                {videoState === 'paused' && (
-                  <div className="flex flex-col items-center justify-center gap-4">
-                    <div className="text-4xl">⏸️</div>
-                    <p className="text-lg font-medium">Video paused</p>
-                  </div>
-                )}
-
-                {/* Error State: Retry option */}
-                {videoState === 'error' && (
-                  <div className="flex flex-col items-center justify-center gap-4">
-                    <div className="text-4xl">⚠️</div>
-                    <p className="text-lg">Video unavailable</p>
-                    <button
-                      onClick={() => setVideoState('initial')}
-                      className="btn-primary"
-                    >
-                      Try Again
-                    </button>
-                  </div>
-                )}
-              </div>
+              {videoState === 'error' && (
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <div className="text-4xl" aria-hidden="true">⚠️</div>
+                  <p className="text-lg">Video unavailable</p>
+                </div>
+              )}
             </div>
           )}
         </div>
 
-        {/* Mobile: Buttons below video - Only show in initial state */}
-        {showButton && (
+        {showButtons && (
           <div className="mt-4 md:hidden space-y-3">
-            <button
-              onClick={handleWatchClick}
-              className="btn-primary w-full"
-            >
+            <button onClick={handleWatchClick} className="btn-primary w-full">
               Watch Session
             </button>
-            {!hideTrailerButton && (
-              <button
-                onClick={handleTrailerClick}
-                className="btn-secondary w-full"
-              >
-                Watch Trailer
-              </button>
-            )}
+            <button
+              onClick={() => setIsTrailerModalOpen(true)}
+              className="btn-secondary w-full"
+            >
+              Watch Trailer
+            </button>
           </div>
         )}
 
-        <p className="text-sm text-gray-600 mt-4 md:mt-6 text-center">
-          Click &ldquo;Watch Session&rdquo; to register and start the video.
-        </p>
+        {videoState === 'initial' && (
+          <p className="text-sm text-gray-600 mt-4 md:mt-6 text-center">
+            Click &ldquo;Watch Session&rdquo; to open the video.
+          </p>
+        )}
       </div>
 
       <TrailerModal

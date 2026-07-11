@@ -1,5 +1,7 @@
 # Career Launch Platform - Data Security Overview
 
+> **Historical — registration flow retired July 2026.** Career Launch no longer collects the viewer details described below. This document is retained as a record of the event-week data controls.
+
 ## For School Administrators & Decision Makers
 
 ### What Data Do We Collect?

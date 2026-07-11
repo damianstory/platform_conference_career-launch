@@ -6,6 +6,7 @@ import { ExternalLink } from 'lucide-react'
 import { getSessionBySlug } from '@/data/sample-sessions'
 import { useSessionContext } from '@/lib/hooks/useSessionContext'
 import { BoothDetailAnalytics } from '@/lib/analytics'
+import { requestSessionPlayback } from '@/lib/sessionPlayback'
 
 interface SessionBannerProps {
   sessionSlug: string
@@ -38,6 +39,7 @@ export default function SessionBanner({ sessionSlug, boothSlug, boothName, booth
     // When on session page, we can check if context.sessionSlug matches current session
     // and show "Back to Booth" linking to context.boothSlug
     saveContext(sessionSlug, session.title, boothSlug)
+    requestSessionPlayback(sessionSlug)
     router.push(`/sessions/${session.slug}`)
   }
 

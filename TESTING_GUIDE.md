@@ -1,5 +1,7 @@
 # Testing Guide: Bottom Drawer Registration Modal
 
+> **Historical — registration flow retired July 2026.** These scenarios describe the former event-week implementation and are retained for reference only.
+
 ## Quick Start
 
 ```bash

@@ -47,7 +47,7 @@ export default function GetInvolved() {
               2
             </div>
             <p className="text-sm text-gray-700 leading-relaxed">
-              Select the <strong>&apos;Not Listed - Watching as Guest&apos;</strong> option when registering for a session if you don&apos;t see your/your child&apos;s school board listed.
+              Choose any session and select <strong>Watch Session</strong>. No registration or viewer details are required.
             </p>
           </div>
         </div>

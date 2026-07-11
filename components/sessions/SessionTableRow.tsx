@@ -7,6 +7,7 @@ import { formatDescription } from '@/lib/formatDescription';
 import { useRouter } from 'next/navigation';
 import { SessionAnalytics } from '@/lib/analytics';
 import TrailerModal from '@/components/session/TrailerModal';
+import { requestSessionPlayback } from '@/lib/sessionPlayback';
 
 interface SessionTableRowProps {
   session: Session;
@@ -47,6 +48,7 @@ export default function SessionTableRow({
     e.stopPropagation();
     // Track watch click from table
     SessionAnalytics.watchClicked(session.id, session.title, 'table');
+    requestSessionPlayback(session.slug);
     router.push(`/sessions/${session.slug}`);
   };
 
@@ -213,7 +215,7 @@ export default function SessionTableRow({
                 <button
                   className="btn-primary text-sm w-full sm:w-36 px-4 py-2 whitespace-nowrap"
                   onClick={handleWatchClick}
-                  aria-label={`Watch ${session.title} with your class`}
+                  aria-label={`Watch ${session.title}`}
                 >
                   Watch Session
                 </button>
