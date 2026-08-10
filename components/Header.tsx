@@ -138,21 +138,21 @@ export default function Header() {
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-20 px-8">
+          <div className="flex items-center justify-center h-20 px-2 sm:px-8">
             <Link
               href="/"
-              className="flex items-center gap-3 hover:opacity-90 transition-opacity"
+              className="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-opacity"
             >
               <Image
                 src="/images/logo.png"
                 alt="myBlueprint"
-                width={240}
-                height={80}
-                className="h-10 w-auto"
+                width={416}
+                height={100}
+                className="h-[32px] sm:h-10 w-auto"
                 priority
               />
-              <div className="h-6 w-px bg-neutral-3" aria-hidden="true" />
-              <span className="text-lg font-bold text-brand-navy">Career Launch</span>
+              <div className="h-[24px] sm:h-6 w-px bg-neutral-3" aria-hidden="true" />
+              <span className="text-base sm:text-lg font-bold text-brand-navy">Career Launch</span>
             </Link>
           </div>
         )}

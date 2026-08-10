@@ -11,6 +11,9 @@
 
   html {
     @apply text-navy;
+    /* `clip` rather than `hidden`: prevents sideways panning without creating a
+       scroll container (which would break the sticky header). */
+    overflow-x: clip;
   }
 
   body {

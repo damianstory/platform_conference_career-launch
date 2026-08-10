@@ -16,7 +16,7 @@ export default function Footer({ className, ...props }: FooterProps) {
     >
       <div className="container-custom">
         <div className="text-center">
-          <p className="text-base text-navy">
+          <p className="text-sm sm:text-base text-navy">
             &copy; 2025 myBlueprint Career Launch.{' '}
             <a
               href="https://myblueprint.ca/"
