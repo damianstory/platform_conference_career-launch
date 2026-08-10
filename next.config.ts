@@ -11,6 +11,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Sessions and booths are hidden (not deleted) while the holding page is live.
+  async redirects() {
+    return [
+      { source: '/sessions/:path*', destination: '/', permanent: false },
+      { source: '/booths/:path*', destination: '/', permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;

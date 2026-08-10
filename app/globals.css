@@ -196,6 +196,15 @@
 }
 
 @layer utilities {
+  /* Holding page entrance (reuses fadeInUp keyframe) */
+  .animate-holding-in {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  .animate-holding-in-delayed {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+  }
+
   /* Diagonal Split Hero Styles */
   .diagonal-split-container {
     position: relative;

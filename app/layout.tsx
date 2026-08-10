@@ -15,17 +15,14 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Career Launch 2025 | myBlueprint',
+  title: 'Career Launch | myBlueprint',
   description:
-    '25+ engaging career focused sessions bringing Canadian industry professionals directly into your classroom. Start watching now.',
+    'Career Launch is returning for a new edition. Stay tuned — and explore LaunchPad for career exploration resources in the meantime.',
   keywords: [
     'career education',
-    'Ontario high schools',
     'career exploration',
-    'student engagement',
     'myBlueprint',
-    'career videos',
-    'guidance counselors',
+    'Career Launch',
   ],
   icons: {
     icon: '/favicon.png',
