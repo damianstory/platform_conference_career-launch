@@ -10,8 +10,9 @@ export default function HoldingPage() {
       />
 
       <div className="animate-holding-in relative flex flex-col items-center">
-        <h1 className="text-white font-black text-[32px] sm:text-[40px] md:text-[52px] lg:text-[64px] xl:text-[72px] leading-[1.1] tracking-[-0.02em] max-w-[900px] [text-wrap:balance]">
-          Career Launch is returning for a new edition.
+        <h1 className="text-white font-black text-[32px] sm:text-[40px] md:text-[50px] lg:text-[64px] xl:text-[72px] leading-[1.1] tracking-[-0.02em] max-w-[1200px] [text-wrap:balance]">
+          <span className="md:block">Career Launch is returning</span>{" "}
+          <span className="md:block">for a new edition.</span>
         </h1>
         <p className="text-light-blue text-lg sm:text-xl md:text-2xl font-medium mt-6">Stay tuned!</p>
       </div>
