@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function HoldingPage() {
   return (
     <section className="relative flex-1 flex flex-col items-center justify-center overflow-hidden text-center px-3 sm:px-6 pt-16 pb-24 sm:py-16 min-h-[480px] bg-[linear-gradient(180deg,#22224C_0%,#22224C_55%,#1B2B66_80%,#123C8A_100%)]">
@@ -17,7 +15,7 @@ export default function HoldingPage() {
         <p className="text-light-blue text-lg sm:text-xl md:text-2xl font-medium mt-6">Stay tuned!</p>
       </div>
 
-      <div className="animate-holding-in-delayed relative mt-10 md:mt-12 flex flex-col items-center gap-[32px] md:gap-6 w-full">
+      <div className="animate-holding-in-delayed relative mt-10 md:mt-12 flex items-center justify-center w-full">
         <a
           href="https://launchpad.myblueprint.ca"
           target="_blank"
@@ -41,12 +39,6 @@ export default function HoldingPage() {
             <path d="M8 7h9v9" />
           </svg>
         </a>
-        <Link
-          href="/stats"
-          className="inline-flex items-center justify-center min-h-[44px] text-light-blue text-[15px] font-medium hover:text-white hover:underline transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-light-blue focus-visible:outline-offset-[3px] rounded"
-        >
-          See the 2025 impact →
-        </Link>
       </div>
 
       <p className="absolute bottom-4 md:bottom-5 left-0 right-0 px-3 sm:px-6 text-[13px] leading-normal text-light-blue">
