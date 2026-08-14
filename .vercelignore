@@ -6,6 +6,9 @@ design-mockups/
 filter-mockup.html
 design-comparison.html
 
+# The partners page is a static HTML file that must deploy (served at /partners)
+!public/partners/index.html
+
 # Security and documentation
 SECURITY_TESTING_REPORT.md
 *.test.ts
