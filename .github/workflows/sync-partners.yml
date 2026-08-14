@@ -1,0 +1,60 @@
+name: Sync partners page content
+
+# Pulls the partners page from gilpages/career-launch-industry-partner into
+# public/partners/ and commits it, which triggers a Vercel deploy.
+#
+# Triggered by:
+#   - workflow_dispatch: called by a small trigger workflow in the source repo
+#     on every push (via a fine-grained PAT scoped to Actions: read/write on
+#     this repo only), or run manually from the Actions tab.
+#   - schedule: daily safety net in case a dispatch is ever missed.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-partners
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout platform repo
+        uses: actions/checkout@v4
+
+      - name: Checkout partners source repo
+        uses: actions/checkout@v4
+        with:
+          repository: gilpages/career-launch-industry-partner
+          path: partners-source
+
+      - name: Copy content into public/partners
+        run: |
+          find public/partners -type f ! -name 'README.md' -delete
+          cp partners-source/index.html public/partners/
+          cp partners-source/*.png public/partners/ 2>/dev/null || true
+
+          # The page currently inlines all images as data URIs, but if a future
+          # version references the PNGs relatively, prefix them so they resolve
+          # under /partners (the page is served at /partners, not /partners/).
+          sed -i -E 's#(src|href)="([a-zA-Z0-9_-]+\.png)"#\1="/partners/\2"#g' public/partners/index.html
+
+          rm -rf partners-source
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/partners
+          if git diff --cached --quiet; then
+            echo "No content changes; nothing to commit."
+          else
+            git commit -m "chore: sync partners page content"
+            git push
+          fi

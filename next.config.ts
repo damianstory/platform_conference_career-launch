@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
       { source: '/booths/:path*', destination: '/', permanent: false },
     ];
   },
+  // The partners page is a static HTML file synced into public/partners/
+  // from gilpages/career-launch-industry-partner (see sync-partners workflow).
+  async rewrites() {
+    return [{ source: '/partners', destination: '/partners/index.html' }];
+  },
 };
 
 export default nextConfig;
