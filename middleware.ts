@@ -17,7 +17,7 @@ export function middleware(request: NextRequest) {
   const csp = [
     "default-src 'self'",
     "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.typekit.net",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://use.typekit.net https://p.typekit.net",
     "font-src 'self' https://fonts.gstatic.com https://use.typekit.net",
     "img-src 'self' data: https: blob:",
     "media-src 'self' https://player.vimeo.com https://www.youtube.com",
